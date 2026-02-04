@@ -4,7 +4,7 @@
 // Point d'entrée du jeu
 int main(void)
 {
-    InitWindow(800, 450, "Platformer Proto - Architecture");
+    InitWindow(800, 450, "Fell From Hell");
 
     GameInit(); // Initialisation du jeu
 
