@@ -11,6 +11,8 @@ int main(void)
     SetTargetFPS(60);
     while (!WindowShouldClose())
     {
+        DrawFPS(10, 10);
+
         GameUpdate(); // Logique
 
         BeginDrawing();
