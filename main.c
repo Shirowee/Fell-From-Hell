@@ -1,4 +1,4 @@
-#include "raylib/raylib.h"
+#include "raylib/include/raylib.h"
 #include "core/GameManager.h"
 
 // Point d'entrée du jeu
@@ -11,11 +11,12 @@ int main(void)
     SetTargetFPS(60);
     while (!WindowShouldClose())
     {
-        DrawFPS(10, 10);
+        
 
         GameUpdate(); // Logique
 
         BeginDrawing();
+        DrawFPS(10, 10);
         ClearBackground(RAYWHITE);
 
         GameDraw();   // Dessin

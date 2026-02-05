@@ -1,20 +1,14 @@
-# Nom de l'exécutable
 TARGET = game
-
-# Compilateur
 CC = gcc
 
-# Détection de l'OS
 ifeq ($(OS),Windows_NT)
     PLATFORM = WINDOWS
 else
     PLATFORM = LINUX
 endif
 
-# Flags communs
-CFLAGS = -Wall -Wextra -std=c99 -I./raylib
+CFLAGS = -Wall -Wextra -std=c99 -O2 -I./raylib/include
 
-# Sources
 SRC = \
     main.c \
     core/GameManager.c \
@@ -24,21 +18,13 @@ SRC = \
 
 OBJ = $(SRC:.c=.o)
 
-# -----------------------------
-# Librairies selon plateforme
-# -----------------------------
-
 ifeq ($(PLATFORM),WINDOWS)
-    LIBS = raylib/libraylib.a -lopengl32 -lgdi32 -lwinmm
+    LIBS = raylib/windows/libraylib.a -lopengl32 -lgdi32 -lwinmm
     RM = del /Q
 else
-    LIBS = raylib/libraylib.a -lm -lpthread -ldl -lrt
+    LIBS = raylib/linux/libraylib.a -lm -lpthread -ldl -lrt -lX11
     RM = rm -f
 endif
-
-# -----------------------------
-# Règles
-# -----------------------------
 
 all: $(TARGET)
 

@@ -1,6 +1,6 @@
 #include "LevelManager.h"
 #include "Platform.h"
-#include "raylib.h"
+#include "../raylib/include/raylib.h"
 
 // Sol unique du niveau
 static Platform ground;
