@@ -5,33 +5,38 @@ TARGET = game
 CC = gcc
 
 # Flags de compilation
-CFLAGS = -Wall -Wextra -std=c99
+# -I indique où est raylib.h
+CFLAGS = -Wall -Wextra -std=c99 -I./raylib
 
-# Liens Raylib et dépendances Linux
-LIBS = -lraylib -lm -lpthread -ldl -lrt -lX11
+# Librairies : raylib + dépendances Linux
+# -L indique où est libraylib.a
+LIBS = -L./raylib -lraylib -lm -lpthread -ldl -lrt -lX11
 
-# Tous les fichiers .c du projet dans le bon ordre
-SRC = core/GameManager.c player/PlayerMovement.c player/PlayerController.c levels/LevelManager.c main.c
+# Tous les fichiers .c de ton projet dans les sous-dossiers
+SRC = \
+    main.c \
+    core/GameManager.c \
+    player/PlayerController.c \
+    player/PlayerMovement.c \
+    levels/LevelManager.c
 
-
-# Fichiers objets correspondants
+# Création des .o
 OBJ = $(SRC:.c=.o)
 
-# Règle par défaut : build
+# Règle principale
 all: $(TARGET)
 
-# Compilation de l'exécutable
+# Link final
 $(TARGET): $(OBJ)
 	$(CC) $(OBJ) -o $(TARGET) $(LIBS)
 
-# Compilation des fichiers .c en .o
+# Compilation des .c en .o
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Supprimer les .o et l'exécutable
+# Nettoyage
 clean:
 	rm -f $(OBJ) $(TARGET)
 
 # Lancer le jeu
 run: all
-	./$(TARGET)
