@@ -4,15 +4,17 @@ TARGET = game
 # Compilateur
 CC = gcc
 
-# Flags de compilation
-# -I indique où est raylib.h
+# Détection de l'OS
+ifeq ($(OS),Windows_NT)
+    PLATFORM = WINDOWS
+else
+    PLATFORM = LINUX
+endif
+
+# Flags communs
 CFLAGS = -Wall -Wextra -std=c99 -I./raylib
 
-# Librairies : raylib + dépendances Linux
-# -L indique où est libraylib.a
-LIBS = raylib/libraylib.a -lm -lpthread -ldl -lrt
-
-# Tous les fichiers .c de ton projet dans les sous-dossiers
+# Sources
 SRC = \
     main.c \
     core/GameManager.c \
@@ -20,23 +22,34 @@ SRC = \
     player/PlayerMovement.c \
     levels/LevelManager.c
 
-# Création des .o
 OBJ = $(SRC:.c=.o)
 
-# Règle principale
+# -----------------------------
+# Librairies selon plateforme
+# -----------------------------
+
+ifeq ($(PLATFORM),WINDOWS)
+    LIBS = raylib/libraylib.a -lopengl32 -lgdi32 -lwinmm
+    RM = del /Q
+else
+    LIBS = raylib/libraylib.a -lm -lpthread -ldl -lrt
+    RM = rm -f
+endif
+
+# -----------------------------
+# Règles
+# -----------------------------
+
 all: $(TARGET)
 
-# Link final
 $(TARGET): $(OBJ)
 	$(CC) $(OBJ) -o $(TARGET) $(LIBS)
 
-# Compilation des .c en .o
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Nettoyage
 clean:
-	rm -f $(OBJ) $(TARGET)
+	$(RM) $(OBJ) $(TARGET)
 
-# Lancer le jeu
 run: all
+	./$(TARGET)
