@@ -1,4 +1,4 @@
-#include "raylib.h"
+#include "raylib/raylib.h"
 #include "core/GameManager.h"
 
 // Point d'entrée du jeu

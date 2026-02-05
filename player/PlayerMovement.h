@@ -1,7 +1,7 @@
 #ifndef PLAYER_MOVEMENT_H
 #define PLAYER_MOVEMENT_H
 
-#include "raylib.h"
+#include "../raylib/raylib.h"
 
 void PlayerMove(Vector2* pos);
 

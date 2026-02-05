@@ -1,5 +1,5 @@
 #include "GameManager.h"
-#include "raylib.h"
+#include "../raylib/raylib.h"
 #include "../player/PlayerController.h"
 #include "../levels/LevelManager.h"
 

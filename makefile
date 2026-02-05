@@ -10,7 +10,7 @@ CFLAGS = -Wall -Wextra -std=c99 -I./raylib
 
 # Librairies : raylib + dépendances Linux
 # -L indique où est libraylib.a
-LIBS = -L./raylib -lraylib -lm -lpthread -ldl -lrt -lX11
+LIBS = raylib/libraylib.a -lm -lpthread -ldl -lrt
 
 # Tous les fichiers .c de ton projet dans les sous-dossiers
 SRC = \
