@@ -1,12 +1,12 @@
 # --- CONFIGURATION DU NOM ---
-TARGET_NAME = game
+TARGET_NAME = bin/game
 
 # --- DÉTECTION AUTOMATIQUE DES SOURCES ---
 # On cherche tous les .c dans le dossier courant et les sous-dossiers (core, player, levels)
-SRC = $(wildcard *.c) \
-      $(wildcard core/*.c) \
-      $(wildcard player/*.c) \
-      $(wildcard levels/*.c)
+SRC = $(wildcard src/*.c) \
+      $(wildcard src/core/*.c) \
+      $(wildcard src/player/*.c) \
+      $(wildcard src/levels/*.c)
 
 # On transforme la liste des .c en .o pour la compilation
 OBJ = $(SRC:.c=.o)

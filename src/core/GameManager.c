@@ -1,7 +1,7 @@
-#include "GameManager.h"
-#include "../raylib/include/raylib.h"
-#include "../player/PlayerController.h"
-#include "../levels/LevelManager.h"
+#include "../../lib/core/GameManager.h"
+#include "../../raylib/include/raylib.h"
+#include "../../lib/player/PlayerController.h"
+#include "../../lib/levels/LevelManager.h"
 
 //initialise le jeu
 void GameInit(void)

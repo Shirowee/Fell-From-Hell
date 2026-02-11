@@ -1,5 +1,5 @@
-#include "raylib/include/raylib.h"
-#include "core/GameManager.h"
+#include "../raylib/include/raylib.h"
+#include "../lib/core/GameManager.h"
 
 // Point d'entrée du jeu
 int main(void)

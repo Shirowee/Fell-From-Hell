@@ -1,6 +1,6 @@
-#include "PlayerController.h"
-#include "PlayerMovement.h"
-#include "../raylib/include/raylib.h"
+#include "../../lib/player/PlayerController.h"
+#include "../../lib/player/PlayerMovement.h"
+#include "../../raylib/include/raylib.h"
 
 //pos et taille du player
 static Vector2 playerPos;
