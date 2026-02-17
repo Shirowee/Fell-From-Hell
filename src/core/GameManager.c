@@ -13,7 +13,8 @@ void GameInit(void)
 //maj du jeu
 void GameUpdate(void)
 {
-    PlayerUpdate();
+    Platform *platforms[1] = { &ground };
+    PlayerUpdate(platforms, 1);
 }
 
 //rendre le jeu
