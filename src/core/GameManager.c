@@ -4,24 +4,24 @@
 #include "../../lib/levels/LevelManager.h"
 
 //initialise le jeu
-void GameInit(void)
+void GameInit(Player *player)
 {
-    PlayerInit();
+    PlayerInit(player);
     LevelInit();
 }
 
 //maj du jeu
-void GameUpdate(void)
+void GameUpdate(Player *player)
 {
     Platform *platforms[1] = { &ground };
-    PlayerUpdate(platforms, 1);
+    PlayerUpdate(player, platforms, 1);
 }
 
 //rendre le jeu
-void GameDraw(void)
+void GameDraw(Player *player)
 {
     LevelDraw();
-    PlayerDraw();
+    PlayerDraw(player);
 }
 
 //décharger

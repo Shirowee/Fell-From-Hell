@@ -13,26 +13,28 @@ static void TestLevelDraw(Platform **platforms, const int nbPlatforms);
 
 int main(void)
 {
+    Player player;
     Platform *platforms[4];
     int nbPlatforms = 0;
 
     InitWindow(800, 450, "Fell From Hell");
 
-    PlayerInit();
+    PlayerInit(&player);
     TestLevelInit(platforms, &nbPlatforms);
 
     SetTargetFPS(60);
     while (!WindowShouldClose())
     {
-        PlayerUpdate(platforms, nbPlatforms); // Logique
+        PlayerUpdate(&player, platforms, nbPlatforms); // Logique
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         TestLevelDraw(platforms, nbPlatforms);   // Dessin des plateformes
-        PlayerDraw();                              // Dessin du joueur
+        PlayerDraw(&player);                              // Dessin du joueur
 
         DrawFPS(10, 10);
+        DrawText(TextFormat("Vitesse sur x: %f", player.velocity.x), 10, 40, 40, RED);
 
         EndDrawing();
     }
@@ -52,7 +54,7 @@ void TestLevelInit (Platform *platforms[4], int *nbPlatforms) {
 
     Ground->rect = (Rectangle){ 0, 400, 800, 50 };
     Wall1->rect = (Rectangle){ 200, 300, 50, 100 };
-    Wall2->rect = (Rectangle){ 500, 200, 50, 200 };
+    Wall2->rect = (Rectangle){ 500, 50, 50, 200 };
     Roof->rect = (Rectangle){ 0, 0, 800, 50 };
 
     platforms[0] = Ground;

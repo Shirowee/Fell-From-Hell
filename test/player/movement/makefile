@@ -6,7 +6,6 @@ TARGET_NAME = testCollision
 SRC = testCollisionPlatform.c \
 	  ../../../src/player/PlayerController.c \
 	  ../../../src/player/PlayerMovement.c \
-	  ../../../src/player/Player.c \
 	  ../../../src/core/GameManager.c \
 	  ../../../src/levels/LevelManager.c
 

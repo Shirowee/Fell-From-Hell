@@ -1,3 +1,4 @@
 *.o
+*.exe
 game
 game.exe

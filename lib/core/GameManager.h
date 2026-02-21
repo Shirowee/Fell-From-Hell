@@ -1,9 +1,11 @@
 #ifndef GAME_MANAGER_H
 #define GAME_MANAGER_H
 
-void GameInit(void);
-void GameUpdate(void);
-void GameDraw(void);
+#include "../player/Player.h"
+
+void GameInit(Player *player);
+void GameUpdate(Player *player);
+void GameDraw(Player *player);
 void GameUnload(void);
 
 #endif
