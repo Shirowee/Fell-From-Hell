@@ -1,7 +1,7 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/enemies/Projectiles.h"
 #include <math.h>
-#include <stdio.h>
+
 
 void InitBullet(bullet_t * bullet, int speed, int size, int dmg, Vector2 pos, int dir ) {
     bullet->bulletSpeed = speed;
@@ -13,6 +13,8 @@ void InitBullet(bullet_t * bullet, int speed, int size, int dmg, Vector2 pos, in
 }
 
 void UpdateBullet(bullet_t * bullet) {
+    if (!bullet->active) return;
+    
     float dt = GetFrameTime();
     float angleRad = bullet->bulletDir * DEG2RAD;
 

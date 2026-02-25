@@ -5,11 +5,16 @@
 #include "../../lib/enemies/Projectiles.h"
 
 typedef struct {
-    bullet_t* liste; //liste contenant les bullets
+    bullet_t* tab; //liste contenant les bullets
     int active; //booléen pour l'activité de la pool
-    int number; //nombre d'elements
-} BulletPool;
+    int capacity; //nombre d'elements
+} bulletPool_t;
 
+void InitBulletPool(bulletPool_t* pool, int capacity);
+void SpawnBulletPool(bulletPool_t* pool, Vector2 pos, int dir);
+void UpdateBulletPool(bulletPool_t* pool);
+void DrawBulletPool(bulletPool_t* pool);
+void FreeBulletPool(bulletPool_t* pool);
 
 
 #endif
