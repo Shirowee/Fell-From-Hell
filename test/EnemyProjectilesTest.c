@@ -1,21 +1,21 @@
 #include "../raylib/include/raylib.h"
-#include "../../lib/enemies/EnemyProjectiles.h"
+#include "../lib/enemies/Projectiles.h"
 int main(void)
 {
     InitWindow(800, 450, "Enemy Projectile Test");
 
     bullet_t bullet;
-    BulletInit(&bullet);
+    InitBullet(&bullet, 20, 10, 10, (Vector2){400, 200}, 0);
 
     SetTargetFPS(60);
     while (!WindowShouldClose())
     {
-        BulletUpdate(&bullet);
+        UpdateBullet(&bullet);
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        BulletDraw(&bullet);
+        DrawBullet(&bullet);
 
         DrawFPS(10, 10);
         EndDrawing();
