@@ -3,7 +3,7 @@
 #include "../../raylib/include/raylib.h"
 
 // Sol unique du niveau
-static Platform ground;
+Platform ground;
 
 //init le sol
 void LevelInit(void)

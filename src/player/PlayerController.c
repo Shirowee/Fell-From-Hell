@@ -1,26 +1,36 @@
 #include "../../lib/player/PlayerController.h"
 #include "../../lib/player/PlayerMovement.h"
 #include "../../raylib/include/raylib.h"
-
-//pos et taille du player
-static Vector2 playerPos;
-static Vector2 playerSize = { 30, 50 };
-
+#include "../../lib/player/Player.h"
+#include "../../lib/levels/LevelManager.h"
 
 //init le joueur
-void PlayerInit(void)
-{
-    playerPos = (Vector2){ 100, 350 };
+void PlayerInit(Player *player){
+    player->position = (Vector2){ PLAYER_X, PLAYER_Y };
+    player->size = (Vector2){ PLAYER_SIZE_X, PLAYER_SIZE_Y };
+    player->velocity = (Vector2){ 0, 0 };
+
+    //Initialisation du corps du joueur
+    player->body.main = (Rectangle){ PLAYER_X, PLAYER_Y, PLAYER_SIZE_X, PLAYER_SIZE_Y };
+    player->body.foot = (Rectangle){ player->body.main.x, player->body.main.y + PLAYER_SIZE_Y, PLAYER_SIZE_X, 5 };
+
+    //Initialisation des mouvements du joueur
+    player->movConfig.maxSpeed = MAX_SPEED;
+    player->movConfig.groundAcc = GROUND_ACC;
+    player->movConfig.jumpStrength = JUMP_STRENGTH;
+    player->movConfig.gravity = DEFAULT_GRAVITY;
+    player->movConfig.isOnGround = false;
+    player->movConfig.isOnLeftWall = false;
+    player->movConfig.isOnRightWall = false;
 }
 
 //maj de la logique du player
-void PlayerUpdate(void)
-{
-    PlayerMove(&playerPos);
+void PlayerUpdate(Player *player, Platform **platform, const int nbPlatforms){
+    PlayerMove(player, platform, nbPlatforms);
 }
 
 //dessine le joueur
-void PlayerDraw(void)
-{
-    DrawRectangleV(playerPos, playerSize, BLUE);
+void PlayerDraw(Player *player){
+    DrawRectangleRec(player->body.main, BLUE);
 }
+
