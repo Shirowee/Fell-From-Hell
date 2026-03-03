@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <math.h>
 
-//Déplacements latéraux
 void PlayerMove(Player *player, Platform **platform, const int nbPlatforms) {
     float dt = GetFrameTime(); //Temps entre images
 
