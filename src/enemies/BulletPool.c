@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+bulletPool_t bulletPool; 
 
 void InitBulletPool(bulletPool_t* pool, int capacity) {
     pool->active = 1;
@@ -19,6 +20,7 @@ void SpawnBulletPool(bulletPool_t* pool, Vector2 pos, int dir) {
     //on cherche la premiere bullet inactive (disponible)
     int spawned = 0;
     for(int i=0; (i < pool->capacity) && (spawned == 0); i++) {
+        
         if (pool->tab[i].active == 0) {
             InitBullet(&pool->tab[i], 500, 10, 1, pos, dir);
             spawned = 1;
