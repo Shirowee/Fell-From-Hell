@@ -1,0 +1,25 @@
+{
+  "map_info": {
+    "id": "lust_01",
+    "title": "Lust LVL1",
+    "dimensions": { "w": 20, "h": 150 }
+  },
+  "platforms": [
+    { "type": "BASIC_PLATFORM_S", "solid":1, "x": 0, "y": 148, "w": 20, "h": 2 },
+    { "type": "BASIC_PLATFORM", "solid":0, "x": 5, "y": 140, "w": 4, "h": 1 }
+  ],
+  "entities": {
+    "player_start": { "x": 10, "y": 145 },
+    "enemies": [
+      { "type": "CHEPA", "dist_aggro": 0 },
+      { "type": "CHEPA", "dist_aggro": 0 }
+    ],
+    "hazards": [
+      { "type": "test", "x": 10, "y": 110 }
+    ]
+  },
+  "triggers": [
+    { "id": "checkpoint_1", "rect": { "x": 0, "y": 100, "w": 20, "h": 1 }, "action": "SET_RESPAWN" },
+    { "id": "exit_to_pride", "rect": { "x": 0, "y": 0, "w": 20, "h": 2 }, "action": "CHEPA"}
+  ]
+}
