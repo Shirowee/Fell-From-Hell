@@ -3,6 +3,7 @@
 #include "../../lib/levels/LevelManager.h"
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 void PlayerMove(Player *player, Platform **platform, const int nbPlatforms) {
     float dt = GetFrameTime(); //Temps entre images

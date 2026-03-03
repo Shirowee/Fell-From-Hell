@@ -1,4 +1,8 @@
 #include "../raylib/include/raylib.h"
+int main(){
+    return 0;
+}
+/*
 #include "../lib/cJson/cJSON.h"
 #include "stdio.h"
 
@@ -26,5 +30,5 @@ void readJsonLvl(const char * fileName){
     cJSON *map_info = cJSON_GetObjectItemCaseSensitive(json, "map_info");
     printf("Map:%s\n", map_info->valuestring);
 }
-
+*/
 
