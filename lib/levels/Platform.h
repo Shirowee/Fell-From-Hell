@@ -5,6 +5,7 @@
 
 typedef struct Platform {
     Rectangle rect;
+    bool solid;
 } Platform;
 
 #endif

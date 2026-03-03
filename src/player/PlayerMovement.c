@@ -68,47 +68,68 @@ void PlayerPositionFix(Player *player, Platform **platform, const int nbPlatform
     int i;
     int distanceX, distanceY;
     int platformCenterX, platformCenterY;
-    int playerCenterX = player->position.x + player->size.x / 2;
-    int playerCenterY = player->position.y + player->size.y / 2;
+    int playerCenterX;
+    int playerCenterY;
+    bool collision;
+    MovementState state = getPlayerMovementState(player);
 
     for(i = 0; i < nbPlatforms; i++) {
-        if (CheckCollisionRecs(player->body.main, platform[i]->rect)) {
-            //Calcul du centre de la plateforme
-            platformCenterX = platform[i]->rect.x + platform[i]->rect.width / 2;
-            platformCenterY = platform[i]->rect.y + platform[i]->rect.height / 2;
+        collision = false;
+        // Calcul du centre de la plateforme
+        platformCenterX = platform[i]->rect.x + platform[i]->rect.width / 2;
+        platformCenterY = platform[i]->rect.y + platform[i]->rect.height / 2;
 
-            // Calcul de la distance entre le joueur et la plateforme
-            distanceX = (player->size.x / 2 + platform[i]->rect.width / 2) - abs(playerCenterX - platformCenterX);
-            distanceY = (player->size.y / 2 + platform[i]->rect.height / 2) - abs(playerCenterY - platformCenterY);
+        if(platform[i]->solid) {
+            if(CheckCollisionRecs(player->body.main, platform[i]->rect)){
+                collision = true;
+                // Calcul du centre de la rectangle main
+                playerCenterX = player->body.main.x + player->body.main.width / 2;
+                playerCenterY = player->body.main.y + player->body.main.height / 2;
 
-            if(distanceX < distanceY) { // Collision sur l'axe x
-                if (playerCenterX < platformCenterX) {
-                    player->position.x = platform[i]->rect.x - player->size.x; // Collision à droite
-                } else {
-                    player->position.x = platform[i]->rect.x + platform[i]->rect.width; // Collision à gauche
-                }
-                player->velocity.x = 0; // Arrêter le mouvement horizontal
-            } else { // Collision sur l'axe y
-                if (playerCenterY < platformCenterY) {
-                    player->position.y = platform[i]->rect.y - player->size.y; // Collision en bas
-                    if (player->velocity.y >= 0) {
-                        player->velocity.y = 0; // Arrêter le mouvement vertical
+                // Calcul de la distance entre le joueur et la plateforme
+                distanceX = (player->size.x / 2 + platform[i]->rect.width / 2) - abs(playerCenterX - platformCenterX);
+                distanceY = (player->size.y / 2 + platform[i]->rect.height / 2) - abs(playerCenterY - platformCenterY);
+
+                if(distanceX < distanceY) { // Collision sur l'axe x
+                    if (playerCenterX < platformCenterX) {
+                        player->position.x = platform[i]->rect.x - player->size.x; // Collision à droite
+                    } else {
+                        player->position.x = platform[i]->rect.x + platform[i]->rect.width; // Collision à gauche
                     }
-                } else {
-                    player->position.y = platform[i]->rect.y + platform[i]->rect.height; // Collision en haut
-                    if (player->velocity.y <= 0) {
-                        player->velocity.y = 0; // Arrêter le mouvement vertical
+                    player->velocity.x = 0; // Arrêter le mouvement horizontal
+                }
+                else { // Collision sur l'axe y
+                    if (playerCenterY < platformCenterY) {
+                        player->position.y = platform[i]->rect.y - player->size.y; // Collision en bas
+                        if (state == FALLING) {
+                            player->velocity.y = 0; // Arrêter le mouvement vertical
+                        }
+                    } 
+                    else {
+                        player->position.y = platform[i]->rect.y + platform[i]->rect.height; // Collision en haut
+                        if (state == JUMPING) {
+                            player->velocity.y = 0; // Arrêter le mouvement vertical
+                        }
                     }
                 }
             }
         }
-    }
+        else {
+            if(state != JUMPING && CheckCollisionRecs(player->body.foot, platform[i]->rect)){
+                player->position.y = platform[i]->rect.y - player->size.y; // Collision en bas
+                player->velocity.y = 0; // Arrêter le mouvement vertical
+                collision = true;
+            }
+        }
 
-    // Mettre à jour le corps du joueur après correction de position
-    player->body.main.x = player->position.x;
-    player->body.main.y = player->position.y;
-    player->body.foot.x = player->position.x;
-    player->body.foot.y = player->position.y + player->size.y;
+        if(collision){
+            // Mettre à jour le corps du joueur après correction de position
+            player->body.main.x = player->position.x;
+            player->body.main.y = player->position.y;
+            player->body.foot.x = player->position.x;
+            player->body.foot.y = player->position.y + player->size.y;
+        }
+    }
 }
 
 // Vérifie si le joueur est au sol en vérifiant la collision entre le pied du joueur et les plateformes
@@ -117,10 +138,10 @@ bool isOnGround(Player *player, Platform **platform, const int nbPlatforms) {
 
     for(i = 0; i < nbPlatforms; i++) {
         if (CheckCollisionRecs(player->body.foot, platform[i]->rect)) {
-            if (player->velocity.y >= 0) {
+            if (getPlayerMovementState(player) != JUMPING && player->body.foot.y <= platform[i]->rect.y) {
                 return true; // Le pied du joueur touche une plateforme
             }
-            return false; // Le pied du joueur est en collision mais le joueur monte, donc pas au sol
+            return false;
         }
     }
     return false;
@@ -135,12 +156,11 @@ MovementState getPlayerMovementState(Player *player) {
         if(player->velocity.x != 0) {
             return RUNNING;
         }
+        return IDLE;
     } else {
         if(player->velocity.y < 0) {
             return JUMPING;
         }
         return FALLING;
     }
-
-    return IDLE;
 }
