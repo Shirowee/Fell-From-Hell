@@ -1,3 +1,5 @@
 *.o
 game
 game.exe
+bin/*
+!bin/.gitkeep
