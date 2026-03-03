@@ -1,5 +1,6 @@
 #include "../../raylib/include/raylib.h"
 
+/*
 typedef enum{
     AUCUN,
     TOUS,
@@ -35,7 +36,7 @@ arme_t pistolet_laser ={50, 0.8, 10, 3, AUCUN, 0, 100};
 //description : tir un rayon laser qui reste pendant 1sec
 arme_t fusil_rafales ={35, 2, 11, 3, AUCUN, 10, 100};
 //description : tir trois balles d’affilées
-arme_t lance_glace ={10, 20, 300, 3, gel, 30, 20};
+arme_t lance_glace ={10, 20, 300, 3, GEL, 30, 20};
 //description : lance flamme mais type gel
 arme_t lance_roquette ={150, 0.8, 8, 4, FEU, 0, 50};
 //description : tir un missile en ligne droite qui explose au bout de x sec
@@ -49,5 +50,7 @@ arme_t pistolet_eclectique ={35, 2, 15, 2, ELECTRIQUE, 40, 50};
 //description : tir des arcs électrique qui touche tous les ennemie à porter dans la direction de tir
 arme_t pistolet_mitrailleur ={10, 10, 40, 0.5, AUCUN, 25, 50};
 //description : tir et recharge vite mais peu de dégats
-arme_t pistolet jsp koi ={20, 2, 20, 1.5, AUCUN, 7.5, 100};
-//description : tir dans 4 direction
+arme_t pistolet_jsp_koi ={20, 2, 20, 1.5, AUCUN, 7.5, 100};
+//description : tir dans 4 direction 
+
+*/

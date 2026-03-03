@@ -9,6 +9,7 @@ BIN_DIR = ../bin
 PROJECT_SRC = $(wildcard ../src/core/*.c) \
               $(wildcard ../src/enemies/*.c) \
               $(wildcard ../src/levels/*.c) \
+              $(wildcard ../src/systems/*.c) \
               $(wildcard ../src/player/*.c)
 
 PROJECT_OBJ = $(PROJECT_SRC:.c=.o)

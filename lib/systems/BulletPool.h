@@ -2,7 +2,7 @@
 #define BULLETPOOL_H
 
 #include "../../raylib/include/raylib.h"
-#include "../../lib/enemies/Projectiles.h"
+#include "Projectiles.h"
 
 typedef struct {
     bullet_t* tab; //liste contenant les bullets
