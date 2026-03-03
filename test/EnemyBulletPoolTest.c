@@ -1,0 +1,31 @@
+#include "../raylib/include/raylib.h"
+#include "../lib/enemies/BulletPool.h"
+int main(void)
+{
+    InitWindow(800, 450, "BulletPool Test");
+
+    //bulletPool_t enemyBullets;
+    InitBulletPool(&bulletPool, 300);
+
+    SetTargetFPS(60);
+    while (!WindowShouldClose())
+    {
+        if (IsKeyPressed(KEY_SPACE))
+            SpawnBulletPool(&bulletPool, (Vector2){400, 200}, 0); 
+
+        UpdateBulletPool(&bulletPool);
+
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+
+        DrawBulletPool(&bulletPool);
+
+        DrawFPS(10, 10);
+        
+        EndDrawing();
+    }
+
+    FreeBulletPool(&bulletPool);
+    CloseWindow();
+    return 0;
+}
