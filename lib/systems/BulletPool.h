@@ -17,4 +17,5 @@ void DrawBulletPool(bulletPool_t* pool);
 void FreeBulletPool(bulletPool_t* pool);
 
 extern bulletPool_t bulletPool;
+extern bulletPool_t playerBulletPool;
 #endif
