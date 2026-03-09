@@ -2,7 +2,7 @@
 #define PLAYER_WEAPON_H
 
 #include "../../raylib/include/raylib.h"
-#include "../systems/Projectiles.h"
+//#include "../systems/Projectiles.h"
 #include "../systems/BulletPool.h"
 
 
@@ -57,8 +57,5 @@ weapon_t pistolet_mitrailleur ={10, 10, 40, 0.5, AUCUN, 25, 50};
 //description : tir et recharge vite mais peu de dégats
 weapon_t pistolet_jsp_koi ={20, 2, 20, 1.5, AUCUN, 7.5, 100};
 //description : tir dans 4 direction 
-
-
-
 
 #endif
