@@ -2,9 +2,8 @@
 #define PLAYER_WEAPON_H
 
 #include "../../raylib/include/raylib.h"
-#include "systems/Projectiles.h"
-#include "systems/Projectiles.h"
-
+#include "../systems/Projectiles.h"
+#include "../systems/BulletPool.h"
 
 
 typedef enum{
@@ -22,7 +21,7 @@ typedef struct{
     float tps;                  //tir par seconde
     int chargeur;               //nombre de munition
     float temps_rechargement;   //en secondes
-    effet_t effet;              //effet de l'arme
+    effect_t effet;              //effet de l'arme
     int dispersion;             //rayon de dispersion de l'arme
     int porte;                  //porté de l'arme entre 0 et 100
 }weapon_t;
