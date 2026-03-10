@@ -1,10 +1,20 @@
 #include "../raylib/include/raylib.h"
-int main(){
-    return 0;
-}
-/*
 #include "../lib/cJson/cJSON.h"
 #include "stdio.h"
+
+
+int main(){
+
+    InitWindow(1600, 900, "TEST MAP");
+    SetTargetFPS(60);
+
+    while (!WindowShouldClose()){
+
+    }
+
+    return 0;
+}
+
 
 void readJsonLvl(const char * fileName){
     const char path = TextFormat("../lib/%s.json",fileName); // Création du chemin complet jusqu'à la map choisi 
@@ -30,5 +40,5 @@ void readJsonLvl(const char * fileName){
     cJSON *map_info = cJSON_GetObjectItemCaseSensitive(json, "map_info");
     printf("Map:%s\n", map_info->valuestring);
 }
-*/
+
 
