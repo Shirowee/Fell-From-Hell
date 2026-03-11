@@ -18,9 +18,11 @@ int main(){
     {
         //update
         PlayerShoot(weapon, posJoueur, &time);
+        /*
         if (IsKeyDown(SPACE)){
             ChangeWeapon(&weapon, fusil_a_pompe);
         }
+            */
 
         UpdateBulletPool(&playerBulletPool);
 

@@ -39,6 +39,8 @@ void PlayerShoot(weapon_t weapon, Vector2 posJoueur, double  * time){
     }
 }
 
+/*
 void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon){
     *oldWeapon = newWeapon;
 }
+    */
