@@ -11,17 +11,22 @@ void PlayerMove(Player *player, Platform **platform, const int nbPlatforms) {
     player->movConfig.isOnGround = isOnGround(player, platform, nbPlatforms); // Vérifie si le joueur est au sol
 
     //Events de déplacement
-    if (IsKeyDown(KEY_RIGHT)) player->velocity.x += player->movConfig.groundAcc;
-    else if (IsKeyDown(KEY_LEFT))  player->velocity.x -= player->movConfig.groundAcc;
-    else player->velocity.x *= ( fabs(player->velocity.x) > 10 ? 0.5 : 0 ); // Ralentissement progressif
+    if(getPlayerMovementState(player) != WALL_SLIDING){
+        if (IsKeyDown(KEY_RIGHT)) player->velocity.x += (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * dt;
+        else if (IsKeyDown(KEY_LEFT))  player->velocity.x -= (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * dt;
+        else player->velocity.x *= (player->movConfig.isOnGround ? (fabs(player->velocity.x) > 10 ? powf(GROUND_FRICTION, dt) : 0) : powf(AIR_FRICTION, dt)); // Ralentissement progressif
+    }
 
     if (IsKeyDown(KEY_SPACE)) PlayerJump(player);
-    if (getPlayerMovementState(player) == FALLING) Gravity(player, player->movConfig.gravity * 1.5);
+    if (getPlayerMovementState(player) == FALLING) Gravity(player, player->movConfig.fallingGravity);
     else if (getPlayerMovementState(player) == JUMPING) Gravity(player, player->movConfig.gravity);
+    else if (getPlayerMovementState(player) == WALL_SLIDING) Gravity(player, WALL_SLIDE_GRAVITY);
 
     //Corretion vitesse
     if(player->velocity.x > player->movConfig.maxSpeed) player->velocity.x = player->movConfig.maxSpeed;
     else if(player->velocity.x < -player->movConfig.maxSpeed) player->velocity.x = -player->movConfig.maxSpeed;
+
+    if(getPlayerMovementState(player) == WALL_SLIDING && player->velocity.y > MAX_WALL_SPEED) player->velocity.y = MAX_WALL_SPEED;
 
     //Déplacement du joueur
     if(player->velocity.x != 0){
@@ -40,21 +45,31 @@ void PlayerMove(Player *player, Platform **platform, const int nbPlatforms) {
     PlayerPositionFix(player, platform, nbPlatforms); // Vérification de collision avec les plateformes
 }
 
+void PlayerMoveConfigUpdate(Player *player, Platform **platform, const int nbPlatforms){
+    player->movConfig.isOnGround = isOnGround(player, platform, nbPlatforms);
+    if(player->movConfig.isOnLeftWall)
+        player->movConfig.isOnLeftWall = isOnWall(player, platform, nbPlatforms, Left);
+    if(player->movConfig.isOnRightWall)
+        player->movConfig.isOnRightWall = isOnWall(player, platform, nbPlatforms, Right);
+}
+
 // Saut
 void PlayerJump(Player *player) {
-    if (player->movConfig.isOnGround) {
+    if(getPlayerMovementState(player) == WALL_SLIDING){
+        if (player->movConfig.isOnLeftWall) {
+            player->velocity.y = player->movConfig.jumpStrength / 1.5; // Force de saut
+            player->velocity.x = -player->movConfig.jumpStrength * 10; // Saut vers la droite
+            player->movConfig.isOnLeftWall = false;
+        }
+        else if (player->movConfig.isOnRightWall) {
+            player->velocity.y = player->movConfig.jumpStrength / 1.5; // Force de saut
+            player->velocity.x = player->movConfig.jumpStrength * 10; // Saut vers la gauche
+            player->movConfig.isOnRightWall = false;
+        }
+    }
+    else if(player->movConfig.isOnGround){
         player->velocity.y = player->movConfig.jumpStrength; // Force de saut
         player->movConfig.isOnGround = false;
-    }
-    else if (player->movConfig.isOnLeftWall) {
-        player->velocity.y = player->movConfig.jumpStrength / 2; // Force de saut
-        player->velocity.x = -player->movConfig.jumpStrength / 2 ; // Saut vers la droite
-        player->movConfig.isOnLeftWall = false;
-    }
-    else if (player->movConfig.isOnRightWall) {
-        player->velocity.y = player->movConfig.jumpStrength / 2; // Force de saut
-        player->velocity.x = player->movConfig.jumpStrength / 2 ; // Saut vers la gauche
-        player->movConfig.isOnRightWall = false;
     }
 }
 
@@ -93,8 +108,18 @@ void PlayerPositionFix(Player *player, Platform **platform, const int nbPlatform
                 if(distanceX < distanceY) { // Collision sur l'axe x
                     if (playerCenterX < platformCenterX) {
                         player->position.x = platform[i]->rect.x - player->size.x; // Collision à droite
+                        if(state == JUMPING || state == FALLING){
+                            player->movConfig.isOnLeftWall = false;
+                            player->movConfig.isOnRightWall = true;
+                            player->velocity.y = 0;
+                        }
                     } else {
                         player->position.x = platform[i]->rect.x + platform[i]->rect.width; // Collision à gauche
+                        if(state == JUMPING || state == FALLING){
+                            player->movConfig.isOnLeftWall = true;
+                            player->movConfig.isOnRightWall = false;
+                            player->velocity.y = 0;
+                        }
                     }
                     player->velocity.x = 0; // Arrêter le mouvement horizontal
                 }
@@ -103,6 +128,11 @@ void PlayerPositionFix(Player *player, Platform **platform, const int nbPlatform
                         player->position.y = platform[i]->rect.y - player->size.y; // Collision en bas
                         if (state == FALLING) {
                             player->velocity.y = 0; // Arrêter le mouvement vertical
+                        }
+                        if (state == WALL_SLIDING) {
+                            player->movConfig.isOnLeftWall = false;
+                            player->movConfig.isOnRightWall = false;
+                            player->velocity.y = 0;
                         }
                     } 
                     else {
@@ -119,6 +149,11 @@ void PlayerPositionFix(Player *player, Platform **platform, const int nbPlatform
                 player->position.y = platform[i]->rect.y - player->size.y; // Collision en bas
                 player->velocity.y = 0; // Arrêter le mouvement vertical
                 collision = true;
+                if (state == WALL_SLIDING) {
+                    player->movConfig.isOnLeftWall = false;
+                    player->movConfig.isOnRightWall = false;
+                    player->velocity.y = 0;
+                }
             }
         }
 
@@ -147,17 +182,41 @@ bool isOnGround(Player *player, Platform **platform, const int nbPlatforms) {
     return false;
 }
 
-MovementState getPlayerMovementState(Player *player) {
-    if(player->movConfig.isOnLeftWall || player->movConfig.isOnRightWall) {
-        return WALL_SLIDING;
+// Vérifie si le joueur est sur un mur
+bool isOnWall(Player *player, Platform **platform, const int nbPlatforms, Direction dir) {
+    int i;
+    Rectangle checker;
+
+    if(!player->movConfig.isOnGround){
+        if(dir == Left){
+            checker = (Rectangle){player->position.x - 5, player->position.y, 5, player->size.y};
+        }
+        else if(dir == Right){
+            checker = (Rectangle){player->position.x + player->size.x, player->position.y, 5, player->size.y};
+        }
+        else{
+            return false;
+        }
+
+        for(i = 0; i < nbPlatforms; i++) {
+            if (platform[i]->solid && CheckCollisionRecs(checker, platform[i]->rect)) {
+                return true; // Le joueur touche un mur
+            }
+        }
     }
-    
+    return false;
+}
+
+MovementState getPlayerMovementState(Player *player) {
     if(player->movConfig.isOnGround) {
         if(player->velocity.x != 0) {
             return RUNNING;
         }
         return IDLE;
     } else {
+        if(player->movConfig.isOnLeftWall || player->movConfig.isOnRightWall) {
+            return WALL_SLIDING;
+        }
         if(player->velocity.y < 0) {
             return JUMPING;
         }

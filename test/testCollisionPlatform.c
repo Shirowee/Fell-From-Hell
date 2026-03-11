@@ -14,7 +14,7 @@ static void TestLevelDraw(Platform **platforms, const int nbPlatforms);
 int main(void)
 {
     Player player;
-    Platform *platforms[6];
+    Platform *platforms[8];
     int nbPlatforms = 0;
 
     InitWindow(800, 450, "Fell From Hell");
@@ -34,6 +34,11 @@ int main(void)
         PlayerDraw(&player);                              // Dessin du joueur
 
         DrawFPS(10, 10);
+        DrawText(TextFormat("Movement State: %i", getPlayerMovementState(&player)), 10, 30, 20, GREEN);
+        DrawText(TextFormat("Is On Ground: %i", isOnGround(&player, platforms, nbPlatforms)), 10, 50, 20, GREEN);
+        DrawText(TextFormat("Is On Ground Config: %i", player.movConfig.isOnGround), 10, 70, 20, ORANGE);
+        DrawText(TextFormat("Is On Left Wall Config: %i", player.movConfig.isOnLeftWall), 10, 90, 20, ORANGE);
+        DrawText(TextFormat("Is On Right Wall Config: %i", player.movConfig.isOnRightWall), 10, 110, 20, ORANGE);
 
         EndDrawing();
     }
@@ -47,6 +52,8 @@ int main(void)
 static
 void TestLevelInit (Platform *platforms[4], int *nbPlatforms) {
     Platform *Ground = malloc(sizeof(Platform));
+    Platform *LeftWall = malloc(sizeof(Platform));
+    Platform *RightWall = malloc(sizeof(Platform));
     Platform *Wall1 = malloc(sizeof(Platform));
     Platform *Wall2 = malloc(sizeof(Platform));
     Platform *Roof = malloc(sizeof(Platform));
@@ -54,6 +61,8 @@ void TestLevelInit (Platform *platforms[4], int *nbPlatforms) {
     Platform *Platform2 = malloc(sizeof(Platform));
 
     Ground->rect = (Rectangle){ 0, 400, 800, 50 };
+    LeftWall->rect = (Rectangle){ 0, 0, 50, 450 };
+    RightWall->rect = (Rectangle){ 780, 0, 20, 450 };
     Wall1->rect = (Rectangle){ 200, 300, 50, 100 };
     Wall2->rect = (Rectangle){ 500, 50, 50, 200 };
     Roof->rect = (Rectangle){ 0, 0, 800, 50 };
@@ -61,6 +70,8 @@ void TestLevelInit (Platform *platforms[4], int *nbPlatforms) {
     Platform2->rect = (Rectangle){ 600, 300, 200, 10 };
 
     Ground->solid = true;
+    LeftWall->solid = true;
+    RightWall->solid = true;
     Wall1->solid = true;
     Wall2->solid = true;
     Roof->solid = true;
@@ -68,13 +79,15 @@ void TestLevelInit (Platform *platforms[4], int *nbPlatforms) {
     Platform2->solid = false;
 
     platforms[0] = Ground;
-    platforms[1] = Wall1;
-    platforms[2] = Wall2;
-    platforms[3] = Roof;
-    platforms[4] = Platform1;
-    platforms[5] = Platform2;
+    platforms[1] = LeftWall;
+    platforms[2] = RightWall;
+    platforms[3] = Wall1;
+    platforms[4] = Wall2;
+    platforms[5] = Roof;
+    platforms[6] = Platform1;
+    platforms[7] = Platform2;
 
-    *nbPlatforms = 6;
+    *nbPlatforms = 8;
 }
 
 static

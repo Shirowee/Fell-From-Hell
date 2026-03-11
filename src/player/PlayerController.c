@@ -17,8 +17,10 @@ void PlayerInit(Player *player){
     //Initialisation des mouvements du joueur
     player->movConfig.maxSpeed = MAX_SPEED;
     player->movConfig.groundAcc = GROUND_ACC;
+    player->movConfig.airAcc = AIR_ACC;
     player->movConfig.jumpStrength = JUMP_STRENGTH;
     player->movConfig.gravity = DEFAULT_GRAVITY;
+    player->movConfig.fallingGravity = FALLING_GRAVITY;
     player->movConfig.isOnGround = false;
     player->movConfig.isOnLeftWall = false;
     player->movConfig.isOnRightWall = false;
@@ -27,10 +29,22 @@ void PlayerInit(Player *player){
 //maj de la logique du player
 void PlayerUpdate(Player *player, Platform **platform, const int nbPlatforms){
     PlayerMove(player, platform, nbPlatforms);
+    PlayerMoveConfigUpdate(player, platform, nbPlatforms);
 }
 
 //dessine le joueur
 void PlayerDraw(Player *player){
-    DrawRectangleRec(player->body.main, BLUE);
+    Color color;
+
+    switch(getPlayerMovementState(player)){
+        case IDLE: color = BLUE; break;
+        case RUNNING: color = RED; break;
+        case JUMPING: color = YELLOW; break;
+        case FALLING: color = GREEN; break;
+        case WALL_SLIDING: color = PURPLE; break;
+    }
+
+
+    DrawRectangleRec(player->body.main, color);
 }
 

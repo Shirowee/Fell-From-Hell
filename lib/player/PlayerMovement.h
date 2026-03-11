@@ -20,17 +20,22 @@
  * \def GROUND_ACC
  * \brief accélération du joueur sur le sol en pixels par seconde.
  */
-#define GROUND_ACC 100
+#define GROUND_ACC 1600
  /**
  * \def AIR_ACC
  * \brief accélération du joueur dans les airs en pixels par seconde.
  */
-#define AIR_ACC 75
+#define AIR_ACC 1000
 /**
  * \def MAX_SPEED
  * \brief Vitesse maximale du joueur en pixels par seconde.
  */
 #define MAX_SPEED 400
+/**
+ * \def MAX_WALL_SPEED
+ * \brief Vitesse maximale du joueur sur mur en pixels par seconde.
+ */
+#define MAX_WALL_SPEED 200
 /**
  * \def JUMP_STRENGTH
  * \brief Force de saut du joueur en pixels par seconde.
@@ -46,6 +51,21 @@
  * \brief Gravité lors d'une chute en pixels par seconde carrée.
  */
 #define FALLING_GRAVITY 1225
+/**
+ * \def WALL_SLIDE_GRAVITY
+ * \brief Gravité sur mur en pixels par seconde carrée.
+ */
+#define WALL_SLIDE_GRAVITY 300
+/**
+ * \def GROUND_FRICTION
+ * \brief Ralentissement par friction sur le sol
+ */
+#define GROUND_FRICTION 0.0001
+/**
+ * \def AIR_FRICTION
+ * \brief Ralentissement par friction dans les airs
+ */
+#define AIR_FRICTION 0.1
 
 /*
  *Structures
@@ -84,6 +104,8 @@ typedef struct MovementConfig_s {
     bool isOnRightWall;  /**< Indique si le joueur est en train de glisser sur un mur à droite */
 } MovementConfig;
 
+typedef enum{Left, Right, Up, Down} Direction;
+
 #include "Player.h"
 
 /*
@@ -98,6 +120,16 @@ typedef struct MovementConfig_s {
  * \param nbPlatform Nombre de Platform dans le tableau platform
  */
 void PlayerMove(Player *player, Platform **platform, const int nbPlatforms);
+
+ /**
+ * \fn void PlayerMoveConfigUpdate(Player *player, Platform **platform, const int nbPlatforms);
+ * \brief Met à jour les configs des mouvements
+ * \param player Pointeur sur Player
+ * \param platform Tableau de pointeurs sur Platform
+ * \param nbPlatform Nombre de Platform dans le tableau platform
+ */
+void PlayerMoveConfigUpdate(Player *player, Platform **platform, const int nbPlatforms);
+
 /**
  * \fn void PlayerJump(Player *player);
  * \brief Fait sauter le joueur
@@ -128,6 +160,17 @@ void PlayerPositionFix(Player *player, Platform **platform, const int nbPlatform
  * \return true si le joueur est bien sur une Platform, sinon false
  */
 bool isOnGround(Player *player, Platform **platform, const int nbPlatforms);
+/**
+ * \fn bool isOnWall(Player *player, Platform **platform, const int nbPlatforms, Direction dir);
+ * \brief Verifie si le joueur est sur un mur
+ * \param player Pointeur sur Player
+ * \param platform Tableau de pointeurs sur Platform
+ * \param nbPlatform Nombre de Platform dans le tableau platform
+ * \param dir Direction vers laquelle il faut vérifier
+ * \return true si le joueur est bien sur un mur, sinon false
+ */
+bool isOnWall(Player *player, Platform **platform, const int nbPlatforms, Direction dir);
+
 /**
  * \fn MovementState getPlayerMovementState(Player *player);
  * \brief Verifie l'etat de mouvement du joueur
