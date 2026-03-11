@@ -61,5 +61,6 @@ extern weapon_t pistolet_jsp_koi;
 
 //definition des fonction
 void PlayerShoot(weapon_t weapon, Vector2 posJoueur, double * time);
+void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon);
 
 #endif

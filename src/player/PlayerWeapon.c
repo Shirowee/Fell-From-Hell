@@ -1,7 +1,11 @@
 #include "../../lib/player/PlayerWeapon.h"
 #include <math.h>
+#include <stdlib.h>
 
-weapon_t minigun ={12.5, 10, 75, 3, AUCUN, 20, 100};
+
+
+
+weapon_t minigun ={12.5, 10, 75, 3, AUCUN, 100, 100};
 weapon_t lance_flammes ={10, 20, 300, 3, FEU, 30, 20};
 weapon_t lance_missile_tete_chercheuse ={125, 2, 10, 6, AUCUN, 0, 100};
 weapon_t fusil_a_pompe ={12.5, 0.5, 6, 5, AUCUN, 50, 20};
@@ -17,30 +21,33 @@ weapon_t pistolet_mitrailleur ={10, 10, 40, 0.5, AUCUN, 25, 50};
 weapon_t pistolet_jsp_koi ={20, 2, 20, 1.5, AUCUN, 7.5, 100};
 
 
-void PlayerShoot(weapon_t weapon, Vector2 posJoueur, double  * time){
+void PlayerShoot(weapon_t weapon, Vector2 posJoueur, double  * timeSpent){
+    
     int gamepad = 0;
     float direction;
     float cooldown = 1/weapon.tps; //temps entre deux tir
     Vector2 posSouris; 
 
-    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && GetTime()- *time >= cooldown){
+    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && GetTime()- *timeSpent >= cooldown){
         posSouris = GetMousePosition();
         direction = ((int)(atan2(posSouris.y - posJoueur.y, posSouris.x - posJoueur.x) * 180 / PI) + 360) % 360;
+        direction += rand() % weapon.dispersion - weapon.dispersion/2;
         SpawnBulletPool(&playerBulletPool, posJoueur, direction, 500, 30, weapon.degats); 
-        *time = GetTime();
+        *timeSpent = GetTime();
     }
 
-    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_RIGHT_TRIGGER_2) && GetTime()- *time >= cooldown){
+    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_RIGHT_TRIGGER_2) && GetTime()- *timeSpent >= cooldown){
         float rightStickX = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_RIGHT_X);
         float rightStickY = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_RIGHT_Y);
         direction = atan2(rightStickY, rightStickX) * 180/PI;
+        direction += rand() % weapon.dispersion - weapon.dispersion/2;
         SpawnBulletPool(&playerBulletPool, posJoueur, direction, 500, 30, weapon.degats);
-        *time = GetTime();
+        *timeSpent = GetTime();
     }
 }
 
-/*
+
 void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon){
     *oldWeapon = newWeapon;
 }
-    */
+    
