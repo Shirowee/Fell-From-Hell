@@ -17,13 +17,16 @@ typedef enum{
 }effect_t;
 
 typedef struct{
-    float degats;
+    int indice;                 //indice de l'arme
+    float dmg;
     float tps;                  //tir par seconde
     int chargeur;               //nombre de munition
     float temps_rechargement;   //en secondes
-    effect_t effet;              //effet de l'arme
+    effect_t effet;             //effet de l'arme
     int dispersion;             //rayon de dispersion de l'arme
     int porte;                  //porté de l'arme entre 0 et 100
+    int bulletSpeed;
+    int bulletSize;
 }weapon_t;
 
 
@@ -36,7 +39,7 @@ extern weapon_t lance_flammes;
 extern weapon_t lance_missile_tete_chercheuse;
 //description : lance un missile qui se dirige vers l’ennemi le plus proche, cadence de tir élevée, temps de rechargement long
 extern weapon_t fusil_a_pompe;
-//description : tir 9 balles en forme de cone
+//description : tir 7 balles en forme de cone
 extern weapon_t pistolet_laser;
 //description : tir un rayon laser qui reste pendant 1sec
 extern weapon_t fusil_rafales;
@@ -62,5 +65,6 @@ extern weapon_t pistolet_jsp_koi;
 //definition des fonction
 void PlayerShoot(weapon_t weapon, Vector2 posJoueur, double * time);
 void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon);
+void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction);
 
 #endif
