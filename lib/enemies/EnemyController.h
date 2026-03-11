@@ -4,11 +4,14 @@
 #define ENEMY_CONTROLLER_H
 
 typedef struct enemy_s {
-    float enemySpeed; // vitesse
-    Vector2 enemySize; // taille
-    int enemyDmg; // dégats
-    Vector2 enemyPos; // position
+    float speed; // vitesse
+    Vector2 size; // taille
+    int dmg; // dégats
+    Vector2 pos; // position
     int isShooting; //si elle doit être dessinée
+    int dir; //direction
+    int bulletSpeed; //vitesse bullet
+    int bulletSize; //taille bullet
 } enemy_t;
 
 void EnemyInit(enemy_t * enemy);

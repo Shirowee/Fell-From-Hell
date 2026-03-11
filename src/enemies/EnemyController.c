@@ -7,11 +7,14 @@
 //init l'ennemi
 void EnemyInit(enemy_t * enemy)
 {
-    enemy->enemySpeed = 30;
-    enemy->enemyPos = (Vector2){ 100, 350 };
-    enemy->enemyDmg = 1;
+    enemy->speed = 30;
+    enemy->pos = (Vector2){ 100, 350 };
+    enemy->dmg = 1;
     enemy->isShooting = 0;
-    enemy->enemySize = (Vector2){30,30};
+    enemy->size = (Vector2){30,30};
+    enemy->dir = 0;
+    enemy->bulletSpeed = 200;
+    enemy->bulletSize = 200;
 }
 
 //maj de la logique de l'ennemi
@@ -20,7 +23,7 @@ void EnemyUpdate(enemy_t * enemy)
     EnemyMove(enemy);
     if (enemy->isShooting == 1){
         enemy->isShooting = 0;
-        SpawnBulletPool(&bulletPool,enemy->enemyPos,40);
+        SpawnBulletPool(&bulletPool,enemy->pos,enemy->dir,enemy->bulletSpeed,enemy->bulletSize,enemy->dmg);
     }
 }
 
@@ -28,5 +31,5 @@ void EnemyUpdate(enemy_t * enemy)
 //dessine l'ennemi
 void EnemyDraw(enemy_t * enemy)
 {
-    DrawRectangleV(enemy->enemyPos, enemy->enemySize, RED);
+    DrawRectangleV(enemy->pos, enemy->size, RED);
 }

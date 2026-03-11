@@ -1,4 +1,4 @@
-#include "../../raylib/include/raylib.h"
+/*#include "../../raylib/include/raylib.h"
 #include "../../lib/systems/BulletPool.h"
 #include <math.h>
 #include <stdlib.h>
@@ -6,7 +6,7 @@
 
 bulletPool_t bulletPool; 
 
-void InitBulletPool(bulletPool_t* pool, int capacity) {
+void InitEnemyPool(bulletPool_t* pool, int capacity) {
     pool->active = 1;
     pool->capacity = capacity;
     pool->tab = malloc(sizeof(bullet_t) * capacity);
@@ -44,4 +44,4 @@ void FreeBulletPool(bulletPool_t* pool) {
     free(pool->tab);
     pool->tab = NULL;
     pool->capacity = 0;
-}
+}*/
