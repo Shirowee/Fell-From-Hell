@@ -26,6 +26,9 @@ typedef struct {
     char type[32];
     int solid; // 1 pour vrai, 0 pour faux
     float x, y, width, high;
+    Rectangle rect; 
+    Color color;
+
 } Platform;
 
 typedef struct {
@@ -199,17 +202,46 @@ int readJsonLvl(const char * fileName){
     return 1;
 }
 
+#define TILE_SIZE 40  // Chaque unité du JSON vaudra X pixels à l'écran
+
+void Levelinit(Level *lvl){
+    for (int i = 0; i < lvl->platformCount; i++) {
+        Platform *p = &lvl->platforms[i];
+        
+        p->rect = (Rectangle){ // Calcul de la position réelle par rapport a TILE_SIZE
+            p->x * TILE_SIZE,
+            p->y * TILE_SIZE,
+            p->width * TILE_SIZE,
+            p->high * TILE_SIZE
+        };
+    
+
+    p->color = p->solid ? DARKGRAY : GRAY; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
+    if (strcmp(p->type, "BASIC_PLATFORM_S") == 0) p->color = DARKBLUE; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
+    }
+}
+
+void Leveldraw(Level *lvl) {
+    for (int i = 0; i < lvl->platformCount; i++) {
+        printf("Dessin plat %d a y: %f\n", i, lvl->platforms[i].rect.y);
+        DrawRectangleRec(lvl->platforms[i].rect, lvl->platforms[i].color);
+    }
+}
 
 int main(){
 
     readJsonLvl("map1");
+    Levelinit(&currentLevel);
 
-    /*InitWindow(1600, 900, "TEST MAP");
+    InitWindow(1600, 900, "TEST MAP");
     SetTargetFPS(60);
 
     while (!WindowShouldClose()){
-
-    }*/
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        Leveldraw(&currentLevel);
+        EndDrawing();
+    }
 
     return 0;
 }
