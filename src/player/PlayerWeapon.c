@@ -26,7 +26,7 @@ void PlayerShoot(weapon_t weapon, Vector2 posJoueur, double  * time){
     if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && GetTime()- *time >= cooldown){
         posSouris = GetMousePosition();
         direction = ((int)(atan2(posSouris.y - posJoueur.y, posSouris.x - posJoueur.x) * 180 / PI) + 360) % 360;
-        SpawnBulletPool(&playerBulletPool, posJoueur, direction); 
+        SpawnBulletPool(&playerBulletPool, posJoueur, direction, 500, 30, weapon.degats); 
         *time = GetTime();
     }
 
@@ -34,7 +34,7 @@ void PlayerShoot(weapon_t weapon, Vector2 posJoueur, double  * time){
         float rightStickX = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_RIGHT_X);
         float rightStickY = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_RIGHT_Y);
         direction = atan2(rightStickY, rightStickX) * 180/PI;
-        SpawnBulletPool(&playerBulletPool, posJoueur, direction);
+        SpawnBulletPool(&playerBulletPool, posJoueur, direction, 500, 30, weapon.degats);
         *time = GetTime();
     }
 }
