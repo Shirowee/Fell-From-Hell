@@ -2,25 +2,168 @@
 #include "../lib/cJson/cJSON.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void displayExtractData(cJSON *json) {
-    if (json == NULL) {
-        printf("Erreur : Aucun objet JSON à afficher.\n");
-        return;
+// Sous Structure
+typedef struct {
+    int x;
+    int y;
+} Pos;
+
+typedef struct {
+    float x, y, w, h;
+} Rect;
+
+// Structures du contenu de la Map
+typedef struct {
+    char id[32];
+    char title[64];
+    int width;
+    int height;
+} MapInfo;
+
+typedef struct {
+    char type[32];
+    int solid; // 1 pour vrai, 0 pour faux
+    float x, y, width, high;
+} Platform;
+
+typedef struct {
+    char type[32];
+    float dist_aggro;
+} Enemy;
+
+typedef struct {
+    char type[32];
+    Pos position;
+} Hazard;
+
+typedef struct {
+    char id[32];
+    Rect rect;
+    char action[32];
+} Trigger;
+
+// Structure Final du niveau
+#define MAX_PLATFORMS 100
+#define MAX_ENEMIES 50
+#define MAX_HAZARDS 50
+#define MAX_TRIGGERS 20
+
+typedef struct {
+    MapInfo info;
+    
+    // Plateformes
+    Platform platforms[MAX_PLATFORMS];
+    int platformCount;
+
+    // Entités
+    Pos playerStart;
+    Enemy enemies[MAX_ENEMIES];
+    int enemyCount;
+    Hazard hazards[MAX_HAZARDS];
+    int hazardCount;
+
+    // Triggers
+    Trigger triggers[MAX_TRIGGERS];
+    int triggerCount;
+} Level;
+
+
+Level currentLevel; // Déclaration du niveau
+
+
+void parseLevelData(cJSON *json, Level *lvl) {
+    if (json == NULL || lvl == NULL) return;
+
+    // 1. Extraction de map_info
+    cJSON *map_info = cJSON_GetObjectItemCaseSensitive(json, "map_info");
+    if (map_info) {
+        cJSON *id = cJSON_GetObjectItemCaseSensitive(map_info, "id");
+        cJSON *title = cJSON_GetObjectItemCaseSensitive(map_info, "title");
+        cJSON *dims = cJSON_GetObjectItemCaseSensitive(map_info, "dimensions");
+
+        if (cJSON_IsString(id)) strncpy(lvl->info.id, id->valuestring, 31);
+        if (cJSON_IsString(title)) strncpy(lvl->info.title, title->valuestring, 63);
+        if (dims) {
+            lvl->info.width = cJSON_GetObjectItemCaseSensitive(dims, "w")->valueint;
+            lvl->info.height = cJSON_GetObjectItemCaseSensitive(dims, "h")->valueint;
+        }
     }
 
-    // cJSON_Print crée une chaîne de caractères formatée (avec retours à la ligne et espaces)
-    char *jsonRawString = cJSON_Print(json); 
+    // 2. Extraction des Plateformes (Tableau)
+    cJSON *platforms = cJSON_GetObjectItemCaseSensitive(json, "platforms");
+    lvl->platformCount = 0;
+    cJSON *plat = NULL;
+    cJSON_ArrayForEach(plat, platforms) {
+        if (lvl->platformCount < MAX_PLATFORMS) {
+            Platform *p = &lvl->platforms[lvl->platformCount];
+            strncpy(p->type, cJSON_GetObjectItemCaseSensitive(plat, "type")->valuestring, 31);
+            p->solid = cJSON_GetObjectItemCaseSensitive(plat, "solid")->valueint;
+            p->x = (float)cJSON_GetObjectItemCaseSensitive(plat, "x")->valuedouble;
+            p->y = (float)cJSON_GetObjectItemCaseSensitive(plat, "y")->valuedouble;
+            p->width = (float)cJSON_GetObjectItemCaseSensitive(plat, "width")->valuedouble;
+            p->high = (float)cJSON_GetObjectItemCaseSensitive(plat, "high")->valuedouble;
+            lvl->platformCount++;
+        }
+    }
 
-    if (jsonRawString != NULL) {
-        printf("=== DONNÉES EXTRAITES DU JSON ===\n");
-        printf("%s\n", jsonRawString);
-        printf("==================================\n");
+    // 3. Extraction des Entités (Player Start, Enemies, Hazards) ---
+    cJSON *entities = cJSON_GetObjectItemCaseSensitive(json, "entities");
+    if (entities) {
+        // Player Start
+        cJSON *p_start = cJSON_GetObjectItemCaseSensitive(entities, "player_start");
+        if (p_start) {
+            lvl->playerStart.x = cJSON_GetObjectItemCaseSensitive(p_start, "x")->valueint;
+            lvl->playerStart.y = cJSON_GetObjectItemCaseSensitive(p_start, "y")->valueint;
+        }
 
-        // TRÈS IMPORTANT : cJSON_Print alloue de la mémoire, il faut la libérer après usage
-        free(jsonRawString); 
+        // Enemies
+        cJSON *enemies = cJSON_GetObjectItemCaseSensitive(entities, "enemies");
+        lvl->enemyCount = 0;
+        cJSON *en = NULL;
+        cJSON_ArrayForEach(en, enemies) {
+            if (lvl->enemyCount < MAX_ENEMIES) {
+                strncpy(lvl->enemies[lvl->enemyCount].type, cJSON_GetObjectItemCaseSensitive(en, "type")->valuestring, 31);
+                lvl->enemies[lvl->enemyCount].dist_aggro = (float)cJSON_GetObjectItemCaseSensitive(en, "dist_aggro")->valuedouble;
+                lvl->enemyCount++;
+            }
+        }
+
+        // Hazards
+        cJSON *hazards = cJSON_GetObjectItemCaseSensitive(entities, "hazards");
+        lvl->hazardCount = 0;
+        cJSON *hz = NULL;
+        cJSON_ArrayForEach(hz, hazards) {
+            if (lvl->hazardCount < MAX_HAZARDS) {
+                strncpy(lvl->hazards[lvl->hazardCount].type, cJSON_GetObjectItemCaseSensitive(hz, "type")->valuestring, 31);
+                lvl->hazards[lvl->hazardCount].position.x = cJSON_GetObjectItemCaseSensitive(hz, "x")->valueint;
+                lvl->hazards[lvl->hazardCount].position.y = cJSON_GetObjectItemCaseSensitive(hz, "y")->valueint;
+                lvl->hazardCount++;
+            }
+        }
+    }
+
+    // 4. Extraction des Triggers
+    cJSON *triggers = cJSON_GetObjectItemCaseSensitive(json, "triggers");
+    lvl->triggerCount = 0;
+    cJSON *trig = NULL;
+    cJSON_ArrayForEach(trig, triggers) {
+        if (lvl->triggerCount < MAX_TRIGGERS) {
+            Trigger *t = &lvl->triggers[lvl->triggerCount];
+            strncpy(t->id, cJSON_GetObjectItemCaseSensitive(trig, "id")->valuestring, 31);
+            strncpy(t->action, cJSON_GetObjectItemCaseSensitive(trig, "action")->valuestring, 31);
+            
+            cJSON *r = cJSON_GetObjectItemCaseSensitive(trig, "rect");
+            t->rect.x = (float)cJSON_GetObjectItemCaseSensitive(r, "x")->valuedouble;
+            t->rect.y = (float)cJSON_GetObjectItemCaseSensitive(r, "y")->valuedouble;
+            t->rect.w = (float)cJSON_GetObjectItemCaseSensitive(r, "w")->valuedouble;
+            t->rect.h = (float)cJSON_GetObjectItemCaseSensitive(r, "h")->valuedouble;
+            lvl->triggerCount++;
+        }
     }
 }
+
 
 int readJsonLvl(const char * fileName){
     const char * path = TextFormat("../lib/map/%s.json",fileName); // Création du chemin complet jusqu'à la map choisi 
@@ -44,14 +187,15 @@ int readJsonLvl(const char * fileName){
         return 0;
     }
 
-    displayExtractData(json);
+    parseLevelData(json, &currentLevel);
+    
 
     cJSON_Delete(json);
 
+    printf("Titre charge : %s\n", currentLevel.info.title);
+    printf("Nombre de plateformes : %d\n", currentLevel.platformCount);
+
     
-    
-    /*cJSON *map_info = cJSON_GetObjectItemCaseSensitive(json, "map_info");
-    printf("Map:%s\n", map_info->valuestring);*/
     return 1;
 }
 
