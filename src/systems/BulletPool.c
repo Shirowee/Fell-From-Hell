@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 bulletPool_t bulletPool; 
+bulletPool_t playerBulletPool;
 
 void InitBulletPool(bulletPool_t* pool, int capacity) {
     pool->active = 1;
