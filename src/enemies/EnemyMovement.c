@@ -6,7 +6,7 @@
 void EnemyMove(enemy_t * enemy)
 {
     float dt = GetFrameTime(); // Temps entre images
-    enemy->enemyPos.x += enemy->enemySpeed * dt;
+    enemy->pos.x += enemy->speed * dt;
 }
 
 

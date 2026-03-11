@@ -12,7 +12,7 @@ int main(void)
     while (!WindowShouldClose())
     {
         if (IsKeyPressed(KEY_SPACE))
-            SpawnBulletPool(&bulletPool, (Vector2){400, 200}, 0); 
+            SpawnBulletPool(&bulletPool, (Vector2){400, 200}, 0, 20, 5, 1); 
 
         UpdateBulletPool(&bulletPool);
 
