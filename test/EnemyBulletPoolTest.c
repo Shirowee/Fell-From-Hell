@@ -1,3 +1,4 @@
+/*
 #include "../raylib/include/raylib.h"
 #include "../lib/systems/BulletPool.h"
 int main(void)
@@ -29,3 +30,5 @@ int main(void)
     CloseWindow();
     return 0;
 }
+
+*/

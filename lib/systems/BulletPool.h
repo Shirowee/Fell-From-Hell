@@ -11,7 +11,7 @@ typedef struct {
 } bulletPool_t;
 
 void InitBulletPool(bulletPool_t* pool, int capacity);
-void SpawnBulletPool(bulletPool_t* pool, Vector2 pos, int dir);
+void SpawnBulletPool(bulletPool_t* pool, Vector2 pos, int dir, int speed, int size, int dmg);
 void UpdateBulletPool(bulletPool_t* pool);
 void DrawBulletPool(bulletPool_t* pool);
 void FreeBulletPool(bulletPool_t* pool);
