@@ -24,7 +24,7 @@ int main(){
         //update
         PlayerShoot(weapon, posJoueur, &timeSpent);
         if (IsKeyDown(KEY_RIGHT)){
-            ChangeWeapon(&weapon, epee_longue);
+            ChangeWeapon(&weapon, sniper); //fusil_a_pompe sniper
         }
 
         UpdateBulletPool(&playerBulletPool);
@@ -34,6 +34,7 @@ int main(){
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
+        DrawText(TextFormat("Arme équipée : %d", weapon.indice), 10, 30, 20, DARKGRAY);
         DrawBulletPool(&playerBulletPool);
 
         DrawFPS(10, 10);
