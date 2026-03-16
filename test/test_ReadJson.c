@@ -202,17 +202,16 @@ int readJsonLvl(const char * fileName){
     return 1;
 }
 
-#define TILE_SIZE 40  // Chaque unité du JSON vaudra X pixels à l'écran
 
-void Levelinit(Level *lvl){
+void Levelinit(Level *lvl, float tileSize){
     for (int i = 0; i < lvl->platformCount; i++) {
         Platform *p = &lvl->platforms[i];
         
-        p->rect = (Rectangle){ // Calcul de la position réelle par rapport a TILE_SIZE
-            p->x * TILE_SIZE,
-            p->y * TILE_SIZE,
-            p->width * TILE_SIZE,
-            p->high * TILE_SIZE
+        p->rect = (Rectangle){ // Calcul de la position et taille réelle par rapport a tile_size
+            p->x * tileSize,
+            p->y * tileSize,
+            p->width * tileSize,
+            p->high * tileSize
         };
     
 
@@ -223,23 +222,43 @@ void Levelinit(Level *lvl){
 
 void Leveldraw(Level *lvl) {
     for (int i = 0; i < lvl->platformCount; i++) {
-        printf("Dessin plat %d a y: %f\n", i, lvl->platforms[i].rect.y);
         DrawRectangleRec(lvl->platforms[i].rect, lvl->platforms[i].color);
     }
 }
 
+#define Reflargeur 1920
+#define Refhauteur 1080
+
 int main(){
+    if (!readJsonLvl("map1")) return -1;
 
-    readJsonLvl("map1");
-    Levelinit(&currentLevel);
+    SetConfigFlags(FLAG_FULLSCREEN_MODE);
 
-    InitWindow(1600, 900, "TEST MAP");
-    SetTargetFPS(60);
+    InitWindow(0, 0, "TEST MAP");
+    SetTargetFPS(60);   
+
+    float dynamicTileSize = (float)GetScreenHeight() / Refhauteur; // Taille dynamique en fonction de la taille de la fenêtre
+
+    Levelinit(&currentLevel, dynamicTileSize);
+
+    Camera2D camera = { 0 };
+    camera.zoom = 1.0f;
 
     while (!WindowShouldClose()){
+        float cameraSpeed = 800.0f * GetFrameTime(); 
+        
+        if (IsKeyDown(KEY_UP)) camera.target.y -= cameraSpeed;
+        if (IsKeyDown(KEY_DOWN)) camera.target.y += cameraSpeed;
+
         BeginDrawing();
         ClearBackground(RAYWHITE);
+
+        BeginMode2D(camera);
+
         Leveldraw(&currentLevel);
+
+        EndMode2D();
+
         EndDrawing();
     }
 
