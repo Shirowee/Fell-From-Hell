@@ -17,14 +17,15 @@ int main(){
     weapon_t weapon = minigun; //fusil_a_pompe
     Vector2 posJoueur =(Vector2){400, 200};
     double timeSpent=0;
+    double startReload = -10;
 
     SetTargetFPS(60);
     while (!WindowShouldClose())
     {
         //update
-        PlayerShoot(weapon, posJoueur, &timeSpent);
+        PlayerShoot(&weapon, posJoueur, &timeSpent, &startReload);
         if (IsKeyDown(KEY_RIGHT)){
-            ChangeWeapon(&weapon, sniper); //fusil_a_pompe sniper
+            ChangeWeapon(&weapon, pistolet_jsp_koi); //fusil_a_pompe sniper arbalete pistolet_mitrailleur pistolet_jsp_koi
         }
 
         UpdateBulletPool(&playerBulletPool);
@@ -35,6 +36,7 @@ int main(){
         ClearBackground(RAYWHITE);
 
         DrawText(TextFormat("Arme équipée : %d", weapon.indice), 10, 30, 20, DARKGRAY);
+        DrawText(TextFormat("amo left : %d", weapon.amo_left), 10, 50, 20, DARKGRAY);
         DrawBulletPool(&playerBulletPool);
 
         DrawFPS(10, 10);

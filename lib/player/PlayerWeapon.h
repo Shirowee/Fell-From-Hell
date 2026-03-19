@@ -20,8 +20,9 @@ typedef struct{
     int indice;                 //indice de l'arme
     float dmg;
     float tps;                  //tir par seconde
-    int chargeur;               //nombre de munition
-    float temps_rechargement;   //en secondes
+    int magazine;               //nombre de munition
+    int amo_left;               //nombre de munition restante
+    float reloadTime;          //en secondes
     effect_t effet;             //effet de l'arme
     int dispersion;             //rayon de dispersion de l'arme
     int porte;                  //porté de l'arme entre 0 et 100
@@ -63,8 +64,9 @@ extern weapon_t pistolet_jsp_koi;
 
 
 //definition des fonction
-void PlayerShoot(weapon_t weapon, Vector2 posJoueur, double * time);
+void PlayerShoot(weapon_t * weapon, Vector2 posJoueur, double * timeSpent, double * startReload);
 void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon);
 void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction);
+int IsReloading(weapon_t * weapon, double * startReload);
 
 #endif
