@@ -3,7 +3,7 @@
 
 #include "../player/Player.h"
 
-void GameInit(Player *player);
+void GameInit(Player *player, float dynamicTileSize);
 void GameUpdate(Player *player);
 void GameDraw(Player *player);
 void GameUnload(void);
