@@ -15,9 +15,13 @@ int main(void)
     {
         
         if (IsKeyPressed(KEY_SPACE)){
-            SpawnEnemyPool(&enemyPool,(Vector2){200,200},30,(Vector2){20,30},1,500,10);
+            SpawnEnemyPool(&enemyPool,(Vector2){200,200},180,(Vector2){20,30},1,500,10);
         }
         
+
+        playerPos = GetMousePosition();
+
+
         UpdateEnemyPool(&enemyPool,playerPos);
 
         BeginDrawing();
