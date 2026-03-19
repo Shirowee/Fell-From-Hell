@@ -26,25 +26,31 @@ void PlayerShoot(weapon_t * weapon, Vector2 posJoueur, double  * timeSpent, doub
     
     int gamepad = 0;
     float direction;
-    float cooldown = 1/weapon->tps; //temps entre deux tir
     Vector2 posSouris; 
 
-    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && GetTime()- *timeSpent >= cooldown && !IsReloading(weapon, startReload)){
+    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && Cooldown(*weapon, timeSpent) && !IsReloading(weapon, startReload)){
         posSouris = GetMousePosition();
         direction = ((int)(atan2(posSouris.y - posJoueur.y, posSouris.x - posJoueur.x) * 180 / PI) + 360) % 360;
         spawnBulletWeapon(*weapon, posJoueur, direction);
-        *timeSpent = GetTime();
         (weapon->amo_left)--;
     }
 
-    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_RIGHT_TRIGGER_2) && GetTime()- *timeSpent >= cooldown && !IsReloading(weapon, startReload)){
+    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_RIGHT_TRIGGER_2) && Cooldown(*weapon, timeSpent) && !IsReloading(weapon, startReload)){
         float rightStickX = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_RIGHT_X);
         float rightStickY = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_RIGHT_Y);
         direction = atan2(rightStickY, rightStickX) * 180/PI;
         spawnBulletWeapon(*weapon, posJoueur, direction);
-        *timeSpent = GetTime();
         (weapon->amo_left)--;
     }
+}
+
+int Cooldown(weapon_t weapon, double  * timeSpent){
+    float cooldown = 1/weapon.tps; //temps entre deux tir
+    if(GetTime()- *timeSpent >= cooldown){
+        *timeSpent = GetTime();
+        return(1);
+    }
+    return(0);
 }
 
 int IsReloading(weapon_t * weapon, double * startReload){

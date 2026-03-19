@@ -67,6 +67,7 @@ extern weapon_t pistolet_multi_direction;
 void PlayerShoot(weapon_t * weapon, Vector2 posJoueur, double * timeSpent, double * startReload);
 void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon);
 void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction);
+int Cooldown(weapon_t weapon, double  * timeSpent);
 int IsReloading(weapon_t * weapon, double * startReload);
 
 #endif
