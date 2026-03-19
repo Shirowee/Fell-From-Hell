@@ -12,9 +12,10 @@ typedef struct enemy_s {
     int dir; //direction
     int bulletSpeed; //vitesse bullet
     int bulletSize; //taille bullet
+    int active; //si l'enemi doit être affiché
 } enemy_t;
 
-void EnemyInit(enemy_t * enemy);
+void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg, Vector2 pos, int bulletSpeed, int bulletSize);
 void EnemyUpdate(enemy_t * enemy);
 void EnemyDraw(enemy_t * enemy);
 

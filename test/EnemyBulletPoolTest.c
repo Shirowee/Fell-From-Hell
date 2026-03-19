@@ -4,7 +4,7 @@ int main(void)
 {
     InitWindow(800, 450, "BulletPool Test");
 
-    //bulletPool_t enemyBullets;
+    //--------------------------ADD TO GAME INIT-------------------
     InitBulletPool(&bulletPool, 300);
 
     SetTargetFPS(60);

@@ -1,26 +1,24 @@
-/*#ifndef ENEMYPOOL_H
+#ifndef ENEMYPOOL_H
 #define ENEMYPOOL_H
 
 #include "../../raylib/include/raylib.h"
-#include "../.h"
+#include "../enemies/EnemyController.h"
 
-typedef enum {
-    default
-} enemy_t;
+
+
 
 typedef struct {
-    bullet_t* tab; //liste contenant les enemy
+    enemy_t* tab; //liste contenant les enemy
     int active; //booléen pour l'activité de la pool
     int capacity; //nombre d'elements
+} enemyPool_t;
 
-    enemy_t enemy_type;
-} bulletPool_t;
+void InitEnemyPool(enemyPool_t* pool, int capacity);
+void SpawnEnemyPool(enemyPool_t* pool, Vector2 pos, 
+                    float speed, Vector2 size, int dmg, float bulletSpeed, int bulletSize);
+void UpdateEnemyPool(enemyPool_t* pool);
+void DrawEnemyPool(enemyPool_t* pool);
+void FreeEnemyPool(enemyPool_t* pool);
 
-void InitBulletPool(bulletPool_t* pool, int capacity);
-void SpawnBulletPool(bulletPool_t* pool, Vector2 pos, int dir);
-void UpdateBulletPool(bulletPool_t* pool);
-void DrawBulletPool(bulletPool_t* pool);
-void FreeBulletPool(bulletPool_t* pool);
-
-extern bulletPool_t bulletPool;
-#endif*/
+extern enemyPool_t enemyPool;
+#endif

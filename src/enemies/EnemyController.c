@@ -5,16 +5,17 @@
 
 
 //init l'ennemi
-void EnemyInit(enemy_t * enemy)
-{
-    enemy->speed = 30;
-    enemy->pos = (Vector2){ 100, 350 };
-    enemy->dmg = 1;
+void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
+                Vector2 pos, int bulletSpeed, int bulletSize) {
+    enemy->speed = speed;
+    enemy->pos = pos;
+    enemy->dmg = dmg;
     enemy->isShooting = 0;
-    enemy->size = (Vector2){30,30};
+    enemy->size = size;
     enemy->dir = 0;
-    enemy->bulletSpeed = 200;
-    enemy->bulletSize = 200;
+    enemy->bulletSpeed = bulletSpeed;
+    enemy->bulletSize = bulletSize;
+    enemy->active = 1;
 }
 
 //maj de la logique de l'ennemi
