@@ -59,7 +59,7 @@ extern weapon_t pistolet_eclectique;
 //description : tir des arcs électrique qui touche tous les ennemie à porter dans la direction de tir
 extern weapon_t pistolet_mitrailleur;
 //description : tir et recharge vite mais peu de dégats
-extern weapon_t pistolet_jsp_koi;
+extern weapon_t pistolet_multi_direction;
 //description : tir dans 4 direction 
 
 

@@ -25,7 +25,7 @@ int main(){
         //update
         PlayerShoot(&weapon, posJoueur, &timeSpent, &startReload);
         if (IsKeyDown(KEY_RIGHT)){
-            ChangeWeapon(&weapon, pistolet_jsp_koi); //fusil_a_pompe sniper arbalete pistolet_mitrailleur pistolet_jsp_koi
+            ChangeWeapon(&weapon, fusil_a_pompe); //fusil_a_pompe sniper arbalete pistolet_mitrailleur pistolet_multi_direction
         }
 
         UpdateBulletPool(&playerBulletPool);

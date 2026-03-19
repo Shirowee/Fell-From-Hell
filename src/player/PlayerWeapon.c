@@ -19,7 +19,7 @@ weapon_t sniper ={9, 150, 0.75, 6, 6, 3, AUCUN, 0, 100, 1200, 15};
 weapon_t arbalete ={10, 70, 1, 8, 6, 3, TOUS, 0, 100, 500, 10};
 weapon_t pistolet_eclectique ={11, 35, 2, 15, 15, 2, ELECTRIQUE, 40, 50, 500, 10};
 weapon_t pistolet_mitrailleur ={12, 10, 10, 40, 40, 0.5, AUCUN, 25, 50, 500, 10};
-weapon_t pistolet_jsp_koi ={13, 20, 2, 20, 20, 1.5, AUCUN, 7.5, 100, 500, 10};
+weapon_t pistolet_multi_direction ={13, 20, 2, 20, 20, 1.5, AUCUN, 7.5, 100, 500, 10};
 
 
 void PlayerShoot(weapon_t * weapon, Vector2 posJoueur, double  * timeSpent, double * startReload){
@@ -75,7 +75,7 @@ void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon){
 #define ARBALETE 10
 #define PISTOLET_ELECTRIQUE 11
 #define PISTOLET_MITRAILLEUR 12
-#define PISTOLET_JSP_KOI 13
+#define PISTOLET_MULTI_DIRECTION 13
 
 void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction){
     
@@ -89,7 +89,7 @@ void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction){
             SpawnBulletPool(&playerBulletPool, posJoueur, direction - 3*(weapon.dispersion/6), weapon.bulletSpeed, weapon.bulletSize, weapon.dmg);
             break;
 
-        case PISTOLET_JSP_KOI : direction += rand() % weapon.dispersion - weapon.dispersion/2;
+        case PISTOLET_MULTI_DIRECTION : direction += rand() % weapon.dispersion - weapon.dispersion/2;
             SpawnBulletPool(&playerBulletPool, posJoueur, direction, weapon.bulletSpeed, weapon.bulletSize, weapon.dmg);
             SpawnBulletPool(&playerBulletPool, posJoueur, direction + 90, weapon.bulletSpeed, weapon.bulletSize, weapon.dmg);
             SpawnBulletPool(&playerBulletPool, posJoueur, direction + 180, weapon.bulletSpeed, weapon.bulletSize, weapon.dmg);
