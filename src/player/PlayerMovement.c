@@ -29,7 +29,8 @@ void PlayerMove(Player *player, Platform **platform, const int nbPlatforms) {
     if(player->velocity.x > player->movConfig.maxSpeed) player->velocity.x = player->movConfig.maxSpeed;
     else if(player->velocity.x < -player->movConfig.maxSpeed) player->velocity.x = -player->movConfig.maxSpeed;
 
-    if(player->movConfig.isOnGround) player->velocity.y = 0.0; 
+    if(player->movConfig.isOnGround) player->velocity.y = 0.0;
+    else if(IsKeyReleased(KEY_SPACE) || (timer.jumpTime <= 0.0 && getPlayerMovementState(player) == JUMPING)) player->velocity.y *= 0.5;
     if(getPlayerMovementState(player) == WALL_SLIDING && player->velocity.y > MAX_WALL_SPEED) player->velocity.y = MAX_WALL_SPEED;
 
     //Déplacement du joueur
