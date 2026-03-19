@@ -30,9 +30,9 @@ void SpawnEnemyPool(enemyPool_t* pool, Vector2 pos,
     }
 }
 
-void UpdateEnemyPool(enemyPool_t* pool) {
+void UpdateEnemyPool(enemyPool_t* pool, Vector2 playerPos) {
     for(int i=0; i < pool->capacity; i++) {
-        EnemyUpdate(&pool->tab[i]);
+        EnemyUpdate(&pool->tab[i], playerPos);
     }
 }
 

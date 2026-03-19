@@ -16,7 +16,7 @@ typedef struct {
 void InitEnemyPool(enemyPool_t* pool, int capacity);
 void SpawnEnemyPool(enemyPool_t* pool, Vector2 pos, 
                     float speed, Vector2 size, int dmg, float bulletSpeed, int bulletSize);
-void UpdateEnemyPool(enemyPool_t* pool);
+void UpdateEnemyPool(enemyPool_t* pool, Vector2 playerPos);
 void DrawEnemyPool(enemyPool_t* pool);
 void FreeEnemyPool(enemyPool_t* pool);
 

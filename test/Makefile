@@ -22,7 +22,10 @@ TEST_OBJ = $(TEST_SRC:.c=.o)
 TEST_EXE = $(TEST_SRC:%.c=$(BIN_DIR)/%.exe)
 
 # Flags de compilation
-CFLAGS = -Wall -Wextra -std=c99 -O2 -I../raylib/include
+BASE_CFLAGS = -Wall -Wextra -std=c99 -I../raylib/include
+CFLAGS = $(BASE_CFLAGS) -02
+debug: CFLAGS = $(BASE_CFLAGS) -g -O0
+debug: clean all
 
 # ==============================
 # DÉTECTION PLATEFORME

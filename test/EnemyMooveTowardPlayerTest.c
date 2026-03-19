@@ -1,14 +1,14 @@
 #include "../raylib/include/raylib.h"
 #include "../../lib/systems/EnemyPool.h"
 #include "../../lib/systems/BulletPool.h"
+#include "../../lib/enemies/EnemyMovement.h"
 #include<stdio.h>
 
 int main(void)
 {
-    InitWindow(800, 450, "Enemy Pool Test");
+    InitWindow(800, 450, "Enemy Pool Shooting Test");
     InitEnemyPool(&enemyPool,200);
-    InitBulletPool(&bulletPool,300);
-
+    Vector2 playerPos = (Vector2){800,450};
 
     SetTargetFPS(60);
     while (!WindowShouldClose())
@@ -16,13 +16,9 @@ int main(void)
         
         if (IsKeyPressed(KEY_SPACE)){
             SpawnEnemyPool(&enemyPool,(Vector2){200,200},30,(Vector2){20,30},1,500,10);
-            
         }
         
-        UpdateEnemyPool(&enemyPool,(Vector2){0,0});
-        UpdateBulletPool(&bulletPool);
-
-
+        UpdateEnemyPool(&enemyPool,playerPos);
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
@@ -34,7 +30,6 @@ int main(void)
         EndDrawing();
     }
     FreeEnemyPool(&enemyPool);
-    FreeBulletPool(&bulletPool);
     CloseWindow();
     return 0;
 }
