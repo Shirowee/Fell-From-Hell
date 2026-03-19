@@ -39,6 +39,9 @@ int main(void)
         DrawText(TextFormat("Is On Ground Config: %i", player.movConfig.isOnGround), 10, 70, 20, ORANGE);
         DrawText(TextFormat("Is On Left Wall Config: %i", player.movConfig.isOnLeftWall), 10, 90, 20, ORANGE);
         DrawText(TextFormat("Is On Right Wall Config: %i", player.movConfig.isOnRightWall), 10, 110, 20, ORANGE);
+        DrawText(TextFormat("jumpTime: %fs", timer.jumpTime), 500, 30, 20, ORANGE);
+        DrawText(TextFormat("jumpTimeOut: %fs", timer.jumpTimeOut), 500, 50, 20, ORANGE);
+        DrawText(TextFormat("Velocity y: %f", player.velocity.y), 500, 70, 20, ORANGE);
 
         EndDrawing();
     }

@@ -12,7 +12,7 @@ void PlayerInit(Player *player){
 
     //Initialisation du corps du joueur
     player->body.main = (Rectangle){ PLAYER_X, PLAYER_Y, PLAYER_SIZE_X, PLAYER_SIZE_Y };
-    player->body.foot = (Rectangle){ player->body.main.x, player->body.main.y + PLAYER_SIZE_Y, PLAYER_SIZE_X, 5 };
+    player->body.foot = (Rectangle){ player->body.main.x, player->body.main.y + PLAYER_SIZE_Y, PLAYER_SIZE_X, 1 };
 
     //Initialisation des mouvements du joueur
     player->movConfig.maxSpeed = MAX_SPEED;
@@ -24,12 +24,17 @@ void PlayerInit(Player *player){
     player->movConfig.isOnGround = false;
     player->movConfig.isOnLeftWall = false;
     player->movConfig.isOnRightWall = false;
+
+    PlayerMoveFlagsInit();
+    PlayerMoveTimerInit();
 }
 
 //maj de la logique du player
 void PlayerUpdate(Player *player, Platform **platform, const int nbPlatforms){
-    PlayerMove(player, platform, nbPlatforms);
+    PlayerMoveFlagsUpdate();
+    PlayerMoveTimerUpdate(player);
     PlayerMoveConfigUpdate(player, platform, nbPlatforms);
+    PlayerMove(player, platform, nbPlatforms);
 }
 
 //dessine le joueur

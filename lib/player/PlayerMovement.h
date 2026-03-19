@@ -40,7 +40,7 @@
  * \def JUMP_STRENGTH
  * \brief Force de saut du joueur en pixels par seconde.
  */
-#define JUMP_STRENGTH -600
+#define JUMP_STRENGTH -800
 /**
  * \def DEFAULT_GRAVITY
  * \brief Gravité par défaut en pixels par seconde carrée.
@@ -103,6 +103,16 @@ typedef struct MovementConfig_s {
     bool isOnLeftWall;   /**< Indique si le joueur est en train de glisser sur un mur à gauche */
     bool isOnRightWall;  /**< Indique si le joueur est en train de glisser sur un mur à droite */
 } MovementConfig;
+typedef struct MovFlags_s {
+    bool jumpMovePressed;
+    bool leftMovePressed;
+    bool rightMovePressed;
+} MovFlags;
+
+typedef struct MovTimer_s {
+    float jumpTime;
+    float jumpTimeOut;
+} MovTimer;
 
 typedef enum{Left, Right, Up, Down} Direction;
 
@@ -120,6 +130,12 @@ typedef enum{Left, Right, Up, Down} Direction;
  * \param nbPlatform Nombre de Platform dans le tableau platform
  */
 void PlayerMove(Player *player, Platform **platform, const int nbPlatforms);
+
+void PlayerMoveFlagsInit();
+void PlayerMoveTimerInit();
+
+void PlayerMoveFlagsUpdate();
+void PlayerMoveTimerUpdate(Player *player);
 
  /**
  * \fn void PlayerMoveConfigUpdate(Player *player, Platform **platform, const int nbPlatforms);
@@ -178,5 +194,7 @@ bool isOnWall(Player *player, Platform **platform, const int nbPlatforms, Direct
  * \return MovementState correspondant a l'etat de mouvement du joueur
  */
 MovementState getPlayerMovementState(Player *player);
+
+extern MovTimer timer;
 
 #endif
