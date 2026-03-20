@@ -21,7 +21,9 @@ bool verifPremPlan(bool onTop){
 // Point d'entrée du jeu
 int main(void)
 {
-    if (!readJsonLvl("map1")) return -1;
+    ChangeDirectory(GetApplicationDirectory()); // Ce place au niveau du .exe pour éviter des prob avec le readJson après
+    if (!readJsonLvl("map1")) return -1; // Si impossible de lire la map
+
     bool isTopmost = false; // Variable Etat de la fenêtre (Premier Plan ou Non)
     
     SetConfigFlags(FLAG_WINDOW_UNDECORATED | FLAG_WINDOW_HIDDEN); // Ouverture de la fenêtre sans la barre et caché (pour ne pas rendre le redimensionnement)
@@ -50,9 +52,9 @@ int main(void)
     while (!WindowShouldClose())
     {
         isTopmost = verifPremPlan(isTopmost);
-        float cameraSpeed = 800.0f * GetFrameTime(); 
-        if (IsKeyDown(KEY_UP)) camera.target.y -= cameraSpeed;
-        if (IsKeyDown(KEY_DOWN)) camera.target.y += cameraSpeed;
+        float cameraSpeed = 800.0f * GetFrameTime(); //TEMPORAIRE POUR FAIRE LA MAP
+        if (IsKeyDown(KEY_UP)) camera.target.y -= cameraSpeed; //TEMPORAIRE POUR FAIRE LA MAP
+        if (IsKeyDown(KEY_DOWN)) camera.target.y += cameraSpeed; //TEMPORAIRE POUR FAIRE LA MAP
 
         GameUpdate(&player); // Logique
 
