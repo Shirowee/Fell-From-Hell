@@ -2,6 +2,7 @@
 #include "../lib/systems/BulletPool.h"
 int main(void)
 {
+    /*
     InitWindow(800, 450, "BulletPool Test");
 
     //bulletPool_t enemyBullets;
@@ -27,5 +28,6 @@ int main(void)
 
     FreeBulletPool(&bulletPool);
     CloseWindow();
+    */
     return 0;
 }

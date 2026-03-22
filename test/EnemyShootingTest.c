@@ -5,6 +5,7 @@
 
 int main(void)
 {
+    /*
     InitWindow(800, 450, "Enemy Test");
     enemy_t enemy;
     EnemyInit(&enemy);
@@ -33,5 +34,6 @@ int main(void)
 
     FreeBulletPool(&bulletPool);
     CloseWindow();
+    */
     return 0;
 }

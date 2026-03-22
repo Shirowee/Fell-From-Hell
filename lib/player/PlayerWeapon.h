@@ -5,6 +5,20 @@
 //#include "../systems/Projectiles.h"
 #include "../systems/BulletPool.h"
 
+#define MINIGUN 0
+#define LANCE_FLAMEMS 1
+#define LANCE_MISSILE_TETE_CHERCHEUSE 2
+#define FUSIL_A_POMPE 3
+#define PISTOLET_LASER 4
+#define FUSIL_RAFALES 5
+#define LANCE_GLACE 6
+#define LANCE_ROQUETTE 7
+#define EPEE_LONGUE 8
+#define SNIPER 9
+#define ARBALETE 10
+#define PISTOLET_ELECTRIQUE 11
+#define PISTOLET_MITRAILLEUR 12
+#define PISTOLET_MULTI_DIRECTION 13
 
 typedef enum{
     AUCUN,
@@ -22,10 +36,10 @@ typedef struct{
     float tps;                  //tir par seconde
     int magazine;               //nombre de munition
     int amo_left;               //nombre de munition restante
-    float reloadTime;          //en secondes
+    float reloadTime;           //en secondes
     effect_t effet;             //effet de l'arme
     int dispersion;             //rayon de dispersion de l'arme
-    int porte;                  //porté de l'arme entre 0 et 100
+    float lifeTime;             //durer de vie d'une bullet en sec
     int bulletSpeed;
     int bulletSize;
 }weapon_t;

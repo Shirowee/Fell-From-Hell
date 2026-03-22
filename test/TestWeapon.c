@@ -16,7 +16,7 @@ int main(){
 
     weapon_t weapon = minigun; //fusil_a_pompe
     Vector2 posJoueur =(Vector2){400, 200};
-    double timeSpent=0;
+    double timeSpent=0; //temp entre deux tir
     double startReload = -10;
 
     SetTargetFPS(60);
@@ -25,7 +25,7 @@ int main(){
         //update
         PlayerShoot(&weapon, posJoueur, &timeSpent, &startReload);
         if (IsKeyDown(KEY_RIGHT)){
-            ChangeWeapon(&weapon, pistolet_mitrailleur); //fusil_a_pompe sniper arbalete pistolet_mitrailleur pistolet_multi_direction
+            ChangeWeapon(&weapon, lance_roquette); //lance_flammes fusil_a_pompe pistolet_laser lance_glace lance_roquette sniper arbalete pistolet_mitrailleur pistolet_multi_direction 
         }
 
         UpdateBulletPool(&playerBulletPool);

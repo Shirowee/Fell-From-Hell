@@ -1,3 +1,4 @@
+/*
 #include "../../lib/enemies/EnemyController.h"
 #include "../../lib/enemies/EnemyMovement.h"
 #include "../../lib/systems/BulletPool.h"
@@ -33,3 +34,4 @@ void EnemyDraw(enemy_t * enemy)
 {
     DrawRectangleV(enemy->pos, enemy->size, RED);
 }
+*/

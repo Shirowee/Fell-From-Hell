@@ -17,13 +17,13 @@ void InitBulletPool(bulletPool_t* pool, int capacity) {
     }
 }
 
-void SpawnBulletPool(bulletPool_t* pool, Vector2 pos, int dir, int speed, int size, int dmg) {
+void SpawnBulletPool(bulletPool_t* pool, Vector2 pos, int dir, int speed, int size, int dmg, float lifeTime, int indice) {
     //on cherche la premiere bullet inactive (disponible)
     int spawned = 0;
     for(int i=0; (i < pool->capacity) && (spawned == 0); i++) {
         
         if (pool->tab[i].active == 0) {
-            InitBullet(&pool->tab[i], speed, size, dmg, pos, dir);
+            InitBullet(&pool->tab[i], speed, size, dmg, pos, dir, lifeTime, indice);
             spawned = 1;
         }
     }

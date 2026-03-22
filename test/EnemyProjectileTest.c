@@ -2,6 +2,7 @@
 #include "../lib/systems/Projectiles.h"
 int main(void)
 {
+    /*
     InitWindow(800, 450, "Enemy Projectile Test");
 
     bullet_t bullet;
@@ -22,5 +23,6 @@ int main(void)
     }
 
     CloseWindow();
+    */
     return 0;
 }
