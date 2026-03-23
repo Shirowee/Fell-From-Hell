@@ -5,6 +5,7 @@ TARGET_NAME = bin/game
 # On cherche tous les .c dans le dossier courant et les sous-dossiers (core, player, levels)
 SRC = $(wildcard src/*.c) \
       $(wildcard src/core/*.c) \
+      $(wildcard src/enemies/*.c) \
       $(wildcard src/player/*.c) \
       $(wildcard src/systems/*.c) \
       $(wildcard src/levels/*.c)
