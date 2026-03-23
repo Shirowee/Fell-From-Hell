@@ -27,6 +27,6 @@ void UpdateBullet(bullet_t * bullet);
 
 void DrawExplosion(bullet_t * bullet);
 
-void DrawBullet(bullet_t * bullet);
+void DrawBullet(bullet_t * bullet, Vector2 posJoueur);
 
 #endif

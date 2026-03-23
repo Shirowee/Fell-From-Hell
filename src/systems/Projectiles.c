@@ -27,7 +27,7 @@ void UpdateBullet(bullet_t * bullet) {
         bullet->bulletPos.y += sinf(angleRad) * bullet->bulletSpeed * dt;
 
         //vérification que la bullet soit dans l'écran sinon c'est à unload
-        if (bullet->bulletPos.x < -50 || bullet->bulletPos.x > 2500 || bullet->bulletPos.y < -50 || bullet->bulletPos.y > 1500) {
+        if (bullet->bulletPos.x < -50 || bullet->bulletPos.x > GetScreenWidth()+50 || bullet->bulletPos.y < -50 || bullet->bulletPos.y > GetScreenHeight()+50) {
                 bullet->active = false;
         }
         break;
@@ -60,11 +60,9 @@ void DrawExplosion(bullet_t * bullet) {
     DrawCircleV(bullet->bulletPos, 200, ORANGE);
 }
 
-void DrawBullet(bullet_t * bullet) {
+void DrawBullet(bullet_t * bullet, Vector2 posJoueur) {
     if (!bullet->active) return;
-    Vector2 posJoueur =(Vector2){400, 200}; //temp
 
-    printf("indice %d\n", bullet->indice);
     switch (bullet->indice)
     {
     case BASIC:

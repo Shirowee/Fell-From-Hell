@@ -13,7 +13,7 @@ typedef struct {
 void InitBulletPool(bulletPool_t* pool, int capacity);
 void SpawnBulletPool(bulletPool_t* pool, Vector2 pos, int dir, int speed, int size, int dmg, float lifeTime, int indice);
 void UpdateBulletPool(bulletPool_t* pool);
-void DrawBulletPool(bulletPool_t* pool);
+void DrawBulletPool(bulletPool_t* pool, Vector2 posJoueur);
 void FreeBulletPool(bulletPool_t* pool);
 
 extern bulletPool_t bulletPool;

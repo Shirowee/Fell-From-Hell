@@ -25,7 +25,7 @@ void GameDraw(Player *player)
 {
     LevelDraw();
     PlayerDraw(player);
-    DrawBulletPool(&playerBulletPool);
+    DrawBulletPool(&playerBulletPool, player->position);
 }
 
 //décharger
