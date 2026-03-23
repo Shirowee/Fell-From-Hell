@@ -40,6 +40,7 @@ int main(void)
 
         // LOGIQUE
         GameUpdate(&player, &timeSpent, &startReload);
+        printf("x=%f ; y=%f\n", player.position.x, player.position.y);
 
         // DESSIN
         BeginDrawing();

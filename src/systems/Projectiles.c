@@ -1,7 +1,7 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/Projectiles.h"
 #include <math.h>
-
+#include <stdio.h> //pour les test printf
 
 void InitBullet(bullet_t * bullet, int speed, int size, int dmg, Vector2 pos, int dir, float lifeTime, int indice) {
     bullet->bulletSpeed = speed;
@@ -27,7 +27,7 @@ void UpdateBullet(bullet_t * bullet) {
         bullet->bulletPos.y += sinf(angleRad) * bullet->bulletSpeed * dt;
 
         //vérification que la bullet soit dans l'écran sinon c'est à unload
-        if (bullet->bulletPos.x < -50 || bullet->bulletPos.x > 850 || bullet->bulletPos.y < -50 || bullet->bulletPos.y > 500) {
+        if (bullet->bulletPos.x < -50 || bullet->bulletPos.x > 2500 || bullet->bulletPos.y < -50 || bullet->bulletPos.y > 1500) {
                 bullet->active = false;
         }
         break;
@@ -64,9 +64,11 @@ void DrawBullet(bullet_t * bullet) {
     if (!bullet->active) return;
     Vector2 posJoueur =(Vector2){400, 200}; //temp
 
+    printf("indice %d\n", bullet->indice);
     switch (bullet->indice)
     {
     case BASIC:
+        
         DrawCircleV(bullet->bulletPos, bullet->bulletSize, BLACK);
         break;
 
