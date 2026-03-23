@@ -33,7 +33,7 @@ debug: clean all
 
 ifeq ($(OS),Windows_NT)
     CC = gcc
-    LIBS = ../raylib/windows/libraylib.a -lopengl32 -lgdi32 -lwinmm
+    LIBS = ../raylib/windows/libraylib.a ../lib/cJson/libcjson_win.a -lopengl32 -lgdi32 -lwinmm
     RM = del /Q
     MKDIR = if not exist $(BIN_DIR) mkdir $(BIN_DIR)
     PLATFORM_STATUS = WINDOWS_NATIVE
@@ -41,13 +41,13 @@ else
     MINGW_CHECK := $(shell which x86_64-w64-mingw32-gcc 2>/dev/null)
     ifneq ($(MINGW_CHECK),)
         CC = x86_64-w64-mingw32-gcc
-        LIBS = ../raylib/windows/libraylib.a -lopengl32 -lgdi32 -lwinmm
+        LIBS = ../raylib/windows/libraylib.a ../lib/cJson/libcjson_win.a -lopengl32 -lgdi32 -lwinmm
         RM = rm -f
         MKDIR = mkdir -p $(BIN_DIR)
         PLATFORM_STATUS = WINDOWS_CROSS_COMPILATION
     else
         CC = gcc
-        LIBS = ../raylib/linux/libraylib.a -lm -lpthread -ldl -lrt -lX11
+        LIBS = ../raylib/linux/libraylib.a ../lib/cJson/libcjson_linux.a -lm -lpthread -ldl -lrt -lX11
         RM = rm -f
         MKDIR = mkdir -p $(BIN_DIR)
         PLATFORM_STATUS = LINUX_FALLBACK

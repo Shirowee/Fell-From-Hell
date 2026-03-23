@@ -2,11 +2,10 @@
   "map_info": {
     "id": "lust_01",
     "title": "Lust LVL1",
-    "dimensions": { "w": 20, "h": 150 }
+    "dimensions": { "w": 1920, "h": 1080 }
   },
   "platforms": [
-    { "type": "BASIC_PLATFORM_S", "solid":1, "x": 0, "y": 148, "w": 20, "h": 2 },
-    { "type": "BASIC_PLATFORM", "solid":0, "x": 5, "y": 140, "w": 4, "h": 1 }
+    { "type": "BASIC_PLATFORM_S", "solid":0, "x": 0, "y": 1070, "width": 1920, "high": 10 }
   ],
   "entities": {
     "player_start": { "x": 10, "y": 145 },

@@ -12,25 +12,48 @@ void PlayerInit(Player *player){
 
     //Initialisation du corps du joueur
     player->body.main = (Rectangle){ PLAYER_X, PLAYER_Y, PLAYER_SIZE_X, PLAYER_SIZE_Y };
-    player->body.foot = (Rectangle){ player->body.main.x, player->body.main.y + PLAYER_SIZE_Y, PLAYER_SIZE_X, 5 };
+    player->body.foot = (Rectangle){ player->body.main.x, player->body.main.y + PLAYER_SIZE_Y, PLAYER_SIZE_X, 1 };
 
     //Initialisation des mouvements du joueur
     player->movConfig.maxSpeed = MAX_SPEED;
     player->movConfig.groundAcc = GROUND_ACC;
+    player->movConfig.airAcc = AIR_ACC;
     player->movConfig.jumpStrength = JUMP_STRENGTH;
     player->movConfig.gravity = DEFAULT_GRAVITY;
+    player->movConfig.fallingGravity = FALLING_GRAVITY;
+
+    player->movConfig.nbJumpMax = DEFAULT_JUMPS_MAX;
+    player->movConfig.nbJump = DEFAULT_JUMPS_MAX;
+
     player->movConfig.isOnGround = false;
     player->movConfig.isOnLeftWall = false;
     player->movConfig.isOnRightWall = false;
+
+    PlayerMoveFlagsInit();
+    PlayerMoveTimerInit();
 }
 
 //maj de la logique du player
-void PlayerUpdate(Player *player, Platform **platform, const int nbPlatforms){
+void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms){
+    PlayerMoveTimerUpdate(player);
+    PlayerMoveConfigUpdate(player, platform, nbPlatforms);
     PlayerMove(player, platform, nbPlatforms);
+    PlayerMoveFlagsUpdate();
 }
 
 //dessine le joueur
 void PlayerDraw(Player *player){
-    DrawRectangleRec(player->body.main, BLUE);
+    Color color;
+
+    switch(getPlayerMovementState(player)){
+        case IDLE: color = BLUE; break;
+        case RUNNING: color = RED; break;
+        case JUMPING: color = YELLOW; break;
+        case FALLING: color = GREEN; break;
+        case WALL_SLIDING: color = PURPLE; break;
+        case DASHING: color = PINK; break;
+    }
+
+    DrawRectangleRec(player->body.main, color);
 }
 

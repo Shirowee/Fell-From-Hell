@@ -18,7 +18,7 @@
 #define PLAYER_SIZE_Y 50
 
 void PlayerInit(Player *player);
-void PlayerUpdate(Player *player, Platform **platform, const int nbPlatforms);
+void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms);
 void PlayerDraw(Player *player);
 
 #endif
