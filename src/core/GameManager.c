@@ -6,18 +6,15 @@
 //initialise le jeu
 void GameInit(Player *player,float dynamicTileSize)
 {
-    PlayerInit(player);
     LevelInit(dynamicTileSize);
+    PlayerInit(player);
 }
 
 //maj du jeu
 void GameUpdate(Player *player)
 {
-    Platform *activePlatforms[MAX_PLATFORMS];
-    for(int i = 0; i < currentLevel.platformCount; i++){ // Conversion des pointeurs pour PlayerUpdate
-        activePlatforms[i] = &currentLevel.platforms[i];
-    }
-    PlayerUpdate(player, activePlatforms, currentLevel.platformCount);
+    
+    PlayerUpdate(player, currentLevel.platforms, currentLevel.platformCount);
 }
 
 //rendre le jeu
