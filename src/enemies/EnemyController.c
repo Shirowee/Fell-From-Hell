@@ -1,4 +1,4 @@
-/*
+
 #include "../../lib/enemies/EnemyController.h"
 #include "../../lib/enemies/EnemyMovement.h"
 #include "../../lib/systems/BulletPool.h"
@@ -58,7 +58,7 @@ void EnemyUpdate(enemy_t * enemy, Vector2 playerPos)
     enemy->state(enemy,&bulletPool, playerPos);
     if (enemy->isShooting == 1){
         enemy->isShooting = 0;
-        SpawnBulletPool(&bulletPool,enemy->pos,enemy->dir,enemy->bulletSpeed,enemy->bulletSize,enemy->dmg);
+        SpawnBulletPool(&bulletPool,enemy->pos,enemy->dir,enemy->bulletSpeed,enemy->bulletSize,enemy->dmg, 100, 0);
     }
 }
 
@@ -68,4 +68,3 @@ void EnemyDraw(enemy_t * enemy)
 {
     DrawRectangleV(enemy->pos, enemy->size, RED);
 }
-*/

@@ -2,7 +2,6 @@
 #include "../lib/systems/BulletPool.h"
 int main(void)
 {
-    /*
     InitWindow(800, 450, "BulletPool Test");
 
     //--------------------------ADD TO GAME INIT-------------------
@@ -12,7 +11,7 @@ int main(void)
     while (!WindowShouldClose())
     {
         if (IsKeyPressed(KEY_SPACE))
-            SpawnBulletPool(&bulletPool, (Vector2){400, 200}, 0, 20, 5, 1); 
+            SpawnBulletPool(&bulletPool, (Vector2){400, 200}, 0, 20, 5, 1, 0, 0); 
 
         UpdateBulletPool(&bulletPool);
 
@@ -28,6 +27,6 @@ int main(void)
 
     FreeBulletPool(&bulletPool);
     CloseWindow();
-    */
+
     return 0;
 }
