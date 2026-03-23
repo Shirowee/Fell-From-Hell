@@ -25,7 +25,7 @@ int main(){
         //update
         PlayerShoot(&weapon, posJoueur, &timeSpent, &startReload);
         if (IsKeyDown(KEY_RIGHT)){
-            ChangeWeapon(&weapon, lance_roquette); //lance_flammes fusil_a_pompe pistolet_laser lance_glace lance_roquette sniper arbalete pistolet_mitrailleur pistolet_multi_direction 
+            ChangeWeapon(&weapon, lance_flammes); //lance_flammes fusil_a_pompe pistolet_laser lance_glace lance_roquette sniper arbalete pistolet_mitrailleur pistolet_multi_direction 
         }
 
         UpdateBulletPool(&playerBulletPool);
