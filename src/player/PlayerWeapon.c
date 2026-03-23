@@ -1,4 +1,4 @@
-#include "../../lib/player/PlayerWeapon.h"
+#include "../../lib/player/Player.h"
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -22,10 +22,11 @@ weapon_t pistolet_mitrailleur ={12, 10, 10, 40, 40, 0.5, AUCUN, 25, 50, 500, 10}
 weapon_t pistolet_multi_direction ={13, 20, 2, 20, 20, 1.5, AUCUN, 7.5, 100, 500, 10};
 
 
-void PlayerShoot(weapon_t * weapon, Vector2 posJoueur, double  * timeSpent, double * startReload){
-    
+void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
     int gamepad = 0;
     float direction;
+    weapon_t* weapon = &(player->weapon);
+    Vector2 posJoueur = player->position; 
     Vector2 posSouris; 
 
     if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && !IsReloading(weapon, startReload) && Cooldown(*weapon, timeSpent)){

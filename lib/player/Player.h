@@ -13,6 +13,7 @@ typedef struct PlayerBody_s PlayerBody;
 typedef struct Player_s Player;
 
 #include "PlayerMovement.h"
+#include "PlayerWeapon.h"
 #include "../../raylib/include/raylib.h"
 
 /*
@@ -43,6 +44,7 @@ struct Player_s {
     Vector2 velocity;           /**< Vecteur de vitesse du joueur */
     PlayerBody body;            /**< Corps du joueur, servant principalement pour les collisions */
     MovementConfig movConfig;  /**< Configuration de mouvement du joueur */
+    weapon_t weapon;            /**< Arme du joueur */
 };
 
 #endif

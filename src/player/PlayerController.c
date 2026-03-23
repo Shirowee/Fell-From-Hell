@@ -29,16 +29,19 @@ void PlayerInit(Player *player){
     player->movConfig.isOnLeftWall = false;
     player->movConfig.isOnRightWall = false;
 
+    player->weapon = minigun;
+
     PlayerMoveFlagsInit();
     PlayerMoveTimerInit();
 }
 
 //maj de la logique du player
-void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms){
+void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms, double* timeSpent, double* startReload){
     PlayerMoveTimerUpdate(player);
     PlayerMoveConfigUpdate(player, platform, nbPlatforms);
     PlayerMove(player, platform, nbPlatforms);
     PlayerMoveFlagsUpdate();
+    PlayerShoot(player, timeSpent, startReload);
 }
 
 //dessine le joueur

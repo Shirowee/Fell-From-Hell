@@ -14,7 +14,7 @@ int main(){
     
     InitBulletPool(&playerBulletPool, 300);
 
-    weapon_t weapon = minigun; //fusil_a_pompe
+    weapon_t weapon = minigun;
     Vector2 posJoueur =(Vector2){400, 200};
     double timeSpent=0; //temp entre deux tir
     double startReload = -10;

@@ -26,6 +26,8 @@ int main(void)
     *************************/
     float dynamicTileSize = (float)GetScreenHeight() / REF_HAUTEUR;
     Player player;
+    double timeSpent=0; //temp entre deux tir
+    double startReload = -10;
     GameInit(&player,dynamicTileSize); // Initialisation du jeu
 
 
@@ -37,7 +39,7 @@ int main(void)
         WindowManager_Update(); // Update de l'état de la fenêtre
 
         // LOGIQUE
-        GameUpdate(&player);
+        GameUpdate(&player, &timeSpent, &startReload);
 
         // DESSIN
         BeginDrawing();
@@ -53,6 +55,5 @@ int main(void)
     *********/
     GameUnload(); 
 
-    CloseWindow();
     return 0;
 }

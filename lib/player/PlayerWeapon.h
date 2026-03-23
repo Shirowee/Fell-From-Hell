@@ -2,8 +2,10 @@
 #define PLAYER_WEAPON_H
 
 #include "../../raylib/include/raylib.h"
-//#include "../systems/Projectiles.h"
 #include "../systems/BulletPool.h"
+
+
+typedef struct Player_s Player;
 
 #define MINIGUN 0
 #define LANCE_FLAMEMS 1
@@ -78,7 +80,7 @@ extern weapon_t pistolet_multi_direction;
 
 
 //definition des fonction
-void PlayerShoot(weapon_t * weapon, Vector2 posJoueur, double * timeSpent, double * startReload);
+void PlayerShoot(Player* player, double * timeSpent, double * startReload);
 void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon);
 void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction);
 int Cooldown(weapon_t weapon, double  * timeSpent);
