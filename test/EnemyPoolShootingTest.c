@@ -1,14 +1,13 @@
 #include "../raylib/include/raylib.h"
-#include "../lib/enemies/EnemyController.h"
-#include "../lib/enemies/EnemyMovement.h"
+#include "../../lib/systems/EnemyPool.h"
 #include "../../lib/systems/BulletPool.h"
+#include "../../lib/enemies/EnemyMovement.h"
 #include<stdio.h>
+
 int main(void)
 {
-    /*
-    InitWindow(800, 450, "Enemy Test");
-    enemy_t enemy;
-    EnemyInit(&enemy,30,(Vector2){20,30},1,(Vector2){200,200},500,10);
+    InitWindow(800, 450, "Enemy Pool Shooting Test");
+    InitEnemyPool(&enemyPool,200);
     InitBulletPool(&bulletPool,300);
 
 
@@ -17,27 +16,28 @@ int main(void)
     {
         
         if (IsKeyPressed(KEY_SPACE)){
-            EnemyShoots(&enemy);
-        
+            SpawnEnemyPool(&enemyPool,(Vector2){200,200},30,(Vector2){20,30},1,500,10);
+            for(int i=0; (i < enemyPool.capacity); i++) {
+                EnemyShoots(&(enemyPool.tab[i]));
+            }
         }
         
-        EnemyUpdate(&enemy,(Vector2){0,0});
+        UpdateEnemyPool(&enemyPool,(Vector2){0,0});
         UpdateBulletPool(&bulletPool);
 
 
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
-        EnemyDraw(&enemy);
+        DrawEnemyPool(&enemyPool);
         DrawBulletPool(&bulletPool);
 
         DrawFPS(10, 10);
         
         EndDrawing();
     }
-
+    FreeEnemyPool(&enemyPool);
     FreeBulletPool(&bulletPool);
     CloseWindow();
-    */
     return 0;
 }
