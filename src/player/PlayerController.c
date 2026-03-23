@@ -21,6 +21,10 @@ void PlayerInit(Player *player){
     player->movConfig.jumpStrength = JUMP_STRENGTH;
     player->movConfig.gravity = DEFAULT_GRAVITY;
     player->movConfig.fallingGravity = FALLING_GRAVITY;
+
+    player->movConfig.nbJumpMax = DEFAULT_JUMPS_MAX;
+    player->movConfig.nbJump = DEFAULT_JUMPS_MAX;
+
     player->movConfig.isOnGround = false;
     player->movConfig.isOnLeftWall = false;
     player->movConfig.isOnRightWall = false;
@@ -30,11 +34,11 @@ void PlayerInit(Player *player){
 }
 
 //maj de la logique du player
-void PlayerUpdate(Player *player, Platform **platform, const int nbPlatforms){
-    PlayerMoveFlagsUpdate();
+void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms){
     PlayerMoveTimerUpdate(player);
     PlayerMoveConfigUpdate(player, platform, nbPlatforms);
     PlayerMove(player, platform, nbPlatforms);
+    PlayerMoveFlagsUpdate();
 }
 
 //dessine le joueur
@@ -47,8 +51,8 @@ void PlayerDraw(Player *player){
         case JUMPING: color = YELLOW; break;
         case FALLING: color = GREEN; break;
         case WALL_SLIDING: color = PURPLE; break;
+        case DASHING: color = PINK; break;
     }
-
 
     DrawRectangleRec(player->body.main, color);
 }

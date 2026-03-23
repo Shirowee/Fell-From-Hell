@@ -7,14 +7,13 @@
 #include "../lib/levels/LevelManager.h"
 
 // Declarations
-static void TestLevelInit(Platform *platforms[4], int *nbPlatforms);
-static void TestLevelFree(Platform **platforms, const int nbPlatforms);
-static void TestLevelDraw(Platform **platforms, const int nbPlatforms);
+static void TestLevelInit(Platform platforms[8], int *nbPlatforms);
+static void TestLevelDraw(Platform platforms[8], const int nbPlatforms);
 
 int main(void)
 {
     Player player;
-    Platform *platforms[8];
+    Platform platforms[8];
     int nbPlatforms = 0;
 
     InitWindow(800, 450, "Fell From Hell");
@@ -41,45 +40,46 @@ int main(void)
         DrawText(TextFormat("Is On Right Wall Config: %i", player.movConfig.isOnRightWall), 10, 110, 20, ORANGE);
         DrawText(TextFormat("jumpTime: %fs", timer.jumpTime), 500, 30, 20, ORANGE);
         DrawText(TextFormat("jumpTimeOut: %fs", timer.jumpTimeOut), 500, 50, 20, ORANGE);
-        DrawText(TextFormat("Velocity y: %f", player.velocity.y), 500, 70, 20, ORANGE);
+        DrawText(TextFormat("dashTime: %fs", timer.dashTime), 500, 70, 20, ORANGE);
+        DrawText(TextFormat("dashTimeOut: %fs", timer.dashTimeOut), 500, 90, 20, ORANGE);
+        DrawText(TextFormat("Velocity y: %f", player.velocity.y), 500, 110, 20, ORANGE);
+        DrawText(TextFormat("NbJump: %i", player.movConfig.nbJump), 500, 130, 20, ORANGE);
 
         EndDrawing();
     }
-
-    TestLevelFree(platforms, nbPlatforms);
 
     CloseWindow();
     return 0;
 }
 
 static
-void TestLevelInit (Platform *platforms[4], int *nbPlatforms) {
-    Platform *Ground = malloc(sizeof(Platform));
-    Platform *LeftWall = malloc(sizeof(Platform));
-    Platform *RightWall = malloc(sizeof(Platform));
-    Platform *Wall1 = malloc(sizeof(Platform));
-    Platform *Wall2 = malloc(sizeof(Platform));
-    Platform *Roof = malloc(sizeof(Platform));
-    Platform *Platform1 = malloc(sizeof(Platform));
-    Platform *Platform2 = malloc(sizeof(Platform));
+void TestLevelInit (Platform platforms[8], int *nbPlatforms) {
+    Platform Ground;
+    Platform LeftWall;
+    Platform RightWall;
+    Platform Wall1;
+    Platform Wall2;
+    Platform Roof;
+    Platform Platform1;
+    Platform Platform2;
 
-    Ground->rect = (Rectangle){ 0, 400, 800, 50 };
-    LeftWall->rect = (Rectangle){ 0, 0, 50, 450 };
-    RightWall->rect = (Rectangle){ 780, 0, 20, 450 };
-    Wall1->rect = (Rectangle){ 200, 300, 50, 100 };
-    Wall2->rect = (Rectangle){ 500, 50, 50, 200 };
-    Roof->rect = (Rectangle){ 0, 0, 800, 50 };
-    Platform1->rect = (Rectangle){ 10, 250, 200, 10 };
-    Platform2->rect = (Rectangle){ 600, 300, 200, 10 };
+    Ground.rect = (Rectangle){ 0, 400, 800, 50 };
+    LeftWall.rect = (Rectangle){ 0, 0, 50, 450 };
+    RightWall.rect = (Rectangle){ 780, 0, 20, 450 };
+    Wall1.rect = (Rectangle){ 200, 300, 50, 100 };
+    Wall2.rect = (Rectangle){ 500, 50, 50, 200 };
+    Roof.rect = (Rectangle){ 0, 0, 800, 50 };
+    Platform1.rect = (Rectangle){ 10, 250, 200, 10 };
+    Platform2.rect = (Rectangle){ 600, 300, 200, 10 };
 
-    Ground->solid = true;
-    LeftWall->solid = true;
-    RightWall->solid = true;
-    Wall1->solid = true;
-    Wall2->solid = true;
-    Roof->solid = true;
-    Platform1->solid = false;
-    Platform2->solid = false;
+    Ground.solid = true;
+    LeftWall.solid = true;
+    RightWall.solid = true;
+    Wall1.solid = true;
+    Wall2.solid = true;
+    Roof.solid = true;
+    Platform1.solid = false;
+    Platform2.solid = false;
 
     platforms[0] = Ground;
     platforms[1] = LeftWall;
@@ -94,15 +94,8 @@ void TestLevelInit (Platform *platforms[4], int *nbPlatforms) {
 }
 
 static
-void TestLevelFree(Platform **platforms, const int nbPlatforms) {
+void TestLevelDraw(Platform platforms[8], const int nbPlatforms) {
     for (int i = 0; i < nbPlatforms; i++) {
-        free(platforms[i]);
-    }
-}
-
-static
-void TestLevelDraw(Platform **platforms, const int nbPlatforms) {
-    for (int i = 0; i < nbPlatforms; i++) {
-        DrawRectangleRec(platforms[i]->rect, DARKGRAY);
+        DrawRectangleRec(platforms[i].rect, DARKGRAY);
     }
 }
