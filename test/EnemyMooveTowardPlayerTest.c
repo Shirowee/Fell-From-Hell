@@ -6,7 +6,7 @@
 
 int main(void)
 {
-    InitWindow(800, 450, "Enemy Pool Shooting Test");
+    InitWindow(1920, 1080, "Enemy Pool Shooting Test");
     InitEnemyPool(&enemyPool,200);
     Vector2 playerPos = (Vector2){800,450};
 
