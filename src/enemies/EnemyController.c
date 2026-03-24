@@ -21,6 +21,7 @@ void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
     enemy->bulletSize = bulletSize;
     enemy->active = 1;
 
+    enemy->stateTimer = 0;
     enemy->state = EnemyState_Idle;
 }
 
