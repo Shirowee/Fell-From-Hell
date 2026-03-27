@@ -18,7 +18,7 @@ void WindowInit(){
 
     InitWindow(850, 400, "Fell From Hell");
     
-    int monitor = GetCurrentMonitor(); // Récupère l'écran où est affiché le jeu
+    int monitor = GetCurrentMonitor(); // Récupere l'écran où est affiché le jeu
     int screenWidth = GetMonitorWidth(monitor) - 1; // Récupère la dimension de l'écran
     int screenHeight = GetMonitorHeight(monitor);
 
