@@ -18,14 +18,19 @@ void WindowInit(){
 
     InitWindow(850, 400, "Fell From Hell");
     
+    #if defined(_WIN32) || defined(_WIN64) /* GESTION DE LA FENÊTRE POUR WINDOWS */
     int monitor = GetCurrentMonitor(); // Récupère l'écran où est affiché le jeu
     int screenWidth = GetMonitorWidth(monitor) - 1; // Récupère la dimension de l'écran
     int screenHeight = GetMonitorHeight(monitor);
 
     SetWindowSize(screenWidth, screenHeight);
     SetWindowPosition(0, 0);
-    ClearWindowState(FLAG_WINDOW_HIDDEN);
+    
+    #else /* GESTION DE LA FENÊTRE POUR AUTRE QUE WINDOWS*/
+    ToggleFullscreen();
+    #endif
 
+    ClearWindowState(FLAG_WINDOW_HIDDEN);
     SetTargetFPS(60);
 }
 
@@ -38,5 +43,3 @@ bool WindowManager_IsTopmost(void) {
     return isTopmost;
 }
     
-
-// TEST POUR VERIFIER QUE JSUIS SUR MA BRANCHE
