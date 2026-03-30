@@ -33,6 +33,24 @@
  */
 #define PLAYER_SIZE_Y 50
 
+/*
+ *Structures
+ */
+
+ /**
+ * \struct PlayerStats_s
+ * \brief Structure pour les statistiques du joueur.
+ * \typedef PlayerStats
+ * \brief Type de données pour les statistiques du joueur.
+ */
+typedef struct PlayerStats_s{
+    int hp; /**< Points de vie courant */
+    int hpMax;  /**< Points de vie maximale */
+    int regen;  /**< Nombre de points de vie régénéré par seconde */
+    int regenTimeOut;   /**< Temps avant que la vie du joueur se régénère */
+    float invTime; /**< Temps pendant lequel le joueur est invincible */
+}PlayerStats;
+
  /**
  * \fn void PlayerInit(Player *player);
  * \brief Initialise la structure joueur
@@ -60,5 +78,29 @@ void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms, do
  * \param player Pointeur sur Player
  */
 void PlayerDraw(Player *player);
+
+ /**
+ * \fn bool isInvicible(Player *player);
+ * \brief Détermine si le joueur est invincible
+ * \param player Pointeur sur Player
+ * \return Renvoie vrai si il est invincible, sinon faux
+ */
+bool isInvicible(Player *player);
+
+ /**
+ * \fn bool isAlive(Player *player);
+ * \brief Détermine si le joueur est encore en vie
+ * \param player Pointeur sur Player
+ * \return Renvoie vrai si il a encore des points de vie, sinon faux
+ */
+bool isAlive(Player *player);
+
+ /**
+ * \fn canRegen(Player *player);
+ * \brief Détermine si le joueur peut régénérer ses points de vie
+ * \param player Pointeur sur Player
+ * \return Renvoie vrai si c'est le cas, sinon faux
+ */
+bool canRegen(Player *player);
 
 #endif

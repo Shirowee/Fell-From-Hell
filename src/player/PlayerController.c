@@ -60,3 +60,14 @@ void PlayerDraw(Player *player){
     DrawRectangleRec(player->body.main, color);
 }
 
+bool isInvicible(Player *player){
+    return (player->stats.invTime > 0.0);
+}
+
+bool isAlive(Player *player){
+    return (player->stats.hp > 0);
+}
+
+bool canRegen(Player *player){
+    return (player->stats.regenTimeOut <= 0.0);
+}
