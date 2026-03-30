@@ -4,9 +4,7 @@
 #include <stdio.h>
 
 
-
-
-weapon_t minigun ={0, 12.5, 10, 75, 75, 3, AUCUN, 20, 100, 500, 15};
+weapon_t minigun ={0, 12.5, 10, 75, 75, 3, AUCUN, 30, 100, 500, 15};
 weapon_t lance_flammes ={1, 10, 20, 300, 300, 3, FEU, 30, 0.5, 500, 30};
 weapon_t lance_missile_tete_chercheuse ={2, 125, 2, 10, 10, 6, AUCUN, 0, 4, 500, 10};
 weapon_t fusil_a_pompe ={3, 12.5, 0.75, 6, 6, 5, AUCUN, 50, 0.75, 400, 10};
@@ -91,7 +89,7 @@ void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction){
             break;
 
         case PISTOLET_MULTI_DIRECTION : 
-            direction += rand() % weapon.dispersion - weapon.dispersion/2;
+            direction += GetRandomValue(weapon.dispersion /-2, weapon.dispersion /2);
             SpawnBulletPool(&playerBulletPool, posJoueur, direction, weapon.bulletSpeed, weapon.bulletSize, weapon.dmg, weapon.lifeTime, BASIC);
             SpawnBulletPool(&playerBulletPool, posJoueur, direction + 90, weapon.bulletSpeed, weapon.bulletSize, weapon.dmg, weapon.lifeTime, BASIC);
             SpawnBulletPool(&playerBulletPool, posJoueur, direction + 180, weapon.bulletSpeed, weapon.bulletSize, weapon.dmg, weapon.lifeTime, BASIC);
@@ -100,7 +98,7 @@ void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction){
 
 
         default : 
-            if(weapon.dispersion != 0) direction += rand() % weapon.dispersion - weapon.dispersion/2; // calcul de la dispesion
+            if(weapon.dispersion != 0) direction += GetRandomValue(weapon.dispersion /-2, weapon.dispersion /2); // calcul de la dispesion
             SpawnBulletPool(&playerBulletPool, posJoueur, direction, weapon.bulletSpeed, weapon.bulletSize, weapon.dmg, weapon.lifeTime, BASIC);
     }
 }

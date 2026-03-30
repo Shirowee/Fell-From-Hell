@@ -16,7 +16,6 @@ void GameInit(Player *player,float dynamicTileSize)
     InitEnemyPool(&enemyPool, 100);
     EnemySpawnerInit(&enemySpawner);
 
-    srand(time(NULL));
     InitBulletPool(&playerBulletPool, 300);
 }
 
