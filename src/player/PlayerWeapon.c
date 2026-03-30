@@ -34,7 +34,7 @@ void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
         (weapon->amo_left)--;
     }
 
-    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_RIGHT_TRIGGER_2) && Cooldown(*weapon, timeSpent) && !IsReloading(weapon, startReload)){
+    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_RIGHT_TRIGGER_2) && !IsReloading(weapon, startReload) && Cooldown(*weapon, timeSpent)){
         float rightStickX = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_RIGHT_X);
         float rightStickY = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_RIGHT_Y);
         direction = atan2(rightStickY, rightStickX) * 180/PI;
