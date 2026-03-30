@@ -126,8 +126,6 @@ typedef struct MovementConfig_s {
  */
 typedef struct MovFlags_s {
     bool jumpMovePressed;
-    bool leftMovePressed;
-    bool rightMovePressed;
 } MovFlags;
 
 /**

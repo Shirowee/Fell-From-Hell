@@ -74,8 +74,6 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
 
 void PlayerMoveFlagsInit(){
     flags.jumpMovePressed = false;
-    flags.leftMovePressed = false;
-    flags.rightMovePressed = false;
 }
 
 void PlayerMoveTimerInit(){
@@ -91,20 +89,6 @@ void PlayerMoveFlagsUpdate(){
     }
     else if(IsKeyReleased(KEY_SPACE)){
         flags.jumpMovePressed = false;
-    }
-
-    if(IsKeyPressed(KEY_LEFT)){
-        flags.leftMovePressed = true;
-    }
-    else if(IsKeyReleased(KEY_LEFT)){
-        flags.leftMovePressed = false;
-    }
-
-    if(IsKeyPressed(KEY_RIGHT)){
-        flags.rightMovePressed = true;
-    }
-    else if(IsKeyReleased(KEY_RIGHT)){
-        flags.rightMovePressed = false;
     }
 }
 
