@@ -67,5 +67,8 @@ void EnemyUpdate(enemy_t * enemy, Vector2 playerPos)
 //dessine l'ennemi
 void EnemyDraw(enemy_t * enemy)
 {
-    DrawRectangleV(enemy->pos, enemy->size, RED);
+    if (enemy->active == 0) return;
+    float centered_x = enemy->pos.x - enemy->size.x / 2;
+    float centered_y = enemy->pos.y - enemy->size.y / 2;
+    DrawRectangleV((Vector2){centered_x, centered_y}, enemy->size, RED);
 }

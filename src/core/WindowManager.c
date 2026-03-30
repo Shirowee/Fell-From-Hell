@@ -18,20 +18,28 @@ void WindowInit(){
 
     InitWindow(850, 400, "Fell From Hell");
     
-    int monitor = GetCurrentMonitor(); // Récupere l'écran où est affiché le jeu
-    int screenWidth = GetMonitorWidth(monitor) - 1; // Récupère la dimension de l'écran
-    int screenHeight = GetMonitorHeight(monitor);
+    #if defined(_WIN32) || defined(_WIN64) /* GESTION DE LA FENÊTRE POUR WINDOWS */
+        printf("INIT WINDOW FOR WINDOWS\n");
+        int monitor = GetCurrentMonitor(); // Récupère l'écran où est affiché le jeu
+        int screenWidth = GetMonitorWidth(monitor) - 1; // Récupère la dimension de l'écran
+        int screenHeight = GetMonitorHeight(monitor);
+    
+        SetWindowSize(screenWidth, screenHeight);
+        SetWindowPosition(0, 0);
+ 
+    #else /* GESTION DE LA FENÊTRE POUR AUTRE QUE WINDOWS*/
+        printf("INIT WINDOW FOR OTHER PLATFORMS\n");
+        ToggleFullscreen();
+    #endif
 
-    SetWindowSize(screenWidth, screenHeight);
-    SetWindowPosition(0, 0);
     ClearWindowState(FLAG_WINDOW_HIDDEN);
-
     SetTargetFPS(60);
 }
 
 void WindowManager_Update(void) {
     verifPremPlan();
 }
+
 
 // Fonction pour permettre de connaître l'état de la fenêtre
 bool WindowManager_IsTopmost(void) {

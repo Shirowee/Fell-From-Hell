@@ -60,3 +60,6 @@ void PlayerDraw(Player *player){
     DrawRectangleRec(player->body.main, color);
 }
 
+Vector2 getPlayerCenter(Player *player){
+    return (Vector2){ player->position.x + player->size.x / 2, player->position.y + player->size.y / 2 };
+}

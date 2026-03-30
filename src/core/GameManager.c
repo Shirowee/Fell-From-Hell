@@ -24,7 +24,7 @@ void GameInit(Player *player,float dynamicTileSize)
 void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
-    UpdateEnemyPool(&enemyPool, player->position);
+    UpdateEnemyPool(&enemyPool, getPlayerCenter(player));
     UpdateBulletPool(&playerBulletPool);
 
     CheckEnemyBulletCollision(&enemyPool, &playerBulletPool);
