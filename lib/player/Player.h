@@ -15,6 +15,7 @@ typedef struct Player_s Player;
 #include "PlayerMovement.h"
 #include "PlayerWeapon.h"
 #include "../../raylib/include/raylib.h"
+#include "../systems/BuffSystem.h"
 
 /*
  *Structures
@@ -43,8 +44,9 @@ struct Player_s {
     Vector2 size;               /**< Taille du joueur */
     Vector2 velocity;           /**< Vecteur de vitesse du joueur */
     PlayerBody body;            /**< Corps du joueur, servant principalement pour les collisions */
-    MovementConfig movConfig;  /**< Configuration de mouvement du joueur */
+    MovementConfig movConfig;   /**< Configuration de mouvement du joueur */
     weapon_t weapon;            /**< Arme du joueur */
+    buff_t * buff;              /**< buff */
 };
 
 #endif

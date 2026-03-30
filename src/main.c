@@ -53,7 +53,7 @@ int main(void)
     /********
     * UNLOAD
     *********/
-    GameUnload(); 
+    GameUnload(player); 
 
     return 0;
 }

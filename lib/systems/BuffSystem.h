@@ -24,10 +24,13 @@ typedef struct {
     */
 } buff_t;
 
+buff_t* BuffInit(void);
+void FreeBuff(buff_t* buff);
 void BuffDmg(buff_t* buff, float add);
 void BufffireRate(buff_t* buff, float add);
 void BuffreloadTime(buff_t* buff, float sub);
 void Buffdispersion(buff_t* buff, float sub);
 void BuffbulletSpeed(buff_t* buff, float add);
 void BuffbulletSize(buff_t* buff, float add);
+
 #endif

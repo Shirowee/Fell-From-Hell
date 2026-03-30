@@ -8,6 +8,6 @@
 void GameInit(Player *player, float dynamicTileSize);
 void GameUpdate(Player *player, double* timeSpent, double* startReload);
 void GameDraw(Player *player);
-void GameUnload(void);
+void GameUnload(Player player);
 
 #endif

@@ -29,7 +29,11 @@ void PlayerInit(Player *player){
     player->movConfig.isOnLeftWall = false;
     player->movConfig.isOnRightWall = false;
 
+    //Initialisation de l'arme du joueur
     player->weapon = minigun;
+
+    //Initialisation des buff du joueur
+    player->buff = BuffInit();
 
     PlayerMoveFlagsInit();
     PlayerMoveTimerInit();
