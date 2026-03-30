@@ -10,10 +10,6 @@ void PlayerInit(Player *player){
     player->size = (Vector2){ PLAYER_SIZE_X, PLAYER_SIZE_Y };
     player->velocity = (Vector2){ 0, 0 };
 
-    //Initialisation du corps du joueur
-    player->body.main = (Rectangle){ PLAYER_X, PLAYER_Y, PLAYER_SIZE_X, PLAYER_SIZE_Y };
-    player->body.foot = (Rectangle){ player->body.main.x, player->body.main.y + PLAYER_SIZE_Y, PLAYER_SIZE_X, 1 };
-
     //Initialisation des mouvements du joueur
     player->movConfig.maxSpeed = MAX_SPEED;
     player->movConfig.groundAcc = GROUND_ACC;
@@ -29,6 +25,7 @@ void PlayerInit(Player *player){
     player->movConfig.isOnLeftWall = false;
     player->movConfig.isOnRightWall = false;
 
+    //Initialisation de l'arme du joueur
     player->weapon = minigun;
 
     PlayerMoveFlagsInit();
@@ -47,6 +44,7 @@ void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms, do
 //dessine le joueur
 void PlayerDraw(Player *player){
     Color color;
+    Rectangle body = (Rectangle){player->position.x, player->position.y, player->size.x, player->size.y};
 
     switch(getPlayerMovementState(player)){
         case IDLE: color = BLUE; break;
@@ -57,6 +55,6 @@ void PlayerDraw(Player *player){
         case DASHING: color = PINK; break;
     }
 
-    DrawRectangleRec(player->body.main, color);
+    DrawRectangleRec(body, color);
 }
 
