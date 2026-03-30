@@ -77,6 +77,11 @@
  */
 #define DEFAULT_JUMPS_MAX 3
 
+#define KEY_MOVE_LEFT KEY_A
+#define KEY_MOVE_RIGHT KEY_D
+#define KEY_MOVE_JUMP KEY_SPACE
+#define KEY_MOVE_DASH KEY_E
+
 /*
  *Structures
  */
