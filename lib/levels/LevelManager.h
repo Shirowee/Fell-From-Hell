@@ -57,7 +57,7 @@ typedef struct {
 } Level;
 
 int readJsonLvl(const char * fileName);
-void LevelInit(float tileSize);
+void LevelInit(void);
 void LevelDraw(void);
 
 extern Level currentLevel; // Déclaration du niveau
