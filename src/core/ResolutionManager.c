@@ -9,6 +9,6 @@ void ResolutionInit(int mapRefWidth, int mapRefHeight) {
     resolution.scale  = (float)GetScreenWidth() / mapRefWidth;
 }
 
-float ResScale(float value) {
+float RS(float value) {
     return value * resolution.scale;
 }

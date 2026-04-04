@@ -12,6 +12,6 @@ typedef struct {
 extern ResolutionConfig resolution;
 
 void ResolutionInit(int mapRefWidth, int mapRefHeight);
-float ResScale(float value);
+float RS(float value);
 
 #endif

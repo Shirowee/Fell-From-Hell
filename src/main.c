@@ -40,8 +40,8 @@ int main(void) {
         float cameraSpeed = 800.0f * GetFrameTime(); // TEMPORAIRE MAP
         if(IsKeyDown(KEY_UP)) camera.target.y -= cameraSpeed; // TEMPORAIRE MAP
         if(IsKeyDown(KEY_DOWN)) camera.target.y += cameraSpeed; // TEMPORAIRE MAP
-        if(IsKeyDown(KEY_Y)) camera.target.x += cameraSpeed; // TEMPORAIRE MAP
-        if(IsKeyDown(KEY_U)) camera.target.x -= cameraSpeed; // TEMPORAIRE MAP
+        if(IsKeyDown(KEY_U)) camera.target.x += cameraSpeed; // TEMPORAIRE MAP
+        if(IsKeyDown(KEY_Y)) camera.target.x -= cameraSpeed; // TEMPORAIRE MAP
 
         // LOGIQUE
         GameUpdate(&player, &timeSpent, &startReload);
