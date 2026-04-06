@@ -1,3 +1,20 @@
+/**
+ * @file BulletPool.c
+ * @brief Gestion des pools de projectiles (bullets)
+ * @author A. Pocholle
+ * 
+ * Implémente un système de gestion de projectiles basé sur le principe
+ * d’object pooling.
+ * 
+ * Au lieu d’allouer/libérer dynamiquement des projectiles à chaque tir,
+ * un tableau de bullets est pré-alloué et réutilisé grâce à un flag
+ * d’activité.
+ * 
+ * Deux pools globaux sont utilisés :
+ * - bulletPool : projectiles ennemis
+ * - playerBulletPool : projectiles du joueur
+ */
+
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/BulletPool.h"
 #include <math.h>

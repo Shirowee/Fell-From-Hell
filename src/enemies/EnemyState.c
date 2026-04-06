@@ -1,3 +1,24 @@
+/**
+ * @file EnemyStates.h
+ * @brief Machine à états des ennemis
+ *
+ * Définit la machine à états utilisée pour contrôler
+ * le comportement des ennemis dans le jeu.
+ *
+ * Chaque ennemi possède un état courant qui détermine son comportement,
+ * par exemple :
+ * - état de base (idle)
+ * - déplacement (move)
+ * - poursuite du joueur (chase)
+ * - attaque (attack)
+ *
+ * Les transitions entre états sont gérées en fonction de conditions
+ * internes (distance au joueur, timer, dégâts, etc.).
+ *
+ *
+ * @author A. Pocholle
+ */
+
 #include "../../lib/enemies/EnemyMovement.h"
 #include "../../lib/enemies/EnemyController.h"
 #include "../../lib/enemies/EnemyStates.h"

@@ -1,3 +1,17 @@
+/**
+ * @file EnemySpawner.c
+ * @brief Gestion de l'apparition dynamique des ennemis
+ * @author A. Pocholle
+ * 
+ * Responsable du spawn automatique des ennemis
+ * à intervalles réguliers.
+ * 
+ * Le système fonctionne avec :
+ * - un timer interne
+ * - un cooldown variable
+ * - un spawn aléatoire sur l'écran
+ */
+
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/EnemySpawner.h"
 

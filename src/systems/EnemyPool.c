@@ -1,3 +1,23 @@
+/**
+ * @file EnemyPool.c
+ * @brief Gestion du pool d'ennemis (object pooling)
+ * @author A. Pocholle
+ * 
+ * Implémente un système de pool d'ennemis basé sur
+ * l’object pooling.
+ * 
+ * Les ennemis sont pré-alloués dans un tableau et réutilisés
+ * via un flag "active", évitant les allocations dynamiques
+ * répétées en jeu.
+ * 
+ * Fonctionnalités :
+ * - Initialisation du pool
+ * - Spawn d’ennemis
+ * - Mise à jour des ennemis
+ * - Affichage des ennemis
+ * - Libération mémoire
+ */
+ 
 #include "../../raylib/include/raylib.h"
 #include "../../lib/enemies/EnemyController.h"
 #include "../../lib/systems/EnemyPool.h"

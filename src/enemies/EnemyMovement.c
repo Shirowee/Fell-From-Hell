@@ -1,3 +1,21 @@
+/**
+ * @file EnemyMovement.h
+ * @brief Gestion du mouvement des ennemis
+ *
+ * Contient les fonctions responsables du déplacement
+ * des ennemis dans le jeu.
+ *
+ * Implémente différentes logiques de mouvement selon le type
+ * ou l’état de l’ennemi, par exemple :
+ * - déplacement aléatoire
+ * - poursuite du joueur
+ * - déplacement directionnel simple
+ * - comportement basé sur une machine à états
+ *
+ *
+ * @author A. Pocholle
+ */
+ 
 #include "../../lib/enemies/EnemyMovement.h"
 #include "../../lib/enemies/EnemyController.h"
 #include "../../raylib/include/raylib.h"

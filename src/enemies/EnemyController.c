@@ -1,13 +1,40 @@
+/**
+ * @file EnemyController.h
+ * @brief Gestion des ennemis et de leur comportement (state machine)
+ * 
+ * Définit l’interface de contrôle des ennemis du jeu.
+ * Implémente une machine à états permettant de gérer différents
+ * comportements tels que :
+ * - déplacement aléatoire
+ * - poursuite du joueur
+ * - attaque
+ * - états passifs ou inactifs
+ *
+ * Chaque ennemi est représenté par une structure 'enemy_t' et peut
+ * évoluer dynamiquement selon son état interne.
+ *
+ * Fournit également des fonctions de :
+ * - initialisation des ennemis
+ * - mise à jour des comportements
+ * - gestion des transitions d’états
+ * - rendu graphique
+ *
+ *
+ * @author A. Pocholle
+ */
+
+
 #include "../../lib/enemies/EnemyController.h"
 #include "../../lib/enemies/EnemyMovement.h"
 #include "../../lib/systems/BulletPool.h"
 #include "../../lib/enemies/EnemyStates.h"
 #include "../../raylib/include/raylib.h"
 
+
 void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
 void EnemyState_Move(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
 
-//init l'ennemi
+
 void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
                 Vector2 pos, int bulletSpeed, int bulletSize) {
     enemy->speed = speed;
@@ -25,13 +52,13 @@ void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
     enemy->type = GetRandomValue(0, 1);
 }
 
-//tir
+
 void EnemyShoots(enemy_t * enemy)
 {
     enemy->isShooting = 1;
 }
 
-//maj de la logique de l'ennemi
+
 void EnemyUpdate(enemy_t * enemy, Vector2 playerPos)
 {
     if ( enemy->active == 0 ) return;
@@ -44,7 +71,6 @@ void EnemyUpdate(enemy_t * enemy, Vector2 playerPos)
 }
 
 
-//dessine l'ennemi
 void EnemyDraw(enemy_t * enemy)
 {
     if (enemy->active == 0) return;

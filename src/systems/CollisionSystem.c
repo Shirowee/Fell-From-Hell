@@ -1,3 +1,18 @@
+/**
+ * @file CollisionSystem.c
+ * @brief Gestion des collisions entre ennemis et projectiles
+ * @author A. Pocholle
+ * 
+ * Implémente la détection de collision entre les ennemis
+ * et les bullets à l’aide d’une méthode simple basée sur la distance
+ * entre deux points (collision circulaire).
+ * 
+ * Lorsqu'une collision est détectée :
+ * - l'ennemi est désactivé
+ * - la bullet est désactivée
+ */
+
+
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/CollisionSystem.h"
 #include <math.h>

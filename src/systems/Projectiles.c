@@ -1,3 +1,18 @@
+/**
+ * @file Projectiles.c
+ * @brief Gestion des projectiles du jeu
+ * @authors A. Pocholle, Kilian
+ *
+ * Ce module gère la création, la mise à jour et l'affichage
+ * des projectiles.
+ *
+ * Plusieurs types de projectiles sont supportés :
+ * - BASIC : projectile classique
+ * - EXPLOSIF : projectile avec explosion
+ * - RAYON : tir instantané type laser
+ * - MELEE : (non implémenté)
+ */
+
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/Projectiles.h"
 #include <math.h>
