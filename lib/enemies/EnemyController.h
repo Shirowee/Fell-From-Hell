@@ -4,6 +4,11 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/BulletPool.h"
 
+typedef enum {
+    ENEMY_CHASER,
+    ENEMY_SHOOTER,
+} EnemyType;
+
 typedef struct enemy_s {
     /*
     * Enemy informations
@@ -19,6 +24,7 @@ typedef struct enemy_s {
     /*
     * For the state machine
     */
+    EnemyType type;
     void (*state)(struct enemy_s*, bulletPool_t*, Vector2);
     float stateTimer;
 

@@ -1,12 +1,11 @@
-
 #include "../../lib/enemies/EnemyController.h"
 #include "../../lib/enemies/EnemyMovement.h"
 #include "../../lib/systems/BulletPool.h"
+#include "../../lib/enemies/EnemyStates.h"
 #include "../../raylib/include/raylib.h"
 
 void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
 void EnemyState_Move(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
-void EnemyState_Attack(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
 
 //init l'ennemi
 void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
@@ -23,32 +22,13 @@ void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
 
     enemy->stateTimer = 0;
     enemy->state = EnemyState_Idle;
+    enemy->type = GetRandomValue(0, 1);
 }
 
 //tir
 void EnemyShoots(enemy_t * enemy)
 {
     enemy->isShooting = 1;
-}
-
-/*
-* STATES MACHINE
-*/
-void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos){
-    enemy->stateTimer += GetFrameTime();
-
-    if (enemy->stateTimer > 1.0f){
-        enemy->state = EnemyState_Move;
-        enemy->stateTimer = 0;
-    }
-}
-
-void EnemyState_Move(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos){
-    EnemyMoveTowardsPlayer(enemy, playerPos);
-}
-
-void EnemyState_Attack(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos){
-    return;
 }
 
 //maj de la logique de l'ennemi

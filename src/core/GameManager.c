@@ -15,6 +15,7 @@ void GameInit(Player *player,float dynamicTileSize)
     //Init enemy
     InitEnemyPool(&enemyPool, 100);
     EnemySpawnerInit(&enemySpawner);
+    InitBulletPool(&bulletPool, 300);
 
     srand(time(NULL));
     InitBulletPool(&playerBulletPool, 300);
@@ -25,7 +26,7 @@ void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
     UpdateEnemyPool(&enemyPool, getPlayerCenter(player));
-    UpdateBulletPool(&playerBulletPool);
+    UpdateBulletPool(&bulletPool);
 
     CheckEnemyBulletCollision(&enemyPool, &playerBulletPool);
 
@@ -40,6 +41,7 @@ void GameDraw(Player *player)
     PlayerDraw(player);
     DrawEnemyPool(&enemyPool);
     DrawBulletPool(&playerBulletPool, player->position);
+    DrawBulletPool(&bulletPool, player->position);
 }
 
 //décharger
