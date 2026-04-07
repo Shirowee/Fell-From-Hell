@@ -65,12 +65,12 @@
  * \def GROUND_FRICTION
  * \brief Ralentissement par friction sur le sol
  */
-#define GROUND_FRICTION 0.0001
+#define GROUND_FRICTION 0.9f
 /**
  * \def AIR_FRICTION
  * \brief Ralentissement par friction dans les airs
  */
-#define AIR_FRICTION 0.1
+#define AIR_FRICTION 0.99f
 /**
  * \def DEFAULT_JUMPS_MAX
  * \brief Nombre de saut d'affilé maximum par défaut
