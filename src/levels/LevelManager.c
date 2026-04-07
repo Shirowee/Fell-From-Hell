@@ -136,21 +136,18 @@ int readJsonLvl(const char * fileName){
 
 
 //Initialise le niveau
-void LevelInit(float tileSize){
+void LevelInit(){
     for (int i = 0; i < currentLevel.platformCount; i++) {
-        
         Platform *p = &currentLevel.platforms[i];
-        
         p->rect = (Rectangle){ 
-            p->x * tileSize,
-            p->y * tileSize,
-            p->width * tileSize,
-            p->high * tileSize
+            p->x,
+            p->y, 
+            p->width, 
+            p->high 
         };
-    
 
-    p->color = p->solid ? DARKGRAY : GRAY; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
-    if (strcmp(p->type, "BASIC_PLATFORM_S") == 0) p->color = DARKBLUE; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
+        p->color = p->solid ? DARKGRAY : GRAY; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
+        if (strcmp(p->type, "BASIC_PLATFORM_S") == 0) p->color = DARKBLUE; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
     }
 }
 

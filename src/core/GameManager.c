@@ -8,9 +8,9 @@
 #include "../../lib/systems/LifeManager.h"
 
 //initialise le jeu
-void GameInit(Player *player,float dynamicTileSize)
+void GameInit(Player *player)
 {
-    LevelInit(dynamicTileSize);
+    LevelInit();
     PlayerInit(player);
 
     //Init enemy

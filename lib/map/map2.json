@@ -1,0 +1,25 @@
+{
+  "map_info": {
+    "id": "lust_01", "title": "Lust LVL1",
+    "dimensions": { "w": 2048, "h": 2304 }
+  },
+  "platforms": [
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 2048, "width": 2048, "high": 256 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 0, "y": 1664, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1664, "y": 1664, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 768, "y": 1280, "width": 512, "high": 320 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 512, "y": 1344, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1280, "y": 1344, "width": 256, "high": 64 }
+  ],
+  "entities": {
+    "player_start": { "x": 0, "y": 640 },
+    "enemies": [],
+    "hazards": [
+      { "type": "test", "x": 0, "y": 1792 }
+    ]
+  },
+  "triggers": [
+    { "id": "checkpoint_1", "rect": { "x": 0, "y": 740, "w": 20, "h": 1 }, "action": "SET_RESPAWN" },
+    { "id": "exit_to_pride", "rect": { "x": 0, "y": 640, "w": 20, "h": 2 }, "action": "CHEPA" }
+  ]
+}

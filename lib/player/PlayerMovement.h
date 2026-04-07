@@ -27,10 +27,15 @@
  */
 #define AIR_ACC 1000
 /**
- * \def MAX_SPEED
- * \brief Vitesse maximale du joueur en pixels par seconde.
+ * \def MAX_SPEED_X
+ * \brief Vitesse maximale du joueur sur x en pixels par seconde.
  */
-#define MAX_SPEED 400
+#define MAX_SPEED_X 400
+/**
+ * \def MAX_SPEED_Y
+ * \brief Vitesse maximale du joueur sur y en pixels par seconde.
+ */
+#define MAX_SPEED_Y 1500
 /**
  * \def MAX_WALL_SPEED
  * \brief Vitesse maximale du joueur sur mur en pixels par seconde.
@@ -40,7 +45,7 @@
  * \def JUMP_STRENGTH
  * \brief Force de saut du joueur en pixels par seconde.
  */
-#define JUMP_STRENGTH -800
+#define JUMP_STRENGTH -1200
 /**
  * \def DASH_SPEED
  * \brief Vitesse du dash du joueur en pixels par seconde.
@@ -131,6 +136,8 @@ typedef struct MovementConfig_s {
  */
 typedef struct MovFlags_s {
     bool jumpMovePressed;
+    bool landing;
+    bool canJump;
 } MovFlags;
 
 /**
@@ -140,7 +147,6 @@ typedef struct MovFlags_s {
  * \brief Type de données pour les chronomètres de mouvements du joueur.
  */
 typedef struct MovTimer_s {
-    float jumpTime;
     float jumpTimeOut;
     float dashTime;
     float dashTimeOut;
@@ -217,13 +223,14 @@ void PlayerDash(Player *player);
  */
 void Gravity(Player *player, const float GravityStrength);
 /**
- * \fn void PlayerPositionFix(Player *player, Platform **platform, const int nbPlatforms);
+ * \fn bool PlayerPositionFix(Player *player, Platform **platform, const int nbPlatforms);
  * \brief Corrige la position du joueur en cas de collision avec un ou des Platform
  * \param player Pointeur sur Player
  * \param platform Tableau de pointeurs sur Platform
  * \param nbPlatform Nombre de Platform dans le tableau platform
+ * \return true si le joueur est entré en collision au moins une fois avec une plateforme, sinon false
  */
-void PlayerPositionFix(Player *player, Platform platform[], const int nbPlatforms);
+bool PlayerPositionFix(Player *player, Vector2 oldPosition, Platform platform[], const int nbPlatforms);
 /**
  * \fn bool isOnGround(Player *player, Platform **platform, const int nbPlatforms);
  * \brief Verifie si le joueur est sur une Platform
@@ -253,5 +260,6 @@ bool isOnWall(Player *player, Platform platform[], const int nbPlatforms, Direct
 MovementState getPlayerMovementState(Player *player);
 
 extern MovTimer timer;
+extern MovFlags flags;
 
 #endif

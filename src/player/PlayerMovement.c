@@ -5,13 +5,15 @@
 #include <math.h>
 #include <stdlib.h>
 
-static MovFlags flags;
+MovFlags flags;
 MovTimer timer;
 
 void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
     float dt = GetFrameTime(); //Temps entre images
     MovementState state = getPlayerMovementState(player);
     float friction;
+    bool checkCollisions;
+    Vector2 oldPosition;
 
     if(player->movConfig.isOnGround) player->movConfig.isOnGround = isOnGround(player, platform, nbPlatforms); // Vérifie si le joueur est au sol
 
@@ -24,7 +26,7 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
         else player->velocity.x *= (fabs(player->velocity.x) > 10 ? friction : 0); // Ralentissement progressif
     }
 
-    if (IsKeyDown(KEY_MOVE_JUMP) && timer.jumpTimeOut <= 0.0) PlayerJump(player);
+    if (IsKeyDown(KEY_MOVE_JUMP) && flags.canJump) PlayerJump(player);
     if (state == FALLING) Gravity(player, player->movConfig.fallingGravity);
     else if (state == JUMPING) Gravity(player, player->movConfig.gravity);
     else if (state == WALL_SLIDING) Gravity(player, WALL_SLIDE_GRAVITY);
@@ -36,20 +38,28 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
         if(player->velocity.x > player->movConfig.maxSpeed) player->velocity.x = player->movConfig.maxSpeed;
         else if(player->velocity.x < -player->movConfig.maxSpeed) player->velocity.x = -player->movConfig.maxSpeed;
     }
-
     if(player->movConfig.isOnGround) player->velocity.y = 0.0;
-    else if(IsKeyReleased(KEY_MOVE_JUMP) || (timer.jumpTime <= 0.0 && state == JUMPING)) player->velocity.y *= 0.5;
+    else if(IsKeyReleased(KEY_MOVE_JUMP) && state == JUMPING) player->velocity.y *= 0.5;
     if(state == WALL_SLIDING && player->velocity.y > MAX_WALL_SPEED) player->velocity.y = MAX_WALL_SPEED;
+    else if(player->velocity.y > MAX_SPEED_Y) player->velocity.y = MAX_SPEED_Y;
 
-    //Déplacement du joueur
-    if(player->velocity.x != 0){
-        player->position.x += player->velocity.x * dt;
-    }
-    if(player->velocity.y != 0){
-        player->position.y += player->velocity.y * dt;
+
+    int steps = ceil(fmax(fabs(player->velocity.x), fabs(player->velocity.y)) * dt * 4 / player->size.y);
+    float stepDt = dt / steps;
+
+    checkCollisions = true;
+    for(int i = 0; i < steps; i++){ 
+        oldPosition = player->position;
+
+        //Déplacement du joueur
+        player->position.x += player->velocity.x * stepDt;
+        player->position.y += player->velocity.y * stepDt;
+
+        //Best: O(0), Average: O(1), Worst: O(2)
+        if(checkCollisions)
+            checkCollisions = !PlayerPositionFix(player, oldPosition, platform, nbPlatforms); // Vérification de collision avec les plateformes
     }
 
-    PlayerPositionFix(player, platform, nbPlatforms); // Vérification de collision avec les plateformes
 }
 
 void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPlatforms){
@@ -72,10 +82,10 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
 
 void PlayerMoveFlagsInit(){
     flags.jumpMovePressed = false;
+    flags.canJump = true;
 }
 
 void PlayerMoveTimerInit(){
-    timer.jumpTime = 0.0;
     timer.jumpTimeOut = 0.0;
     timer.dashTime = 0.0;
     timer.dashTimeOut = 0.0;
@@ -84,27 +94,24 @@ void PlayerMoveTimerInit(){
 void PlayerMoveFlagsUpdate(){
     if(IsKeyPressed(KEY_MOVE_JUMP)){
         flags.jumpMovePressed = true;
+        flags.canJump = false;
     }
     else if(IsKeyReleased(KEY_MOVE_JUMP)){
         flags.jumpMovePressed = false;
+        flags.canJump = true;
     }
+
+    flags.landing = false;
 }
 
 void PlayerMoveTimerUpdate(Player *player){
     float dt = GetFrameTime();
 
-    if(timer.jumpTime > 0.0){
-        timer.jumpTime -= dt;
-    }
-    else if(timer.jumpTime <= 0.0 && IsKeyPressed(KEY_MOVE_JUMP)){
-        timer.jumpTime = 0.5;
-    }
-
-    if(timer.jumpTimeOut > 0.0 && (player->movConfig.isOnGround || getPlayerMovementState(player) == WALL_SLIDING)){
+    if(timer.jumpTimeOut > 0.0){
         timer.jumpTimeOut -= dt;
     }
-    else if(timer.jumpTimeOut <= 0.0 && player->movConfig.nbJump == 0 && player->movConfig.isOnGround){
-        timer.jumpTimeOut = 0.1;
+    else if(timer.jumpTimeOut <= 0.0 && flags.landing){
+        timer.jumpTimeOut = 1.0;
     }
 
     if(timer.dashTime > 0.0){
@@ -145,8 +152,8 @@ void PlayerJump(Player *player) {
         player->movConfig.nbJump--;
     }
     else{
-        if(player->movConfig.nbJump && (!flags.jumpMovePressed)){
-            player->velocity.y = player->movConfig.jumpStrength / 1.5;
+        if(player->movConfig.nbJump){
+            player->velocity.y = player->movConfig.jumpStrength / 1.25;
             player->movConfig.nbJump--;
         }
     }
@@ -174,16 +181,24 @@ void Gravity(Player *player, const float GravityStrength) {
 }
 
 // Correction de la position du joueur en cas de collision avec les plateformes
-void PlayerPositionFix(Player *player, Platform platform[], const int nbPlatforms) {
+bool PlayerPositionFix(Player *player, Vector2 oldPosition, Platform platform[], const int nbPlatforms){
     int i;
     int distanceX, distanceY;
     int platformCenterX, platformCenterY;
     int playerCenterX;
     int playerCenterY;
+
+    float prevBottom;
+    float currBottom;
+    float platformTop;
+
     bool collision;
+    bool collisionOnce = false;
+    bool wasAbove;
+    bool isFalling = player->velocity.y > 0;
+
     MovementState state = getPlayerMovementState(player);
     Rectangle body = (Rectangle){player->position.x, player->position.y, player->size.x, player->size.y};
-    Rectangle foot = (Rectangle){player->position.x, player->position.y + player->size.y, player->size.x, 1};
 
     for(i = 0; i < nbPlatforms; i++) {
         //Ne vérifie que pour les plateformes les plus proches
@@ -251,7 +266,13 @@ void PlayerPositionFix(Player *player, Platform platform[], const int nbPlatform
             }
         }
         else {
-            if(state != JUMPING && CheckCollisionRecs(foot, platform[i].rect)){
+            prevBottom = oldPosition.y + player->size.y;
+            currBottom = player->position.y + player->size.y;
+            platformTop = platform[i].rect.y;
+
+            wasAbove = prevBottom <= platformTop;
+
+            if(wasAbove && isFalling && currBottom >= platformTop && CheckCollisionRecs(body, platform[i].rect)){
                 player->position.y = platform[i].rect.y - player->size.y; // Collision en bas
                 player->velocity.y = 0; // Arrêter le mouvement vertical
                 collision = true;
@@ -267,16 +288,19 @@ void PlayerPositionFix(Player *player, Platform platform[], const int nbPlatform
             // Mettre à jour le corps du joueur après correction de position
             body.x = player->position.x;
             body.y = player->position.y;
-            foot.x = player->position.x;
-            foot.y = player->position.y + player->size.y;
+
+            collisionOnce = true;
         }
     }
+
+    return collisionOnce;
 }
 
 // Vérifie si le joueur est au sol en vérifiant la collision entre le pied du joueur et les plateformes
 bool isOnGround(Player *player, Platform platform[], const int nbPlatforms) {
     int i;
     Rectangle foot = (Rectangle){player->position.x, player->position.y + player->size.y, player->size.x, 1};
+    bool grounded = false;
 
     for(i = 0; i < nbPlatforms; i++) {
         if(platform[i].rect.x + platform[i].rect.width < player->position.x - 100) continue;
@@ -284,12 +308,11 @@ bool isOnGround(Player *player, Platform platform[], const int nbPlatforms) {
 
         if (CheckCollisionRecs(foot, platform[i].rect)) {
             if (getPlayerMovementState(player) != JUMPING && foot.y <= platform[i].rect.y) {
-                return true; // Le pied du joueur touche une plateforme
+                grounded = true; // Le pied du joueur touche une plateforme
             }
-            return false;
         }
     }
-    return false;
+    return grounded;
 }
 
 // Vérifie si le joueur est sur un mur
