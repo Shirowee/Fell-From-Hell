@@ -159,7 +159,7 @@ void ChangeWeapon(weapon_t *oldWeapon, weapon_t newWeapon);
  * \param posJoueur Position du joueur
  * \param direction Direction du tir
  */
-void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction);
+void spawnBulletWeapon(weapon_t weapon, Player player, int direction);
 
 /**
  * \brief Vérifie si l'arme est en cooldown.

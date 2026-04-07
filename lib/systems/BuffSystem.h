@@ -82,4 +82,19 @@ void BuffbulletSpeed(buff_t* buff, float add);
  */
 void BuffbulletSize(buff_t* buff, float add);
 
+/**
+ * \brief Initialise et alloue un nouveau buff.
+ * \return Pointeur vers une structure buff_t initialisée
+ *
+ * \note Les valeurs du buff sont initialisées à 1 (aucun bonus).
+ * \warning La mémoire allouée doit être libérée avec FreeBuff().
+ */
+buff_t* BuffInit(void);
+
+/**
+ * \brief Libère les ressources associées à un buff.
+ * \param buff Pointeur vers la structure de buff à libérer
+ */
+void FreeBuff(buff_t* buff);
+
 #endif
