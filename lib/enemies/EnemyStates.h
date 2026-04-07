@@ -61,4 +61,12 @@ void EnemyState_EnemyShootCircle(enemy_t* enemy, bulletPool_t* pool, Vector2 pla
  * Tire un projectile en ligne droite vers le joueur
  */
 void EnemyState_EnemyShoot(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos);
+
+/**
+ * @brief Etat d'attaque en spirale
+ * 
+ * Tire un projectile en spirale autour de l'ennemi
+ */
+void EnemyState_EnemyShootSpiral(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos);
+
 #endif

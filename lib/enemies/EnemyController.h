@@ -36,6 +36,7 @@ typedef enum {
     ENEMY_CHASER,
     ENEMY_SHOOTER_CIRCLE,
     ENEMY_SHOOTER,
+    ENEMY_SPIRAL
 } EnemyType;
 
 /**

@@ -47,7 +47,7 @@ void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
 
     enemy->stateTimer = 0;
     enemy->state = EnemyState_Idle;
-    enemy->type = GetRandomValue(0, 2);
+    enemy->type = GetRandomValue(0, 3);
 }
 
 

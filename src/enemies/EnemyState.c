@@ -57,7 +57,11 @@ void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos){
                     enemy->state = EnemyState_MoveRandom;
                 }
                 break;
+            case ENEMY_SPIRAL:
+                enemy->state = EnemyState_EnemyShootSpiral;
+                break;
             }
+            
         enemy->stateTimer = 0;
     }
 }
@@ -123,4 +127,36 @@ void EnemyState_EnemyShoot(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos
     EnemySetDirTowardsPlayer(enemy, playerPos);
     EnemyShoots(enemy);
     enemy->state = EnemyState_Idle;
+}
+
+void EnemyState_EnemyShootArc(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos)
+{
+
+    float dt = GetFrameTime();
+    enemy->stateTimer += dt;
+    if (enemy->stateTimer > 1.0f) {
+        EnemyShoots(enemy);
+        enemy->dir += 5;
+    }
+    if (enemy->stateTimer > 1.5f) {
+        enemy->state = EnemyState_Idle;
+    }
+    
+    
+}
+
+void EnemyState_EnemyShootSpiral(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos)
+{
+
+    float dt = GetFrameTime();
+    enemy->stateTimer += dt;
+    if (enemy->stateTimer > 0.25f) {
+        EnemyShoots(enemy);
+        enemy->dir += 13;
+    }
+    if (enemy->stateTimer > 0.25f) {
+        enemy->state = EnemyState_Idle;
+    }
+    
+    
 }
