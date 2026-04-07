@@ -8,6 +8,7 @@ SRC = $(wildcard src/*.c) \
       $(wildcard src/enemies/*.c) \
       $(wildcard src/player/*.c) \
       $(wildcard src/systems/*.c) \
+      $(wildcard src/menu/*.c) \
       $(wildcard src/levels/*.c)
 
 # On transforme la liste des .c en .o pour la compilation
