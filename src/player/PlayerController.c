@@ -3,6 +3,9 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/player/Player.h"
 #include "../../lib/levels/LevelManager.h"
+#include "../../lib/systems/EnemyPool.h"
+#include "../../lib/systems/LifeManager.h"
+#include <stdio.h>
 
 //init le joueur
 void PlayerInit(Player *player){
@@ -25,6 +28,13 @@ void PlayerInit(Player *player){
     player->movConfig.isOnLeftWall = false;
     player->movConfig.isOnRightWall = false;
 
+    //Initialisation de statistiques du joueur
+    player->stats.hp = DEFAULT_PLAYER_HP;
+    player->stats.hpMax = DEFAULT_PLAYER_HP;
+    player->stats.regen = DEFAULT_PLAYER_REGEN;
+    player->stats.invTime = 0.0;
+    player->stats.regenTimeOut = 1.0;
+
     //Initialisation de l'arme du joueur
     player->weapon = minigun;
 
@@ -39,6 +49,8 @@ void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms, do
     PlayerMove(player, platform, nbPlatforms);
     PlayerMoveFlagsUpdate();
     PlayerShoot(player, timeSpent, startReload);
+
+    PlayerLifeAlteration(player, &enemyPool, &bulletPool);
 }
 
 //dessine le joueur
@@ -56,16 +68,4 @@ void PlayerDraw(Player *player){
     }
 
     DrawRectangleRec(body, color);
-}
-
-bool isInvicible(Player *player){
-    return (player->stats.invTime > 0.0);
-}
-
-bool isAlive(Player *player){
-    return (player->stats.hp > 0);
-}
-
-bool canRegen(Player *player){
-    return (player->stats.regenTimeOut <= 0.0);
 }

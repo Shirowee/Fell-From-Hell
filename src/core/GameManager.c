@@ -5,6 +5,7 @@
 #include "../../lib/systems/EnemyPool.h"
 #include "../../lib/systems/EnemySpawner.h"
 #include "../../lib/systems/CollisionSystem.h"
+#include "../../lib/systems/LifeManager.h"
 
 //initialise le jeu
 void GameInit(Player *player,float dynamicTileSize)

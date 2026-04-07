@@ -10,7 +10,6 @@
 #define PLAYER_CONTROLLER_H
 
 #include "../levels/Platform.h"
-#include "Player.h"
 
 /**
  * \def PLAYER_X
@@ -32,6 +31,22 @@
  * \brief Taille par défaut du joueur sur l'axe y en pixels.
  */
 #define PLAYER_SIZE_Y 50
+/**
+ * \def DEFAULT_PLAYER_HP
+ * \brief Nombre de points de vie par défaut du joueur
+ */
+#define DEFAULT_PLAYER_HP 100
+/**
+ * \def DEFAULT_PLAYER_REGEN
+ * \brief Nombre de points de vie régénéré par défaut au joueur
+ */
+#define DEFAULT_PLAYER_REGEN 1
+/**
+ * \def PLAYER_INVICIBILITY_TIME
+ * \brief Temps d'invincibilité du joueur
+ */
+#define PLAYER_INVICIBILITY_TIME 1
+
 
 /*
  *Structures
@@ -47,9 +62,11 @@ typedef struct PlayerStats_s{
     int hp; /**< Points de vie courant */
     int hpMax;  /**< Points de vie maximale */
     int regen;  /**< Nombre de points de vie régénéré par seconde */
-    int regenTimeOut;   /**< Temps avant que la vie du joueur se régénère */
+    float regenTimeOut;   /**< Temps avant que la vie du joueur se régénère */
     float invTime; /**< Temps pendant lequel le joueur est invincible */
 }PlayerStats;
+
+#include "Player.h"
 
  /**
  * \fn void PlayerInit(Player *player);
@@ -78,29 +95,5 @@ void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms, do
  * \param player Pointeur sur Player
  */
 void PlayerDraw(Player *player);
-
- /**
- * \fn bool isInvicible(Player *player);
- * \brief Détermine si le joueur est invincible
- * \param player Pointeur sur Player
- * \return Renvoie vrai si il est invincible, sinon faux
- */
-bool isInvicible(Player *player);
-
- /**
- * \fn bool isAlive(Player *player);
- * \brief Détermine si le joueur est encore en vie
- * \param player Pointeur sur Player
- * \return Renvoie vrai si il a encore des points de vie, sinon faux
- */
-bool isAlive(Player *player);
-
- /**
- * \fn canRegen(Player *player);
- * \brief Détermine si le joueur peut régénérer ses points de vie
- * \param player Pointeur sur Player
- * \return Renvoie vrai si c'est le cas, sinon faux
- */
-bool canRegen(Player *player);
 
 #endif

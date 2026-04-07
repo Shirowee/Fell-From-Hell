@@ -9,7 +9,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-typedef struct PlayerBody_s PlayerBody;
 typedef struct Player_s Player;
 
 #include "PlayerController.h"
@@ -31,11 +30,7 @@ struct Player_s {
     Vector2 position;           /**< Position du joueur */
     Vector2 size;               /**< Taille du joueur */
     Vector2 velocity;           /**< Vecteur de vitesse du joueur */
-<<<<<<< HEAD
     PlayerStats stats;          /**< Statistiques du joueur */
-    PlayerBody body;            /**< Corps du joueur, servant principalement pour les collisions */
-=======
->>>>>>> dev_player_mvt
     MovementConfig movConfig;  /**< Configuration de mouvement du joueur */
     weapon_t weapon;            /**< Arme du joueur */
 };
