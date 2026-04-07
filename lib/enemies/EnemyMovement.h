@@ -43,4 +43,15 @@ void EnemyMove(enemy_t * enemy);
  */
 void EnemyMoveTowardsPlayer(enemy_t * enemy, Vector2 player);
 
+/**
+ * @brief Change la direction de l'ennemi pour qu'il regarde vers le joueur
+ * 
+ * Calcule la direction vers le joueur, normalise ce vecteur,
+ * puis change la direction de l'ennemi pour qu'il regarde vers le joueur.
+ * 
+ * @param enemy pointeur vers l'ennemi
+ * @param player position du joueur
+ */
+void EnemySetDirTowardsPlayer(enemy_t * enemy, Vector2 player);
+
 #endif

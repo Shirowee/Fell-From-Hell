@@ -34,6 +34,7 @@
  */
 typedef enum {
     ENEMY_CHASER,
+    ENEMY_SHOOTER_CIRCLE,
     ENEMY_SHOOTER,
 } EnemyType;
 
@@ -104,31 +105,5 @@ void EnemyDraw(enemy_t * enemy);
  */
 void EnemyShoots(enemy_t * enemy);
 
-/* ==================== États ==================== */
-
-/**
- * @brief Etat idle de l'ennemi
- * @param enemy pointeur vers l'ennemi
- * @param pool pool de bullets
- * @param playerPos position du joueur
- */
-void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
-
-/**
- * @brief Etat de déplacement
- * @param enemy pointeur vers l'ennemi
- * @param pool pool de bullets
- * @param playerPos position du joueur
- */
-void EnemyState_Move(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
-
-/**
- * @brief Etat d'attaque
- * @param enemy pointeur vers l'ennemi
- * @param pool pool de bullets
- * @param playerPos position du joueur
- */
- */
-void EnemyState_Attack(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
 
 #endif

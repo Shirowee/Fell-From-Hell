@@ -55,5 +55,10 @@ void EnemyState_MoveRandom(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPo
  */
 void EnemyState_EnemyShootCircle(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos);
 
-
+/**
+ * @brief Etat d'attaque simple
+ * 
+ * Tire un projectile en ligne droite vers le joueur
+ */
+void EnemyState_EnemyShoot(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos);
 #endif

@@ -30,7 +30,7 @@
 */
 void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos){
     enemy->stateTimer += GetFrameTime();
-
+    int randomValue;
     if (enemy->stateTimer > 0.1f){
         switch (enemy->type)
             {
@@ -38,8 +38,8 @@ void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos){
                 enemy->state = EnemyState_MoveTowardsPlayer;
                 break;
 
-            case ENEMY_SHOOTER:
-                int randomValue = GetRandomValue(0, 100);
+            case ENEMY_SHOOTER_CIRCLE:
+                randomValue = GetRandomValue(0, 100);
                 if (randomValue <= 60) {
                     enemy->state = EnemyState_EnemyShootCircle;
                 }
@@ -48,7 +48,15 @@ void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos){
                 }
                 
                 break;
-
+            case ENEMY_SHOOTER:
+                randomValue = GetRandomValue(0, 100);
+                if (randomValue <= 60) {
+                    enemy->state = EnemyState_EnemyShoot;
+                }
+                else {
+                    enemy->state = EnemyState_MoveRandom;
+                }
+                break;
             }
         enemy->stateTimer = 0;
     }
@@ -90,7 +98,7 @@ void EnemyState_EnemyShootCircle(enemy_t* enemy, bulletPool_t* pool, Vector2 pla
 
     float dt = GetFrameTime();
     enemy->stateTimer += dt;
-    if (enemy->stateTimer > 1.0f) {
+    if (enemy->stateTimer > 0.5f) {
         int bullets = 8;
 
         for (int i = 0; i < bullets; i++)
@@ -108,4 +116,11 @@ void EnemyState_EnemyShootCircle(enemy_t* enemy, bulletPool_t* pool, Vector2 pla
         }
         enemy->state = EnemyState_Idle;
     }
+}
+
+void EnemyState_EnemyShoot(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos)
+{
+    EnemySetDirTowardsPlayer(enemy, playerPos);
+    EnemyShoots(enemy);
+    enemy->state = EnemyState_Idle;
 }

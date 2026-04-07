@@ -31,8 +31,6 @@
 #include "../../raylib/include/raylib.h"
 
 
-void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
-void EnemyState_Move(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos);
 
 
 void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
@@ -49,7 +47,7 @@ void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
 
     enemy->stateTimer = 0;
     enemy->state = EnemyState_Idle;
-    enemy->type = GetRandomValue(0, 1);
+    enemy->type = GetRandomValue(0, 2);
 }
 
 

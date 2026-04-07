@@ -54,3 +54,13 @@ void EnemyMoveTowardsPlayer(enemy_t *enemy, Vector2 player)
         enemy->pos.y += direction.y * enemy->speed * dt;
     }
 }
+
+void EnemySetDirTowardsPlayer(enemy_t *enemy, Vector2 player)
+{
+    Vector2 direction;
+    direction.x = player.x - enemy->pos.x;
+    direction.y = player.y - enemy->pos.y;
+
+    float angleRad = atan2f(direction.y, direction.x);
+    enemy->dir = angleRad * RAD2DEG;
+}
