@@ -3,24 +3,25 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/player/Player.h"
 #include "../../lib/levels/LevelManager.h"
+#include "../../lib/core/ResolutionManager.h"
 
 //init le joueur
 void PlayerInit(Player *player){
     player->position = (Vector2){ PLAYER_X, PLAYER_Y };
-    player->size = (Vector2){ PLAYER_SIZE_X, PLAYER_SIZE_Y };
+    player->size = (Vector2){ RS(PLAYER_SIZE_X), RS(PLAYER_SIZE_Y) };
     player->velocity = (Vector2){ 0, 0 };
 
     //Initialisation du corps du joueur
-    player->body.main = (Rectangle){ PLAYER_X, PLAYER_Y, PLAYER_SIZE_X, PLAYER_SIZE_Y };
-    player->body.foot = (Rectangle){ player->body.main.x, player->body.main.y + PLAYER_SIZE_Y, PLAYER_SIZE_X, 1 };
+    player->body.main = (Rectangle){ RS(PLAYER_X), RS(PLAYER_Y), RS(PLAYER_SIZE_X), RS(PLAYER_SIZE_Y) };
+    player->body.foot = (Rectangle){ player->body.main.x, player->body.main.y + RS(PLAYER_SIZE_Y), RS(PLAYER_SIZE_X), 1 };
 
     //Initialisation des mouvements du joueur
-    player->movConfig.maxSpeed = MAX_SPEED;
-    player->movConfig.groundAcc = GROUND_ACC;
-    player->movConfig.airAcc = AIR_ACC;
-    player->movConfig.jumpStrength = JUMP_STRENGTH;
-    player->movConfig.gravity = DEFAULT_GRAVITY;
-    player->movConfig.fallingGravity = FALLING_GRAVITY;
+    player->movConfig.maxSpeed = RS(MAX_SPEED);
+    player->movConfig.groundAcc = RS(GROUND_ACC);
+    player->movConfig.airAcc = RS(AIR_ACC);
+    player->movConfig.jumpStrength = RS(JUMP_STRENGTH);
+    player->movConfig.gravity = RS(DEFAULT_GRAVITY);
+    player->movConfig.fallingGravity = RS(FALLING_GRAVITY);
 
     player->movConfig.nbJumpMax = DEFAULT_JUMPS_MAX;
     player->movConfig.nbJump = DEFAULT_JUMPS_MAX;

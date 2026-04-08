@@ -1,26 +1,25 @@
 {
   "map_info": {
-    "id": "lust_01",
-    "title": "Lust LVL1",
-    "dimensions": { "w": 1920, "h": 1080 }
+    "id": "lust_01", "title": "Lust LVL1",
+    "dimensions": { "w": 2048, "h": 6784 }
   },
   "platforms": [
-    { "type": "BASIC_PLATFORM_S", "solid":0, "x": 0, "y": 1040, "width": 1920, "high": 40 },
-    { "type": "BASIC_PLATFORM_S", "solid":0, "x": 0, "y": 900, "width": 200, "high": 50 },
-    { "type": "BASIC_PLATFORM_S", "solid":0, "x": 1720, "y": 900, "width": 200, "high": 50 }
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 6528, "width": 2048, "high": 256 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 0, "y": 6144, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1664, "y": 6144, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 768, "y": 5760, "width": 512, "high": 320 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 512, "y": 5824, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1280, "y": 5824, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 0, "y": 5568, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1664, "y": 5568, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 512, "y": 5248, "width": 1024, "high": 64 }
   ],
   "entities": {
-    "player_start": { "x": 10, "y": 145 },
-    "enemies": [
-      { "type": "CHEPA", "dist_aggro": 0 },
-      { "type": "CHEPA", "dist_aggro": 0 }
-    ],
+    "player_start": { "x": 832, "y": 5120 },
+    "enemies": [],
     "hazards": [
-      { "type": "test", "x": 10, "y": 110 }
+      { "type": "test", "x": 0, "y": 6272 }
     ]
   },
-  "triggers": [
-    { "id": "checkpoint_1", "rect": { "x": 0, "y": 100, "w": 20, "h": 1 }, "action": "SET_RESPAWN" },
-    { "id": "exit_to_pride", "rect": { "x": 0, "y": 0, "w": 20, "h": 2 }, "action": "CHEPA"}
-  ]
+  "triggers": []
 }

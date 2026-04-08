@@ -1,6 +1,7 @@
 #include "../../lib/player/PlayerMovement.h"
 #include "../../lib/player/Player.h"
 #include "../../lib/levels/LevelManager.h"
+#include "../../lib/core/ResolutionManager.h"
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -23,7 +24,7 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
     if (IsKeyDown(KEY_SPACE) && timer.jumpTimeOut <= 0.0) PlayerJump(player);
     if (getPlayerMovementState(player) == FALLING) Gravity(player, player->movConfig.fallingGravity);
     else if (getPlayerMovementState(player) == JUMPING) Gravity(player, player->movConfig.gravity);
-    else if (getPlayerMovementState(player) == WALL_SLIDING) Gravity(player, WALL_SLIDE_GRAVITY);
+    else if (getPlayerMovementState(player) == WALL_SLIDING) Gravity(player, RS(WALL_SLIDE_GRAVITY));
 
     if(getPlayerMovementState(player) == DASHING) PlayerDash(player);
 
@@ -35,7 +36,7 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
 
     if(player->movConfig.isOnGround) player->velocity.y = 0.0;
     else if(IsKeyReleased(KEY_SPACE) || (timer.jumpTime <= 0.0 && getPlayerMovementState(player) == JUMPING)) player->velocity.y *= 0.5;
-    if(getPlayerMovementState(player) == WALL_SLIDING && player->velocity.y > MAX_WALL_SPEED) player->velocity.y = MAX_WALL_SPEED;
+    if(getPlayerMovementState(player) == WALL_SLIDING && player->velocity.y > MAX_WALL_SPEED) player->velocity.y = RS(MAX_WALL_SPEED);
 
     //Déplacement du joueur
     if(player->velocity.x != 0){
@@ -173,10 +174,10 @@ void PlayerJump(Player *player) {
 // Dash
 void PlayerDash(Player *player){
     if(player->velocity.x > 0.0){
-        player->velocity.x = DASH_SPEED;
+        player->velocity.x = RS(DASH_SPEED);
     }
     else if(player->velocity.x < 0.0){
-        player->velocity.x = -DASH_SPEED;
+        player->velocity.x = -RS(DASH_SPEED);
     }
     else{
         timer.dashTime = 0.0;

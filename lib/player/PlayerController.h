@@ -12,8 +12,8 @@
 #include "../levels/Platform.h"
 #include "Player.h"
 
-#define PLAYER_X 100
-#define PLAYER_Y 350
+#define PLAYER_X 0
+#define PLAYER_Y 640
 #define PLAYER_SIZE_X 30
 #define PLAYER_SIZE_Y 50
 

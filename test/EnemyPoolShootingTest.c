@@ -7,6 +7,7 @@
 int main(void)
 {
     InitWindow(800, 450, "Enemy Pool Shooting Test");
+    /*
     InitEnemyPool(&enemyPool,200);
     InitBulletPool(&bulletPool,300);
 
@@ -39,5 +40,6 @@ int main(void)
     FreeEnemyPool(&enemyPool);
     FreeBulletPool(&bulletPool);
     CloseWindow();
+    */
     return 0;
 }
