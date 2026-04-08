@@ -1,3 +1,4 @@
+/* jsp c koi ce bloc
 
 /**
  * \file ResolutionManager.h
@@ -21,6 +22,7 @@ ResolutionManager.c
 Thokill
 thokill
  
+*/
  
  
  

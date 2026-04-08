@@ -44,8 +44,9 @@ void PlayerInit(Player *player){
     //Initialisation des buff du joueur
     player->buff = BuffInit();
 
-    PlayerMoveFlagsInit();
-    PlayerMoveTimerInit();
+    //je crois faut enlever
+    //PlayerMoveFlagsInit();
+    //PlayerMoveTimerInit();
 }
 
 //maj de la logique du player

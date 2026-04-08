@@ -42,7 +42,7 @@ Screen_t MenuUpdate(void);
  * \details Contient la boucle ou la logique principale du gameplay.
  * Peut retourner SCREEN_MENU ou SCREEN_EXIT selon les actions du joueur.
  */
-Screen_t Game(Player* player);
+Screen_t Game(Player* player, Camera2D* camera);
 
 /**
  * \brief Met à jour l'écran des paramètres.
