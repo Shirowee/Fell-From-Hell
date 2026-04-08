@@ -68,6 +68,6 @@ Screen_t PauseUpdate(void);
  * \details Affiche les résultats du niveau et permet au joueur d'obtenir 
  * des améliorations de passer au niveau suivant ou de quitter le jeu.
  */
-Screen_t EndLevelUpdate(void);
+Screen_t EndLevelUpdate(Player* player);
 
 #endif

@@ -18,6 +18,17 @@ void FreeBuff(buff_t* buff){
     free(buff);
 }
 
+void Buff(buff_t* buff, float add, int indice){
+    switch (indice){
+        case 0 : BuffDmg(buff, add); break;
+        case 1 : BufffireRate(buff, add); break;
+        case 2 : BuffreloadTime(buff, add); break;
+        case 3 : Buffdispersion(buff, add); break;
+        case 4 : BuffbulletSpeed(buff, add); break;
+        case 5 : BuffbulletSize(buff, add); break;
+        default: break;
+    }
+}
 void BuffDmg(buff_t* buff, float add){
     buff->dmg += add;
 }

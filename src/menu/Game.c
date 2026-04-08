@@ -46,5 +46,6 @@ Screen_t Game(Player* player, Camera2D* camera)
         EndDrawing();
     }
 
-    return (SCREEN_PAUSE);
+    //return (SCREEN_PAUSE);
+    return (SCREEN_END_LEVEL);
 }

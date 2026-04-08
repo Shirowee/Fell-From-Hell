@@ -149,9 +149,9 @@ void PlayerShoot(Player* player, double *timeSpent, double *startReload);
 /**
  * \brief Change l'arme actuelle.
  * \param oldWeapon Pointeur vers l'arme actuelle
- * \param newWeapon Nouvelle arme à équiper
+ * \param indice Indice de la nouvelle arme à équiper
  */
-void ChangeWeapon(weapon_t *oldWeapon, weapon_t newWeapon);
+void ChangeWeapon(weapon_t *oldWeapon, int indice);
 
 /**
  * \brief Génère un projectile selon les caractéristiques de l'arme.

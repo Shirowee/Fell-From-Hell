@@ -58,7 +58,7 @@ int main(void)
                 previousScreen = SCREEN_PAUSE;
                 break;
             case SCREEN_END_LEVEL: 
-                currentScreen = EndLevelUpdate(); break;
+                currentScreen = EndLevelUpdate(&player); break;
             default: break;
         }
 

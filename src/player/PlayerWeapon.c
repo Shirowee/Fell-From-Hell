@@ -63,8 +63,24 @@ int IsReloading(weapon_t * weapon, double * startReload){
     return 0;
 }
 
-void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon){
-    *oldWeapon = newWeapon;
+void ChangeWeapon(weapon_t * oldWeapon, int indice){
+    switch (indice){
+        case MINIGUN : *oldWeapon = minigun; break;
+        case LANCE_FLAMMES : *oldWeapon = lance_flammes; break;
+        case LANCE_MISSILE_TETE_CHERCHEUSE : *oldWeapon = lance_missile_tete_chercheuse; break;
+        case FUSIL_A_POMPE : *oldWeapon = fusil_a_pompe; break;
+        case PISTOLET_LASER : *oldWeapon = pistolet_laser; break;
+        case FUSIL_RAFALES : *oldWeapon = fusil_rafales; break;
+        case LANCE_GLACE : *oldWeapon = lance_glace; break;
+        case LANCE_ROQUETTE : *oldWeapon = lance_roquette; break;
+        case EPEE_LONGUE : *oldWeapon = epee_longue; break;
+        case SNIPER : *oldWeapon = sniper; break;
+        case ARBALETE : *oldWeapon = arbalete; break;
+        case PISTOLET_ELECTRIQUE : *oldWeapon = pistolet_eclectique; break;
+        case PISTOLET_MITRAILLEUR : *oldWeapon = pistolet_mitrailleur; break;
+        case PISTOLET_MULTI_DIRECTION : *oldWeapon = pistolet_multi_direction; break;
+        default: break;
+    }
 }
 
 void spawnBulletWeapon(weapon_t weapon, Player player, int direction){

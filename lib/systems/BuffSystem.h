@@ -40,6 +40,14 @@ typedef struct {
  * Fonctions de modification des buffs
  * ========================= */
 
+ /**
+ * \brief appel une des fonction buff.
+ * \param buff Pointeur vers la structure de buff
+ * \param add Valeur à ajouter
+ * \param indice indice de la fonction à appeler
+ */
+ void Buff(buff_t* buff, float add, int indice);
+
 /**
  * \brief Augmente les dégâts.
  * \param buff Pointeur vers la structure de buff
