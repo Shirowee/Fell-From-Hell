@@ -4,6 +4,7 @@
 #include "../lib/core/WindowManager.h"
 #include "../lib/core/ResolutionManager.h"
 #include "../lib/levels/LevelManager.h"
+#include "../lib/systems/LifeManager.h"
 
 
 // Point d'entrée du jeu
@@ -55,6 +56,8 @@ int main(void) {
             EndMode2D();
 
             DrawFPS(10, 10);
+            HPDraw(&player, 10, 50, 300, 20);
+            
         EndDrawing();
     }
 

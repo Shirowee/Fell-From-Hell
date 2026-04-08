@@ -17,6 +17,16 @@ typedef struct Player_s Player;
 #include "../../raylib/include/raylib.h"
 
 /*
+ *Constantes
+ */
+
+/**
+ * \def PLAYER_MAX_DIST_DETECT
+ * \brief distance maximale prise en compte pour les collisions entre le joueur et les autre entités
+ */
+#define PLAYER_MAX_DIST_DETECT 100
+
+/*
  *Structures
  */
 

@@ -21,70 +21,101 @@
  * \brief accélération du joueur sur le sol en pixels par seconde.
  */
 #define GROUND_ACC 1600
+
  /**
  * \def AIR_ACC
  * \brief accélération du joueur dans les airs en pixels par seconde.
  */
 #define AIR_ACC 1000
+
 /**
  * \def MAX_SPEED_X
  * \brief Vitesse maximale du joueur sur x en pixels par seconde.
  */
 #define MAX_SPEED_X 400
+
 /**
  * \def MAX_SPEED_Y
  * \brief Vitesse maximale du joueur sur y en pixels par seconde.
  */
 #define MAX_SPEED_Y 1500
+
 /**
  * \def MAX_WALL_SPEED
  * \brief Vitesse maximale du joueur sur mur en pixels par seconde.
  */
 #define MAX_WALL_SPEED 200
+
 /**
  * \def JUMP_STRENGTH
  * \brief Force de saut du joueur en pixels par seconde.
  */
 #define JUMP_STRENGTH -1200
+
 /**
  * \def DASH_SPEED
  * \brief Vitesse du dash du joueur en pixels par seconde.
  */
 #define DASH_SPEED 800
+
 /**
  * \def DEFAULT_GRAVITY
  * \brief Gravité par défaut en pixels par seconde carrée.
  */
 #define DEFAULT_GRAVITY 980
+
 /**
  * \def FALLING_GRAVITY
  * \brief Gravité lors d'une chute en pixels par seconde carrée.
  */
 #define FALLING_GRAVITY 1225
+
 /**
  * \def WALL_SLIDE_GRAVITY
  * \brief Gravité sur mur en pixels par seconde carrée.
  */
 #define WALL_SLIDE_GRAVITY 300
+
 /**
  * \def GROUND_FRICTION
  * \brief Ralentissement par friction sur le sol
  */
 #define GROUND_FRICTION 0.9f
+
 /**
  * \def AIR_FRICTION
  * \brief Ralentissement par friction dans les airs
  */
 #define AIR_FRICTION 0.99f
+
 /**
  * \def DEFAULT_JUMPS_MAX
  * \brief Nombre de saut d'affilé maximum par défaut
  */
 #define DEFAULT_JUMPS_MAX 3
 
+/**
+ * \def KEY_MOVE_LEFT
+ * \brief Touche pour aller à gauche
+ */
 #define KEY_MOVE_LEFT KEY_A
+
+/**
+ * \def KEY_MOVE_RIGHT
+ * \brief Touche pour aller à droite
+ */
 #define KEY_MOVE_RIGHT KEY_D
+
+/**
+ * \def KEY_MOVE_JUMP
+ * \brief Touche pour sauter
+ */
 #define KEY_MOVE_JUMP KEY_SPACE
+
+/**
+ * \def KEY_MOVE_DASH
+ * \brief Touche pour dasher
+ */
 #define KEY_MOVE_DASH KEY_E
 
 /*
@@ -119,6 +150,8 @@ typedef struct MovementConfig_s {
     float jumpStrength; /**< Force de saut du joueur */
     float gravity;      /**< Gravité appliquée au joueur */
     float fallingGravity;      /**< Gravité appliquée au joueur lorsqu'il tombe */
+    float dashTime;
+    float dashTimeOut;
 
     int nbJumpMax;  /**< Nombre de saut d'affilé maximum */
     int nbJump;     /**< Nombre de saut d'affilé restant */
@@ -127,30 +160,8 @@ typedef struct MovementConfig_s {
     bool isOnLeftWall;   /**< Indique si le joueur est entrain de glisser sur un mur à gauche */
     bool isOnRightWall;  /**< Indique si le joueur est entrain de glisser sur un mur à droite */
     bool isDashing;     /**< Indique si le joueur est entrain de glisser */
+    bool canJump;   /**< Indique si le joueur peut sauter */
 } MovementConfig;
-/**
- * \struct MovFlags_s
- * \brief Structure pour gérer les flags de mouvements du joueur.
- * \typedef MovFlags
- * \brief Type de données pour les flags de mouvements du joueur.
- */
-typedef struct MovFlags_s {
-    bool jumpMovePressed;
-    bool landing;
-    bool canJump;
-} MovFlags;
-
-/**
- * \struct MovTimer_s
- * \brief Structure pour gérer les chronomètres de mouvements du joueur.
- * \typedef MovTimer
- * \brief Type de données pour les chronomètres de mouvements du joueur.
- */
-typedef struct MovTimer_s {
-    float jumpTimeOut;
-    float dashTime;
-    float dashTimeOut;
-} MovTimer;
 
 /**
  * \enum Direction
@@ -174,30 +185,6 @@ typedef enum{Left, Right, Up, Down} Direction;
 void PlayerMove(Player *player, Platform platform[], const int nbPlatforms);
 
  /**
- * \fn void PlayerMoveFlagsInit();
- * \brief Initialise les flags de mouvements du joueur
- */
-void PlayerMoveFlagsInit();
-
- /**
- * \fn void PlayerMoveTimerInit();
- * \brief Initialise les chronomètres de mouvements du joueur
- */
-void PlayerMoveTimerInit();
-
- /**
- * \fn void PlayerMoveFlagsUpdate();
- * \brief Met à jour les flags de mouvements du joueur
- */
-void PlayerMoveFlagsUpdate();
-
- /**
- * \fn void PlayerMoveTimerUpdate(Player *player);
- * \brief Met à jour les chronomètres de mouvements du joueur
- */
-void PlayerMoveTimerUpdate(Player *player);
-
- /**
  * \fn void PlayerMoveConfigUpdate(Player *player, Platform **platform, const int nbPlatforms);
  * \brief Met à jour les configs des mouvements
  * \param player Pointeur sur Player
@@ -213,6 +200,11 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
  */
 void PlayerJump(Player *player);
 
+/**
+ * \fn void PlayerDash(Player *player);
+ * \brief Fait dasher le joueur
+ * \param player Pointeur sur Player
+ */
 void PlayerDash(Player *player);
 
 /**
@@ -258,8 +250,5 @@ bool isOnWall(Player *player, Platform platform[], const int nbPlatforms, Direct
  * \return MovementState correspondant a l'etat de mouvement du joueur
  */
 MovementState getPlayerMovementState(Player *player);
-
-extern MovTimer timer;
-extern MovFlags flags;
 
 #endif

@@ -31,7 +31,7 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
     }
 }
 
-void checkPlayerEnemyCollision(Player* player, enemyPool_t* enemies, int* total_dmg){
+void CheckPlayerEnemyCollision(Player* player, enemyPool_t* enemies, int* total_dmg){
     int i;
     int gap = 0.05; //En %
     enemy_t* enemy;
@@ -47,6 +47,11 @@ void checkPlayerEnemyCollision(Player* player, enemyPool_t* enemies, int* total_
     for(i = 0; i < enemies->capacity; i++){
         enemy = &enemies->tab[i];
 
+        if(enemy->pos.x + enemy->size.x < player->position.x - PLAYER_MAX_DIST_DETECT) continue;
+        if(enemy->pos.x > player->position.x + PLAYER_MAX_DIST_DETECT) continue;
+        if(enemy->pos.y + enemy->size.y < player->position.y - PLAYER_MAX_DIST_DETECT) continue;
+        if(enemy->pos.y > player->position.y + PLAYER_MAX_DIST_DETECT) continue;
+
         if(enemy->active){
             //Initialisation de la hitbox de l'ennemie
             enemyHitbox.x = enemy->pos.x + (int)(enemy->size.x*gap);
@@ -60,7 +65,7 @@ void checkPlayerEnemyCollision(Player* player, enemyPool_t* enemies, int* total_
     }
 }
 
-void checkPlayerBulletCollision(Player* player, bulletPool_t* bullets, int* total_dmg){
+void CheckPlayerBulletCollision(Player* player, bulletPool_t* bullets, int* total_dmg){
     int i;
     bullet_t* bullet;
 

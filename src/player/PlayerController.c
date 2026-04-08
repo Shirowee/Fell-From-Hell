@@ -20,6 +20,8 @@ void PlayerInit(Player *player){
     player->movConfig.jumpStrength = JUMP_STRENGTH;
     player->movConfig.gravity = DEFAULT_GRAVITY;
     player->movConfig.fallingGravity = FALLING_GRAVITY;
+    player->movConfig.dashTime = 0.0;
+    player->movConfig.dashTimeOut = 0.0;
 
     player->movConfig.nbJumpMax = DEFAULT_JUMPS_MAX;
     player->movConfig.nbJump = DEFAULT_JUMPS_MAX;
@@ -27,6 +29,7 @@ void PlayerInit(Player *player){
     player->movConfig.isOnGround = false;
     player->movConfig.isOnLeftWall = false;
     player->movConfig.isOnRightWall = false;
+    player->movConfig.canJump = true;
 
     //Initialisation de statistiques du joueur
     player->stats.hp = DEFAULT_PLAYER_HP;
@@ -37,19 +40,13 @@ void PlayerInit(Player *player){
 
     //Initialisation de l'arme du joueur
     player->weapon = minigun;
-
-    PlayerMoveFlagsInit();
-    PlayerMoveTimerInit();
 }
 
 //maj de la logique du player
 void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms, double* timeSpent, double* startReload){
-    PlayerMoveTimerUpdate(player);
     PlayerMoveConfigUpdate(player, platform, nbPlatforms);
     PlayerMove(player, platform, nbPlatforms);
-    PlayerMoveFlagsUpdate();
     PlayerShoot(player, timeSpent, startReload);
-
     PlayerLifeAlteration(player, &enemyPool, &bulletPool);
 }
 

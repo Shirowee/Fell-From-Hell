@@ -35,12 +35,12 @@
  * \def DEFAULT_PLAYER_HP
  * \brief Nombre de points de vie par défaut du joueur
  */
-#define DEFAULT_PLAYER_HP 1000
+#define DEFAULT_PLAYER_HP 200
 /**
  * \def DEFAULT_PLAYER_REGEN
  * \brief Nombre de points de vie régénéré par défaut au joueur
  */
-#define DEFAULT_PLAYER_REGEN 10
+#define DEFAULT_PLAYER_REGEN 5
 /**
  * \def PLAYER_INVICIBILITY_TIME
  * \brief Temps d'invincibilité du joueur

@@ -10,9 +10,9 @@ void PlayerLifeAlteration(Player *player, enemyPool_t *ennemies, bulletPool_t *b
     float dt = GetFrameTime();
 
     //Perte de vie
-    if(player->stats.invTime <= 0.0){
-        checkPlayerEnemyCollision(player, ennemies, &dmgToPlayer);
-        checkPlayerBulletCollision(player, bullets, &dmgToPlayer);
+    if(!isInvicible(player)){
+        CheckPlayerEnemyCollision(player, ennemies, &dmgToPlayer);
+        CheckPlayerBulletCollision(player, bullets, &dmgToPlayer);
 
         if(dmgToPlayer > 0)
             ApplyDamageToPlayer(player, dmgToPlayer);
@@ -22,7 +22,7 @@ void PlayerLifeAlteration(Player *player, enemyPool_t *ennemies, bulletPool_t *b
     }
 
     //Gain de vie
-    if(player->stats.regenTimeOut <= 0.0){
+    if(canRegen(player)){
         player->stats.regenTimeOut = REGEN_TIME;
         player->stats.hp += player->stats.regen;
 
@@ -35,6 +35,7 @@ void PlayerLifeAlteration(Player *player, enemyPool_t *ennemies, bulletPool_t *b
     }
 }
 
+//Applique des dégâts au joueur
 void ApplyDamageToPlayer(Player *player, int dmg){
     player->stats.hp -= dmg;
     player->stats.invTime = PLAYER_INVICIBILITY_TIME;
