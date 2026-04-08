@@ -24,7 +24,7 @@ Screen_t Game(Player* player, Camera2D* camera)
     /*******************
     * BOUCLE PRINCIPALE
     ********************/
-    while (!IsKeyPressed(KEY_ESCAPE))
+    while (!IsKeyPressed(KEY_ESCAPE) && !IsKeyPressed(KEY_L))
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
 
@@ -46,6 +46,8 @@ Screen_t Game(Player* player, Camera2D* camera)
         EndDrawing();
     }
 
-    //return (SCREEN_PAUSE);
+    if(IsKeyPressed(KEY_ESCAPE))
+        return (SCREEN_PAUSE);
+        
     return (SCREEN_END_LEVEL);
 }
