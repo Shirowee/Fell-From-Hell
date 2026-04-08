@@ -1,18 +1,16 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/core/Screen.h"
 
-Screen_t SettingsUpdate(Screen_t previousScreen)
+
+Screen_t PauseUpdate(void)
 {
-    static int selected = 0; // 0 = key_binding, 1 = jsp_temp, 2 = Exit
+    static int selected = 0; // 0 = Play, 1 = Settings, 2 = Exit
 
     const char *options[3] = {
-        "CHANGEMENT DES TOUCHES",
-        "BLABLA",
-        "REVENIR AU MENU"
+        "RETOURNER EN JEU",
+        "PARAMETRES",
+        "QUITTER LE JEU"
     };
-    if (previousScreen == SCREEN_PAUSE) {
-        options[2] = "REVENIR AU MENU PAUSE";
-    }
 
     int optionCount = 3;
 
@@ -30,10 +28,9 @@ Screen_t SettingsUpdate(Screen_t previousScreen)
     // Validation
     if (IsKeyPressed(KEY_ENTER)) {
         switch (selected) {
-            case 0: return SCREEN_GAME; //jsp encore
+            case 0: return SCREEN_GAME;
             case 1: return SCREEN_SETTINGS;
-            case 2: if(previousScreen == SCREEN_MENU) return SCREEN_MENU;
-            return SCREEN_PAUSE;
+            case 2: return SCREEN_EXIT;
         }
     }
 
@@ -41,7 +38,7 @@ Screen_t SettingsUpdate(Screen_t previousScreen)
     int screenWidth = GetScreenWidth();
     int screenHeight = GetScreenHeight();
 
-    DrawText("PARAMETRES", screenWidth / 2 - 100, 150, 50, BLACK);
+    DrawText("Pause", screenWidth / 2 - 100, 150, 50, BLACK);
 
     for (int i = 0; i < optionCount; i++) {
         Color color = (i == selected) ? RED : DARKGRAY;
@@ -57,5 +54,5 @@ Screen_t SettingsUpdate(Screen_t previousScreen)
 
     DrawText("Utilise les flèches et ENTREE", screenWidth / 2 - 150, screenHeight - 100, 20, GRAY);
 
-    return SCREEN_SETTINGS;
+    return SCREEN_PAUSE;
 }

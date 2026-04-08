@@ -27,6 +27,7 @@ void WindowInit(){
     ClearWindowState(FLAG_WINDOW_HIDDEN);
 
     SetTargetFPS(60);
+    SetExitKey(KEY_NULL);
 }
 
 void WindowManager_Update(void) {

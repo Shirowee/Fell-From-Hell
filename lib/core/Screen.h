@@ -7,6 +7,8 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
+#include "../player/Player.h"
+
 /**
  * \enum Screen_t
  * \brief Représente les différents états/écrans du jeu.
@@ -15,6 +17,8 @@ typedef enum {
     SCREEN_MENU,      /**< Écran du menu principal */
     SCREEN_GAME,      /**< Écran de jeu */
     SCREEN_SETTINGS,  /**< Écran des paramètres */
+    SCREEN_PAUSE,     /**< Écran de pause */
+    SCREEN_END_LEVEL, /**< Écran de fin d'un niveau */
     SCREEN_EXIT       /**< Quitte le jeu */
 } Screen_t;
 
@@ -38,7 +42,7 @@ Screen_t MenuUpdate(void);
  * \details Contient la boucle ou la logique principale du gameplay.
  * Peut retourner SCREEN_MENU ou SCREEN_EXIT selon les actions du joueur.
  */
-Screen_t Game(void);
+Screen_t Game(Player* player);
 
 /**
  * \brief Met à jour l'écran des paramètres.
@@ -46,7 +50,24 @@ Screen_t Game(void);
  *
  * \details Permet de modifier les options du jeu (audio, contrôles, etc.).
  */
-Screen_t SettingsUpdate(void);
+Screen_t SettingsUpdate(Screen_t previousScreen);
 
+/**
+ * \brief Met à jour l'écran de pause.
+ * \return Le prochain écran à afficher (Screen_t)
+ *
+ * \details Gère les interactions durant la pause (reprendre la partie,
+ * modifier les paramètres, quitter le jeu, etc.).
+ */
+Screen_t PauseUpdate(void);
+
+/**
+ * \brief Met à jour l'écran de fin de niveau.
+ * \return Le prochain écran à afficher (Screen_t)
+ *
+ * \details Affiche les résultats du niveau et permet au joueur d'obtenir 
+ * des améliorations de passer au niveau suivant ou de quitter le jeu.
+ */
+Screen_t EndLevelUpdate(void);
 
 #endif
