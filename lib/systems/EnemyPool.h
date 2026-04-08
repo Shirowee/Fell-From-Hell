@@ -58,8 +58,14 @@ void InitEnemyPool(enemyPool_t* pool, int capacity);
  * @param bulletSpeed vitesse des projectiles
  * @param bulletSize taille des projectiles
  */
-void SpawnEnemyPool(enemyPool_t* pool, Vector2 pos, 
-                    float speed, Vector2 size, int dmg, float bulletSpeed, int bulletSize);
+void SpawnEnemyPool(enemyPool_t* pool, 
+    Vector2 pos, 
+    float speed, 
+    Vector2 size, 
+    int dmg, 
+    float bulletSpeed, 
+    int bulletSize, 
+    EnemyType_t type);
 
 /**
  * @brief Met à jour tous les ennemis du pool

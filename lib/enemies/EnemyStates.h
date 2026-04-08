@@ -69,4 +69,11 @@ void EnemyState_EnemyShoot(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos
  */
 void EnemyState_EnemyShootSpiral(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos);
 
+/**
+ * @brief Etat d'attaque en arc
+ * 
+ * Tire des projectiles en arc de cercle vers le joueur
+ */
+void EnemyState_EnemyShootArc(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos);
+
 #endif

@@ -36,8 +36,9 @@ typedef enum {
     ENEMY_CHASER,
     ENEMY_SHOOTER_CIRCLE,
     ENEMY_SHOOTER,
-    ENEMY_SPIRAL
-} EnemyType;
+    ENEMY_SPIRAL,
+    ENEMY_ARC
+} EnemyType_t;
 
 /**
  * @brief Structure représentant un ennemi
@@ -54,8 +55,6 @@ typedef struct enemy_s {
     int bulletSize; /**< Taille des projectiles */
 
     /* ==================== State machine ==================== */
-    EnemyType type; /**< Type d'ennemi */
-
     /**
      * @brief Fonction représentant l'état courant
      * 
@@ -63,8 +62,9 @@ typedef struct enemy_s {
      */
     void (*state)(struct enemy_s*, bulletPool_t*, Vector2);
 
-    float stateTimer;/**< Timer pour gérer les transitions d'état */
+    float stateTimer; /**< Timer pour gérer les transitions d'état */
 
+    EnemyType_t type; /**< Type d'ennemi */
     /* ==================== Logique ==================== */
 
     int isShooting; /**< Indique si l'ennemi doit tirer au prochain update */
@@ -81,8 +81,9 @@ typedef struct enemy_s {
  * @param pos position initiale
  * @param bulletSpeed vitesse des projectiles
  * @param bulletSize taille des projectiles
+* @param type type d'ennemi
  */
-void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg, Vector2 pos, int bulletSpeed, int bulletSize);
+void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg, Vector2 pos, int bulletSpeed, int bulletSize, EnemyType_t type);
 
 /**
  * @brief Met à jour la logique de l'ennemi

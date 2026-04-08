@@ -31,7 +31,7 @@
 void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos){
     enemy->stateTimer += GetFrameTime();
     int randomValue;
-    if (enemy->stateTimer > 0.1f){
+    if (enemy->stateTimer > 0.2f){
         switch (enemy->type)
             {
             case ENEMY_CHASER:
@@ -59,6 +59,9 @@ void EnemyState_Idle(enemy_t * enemy, bulletPool_t* pool, Vector2 playerPos){
                 break;
             case ENEMY_SPIRAL:
                 enemy->state = EnemyState_EnemyShootSpiral;
+                break;
+            case ENEMY_ARC:
+                enemy->state = EnemyState_EnemyShootArc;
                 break;
             }
             
@@ -125,7 +128,14 @@ void EnemyState_EnemyShootCircle(enemy_t* enemy, bulletPool_t* pool, Vector2 pla
 void EnemyState_EnemyShoot(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos)
 {
     EnemySetDirTowardsPlayer(enemy, playerPos);
-    EnemyShoots(enemy);
+    SpawnBulletPool(pool,
+                enemy->pos,
+                enemy->dir,
+                enemy->bulletSpeed,
+                enemy->bulletSize,
+                enemy->dmg,
+                100,
+                0);
     enemy->state = EnemyState_Idle;
 }
 
@@ -134,11 +144,18 @@ void EnemyState_EnemyShootArc(enemy_t* enemy, bulletPool_t* pool, Vector2 player
 
     float dt = GetFrameTime();
     enemy->stateTimer += dt;
-    if (enemy->stateTimer > 1.0f) {
-        EnemyShoots(enemy);
+    if ((enemy->stateTimer > 1.0f)&&(enemy->stateTimer < 1.5f)) {
+        SpawnBulletPool(pool,
+                enemy->pos,
+                enemy->dir,
+                enemy->bulletSpeed,
+                enemy->bulletSize,
+                enemy->dmg,
+                100,
+                0);
         enemy->dir += 5;
     }
-    if (enemy->stateTimer > 1.5f) {
+    if (enemy->stateTimer > 3.0f) {
         enemy->state = EnemyState_Idle;
     }
     
@@ -151,7 +168,14 @@ void EnemyState_EnemyShootSpiral(enemy_t* enemy, bulletPool_t* pool, Vector2 pla
     float dt = GetFrameTime();
     enemy->stateTimer += dt;
     if (enemy->stateTimer > 0.25f) {
-        EnemyShoots(enemy);
+        SpawnBulletPool(pool,
+                enemy->pos,
+                enemy->dir,
+                enemy->bulletSpeed,
+                enemy->bulletSize,
+                enemy->dmg,
+                100,
+                0);
         enemy->dir += 13;
     }
     if (enemy->stateTimer > 0.25f) {

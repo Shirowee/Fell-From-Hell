@@ -34,23 +34,30 @@
 
 
 void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
-                Vector2 pos, int bulletSpeed, int bulletSize) {
+                Vector2 pos, int bulletSpeed, int bulletSize, EnemyType_t type) {
+    /*=================== STATS ===================*/
     enemy->speed = speed;
     enemy->pos = pos;
     enemy->dmg = dmg;
-    enemy->isShooting = 0;
     enemy->size = size;
     enemy->dir = 0;
+
+    /*=================== Bullet related ===================*/
+
     enemy->bulletSpeed = bulletSpeed;
     enemy->bulletSize = bulletSize;
-    enemy->active = 1;
 
+    /*=================== States related ===================*/
     enemy->stateTimer = 0;
     enemy->state = EnemyState_Idle;
-    enemy->type = GetRandomValue(0, 3);
+    enemy->type = type;
+
+    /*=================== Logic ===================*/
+    enemy->active = 1;
+    enemy->isShooting = 0;
 }
 
-
+//deprecated
 void EnemyShoots(enemy_t * enemy)
 {
     enemy->isShooting = 1;
