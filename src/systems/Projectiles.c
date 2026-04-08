@@ -14,6 +14,7 @@
  */
 
 #include "../../raylib/include/raylib.h"
+#include "../../lib/levels/LevelManager.h"
 #include "../../lib/systems/Projectiles.h"
 #include <math.h>
 #include <stdio.h> //pour les test printf
@@ -42,7 +43,7 @@ void UpdateBullet(bullet_t * bullet) {
         bullet->bulletPos.y += sinf(angleRad) * bullet->bulletSpeed * dt;
 
         //vérification que la bullet soit dans l'écran sinon c'est à unload
-        if (bullet->bulletPos.x < -50 || bullet->bulletPos.x > GetScreenWidth()+50 || bullet->bulletPos.y < -50 || bullet->bulletPos.y > GetScreenHeight()+50) {
+        if (bullet->bulletPos.x < -50 || bullet->bulletPos.x > GetScreenWidth()+50 || bullet->bulletPos.y < -50 || bullet->bulletPos.y > currentLevel.info.height+50) {
                 bullet->active = false;
         }
         break;

@@ -23,6 +23,7 @@ weapon_t pistolet_multi_direction ={13, 20, 2, 20, 20, 1.5, AUCUN, 7.5, 100, 500
 
 
 void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
+    
     int gamepad = 0;
     float direction;
     weapon_t* weapon = &(player->weapon);
@@ -70,7 +71,6 @@ void ChangeWeapon(weapon_t * oldWeapon, weapon_t newWeapon){
 }
 
 void spawnBulletWeapon(weapon_t weapon, Vector2 posJoueur, int direction){
-    
     switch(weapon.indice){
         case FUSIL_A_POMPE : 
             SpawnBulletPool(&playerBulletPool, posJoueur, direction, weapon.bulletSpeed, weapon.bulletSize, weapon.dmg, weapon.lifeTime, BASIC);

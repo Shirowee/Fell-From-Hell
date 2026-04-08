@@ -31,7 +31,7 @@ void GameUpdate(Player *player, double* timeSpent, double* startReload)
 
     CheckEnemyBulletCollision(&enemyPool, &playerBulletPool);
 
-    //PlayerUpdate(player, currentLevel.platforms, currentLevel.platformCount, timeSpent, startReload);
+    PlayerUpdate(player, currentLevel.platforms, currentLevel.platformCount, timeSpent, startReload);
     UpdateBulletPool(&playerBulletPool);
 }
 
