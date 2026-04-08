@@ -95,5 +95,6 @@ void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms, do
  * \param player Pointeur sur Player
  */
 void PlayerDraw(Player *player);
+Vector2 getPlayerCenter(Player *player);
 
 #endif

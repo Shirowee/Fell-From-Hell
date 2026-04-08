@@ -1,3 +1,23 @@
+/**
+ * @file EnemyPool.c
+ * @brief Gestion du pool d'ennemis (object pooling)
+ * @author A. Pocholle
+ * 
+ * Implémente un système de pool d'ennemis basé sur
+ * l’object pooling.
+ * 
+ * Les ennemis sont pré-alloués dans un tableau et réutilisés
+ * via un flag "active", évitant les allocations dynamiques
+ * répétées en jeu.
+ * 
+ * Fonctionnalités :
+ * - Initialisation du pool
+ * - Spawn d’ennemis
+ * - Mise à jour des ennemis
+ * - Affichage des ennemis
+ * - Libération mémoire
+ */
+ 
 #include "../../raylib/include/raylib.h"
 #include "../../lib/enemies/EnemyController.h"
 #include "../../lib/systems/EnemyPool.h"
@@ -18,13 +38,13 @@ void InitEnemyPool(enemyPool_t* pool, int capacity) {
 }
 
 void SpawnEnemyPool(enemyPool_t* pool, Vector2 pos, 
-                    float speed, Vector2 size, int dmg, float bulletSpeed, int bulletSize) {
+                    float speed, Vector2 size, int dmg, float bulletSpeed, int bulletSize, EnemyType_t type) {
     //on cherche la premiere bullet inactive (disponible)
     int spawned = 0;
     for(int i=0; (i < pool->capacity) && (spawned == 0); i++) {
         
         if (pool->tab[i].active == 0) {
-            EnemyInit(&pool->tab[i], speed, size, dmg, pos, bulletSpeed, bulletSize);
+            EnemyInit(&pool->tab[i], speed, size, dmg, pos, bulletSpeed, bulletSize, type);
             spawned = 1;
         }
     }
