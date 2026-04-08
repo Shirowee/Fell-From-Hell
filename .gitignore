@@ -2,5 +2,6 @@
 *.exe
 game
 game.exe
+test/Map.c
 bin/*
 !bin/.gitkeep
