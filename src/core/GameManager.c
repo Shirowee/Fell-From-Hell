@@ -18,7 +18,6 @@ void GameInit(Player *player)
     EnemySpawnerInit(&enemySpawner);
     InitBulletPool(&bulletPool, 3000);
 
-    srand(time(NULL));
     InitBulletPool(&playerBulletPool, 300);
 }
 
@@ -46,9 +45,11 @@ void GameDraw(Player *player)
 }
 
 //décharger
-void GameUnload(void)
+void GameUnload(Player player)
 {
     FreeBulletPool(&playerBulletPool);
     FreeEnemyPool(&enemyPool);
+    FreeBuff(player.buff);
+
     CloseWindow();
 }

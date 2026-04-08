@@ -4,11 +4,10 @@
 #include "../player/Player.h"
 #include "../systems/BulletPool.h"
 #include <stdlib.h>
-#include <time.h>
 
 void GameInit(Player *player);
 void GameUpdate(Player *player, double* timeSpent, double* startReload);
 void GameDraw(Player *player);
-void GameUnload(void);
+void GameUnload(Player player);
 
 #endif

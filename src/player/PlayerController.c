@@ -40,6 +40,12 @@ void PlayerInit(Player *player){
 
     //Initialisation de l'arme du joueur
     player->weapon = minigun;
+
+    //Initialisation des buff du joueur
+    player->buff = BuffInit();
+
+    PlayerMoveFlagsInit();
+    PlayerMoveTimerInit();
 }
 
 //maj de la logique du player
