@@ -1,0 +1,7 @@
+<map id="lib/core/WindowManager.h" name="lib/core/WindowManager.h">
+<area shape="rect" id="Node000001" title="Gestionnaire de la fenêtre de jeu et de l&#39;affichage de la fenêtre." alt="" coords="21,5,215,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title=" " alt="" coords="5,79,95,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,42,63,80,59,77,96,39"/>
+<area shape="rect" id="Node000003" href="$Game_8c.html" title=" " alt="" coords="119,79,255,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,39,178,77,174,80,137,43"/>
+</map>

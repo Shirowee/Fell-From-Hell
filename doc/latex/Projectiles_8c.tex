@@ -11,7 +11,13 @@ Gestion des projectiles du jeu.
 {\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 Include dependency graph for Projectiles.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Projectiles_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,12 +47,14 @@ Plusieurs types de projectiles sont supportés \+:
 \item MELEE \+: (non implémenté) 
 \end{DoxyItemize}
 
+\label{doc-func-members}
+\Hypertarget{Projectiles_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{Projectiles_8c_a2cf641f58198b9c642f4aed7a1ecd588}\label{Projectiles_8c_a2cf641f58198b9c642f4aed7a1ecd588} 
-\index{Projectiles.c@{Projectiles.c}!DrawBullet@{DrawBullet}}
+\Hypertarget{Projectiles_8c_a2cf641f58198b9c642f4aed7a1ecd588}\index{Projectiles.c@{Projectiles.c}!DrawBullet@{DrawBullet}}
 \index{DrawBullet@{DrawBullet}!Projectiles.c@{Projectiles.c}}
 \doxysubsubsection{\texorpdfstring{DrawBullet()}{DrawBullet()}}
-{\footnotesize\ttfamily void Draw\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet,  }\item[{Vector2}]{pos\+Joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Projectiles_8c_a2cf641f58198b9c642f4aed7a1ecd588} 
+void Draw\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet}{, }\item[{Vector2}]{pos\+Joueur}{}\end{DoxyParamCaption})}
 
 
 
@@ -59,11 +67,11 @@ Dessine un projectile.
 {\em pos\+Joueur} & position du joueur (utile pour le rayon) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{Projectiles_8c_af25911d704be2b43f8d2243a7048e969}\label{Projectiles_8c_af25911d704be2b43f8d2243a7048e969} 
-\index{Projectiles.c@{Projectiles.c}!DrawExplosion@{DrawExplosion}}
+\Hypertarget{Projectiles_8c_af25911d704be2b43f8d2243a7048e969}\index{Projectiles.c@{Projectiles.c}!DrawExplosion@{DrawExplosion}}
 \index{DrawExplosion@{DrawExplosion}!Projectiles.c@{Projectiles.c}}
 \doxysubsubsection{\texorpdfstring{DrawExplosion()}{DrawExplosion()}}
-{\footnotesize\ttfamily void Draw\+Explosion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Projectiles_8c_af25911d704be2b43f8d2243a7048e969} 
+void Draw\+Explosion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet}{}\end{DoxyParamCaption})}
 
 
 
@@ -74,11 +82,11 @@ Affiche une explosion de projectile explosif.
 {\em bullet} & projectile concerné \\
 \hline
 \end{DoxyParams}
-\Hypertarget{Projectiles_8c_ade1c32da98bc6ca8991ffc13c8664608}\label{Projectiles_8c_ade1c32da98bc6ca8991ffc13c8664608} 
-\index{Projectiles.c@{Projectiles.c}!InitBullet@{InitBullet}}
+\Hypertarget{Projectiles_8c_ade1c32da98bc6ca8991ffc13c8664608}\index{Projectiles.c@{Projectiles.c}!InitBullet@{InitBullet}}
 \index{InitBullet@{InitBullet}!Projectiles.c@{Projectiles.c}}
 \doxysubsubsection{\texorpdfstring{InitBullet()}{InitBullet()}}
-{\footnotesize\ttfamily void Init\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet,  }\item[{int}]{speed,  }\item[{int}]{size,  }\item[{int}]{dmg,  }\item[{Vector2}]{Pos,  }\item[{int}]{dir,  }\item[{float}]{life\+Time,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Projectiles_8c_ade1c32da98bc6ca8991ffc13c8664608} 
+void Init\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet}{, }\item[{int}]{speed}{, }\item[{int}]{size}{, }\item[{int}]{dmg}{, }\item[{Vector2}]{Pos}{, }\item[{int}]{dir}{, }\item[{float}]{life\+Time}{, }\item[{int}]{indice}{}\end{DoxyParamCaption})}
 
 
 
@@ -103,11 +111,11 @@ Initialise un projectile.
 {\em indice} & type de projectile (BASIC, EXPLOSIF, etc.) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{Projectiles_8c_a4d4b9728f427269e66222f67fa168836}\label{Projectiles_8c_a4d4b9728f427269e66222f67fa168836} 
-\index{Projectiles.c@{Projectiles.c}!UpdateBullet@{UpdateBullet}}
+\Hypertarget{Projectiles_8c_a4d4b9728f427269e66222f67fa168836}\index{Projectiles.c@{Projectiles.c}!UpdateBullet@{UpdateBullet}}
 \index{UpdateBullet@{UpdateBullet}!Projectiles.c@{Projectiles.c}}
 \doxysubsubsection{\texorpdfstring{UpdateBullet()}{UpdateBullet()}}
-{\footnotesize\ttfamily void Update\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Projectiles_8c_a4d4b9728f427269e66222f67fa168836} 
+void Update\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet}{}\end{DoxyParamCaption})}
 
 
 

@@ -1,0 +1,107 @@
+\doxysection{lib/core/\+Ressources\+Manager.h File Reference}
+\hypertarget{RessourcesManager_8h}{}\label{RessourcesManager_8h}\index{lib/core/RessourcesManager.h@{lib/core/RessourcesManager.h}}
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+Include dependency graph for Ressources\+Manager.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{RessourcesManager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{RessourcesManager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Texture2D \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8h_a4bc34793271f2e1a0e99da94d1699edb}{RM\+\_\+\+Get\+Texture}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Récupère une texture depuis le gestionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f}{RM\+\_\+\+Unload\+Texture}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Décharge une texture spécifique. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}{RM\+\_\+\+Unload\+All}} (void)
+\begin{DoxyCompactList}\small\item\em Décharge toutes les textures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_a601e378d412e2ae15519a5eb51347f5e}{RM\+\_\+\+Print\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}état interne du Resource Manager (debug) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{RessourcesManager_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{RessourcesManager_8h_a4bc34793271f2e1a0e99da94d1699edb}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_GetTexture@{RM\_GetTexture}}
+\index{RM\_GetTexture@{RM\_GetTexture}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_GetTexture()}{RM\_GetTexture()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a4bc34793271f2e1a0e99da94d1699edb} 
+Texture2D \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Récupère une texture depuis le gestionnaire. 
+
+Si la texture est déjà chargée, elle est simplement retournée. Sinon, elle est chargée puis stockée.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Chemin vers le fichier image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la texture, ou NULL en cas d\textquotesingle{}erreur
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+La texture reste en mémoire jusqu\textquotesingle{}à appel de \doxylink{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f}{RM\+\_\+\+Unload\+Texture()} ou \doxylink{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}{RM\+\_\+\+Unload\+All()} 
+\end{DoxyNote}
+\Hypertarget{RessourcesManager_8h_a601e378d412e2ae15519a5eb51347f5e}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_PrintStatus@{RM\_PrintStatus}}
+\index{RM\_PrintStatus@{RM\_PrintStatus}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_PrintStatus()}{RM\_PrintStatus()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a601e378d412e2ae15519a5eb51347f5e} 
+void RM\+\_\+\+Print\+Status (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Affiche l\textquotesingle{}état interne du Resource Manager (debug) 
+
+Affiche dans la console \+:
+\begin{DoxyItemize}
+\item le nombre de textures chargées
+\item la liste des chemins 
+\end{DoxyItemize}\Hypertarget{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_UnloadAll@{RM\_UnloadAll}}
+\index{RM\_UnloadAll@{RM\_UnloadAll}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_UnloadAll()}{RM\_UnloadAll()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40} 
+void RM\+\_\+\+Unload\+All (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Décharge toutes les textures. 
+
+Libère toutes les textures chargées en mémoire GPU et réinitialise le gestionnaire.
+
+\begin{DoxyWarning}{Warning}
+Doit être appelé avant la fermeture du programme 
+\end{DoxyWarning}
+\Hypertarget{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_UnloadTexture@{RM\_UnloadTexture}}
+\index{RM\_UnloadTexture@{RM\_UnloadTexture}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_UnloadTexture()}{RM\_UnloadTexture()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f} 
+void RM\+\_\+\+Unload\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Décharge une texture spécifique. 
+
+Libère la mémoire GPU associée à la texture et la retire du gestionnaire.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Chemin de la texture à libérer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Si la texture n\textquotesingle{}existe pas, la fonction ne fait rien 
+\end{DoxyWarning}

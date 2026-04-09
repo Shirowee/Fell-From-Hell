@@ -1,0 +1,30 @@
+<map id="lib/core/Screen.h" name="lib/core/Screen.h">
+<area shape="rect" id="Node000001" title="Définition des différents écrans du jeu (menu, jeu, paramètres, sortie)." alt="" coords="176,5,307,31"/>
+<area shape="rect" id="Node000002" href="$Player_8h.html" title="Définit la structure du joueur et son corps, ainsi que les fonctions associées." alt="" coords="176,79,307,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,31,244,65,239,65,239,31"/>
+<area shape="rect" id="Node000003" href="$PlayerController_8h.html" title="Gère l&#39;initialisation, la mise à jour et le dessin du joueur." alt="" coords="5,152,144,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="209,106,108,149,106,144,207,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="335,372,470,412"/>
+<area shape="poly" id="edge16_Node000002_Node000005" title=" " alt="" coords="267,102,298,122,327,150,358,203,379,260,393,313,401,357,396,358,388,314,374,261,353,205,323,154,295,126,264,106"/>
+<area shape="rect" id="Node000006" href="$PlayerMovement_8h.html" title="Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts, la gravité et les coll..." alt="" coords="169,152,314,177"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="237,104,235,139,230,138,232,104"/>
+<area shape="rect" id="Node000007" href="$PlayerWeapon_8h.html" title=" " alt="" coords="390,152,517,177"/>
+<area shape="poly" id="edge10_Node000002_Node000007" title=" " alt="" coords="276,101,407,145,405,150,275,107"/>
+<area shape="rect" id="Node000010" href="$BuffSystem_8h.html" title="Gestion des améliorations (buffs) appliquées au joueur et aux armes." alt="" coords="619,299,799,324"/>
+<area shape="poly" id="edge17_Node000002_Node000010" title=" " alt="" coords="308,95,414,112,473,128,529,150,580,180,627,217,665,254,693,286,689,290,661,258,623,221,577,184,527,154,471,133,413,118,307,100"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="108,149,208,107,210,112,110,154"/>
+<area shape="rect" id="Node000004" href="$Platform_8h.html" title="Définition des structures de base pour des positions et des rectangles." alt="" coords="118,225,263,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="95,175,161,216,159,220,92,180"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="203,249,238,283,284,322,352,363,350,368,281,326,234,287,199,253"/>
+<area shape="poly" id="edge9_Node000006_Node000002" title=" " alt="" coords="246,152,247,118,253,118,251,152"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="235,179,209,216,205,213,231,176"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="250,176,335,322,372,361,368,364,331,326,246,179"/>
+<area shape="poly" id="edge11_Node000007_Node000005" title=" " alt="" coords="450,179,431,226,416,297,408,359,403,358,410,296,425,225,445,177"/>
+<area shape="rect" id="Node000008" href="$BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="440,225,611,251"/>
+<area shape="poly" id="edge12_Node000007_Node000008" title=" " alt="" coords="467,176,506,214,502,218,463,180"/>
+<area shape="poly" id="edge13_Node000008_Node000005" title=" " alt="" coords="538,250,558,284,563,305,557,325,542,343,525,357,484,377,482,372,522,353,539,339,552,323,557,305,554,286,533,252"/>
+<area shape="rect" id="Node000009" href="$Projectiles_8h.html" title=" " alt="" coords="441,299,543,324"/>
+<area shape="poly" id="edge14_Node000008_Node000009" title=" " alt="" coords="522,252,506,287,501,285,517,250"/>
+<area shape="poly" id="edge15_Node000009_Node000005" title=" " alt="" coords="481,326,436,365,433,361,477,322"/>
+<area shape="poly" id="edge18_Node000010_Node000005" title=" " alt="" coords="665,327,484,373,483,367,664,321"/>
+</map>

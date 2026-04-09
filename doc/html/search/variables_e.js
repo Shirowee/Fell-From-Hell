@@ -7,7 +7,7 @@ var searchData=
   ['refw_4',['refW',['../structResolutionConfig.html#a97d40be189830cefe8ca01b11edb9994',1,'ResolutionConfig']]],
   ['regen_5',['regen',['../structPlayerStats__s.html#a0e7182ae60b8a0d646f0348b58e40eb1',1,'PlayerStats_s']]],
   ['regentimeout_6',['regenTimeOut',['../structPlayerStats__s.html#a13602357799753f3b36ad3afdf7358a3',1,'PlayerStats_s']]],
-  ['reloadtime_7',['reloadtime',['../structweapon__t.html#a0f7694cc87a52113aa3e0d0cd852ae47',1,'weapon_t::reloadTime'],['../structbuff__t.html#ad44189de31c341c2af23a38adbaabd37',1,'buff_t::reloadTime']]],
+  ['reloadtime_7',['reloadTime',['../structweapon__t.html#a0f7694cc87a52113aa3e0d0cd852ae47',1,'weapon_t::reloadTime'],['../structbuff__t.html#ad44189de31c341c2af23a38adbaabd37',1,'buff_t::reloadTime']]],
   ['replacement_8',['replacement',['../cJSON_8h.html#a10573fccca598ec39809e8beb3f7f791',1,'cJSON.h']]],
   ['require_5fnull_5fterminated_9',['require_null_terminated',['../cJSON_8h.html#a68bc5d2265c7694323a75615f7ac0130',1,'cJSON.h']]],
   ['resolution_10',['resolution',['../ResolutionManager_8h.html#a2016104fa368c7cbefbbb0fe119a3a09',1,'resolution:&#160;ResolutionManager.c'],['../ResolutionManager_8c.html#a2016104fa368c7cbefbbb0fe119a3a09',1,'resolution:&#160;ResolutionManager.c']]],

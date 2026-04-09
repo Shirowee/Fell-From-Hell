@@ -3,3 +3,191 @@
 {\ttfamily \#include "{}../../lib/systems/\+Buff\+System.\+h"{}}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 Include dependency graph for Buff\+System.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{BuffSystem_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{BuffSystem_8c_aaa53f454659a437188bc410146a733fe}{Buff\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialise et alloue un nouveau buff. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8c_a72028564d5ae2c5ceb60456d54691e8b}{Free\+Buff}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff)
+\begin{DoxyCompactList}\small\item\em Libère les ressources associées à un buff. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8c_a9a9b4b2422ce2adc3ad12233d4d26e56}{Buff}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float add, int indice)
+\begin{DoxyCompactList}\small\item\em appel une des fonction buff. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8c_ae22790f9620560c2393838ad1d17606d}{Buff\+Dmg}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float add)
+\begin{DoxyCompactList}\small\item\em Augmente les dégâts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8c_ad5534b7b1fc84944467ed484f987d148}{Bufffire\+Rate}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float add)
+\begin{DoxyCompactList}\small\item\em Augmente la cadence de tir. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8c_aed66b9e9348fc7e0ad2c87f18c159bcc}{Buffreload\+Time}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float sub)
+\begin{DoxyCompactList}\small\item\em Réduit le temps de rechargement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8c_a36aa5af7ab945960b0408c7b3147598b}{Buffdispersion}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float sub)
+\begin{DoxyCompactList}\small\item\em Réduit la dispersion des tirs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8c_a521760451f88833725e8b17b3586edc1}{Buffbullet\+Speed}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float add)
+\begin{DoxyCompactList}\small\item\em Augmente la vitesse des projectiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8c_a277e45232d5f2fe316d40dabc07d9b8a}{Buffbullet\+Size}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float add)
+\begin{DoxyCompactList}\small\item\em Augmente la taille des projectiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{BuffSystem_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{BuffSystem_8c_a9a9b4b2422ce2adc3ad12233d4d26e56}\index{BuffSystem.c@{BuffSystem.c}!Buff@{Buff}}
+\index{Buff@{Buff}!BuffSystem.c@{BuffSystem.c}}
+\doxysubsubsection{\texorpdfstring{Buff()}{Buff()}}
+{\footnotesize\ttfamily \label{BuffSystem_8c_a9a9b4b2422ce2adc3ad12233d4d26e56} 
+void Buff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{, }\item[{float}]{add}{, }\item[{int}]{indice}{}\end{DoxyParamCaption})}
+
+
+
+appel une des fonction buff. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff \\
+\hline
+{\em add} & Valeur à ajouter \\
+\hline
+{\em indice} & indice de la fonction à appeler \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BuffSystem_8c_a277e45232d5f2fe316d40dabc07d9b8a}\index{BuffSystem.c@{BuffSystem.c}!BuffbulletSize@{BuffbulletSize}}
+\index{BuffbulletSize@{BuffbulletSize}!BuffSystem.c@{BuffSystem.c}}
+\doxysubsubsection{\texorpdfstring{BuffbulletSize()}{BuffbulletSize()}}
+{\footnotesize\ttfamily \label{BuffSystem_8c_a277e45232d5f2fe316d40dabc07d9b8a} 
+void Buffbullet\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{, }\item[{float}]{add}{}\end{DoxyParamCaption})}
+
+
+
+Augmente la taille des projectiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff \\
+\hline
+{\em add} & Valeur à ajouter \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BuffSystem_8c_a521760451f88833725e8b17b3586edc1}\index{BuffSystem.c@{BuffSystem.c}!BuffbulletSpeed@{BuffbulletSpeed}}
+\index{BuffbulletSpeed@{BuffbulletSpeed}!BuffSystem.c@{BuffSystem.c}}
+\doxysubsubsection{\texorpdfstring{BuffbulletSpeed()}{BuffbulletSpeed()}}
+{\footnotesize\ttfamily \label{BuffSystem_8c_a521760451f88833725e8b17b3586edc1} 
+void Buffbullet\+Speed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{, }\item[{float}]{add}{}\end{DoxyParamCaption})}
+
+
+
+Augmente la vitesse des projectiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff \\
+\hline
+{\em add} & Valeur à ajouter \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BuffSystem_8c_a36aa5af7ab945960b0408c7b3147598b}\index{BuffSystem.c@{BuffSystem.c}!Buffdispersion@{Buffdispersion}}
+\index{Buffdispersion@{Buffdispersion}!BuffSystem.c@{BuffSystem.c}}
+\doxysubsubsection{\texorpdfstring{Buffdispersion()}{Buffdispersion()}}
+{\footnotesize\ttfamily \label{BuffSystem_8c_a36aa5af7ab945960b0408c7b3147598b} 
+void Buffdispersion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{, }\item[{float}]{sub}{}\end{DoxyParamCaption})}
+
+
+
+Réduit la dispersion des tirs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff \\
+\hline
+{\em sub} & Valeur à soustraire \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BuffSystem_8c_ae22790f9620560c2393838ad1d17606d}\index{BuffSystem.c@{BuffSystem.c}!BuffDmg@{BuffDmg}}
+\index{BuffDmg@{BuffDmg}!BuffSystem.c@{BuffSystem.c}}
+\doxysubsubsection{\texorpdfstring{BuffDmg()}{BuffDmg()}}
+{\footnotesize\ttfamily \label{BuffSystem_8c_ae22790f9620560c2393838ad1d17606d} 
+void Buff\+Dmg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{, }\item[{float}]{add}{}\end{DoxyParamCaption})}
+
+
+
+Augmente les dégâts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff \\
+\hline
+{\em add} & Valeur à ajouter \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BuffSystem_8c_ad5534b7b1fc84944467ed484f987d148}\index{BuffSystem.c@{BuffSystem.c}!BufffireRate@{BufffireRate}}
+\index{BufffireRate@{BufffireRate}!BuffSystem.c@{BuffSystem.c}}
+\doxysubsubsection{\texorpdfstring{BufffireRate()}{BufffireRate()}}
+{\footnotesize\ttfamily \label{BuffSystem_8c_ad5534b7b1fc84944467ed484f987d148} 
+void Bufffire\+Rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{, }\item[{float}]{add}{}\end{DoxyParamCaption})}
+
+
+
+Augmente la cadence de tir. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff \\
+\hline
+{\em add} & Valeur à ajouter \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BuffSystem_8c_aaa53f454659a437188bc410146a733fe}\index{BuffSystem.c@{BuffSystem.c}!BuffInit@{BuffInit}}
+\index{BuffInit@{BuffInit}!BuffSystem.c@{BuffSystem.c}}
+\doxysubsubsection{\texorpdfstring{BuffInit()}{BuffInit()}}
+{\footnotesize\ttfamily \label{BuffSystem_8c_aaa53f454659a437188bc410146a733fe} 
+\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*} Buff\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise et alloue un nouveau buff. 
+
+\begin{DoxyReturn}{Returns}
+Pointeur vers une structure \doxylink{structbuff__t}{buff\+\_\+t} initialisée
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Les valeurs du buff sont initialisées à 1 (aucun bonus). 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+La mémoire allouée doit être libérée avec \doxylink{BuffSystem_8h_a72028564d5ae2c5ceb60456d54691e8b}{Free\+Buff()}. 
+\end{DoxyWarning}
+\Hypertarget{BuffSystem_8c_aed66b9e9348fc7e0ad2c87f18c159bcc}\index{BuffSystem.c@{BuffSystem.c}!BuffreloadTime@{BuffreloadTime}}
+\index{BuffreloadTime@{BuffreloadTime}!BuffSystem.c@{BuffSystem.c}}
+\doxysubsubsection{\texorpdfstring{BuffreloadTime()}{BuffreloadTime()}}
+{\footnotesize\ttfamily \label{BuffSystem_8c_aed66b9e9348fc7e0ad2c87f18c159bcc} 
+void Buffreload\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{, }\item[{float}]{sub}{}\end{DoxyParamCaption})}
+
+
+
+Réduit le temps de rechargement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff \\
+\hline
+{\em sub} & Valeur à soustraire \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BuffSystem_8c_a72028564d5ae2c5ceb60456d54691e8b}\index{BuffSystem.c@{BuffSystem.c}!FreeBuff@{FreeBuff}}
+\index{FreeBuff@{FreeBuff}!BuffSystem.c@{BuffSystem.c}}
+\doxysubsubsection{\texorpdfstring{FreeBuff()}{FreeBuff()}}
+{\footnotesize\ttfamily \label{BuffSystem_8c_a72028564d5ae2c5ceb60456d54691e8b} 
+void Free\+Buff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{}\end{DoxyParamCaption})}
+
+
+
+Libère les ressources associées à un buff. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff à libérer \\
+\hline
+\end{DoxyParams}

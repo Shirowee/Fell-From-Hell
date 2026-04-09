@@ -3,9 +3,21 @@
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
 {\ttfamily \#include "{}../systems/\+Bullet\+Pool.\+h"{}}\newline
 Include dependency graph for Player\+Weapon.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{PlayerWeapon_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PlayerWeapon_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,11 +54,6 @@ struct \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}}
 \item 
 \#define \mbox{\hyperlink{PlayerWeapon_8h_af6650858f95665fa471ac71d584f9a51}{PISTOLET\+\_\+\+MULTI\+\_\+\+DIRECTION}}~13
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Typedefs}
-\begin{DoxyCompactItemize}
-\item 
-typedef struct \mbox{\hyperlink{structPlayer__s}{Player\+\_\+s}} \mbox{\hyperlink{PlayerWeapon_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}
-\begin{DoxyCompactList}\small\item\em Structure opaque représentant le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -64,11 +71,11 @@ enum \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601}{effect\
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{PlayerWeapon_8h_afbd8054542ac18bb344723c5e7c171d8}{Player\+Shoot}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, double \texorpdfstring{$\ast$}{*}time\+Spent, double \texorpdfstring{$\ast$}{*}start\+Reload)
+void \mbox{\hyperlink{PlayerWeapon_8h_afbd8054542ac18bb344723c5e7c171d8}{Player\+Shoot}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, double \texorpdfstring{$\ast$}{*}time\+Spent, double \texorpdfstring{$\ast$}{*}start\+Reload)
 \begin{DoxyCompactList}\small\item\em Permet au joueur de tirer avec son arme actuelle. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{PlayerWeapon_8h_adc123952fe27d52272e4627f4f7e124a}{Change\+Weapon}} (\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}old\+Weapon, int indice)
 \begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}arme actuelle. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{PlayerWeapon_8h_a4fb8e11fca5691cd02b616de96744a92}{spawn\+Bullet\+Weapon}} (\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} weapon, \mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} player, int direction)
+void \mbox{\hyperlink{PlayerWeapon_8h_a4fb8e11fca5691cd02b616de96744a92}{spawn\+Bullet\+Weapon}} (\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} weapon, \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} player, int direction)
 \begin{DoxyCompactList}\small\item\em Génère un projectile selon les caractéristiques de l\textquotesingle{}arme. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{PlayerWeapon_8h_a3253470921600f82b027ff8d4fa60e4f}{Cooldown}} (\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} weapon, double \texorpdfstring{$\ast$}{*}time\+Spent)
 \begin{DoxyCompactList}\small\item\em Vérifie si l\textquotesingle{}arme est en cooldown. \end{DoxyCompactList}\item 
@@ -107,118 +114,109 @@ int \mbox{\hyperlink{PlayerWeapon_8h_aba0adba5b97a0dbad07bea6343c5af16}{Is\+Relo
 \begin{DoxyCompactList}\small\item\em Pistolet multidirection \+: tir dans 4 directions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\label{doc-define-members}
+\Hypertarget{PlayerWeapon_8h_doc-define-members}
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{PlayerWeapon_8h_a4b4b7efeb223e9731ed5d0f7484e9e3d}\label{PlayerWeapon_8h_a4b4b7efeb223e9731ed5d0f7484e9e3d} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!ARBALETE@{ARBALETE}}
+\Hypertarget{PlayerWeapon_8h_a4b4b7efeb223e9731ed5d0f7484e9e3d}\index{PlayerWeapon.h@{PlayerWeapon.h}!ARBALETE@{ARBALETE}}
 \index{ARBALETE@{ARBALETE}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{ARBALETE}{ARBALETE}}
-{\footnotesize\ttfamily \#define ARBALETE~10}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a4b4b7efeb223e9731ed5d0f7484e9e3d} 
+\#define ARBALETE~10}
 
-\Hypertarget{PlayerWeapon_8h_a5b8fc15083ec27a36252547ceee22bd0}\label{PlayerWeapon_8h_a5b8fc15083ec27a36252547ceee22bd0} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!EPEE\_LONGUE@{EPEE\_LONGUE}}
+\Hypertarget{PlayerWeapon_8h_a5b8fc15083ec27a36252547ceee22bd0}\index{PlayerWeapon.h@{PlayerWeapon.h}!EPEE\_LONGUE@{EPEE\_LONGUE}}
 \index{EPEE\_LONGUE@{EPEE\_LONGUE}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{EPEE\_LONGUE}{EPEE\_LONGUE}}
-{\footnotesize\ttfamily \#define EPEE\+\_\+\+LONGUE~8}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a5b8fc15083ec27a36252547ceee22bd0} 
+\#define EPEE\+\_\+\+LONGUE~8}
 
-\Hypertarget{PlayerWeapon_8h_a8e8536874251d8444231a1dc20796445}\label{PlayerWeapon_8h_a8e8536874251d8444231a1dc20796445} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!FUSIL\_A\_POMPE@{FUSIL\_A\_POMPE}}
+\Hypertarget{PlayerWeapon_8h_a8e8536874251d8444231a1dc20796445}\index{PlayerWeapon.h@{PlayerWeapon.h}!FUSIL\_A\_POMPE@{FUSIL\_A\_POMPE}}
 \index{FUSIL\_A\_POMPE@{FUSIL\_A\_POMPE}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{FUSIL\_A\_POMPE}{FUSIL\_A\_POMPE}}
-{\footnotesize\ttfamily \#define FUSIL\+\_\+\+A\+\_\+\+POMPE~3}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a8e8536874251d8444231a1dc20796445} 
+\#define FUSIL\+\_\+\+A\+\_\+\+POMPE~3}
 
-\Hypertarget{PlayerWeapon_8h_a05a44f284f85b535a6e449e7c0d34213}\label{PlayerWeapon_8h_a05a44f284f85b535a6e449e7c0d34213} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!FUSIL\_RAFALES@{FUSIL\_RAFALES}}
+\Hypertarget{PlayerWeapon_8h_a05a44f284f85b535a6e449e7c0d34213}\index{PlayerWeapon.h@{PlayerWeapon.h}!FUSIL\_RAFALES@{FUSIL\_RAFALES}}
 \index{FUSIL\_RAFALES@{FUSIL\_RAFALES}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{FUSIL\_RAFALES}{FUSIL\_RAFALES}}
-{\footnotesize\ttfamily \#define FUSIL\+\_\+\+RAFALES~5}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a05a44f284f85b535a6e449e7c0d34213} 
+\#define FUSIL\+\_\+\+RAFALES~5}
 
-\Hypertarget{PlayerWeapon_8h_af442739e48b782e8ae806ac870b7e27d}\label{PlayerWeapon_8h_af442739e48b782e8ae806ac870b7e27d} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!LANCE\_FLAMMES@{LANCE\_FLAMMES}}
+\Hypertarget{PlayerWeapon_8h_af442739e48b782e8ae806ac870b7e27d}\index{PlayerWeapon.h@{PlayerWeapon.h}!LANCE\_FLAMMES@{LANCE\_FLAMMES}}
 \index{LANCE\_FLAMMES@{LANCE\_FLAMMES}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{LANCE\_FLAMMES}{LANCE\_FLAMMES}}
-{\footnotesize\ttfamily \#define LANCE\+\_\+\+FLAMMES~1}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_af442739e48b782e8ae806ac870b7e27d} 
+\#define LANCE\+\_\+\+FLAMMES~1}
 
-\Hypertarget{PlayerWeapon_8h_ab6e3f58d26b5b46c260df07ecf78f5d6}\label{PlayerWeapon_8h_ab6e3f58d26b5b46c260df07ecf78f5d6} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!LANCE\_GLACE@{LANCE\_GLACE}}
+\Hypertarget{PlayerWeapon_8h_ab6e3f58d26b5b46c260df07ecf78f5d6}\index{PlayerWeapon.h@{PlayerWeapon.h}!LANCE\_GLACE@{LANCE\_GLACE}}
 \index{LANCE\_GLACE@{LANCE\_GLACE}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{LANCE\_GLACE}{LANCE\_GLACE}}
-{\footnotesize\ttfamily \#define LANCE\+\_\+\+GLACE~6}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_ab6e3f58d26b5b46c260df07ecf78f5d6} 
+\#define LANCE\+\_\+\+GLACE~6}
 
-\Hypertarget{PlayerWeapon_8h_a927190ba95625850adfa794d6b6ecbb7}\label{PlayerWeapon_8h_a927190ba95625850adfa794d6b6ecbb7} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!LANCE\_MISSILE\_TETE\_CHERCHEUSE@{LANCE\_MISSILE\_TETE\_CHERCHEUSE}}
+\Hypertarget{PlayerWeapon_8h_a927190ba95625850adfa794d6b6ecbb7}\index{PlayerWeapon.h@{PlayerWeapon.h}!LANCE\_MISSILE\_TETE\_CHERCHEUSE@{LANCE\_MISSILE\_TETE\_CHERCHEUSE}}
 \index{LANCE\_MISSILE\_TETE\_CHERCHEUSE@{LANCE\_MISSILE\_TETE\_CHERCHEUSE}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{LANCE\_MISSILE\_TETE\_CHERCHEUSE}{LANCE\_MISSILE\_TETE\_CHERCHEUSE}}
-{\footnotesize\ttfamily \#define LANCE\+\_\+\+MISSILE\+\_\+\+TETE\+\_\+\+CHERCHEUSE~2}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a927190ba95625850adfa794d6b6ecbb7} 
+\#define LANCE\+\_\+\+MISSILE\+\_\+\+TETE\+\_\+\+CHERCHEUSE~2}
 
-\Hypertarget{PlayerWeapon_8h_a19e041578865553c36f8e37b71c72ac0}\label{PlayerWeapon_8h_a19e041578865553c36f8e37b71c72ac0} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!LANCE\_ROQUETTE@{LANCE\_ROQUETTE}}
+\Hypertarget{PlayerWeapon_8h_a19e041578865553c36f8e37b71c72ac0}\index{PlayerWeapon.h@{PlayerWeapon.h}!LANCE\_ROQUETTE@{LANCE\_ROQUETTE}}
 \index{LANCE\_ROQUETTE@{LANCE\_ROQUETTE}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{LANCE\_ROQUETTE}{LANCE\_ROQUETTE}}
-{\footnotesize\ttfamily \#define LANCE\+\_\+\+ROQUETTE~7}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a19e041578865553c36f8e37b71c72ac0} 
+\#define LANCE\+\_\+\+ROQUETTE~7}
 
-\Hypertarget{PlayerWeapon_8h_a2b8ae3b2ddb786920c9a918f2cc96a9d}\label{PlayerWeapon_8h_a2b8ae3b2ddb786920c9a918f2cc96a9d} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!MINIGUN@{MINIGUN}}
+\Hypertarget{PlayerWeapon_8h_a2b8ae3b2ddb786920c9a918f2cc96a9d}\index{PlayerWeapon.h@{PlayerWeapon.h}!MINIGUN@{MINIGUN}}
 \index{MINIGUN@{MINIGUN}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{MINIGUN}{MINIGUN}}
-{\footnotesize\ttfamily \#define MINIGUN~0}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a2b8ae3b2ddb786920c9a918f2cc96a9d} 
+\#define MINIGUN~0}
 
-\Hypertarget{PlayerWeapon_8h_a3a4579869c8b9cf263955f228a2acbd6}\label{PlayerWeapon_8h_a3a4579869c8b9cf263955f228a2acbd6} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!PISTOLET\_ELECTRIQUE@{PISTOLET\_ELECTRIQUE}}
+\Hypertarget{PlayerWeapon_8h_a3a4579869c8b9cf263955f228a2acbd6}\index{PlayerWeapon.h@{PlayerWeapon.h}!PISTOLET\_ELECTRIQUE@{PISTOLET\_ELECTRIQUE}}
 \index{PISTOLET\_ELECTRIQUE@{PISTOLET\_ELECTRIQUE}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{PISTOLET\_ELECTRIQUE}{PISTOLET\_ELECTRIQUE}}
-{\footnotesize\ttfamily \#define PISTOLET\+\_\+\+ELECTRIQUE~11}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a3a4579869c8b9cf263955f228a2acbd6} 
+\#define PISTOLET\+\_\+\+ELECTRIQUE~11}
 
-\Hypertarget{PlayerWeapon_8h_a9c92ee186d8c236dc5dfe5fbcce0d160}\label{PlayerWeapon_8h_a9c92ee186d8c236dc5dfe5fbcce0d160} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!PISTOLET\_LASER@{PISTOLET\_LASER}}
+\Hypertarget{PlayerWeapon_8h_a9c92ee186d8c236dc5dfe5fbcce0d160}\index{PlayerWeapon.h@{PlayerWeapon.h}!PISTOLET\_LASER@{PISTOLET\_LASER}}
 \index{PISTOLET\_LASER@{PISTOLET\_LASER}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{PISTOLET\_LASER}{PISTOLET\_LASER}}
-{\footnotesize\ttfamily \#define PISTOLET\+\_\+\+LASER~4}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a9c92ee186d8c236dc5dfe5fbcce0d160} 
+\#define PISTOLET\+\_\+\+LASER~4}
 
-\Hypertarget{PlayerWeapon_8h_a566a4c99cb123aa2a007713585d0e0f8}\label{PlayerWeapon_8h_a566a4c99cb123aa2a007713585d0e0f8} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!PISTOLET\_MITRAILLEUR@{PISTOLET\_MITRAILLEUR}}
+\Hypertarget{PlayerWeapon_8h_a566a4c99cb123aa2a007713585d0e0f8}\index{PlayerWeapon.h@{PlayerWeapon.h}!PISTOLET\_MITRAILLEUR@{PISTOLET\_MITRAILLEUR}}
 \index{PISTOLET\_MITRAILLEUR@{PISTOLET\_MITRAILLEUR}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{PISTOLET\_MITRAILLEUR}{PISTOLET\_MITRAILLEUR}}
-{\footnotesize\ttfamily \#define PISTOLET\+\_\+\+MITRAILLEUR~12}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a566a4c99cb123aa2a007713585d0e0f8} 
+\#define PISTOLET\+\_\+\+MITRAILLEUR~12}
 
-\Hypertarget{PlayerWeapon_8h_af6650858f95665fa471ac71d584f9a51}\label{PlayerWeapon_8h_af6650858f95665fa471ac71d584f9a51} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!PISTOLET\_MULTI\_DIRECTION@{PISTOLET\_MULTI\_DIRECTION}}
+\Hypertarget{PlayerWeapon_8h_af6650858f95665fa471ac71d584f9a51}\index{PlayerWeapon.h@{PlayerWeapon.h}!PISTOLET\_MULTI\_DIRECTION@{PISTOLET\_MULTI\_DIRECTION}}
 \index{PISTOLET\_MULTI\_DIRECTION@{PISTOLET\_MULTI\_DIRECTION}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{PISTOLET\_MULTI\_DIRECTION}{PISTOLET\_MULTI\_DIRECTION}}
-{\footnotesize\ttfamily \#define PISTOLET\+\_\+\+MULTI\+\_\+\+DIRECTION~13}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_af6650858f95665fa471ac71d584f9a51} 
+\#define PISTOLET\+\_\+\+MULTI\+\_\+\+DIRECTION~13}
 
-\Hypertarget{PlayerWeapon_8h_a479041a42773c50c855b3de46d4c024c}\label{PlayerWeapon_8h_a479041a42773c50c855b3de46d4c024c} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!SNIPER@{SNIPER}}
+\Hypertarget{PlayerWeapon_8h_a479041a42773c50c855b3de46d4c024c}\index{PlayerWeapon.h@{PlayerWeapon.h}!SNIPER@{SNIPER}}
 \index{SNIPER@{SNIPER}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{SNIPER}{SNIPER}}
-{\footnotesize\ttfamily \#define SNIPER~9}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a479041a42773c50c855b3de46d4c024c} 
+\#define SNIPER~9}
 
 
 
-\doxysubsection{Typedef Documentation}
-\Hypertarget{PlayerWeapon_8h_a47e6f8d93a79a2576363b43294ea2090}\label{PlayerWeapon_8h_a47e6f8d93a79a2576363b43294ea2090} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!Player@{Player}}
-\index{Player@{Player}!PlayerWeapon.h@{PlayerWeapon.h}}
-\doxysubsubsection{\texorpdfstring{Player}{Player}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structPlayer__s}{Player\+\_\+s}} \mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}}}
-
-
-
-Structure opaque représentant le joueur. 
-
-
-
+\label{doc-enum-members}
+\Hypertarget{PlayerWeapon_8h_doc-enum-members}
 \doxysubsection{Enumeration Type Documentation}
-\Hypertarget{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601}\label{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!effect\_t@{effect\_t}}
+\Hypertarget{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601}\index{PlayerWeapon.h@{PlayerWeapon.h}!effect\_t@{effect\_t}}
 \index{effect\_t@{effect\_t}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{effect\_t}{effect\_t}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601}{effect\+\_\+t}}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601} 
+enum \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601}{effect\+\_\+t}}}
 
 
 
 Types d\textquotesingle{}effets applicables aux armes. 
 
-\begin{DoxyEnumFields}{Enumerator}
+\begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{AUCUN@{AUCUN}!PlayerWeapon.h@{PlayerWeapon.h}}\index{PlayerWeapon.h@{PlayerWeapon.h}!AUCUN@{AUCUN}}}\Hypertarget{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}\label{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b} 
 AUCUN&Aucun effet \\
 \hline
@@ -250,12 +248,14 @@ BENEDICTION&Bénédiction \\
 \end{DoxyEnumFields}
 
 
+\label{doc-func-members}
+\Hypertarget{PlayerWeapon_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{PlayerWeapon_8h_adc123952fe27d52272e4627f4f7e124a}\label{PlayerWeapon_8h_adc123952fe27d52272e4627f4f7e124a} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!ChangeWeapon@{ChangeWeapon}}
+\Hypertarget{PlayerWeapon_8h_adc123952fe27d52272e4627f4f7e124a}\index{PlayerWeapon.h@{PlayerWeapon.h}!ChangeWeapon@{ChangeWeapon}}
 \index{ChangeWeapon@{ChangeWeapon}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{ChangeWeapon()}{ChangeWeapon()}}
-{\footnotesize\ttfamily void Change\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{old\+Weapon,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_adc123952fe27d52272e4627f4f7e124a} 
+void Change\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{old\+Weapon}{, }\item[{int}]{indice}{}\end{DoxyParamCaption})}
 
 
 
@@ -268,11 +268,11 @@ Change l\textquotesingle{}arme actuelle.
 {\em indice} & Indice de la nouvelle arme à équiper \\
 \hline
 \end{DoxyParams}
-\Hypertarget{PlayerWeapon_8h_a3253470921600f82b027ff8d4fa60e4f}\label{PlayerWeapon_8h_a3253470921600f82b027ff8d4fa60e4f} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!Cooldown@{Cooldown}}
+\Hypertarget{PlayerWeapon_8h_a3253470921600f82b027ff8d4fa60e4f}\index{PlayerWeapon.h@{PlayerWeapon.h}!Cooldown@{Cooldown}}
 \index{Cooldown@{Cooldown}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{Cooldown()}{Cooldown()}}
-{\footnotesize\ttfamily int Cooldown (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}}}]{weapon,  }\item[{double \texorpdfstring{$\ast$}{*}}]{time\+Spent }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a3253470921600f82b027ff8d4fa60e4f} 
+int Cooldown (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}}}]{weapon}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{time\+Spent}{}\end{DoxyParamCaption})}
 
 
 
@@ -288,11 +288,11 @@ Vérifie si l\textquotesingle{}arme est en cooldown.
 \begin{DoxyReturn}{Returns}
 1 si en cooldown, 0 sinon 
 \end{DoxyReturn}
-\Hypertarget{PlayerWeapon_8h_aba0adba5b97a0dbad07bea6343c5af16}\label{PlayerWeapon_8h_aba0adba5b97a0dbad07bea6343c5af16} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!IsReloading@{IsReloading}}
+\Hypertarget{PlayerWeapon_8h_aba0adba5b97a0dbad07bea6343c5af16}\index{PlayerWeapon.h@{PlayerWeapon.h}!IsReloading@{IsReloading}}
 \index{IsReloading@{IsReloading}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{IsReloading()}{IsReloading()}}
-{\footnotesize\ttfamily int Is\+Reloading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{weapon,  }\item[{double \texorpdfstring{$\ast$}{*}}]{start\+Reload }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_aba0adba5b97a0dbad07bea6343c5af16} 
+int Is\+Reloading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{weapon}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{start\+Reload}{}\end{DoxyParamCaption})}
 
 
 
@@ -308,11 +308,11 @@ Vérifie si l\textquotesingle{}arme est en cours de rechargement.
 \begin{DoxyReturn}{Returns}
 1 si en rechargement, 0 sinon 
 \end{DoxyReturn}
-\Hypertarget{PlayerWeapon_8h_afbd8054542ac18bb344723c5e7c171d8}\label{PlayerWeapon_8h_afbd8054542ac18bb344723c5e7c171d8} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!PlayerShoot@{PlayerShoot}}
+\Hypertarget{PlayerWeapon_8h_afbd8054542ac18bb344723c5e7c171d8}\index{PlayerWeapon.h@{PlayerWeapon.h}!PlayerShoot@{PlayerShoot}}
 \index{PlayerShoot@{PlayerShoot}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{PlayerShoot()}{PlayerShoot()}}
-{\footnotesize\ttfamily void Player\+Shoot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{double \texorpdfstring{$\ast$}{*}}]{time\+Spent,  }\item[{double \texorpdfstring{$\ast$}{*}}]{start\+Reload }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_afbd8054542ac18bb344723c5e7c171d8} 
+void Player\+Shoot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{time\+Spent}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{start\+Reload}{}\end{DoxyParamCaption})}
 
 
 
@@ -327,11 +327,11 @@ Permet au joueur de tirer avec son arme actuelle.
 {\em start\+Reload} & Temps de début du rechargement \\
 \hline
 \end{DoxyParams}
-\Hypertarget{PlayerWeapon_8h_a4fb8e11fca5691cd02b616de96744a92}\label{PlayerWeapon_8h_a4fb8e11fca5691cd02b616de96744a92} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!spawnBulletWeapon@{spawnBulletWeapon}}
+\Hypertarget{PlayerWeapon_8h_a4fb8e11fca5691cd02b616de96744a92}\index{PlayerWeapon.h@{PlayerWeapon.h}!spawnBulletWeapon@{spawnBulletWeapon}}
 \index{spawnBulletWeapon@{spawnBulletWeapon}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{spawnBulletWeapon()}{spawnBulletWeapon()}}
-{\footnotesize\ttfamily void spawn\+Bullet\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}}}]{weapon,  }\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}}}]{player,  }\item[{int}]{direction }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a4fb8e11fca5691cd02b616de96744a92} 
+void spawn\+Bullet\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}}}]{weapon}{, }\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}}]{player}{, }\item[{int}]{direction}{}\end{DoxyParamCaption})}
 
 
 
@@ -343,147 +343,149 @@ Génère un projectile selon les caractéristiques de l\textquotesingle{}arme.
 \hline
 {\em pos\+Joueur} & Position du joueur \\
 \hline
-{\em direction} & Direction du tir \\
+{\em direction} & \doxylink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} du tir \\
 \hline
 \end{DoxyParams}
 
 
+\label{doc-var-members}
+\Hypertarget{PlayerWeapon_8h_doc-var-members}
 \doxysubsection{Variable Documentation}
-\Hypertarget{PlayerWeapon_8h_a8c8acc3ea9356c2f5c7e3e10d7192059}\label{PlayerWeapon_8h_a8c8acc3ea9356c2f5c7e3e10d7192059} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!arbalete@{arbalete}}
+\Hypertarget{PlayerWeapon_8h_a8c8acc3ea9356c2f5c7e3e10d7192059}\index{PlayerWeapon.h@{PlayerWeapon.h}!arbalete@{arbalete}}
 \index{arbalete@{arbalete}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{arbalete}{arbalete}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} arbalete\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a8c8acc3ea9356c2f5c7e3e10d7192059} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} arbalete\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Arbalète \+: alterne différents types de carreaux. 
 
-\Hypertarget{PlayerWeapon_8h_a8360d988d07b52ad8ddf20e5fafd4c6f}\label{PlayerWeapon_8h_a8360d988d07b52ad8ddf20e5fafd4c6f} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!epee\_longue@{epee\_longue}}
+\Hypertarget{PlayerWeapon_8h_a8360d988d07b52ad8ddf20e5fafd4c6f}\index{PlayerWeapon.h@{PlayerWeapon.h}!epee\_longue@{epee\_longue}}
 \index{epee\_longue@{epee\_longue}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{epee\_longue}{epee\_longue}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} epee\+\_\+longue\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a8360d988d07b52ad8ddf20e5fafd4c6f} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} epee\+\_\+longue\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Épée longue \+: attaque de mêlée en cône. 
 
-\Hypertarget{PlayerWeapon_8h_afeb379c686bd18e9c63c80b661209763}\label{PlayerWeapon_8h_afeb379c686bd18e9c63c80b661209763} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!fusil\_a\_pompe@{fusil\_a\_pompe}}
+\Hypertarget{PlayerWeapon_8h_afeb379c686bd18e9c63c80b661209763}\index{PlayerWeapon.h@{PlayerWeapon.h}!fusil\_a\_pompe@{fusil\_a\_pompe}}
 \index{fusil\_a\_pompe@{fusil\_a\_pompe}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{fusil\_a\_pompe}{fusil\_a\_pompe}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+a\+\_\+pompe\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_afeb379c686bd18e9c63c80b661209763} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+a\+\_\+pompe\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Fusil à pompe \+: tir en cône de plusieurs projectiles. 
 
-\Hypertarget{PlayerWeapon_8h_a01166402a9981ed8e533de5e1786ce89}\label{PlayerWeapon_8h_a01166402a9981ed8e533de5e1786ce89} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!fusil\_rafales@{fusil\_rafales}}
+\Hypertarget{PlayerWeapon_8h_a01166402a9981ed8e533de5e1786ce89}\index{PlayerWeapon.h@{PlayerWeapon.h}!fusil\_rafales@{fusil\_rafales}}
 \index{fusil\_rafales@{fusil\_rafales}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{fusil\_rafales}{fusil\_rafales}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+rafales\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a01166402a9981ed8e533de5e1786ce89} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+rafales\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Fusil à rafales \+: tir de 3 balles successives. 
 
-\Hypertarget{PlayerWeapon_8h_a50f909b581e3c83ab8e9fa368bcf9ad4}\label{PlayerWeapon_8h_a50f909b581e3c83ab8e9fa368bcf9ad4} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!lance\_flammes@{lance\_flammes}}
+\Hypertarget{PlayerWeapon_8h_a50f909b581e3c83ab8e9fa368bcf9ad4}\index{PlayerWeapon.h@{PlayerWeapon.h}!lance\_flammes@{lance\_flammes}}
 \index{lance\_flammes@{lance\_flammes}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{lance\_flammes}{lance\_flammes}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+flammes\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a50f909b581e3c83ab8e9fa368bcf9ad4} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+flammes\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Lance-\/flammes \+: faibles dégâts mais applique brûlure. 
 
-\Hypertarget{PlayerWeapon_8h_aedb4a0d6d9ebb2993170ccf3702774e2}\label{PlayerWeapon_8h_aedb4a0d6d9ebb2993170ccf3702774e2} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!lance\_glace@{lance\_glace}}
+\Hypertarget{PlayerWeapon_8h_aedb4a0d6d9ebb2993170ccf3702774e2}\index{PlayerWeapon.h@{PlayerWeapon.h}!lance\_glace@{lance\_glace}}
 \index{lance\_glace@{lance\_glace}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{lance\_glace}{lance\_glace}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+glace\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_aedb4a0d6d9ebb2993170ccf3702774e2} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+glace\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Lance-\/glace \+: équivalent gel du lance-\/flammes. 
 
-\Hypertarget{PlayerWeapon_8h_a5620b923a3c0ec6db2ddeadc4507b47d}\label{PlayerWeapon_8h_a5620b923a3c0ec6db2ddeadc4507b47d} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!lance\_missile\_tete\_chercheuse@{lance\_missile\_tete\_chercheuse}}
+\Hypertarget{PlayerWeapon_8h_a5620b923a3c0ec6db2ddeadc4507b47d}\index{PlayerWeapon.h@{PlayerWeapon.h}!lance\_missile\_tete\_chercheuse@{lance\_missile\_tete\_chercheuse}}
 \index{lance\_missile\_tete\_chercheuse@{lance\_missile\_tete\_chercheuse}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{lance\_missile\_tete\_chercheuse}{lance\_missile\_tete\_chercheuse}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+missile\+\_\+tete\+\_\+chercheuse\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a5620b923a3c0ec6db2ddeadc4507b47d} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+missile\+\_\+tete\+\_\+chercheuse\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Lance-\/missile à tête chercheuse. 
 
-\Hypertarget{PlayerWeapon_8h_aa533c9ae7191475452231219c0f40645}\label{PlayerWeapon_8h_aa533c9ae7191475452231219c0f40645} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!lance\_roquette@{lance\_roquette}}
+\Hypertarget{PlayerWeapon_8h_aa533c9ae7191475452231219c0f40645}\index{PlayerWeapon.h@{PlayerWeapon.h}!lance\_roquette@{lance\_roquette}}
 \index{lance\_roquette@{lance\_roquette}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{lance\_roquette}{lance\_roquette}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+roquette\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_aa533c9ae7191475452231219c0f40645} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+roquette\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Lance-\/roquette \+: missile explosif. 
 
-\Hypertarget{PlayerWeapon_8h_a4d8ff34614b1d5d9d20807134de12fd4}\label{PlayerWeapon_8h_a4d8ff34614b1d5d9d20807134de12fd4} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!minigun@{minigun}}
+\Hypertarget{PlayerWeapon_8h_a4d8ff34614b1d5d9d20807134de12fd4}\index{PlayerWeapon.h@{PlayerWeapon.h}!minigun@{minigun}}
 \index{minigun@{minigun}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{minigun}{minigun}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} minigun\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a4d8ff34614b1d5d9d20807134de12fd4} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} minigun\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Minigun \+: tir rapide avec dispersion et grand chargeur. 
 
-\Hypertarget{PlayerWeapon_8h_aea8a4e4eb9161d8e4a3a7b5450e3d9a9}\label{PlayerWeapon_8h_aea8a4e4eb9161d8e4a3a7b5450e3d9a9} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!pistolet\_eclectique@{pistolet\_eclectique}}
+\Hypertarget{PlayerWeapon_8h_aea8a4e4eb9161d8e4a3a7b5450e3d9a9}\index{PlayerWeapon.h@{PlayerWeapon.h}!pistolet\_eclectique@{pistolet\_eclectique}}
 \index{pistolet\_eclectique@{pistolet\_eclectique}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{pistolet\_eclectique}{pistolet\_eclectique}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+eclectique\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_aea8a4e4eb9161d8e4a3a7b5450e3d9a9} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+eclectique\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Pistolet électrique \+: attaque en chaîne les ennemis proches. 
 
-\Hypertarget{PlayerWeapon_8h_abdd8b82b357fb575842ce112597760ec}\label{PlayerWeapon_8h_abdd8b82b357fb575842ce112597760ec} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!pistolet\_laser@{pistolet\_laser}}
+\Hypertarget{PlayerWeapon_8h_abdd8b82b357fb575842ce112597760ec}\index{PlayerWeapon.h@{PlayerWeapon.h}!pistolet\_laser@{pistolet\_laser}}
 \index{pistolet\_laser@{pistolet\_laser}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{pistolet\_laser}{pistolet\_laser}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+laser\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_abdd8b82b357fb575842ce112597760ec} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+laser\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Pistolet laser \+: rayon continu pendant 1 seconde. 
 
-\Hypertarget{PlayerWeapon_8h_acc93f609dad18eb5ff6191661f27f9c9}\label{PlayerWeapon_8h_acc93f609dad18eb5ff6191661f27f9c9} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!pistolet\_mitrailleur@{pistolet\_mitrailleur}}
+\Hypertarget{PlayerWeapon_8h_acc93f609dad18eb5ff6191661f27f9c9}\index{PlayerWeapon.h@{PlayerWeapon.h}!pistolet\_mitrailleur@{pistolet\_mitrailleur}}
 \index{pistolet\_mitrailleur@{pistolet\_mitrailleur}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{pistolet\_mitrailleur}{pistolet\_mitrailleur}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+mitrailleur\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_acc93f609dad18eb5ff6191661f27f9c9} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+mitrailleur\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Pistolet mitrailleur \+: rapide mais peu puissant. 
 
-\Hypertarget{PlayerWeapon_8h_a038dce8dc6a7310c996daa199e4e027c}\label{PlayerWeapon_8h_a038dce8dc6a7310c996daa199e4e027c} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!pistolet\_multi\_direction@{pistolet\_multi\_direction}}
+\Hypertarget{PlayerWeapon_8h_a038dce8dc6a7310c996daa199e4e027c}\index{PlayerWeapon.h@{PlayerWeapon.h}!pistolet\_multi\_direction@{pistolet\_multi\_direction}}
 \index{pistolet\_multi\_direction@{pistolet\_multi\_direction}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{pistolet\_multi\_direction}{pistolet\_multi\_direction}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+multi\+\_\+direction\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a038dce8dc6a7310c996daa199e4e027c} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+multi\+\_\+direction\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Pistolet multidirection \+: tir dans 4 directions. 
 
-\Hypertarget{PlayerWeapon_8h_a6a2743a0956741cb885071eb4e909f85}\label{PlayerWeapon_8h_a6a2743a0956741cb885071eb4e909f85} 
-\index{PlayerWeapon.h@{PlayerWeapon.h}!sniper@{sniper}}
+\Hypertarget{PlayerWeapon_8h_a6a2743a0956741cb885071eb4e909f85}\index{PlayerWeapon.h@{PlayerWeapon.h}!sniper@{sniper}}
 \index{sniper@{sniper}!PlayerWeapon.h@{PlayerWeapon.h}}
 \doxysubsubsection{\texorpdfstring{sniper}{sniper}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} sniper\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8h_a6a2743a0956741cb885071eb4e909f85} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} sniper\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 

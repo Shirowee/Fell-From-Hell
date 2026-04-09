@@ -7,9 +7,21 @@ Gestion du mouvement des ennemis.
 
 {\ttfamily \#include "{}../../lib/enemies/\+Enemy\+Controller.\+h"{}}\newline
 Include dependency graph for Enemy\+Movement.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{EnemyMovement_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{EnemyMovement_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,21 +56,25 @@ A. Pocholle
 \end{DoxyAuthor}
 
 
+\label{doc-define-members}
+\Hypertarget{EnemyMovement_8h_doc-define-members}
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{EnemyMovement_8h_acab62c497165be47039e024208455378}\label{EnemyMovement_8h_acab62c497165be47039e024208455378} 
-\index{EnemyMovement.h@{EnemyMovement.h}!ENEMY\_MOVEMENT\_H@{ENEMY\_MOVEMENT\_H}}
+\Hypertarget{EnemyMovement_8h_acab62c497165be47039e024208455378}\index{EnemyMovement.h@{EnemyMovement.h}!ENEMY\_MOVEMENT\_H@{ENEMY\_MOVEMENT\_H}}
 \index{ENEMY\_MOVEMENT\_H@{ENEMY\_MOVEMENT\_H}!EnemyMovement.h@{EnemyMovement.h}}
 \doxysubsubsection{\texorpdfstring{ENEMY\_MOVEMENT\_H}{ENEMY\_MOVEMENT\_H}}
-{\footnotesize\ttfamily \#define ENEMY\+\_\+\+MOVEMENT\+\_\+H}
+{\footnotesize\ttfamily \label{EnemyMovement_8h_acab62c497165be47039e024208455378} 
+\#define ENEMY\+\_\+\+MOVEMENT\+\_\+H}
 
 
 
+\label{doc-func-members}
+\Hypertarget{EnemyMovement_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{EnemyMovement_8h_a8a0be60e00616212c5c0313a530171d7}\label{EnemyMovement_8h_a8a0be60e00616212c5c0313a530171d7} 
-\index{EnemyMovement.h@{EnemyMovement.h}!EnemyMove@{EnemyMove}}
+\Hypertarget{EnemyMovement_8h_a8a0be60e00616212c5c0313a530171d7}\index{EnemyMovement.h@{EnemyMovement.h}!EnemyMove@{EnemyMove}}
 \index{EnemyMove@{EnemyMove}!EnemyMovement.h@{EnemyMovement.h}}
 \doxysubsubsection{\texorpdfstring{EnemyMove()}{EnemyMove()}}
-{\footnotesize\ttfamily void Enemy\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyMovement_8h_a8a0be60e00616212c5c0313a530171d7} 
+void Enemy\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{}\end{DoxyParamCaption})}
 
 
 
@@ -71,11 +87,11 @@ Utilise la direction (en degrés) et la vitesse pour calculer un déplacement ba
 {\em enemy} & pointeur vers l\textquotesingle{}ennemi \\
 \hline
 \end{DoxyParams}
-\Hypertarget{EnemyMovement_8h_a1a7b3bf48f0774789a1ac17013297ff9}\label{EnemyMovement_8h_a1a7b3bf48f0774789a1ac17013297ff9} 
-\index{EnemyMovement.h@{EnemyMovement.h}!EnemyMoveTowardsPlayer@{EnemyMoveTowardsPlayer}}
+\Hypertarget{EnemyMovement_8h_a1a7b3bf48f0774789a1ac17013297ff9}\index{EnemyMovement.h@{EnemyMovement.h}!EnemyMoveTowardsPlayer@{EnemyMoveTowardsPlayer}}
 \index{EnemyMoveTowardsPlayer@{EnemyMoveTowardsPlayer}!EnemyMovement.h@{EnemyMovement.h}}
 \doxysubsubsection{\texorpdfstring{EnemyMoveTowardsPlayer()}{EnemyMoveTowardsPlayer()}}
-{\footnotesize\ttfamily void Enemy\+Move\+Towards\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{Vector2}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyMovement_8h_a1a7b3bf48f0774789a1ac17013297ff9} 
+void Enemy\+Move\+Towards\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{Vector2}]{player}{}\end{DoxyParamCaption})}
 
 
 
@@ -90,11 +106,11 @@ Calcule la direction vers le joueur, normalise ce vecteur, puis déplace l\textq
 {\em player} & position du joueur \\
 \hline
 \end{DoxyParams}
-\Hypertarget{EnemyMovement_8h_aed0bf00c74b7f1684918c082a252ba4c}\label{EnemyMovement_8h_aed0bf00c74b7f1684918c082a252ba4c} 
-\index{EnemyMovement.h@{EnemyMovement.h}!EnemySetDirTowardsPlayer@{EnemySetDirTowardsPlayer}}
+\Hypertarget{EnemyMovement_8h_aed0bf00c74b7f1684918c082a252ba4c}\index{EnemyMovement.h@{EnemyMovement.h}!EnemySetDirTowardsPlayer@{EnemySetDirTowardsPlayer}}
 \index{EnemySetDirTowardsPlayer@{EnemySetDirTowardsPlayer}!EnemyMovement.h@{EnemyMovement.h}}
 \doxysubsubsection{\texorpdfstring{EnemySetDirTowardsPlayer()}{EnemySetDirTowardsPlayer()}}
-{\footnotesize\ttfamily void Enemy\+Set\+Dir\+Towards\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{Vector2}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyMovement_8h_aed0bf00c74b7f1684918c082a252ba4c} 
+void Enemy\+Set\+Dir\+Towards\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{Vector2}]{player}{}\end{DoxyParamCaption})}
 
 
 

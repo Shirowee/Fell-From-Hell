@@ -3,23 +3,24 @@
 \mbox{\hyperlink{Player_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_H}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PLAYER\_H}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayerBody__s}{PlayerBody\_s}}\ \mbox{\hyperlink{structPlayerBody__s}{PlayerBody}};}
-\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayer__s}{Player\_s}}\ \mbox{\hyperlink{structPlayer__s}{Player}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayerBody__s}{PlayerBody\_s}}\ \mbox{\hyperlink{Player_8h_a2d9be414658d09803de520d27babb9a7}{PlayerBody}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayer__s}{Player\_s}}\ \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}};}
 \DoxyCodeLine{00014\ }
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PlayerController_8h}{PlayerController.h}}"{}}}
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PlayerMovement_8h}{PlayerMovement.h}}"{}}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PlayerWeapon_8h}{PlayerWeapon.h}}"{}}}
 \DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../../raylib/include/raylib.h"{}}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../systems/BuffSystem.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BuffSystem_8h}{../systems/BuffSystem.h}}"{}}}
 \DoxyCodeLine{00020\ }
 \DoxyCodeLine{00021\ \textcolor{comment}{/*}}
 \DoxyCodeLine{00022\ \textcolor{comment}{\ *Constantes}}
 \DoxyCodeLine{00023\ \textcolor{comment}{\ */}}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PLAYER\_MAX\_DIST\_DETECT\ 100}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PLAYER\_MAX\_DIST\_DETECT\ 512}}
 \DoxyCodeLine{00030\ }
 \DoxyCodeLine{00031\ \textcolor{comment}{/*}}
 \DoxyCodeLine{00032\ \textcolor{comment}{\ *Structures}}
@@ -34,12 +35,15 @@
 \DoxyCodeLine{00054\ \ \ \ \ Vector2\ \mbox{\hyperlink{structPlayer__s_a5ed26994494a8c9bcca57f21cc50716d}{position}};\ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00055\ \ \ \ \ Vector2\ \mbox{\hyperlink{structPlayer__s_aecaa3b7b01f9e080d8c2527b8c5b9e0f}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00056\ \ \ \ \ Vector2\ \mbox{\hyperlink{structPlayer__s_a4a9ac67b8576048daf432605599e1459}{velocity}};\ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{structPlayerStats__s}{PlayerStats}}\ \mbox{\hyperlink{structPlayer__s_a541ff3b84b02fbfabb48136868d7e939}{stats}};\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{structMovementConfig__s}{MovementConfig}}\ \mbox{\hyperlink{structPlayer__s_a69a8d693d3babc8678756b0ec46bb51b}{movConfig}};\ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{PlayerController_8h_a7170bfc6947b2e4653e327611d569f29}{PlayerStats}}\ \mbox{\hyperlink{structPlayer__s_a541ff3b84b02fbfabb48136868d7e939}{stats}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{PlayerMovement_8h_ad86d4956249046fbd7348fdce9ec2b20}{MovementConfig}}\ \mbox{\hyperlink{structPlayer__s_a69a8d693d3babc8678756b0ec46bb51b}{movConfig}};\ \ \ }
 \DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{structweapon__t}{weapon\_t}}\ \mbox{\hyperlink{structPlayer__s_a258d2081187aaa706dfcffd8bed2f994}{weapon}};\ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{structbuff__t}{buff\_t}}\ *\ \mbox{\hyperlink{structPlayer__s_a68fb69ce39c80afdd83f1ac6303ecaa1}{buff}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00061\ \};}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*===============Textures===============*/}}
+\DoxyCodeLine{00062\ \ \ \ \ Texture2D\ *\mbox{\hyperlink{structPlayer__s_a451f91e8a50c6084f1229fcc69204235}{texture}};\ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ }
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

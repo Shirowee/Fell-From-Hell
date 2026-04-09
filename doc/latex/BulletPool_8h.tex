@@ -8,9 +8,21 @@ Gestion des pools de projectiles (bullets)
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
 {\ttfamily \#include "{}Projectiles.\+h"{}}\newline
 Include dependency graph for Bullet\+Pool.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{BulletPool_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BulletPool_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,12 +66,14 @@ Deux pools globaux sont utilisés \+:
 \item player\+Bullet\+Pool \+: projectiles du joueur 
 \end{DoxyItemize}
 
+\label{doc-func-members}
+\Hypertarget{BulletPool_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{BulletPool_8h_a3b7fd1e8efbee5fb1469b308243e7165}\label{BulletPool_8h_a3b7fd1e8efbee5fb1469b308243e7165} 
-\index{BulletPool.h@{BulletPool.h}!DrawBulletPool@{DrawBulletPool}}
+\Hypertarget{BulletPool_8h_a3b7fd1e8efbee5fb1469b308243e7165}\index{BulletPool.h@{BulletPool.h}!DrawBulletPool@{DrawBulletPool}}
 \index{DrawBulletPool@{DrawBulletPool}!BulletPool.h@{BulletPool.h}}
 \doxysubsubsection{\texorpdfstring{DrawBulletPool()}{DrawBulletPool()}}
-{\footnotesize\ttfamily void Draw\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{pos\+Joueur }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{BulletPool_8h_a3b7fd1e8efbee5fb1469b308243e7165} 
+void Draw\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos\+Joueur}{}\end{DoxyParamCaption})}
 
 
 
@@ -72,11 +86,11 @@ Dessine tous les projectiles du pool.
 {\em pos\+Joueur} & position du joueur \\
 \hline
 \end{DoxyParams}
-\Hypertarget{BulletPool_8h_ac20faedcdf2e2f61a11ec25191108b6f}\label{BulletPool_8h_ac20faedcdf2e2f61a11ec25191108b6f} 
-\index{BulletPool.h@{BulletPool.h}!FreeBulletPool@{FreeBulletPool}}
+\Hypertarget{BulletPool_8h_ac20faedcdf2e2f61a11ec25191108b6f}\index{BulletPool.h@{BulletPool.h}!FreeBulletPool@{FreeBulletPool}}
 \index{FreeBulletPool@{FreeBulletPool}!BulletPool.h@{BulletPool.h}}
 \doxysubsubsection{\texorpdfstring{FreeBulletPool()}{FreeBulletPool()}}
-{\footnotesize\ttfamily void Free\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{BulletPool_8h_ac20faedcdf2e2f61a11ec25191108b6f} 
+void Free\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{}\end{DoxyParamCaption})}
 
 
 
@@ -89,11 +103,11 @@ Libère le tableau de bullets et réinitialise le pool.
 {\em pool} & pointeur vers le pool \\
 \hline
 \end{DoxyParams}
-\Hypertarget{BulletPool_8h_ad57664463d97f394168d80dcab8aa5d7}\label{BulletPool_8h_ad57664463d97f394168d80dcab8aa5d7} 
-\index{BulletPool.h@{BulletPool.h}!InitBulletPool@{InitBulletPool}}
+\Hypertarget{BulletPool_8h_ad57664463d97f394168d80dcab8aa5d7}\index{BulletPool.h@{BulletPool.h}!InitBulletPool@{InitBulletPool}}
 \index{InitBulletPool@{InitBulletPool}!BulletPool.h@{BulletPool.h}}
 \doxysubsubsection{\texorpdfstring{InitBulletPool()}{InitBulletPool()}}
-{\footnotesize\ttfamily void Init\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{BulletPool_8h_ad57664463d97f394168d80dcab8aa5d7} 
+void Init\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
 
 
 
@@ -108,11 +122,11 @@ Alloue un tableau de bullets et initialise chaque élément comme inactif.
 {\em capacity} & nombre maximum de projectiles dans le pool \\
 \hline
 \end{DoxyParams}
-\Hypertarget{BulletPool_8h_ad026bf70e944ff507c6e6ee3658a8a03}\label{BulletPool_8h_ad026bf70e944ff507c6e6ee3658a8a03} 
-\index{BulletPool.h@{BulletPool.h}!SpawnBulletPool@{SpawnBulletPool}}
+\Hypertarget{BulletPool_8h_ad026bf70e944ff507c6e6ee3658a8a03}\index{BulletPool.h@{BulletPool.h}!SpawnBulletPool@{SpawnBulletPool}}
 \index{SpawnBulletPool@{SpawnBulletPool}!BulletPool.h@{BulletPool.h}}
 \doxysubsubsection{\texorpdfstring{SpawnBulletPool()}{SpawnBulletPool()}}
-{\footnotesize\ttfamily void Spawn\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{pos,  }\item[{int}]{dir,  }\item[{int}]{speed,  }\item[{int}]{size,  }\item[{int}]{dmg,  }\item[{float}]{life\+Time,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{BulletPool_8h_ad026bf70e944ff507c6e6ee3658a8a03} 
+void Spawn\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{, }\item[{int}]{dir}{, }\item[{int}]{speed}{, }\item[{int}]{size}{, }\item[{int}]{dmg}{, }\item[{float}]{life\+Time}{, }\item[{int}]{indice}{}\end{DoxyParamCaption})}
 
 
 
@@ -139,11 +153,11 @@ Recherche la première bullet inactive afin de la réutiliser. Si aucune bullet 
 {\em indice} & identifiant ou type de projectile \\
 \hline
 \end{DoxyParams}
-\Hypertarget{BulletPool_8h_a76d5595ccec9e55ff7965f8939112ebc}\label{BulletPool_8h_a76d5595ccec9e55ff7965f8939112ebc} 
-\index{BulletPool.h@{BulletPool.h}!UpdateBulletPool@{UpdateBulletPool}}
+\Hypertarget{BulletPool_8h_a76d5595ccec9e55ff7965f8939112ebc}\index{BulletPool.h@{BulletPool.h}!UpdateBulletPool@{UpdateBulletPool}}
 \index{UpdateBulletPool@{UpdateBulletPool}!BulletPool.h@{BulletPool.h}}
 \doxysubsubsection{\texorpdfstring{UpdateBulletPool()}{UpdateBulletPool()}}
-{\footnotesize\ttfamily void Update\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{BulletPool_8h_a76d5595ccec9e55ff7965f8939112ebc} 
+void Update\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{}\end{DoxyParamCaption})}
 
 
 
@@ -158,22 +172,24 @@ Appelle la fonction de mise à jour individuelle pour chaque bullet.
 \end{DoxyParams}
 
 
+\label{doc-var-members}
+\Hypertarget{BulletPool_8h_doc-var-members}
 \doxysubsection{Variable Documentation}
-\Hypertarget{BulletPool_8h_ab235d8c88e2a6e8d419e9492a0188497}\label{BulletPool_8h_ab235d8c88e2a6e8d419e9492a0188497} 
-\index{BulletPool.h@{BulletPool.h}!bulletPool@{bulletPool}}
+\Hypertarget{BulletPool_8h_ab235d8c88e2a6e8d419e9492a0188497}\index{BulletPool.h@{BulletPool.h}!bulletPool@{bulletPool}}
 \index{bulletPool@{bulletPool}!BulletPool.h@{BulletPool.h}}
 \doxysubsubsection{\texorpdfstring{bulletPool}{bulletPool}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} bullet\+Pool\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{BulletPool_8h_ab235d8c88e2a6e8d419e9492a0188497} 
+\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} bullet\+Pool\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 
 Pool de projectiles des ennemis. 
 
-\Hypertarget{BulletPool_8h_ab0e44fdb9d248c3e0e2e6af819e646d8}\label{BulletPool_8h_ab0e44fdb9d248c3e0e2e6af819e646d8} 
-\index{BulletPool.h@{BulletPool.h}!playerBulletPool@{playerBulletPool}}
+\Hypertarget{BulletPool_8h_ab0e44fdb9d248c3e0e2e6af819e646d8}\index{BulletPool.h@{BulletPool.h}!playerBulletPool@{playerBulletPool}}
 \index{playerBulletPool@{playerBulletPool}!BulletPool.h@{BulletPool.h}}
 \doxysubsubsection{\texorpdfstring{playerBulletPool}{playerBulletPool}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} player\+Bullet\+Pool\hspace{0.3cm}{\ttfamily [extern]}}
+{\footnotesize\ttfamily \label{BulletPool_8h_ab0e44fdb9d248c3e0e2e6af819e646d8} 
+\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} player\+Bullet\+Pool\hspace{0.3cm}{\ttfamily [extern]}}
 
 
 

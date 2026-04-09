@@ -3,31 +3,32 @@
 \mbox{\hyperlink{PlayerWeapon_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_WEAPON\_H}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ PLAYER\_WEAPON\_H}}
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../raylib/include/raylib.h"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../systems/BulletPool.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BulletPool_8h}{../systems/BulletPool.h}}"{}}}
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayer__s}{Player\_s}}\ \mbox{\hyperlink{structPlayer__s}{Player}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayer__s}{Player\_s}}\ \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}};}
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \textcolor{comment}{/*\ =========================}}
 \DoxyCodeLine{00019\ \textcolor{comment}{\ *\ Constantes\ des\ armes}}
 \DoxyCodeLine{00020\ \textcolor{comment}{\ *\ =========================\ */}}
 \DoxyCodeLine{00021\ }
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MINIGUN\ 0}}
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ LANCE\_FLAMMES\ 1}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ LANCE\_MISSILE\_TETE\_CHERCHEUSE\ 2}}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ FUSIL\_A\_POMPE\ 3}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ PISTOLET\_LASER\ 4}}
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ FUSIL\_RAFALES\ 5}}
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LANCE\_GLACE\ 6}}
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ LANCE\_ROQUETTE\ 7}}
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ EPEE\_LONGUE\ 8}}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ SNIPER\ 9}}
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ARBALETE\ 10}}
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ PISTOLET\_ELECTRIQUE\ 11}}
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ PISTOLET\_MITRAILLEUR\ 12}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MINIGUN\ 0}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ LANCE\_FLAMMES\ 1}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ LANCE\_MISSILE\_TETE\_CHERCHEUSE\ 2}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ FUSIL\_A\_POMPE\ 3}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ PISTOLET\_LASER\ 4}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ FUSIL\_RAFALES\ 5}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LANCE\_GLACE\ 6}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ LANCE\_ROQUETTE\ 7}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ EPEE\_LONGUE\ 8}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ SNIPER\ 9}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ARBALETE\ 10}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ PISTOLET\_ELECTRIQUE\ 11}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ PISTOLET\_MITRAILLEUR\ 12}\textcolor{preprocessor}{}}
 \DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ PISTOLET\_MULTI\_DIRECTION\ 13}}
 \DoxyCodeLine{00050\ }
 \DoxyCodeLine{00051\ \textcolor{comment}{/*\ =========================}}
@@ -98,11 +99,11 @@
 \DoxyCodeLine{00138\ \textcolor{comment}{\ *\ Fonctions}}
 \DoxyCodeLine{00139\ \textcolor{comment}{\ *\ =========================\ */}}
 \DoxyCodeLine{00140\ }
-\DoxyCodeLine{00147\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerWeapon_8h_afbd8054542ac18bb344723c5e7c171d8}{PlayerShoot}}(\mbox{\hyperlink{structPlayer__s}{Player}}*\ player,\ \textcolor{keywordtype}{double}\ *timeSpent,\ \textcolor{keywordtype}{double}\ *startReload);}
+\DoxyCodeLine{00147\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerWeapon_8h_afbd8054542ac18bb344723c5e7c171d8}{PlayerShoot}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}*\ player,\ \textcolor{keywordtype}{double}\ *timeSpent,\ \textcolor{keywordtype}{double}\ *startReload);}
 \DoxyCodeLine{00148\ }
 \DoxyCodeLine{00154\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerWeapon_8h_adc123952fe27d52272e4627f4f7e124a}{ChangeWeapon}}(\mbox{\hyperlink{structweapon__t}{weapon\_t}}\ *oldWeapon,\ \textcolor{keywordtype}{int}\ indice);}
 \DoxyCodeLine{00155\ }
-\DoxyCodeLine{00162\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerWeapon_8h_a4fb8e11fca5691cd02b616de96744a92}{spawnBulletWeapon}}(\mbox{\hyperlink{structweapon__t}{weapon\_t}}\ \mbox{\hyperlink{structPlayer__s_a258d2081187aaa706dfcffd8bed2f994}{weapon}},\ \mbox{\hyperlink{structPlayer__s}{Player}}\ player,\ \textcolor{keywordtype}{int}\ direction);}
+\DoxyCodeLine{00162\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerWeapon_8h_a4fb8e11fca5691cd02b616de96744a92}{spawnBulletWeapon}}(\mbox{\hyperlink{structweapon__t}{weapon\_t}}\ \mbox{\hyperlink{structPlayer__s_a258d2081187aaa706dfcffd8bed2f994}{weapon}},\ \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ player,\ \textcolor{keywordtype}{int}\ direction);}
 \DoxyCodeLine{00163\ }
 \DoxyCodeLine{00170\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{PlayerWeapon_8h_a3253470921600f82b027ff8d4fa60e4f}{Cooldown}}(\mbox{\hyperlink{structweapon__t}{weapon\_t}}\ \mbox{\hyperlink{structPlayer__s_a258d2081187aaa706dfcffd8bed2f994}{weapon}},\ \textcolor{keywordtype}{double}\ *timeSpent);}
 \DoxyCodeLine{00171\ }

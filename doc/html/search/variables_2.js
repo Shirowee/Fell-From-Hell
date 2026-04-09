@@ -9,5 +9,5 @@ var searchData=
   ['cooldown_6',['cooldown',['../structEnemySpawner.html#a8b2a0f835a86b46584383f08f077a7d0',1,'EnemySpawner']]],
   ['count_7',['count',['../cJSON_8h.html#ad43c3812e6d13e0518d9f8b8f463ffcf',1,'cJSON.h']]],
   ['createtime_8',['createTime',['../structbullet__s.html#a682d1a2ced68c88052fe4f6d7a4f140e',1,'bullet_s']]],
-  ['currentlevel_9',['currentlevel',['../LevelManager_8h.html#af107047702073394f1225cd1d3fbae03',1,'currentLevel:&#160;LevelManager.c'],['../LevelManager_8c.html#af107047702073394f1225cd1d3fbae03',1,'currentLevel:&#160;LevelManager.c']]]
+  ['currentlevel_9',['currentLevel',['../LevelManager_8h.html#af107047702073394f1225cd1d3fbae03',1,'currentLevel:&#160;LevelManager.c'],['../LevelManager_8c.html#af107047702073394f1225cd1d3fbae03',1,'currentLevel:&#160;LevelManager.c']]]
 ];

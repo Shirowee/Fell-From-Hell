@@ -8,36 +8,44 @@
 {\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 Include dependency graph for Player\+Movement.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PlayerMovement_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{PlayerMovement_8c_aff8d8ec0ba37d695840637edd0a0a9d1}{Player\+Move}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+void \mbox{\hyperlink{PlayerMovement_8c_aff8d8ec0ba37d695840637edd0a0a9d1}{Player\+Move}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
 \item 
-void \mbox{\hyperlink{PlayerMovement_8c_a3cbba88b75c89a10f73cbff7b2a82fd6}{Player\+Move\+Config\+Update}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+void \mbox{\hyperlink{PlayerMovement_8c_a3cbba88b75c89a10f73cbff7b2a82fd6}{Player\+Move\+Config\+Update}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
 \item 
-void \mbox{\hyperlink{PlayerMovement_8c_af88c7ef0212a60ba1d2ac69e07665102}{Player\+Jump}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+void \mbox{\hyperlink{PlayerMovement_8c_af88c7ef0212a60ba1d2ac69e07665102}{Player\+Jump}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
 \begin{DoxyCompactList}\small\item\em Fait sauter le joueur. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{PlayerMovement_8c_aa4c140cab25d9b704b7dceb45892beba}{Player\+Dash}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+void \mbox{\hyperlink{PlayerMovement_8c_aa4c140cab25d9b704b7dceb45892beba}{Player\+Dash}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
 \begin{DoxyCompactList}\small\item\em Fait dasher le joueur. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{PlayerMovement_8c_a40fc5396087b60ab70e66da5be7267bf}{Gravity}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, const float Gravity\+Strength)
+void \mbox{\hyperlink{PlayerMovement_8c_a40fc5396087b60ab70e66da5be7267bf}{Gravity}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, const float Gravity\+Strength)
 \begin{DoxyCompactList}\small\item\em Applique force de gravité sur le joueur. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{PlayerMovement_8c_affb9d3864ce109253880b2d40a262fa5}{Player\+Position\+Fix}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, Vector2 old\+Position, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+bool \mbox{\hyperlink{PlayerMovement_8c_affb9d3864ce109253880b2d40a262fa5}{Player\+Position\+Fix}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, Vector2 old\+Position, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
 \item 
-bool \mbox{\hyperlink{PlayerMovement_8c_aa37e1e0779a50a707154ae6b3b46c850}{is\+On\+Ground}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+bool \mbox{\hyperlink{PlayerMovement_8c_aa37e1e0779a50a707154ae6b3b46c850}{is\+On\+Ground}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
 \item 
-bool \mbox{\hyperlink{PlayerMovement_8c_ae91de7901008cab29c3ad8fa376b06c0}{is\+On\+Wall}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms, \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+bool \mbox{\hyperlink{PlayerMovement_8c_ae91de7901008cab29c3ad8fa376b06c0}{is\+On\+Wall}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms, \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
 \item 
-\mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State}} \mbox{\hyperlink{PlayerMovement_8c_ac1f9677d73ea082910111aebad432d8e}{get\+Player\+Movement\+State}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State}} \mbox{\hyperlink{PlayerMovement_8c_ac1f9677d73ea082910111aebad432d8e}{get\+Player\+Movement\+State}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
 \begin{DoxyCompactList}\small\item\em Verifie l\textquotesingle{}etat de mouvement du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\label{doc-func-members}
+\Hypertarget{PlayerMovement_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{PlayerMovement_8c_ac1f9677d73ea082910111aebad432d8e}\label{PlayerMovement_8c_ac1f9677d73ea082910111aebad432d8e} 
-\index{PlayerMovement.c@{PlayerMovement.c}!getPlayerMovementState@{getPlayerMovementState}}
+\Hypertarget{PlayerMovement_8c_ac1f9677d73ea082910111aebad432d8e}\index{PlayerMovement.c@{PlayerMovement.c}!getPlayerMovementState@{getPlayerMovementState}}
 \index{getPlayerMovementState@{getPlayerMovementState}!PlayerMovement.c@{PlayerMovement.c}}
 \doxysubsubsection{\texorpdfstring{getPlayerMovementState()}{getPlayerMovementState()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State}} get\+Player\+Movement\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerMovement_8c_ac1f9677d73ea082910111aebad432d8e} 
+\mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State}} get\+Player\+Movement\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
 
 
 
@@ -45,17 +53,17 @@ Verifie l\textquotesingle{}etat de mouvement du joueur.
 
 
 \begin{DoxyParams}{Parameters}
-{\em player} & Pointeur sur Player \\
+{\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Movement\+State correspondant a l\textquotesingle{}etat de mouvement du joueur 
+\doxylink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State} correspondant a l\textquotesingle{}etat de mouvement du joueur 
 \end{DoxyReturn}
-\Hypertarget{PlayerMovement_8c_a40fc5396087b60ab70e66da5be7267bf}\label{PlayerMovement_8c_a40fc5396087b60ab70e66da5be7267bf} 
-\index{PlayerMovement.c@{PlayerMovement.c}!Gravity@{Gravity}}
+\Hypertarget{PlayerMovement_8c_a40fc5396087b60ab70e66da5be7267bf}\index{PlayerMovement.c@{PlayerMovement.c}!Gravity@{Gravity}}
 \index{Gravity@{Gravity}!PlayerMovement.c@{PlayerMovement.c}}
 \doxysubsubsection{\texorpdfstring{Gravity()}{Gravity()}}
-{\footnotesize\ttfamily void Gravity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{const float}]{Gravity\+Strength }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerMovement_8c_a40fc5396087b60ab70e66da5be7267bf} 
+void Gravity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{const float}]{Gravity\+Strength}{}\end{DoxyParamCaption})}
 
 
 
@@ -63,28 +71,28 @@ Applique force de gravité sur le joueur.
 
 
 \begin{DoxyParams}{Parameters}
-{\em player} & Pointeur sur Player \\
+{\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
 \hline
 {\em Gravity\+Strength} & Force de gravité \\
 \hline
 \end{DoxyParams}
-\Hypertarget{PlayerMovement_8c_aa37e1e0779a50a707154ae6b3b46c850}\label{PlayerMovement_8c_aa37e1e0779a50a707154ae6b3b46c850} 
-\index{PlayerMovement.c@{PlayerMovement.c}!isOnGround@{isOnGround}}
+\Hypertarget{PlayerMovement_8c_aa37e1e0779a50a707154ae6b3b46c850}\index{PlayerMovement.c@{PlayerMovement.c}!isOnGround@{isOnGround}}
 \index{isOnGround@{isOnGround}!PlayerMovement.c@{PlayerMovement.c}}
 \doxysubsubsection{\texorpdfstring{isOnGround()}{isOnGround()}}
-{\footnotesize\ttfamily bool is\+On\+Ground (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform\mbox{[}$\,$\mbox{]},  }\item[{const int}]{nb\+Platforms }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerMovement_8c_aa37e1e0779a50a707154ae6b3b46c850} 
+bool is\+On\+Ground (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
 
-\Hypertarget{PlayerMovement_8c_ae91de7901008cab29c3ad8fa376b06c0}\label{PlayerMovement_8c_ae91de7901008cab29c3ad8fa376b06c0} 
-\index{PlayerMovement.c@{PlayerMovement.c}!isOnWall@{isOnWall}}
+\Hypertarget{PlayerMovement_8c_ae91de7901008cab29c3ad8fa376b06c0}\index{PlayerMovement.c@{PlayerMovement.c}!isOnWall@{isOnWall}}
 \index{isOnWall@{isOnWall}!PlayerMovement.c@{PlayerMovement.c}}
 \doxysubsubsection{\texorpdfstring{isOnWall()}{isOnWall()}}
-{\footnotesize\ttfamily bool is\+On\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform\mbox{[}$\,$\mbox{]},  }\item[{const int}]{nb\+Platforms,  }\item[{\mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}]{dir }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerMovement_8c_ae91de7901008cab29c3ad8fa376b06c0} 
+bool is\+On\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{, }\item[{\mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}]{dir}{}\end{DoxyParamCaption})}
 
-\Hypertarget{PlayerMovement_8c_aa4c140cab25d9b704b7dceb45892beba}\label{PlayerMovement_8c_aa4c140cab25d9b704b7dceb45892beba} 
-\index{PlayerMovement.c@{PlayerMovement.c}!PlayerDash@{PlayerDash}}
+\Hypertarget{PlayerMovement_8c_aa4c140cab25d9b704b7dceb45892beba}\index{PlayerMovement.c@{PlayerMovement.c}!PlayerDash@{PlayerDash}}
 \index{PlayerDash@{PlayerDash}!PlayerMovement.c@{PlayerMovement.c}}
 \doxysubsubsection{\texorpdfstring{PlayerDash()}{PlayerDash()}}
-{\footnotesize\ttfamily void Player\+Dash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerMovement_8c_aa4c140cab25d9b704b7dceb45892beba} 
+void Player\+Dash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
 
 
 
@@ -92,14 +100,14 @@ Fait dasher le joueur.
 
 
 \begin{DoxyParams}{Parameters}
-{\em player} & Pointeur sur Player \\
+{\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
 \hline
 \end{DoxyParams}
-\Hypertarget{PlayerMovement_8c_af88c7ef0212a60ba1d2ac69e07665102}\label{PlayerMovement_8c_af88c7ef0212a60ba1d2ac69e07665102} 
-\index{PlayerMovement.c@{PlayerMovement.c}!PlayerJump@{PlayerJump}}
+\Hypertarget{PlayerMovement_8c_af88c7ef0212a60ba1d2ac69e07665102}\index{PlayerMovement.c@{PlayerMovement.c}!PlayerJump@{PlayerJump}}
 \index{PlayerJump@{PlayerJump}!PlayerMovement.c@{PlayerMovement.c}}
 \doxysubsubsection{\texorpdfstring{PlayerJump()}{PlayerJump()}}
-{\footnotesize\ttfamily void Player\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerMovement_8c_af88c7ef0212a60ba1d2ac69e07665102} 
+void Player\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
 
 
 
@@ -107,24 +115,24 @@ Fait sauter le joueur.
 
 
 \begin{DoxyParams}{Parameters}
-{\em player} & Pointeur sur Player \\
+{\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
 \hline
 \end{DoxyParams}
-\Hypertarget{PlayerMovement_8c_aff8d8ec0ba37d695840637edd0a0a9d1}\label{PlayerMovement_8c_aff8d8ec0ba37d695840637edd0a0a9d1} 
-\index{PlayerMovement.c@{PlayerMovement.c}!PlayerMove@{PlayerMove}}
+\Hypertarget{PlayerMovement_8c_aff8d8ec0ba37d695840637edd0a0a9d1}\index{PlayerMovement.c@{PlayerMovement.c}!PlayerMove@{PlayerMove}}
 \index{PlayerMove@{PlayerMove}!PlayerMovement.c@{PlayerMovement.c}}
 \doxysubsubsection{\texorpdfstring{PlayerMove()}{PlayerMove()}}
-{\footnotesize\ttfamily void Player\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform\mbox{[}$\,$\mbox{]},  }\item[{const int}]{nb\+Platforms }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerMovement_8c_aff8d8ec0ba37d695840637edd0a0a9d1} 
+void Player\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
 
-\Hypertarget{PlayerMovement_8c_a3cbba88b75c89a10f73cbff7b2a82fd6}\label{PlayerMovement_8c_a3cbba88b75c89a10f73cbff7b2a82fd6} 
-\index{PlayerMovement.c@{PlayerMovement.c}!PlayerMoveConfigUpdate@{PlayerMoveConfigUpdate}}
+\Hypertarget{PlayerMovement_8c_a3cbba88b75c89a10f73cbff7b2a82fd6}\index{PlayerMovement.c@{PlayerMovement.c}!PlayerMoveConfigUpdate@{PlayerMoveConfigUpdate}}
 \index{PlayerMoveConfigUpdate@{PlayerMoveConfigUpdate}!PlayerMovement.c@{PlayerMovement.c}}
 \doxysubsubsection{\texorpdfstring{PlayerMoveConfigUpdate()}{PlayerMoveConfigUpdate()}}
-{\footnotesize\ttfamily void Player\+Move\+Config\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform\mbox{[}$\,$\mbox{]},  }\item[{const int}]{nb\+Platforms }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerMovement_8c_a3cbba88b75c89a10f73cbff7b2a82fd6} 
+void Player\+Move\+Config\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
 
-\Hypertarget{PlayerMovement_8c_affb9d3864ce109253880b2d40a262fa5}\label{PlayerMovement_8c_affb9d3864ce109253880b2d40a262fa5} 
-\index{PlayerMovement.c@{PlayerMovement.c}!PlayerPositionFix@{PlayerPositionFix}}
+\Hypertarget{PlayerMovement_8c_affb9d3864ce109253880b2d40a262fa5}\index{PlayerMovement.c@{PlayerMovement.c}!PlayerPositionFix@{PlayerPositionFix}}
 \index{PlayerPositionFix@{PlayerPositionFix}!PlayerMovement.c@{PlayerMovement.c}}
 \doxysubsubsection{\texorpdfstring{PlayerPositionFix()}{PlayerPositionFix()}}
-{\footnotesize\ttfamily bool Player\+Position\+Fix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{Vector2}]{old\+Position,  }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform\mbox{[}$\,$\mbox{]},  }\item[{const int}]{nb\+Platforms }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{PlayerMovement_8c_affb9d3864ce109253880b2d40a262fa5} 
+bool Player\+Position\+Fix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{Vector2}]{old\+Position}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
 

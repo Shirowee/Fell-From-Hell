@@ -11,9 +11,21 @@ Définit la structure du joueur et son corps, ainsi que les fonctions associées
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
 {\ttfamily \#include "{}../systems/\+Buff\+System.\+h"{}}\newline
 Include dependency graph for Player.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Player_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Player_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,15 +36,15 @@ struct \mbox{\hyperlink{structPlayer__s}{Player\+\_\+s}}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{Player_8h_a1309e5f01bf9e9d10c145eca8b74c2b9}{PLAYER\+\_\+\+MAX\+\_\+\+DIST\+\_\+\+DETECT}}~100
+\#define \mbox{\hyperlink{Player_8h_a1309e5f01bf9e9d10c145eca8b74c2b9}{PLAYER\+\_\+\+MAX\+\_\+\+DIST\+\_\+\+DETECT}}~512
 \begin{DoxyCompactList}\small\item\em distance maximale prise en compte pour les collisions entre le joueur et les autre entités \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \mbox{\hyperlink{structPlayerBody__s}{Player\+Body\+\_\+s}} \mbox{\hyperlink{Player_8h_aae7b815be55bd18dfadde5bba6a95a49}{Player\+Body}}
+typedef struct \mbox{\hyperlink{structPlayerBody__s}{Player\+Body\+\_\+s}} \mbox{\hyperlink{Player_8h_a2d9be414658d09803de520d27babb9a7}{Player\+Body}}
 \begin{DoxyCompactList}\small\item\em Type de données pour le corps du joueur. \end{DoxyCompactList}\item 
-typedef struct \mbox{\hyperlink{structPlayer__s}{Player\+\_\+s}} \mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}}
-\begin{DoxyCompactList}\small\item\em Type de données pour le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+typedef struct \mbox{\hyperlink{structPlayer__s}{Player\+\_\+s}} \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}
+\begin{DoxyCompactList}\small\item\em Structure opaque représentant le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -49,12 +61,14 @@ Caius
 \end{DoxyDate}
 
 
+\label{doc-define-members}
+\Hypertarget{Player_8h_doc-define-members}
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{Player_8h_a1309e5f01bf9e9d10c145eca8b74c2b9}\label{Player_8h_a1309e5f01bf9e9d10c145eca8b74c2b9} 
-\index{Player.h@{Player.h}!PLAYER\_MAX\_DIST\_DETECT@{PLAYER\_MAX\_DIST\_DETECT}}
+\Hypertarget{Player_8h_a1309e5f01bf9e9d10c145eca8b74c2b9}\index{Player.h@{Player.h}!PLAYER\_MAX\_DIST\_DETECT@{PLAYER\_MAX\_DIST\_DETECT}}
 \index{PLAYER\_MAX\_DIST\_DETECT@{PLAYER\_MAX\_DIST\_DETECT}!Player.h@{Player.h}}
 \doxysubsubsection{\texorpdfstring{PLAYER\_MAX\_DIST\_DETECT}{PLAYER\_MAX\_DIST\_DETECT}}
-{\footnotesize\ttfamily \#define PLAYER\+\_\+\+MAX\+\_\+\+DIST\+\_\+\+DETECT~100}
+{\footnotesize\ttfamily \label{Player_8h_a1309e5f01bf9e9d10c145eca8b74c2b9} 
+\#define PLAYER\+\_\+\+MAX\+\_\+\+DIST\+\_\+\+DETECT~512}
 
 
 
@@ -62,22 +76,24 @@ distance maximale prise en compte pour les collisions entre le joueur et les aut
 
 
 
+\label{doc-typedef-members}
+\Hypertarget{Player_8h_doc-typedef-members}
 \doxysubsection{Typedef Documentation}
-\Hypertarget{Player_8h_a9c8780378078e51e7c9041cbac392db9}\label{Player_8h_a9c8780378078e51e7c9041cbac392db9} 
-\index{Player.h@{Player.h}!Player@{Player}}
+\Hypertarget{Player_8h_a47e6f8d93a79a2576363b43294ea2090}\index{Player.h@{Player.h}!Player@{Player}}
 \index{Player@{Player}!Player.h@{Player.h}}
 \doxysubsubsection{\texorpdfstring{Player}{Player}}
-{\footnotesize\ttfamily \mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}}}
+{\footnotesize\ttfamily \label{Player_8h_a47e6f8d93a79a2576363b43294ea2090} 
+typedef struct \mbox{\hyperlink{structPlayer__s}{Player\+\_\+s}} \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}}
 
 
 
-Type de données pour le joueur. 
+Structure opaque représentant le joueur. 
 
-\Hypertarget{Player_8h_aae7b815be55bd18dfadde5bba6a95a49}\label{Player_8h_aae7b815be55bd18dfadde5bba6a95a49} 
-\index{Player.h@{Player.h}!PlayerBody@{PlayerBody}}
+Type de données pour le joueur. \Hypertarget{Player_8h_a2d9be414658d09803de520d27babb9a7}\index{Player.h@{Player.h}!PlayerBody@{PlayerBody}}
 \index{PlayerBody@{PlayerBody}!Player.h@{Player.h}}
 \doxysubsubsection{\texorpdfstring{PlayerBody}{PlayerBody}}
-{\footnotesize\ttfamily \mbox{\hyperlink{Player_8h_aae7b815be55bd18dfadde5bba6a95a49}{Player\+Body}}}
+{\footnotesize\ttfamily \label{Player_8h_a2d9be414658d09803de520d27babb9a7} 
+typedef struct \mbox{\hyperlink{structPlayerBody__s}{Player\+Body\+\_\+s}} \mbox{\hyperlink{Player_8h_a2d9be414658d09803de520d27babb9a7}{Player\+Body}}}
 
 
 

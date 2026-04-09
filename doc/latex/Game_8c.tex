@@ -9,7 +9,13 @@
 {\ttfamily \#include "{}../../lib/core/\+Resolution\+Manager.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/systems/\+Life\+Manager.\+h"{}}\newline
 Include dependency graph for Game.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Game_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,7 +26,7 @@ Include dependency graph for Game.\+c\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{Game_8c_a627bc5a973888196b8a7a68ba6d46377}{Game}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{Game_8c_a627bc5a973888196b8a7a68ba6d46377}{Game}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
 \begin{DoxyCompactList}\small\item\em Lance et met à jour la logique du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -29,41 +35,47 @@ Camera2D \mbox{\hyperlink{Game_8c_a2104321f3e01d1f85c8054cda5ad149c}{camera}} = 
 \end{DoxyCompactItemize}
 
 
+\label{doc-define-members}
+\Hypertarget{Game_8c_doc-define-members}
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{Game_8c_a731cf8435152efe21a87557e379cdefd}\label{Game_8c_a731cf8435152efe21a87557e379cdefd} 
-\index{Game.c@{Game.c}!REF\_HAUTEUR@{REF\_HAUTEUR}}
+\Hypertarget{Game_8c_a731cf8435152efe21a87557e379cdefd}\index{Game.c@{Game.c}!REF\_HAUTEUR@{REF\_HAUTEUR}}
 \index{REF\_HAUTEUR@{REF\_HAUTEUR}!Game.c@{Game.c}}
 \doxysubsubsection{\texorpdfstring{REF\_HAUTEUR}{REF\_HAUTEUR}}
-{\footnotesize\ttfamily \#define REF\+\_\+\+HAUTEUR~1080}
+{\footnotesize\ttfamily \label{Game_8c_a731cf8435152efe21a87557e379cdefd} 
+\#define REF\+\_\+\+HAUTEUR~1080}
 
-\Hypertarget{Game_8c_a4d0b1299c6daf76da1bba36281df9477}\label{Game_8c_a4d0b1299c6daf76da1bba36281df9477} 
-\index{Game.c@{Game.c}!REF\_LARGEUR@{REF\_LARGEUR}}
+\Hypertarget{Game_8c_a4d0b1299c6daf76da1bba36281df9477}\index{Game.c@{Game.c}!REF\_LARGEUR@{REF\_LARGEUR}}
 \index{REF\_LARGEUR@{REF\_LARGEUR}!Game.c@{Game.c}}
 \doxysubsubsection{\texorpdfstring{REF\_LARGEUR}{REF\_LARGEUR}}
-{\footnotesize\ttfamily \#define REF\+\_\+\+LARGEUR~1920}
+{\footnotesize\ttfamily \label{Game_8c_a4d0b1299c6daf76da1bba36281df9477} 
+\#define REF\+\_\+\+LARGEUR~1920}
 
 
 
+\label{doc-func-members}
+\Hypertarget{Game_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{Game_8c_a627bc5a973888196b8a7a68ba6d46377}\label{Game_8c_a627bc5a973888196b8a7a68ba6d46377} 
-\index{Game.c@{Game.c}!Game@{Game}}
+\Hypertarget{Game_8c_a627bc5a973888196b8a7a68ba6d46377}\index{Game.c@{Game.c}!Game@{Game}}
 \index{Game@{Game}!Game.c@{Game.c}}
 \doxysubsubsection{\texorpdfstring{Game()}{Game()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Game_8c_a627bc5a973888196b8a7a68ba6d46377} 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
 
 
 
 Lance et met à jour la logique du jeu. 
 
 \begin{DoxyReturn}{Returns}
-Le prochain écran à afficher (Screen\+\_\+t)
+Le prochain écran à afficher (\doxylink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t})
 \end{DoxyReturn}
 Contient la boucle ou la logique principale du gameplay. Peut retourner SCREEN\+\_\+\+MENU ou SCREEN\+\_\+\+EXIT selon les actions du joueur. 
 
+\label{doc-var-members}
+\Hypertarget{Game_8c_doc-var-members}
 \doxysubsection{Variable Documentation}
-\Hypertarget{Game_8c_a2104321f3e01d1f85c8054cda5ad149c}\label{Game_8c_a2104321f3e01d1f85c8054cda5ad149c} 
-\index{Game.c@{Game.c}!camera@{camera}}
+\Hypertarget{Game_8c_a2104321f3e01d1f85c8054cda5ad149c}\index{Game.c@{Game.c}!camera@{camera}}
 \index{camera@{camera}!Game.c@{Game.c}}
 \doxysubsubsection{\texorpdfstring{camera}{camera}}
-{\footnotesize\ttfamily Camera2D camera = \{ 0 \}}
+{\footnotesize\ttfamily \label{Game_8c_a2104321f3e01d1f85c8054cda5ad149c} 
+Camera2D camera = \{ 0 \}}
 

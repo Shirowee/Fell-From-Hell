@@ -1,0 +1,7 @@
+<map id="lib/systems/TriggerSystem.h" name="lib/systems/TriggerSystem.h">
+<area shape="rect" id="Node000001" title="Ce fichier TriggerSystem.h sert a la gestion des triggers." alt="" coords="103,5,309,31"/>
+<area shape="rect" id="Node000002" href="$GameManager_8c.html" title=" " alt="" coords="5,79,188,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,40,116,81,113,76,176,36"/>
+<area shape="rect" id="Node000003" href="$TriggerSystem_8c.html" title=" " alt="" coords="213,79,421,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,36,300,76,297,81,234,40"/>
+</map>

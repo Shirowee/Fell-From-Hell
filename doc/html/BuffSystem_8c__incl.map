@@ -1,0 +1,9 @@
+<map id="src/systems/BuffSystem.c" name="src/systems/BuffSystem.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="99,5,289,31"/>
+<area shape="rect" id="Node000002" href="$BuffSystem_8h.html" title="Gestion des améliorations (buffs) appliquées au joueur et aux armes." alt="" coords="5,79,217,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,33,137,72,134,67,179,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="241,79,312,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="209,29,254,67,251,72,206,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="44,152,179,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,104,114,138,109,138,109,104"/>
+</map>

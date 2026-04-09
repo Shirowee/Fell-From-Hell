@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['trigger_0',['Trigger',['../structTrigger.html',1,'']]]
+  ['textureresource_0',['TextureResource',['../structTextureResource.html',1,'']]],
+  ['trigger_1',['Trigger',['../structTrigger.html',1,'']]]
 ];

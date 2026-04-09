@@ -8,9 +8,21 @@ Gestion des ennemis et de leur comportement (state machine)
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/systems/\+Bullet\+Pool.\+h"{}}\newline
 Include dependency graph for Enemy\+Controller.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{EnemyController_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{EnemyController_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,7 +69,7 @@ Définit l’interface de contrôle des ennemis du jeu. Implémente une machine 
 \item états passifs ou inactifs
 \end{DoxyItemize}
 
-Chaque ennemi est représenté par une structure \textquotesingle{}enemy\+\_\+t\textquotesingle{} et peut évoluer dynamiquement selon son état interne.
+Chaque ennemi est représenté par une structure \textquotesingle{}\doxylink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}\textquotesingle{} et peut évoluer dynamiquement selon son état interne.
 
 Fournit également des fonctions de \+:
 \begin{DoxyItemize}
@@ -72,12 +84,14 @@ A. Pocholle
 \end{DoxyAuthor}
 
 
+\label{doc-typedef-members}
+\Hypertarget{EnemyController_8h_doc-typedef-members}
 \doxysubsection{Typedef Documentation}
-\Hypertarget{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}\label{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96} 
-\index{EnemyController.h@{EnemyController.h}!enemy\_t@{enemy\_t}}
+\Hypertarget{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}\index{EnemyController.h@{EnemyController.h}!enemy\_t@{enemy\_t}}
 \index{enemy\_t@{enemy\_t}!EnemyController.h@{EnemyController.h}}
 \doxysubsubsection{\texorpdfstring{enemy\_t}{enemy\_t}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structenemy__s}{enemy\+\_\+s}} \mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}}}
+{\footnotesize\ttfamily \label{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96} 
+typedef struct \mbox{\hyperlink{structenemy__s}{enemy\+\_\+s}} \mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}}}
 
 
 
@@ -85,18 +99,20 @@ Structure représentant un ennemi.
 
 
 
+\label{doc-enum-members}
+\Hypertarget{EnemyController_8h_doc-enum-members}
 \doxysubsection{Enumeration Type Documentation}
-\Hypertarget{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}\label{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e} 
-\index{EnemyController.h@{EnemyController.h}!EnemyType\_t@{EnemyType\_t}}
+\Hypertarget{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}\index{EnemyController.h@{EnemyController.h}!EnemyType\_t@{EnemyType\_t}}
 \index{EnemyType\_t@{EnemyType\_t}!EnemyController.h@{EnemyController.h}}
 \doxysubsubsection{\texorpdfstring{EnemyType\_t}{EnemyType\_t}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}}}
+{\footnotesize\ttfamily \label{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e} 
+enum \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}}}
 
 
 
 Types d\textquotesingle{}ennemis disponibles. 
 
-\begin{DoxyEnumFields}{Enumerator}
+\begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ENEMY\_CHASER@{ENEMY\_CHASER}!EnemyController.h@{EnemyController.h}}\index{EnemyController.h@{EnemyController.h}!ENEMY\_CHASER@{ENEMY\_CHASER}}}\Hypertarget{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79eaf7c5748ce82093d6dd874e7a621c410f}\label{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79eaf7c5748ce82093d6dd874e7a621c410f} 
 ENEMY\+\_\+\+CHASER&\\
 \hline
@@ -120,12 +136,14 @@ ENEMY\+\_\+\+ARC&\\
 \end{DoxyEnumFields}
 
 
+\label{doc-func-members}
+\Hypertarget{EnemyController_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{EnemyController_8h_a1a5a2c68c5718f4cfb7963f26b93eed6}\label{EnemyController_8h_a1a5a2c68c5718f4cfb7963f26b93eed6} 
-\index{EnemyController.h@{EnemyController.h}!EnemyDraw@{EnemyDraw}}
+\Hypertarget{EnemyController_8h_a1a5a2c68c5718f4cfb7963f26b93eed6}\index{EnemyController.h@{EnemyController.h}!EnemyDraw@{EnemyDraw}}
 \index{EnemyDraw@{EnemyDraw}!EnemyController.h@{EnemyController.h}}
 \doxysubsubsection{\texorpdfstring{EnemyDraw()}{EnemyDraw()}}
-{\footnotesize\ttfamily void Enemy\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyController_8h_a1a5a2c68c5718f4cfb7963f26b93eed6} 
+void Enemy\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{}\end{DoxyParamCaption})}
 
 
 
@@ -136,11 +154,11 @@ Dessine l\textquotesingle{}ennemi à l\textquotesingle{}écran.
 {\em enemy} & pointeur vers l\textquotesingle{}ennemi \\
 \hline
 \end{DoxyParams}
-\Hypertarget{EnemyController_8h_af866370ba9b9e114fa79c088dead3748}\label{EnemyController_8h_af866370ba9b9e114fa79c088dead3748} 
-\index{EnemyController.h@{EnemyController.h}!EnemyInit@{EnemyInit}}
+\Hypertarget{EnemyController_8h_af866370ba9b9e114fa79c088dead3748}\index{EnemyController.h@{EnemyController.h}!EnemyInit@{EnemyInit}}
 \index{EnemyInit@{EnemyInit}!EnemyController.h@{EnemyController.h}}
 \doxysubsubsection{\texorpdfstring{EnemyInit()}{EnemyInit()}}
-{\footnotesize\ttfamily void Enemy\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{float}]{speed,  }\item[{Vector2}]{size,  }\item[{int}]{dmg,  }\item[{Vector2}]{pos,  }\item[{int}]{bullet\+Speed,  }\item[{int}]{bullet\+Size,  }\item[{\mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}}}]{type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyController_8h_af866370ba9b9e114fa79c088dead3748} 
+void Enemy\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{float}]{speed}{, }\item[{Vector2}]{size}{, }\item[{int}]{dmg}{, }\item[{Vector2}]{pos}{, }\item[{int}]{bullet\+Speed}{, }\item[{int}]{bullet\+Size}{, }\item[{\mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}}}]{type}{}\end{DoxyParamCaption})}
 
 
 
@@ -165,11 +183,11 @@ Initialise un ennemi.
 {\em type} & type d\textquotesingle{}ennemi \\
 \hline
 \end{DoxyParams}
-\Hypertarget{EnemyController_8h_a7c1654e8730d9f7e1f971756cf408df2}\label{EnemyController_8h_a7c1654e8730d9f7e1f971756cf408df2} 
-\index{EnemyController.h@{EnemyController.h}!EnemyShoots@{EnemyShoots}}
+\Hypertarget{EnemyController_8h_a7c1654e8730d9f7e1f971756cf408df2}\index{EnemyController.h@{EnemyController.h}!EnemyShoots@{EnemyShoots}}
 \index{EnemyShoots@{EnemyShoots}!EnemyController.h@{EnemyController.h}}
 \doxysubsubsection{\texorpdfstring{EnemyShoots()}{EnemyShoots()}}
-{\footnotesize\ttfamily void Enemy\+Shoots (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyController_8h_a7c1654e8730d9f7e1f971756cf408df2} 
+void Enemy\+Shoots (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{}\end{DoxyParamCaption})}
 
 
 
@@ -180,11 +198,11 @@ Active le tir de l\textquotesingle{}ennemi.
 {\em enemy} & pointeur vers l\textquotesingle{}ennemi \\
 \hline
 \end{DoxyParams}
-\Hypertarget{EnemyController_8h_ac86b892c2a8e816f2ceb67ce9c676768}\label{EnemyController_8h_ac86b892c2a8e816f2ceb67ce9c676768} 
-\index{EnemyController.h@{EnemyController.h}!EnemyUpdate@{EnemyUpdate}}
+\Hypertarget{EnemyController_8h_ac86b892c2a8e816f2ceb67ce9c676768}\index{EnemyController.h@{EnemyController.h}!EnemyUpdate@{EnemyUpdate}}
 \index{EnemyUpdate@{EnemyUpdate}!EnemyController.h@{EnemyController.h}}
 \doxysubsubsection{\texorpdfstring{EnemyUpdate()}{EnemyUpdate()}}
-{\footnotesize\ttfamily void Enemy\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{Vector2}]{player\+Pos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyController_8h_ac86b892c2a8e816f2ceb67ce9c676768} 
+void Enemy\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 

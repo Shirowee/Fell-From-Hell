@@ -1,0 +1,9 @@
+<map id="lib/systems/CollisionSystem.h" name="lib/systems/CollisionSystem.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="213,5,431,31"/>
+<area shape="rect" id="Node000002" href="$GameManager_8c.html" title=" " alt="" coords="5,79,188,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,37,134,81,132,76,272,32"/>
+<area shape="rect" id="Node000003" href="$CollisionSystem_8c.html" title="Gestion des collisions entre ennemis et projectiles." alt="" coords="212,79,432,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="325,44,325,79,319,79,319,44"/>
+<area shape="rect" id="Node000004" href="$LifeManager_8c.html" title=" " alt="" coords="457,79,651,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="373,32,517,76,516,81,371,37"/>
+</map>

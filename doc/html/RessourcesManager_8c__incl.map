@@ -1,0 +1,11 @@
+<map id="src/core/RessourcesManager.c" name="src/core/RessourcesManager.c">
+<area shape="rect" id="Node000001" title="Gestion des ressources du jeu." alt="" coords="141,5,359,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,140,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,33,129,76,127,71,223,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="164,86,235,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="245,32,217,76,212,73,240,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="259,86,342,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="260,29,288,73,283,76,255,32"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="366,86,433,111"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="273,28,367,77,364,82,271,33"/>
+</map>
