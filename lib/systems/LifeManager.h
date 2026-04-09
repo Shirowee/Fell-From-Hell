@@ -38,9 +38,16 @@ void HPDraw(Player *player, int x, int y, int width, int height);
  * \brief Applique des dégâts au joueur, c-à-d lui retirer des points de vie
  * \param player Pointeur sur Player
  * \param dmg Nombre de points de vie à retirer
- * \return Renvoie vrai si il est invincible, sinon faux
  */
 void ApplyDamageToPlayer(Player *player, int dmg);
+
+/**
+ * \fn ApplyDamageToPlayer(Player *player, int dmg);
+ * \brief Applique des dégâts à l'ennemie, c-à-d lui retirer des points de vie
+ * \param enemy Pointeur sur Enemy
+ * \param dmg Nombre de points de vie à retirer
+ */
+void ApplyDamageToEnemy(enemy_t *enemy, int dmg);
 
 /**
  * \fn bool isInvicible(Player *player);

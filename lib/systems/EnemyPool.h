@@ -60,6 +60,7 @@ void InitEnemyPool(enemyPool_t* pool, int capacity);
  */
 void SpawnEnemyPool(enemyPool_t* pool, 
     Vector2 pos, 
+    int hp,
     float speed, 
     Vector2 size, 
     int dmg, 

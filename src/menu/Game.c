@@ -39,9 +39,11 @@ Screen_t Game(Player* player, Camera2D* camera)
 
         // DESSIN
         BeginDrawing();
-            ClearBackground(RAYWHITE);         
-            GameDraw(player);
-            
+            ClearBackground(RAYWHITE);   
+            BeginMode2D(*camera);
+                GameDraw(player);
+            EndMode2D();
+
             DrawFPS(10, 10);
         EndDrawing();
     }

@@ -46,6 +46,7 @@ typedef enum {
 typedef struct enemy_s {
     
     /* ==================== Informations générales ==================== */
+    int hp; /**< Points de vie de l'ennemi */
     float speed; /**< Vitesse de déplacement */
     Vector2 size;  /**< Taille de l'ennemi */
     int dmg; /**< Dégâts infligés */
@@ -75,6 +76,7 @@ typedef struct enemy_s {
  * @brief Initialise un ennemi
  * 
  * @param enemy pointeur vers l'ennemi
+ * @param hp nombre de points de vie
  * @param speed vitesse de déplacement
  * @param size taille de l'ennemi
  * @param dmg dégâts infligés
@@ -83,7 +85,7 @@ typedef struct enemy_s {
  * @param bulletSize taille des projectiles
 * @param type type d'ennemi
  */
-void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg, Vector2 pos, int bulletSpeed, int bulletSize, EnemyType_t type);
+void EnemyInit(enemy_t * enemy, int hp, float speed, Vector2 size, int dmg, Vector2 pos, int bulletSpeed, int bulletSize, EnemyType_t type);
 
 /**
  * @brief Met à jour la logique de l'ennemi

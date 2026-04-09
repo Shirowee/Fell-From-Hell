@@ -41,6 +41,10 @@ void ApplyDamageToPlayer(Player *player, int dmg){
     player->stats.invTime = PLAYER_INVICIBILITY_TIME;
 }
 
+void ApplyDamageToEnemy(enemy_t *enemy, int dmg){
+    enemy->hp -= dmg;
+}
+
 //Dessine barre de vie
 void HPDraw(Player *player, int x, int y, int width, int height){
     int gap = 5;
