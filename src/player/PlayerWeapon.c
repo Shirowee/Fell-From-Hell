@@ -1,4 +1,5 @@
 #include "../../lib/player/Player.h"
+#include "../../lib/core/GameManager.h"
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -29,8 +30,9 @@ void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
 
     if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && !IsReloading(weapon, startReload) && Cooldown(*weapon, timeSpent)){
         posSouris = GetMousePosition();
-        direction = ((int)(atan2(posSouris.y - player->position.y, posSouris.x - player->position.x) * 180 / PI) + 360) % 360;
+        direction = ((int)(atan2(posSouris.y + camera.target.y - player->position.y, posSouris.x - player->position.x) * 180 / PI) + 360) % 360;
         spawnBulletWeapon(*weapon, *player, direction);
+        printf("posSouris.y= %f\n", posSouris.y);
         (weapon->amo_left)--;
     }
 

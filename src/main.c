@@ -29,7 +29,7 @@ int main(void)
     Player player;
     GameInit(&player); // Initialisation du jeu
     
-    Camera2D camera = { 0 };
+    
     camera.offset = (Vector2){ 0, 0 };
     camera.target = (Vector2){ 0, 0 };
     camera.zoom   = resolution.scale;
@@ -50,7 +50,7 @@ int main(void)
                 previousScreen = SCREEN_MENU;
                 break;
             case SCREEN_GAME: 
-                currentScreen = Game(&player, &camera); break;
+                currentScreen = Game(&player); break;
             case SCREEN_SETTINGS: 
                 currentScreen = SettingsUpdate(previousScreen); break;
             case SCREEN_PAUSE: 
