@@ -46,7 +46,7 @@ int main(void)
 
         // DESSIN
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+               
 
         
         switch(currentScreen) {

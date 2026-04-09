@@ -152,3 +152,96 @@ void SpawnEnemyPatternCircle(EnemySpawner* spawner, enemyPool_t* pool, Vector2 p
         ENEMY_SHOOTER_CIRCLE);   
 
 }
+
+void SpawnEnemyPatternShooter(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos)
+{
+    //chasers
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x + 100, pos.y + 100}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x - 100, pos.y + 100}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x - 150, pos.y - 100}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x + 150, pos.y - 100}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x, pos.y-180}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    //s
+    SpawnEnemyPool(pool, 
+        (Vector2)pos, 
+        150, 
+        (Vector2){75,75}, 
+        20, 
+        150, 
+        20,
+        ENEMY_SHOOTER);   
+}
+
+void SpawnEnemyPatternArc(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos)
+{
+    //chasers
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x - 150, pos.y - 100}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x + 150, pos.y - 100}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x, pos.y-180}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    //arc
+    SpawnEnemyPool(pool, 
+        (Vector2)pos, 
+        150, 
+        (Vector2){75,75}, 
+        20, 
+        150, 
+        20,
+        ENEMY_ARC);   
+
+}

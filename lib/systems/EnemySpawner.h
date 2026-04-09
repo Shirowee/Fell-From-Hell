@@ -74,6 +74,39 @@ void UpdateEnemySpawner(EnemySpawner* spawner, enemyPool_t* pool);
  * @param pool pool d’ennemis
  * @param pos position de spawn
  */
-void SpawnEnemyPattern1(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos);
+void SpawnEnemyPatternChasers(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos);
+
+/**
+ * @brief Spawn un pattern d'enemis
+ *
+ * 5 chasers et un tireur en cercle
+ *
+ * @param spawner pointeur vers le spawner
+ * @param pool pool d’ennemis
+ * @param pos position de spawn
+ */
+void SpawnEnemyPatternCircle(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos);
+
+/**
+ * @brief Spawn un pattern d'enemis
+ *
+ * 5 chasers et un tireur
+ *
+ * @param spawner pointeur vers le spawner
+ * @param pool pool d’ennemis
+ * @param pos position de spawn
+ */
+void SpawnEnemyPatternShooter(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos);
+
+/**
+ * @brief Spawn un pattern d'enemis
+ *
+ * 5 chasers et un tireur en arcs
+ *
+ * @param spawner pointeur vers le spawner
+ * @param pool pool d’ennemis
+ * @param pos position de spawn
+ */
+void SpawnEnemyPatternArc(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos);
 extern EnemySpawner enemySpawner;
 #endif

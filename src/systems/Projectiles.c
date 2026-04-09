@@ -43,7 +43,7 @@ void UpdateBullet(bullet_t * bullet) {
         bullet->bulletPos.y += sinf(angleRad) * bullet->bulletSpeed * dt;
 
         //vérification que la bullet soit dans l'écran sinon c'est à unload
-        if (bullet->bulletPos.x < -50 || bullet->bulletPos.x > GetScreenWidth()+50 || bullet->bulletPos.y < -50 || bullet->bulletPos.y > currentLevel.info.height+50) {
+        if (bullet->bulletPos.x < -50 || bullet->bulletPos.x > currentLevel.info.width+50 || bullet->bulletPos.y < -50 || bullet->bulletPos.y > currentLevel.info.height+50) {
                 bullet->active = false;
         }
         break;
