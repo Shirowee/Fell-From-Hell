@@ -1,0 +1,26 @@
+\doxysection{Enemy\+Spawner.\+h}
+\hypertarget{EnemySpawner_8h_source}{}\label{EnemySpawner_8h_source}\index{lib/systems/EnemySpawner.h@{lib/systems/EnemySpawner.h}}
+\mbox{\hyperlink{EnemySpawner_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ ENEMYSPAWNER\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ ENEMYSPAWNER\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../../lib/systems/EnemyPool.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structEnemySpawner_ae441b65332c44af6a765b4881a394650}{timer}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structEnemySpawner_a8b2a0f835a86b46584383f08f077a7d0}{cooldown}};}
+\DoxyCodeLine{00033\ \}\ \mbox{\hyperlink{structEnemySpawner}{EnemySpawner}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemySpawner_8h_a3162edda342eb1321eda01d0bc86a566}{EnemySpawnerInit}}(\mbox{\hyperlink{structEnemySpawner}{EnemySpawner}}*\ spawner);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemySpawner_8h_a9d776f5787b32a9f4731256ebc3af03e}{SpawnRandomEnemy}}(\mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ pool);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemySpawner_8h_a8b8f393df12c59d1d2708df07014048f}{UpdateEnemySpawner}}(\mbox{\hyperlink{structEnemySpawner}{EnemySpawner}}*\ spawner,\ \mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ pool);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemySpawner_8h_abc47e057d9ab52658619983906a579e2}{SpawnEnemyPattern1}}(\mbox{\hyperlink{structEnemySpawner}{EnemySpawner}}*\ spawner,\ \mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ pool,\ Vector2\ pos);}
+\DoxyCodeLine{00078\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structEnemySpawner}{EnemySpawner}}\ \mbox{\hyperlink{EnemySpawner_8h_afa1e3a6688b8a86e113b40c4902d54b2}{enemySpawner}};}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

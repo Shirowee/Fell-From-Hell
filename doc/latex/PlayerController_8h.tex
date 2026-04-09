@@ -1,0 +1,213 @@
+\doxysection{lib/player/\+Player\+Controller.h File Reference}
+\hypertarget{PlayerController_8h}{}\label{PlayerController_8h}\index{lib/player/PlayerController.h@{lib/player/PlayerController.h}}
+
+
+Gère l\textquotesingle{}initialisation, la mise à jour et le dessin du joueur.  
+
+
+{\ttfamily \#include "{}../levels/\+Platform.\+h"{}}\newline
+{\ttfamily \#include "{}Player.\+h"{}}\newline
+Include dependency graph for Player\+Controller.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPlayerStats__s}{Player\+Stats\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Structure pour les statistiques du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{PlayerController_8h_a11d58baaffc49494ab91da16621b6a5c}{PLAYER\+\_\+X}}~100
+\begin{DoxyCompactList}\small\item\em Position par défaut du joueur sur l\textquotesingle{}axe x en pixels. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerController_8h_ae22bdd9c98feb24a0843a4ff0fa6e662}{PLAYER\+\_\+Y}}~350
+\begin{DoxyCompactList}\small\item\em Position par défaut du joueur sur l\textquotesingle{}axe y en pixels. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerController_8h_ac2a40db76e8257cf4873ab2fea5d1f3e}{PLAYER\+\_\+\+SIZE\+\_\+X}}~30
+\begin{DoxyCompactList}\small\item\em Taille par défaut du joueur sur l\textquotesingle{}axe x en pixels. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerController_8h_a6c458ddfbff80f2f8b60ebdc34f66063}{PLAYER\+\_\+\+SIZE\+\_\+Y}}~50
+\begin{DoxyCompactList}\small\item\em Taille par défaut du joueur sur l\textquotesingle{}axe y en pixels. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerController_8h_a41be06f6a030f4839ed44d132bdcb519}{DEFAULT\+\_\+\+PLAYER\+\_\+\+HP}}~200
+\begin{DoxyCompactList}\small\item\em Nombre de points de vie par défaut du joueur. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerController_8h_a05d5f4c04f0785557f6dde72359fdb31}{DEFAULT\+\_\+\+PLAYER\+\_\+\+REGEN}}~5
+\begin{DoxyCompactList}\small\item\em Nombre de points de vie régénéré par défaut au joueur. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerController_8h_afa2d784cafe126aa40cfdaac36733580}{PLAYER\+\_\+\+INVICIBILITY\+\_\+\+TIME}}~1
+\begin{DoxyCompactList}\small\item\em Temps d\textquotesingle{}invincibilité du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structPlayerStats__s}{Player\+Stats\+\_\+s}} \mbox{\hyperlink{PlayerController_8h_ae2aa36186c432223c56c58a73e1196e1}{Player\+Stats}}
+\begin{DoxyCompactList}\small\item\em Type de données pour les statistiques du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{PlayerController_8h_a0d8e1f03184cd27397ba9d1ace2a1f5f}{Player\+Init}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Initialise la structure joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PlayerController_8h_a32bb69595e7b7ae7e36c111d356cd733}{Player\+Update}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms, double \texorpdfstring{$\ast$}{*}time\+Spent, double \texorpdfstring{$\ast$}{*}start\+Reload)
+\begin{DoxyCompactList}\small\item\em Met à jour le joueur, c-\/à-\/d mettre à jour les inputs du joueur, les mouvements du joueur, les armes du joueur et les configurations liés au joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PlayerController_8h_a7a972fd705e39c2a53c6bc53f5d881ea}{Player\+Draw}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Dessine le joueur sur l\textquotesingle{}écran du jeu. \end{DoxyCompactList}\item 
+Vector2 \mbox{\hyperlink{PlayerController_8h_a62167afbdb9b52e3146c01b6c565d7a8}{get\+Player\+Center}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gère l\textquotesingle{}initialisation, la mise à jour et le dessin du joueur. 
+
+\begin{DoxyAuthor}{Author}
+Caius 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21-\/02-\/2026 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{PlayerController_8h_a41be06f6a030f4839ed44d132bdcb519}\label{PlayerController_8h_a41be06f6a030f4839ed44d132bdcb519} 
+\index{PlayerController.h@{PlayerController.h}!DEFAULT\_PLAYER\_HP@{DEFAULT\_PLAYER\_HP}}
+\index{DEFAULT\_PLAYER\_HP@{DEFAULT\_PLAYER\_HP}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_PLAYER\_HP}{DEFAULT\_PLAYER\_HP}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+PLAYER\+\_\+\+HP~200}
+
+
+
+Nombre de points de vie par défaut du joueur. 
+
+\Hypertarget{PlayerController_8h_a05d5f4c04f0785557f6dde72359fdb31}\label{PlayerController_8h_a05d5f4c04f0785557f6dde72359fdb31} 
+\index{PlayerController.h@{PlayerController.h}!DEFAULT\_PLAYER\_REGEN@{DEFAULT\_PLAYER\_REGEN}}
+\index{DEFAULT\_PLAYER\_REGEN@{DEFAULT\_PLAYER\_REGEN}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_PLAYER\_REGEN}{DEFAULT\_PLAYER\_REGEN}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+PLAYER\+\_\+\+REGEN~5}
+
+
+
+Nombre de points de vie régénéré par défaut au joueur. 
+
+\Hypertarget{PlayerController_8h_afa2d784cafe126aa40cfdaac36733580}\label{PlayerController_8h_afa2d784cafe126aa40cfdaac36733580} 
+\index{PlayerController.h@{PlayerController.h}!PLAYER\_INVICIBILITY\_TIME@{PLAYER\_INVICIBILITY\_TIME}}
+\index{PLAYER\_INVICIBILITY\_TIME@{PLAYER\_INVICIBILITY\_TIME}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_INVICIBILITY\_TIME}{PLAYER\_INVICIBILITY\_TIME}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+INVICIBILITY\+\_\+\+TIME~1}
+
+
+
+Temps d\textquotesingle{}invincibilité du joueur. 
+
+\Hypertarget{PlayerController_8h_ac2a40db76e8257cf4873ab2fea5d1f3e}\label{PlayerController_8h_ac2a40db76e8257cf4873ab2fea5d1f3e} 
+\index{PlayerController.h@{PlayerController.h}!PLAYER\_SIZE\_X@{PLAYER\_SIZE\_X}}
+\index{PLAYER\_SIZE\_X@{PLAYER\_SIZE\_X}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_SIZE\_X}{PLAYER\_SIZE\_X}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+SIZE\+\_\+X~30}
+
+
+
+Taille par défaut du joueur sur l\textquotesingle{}axe x en pixels. 
+
+\Hypertarget{PlayerController_8h_a6c458ddfbff80f2f8b60ebdc34f66063}\label{PlayerController_8h_a6c458ddfbff80f2f8b60ebdc34f66063} 
+\index{PlayerController.h@{PlayerController.h}!PLAYER\_SIZE\_Y@{PLAYER\_SIZE\_Y}}
+\index{PLAYER\_SIZE\_Y@{PLAYER\_SIZE\_Y}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_SIZE\_Y}{PLAYER\_SIZE\_Y}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+SIZE\+\_\+Y~50}
+
+
+
+Taille par défaut du joueur sur l\textquotesingle{}axe y en pixels. 
+
+\Hypertarget{PlayerController_8h_a11d58baaffc49494ab91da16621b6a5c}\label{PlayerController_8h_a11d58baaffc49494ab91da16621b6a5c} 
+\index{PlayerController.h@{PlayerController.h}!PLAYER\_X@{PLAYER\_X}}
+\index{PLAYER\_X@{PLAYER\_X}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_X}{PLAYER\_X}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+X~100}
+
+
+
+Position par défaut du joueur sur l\textquotesingle{}axe x en pixels. 
+
+\Hypertarget{PlayerController_8h_ae22bdd9c98feb24a0843a4ff0fa6e662}\label{PlayerController_8h_ae22bdd9c98feb24a0843a4ff0fa6e662} 
+\index{PlayerController.h@{PlayerController.h}!PLAYER\_Y@{PLAYER\_Y}}
+\index{PLAYER\_Y@{PLAYER\_Y}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_Y}{PLAYER\_Y}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+Y~350}
+
+
+
+Position par défaut du joueur sur l\textquotesingle{}axe y en pixels. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{PlayerController_8h_ae2aa36186c432223c56c58a73e1196e1}\label{PlayerController_8h_ae2aa36186c432223c56c58a73e1196e1} 
+\index{PlayerController.h@{PlayerController.h}!PlayerStats@{PlayerStats}}
+\index{PlayerStats@{PlayerStats}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{PlayerStats}{PlayerStats}}
+{\footnotesize\ttfamily \mbox{\hyperlink{PlayerController_8h_ae2aa36186c432223c56c58a73e1196e1}{Player\+Stats}}}
+
+
+
+Type de données pour les statistiques du joueur. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{PlayerController_8h_a62167afbdb9b52e3146c01b6c565d7a8}\label{PlayerController_8h_a62167afbdb9b52e3146c01b6c565d7a8} 
+\index{PlayerController.h@{PlayerController.h}!getPlayerCenter@{getPlayerCenter}}
+\index{getPlayerCenter@{getPlayerCenter}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{getPlayerCenter()}{getPlayerCenter()}}
+{\footnotesize\ttfamily Vector2 get\+Player\+Center (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+\Hypertarget{PlayerController_8h_a7a972fd705e39c2a53c6bc53f5d881ea}\label{PlayerController_8h_a7a972fd705e39c2a53c6bc53f5d881ea} 
+\index{PlayerController.h@{PlayerController.h}!PlayerDraw@{PlayerDraw}}
+\index{PlayerDraw@{PlayerDraw}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{PlayerDraw()}{PlayerDraw()}}
+{\footnotesize\ttfamily void Player\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+
+
+Dessine le joueur sur l\textquotesingle{}écran du jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+\end{DoxyParams}
+\Hypertarget{PlayerController_8h_a0d8e1f03184cd27397ba9d1ace2a1f5f}\label{PlayerController_8h_a0d8e1f03184cd27397ba9d1ace2a1f5f} 
+\index{PlayerController.h@{PlayerController.h}!PlayerInit@{PlayerInit}}
+\index{PlayerInit@{PlayerInit}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{PlayerInit()}{PlayerInit()}}
+{\footnotesize\ttfamily void Player\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+
+
+Initialise la structure joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+\end{DoxyParams}
+\Hypertarget{PlayerController_8h_a32bb69595e7b7ae7e36c111d356cd733}\label{PlayerController_8h_a32bb69595e7b7ae7e36c111d356cd733} 
+\index{PlayerController.h@{PlayerController.h}!PlayerUpdate@{PlayerUpdate}}
+\index{PlayerUpdate@{PlayerUpdate}!PlayerController.h@{PlayerController.h}}
+\doxysubsubsection{\texorpdfstring{PlayerUpdate()}{PlayerUpdate()}}
+{\footnotesize\ttfamily void Player\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform\mbox{[}$\,$\mbox{]},  }\item[{const int}]{nb\+Platforms,  }\item[{double \texorpdfstring{$\ast$}{*}}]{time\+Spent,  }\item[{double \texorpdfstring{$\ast$}{*}}]{start\+Reload }\end{DoxyParamCaption})}
+
+
+
+Met à jour le joueur, c-\/à-\/d mettre à jour les inputs du joueur, les mouvements du joueur, les armes du joueur et les configurations liés au joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+{\em platform} & Tableau de platform \\
+\hline
+{\em nb\+Platforms} & Taille de platform \\
+\hline
+{\em time\+Spent} & Temps écoulé depuis le tir de la dernière balle \\
+\hline
+{\em start\+Reload} & Temps écoulé depuis le dernier rechargement de l\textquotesingle{}arme \\
+\hline
+\end{DoxyParams}

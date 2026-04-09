@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['raw_0',['raw',['../cJSON_8h.html#a788db922597cf2fb6389e278f822e59f',1,'cJSON.h']]],
+  ['rayon_1',['RAYON',['../Projectiles_8h.html#a3304c99f43f534878204486fc7b9673d',1,'Projectiles.h']]],
+  ['readjsonlvl_2',['readjsonlvl',['../LevelManager_8h.html#a3eb3374e1a3573ccef109a337db05e06',1,'readJsonLvl(const char *fileName):&#160;LevelManager.c'],['../LevelManager_8c.html#a3eb3374e1a3573ccef109a337db05e06',1,'readJsonLvl(const char *fileName):&#160;LevelManager.c']]],
+  ['rect_3',['rect',['../structRect.html',1,'Rect'],['../structTrigger.html#a758774b2a59c01d44c64a3014a083b8b',1,'Trigger::rect'],['../structPlatform.html#a18ff9d86ebdb43f6552095576ae9e42d',1,'Platform::rect']]],
+  ['recurse_4',['recurse',['../cJSON_8h.html#afc8d1c385c6dc37e1c5b640869ce4ab6',1,'cJSON.h']]],
+  ['ref_5fhauteur_5',['REF_HAUTEUR',['../Game_8c.html#a731cf8435152efe21a87557e379cdefd',1,'Game.c']]],
+  ['ref_5flargeur_6',['REF_LARGEUR',['../Game_8c.html#a4d0b1299c6daf76da1bba36281df9477',1,'Game.c']]],
+  ['refh_7',['refH',['../structResolutionConfig.html#a39abdaf19b9a8fa20da330b72d99bd95',1,'ResolutionConfig']]],
+  ['refw_8',['refW',['../structResolutionConfig.html#a97d40be189830cefe8ca01b11edb9994',1,'ResolutionConfig']]],
+  ['regen_9',['regen',['../structPlayerStats__s.html#a0e7182ae60b8a0d646f0348b58e40eb1',1,'PlayerStats_s']]],
+  ['regen_5ftime_10',['REGEN_TIME',['../LifeManager_8c.html#aff4a69d33e0427e11ea7456068ab6b39',1,'LifeManager.c']]],
+  ['regentimeout_11',['regenTimeOut',['../structPlayerStats__s.html#a13602357799753f3b36ad3afdf7358a3',1,'PlayerStats_s']]],
+  ['reloadtime_12',['reloadtime',['../structbuff__t.html#ad44189de31c341c2af23a38adbaabd37',1,'buff_t::reloadTime'],['../structweapon__t.html#a0f7694cc87a52113aa3e0d0cd852ae47',1,'weapon_t::reloadTime']]],
+  ['replacement_13',['replacement',['../cJSON_8h.html#a10573fccca598ec39809e8beb3f7f791',1,'cJSON.h']]],
+  ['require_5fnull_5fterminated_14',['require_null_terminated',['../cJSON_8h.html#a68bc5d2265c7694323a75615f7ac0130',1,'cJSON.h']]],
+  ['resolution_15',['resolution',['../ResolutionManager_8h.html#a2016104fa368c7cbefbbb0fe119a3a09',1,'resolution:&#160;ResolutionManager.c'],['../ResolutionManager_8c.html#a2016104fa368c7cbefbbb0fe119a3a09',1,'resolution:&#160;ResolutionManager.c']]],
+  ['resolutionconfig_16',['ResolutionConfig',['../structResolutionConfig.html',1,'']]],
+  ['resolutioninit_17',['resolutioninit',['../ResolutionManager_8h.html#a8997fc15fcd97e435b417522d66c9f59',1,'ResolutionInit(int mapRefWidth, int mapRefHeight):&#160;ResolutionManager.c'],['../ResolutionManager_8c.html#a8997fc15fcd97e435b417522d66c9f59',1,'ResolutionInit(int mapRefWidth, int mapRefHeight):&#160;ResolutionManager.c']]],
+  ['resolutionmanager_2ec_18',['ResolutionManager.c',['../ResolutionManager_8c.html',1,'']]],
+  ['resolutionmanager_2eh_19',['ResolutionManager.h',['../ResolutionManager_8h.html',1,'']]],
+  ['return_5fparse_5fend_20',['return_parse_end',['../cJSON_8h.html#a7725ae4fa33fc499614c6895ee9ee44a',1,'cJSON.h']]],
+  ['right_21',['Right',['../PlayerMovement_8h.html#a224b9163917ac32fc95a60d8c1eec3aaad48f7af8c070184f3774c8e85854eb66',1,'PlayerMovement.h']]],
+  ['rs_22',['rs',['../ResolutionManager_8h.html#adb0f3480b1aa6929ae10e15a04dcdbcf',1,'RS(float value):&#160;ResolutionManager.c'],['../ResolutionManager_8c.html#adb0f3480b1aa6929ae10e15a04dcdbcf',1,'RS(float value):&#160;ResolutionManager.c']]],
+  ['running_23',['RUNNING',['../PlayerMovement_8h.html#a8992f9cdedef9a33e8b28babae7dd2bea1061be6c3fb88d32829cba6f6b2be304',1,'PlayerMovement.h']]]
+];

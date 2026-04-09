@@ -1,0 +1,109 @@
+\doxysection{src/enemies/\+Enemy\+State.c File Reference}
+\hypertarget{EnemyState_8c}{}\label{EnemyState_8c}\index{src/enemies/EnemyState.c@{src/enemies/EnemyState.c}}
+{\ttfamily \#include "{}../../lib/enemies/\+Enemy\+Movement.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/enemies/\+Enemy\+Controller.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/enemies/\+Enemy\+States.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Bullet\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Enemy\+State.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{EnemyState_8c_ac94036e6a02356ceeb7e56aa4bda6a45}{Enemy\+State\+\_\+\+Idle}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+\begin{DoxyCompactList}\small\item\em Etat idle de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyState_8c_a01c6174988d6b9551efbd6b2aedf9844}{Enemy\+State\+\_\+\+Move\+Towards\+Player}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+\begin{DoxyCompactList}\small\item\em Etat de poursuite du joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyState_8c_ab7496197d87f1a1c33ca801ed4a5fb1f}{Enemy\+State\+\_\+\+Move\+Random}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+\begin{DoxyCompactList}\small\item\em Etat de déplacement aléatoire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyState_8c_acdebdf53c605dc9060ed461662ee53b0}{Enemy\+State\+\_\+\+Enemy\+Shoot\+Circle}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+\begin{DoxyCompactList}\small\item\em Etat d\textquotesingle{}attaque circulaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyState_8c_af28d290b08219e29153615845506a277}{Enemy\+State\+\_\+\+Enemy\+Shoot}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+\begin{DoxyCompactList}\small\item\em Etat d\textquotesingle{}attaque simple. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyState_8c_abfae72489b09a912b5fa7c6e5b49e782}{Enemy\+State\+\_\+\+Enemy\+Shoot\+Arc}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+\begin{DoxyCompactList}\small\item\em Etat d\textquotesingle{}attaque en arc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyState_8c_a6b533b04076a4312fbf6f4517f6ac0e0}{Enemy\+State\+\_\+\+Enemy\+Shoot\+Spiral}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+\begin{DoxyCompactList}\small\item\em Etat d\textquotesingle{}attaque en spirale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{EnemyState_8c_af28d290b08219e29153615845506a277}\label{EnemyState_8c_af28d290b08219e29153615845506a277} 
+\index{EnemyState.c@{EnemyState.c}!EnemyState\_EnemyShoot@{EnemyState\_EnemyShoot}}
+\index{EnemyState\_EnemyShoot@{EnemyState\_EnemyShoot}!EnemyState.c@{EnemyState.c}}
+\doxysubsubsection{\texorpdfstring{EnemyState\_EnemyShoot()}{EnemyState\_EnemyShoot()}}
+{\footnotesize\ttfamily void Enemy\+State\+\_\+\+Enemy\+Shoot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Etat d\textquotesingle{}attaque simple. 
+
+Tire un projectile en ligne droite vers le joueur \Hypertarget{EnemyState_8c_abfae72489b09a912b5fa7c6e5b49e782}\label{EnemyState_8c_abfae72489b09a912b5fa7c6e5b49e782} 
+\index{EnemyState.c@{EnemyState.c}!EnemyState\_EnemyShootArc@{EnemyState\_EnemyShootArc}}
+\index{EnemyState\_EnemyShootArc@{EnemyState\_EnemyShootArc}!EnemyState.c@{EnemyState.c}}
+\doxysubsubsection{\texorpdfstring{EnemyState\_EnemyShootArc()}{EnemyState\_EnemyShootArc()}}
+{\footnotesize\ttfamily void Enemy\+State\+\_\+\+Enemy\+Shoot\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Etat d\textquotesingle{}attaque en arc. 
+
+Tire des projectiles en arc de cercle vers le joueur \Hypertarget{EnemyState_8c_acdebdf53c605dc9060ed461662ee53b0}\label{EnemyState_8c_acdebdf53c605dc9060ed461662ee53b0} 
+\index{EnemyState.c@{EnemyState.c}!EnemyState\_EnemyShootCircle@{EnemyState\_EnemyShootCircle}}
+\index{EnemyState\_EnemyShootCircle@{EnemyState\_EnemyShootCircle}!EnemyState.c@{EnemyState.c}}
+\doxysubsubsection{\texorpdfstring{EnemyState\_EnemyShootCircle()}{EnemyState\_EnemyShootCircle()}}
+{\footnotesize\ttfamily void Enemy\+State\+\_\+\+Enemy\+Shoot\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Etat d\textquotesingle{}attaque circulaire. 
+
+Tire des projectiles en cercle autour de l\textquotesingle{}ennemi \Hypertarget{EnemyState_8c_a6b533b04076a4312fbf6f4517f6ac0e0}\label{EnemyState_8c_a6b533b04076a4312fbf6f4517f6ac0e0} 
+\index{EnemyState.c@{EnemyState.c}!EnemyState\_EnemyShootSpiral@{EnemyState\_EnemyShootSpiral}}
+\index{EnemyState\_EnemyShootSpiral@{EnemyState\_EnemyShootSpiral}!EnemyState.c@{EnemyState.c}}
+\doxysubsubsection{\texorpdfstring{EnemyState\_EnemyShootSpiral()}{EnemyState\_EnemyShootSpiral()}}
+{\footnotesize\ttfamily void Enemy\+State\+\_\+\+Enemy\+Shoot\+Spiral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Etat d\textquotesingle{}attaque en spirale. 
+
+Tire un projectile en spirale autour de l\textquotesingle{}ennemi \Hypertarget{EnemyState_8c_ac94036e6a02356ceeb7e56aa4bda6a45}\label{EnemyState_8c_ac94036e6a02356ceeb7e56aa4bda6a45} 
+\index{EnemyState.c@{EnemyState.c}!EnemyState\_Idle@{EnemyState\_Idle}}
+\index{EnemyState\_Idle@{EnemyState\_Idle}!EnemyState.c@{EnemyState.c}}
+\doxysubsubsection{\texorpdfstring{EnemyState\_Idle()}{EnemyState\_Idle()}}
+{\footnotesize\ttfamily void Enemy\+State\+\_\+\+Idle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Etat idle de l\textquotesingle{}ennemi. 
+
+Choisit le prochain état en fonction du type d\textquotesingle{}ennemi \+:
+\begin{DoxyItemize}
+\item CHASER \+: poursuite du joueur
+\item SHOOTER \+: attaque ou déplacement aléatoire 
+\end{DoxyItemize}\Hypertarget{EnemyState_8c_ab7496197d87f1a1c33ca801ed4a5fb1f}\label{EnemyState_8c_ab7496197d87f1a1c33ca801ed4a5fb1f} 
+\index{EnemyState.c@{EnemyState.c}!EnemyState\_MoveRandom@{EnemyState\_MoveRandom}}
+\index{EnemyState\_MoveRandom@{EnemyState\_MoveRandom}!EnemyState.c@{EnemyState.c}}
+\doxysubsubsection{\texorpdfstring{EnemyState\_MoveRandom()}{EnemyState\_MoveRandom()}}
+{\footnotesize\ttfamily void Enemy\+State\+\_\+\+Move\+Random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Etat de déplacement aléatoire. 
+
+
+\begin{DoxyItemize}
+\item Change de direction toutes les secondes
+\item Se déplace continuellement
+\item Retourne en idle après 3 secondes 
+\end{DoxyItemize}\Hypertarget{EnemyState_8c_a01c6174988d6b9551efbd6b2aedf9844}\label{EnemyState_8c_a01c6174988d6b9551efbd6b2aedf9844} 
+\index{EnemyState.c@{EnemyState.c}!EnemyState\_MoveTowardsPlayer@{EnemyState\_MoveTowardsPlayer}}
+\index{EnemyState\_MoveTowardsPlayer@{EnemyState\_MoveTowardsPlayer}!EnemyState.c@{EnemyState.c}}
+\doxysubsubsection{\texorpdfstring{EnemyState\_MoveTowardsPlayer()}{EnemyState\_MoveTowardsPlayer()}}
+{\footnotesize\ttfamily void Enemy\+State\+\_\+\+Move\+Towards\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy,  }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Etat de poursuite du joueur. 
+

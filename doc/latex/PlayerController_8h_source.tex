@@ -1,0 +1,43 @@
+\doxysection{Player\+Controller.\+h}
+\hypertarget{PlayerController_8h_source}{}\label{PlayerController_8h_source}\index{lib/player/PlayerController.h@{lib/player/PlayerController.h}}
+\mbox{\hyperlink{PlayerController_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_CONTROLLER\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PLAYER\_CONTROLLER\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../levels/Platform.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ PLAYER\_X\ 100}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ PLAYER\_Y\ 350}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ PLAYER\_SIZE\_X\ 30}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ PLAYER\_SIZE\_Y\ 50}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ DEFAULT\_PLAYER\_HP\ 200}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ DEFAULT\_PLAYER\_REGEN\ 5}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ PLAYER\_INVICIBILITY\_TIME\ 1}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *Structures}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayerStats__s}{PlayerStats\_s}}\{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPlayerStats__s_a80a5a8990d20c980494e308ceba571a8}{hp}};\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPlayerStats__s_a23f966f30e57e0eacf9126ac75febcf3}{hpMax}};\ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPlayerStats__s_a0e7182ae60b8a0d646f0348b58e40eb1}{regen}};\ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structPlayerStats__s_a13602357799753f3b36ad3afdf7358a3}{regenTimeOut}};\ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structPlayerStats__s_a2faea79cbbcf3d1ca8d0ca0e855b94ff}{invTime}};\ }
+\DoxyCodeLine{00067\ \}\mbox{\hyperlink{PlayerController_8h_ae2aa36186c432223c56c58a73e1196e1}{PlayerStats}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerController_8h_a0d8e1f03184cd27397ba9d1ace2a1f5f}{PlayerInit}}(\mbox{\hyperlink{structPlayer__s}{Player}}\ *player);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerController_8h_a32bb69595e7b7ae7e36c111d356cd733}{PlayerUpdate}}(\mbox{\hyperlink{structPlayer__s}{Player}}\ *player,\ \mbox{\hyperlink{structPlatform}{Platform}}\ platform[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nbPlatforms,\ \textcolor{keywordtype}{double}*\ timeSpent,\ \textcolor{keywordtype}{double}*\ startReload);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerController_8h_a7a972fd705e39c2a53c6bc53f5d881ea}{PlayerDraw}}(\mbox{\hyperlink{structPlayer__s}{Player}}\ *player);}
+\DoxyCodeLine{00098\ Vector2\ \mbox{\hyperlink{PlayerController_8h_a62167afbdb9b52e3146c01b6c565d7a8}{getPlayerCenter}}(\mbox{\hyperlink{structPlayer__s}{Player}}\ *player);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

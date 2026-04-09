@@ -1,0 +1,86 @@
+\doxysection{src/player/\+Player\+Controller.c File Reference}
+\hypertarget{PlayerController_8c}{}\label{PlayerController_8c}\index{src/player/PlayerController.c@{src/player/PlayerController.c}}
+{\ttfamily \#include "{}../../lib/player/\+Player\+Controller.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/player/\+Player\+Movement.\+h"{}}\newline
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/player/\+Player.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/levels/\+Level\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Resolution\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Enemy\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Life\+Manager.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Player\+Controller.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{PlayerController_8c_a0d8e1f03184cd27397ba9d1ace2a1f5f}{Player\+Init}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Initialise la structure joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PlayerController_8c_a32bb69595e7b7ae7e36c111d356cd733}{Player\+Update}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms, double \texorpdfstring{$\ast$}{*}time\+Spent, double \texorpdfstring{$\ast$}{*}start\+Reload)
+\begin{DoxyCompactList}\small\item\em Met à jour le joueur, c-\/à-\/d mettre à jour les inputs du joueur, les mouvements du joueur, les armes du joueur et les configurations liés au joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PlayerController_8c_a7a972fd705e39c2a53c6bc53f5d881ea}{Player\+Draw}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Dessine le joueur sur l\textquotesingle{}écran du jeu. \end{DoxyCompactList}\item 
+Vector2 \mbox{\hyperlink{PlayerController_8c_a62167afbdb9b52e3146c01b6c565d7a8}{get\+Player\+Center}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{PlayerController_8c_a62167afbdb9b52e3146c01b6c565d7a8}\label{PlayerController_8c_a62167afbdb9b52e3146c01b6c565d7a8} 
+\index{PlayerController.c@{PlayerController.c}!getPlayerCenter@{getPlayerCenter}}
+\index{getPlayerCenter@{getPlayerCenter}!PlayerController.c@{PlayerController.c}}
+\doxysubsubsection{\texorpdfstring{getPlayerCenter()}{getPlayerCenter()}}
+{\footnotesize\ttfamily Vector2 get\+Player\+Center (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+\Hypertarget{PlayerController_8c_a7a972fd705e39c2a53c6bc53f5d881ea}\label{PlayerController_8c_a7a972fd705e39c2a53c6bc53f5d881ea} 
+\index{PlayerController.c@{PlayerController.c}!PlayerDraw@{PlayerDraw}}
+\index{PlayerDraw@{PlayerDraw}!PlayerController.c@{PlayerController.c}}
+\doxysubsubsection{\texorpdfstring{PlayerDraw()}{PlayerDraw()}}
+{\footnotesize\ttfamily void Player\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+
+
+Dessine le joueur sur l\textquotesingle{}écran du jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+\end{DoxyParams}
+\Hypertarget{PlayerController_8c_a0d8e1f03184cd27397ba9d1ace2a1f5f}\label{PlayerController_8c_a0d8e1f03184cd27397ba9d1ace2a1f5f} 
+\index{PlayerController.c@{PlayerController.c}!PlayerInit@{PlayerInit}}
+\index{PlayerInit@{PlayerInit}!PlayerController.c@{PlayerController.c}}
+\doxysubsubsection{\texorpdfstring{PlayerInit()}{PlayerInit()}}
+{\footnotesize\ttfamily void Player\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+
+
+Initialise la structure joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+\end{DoxyParams}
+\Hypertarget{PlayerController_8c_a32bb69595e7b7ae7e36c111d356cd733}\label{PlayerController_8c_a32bb69595e7b7ae7e36c111d356cd733} 
+\index{PlayerController.c@{PlayerController.c}!PlayerUpdate@{PlayerUpdate}}
+\index{PlayerUpdate@{PlayerUpdate}!PlayerController.c@{PlayerController.c}}
+\doxysubsubsection{\texorpdfstring{PlayerUpdate()}{PlayerUpdate()}}
+{\footnotesize\ttfamily void Player\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform\mbox{[}$\,$\mbox{]},  }\item[{const int}]{nb\+Platforms,  }\item[{double \texorpdfstring{$\ast$}{*}}]{time\+Spent,  }\item[{double \texorpdfstring{$\ast$}{*}}]{start\+Reload }\end{DoxyParamCaption})}
+
+
+
+Met à jour le joueur, c-\/à-\/d mettre à jour les inputs du joueur, les mouvements du joueur, les armes du joueur et les configurations liés au joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+{\em platform} & Tableau de platform \\
+\hline
+{\em nb\+Platforms} & Taille de platform \\
+\hline
+{\em time\+Spent} & Temps écoulé depuis le tir de la dernière balle \\
+\hline
+{\em start\+Reload} & Temps écoulé depuis le dernier rechargement de l\textquotesingle{}arme \\
+\hline
+\end{DoxyParams}

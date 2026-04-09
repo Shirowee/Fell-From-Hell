@@ -1,0 +1,54 @@
+\doxysection{src/menu/\+End\+Level.c File Reference}
+\hypertarget{EndLevel_8c}{}\label{EndLevel_8c}\index{src/menu/EndLevel.c@{src/menu/EndLevel.c}}
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Screen.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Buff\+System.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/player/\+Player\+Weapon.\+h"{}}\newline
+Include dependency graph for End\+Level.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{EndLevel_8c_a525b442075900fe31937ecb0442eeddd}{End\+Level\+Update}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Met à jour l\textquotesingle{}écran de fin de niveau. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{EndLevel_8c_a34b292658ed901a2a206b36968636322}{New\+Level}} (int new\+Flag)
+\begin{DoxyCompactList}\small\item\em Gère l\textquotesingle{}état de déclenchement d\textquotesingle{}un nouveau niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{EndLevel_8c_a525b442075900fe31937ecb0442eeddd}\label{EndLevel_8c_a525b442075900fe31937ecb0442eeddd} 
+\index{EndLevel.c@{EndLevel.c}!EndLevelUpdate@{EndLevelUpdate}}
+\index{EndLevelUpdate@{EndLevelUpdate}!EndLevel.c@{EndLevel.c}}
+\doxysubsubsection{\texorpdfstring{EndLevelUpdate()}{EndLevelUpdate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} End\+Level\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+
+
+Met à jour l\textquotesingle{}écran de fin de niveau. 
+
+\begin{DoxyReturn}{Returns}
+Le prochain écran à afficher (Screen\+\_\+t)
+\end{DoxyReturn}
+Affiche les résultats du niveau et permet au joueur d\textquotesingle{}obtenir des améliorations de passer au niveau suivant ou de quitter le jeu. \Hypertarget{EndLevel_8c_a34b292658ed901a2a206b36968636322}\label{EndLevel_8c_a34b292658ed901a2a206b36968636322} 
+\index{EndLevel.c@{EndLevel.c}!NewLevel@{NewLevel}}
+\index{NewLevel@{NewLevel}!EndLevel.c@{EndLevel.c}}
+\doxysubsubsection{\texorpdfstring{NewLevel()}{NewLevel()}}
+{\footnotesize\ttfamily int New\+Level (\begin{DoxyParamCaption}\item[{int}]{new\+Flag }\end{DoxyParamCaption})}
+
+
+
+Gère l\textquotesingle{}état de déclenchement d\textquotesingle{}un nouveau niveau. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Flag} & Indique si un changement d\textquotesingle{}état est demandé (1 = toggle, 0 = aucun changement) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}état actuel du nouveau niveau (1 = actif, 0 = inactif)
+\end{DoxyReturn}
+Cette fonction utilise une variable statique pour mémoriser l\textquotesingle{}état entre les appels. Si {\ttfamily new\+Flag} est à 1, l\textquotesingle{}état est inversé (toggle). Si {\ttfamily new\+Flag} est à 0, l\textquotesingle{}état reste inchangé.
+
+\begin{DoxyNote}{Note}
+Fonctionne comme un interrupteur (toggle). 
+\end{DoxyNote}

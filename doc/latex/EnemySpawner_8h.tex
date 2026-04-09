@@ -1,0 +1,119 @@
+\doxysection{lib/systems/\+Enemy\+Spawner.h File Reference}
+\hypertarget{EnemySpawner_8h}{}\label{EnemySpawner_8h}\index{lib/systems/EnemySpawner.h@{lib/systems/EnemySpawner.h}}
+{\ttfamily \#include "{}../../lib/systems/\+Enemy\+Pool.\+h"{}}\newline
+Include dependency graph for Enemy\+Spawner.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}}
+\begin{DoxyCompactList}\small\item\em Gère le système de spawn des ennemis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{EnemySpawner_8h_a3162edda342eb1321eda01d0bc86a566}{Enemy\+Spawner\+Init}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner)
+\begin{DoxyCompactList}\small\item\em Initialise le spawner d\textquotesingle{}ennemis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemySpawner_8h_a9d776f5787b32a9f4731256ebc3af03e}{Spawn\+Random\+Enemy}} (\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
+\begin{DoxyCompactList}\small\item\em Spawn un ennemi à une position aléatoire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemySpawner_8h_a8b8f393df12c59d1d2708df07014048f}{Update\+Enemy\+Spawner}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
+\begin{DoxyCompactList}\small\item\em Met à jour le spawner d\textquotesingle{}ennemis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemySpawner_8h_abc47e057d9ab52658619983906a579e2}{Spawn\+Enemy\+Pattern1}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
+\begin{DoxyCompactList}\small\item\em Spawn un pattern d\textquotesingle{}enemis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \mbox{\hyperlink{EnemySpawner_8h_afa1e3a6688b8a86e113b40c4902d54b2}{enemy\+Spawner}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{EnemySpawner_8h_a3162edda342eb1321eda01d0bc86a566}\label{EnemySpawner_8h_a3162edda342eb1321eda01d0bc86a566} 
+\index{EnemySpawner.h@{EnemySpawner.h}!EnemySpawnerInit@{EnemySpawnerInit}}
+\index{EnemySpawnerInit@{EnemySpawnerInit}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{EnemySpawnerInit()}{EnemySpawnerInit()}}
+{\footnotesize\ttfamily void Enemy\+Spawner\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner }\end{DoxyParamCaption})}
+
+
+
+Initialise le spawner d\textquotesingle{}ennemis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spawner} & pointeur vers le spawner \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EnemySpawner_8h_abc47e057d9ab52658619983906a579e2}\label{EnemySpawner_8h_abc47e057d9ab52658619983906a579e2} 
+\index{EnemySpawner.h@{EnemySpawner.h}!SpawnEnemyPattern1@{SpawnEnemyPattern1}}
+\index{SpawnEnemyPattern1@{SpawnEnemyPattern1}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{SpawnEnemyPattern1()}{SpawnEnemyPattern1()}}
+{\footnotesize\ttfamily void Spawn\+Enemy\+Pattern1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner,  }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{pos }\end{DoxyParamCaption})}
+
+
+
+Spawn un pattern d\textquotesingle{}enemis. 
+
+5 chasers
+
+
+\begin{DoxyParams}{Parameters}
+{\em spawner} & pointeur vers le spawner \\
+\hline
+{\em pool} & pool d’ennemis \\
+\hline
+{\em pos} & position de spawn \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EnemySpawner_8h_a9d776f5787b32a9f4731256ebc3af03e}\label{EnemySpawner_8h_a9d776f5787b32a9f4731256ebc3af03e} 
+\index{EnemySpawner.h@{EnemySpawner.h}!SpawnRandomEnemy@{SpawnRandomEnemy}}
+\index{SpawnRandomEnemy@{SpawnRandomEnemy}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{SpawnRandomEnemy()}{SpawnRandomEnemy()}}
+{\footnotesize\ttfamily void Spawn\+Random\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool }\end{DoxyParamCaption})}
+
+
+
+Spawn un ennemi à une position aléatoire. 
+
+Génère un ennemi avec des statistiques aléatoires \+:
+\begin{DoxyItemize}
+\item position sur l\textquotesingle{}écran
+\item vitesse
+\item taille
+\item dégâts
+\item caractéristiques des projectiles
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & pool d’ennemis \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EnemySpawner_8h_a8b8f393df12c59d1d2708df07014048f}\label{EnemySpawner_8h_a8b8f393df12c59d1d2708df07014048f} 
+\index{EnemySpawner.h@{EnemySpawner.h}!UpdateEnemySpawner@{UpdateEnemySpawner}}
+\index{UpdateEnemySpawner@{UpdateEnemySpawner}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{UpdateEnemySpawner()}{UpdateEnemySpawner()}}
+{\footnotesize\ttfamily void Update\+Enemy\+Spawner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner,  }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool }\end{DoxyParamCaption})}
+
+
+
+Met à jour le spawner d\textquotesingle{}ennemis. 
+
+Incrémente un timer et déclenche un spawn lorsque le cooldown est atteint. Le cooldown est ensuite réinitialisé aléatoirement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spawner} & pointeur vers le spawner \\
+\hline
+{\em pool} & pool d’ennemis \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{EnemySpawner_8h_afa1e3a6688b8a86e113b40c4902d54b2}\label{EnemySpawner_8h_afa1e3a6688b8a86e113b40c4902d54b2} 
+\index{EnemySpawner.h@{EnemySpawner.h}!enemySpawner@{enemySpawner}}
+\index{enemySpawner@{enemySpawner}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{enemySpawner}{enemySpawner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} enemy\+Spawner\hspace{0.3cm}{\ttfamily [extern]}}
+

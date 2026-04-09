@@ -1,0 +1,145 @@
+\doxysection{Movement\+Config\+\_\+s Struct Reference}
+\hypertarget{structMovementConfig__s}{}\label{structMovementConfig__s}\index{MovementConfig\_s@{MovementConfig\_s}}
+
+
+Structure pour gérer les mouvements du joueur.  
+
+
+
+
+{\ttfamily \#include $<$Player\+Movement.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{structMovementConfig__s_aa004ad73eb143aa8e23d2cc0210c20e4}{max\+Speed}}
+\item 
+float \mbox{\hyperlink{structMovementConfig__s_a56647c2962b0769638995183fc81912a}{ground\+Acc}}
+\item 
+float \mbox{\hyperlink{structMovementConfig__s_abb8f9ea49ef279944ad3d8ca5db3896a}{air\+Acc}}
+\item 
+float \mbox{\hyperlink{structMovementConfig__s_a576d33b6c099c92298328b6715cc1cfa}{jump\+Strength}}
+\item 
+float \mbox{\hyperlink{structMovementConfig__s_ae48009f5f83f43bd266c072f5d484ee3}{gravity}}
+\item 
+float \mbox{\hyperlink{structMovementConfig__s_ab99b4a5df27a444d4ecc884984941bf8}{falling\+Gravity}}
+\item 
+float \mbox{\hyperlink{structMovementConfig__s_a025fa059524eafaf7b3e572c787b2c47}{dash\+Time}}
+\item 
+float \mbox{\hyperlink{structMovementConfig__s_a26914d329a4472f80c09f62f8b17a197}{dash\+Time\+Out}}
+\item 
+int \mbox{\hyperlink{structMovementConfig__s_aa6aa1ef058eaef9a61cb144eeca91d27}{nb\+Jump\+Max}}
+\item 
+int \mbox{\hyperlink{structMovementConfig__s_a97d0170b1c711ceabad455c90743a3ab}{nb\+Jump}}
+\item 
+bool \mbox{\hyperlink{structMovementConfig__s_aa15a68d9410c03b987af7315a3d93431}{is\+On\+Ground}}
+\item 
+bool \mbox{\hyperlink{structMovementConfig__s_a02298999cbf34d782955734b8b108818}{is\+On\+Left\+Wall}}
+\item 
+bool \mbox{\hyperlink{structMovementConfig__s_a1f475172dacf2131bc7709dd3238879c}{is\+On\+Right\+Wall}}
+\item 
+bool \mbox{\hyperlink{structMovementConfig__s_aeceeb289c2361a5faf957da6042619d2}{is\+Dashing}}
+\item 
+bool \mbox{\hyperlink{structMovementConfig__s_a4cee7a6116094412f7fbc4b0b999b80d}{can\+Jump}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure pour gérer les mouvements du joueur. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structMovementConfig__s_abb8f9ea49ef279944ad3d8ca5db3896a}\label{structMovementConfig__s_abb8f9ea49ef279944ad3d8ca5db3896a} 
+\index{MovementConfig\_s@{MovementConfig\_s}!airAcc@{airAcc}}
+\index{airAcc@{airAcc}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{airAcc}{airAcc}}
+{\footnotesize\ttfamily float Movement\+Config\+\_\+s\+::air\+Acc}
+
+Accélération du joueur dans les airs \Hypertarget{structMovementConfig__s_a4cee7a6116094412f7fbc4b0b999b80d}\label{structMovementConfig__s_a4cee7a6116094412f7fbc4b0b999b80d} 
+\index{MovementConfig\_s@{MovementConfig\_s}!canJump@{canJump}}
+\index{canJump@{canJump}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{canJump}{canJump}}
+{\footnotesize\ttfamily bool Movement\+Config\+\_\+s\+::can\+Jump}
+
+Indique si le joueur peut sauter \Hypertarget{structMovementConfig__s_a025fa059524eafaf7b3e572c787b2c47}\label{structMovementConfig__s_a025fa059524eafaf7b3e572c787b2c47} 
+\index{MovementConfig\_s@{MovementConfig\_s}!dashTime@{dashTime}}
+\index{dashTime@{dashTime}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{dashTime}{dashTime}}
+{\footnotesize\ttfamily float Movement\+Config\+\_\+s\+::dash\+Time}
+
+\Hypertarget{structMovementConfig__s_a26914d329a4472f80c09f62f8b17a197}\label{structMovementConfig__s_a26914d329a4472f80c09f62f8b17a197} 
+\index{MovementConfig\_s@{MovementConfig\_s}!dashTimeOut@{dashTimeOut}}
+\index{dashTimeOut@{dashTimeOut}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{dashTimeOut}{dashTimeOut}}
+{\footnotesize\ttfamily float Movement\+Config\+\_\+s\+::dash\+Time\+Out}
+
+\Hypertarget{structMovementConfig__s_ab99b4a5df27a444d4ecc884984941bf8}\label{structMovementConfig__s_ab99b4a5df27a444d4ecc884984941bf8} 
+\index{MovementConfig\_s@{MovementConfig\_s}!fallingGravity@{fallingGravity}}
+\index{fallingGravity@{fallingGravity}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{fallingGravity}{fallingGravity}}
+{\footnotesize\ttfamily float Movement\+Config\+\_\+s\+::falling\+Gravity}
+
+Gravité appliquée au joueur lorsqu\textquotesingle{}il tombe \Hypertarget{structMovementConfig__s_ae48009f5f83f43bd266c072f5d484ee3}\label{structMovementConfig__s_ae48009f5f83f43bd266c072f5d484ee3} 
+\index{MovementConfig\_s@{MovementConfig\_s}!gravity@{gravity}}
+\index{gravity@{gravity}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{gravity}{gravity}}
+{\footnotesize\ttfamily float Movement\+Config\+\_\+s\+::gravity}
+
+Gravité appliquée au joueur \Hypertarget{structMovementConfig__s_a56647c2962b0769638995183fc81912a}\label{structMovementConfig__s_a56647c2962b0769638995183fc81912a} 
+\index{MovementConfig\_s@{MovementConfig\_s}!groundAcc@{groundAcc}}
+\index{groundAcc@{groundAcc}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{groundAcc}{groundAcc}}
+{\footnotesize\ttfamily float Movement\+Config\+\_\+s\+::ground\+Acc}
+
+Accélération du joueur au sol \Hypertarget{structMovementConfig__s_aeceeb289c2361a5faf957da6042619d2}\label{structMovementConfig__s_aeceeb289c2361a5faf957da6042619d2} 
+\index{MovementConfig\_s@{MovementConfig\_s}!isDashing@{isDashing}}
+\index{isDashing@{isDashing}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{isDashing}{isDashing}}
+{\footnotesize\ttfamily bool Movement\+Config\+\_\+s\+::is\+Dashing}
+
+Indique si le joueur est entrain de glisser \Hypertarget{structMovementConfig__s_aa15a68d9410c03b987af7315a3d93431}\label{structMovementConfig__s_aa15a68d9410c03b987af7315a3d93431} 
+\index{MovementConfig\_s@{MovementConfig\_s}!isOnGround@{isOnGround}}
+\index{isOnGround@{isOnGround}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{isOnGround}{isOnGround}}
+{\footnotesize\ttfamily bool Movement\+Config\+\_\+s\+::is\+On\+Ground}
+
+Indique si le joueur est au sol \Hypertarget{structMovementConfig__s_a02298999cbf34d782955734b8b108818}\label{structMovementConfig__s_a02298999cbf34d782955734b8b108818} 
+\index{MovementConfig\_s@{MovementConfig\_s}!isOnLeftWall@{isOnLeftWall}}
+\index{isOnLeftWall@{isOnLeftWall}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{isOnLeftWall}{isOnLeftWall}}
+{\footnotesize\ttfamily bool Movement\+Config\+\_\+s\+::is\+On\+Left\+Wall}
+
+Indique si le joueur est entrain de glisser sur un mur à gauche \Hypertarget{structMovementConfig__s_a1f475172dacf2131bc7709dd3238879c}\label{structMovementConfig__s_a1f475172dacf2131bc7709dd3238879c} 
+\index{MovementConfig\_s@{MovementConfig\_s}!isOnRightWall@{isOnRightWall}}
+\index{isOnRightWall@{isOnRightWall}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{isOnRightWall}{isOnRightWall}}
+{\footnotesize\ttfamily bool Movement\+Config\+\_\+s\+::is\+On\+Right\+Wall}
+
+Indique si le joueur est entrain de glisser sur un mur à droite \Hypertarget{structMovementConfig__s_a576d33b6c099c92298328b6715cc1cfa}\label{structMovementConfig__s_a576d33b6c099c92298328b6715cc1cfa} 
+\index{MovementConfig\_s@{MovementConfig\_s}!jumpStrength@{jumpStrength}}
+\index{jumpStrength@{jumpStrength}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{jumpStrength}{jumpStrength}}
+{\footnotesize\ttfamily float Movement\+Config\+\_\+s\+::jump\+Strength}
+
+Force de saut du joueur \Hypertarget{structMovementConfig__s_aa004ad73eb143aa8e23d2cc0210c20e4}\label{structMovementConfig__s_aa004ad73eb143aa8e23d2cc0210c20e4} 
+\index{MovementConfig\_s@{MovementConfig\_s}!maxSpeed@{maxSpeed}}
+\index{maxSpeed@{maxSpeed}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{maxSpeed}{maxSpeed}}
+{\footnotesize\ttfamily float Movement\+Config\+\_\+s\+::max\+Speed}
+
+Vitesse maximale du joueur \Hypertarget{structMovementConfig__s_a97d0170b1c711ceabad455c90743a3ab}\label{structMovementConfig__s_a97d0170b1c711ceabad455c90743a3ab} 
+\index{MovementConfig\_s@{MovementConfig\_s}!nbJump@{nbJump}}
+\index{nbJump@{nbJump}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{nbJump}{nbJump}}
+{\footnotesize\ttfamily int Movement\+Config\+\_\+s\+::nb\+Jump}
+
+Nombre de saut d\textquotesingle{}affilé restant \Hypertarget{structMovementConfig__s_aa6aa1ef058eaef9a61cb144eeca91d27}\label{structMovementConfig__s_aa6aa1ef058eaef9a61cb144eeca91d27} 
+\index{MovementConfig\_s@{MovementConfig\_s}!nbJumpMax@{nbJumpMax}}
+\index{nbJumpMax@{nbJumpMax}!MovementConfig\_s@{MovementConfig\_s}}
+\doxysubsubsection{\texorpdfstring{nbJumpMax}{nbJumpMax}}
+{\footnotesize\ttfamily int Movement\+Config\+\_\+s\+::nb\+Jump\+Max}
+
+Nombre de saut d\textquotesingle{}affilé maximum 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/player/\mbox{\hyperlink{PlayerMovement_8h}{Player\+Movement.\+h}}\end{DoxyCompactItemize}

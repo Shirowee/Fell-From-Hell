@@ -1,0 +1,125 @@
+\doxysection{enemy\+\_\+s Struct Reference}
+\hypertarget{structenemy__s}{}\label{structenemy__s}\index{enemy\_s@{enemy\_s}}
+
+
+Structure représentant un ennemi.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Controller.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{structenemy__s_af4e1c4c1c7845b33fc1dc71866e26e6f}{speed}}
+\item 
+Vector2 \mbox{\hyperlink{structenemy__s_adfd6c9a138c6fa8c6bf30e9a17cb2e2a}{size}}
+\item 
+int \mbox{\hyperlink{structenemy__s_ae3f153b4120433c472e65e29cf1f7e90}{dmg}}
+\item 
+Vector2 \mbox{\hyperlink{structenemy__s_aa6b86f88832670da304b7ea37986873c}{pos}}
+\item 
+int \mbox{\hyperlink{structenemy__s_a64e0ac6141af2c6fe8c5a71d05fdf0ee}{dir}}
+\item 
+int \mbox{\hyperlink{structenemy__s_acb39fc113043fd049ded27c02fc18c70}{bullet\+Speed}}
+\item 
+int \mbox{\hyperlink{structenemy__s_aed92d9c3289fe1688665295ab5ab9d1a}{bullet\+Size}}
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structenemy__s_a657dc781cba66458f35aa6bf063ccca5}{state}} )(struct \mbox{\hyperlink{structenemy__s}{enemy\+\_\+s}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}, Vector2)
+\begin{DoxyCompactList}\small\item\em Fonction représentant l\textquotesingle{}état courant. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structenemy__s_a5eb8b0da1a0344fef39a5f0b8c8d6a91}{state\+Timer}}
+\item 
+\mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}} \mbox{\hyperlink{structenemy__s_ae18c81532049d8b697f012bc0323ad63}{type}}
+\item 
+int \mbox{\hyperlink{structenemy__s_ac7fe898a89f369ab93db5f6ea1a222a6}{is\+Shooting}}
+\item 
+int \mbox{\hyperlink{structenemy__s_ab35290d554e2260ce9eb0ac1d85c24ba}{active}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure représentant un ennemi. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structenemy__s_ab35290d554e2260ce9eb0ac1d85c24ba}\label{structenemy__s_ab35290d554e2260ce9eb0ac1d85c24ba} 
+\index{enemy\_s@{enemy\_s}!active@{active}}
+\index{active@{active}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily int enemy\+\_\+s\+::active}
+
+Indique si l\textquotesingle{}ennemi est actif (présent à l\textquotesingle{}écran) \Hypertarget{structenemy__s_aed92d9c3289fe1688665295ab5ab9d1a}\label{structenemy__s_aed92d9c3289fe1688665295ab5ab9d1a} 
+\index{enemy\_s@{enemy\_s}!bulletSize@{bulletSize}}
+\index{bulletSize@{bulletSize}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{bulletSize}{bulletSize}}
+{\footnotesize\ttfamily int enemy\+\_\+s\+::bullet\+Size}
+
+Taille des projectiles \Hypertarget{structenemy__s_acb39fc113043fd049ded27c02fc18c70}\label{structenemy__s_acb39fc113043fd049ded27c02fc18c70} 
+\index{enemy\_s@{enemy\_s}!bulletSpeed@{bulletSpeed}}
+\index{bulletSpeed@{bulletSpeed}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{bulletSpeed}{bulletSpeed}}
+{\footnotesize\ttfamily int enemy\+\_\+s\+::bullet\+Speed}
+
+Vitesse des projectiles \Hypertarget{structenemy__s_a64e0ac6141af2c6fe8c5a71d05fdf0ee}\label{structenemy__s_a64e0ac6141af2c6fe8c5a71d05fdf0ee} 
+\index{enemy\_s@{enemy\_s}!dir@{dir}}
+\index{dir@{dir}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{dir}{dir}}
+{\footnotesize\ttfamily int enemy\+\_\+s\+::dir}
+
+Direction \Hypertarget{structenemy__s_ae3f153b4120433c472e65e29cf1f7e90}\label{structenemy__s_ae3f153b4120433c472e65e29cf1f7e90} 
+\index{enemy\_s@{enemy\_s}!dmg@{dmg}}
+\index{dmg@{dmg}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{dmg}{dmg}}
+{\footnotesize\ttfamily int enemy\+\_\+s\+::dmg}
+
+Dégâts infligés \Hypertarget{structenemy__s_ac7fe898a89f369ab93db5f6ea1a222a6}\label{structenemy__s_ac7fe898a89f369ab93db5f6ea1a222a6} 
+\index{enemy\_s@{enemy\_s}!isShooting@{isShooting}}
+\index{isShooting@{isShooting}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{isShooting}{isShooting}}
+{\footnotesize\ttfamily int enemy\+\_\+s\+::is\+Shooting}
+
+Indique si l\textquotesingle{}ennemi doit tirer au prochain update \Hypertarget{structenemy__s_aa6b86f88832670da304b7ea37986873c}\label{structenemy__s_aa6b86f88832670da304b7ea37986873c} 
+\index{enemy\_s@{enemy\_s}!pos@{pos}}
+\index{pos@{pos}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily Vector2 enemy\+\_\+s\+::pos}
+
+Position actuelle \Hypertarget{structenemy__s_adfd6c9a138c6fa8c6bf30e9a17cb2e2a}\label{structenemy__s_adfd6c9a138c6fa8c6bf30e9a17cb2e2a} 
+\index{enemy\_s@{enemy\_s}!size@{size}}
+\index{size@{size}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily Vector2 enemy\+\_\+s\+::size}
+
+Taille de l\textquotesingle{}ennemi \Hypertarget{structenemy__s_af4e1c4c1c7845b33fc1dc71866e26e6f}\label{structenemy__s_af4e1c4c1c7845b33fc1dc71866e26e6f} 
+\index{enemy\_s@{enemy\_s}!speed@{speed}}
+\index{speed@{speed}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float enemy\+\_\+s\+::speed}
+
+Vitesse de déplacement \Hypertarget{structenemy__s_a657dc781cba66458f35aa6bf063ccca5}\label{structenemy__s_a657dc781cba66458f35aa6bf063ccca5} 
+\index{enemy\_s@{enemy\_s}!state@{state}}
+\index{state@{state}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily void(\texorpdfstring{$\ast$}{*} enemy\+\_\+s\+::state) (struct \mbox{\hyperlink{structenemy__s}{enemy\+\_\+s}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}, Vector2)}
+
+
+
+Fonction représentant l\textquotesingle{}état courant. 
+
+Pointeur de fonction vers un état (Idle, Move, Attack...) \Hypertarget{structenemy__s_a5eb8b0da1a0344fef39a5f0b8c8d6a91}\label{structenemy__s_a5eb8b0da1a0344fef39a5f0b8c8d6a91} 
+\index{enemy\_s@{enemy\_s}!stateTimer@{stateTimer}}
+\index{stateTimer@{stateTimer}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{stateTimer}{stateTimer}}
+{\footnotesize\ttfamily float enemy\+\_\+s\+::state\+Timer}
+
+Timer pour gérer les transitions d\textquotesingle{}état \Hypertarget{structenemy__s_ae18c81532049d8b697f012bc0323ad63}\label{structenemy__s_ae18c81532049d8b697f012bc0323ad63} 
+\index{enemy\_s@{enemy\_s}!type@{type}}
+\index{type@{type}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}} enemy\+\_\+s\+::type}
+
+Type d\textquotesingle{}ennemi 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/enemies/\mbox{\hyperlink{EnemyController_8h}{Enemy\+Controller.\+h}}\end{DoxyCompactItemize}

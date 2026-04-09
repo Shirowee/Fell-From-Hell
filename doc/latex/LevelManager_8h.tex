@@ -1,0 +1,173 @@
+\doxysection{lib/levels/\+Level\+Manager.h File Reference}
+\hypertarget{LevelManager_8h}{}\label{LevelManager_8h}\index{lib/levels/LevelManager.h@{lib/levels/LevelManager.h}}
+
+
+Ce fichier \doxylink{LevelManager_8h}{Level\+Manager.\+h} sert a la gestion des niveaux (affichage et chargement)  
+
+
+{\ttfamily \#include "{}Platform.\+h"{}}\newline
+{\ttfamily \#include "{}../player/\+Player.\+h"{}}\newline
+{\ttfamily \#include "{}../systems/\+Bullet\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}../systems/\+Enemy\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/c\+Json/c\+JSON.\+h"{}}\newline
+Include dependency graph for Level\+Manager.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMapInfo}{Map\+Info}}
+\begin{DoxyCompactList}\small\item\em Informations globales sur le niveau. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structEnemy}{Enemy}}
+\begin{DoxyCompactList}\small\item\em Informations sur les ennemis du niveau. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHazard}{Hazard}}
+\begin{DoxyCompactList}\small\item\em Informations sur les pièges du niveau. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structTrigger}{Trigger}}
+\item 
+struct \mbox{\hyperlink{structLevel}{Level}}
+\begin{DoxyCompactList}\small\item\em Structute globale qui contient toutes les informations sur le niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{Indent}\textbf{ Maximum de tout les éléments d\textquotesingle{}une map}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{LevelManager_8h_ac593e1f0ac5e6a695d5e3d581a1ff930}{MAX\+\_\+\+PLATFORMS}}~100
+\item 
+\#define \mbox{\hyperlink{LevelManager_8h_a544651f3405cff79c40d898a8e54f507}{MAX\+\_\+\+ENEMIES}}~50
+\item 
+\#define \mbox{\hyperlink{LevelManager_8h_ad5547aa11797d4f4a0a5264528f1fb30}{MAX\+\_\+\+HAZARDS}}~50
+\item 
+\#define \mbox{\hyperlink{LevelManager_8h_a7624b0372d537de626c9e76e8e6589c5}{MAX\+\_\+\+TRIGGERS}}~20
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{LevelManager_8h_a3eb3374e1a3573ccef109a337db05e06}{read\+Json\+Lvl}} (const char \texorpdfstring{$\ast$}{*}file\+Name)
+\begin{DoxyCompactList}\small\item\em Charge les données d\textquotesingle{}un niveau depuis un fichier JSON. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LevelManager_8h_aabf5f82cc95d911a3f58b33c25b88970}{Level\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialise le niveau après la conversion JSON. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LevelManager_8h_a78e4d5c3e7ecd49b505d47b4940bf367}{Level\+Draw}} (void)
+\begin{DoxyCompactList}\small\item\em Dessine les platformes et le décors du niveau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LevelManager_8h_a7fa6d517303d1b1b17e59dcb5d0b0edb}{Next\+Lvl\+Request}} (const char \texorpdfstring{$\ast$}{*}target\+Id)
+\item 
+void \mbox{\hyperlink{LevelManager_8h_ab4a3635d7e6eb93faef4184e6201ee75}{Next\+Lvl\+Update}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{EnemyPool_8h_ab8b70d96e97532942f19fdcb03aa4b1a}{enemy\+Pool}}, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{BulletPool_8h_ab235d8c88e2a6e8d419e9492a0188497}{bullet\+Pool}})
+\begin{DoxyCompactList}\small\item\em Réalise le passage au niveau suivant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structLevel}{Level}} \mbox{\hyperlink{LevelManager_8h_af107047702073394f1225cd1d3fbae03}{current\+Level}}
+\begin{DoxyCompactList}\small\item\em Contient toutes les informations sur le niveau actuel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ce fichier \doxylink{LevelManager_8h}{Level\+Manager.\+h} sert a la gestion des niveaux (affichage et chargement) 
+
+\begin{DoxyAuthor}{Author}
+Thomas 
+\end{DoxyAuthor}
+
+\begin{DoxyItemize}
+\item Level\+Manager permet de transformer un fichier JSON contenant toutes les informations sur une map et converti toute ces informations en une structure viable en C pour réaliser l\textquotesingle{}affichage et permettre la réalisation de tout ce qui touche a la map 
+\end{DoxyItemize}
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{LevelManager_8h_a544651f3405cff79c40d898a8e54f507}\label{LevelManager_8h_a544651f3405cff79c40d898a8e54f507} 
+\index{LevelManager.h@{LevelManager.h}!MAX\_ENEMIES@{MAX\_ENEMIES}}
+\index{MAX\_ENEMIES@{MAX\_ENEMIES}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ENEMIES}{MAX\_ENEMIES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ENEMIES~50}
+
+Nombre maximum d\textquotesingle{}ennemis par map \Hypertarget{LevelManager_8h_ad5547aa11797d4f4a0a5264528f1fb30}\label{LevelManager_8h_ad5547aa11797d4f4a0a5264528f1fb30} 
+\index{LevelManager.h@{LevelManager.h}!MAX\_HAZARDS@{MAX\_HAZARDS}}
+\index{MAX\_HAZARDS@{MAX\_HAZARDS}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_HAZARDS}{MAX\_HAZARDS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+HAZARDS~50}
+
+Nombre maximum de pièges par map \Hypertarget{LevelManager_8h_ac593e1f0ac5e6a695d5e3d581a1ff930}\label{LevelManager_8h_ac593e1f0ac5e6a695d5e3d581a1ff930} 
+\index{LevelManager.h@{LevelManager.h}!MAX\_PLATFORMS@{MAX\_PLATFORMS}}
+\index{MAX\_PLATFORMS@{MAX\_PLATFORMS}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_PLATFORMS}{MAX\_PLATFORMS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PLATFORMS~100}
+
+Nombre maximum de plateformes par map \Hypertarget{LevelManager_8h_a7624b0372d537de626c9e76e8e6589c5}\label{LevelManager_8h_a7624b0372d537de626c9e76e8e6589c5} 
+\index{LevelManager.h@{LevelManager.h}!MAX\_TRIGGERS@{MAX\_TRIGGERS}}
+\index{MAX\_TRIGGERS@{MAX\_TRIGGERS}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_TRIGGERS}{MAX\_TRIGGERS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+TRIGGERS~20}
+
+Nombre maximum de zone provoquant un événement par map 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{LevelManager_8h_a78e4d5c3e7ecd49b505d47b4940bf367}\label{LevelManager_8h_a78e4d5c3e7ecd49b505d47b4940bf367} 
+\index{LevelManager.h@{LevelManager.h}!LevelDraw@{LevelDraw}}
+\index{LevelDraw@{LevelDraw}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{LevelDraw()}{LevelDraw()}}
+{\footnotesize\ttfamily void Level\+Draw (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Dessine les platformes et le décors du niveau. 
+
+\Hypertarget{LevelManager_8h_aabf5f82cc95d911a3f58b33c25b88970}\label{LevelManager_8h_aabf5f82cc95d911a3f58b33c25b88970} 
+\index{LevelManager.h@{LevelManager.h}!LevelInit@{LevelInit}}
+\index{LevelInit@{LevelInit}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{LevelInit()}{LevelInit()}}
+{\footnotesize\ttfamily void Level\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialise le niveau après la conversion JSON. 
+
+\Hypertarget{LevelManager_8h_a7fa6d517303d1b1b17e59dcb5d0b0edb}\label{LevelManager_8h_a7fa6d517303d1b1b17e59dcb5d0b0edb} 
+\index{LevelManager.h@{LevelManager.h}!NextLvlRequest@{NextLvlRequest}}
+\index{NextLvlRequest@{NextLvlRequest}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{NextLvlRequest()}{NextLvlRequest()}}
+{\footnotesize\ttfamily void Next\+Lvl\+Request (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{target\+Id }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Id} & Nom de la map vers laquelle on se dirige \\
+\hline
+\end{DoxyParams}
+\Hypertarget{LevelManager_8h_ab4a3635d7e6eb93faef4184e6201ee75}\label{LevelManager_8h_ab4a3635d7e6eb93faef4184e6201ee75} 
+\index{LevelManager.h@{LevelManager.h}!NextLvlUpdate@{NextLvlUpdate}}
+\index{NextLvlUpdate@{NextLvlUpdate}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{NextLvlUpdate()}{NextLvlUpdate()}}
+{\footnotesize\ttfamily void Next\+Lvl\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy\+Pool,  }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet\+Pool }\end{DoxyParamCaption})}
+
+
+
+Réalise le passage au niveau suivant. 
+
+\Hypertarget{LevelManager_8h_a3eb3374e1a3573ccef109a337db05e06}\label{LevelManager_8h_a3eb3374e1a3573ccef109a337db05e06} 
+\index{LevelManager.h@{LevelManager.h}!readJsonLvl@{readJsonLvl}}
+\index{readJsonLvl@{readJsonLvl}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{readJsonLvl()}{readJsonLvl()}}
+{\footnotesize\ttfamily int read\+Json\+Lvl (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Charge les données d\textquotesingle{}un niveau depuis un fichier JSON. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Nom du fichier à lire (sans le .json) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne 1 si succès, 0 ou -\/1 en cas d\textquotesingle{}erreur de lecture 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{LevelManager_8h_af107047702073394f1225cd1d3fbae03}\label{LevelManager_8h_af107047702073394f1225cd1d3fbae03} 
+\index{LevelManager.h@{LevelManager.h}!currentLevel@{currentLevel}}
+\index{currentLevel@{currentLevel}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{currentLevel}{currentLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLevel}{Level}} current\+Level\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Contient toutes les informations sur le niveau actuel. 
+

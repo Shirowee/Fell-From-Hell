@@ -1,0 +1,72 @@
+\doxysection{src/core/\+Resolution\+Manager.c File Reference}
+\hypertarget{ResolutionManager_8c}{}\label{ResolutionManager_8c}\index{src/core/ResolutionManager.c@{src/core/ResolutionManager.c}}
+{\ttfamily \#include "{}../../lib/core/\+Resolution\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+Include dependency graph for Resolution\+Manager.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ResolutionManager_8c_a8997fc15fcd97e435b417522d66c9f59}{Resolution\+Init}} (int map\+Ref\+Width, int map\+Ref\+Height)
+\begin{DoxyCompactList}\small\item\em Initialise la mise à l\textquotesingle{}échelle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{ResolutionManager_8c_adb0f3480b1aa6929ae10e15a04dcdbcf}{RS}} (float value)
+\begin{DoxyCompactList}\small\item\em Convertit la valeur en paramètre avec le ratio scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structResolutionConfig}{Resolution\+Config}} \mbox{\hyperlink{ResolutionManager_8c_a2016104fa368c7cbefbbb0fe119a3a09}{resolution}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ResolutionManager_8c_a8997fc15fcd97e435b417522d66c9f59}\label{ResolutionManager_8c_a8997fc15fcd97e435b417522d66c9f59} 
+\index{ResolutionManager.c@{ResolutionManager.c}!ResolutionInit@{ResolutionInit}}
+\index{ResolutionInit@{ResolutionInit}!ResolutionManager.c@{ResolutionManager.c}}
+\doxysubsubsection{\texorpdfstring{ResolutionInit()}{ResolutionInit()}}
+{\footnotesize\ttfamily void Resolution\+Init (\begin{DoxyParamCaption}\item[{int}]{map\+Ref\+Width,  }\item[{int}]{map\+Ref\+Height }\end{DoxyParamCaption})}
+
+
+
+Initialise la mise à l\textquotesingle{}échelle. 
+
+
+\begin{DoxyItemize}
+\item Calcule le ratio en comparant la largeur de l\textquotesingle{}écran actuelle avec la largeur de référence en paramètre
+\item 
+\begin{DoxyParams}{Parameters}
+{\em map\+Ref\+Width} & Largeur cible de référence \\
+\hline
+{\em map\+Ref\+Height} & Hauteur cible de référence \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{ResolutionManager_8c_adb0f3480b1aa6929ae10e15a04dcdbcf}\label{ResolutionManager_8c_adb0f3480b1aa6929ae10e15a04dcdbcf} 
+\index{ResolutionManager.c@{ResolutionManager.c}!RS@{RS}}
+\index{RS@{RS}!ResolutionManager.c@{ResolutionManager.c}}
+\doxysubsubsection{\texorpdfstring{RS()}{RS()}}
+{\footnotesize\ttfamily float RS (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Convertit la valeur en paramètre avec le ratio scale. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em value} & Valeur en pixels "{}fixe"{} du JSON \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Valeur mise à l\textquotesingle{}échelle pour l\textquotesingle{}affichage 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ResolutionManager_8c_a2016104fa368c7cbefbbb0fe119a3a09}\label{ResolutionManager_8c_a2016104fa368c7cbefbbb0fe119a3a09} 
+\index{ResolutionManager.c@{ResolutionManager.c}!resolution@{resolution}}
+\index{resolution@{resolution}!ResolutionManager.c@{ResolutionManager.c}}
+\doxysubsubsection{\texorpdfstring{resolution}{resolution}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structResolutionConfig}{Resolution\+Config}} resolution}
+

@@ -1,0 +1,53 @@
+\doxysection{src/systems/\+Trigger\+System.c File Reference}
+\hypertarget{TriggerSystem_8c}{}\label{TriggerSystem_8c}\index{src/systems/TriggerSystem.c@{src/systems/TriggerSystem.c}}
+{\ttfamily \#include "{}../../lib/systems/\+Trigger\+System.\+h"{}}\newline
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/levels/\+Level\+Manager.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Trigger\+System.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{TriggerSystem_8c_a6a571a34d14134c35a1f95db5d32a4d5}{Trigger\+Execute}} (\mbox{\hyperlink{structTrigger}{Trigger}} \texorpdfstring{$\ast$}{*}trigger, \mbox{\hyperlink{structLevel}{Level}} \texorpdfstring{$\ast$}{*}level)
+\begin{DoxyCompactList}\small\item\em Exécute l\textquotesingle{}action associée à un trigger. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{TriggerSystem_8c_a4c4d5b907f4e340d857e11855a769585}{Trigger\+System\+Update}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structLevel}{Level}} \texorpdfstring{$\ast$}{*}level)
+\begin{DoxyCompactList}\small\item\em Vérifie si le joueur est dans le rayon d\textquotesingle{}un trigger exécute l\textquotesingle{}action associés si oui. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{TriggerSystem_8c_a6a571a34d14134c35a1f95db5d32a4d5}\label{TriggerSystem_8c_a6a571a34d14134c35a1f95db5d32a4d5} 
+\index{TriggerSystem.c@{TriggerSystem.c}!TriggerExecute@{TriggerExecute}}
+\index{TriggerExecute@{TriggerExecute}!TriggerSystem.c@{TriggerSystem.c}}
+\doxysubsubsection{\texorpdfstring{TriggerExecute()}{TriggerExecute()}}
+{\footnotesize\ttfamily void Trigger\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTrigger}{Trigger}} \texorpdfstring{$\ast$}{*}}]{trigger,  }\item[{\mbox{\hyperlink{structLevel}{Level}} \texorpdfstring{$\ast$}{*}}]{level }\end{DoxyParamCaption})}
+
+
+
+Exécute l\textquotesingle{}action associée à un trigger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trigger} & Pointeur sur un trigger \\
+\hline
+{\em level} & Pointeur sur le niveau \\
+\hline
+\end{DoxyParams}
+\Hypertarget{TriggerSystem_8c_a4c4d5b907f4e340d857e11855a769585}\label{TriggerSystem_8c_a4c4d5b907f4e340d857e11855a769585} 
+\index{TriggerSystem.c@{TriggerSystem.c}!TriggerSystemUpdate@{TriggerSystemUpdate}}
+\index{TriggerSystemUpdate@{TriggerSystemUpdate}!TriggerSystem.c@{TriggerSystem.c}}
+\doxysubsubsection{\texorpdfstring{TriggerSystemUpdate()}{TriggerSystemUpdate()}}
+{\footnotesize\ttfamily void Trigger\+System\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{structLevel}{Level}} \texorpdfstring{$\ast$}{*}}]{level }\end{DoxyParamCaption})}
+
+
+
+Vérifie si le joueur est dans le rayon d\textquotesingle{}un trigger exécute l\textquotesingle{}action associés si oui. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur le joueur \\
+\hline
+{\em level} & Pointeur sur le niveau \\
+\hline
+\end{DoxyParams}

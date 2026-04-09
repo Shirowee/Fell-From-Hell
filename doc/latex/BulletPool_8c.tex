@@ -1,0 +1,177 @@
+\doxysection{src/systems/\+Bullet\+Pool.c File Reference}
+\hypertarget{BulletPool_8c}{}\label{BulletPool_8c}\index{src/systems/BulletPool.c@{src/systems/BulletPool.c}}
+
+
+Gestion des pools de projectiles (bullets)  
+
+
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Bullet\+Pool.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Bullet\+Pool.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{BulletPool_8c_ad57664463d97f394168d80dcab8aa5d7}{Init\+Bullet\+Pool}} (\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, int capacity)
+\begin{DoxyCompactList}\small\item\em Initialise un pool de projectiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BulletPool_8c_ad026bf70e944ff507c6e6ee3658a8a03}{Spawn\+Bullet\+Pool}} (\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos, int dir, int speed, int size, int dmg, float life\+Time, int indice)
+\begin{DoxyCompactList}\small\item\em Fait apparaître un projectile dans le pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BulletPool_8c_a76d5595ccec9e55ff7965f8939112ebc}{Update\+Bullet\+Pool}} (\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
+\begin{DoxyCompactList}\small\item\em Met à jour tous les projectiles du pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BulletPool_8c_a3b7fd1e8efbee5fb1469b308243e7165}{Draw\+Bullet\+Pool}} (\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos\+Joueur)
+\begin{DoxyCompactList}\small\item\em Dessine tous les projectiles du pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BulletPool_8c_ac20faedcdf2e2f61a11ec25191108b6f}{Free\+Bullet\+Pool}} (\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire du pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \mbox{\hyperlink{BulletPool_8c_ab235d8c88e2a6e8d419e9492a0188497}{bullet\+Pool}}
+\begin{DoxyCompactList}\small\item\em Pool de projectiles des ennemis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \mbox{\hyperlink{BulletPool_8c_ab0e44fdb9d248c3e0e2e6af819e646d8}{player\+Bullet\+Pool}}
+\begin{DoxyCompactList}\small\item\em Pool de projectiles du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestion des pools de projectiles (bullets) 
+
+\begin{DoxyAuthor}{Author}
+A. Pocholle
+\end{DoxyAuthor}
+Implémente un système de gestion de projectiles basé sur le principe d’object pooling.
+
+Au lieu d’allouer/libérer dynamiquement des projectiles à chaque tir, un tableau de bullets est pré-\/alloué et réutilisé grâce à un flag d’activité.
+
+Deux pools globaux sont utilisés \+:
+\begin{DoxyItemize}
+\item bullet\+Pool \+: projectiles ennemis
+\item player\+Bullet\+Pool \+: projectiles du joueur 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{BulletPool_8c_a3b7fd1e8efbee5fb1469b308243e7165}\label{BulletPool_8c_a3b7fd1e8efbee5fb1469b308243e7165} 
+\index{BulletPool.c@{BulletPool.c}!DrawBulletPool@{DrawBulletPool}}
+\index{DrawBulletPool@{DrawBulletPool}!BulletPool.c@{BulletPool.c}}
+\doxysubsubsection{\texorpdfstring{DrawBulletPool()}{DrawBulletPool()}}
+{\footnotesize\ttfamily void Draw\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{pos\+Joueur }\end{DoxyParamCaption})}
+
+
+
+Dessine tous les projectiles du pool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & pointeur vers le pool \\
+\hline
+{\em pos\+Joueur} & position du joueur \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BulletPool_8c_ac20faedcdf2e2f61a11ec25191108b6f}\label{BulletPool_8c_ac20faedcdf2e2f61a11ec25191108b6f} 
+\index{BulletPool.c@{BulletPool.c}!FreeBulletPool@{FreeBulletPool}}
+\index{FreeBulletPool@{FreeBulletPool}!BulletPool.c@{BulletPool.c}}
+\doxysubsubsection{\texorpdfstring{FreeBulletPool()}{FreeBulletPool()}}
+{\footnotesize\ttfamily void Free\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire du pool. 
+
+Libère le tableau de bullets et réinitialise le pool.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & pointeur vers le pool \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BulletPool_8c_ad57664463d97f394168d80dcab8aa5d7}\label{BulletPool_8c_ad57664463d97f394168d80dcab8aa5d7} 
+\index{BulletPool.c@{BulletPool.c}!InitBulletPool@{InitBulletPool}}
+\index{InitBulletPool@{InitBulletPool}!BulletPool.c@{BulletPool.c}}
+\doxysubsubsection{\texorpdfstring{InitBulletPool()}{InitBulletPool()}}
+{\footnotesize\ttfamily void Init\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Initialise un pool de projectiles. 
+
+Alloue un tableau de bullets et initialise chaque élément comme inactif.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & pointeur vers le pool à initialiser \\
+\hline
+{\em capacity} & nombre maximum de projectiles dans le pool \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BulletPool_8c_ad026bf70e944ff507c6e6ee3658a8a03}\label{BulletPool_8c_ad026bf70e944ff507c6e6ee3658a8a03} 
+\index{BulletPool.c@{BulletPool.c}!SpawnBulletPool@{SpawnBulletPool}}
+\index{SpawnBulletPool@{SpawnBulletPool}!BulletPool.c@{BulletPool.c}}
+\doxysubsubsection{\texorpdfstring{SpawnBulletPool()}{SpawnBulletPool()}}
+{\footnotesize\ttfamily void Spawn\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool,  }\item[{Vector2}]{pos,  }\item[{int}]{dir,  }\item[{int}]{speed,  }\item[{int}]{size,  }\item[{int}]{dmg,  }\item[{float}]{life\+Time,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+
+
+
+Fait apparaître un projectile dans le pool. 
+
+Recherche la première bullet inactive afin de la réutiliser. Si aucune bullet n\textquotesingle{}est disponible, aucun projectile n\textquotesingle{}est créé.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & pointeur vers le pool \\
+\hline
+{\em pos} & position initiale du projectile \\
+\hline
+{\em dir} & direction (en degrés) \\
+\hline
+{\em speed} & vitesse du projectile \\
+\hline
+{\em size} & taille du projectile \\
+\hline
+{\em dmg} & dégâts infligés \\
+\hline
+{\em life\+Time} & durée de vie du projectile \\
+\hline
+{\em indice} & identifiant ou type de projectile \\
+\hline
+\end{DoxyParams}
+\Hypertarget{BulletPool_8c_a76d5595ccec9e55ff7965f8939112ebc}\label{BulletPool_8c_a76d5595ccec9e55ff7965f8939112ebc} 
+\index{BulletPool.c@{BulletPool.c}!UpdateBulletPool@{UpdateBulletPool}}
+\index{UpdateBulletPool@{UpdateBulletPool}!BulletPool.c@{BulletPool.c}}
+\doxysubsubsection{\texorpdfstring{UpdateBulletPool()}{UpdateBulletPool()}}
+{\footnotesize\ttfamily void Update\+Bullet\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool }\end{DoxyParamCaption})}
+
+
+
+Met à jour tous les projectiles du pool. 
+
+Appelle la fonction de mise à jour individuelle pour chaque bullet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & pointeur vers le pool \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{BulletPool_8c_ab235d8c88e2a6e8d419e9492a0188497}\label{BulletPool_8c_ab235d8c88e2a6e8d419e9492a0188497} 
+\index{BulletPool.c@{BulletPool.c}!bulletPool@{bulletPool}}
+\index{bulletPool@{bulletPool}!BulletPool.c@{BulletPool.c}}
+\doxysubsubsection{\texorpdfstring{bulletPool}{bulletPool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} bullet\+Pool}
+
+
+
+Pool de projectiles des ennemis. 
+
+\Hypertarget{BulletPool_8c_ab0e44fdb9d248c3e0e2e6af819e646d8}\label{BulletPool_8c_ab0e44fdb9d248c3e0e2e6af819e646d8} 
+\index{BulletPool.c@{BulletPool.c}!playerBulletPool@{playerBulletPool}}
+\index{playerBulletPool@{playerBulletPool}!BulletPool.c@{BulletPool.c}}
+\doxysubsubsection{\texorpdfstring{playerBulletPool}{playerBulletPool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} player\+Bullet\+Pool}
+
+
+
+Pool de projectiles du joueur. 
+

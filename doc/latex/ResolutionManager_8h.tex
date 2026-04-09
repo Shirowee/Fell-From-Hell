@@ -1,0 +1,91 @@
+\doxysection{lib/core/\+Resolution\+Manager.h File Reference}
+\hypertarget{ResolutionManager_8h}{}\label{ResolutionManager_8h}\index{lib/core/ResolutionManager.h@{lib/core/ResolutionManager.h}}
+
+
+Sert a gérer la mise à l\textquotesingle{}échelle dynamiquement Ce fichier sert à adapter les coordonnées du JSON à la résolution réelles de l\textquotesingle{}écran afin que le rendu soit identique peut importe la taille de celui-\/ci.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for Resolution\+Manager.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structResolutionConfig}{Resolution\+Config}}
+\begin{DoxyCompactList}\small\item\em Stocke les paramètres globale pour la mise a l\textquotesingle{}échelle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ResolutionManager_8h_a8997fc15fcd97e435b417522d66c9f59}{Resolution\+Init}} (int map\+Ref\+Width, int map\+Ref\+Height)
+\begin{DoxyCompactList}\small\item\em Initialise la mise à l\textquotesingle{}échelle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{ResolutionManager_8h_adb0f3480b1aa6929ae10e15a04dcdbcf}{RS}} (float value)
+\begin{DoxyCompactList}\small\item\em Convertit la valeur en paramètre avec le ratio scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structResolutionConfig}{Resolution\+Config}} \mbox{\hyperlink{ResolutionManager_8h_a2016104fa368c7cbefbbb0fe119a3a09}{resolution}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sert a gérer la mise à l\textquotesingle{}échelle dynamiquement Ce fichier sert à adapter les coordonnées du JSON à la résolution réelles de l\textquotesingle{}écran afin que le rendu soit identique peut importe la taille de celui-\/ci. 
+
+\begin{DoxyAuthor}{Author}
+Thomas 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ResolutionManager_8h_a8997fc15fcd97e435b417522d66c9f59}\label{ResolutionManager_8h_a8997fc15fcd97e435b417522d66c9f59} 
+\index{ResolutionManager.h@{ResolutionManager.h}!ResolutionInit@{ResolutionInit}}
+\index{ResolutionInit@{ResolutionInit}!ResolutionManager.h@{ResolutionManager.h}}
+\doxysubsubsection{\texorpdfstring{ResolutionInit()}{ResolutionInit()}}
+{\footnotesize\ttfamily void Resolution\+Init (\begin{DoxyParamCaption}\item[{int}]{map\+Ref\+Width,  }\item[{int}]{map\+Ref\+Height }\end{DoxyParamCaption})}
+
+
+
+Initialise la mise à l\textquotesingle{}échelle. 
+
+
+\begin{DoxyItemize}
+\item Calcule le ratio en comparant la largeur de l\textquotesingle{}écran actuelle avec la largeur de référence en paramètre
+\item 
+\begin{DoxyParams}{Parameters}
+{\em map\+Ref\+Width} & Largeur cible de référence \\
+\hline
+{\em map\+Ref\+Height} & Hauteur cible de référence \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{ResolutionManager_8h_adb0f3480b1aa6929ae10e15a04dcdbcf}\label{ResolutionManager_8h_adb0f3480b1aa6929ae10e15a04dcdbcf} 
+\index{ResolutionManager.h@{ResolutionManager.h}!RS@{RS}}
+\index{RS@{RS}!ResolutionManager.h@{ResolutionManager.h}}
+\doxysubsubsection{\texorpdfstring{RS()}{RS()}}
+{\footnotesize\ttfamily float RS (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Convertit la valeur en paramètre avec le ratio scale. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em value} & Valeur en pixels "{}fixe"{} du JSON \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Valeur mise à l\textquotesingle{}échelle pour l\textquotesingle{}affichage 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ResolutionManager_8h_a2016104fa368c7cbefbbb0fe119a3a09}\label{ResolutionManager_8h_a2016104fa368c7cbefbbb0fe119a3a09} 
+\index{ResolutionManager.h@{ResolutionManager.h}!resolution@{resolution}}
+\index{resolution@{resolution}!ResolutionManager.h@{ResolutionManager.h}}
+\doxysubsubsection{\texorpdfstring{resolution}{resolution}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structResolutionConfig}{Resolution\+Config}} resolution\hspace{0.3cm}{\ttfamily [extern]}}
+

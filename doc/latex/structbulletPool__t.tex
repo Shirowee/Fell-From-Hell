@@ -1,0 +1,57 @@
+\doxysection{bullet\+Pool\+\_\+t Struct Reference}
+\hypertarget{structbulletPool__t}{}\label{structbulletPool__t}\index{bulletPool\_t@{bulletPool\_t}}
+
+
+Représente un pool de projectiles (object pool)  
+
+
+
+
+{\ttfamily \#include $<$Bullet\+Pool.\+h$>$}
+
+
+
+Collaboration diagram for bullet\+Pool\+\_\+t\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structbulletPool__t_a3911eb7cddaab90015da4dc76974390a}{tab}}
+\item 
+int \mbox{\hyperlink{structbulletPool__t_a1e6930573231a1fd24e73748bd9c9717}{active}}
+\item 
+int \mbox{\hyperlink{structbulletPool__t_a512ff4f9ec30c4f6d605469677956c33}{capacity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Représente un pool de projectiles (object pool) 
+
+Cette structure permet de gérer un ensemble de bullets pré-\/allouées afin d\textquotesingle{}éviter les allocations dynamiques répétées pendant l\textquotesingle{}exécution.
+
+Le pool fonctionne en réutilisant les bullets inactives. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structbulletPool__t_a1e6930573231a1fd24e73748bd9c9717}\label{structbulletPool__t_a1e6930573231a1fd24e73748bd9c9717} 
+\index{bulletPool\_t@{bulletPool\_t}!active@{active}}
+\index{active@{active}!bulletPool\_t@{bulletPool\_t}}
+\doxysubsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily int bullet\+Pool\+\_\+t\+::active}
+
+\Hypertarget{structbulletPool__t_a512ff4f9ec30c4f6d605469677956c33}\label{structbulletPool__t_a512ff4f9ec30c4f6d605469677956c33} 
+\index{bulletPool\_t@{bulletPool\_t}!capacity@{capacity}}
+\index{capacity@{capacity}!bulletPool\_t@{bulletPool\_t}}
+\doxysubsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily int bullet\+Pool\+\_\+t\+::capacity}
+
+\Hypertarget{structbulletPool__t_a3911eb7cddaab90015da4dc76974390a}\label{structbulletPool__t_a3911eb7cddaab90015da4dc76974390a} 
+\index{bulletPool\_t@{bulletPool\_t}!tab@{tab}}
+\index{tab@{tab}!bulletPool\_t@{bulletPool\_t}}
+\doxysubsubsection{\texorpdfstring{tab}{tab}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}}\texorpdfstring{$\ast$}{*} bullet\+Pool\+\_\+t\+::tab}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/systems/\mbox{\hyperlink{BulletPool_8h}{Bullet\+Pool.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+\doxysection{Projectiles.\+h}
+\hypertarget{Projectiles_8h_source}{}\label{Projectiles_8h_source}\index{lib/systems/Projectiles.h@{lib/systems/Projectiles.h}}
+\mbox{\hyperlink{Projectiles_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ PROJECTILES\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ PROJECTILES\_H}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}../../raylib/include/raylib.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//differents\ type\ de\ bullet}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ BASIC\ 0}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ EXPLOSIF\ 1}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ RAYON\ 2}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ MELEE\ 3}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbullet__s}{bullet\_s}}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structbullet__s_ab3f7b2044a7e18c20abb3b5066b8adc8}{bulletSpeed}};\ \textcolor{comment}{//\ vitesse}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structbullet__s_aac20e625802078b0df5ac46ec53aa16a}{bulletSize}};\ \textcolor{comment}{//\ taille}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbullet__s_ac85c55444e2436c4c87d7dec3a5b75e1}{bulletDmg}};\ \textcolor{comment}{//\ dégats}}
+\DoxyCodeLine{00043\ \ \ \ \ Vector2\ \mbox{\hyperlink{structbullet__s_a2117750342ee798d691be27ae66d4bb6}{bulletPos}};\ \textcolor{comment}{//\ position}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbullet__s_a939e85d587b4abe93c054a94ce2d9c9c}{bulletDir}};\ \textcolor{comment}{//\ direction\ en\ deg}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structbullet__s_a682d1a2ced68c88052fe4f6d7a4f140e}{createTime}};\ \textcolor{comment}{//heure\ de\ creation}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structbullet__s_af2def6e7847bd3f72efc65c361e304e4}{lifeTime}};\ \textcolor{comment}{//durer\ de\ vie\ (pour\ bullet\ explosif\ et\ rayon)}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbullet__s_a76c8198a5ff6dc444524c1e33be0bb04}{indice}};\ \textcolor{comment}{//\ indice\ (BASIC\ EXPLOSIF\ RAYON\ MELEE)}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbullet__s_a354e51a87913e1fed3fe698166efb697}{active}};\ \textcolor{comment}{//si\ elle\ doit\ être\ dessinée}}
+\DoxyCodeLine{00049\ \}\ \mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\_t}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Projectiles_8h_a5ec9717e1b10c968f91d3b2af2c57eba}{InitBullet}}(\mbox{\hyperlink{structbullet__s}{bullet\_t}}\ *\ bullet,\ \textcolor{keywordtype}{int}\ speed,\ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ dmg,\ Vector2\ \mbox{\hyperlink{structPos}{Pos}},\ \textcolor{keywordtype}{int}\ dir,\ \textcolor{keywordtype}{float}\ lifeTime,\ \textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Projectiles_8h_a4d4b9728f427269e66222f67fa168836}{UpdateBullet}}(\mbox{\hyperlink{structbullet__s}{bullet\_t}}\ *\ bullet);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Projectiles_8h_af25911d704be2b43f8d2243a7048e969}{DrawExplosion}}(\mbox{\hyperlink{structbullet__s}{bullet\_t}}\ *\ bullet);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Projectiles_8h_a2cf641f58198b9c642f4aed7a1ecd588}{DrawBullet}}(\mbox{\hyperlink{structbullet__s}{bullet\_t}}\ *\ bullet,\ Vector2\ posJoueur);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

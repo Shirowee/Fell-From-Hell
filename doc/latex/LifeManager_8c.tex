@@ -1,0 +1,156 @@
+\doxysection{src/systems/\+Life\+Manager.c File Reference}
+\hypertarget{LifeManager_8c}{}\label{LifeManager_8c}\index{src/systems/LifeManager.c@{src/systems/LifeManager.c}}
+{\ttfamily \#include "{}../../lib/systems/\+Life\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Collision\+System.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/player/\+Player.\+h"{}}\newline
+Include dependency graph for Life\+Manager.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{LifeManager_8c_aff4a69d33e0427e11ea7456068ab6b39}{REGEN\+\_\+\+TIME}}~1.\+0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{LifeManager_8c_a514faa7eb58002946482523cc55b0f6f}{Player\+Life\+Alteration}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}ennemies, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets)
+\begin{DoxyCompactList}\small\item\em Fait subir des dêgats au joueur en fonction des ennemies et des bullets ou régénère la vie du joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LifeManager_8c_a84f9e478cd6f931eadbe6e4f95095205}{Apply\+Damage\+To\+Player}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, int dmg)
+\begin{DoxyCompactList}\small\item\em Applique des dégâts au joueur, c-\/à-\/d lui retirer des points de vie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LifeManager_8c_a4e7948c7d864b12e5ac3157ae3802a5e}{HPDraw}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player, int x, int y, int width, int height)
+\begin{DoxyCompactList}\small\item\em Dessine la barre de vie du joueur. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{LifeManager_8c_a7ca0b81eff813b0a722db9e69573de1f}{is\+Invicible}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Détermine si le joueur est invincible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{LifeManager_8c_a7b7e1d1167696b52e069168da7e9ed6d}{is\+Alive}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Détermine si le joueur est encore en vie. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{LifeManager_8c_a9f1fb09ae5370091264df718ab30ca97}{can\+Regen}} (\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Détermine si le joueur peut régénérer ses points de vie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{LifeManager_8c_aff4a69d33e0427e11ea7456068ab6b39}\label{LifeManager_8c_aff4a69d33e0427e11ea7456068ab6b39} 
+\index{LifeManager.c@{LifeManager.c}!REGEN\_TIME@{REGEN\_TIME}}
+\index{REGEN\_TIME@{REGEN\_TIME}!LifeManager.c@{LifeManager.c}}
+\doxysubsubsection{\texorpdfstring{REGEN\_TIME}{REGEN\_TIME}}
+{\footnotesize\ttfamily \#define REGEN\+\_\+\+TIME~1.\+0}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{LifeManager_8c_a84f9e478cd6f931eadbe6e4f95095205}\label{LifeManager_8c_a84f9e478cd6f931eadbe6e4f95095205} 
+\index{LifeManager.c@{LifeManager.c}!ApplyDamageToPlayer@{ApplyDamageToPlayer}}
+\index{ApplyDamageToPlayer@{ApplyDamageToPlayer}!LifeManager.c@{LifeManager.c}}
+\doxysubsubsection{\texorpdfstring{ApplyDamageToPlayer()}{ApplyDamageToPlayer()}}
+{\footnotesize\ttfamily void Apply\+Damage\+To\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{int}]{dmg }\end{DoxyParamCaption})}
+
+
+
+Applique des dégâts au joueur, c-\/à-\/d lui retirer des points de vie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+{\em dmg} & Nombre de points de vie à retirer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Renvoie vrai si il est invincible, sinon faux 
+\end{DoxyReturn}
+\Hypertarget{LifeManager_8c_a9f1fb09ae5370091264df718ab30ca97}\label{LifeManager_8c_a9f1fb09ae5370091264df718ab30ca97} 
+\index{LifeManager.c@{LifeManager.c}!canRegen@{canRegen}}
+\index{canRegen@{canRegen}!LifeManager.c@{LifeManager.c}}
+\doxysubsubsection{\texorpdfstring{canRegen()}{canRegen()}}
+{\footnotesize\ttfamily bool can\+Regen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+
+
+Détermine si le joueur peut régénérer ses points de vie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Renvoie vrai si c\textquotesingle{}est le cas, sinon faux 
+\end{DoxyReturn}
+\Hypertarget{LifeManager_8c_a4e7948c7d864b12e5ac3157ae3802a5e}\label{LifeManager_8c_a4e7948c7d864b12e5ac3157ae3802a5e} 
+\index{LifeManager.c@{LifeManager.c}!HPDraw@{HPDraw}}
+\index{HPDraw@{HPDraw}!LifeManager.c@{LifeManager.c}}
+\doxysubsubsection{\texorpdfstring{HPDraw()}{HPDraw()}}
+{\footnotesize\ttfamily void HPDraw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Dessine la barre de vie du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+{\em x} & position sur l\textquotesingle{}axe x \\
+\hline
+{\em y} & position sur l\textquotesingle{}axe y \\
+\hline
+{\em width} & longueur de la barre \\
+\hline
+{\em height} & largeur de la barre \\
+\hline
+\end{DoxyParams}
+\Hypertarget{LifeManager_8c_a7b7e1d1167696b52e069168da7e9ed6d}\label{LifeManager_8c_a7b7e1d1167696b52e069168da7e9ed6d} 
+\index{LifeManager.c@{LifeManager.c}!isAlive@{isAlive}}
+\index{isAlive@{isAlive}!LifeManager.c@{LifeManager.c}}
+\doxysubsubsection{\texorpdfstring{isAlive()}{isAlive()}}
+{\footnotesize\ttfamily bool is\+Alive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+
+
+Détermine si le joueur est encore en vie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Renvoie vrai si il a encore des points de vie, sinon faux 
+\end{DoxyReturn}
+\Hypertarget{LifeManager_8c_a7ca0b81eff813b0a722db9e69573de1f}\label{LifeManager_8c_a7ca0b81eff813b0a722db9e69573de1f} 
+\index{LifeManager.c@{LifeManager.c}!isInvicible@{isInvicible}}
+\index{isInvicible@{isInvicible}!LifeManager.c@{LifeManager.c}}
+\doxysubsubsection{\texorpdfstring{isInvicible()}{isInvicible()}}
+{\footnotesize\ttfamily bool is\+Invicible (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+
+
+Détermine si le joueur est invincible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Renvoie vrai si il est invincible, sinon faux 
+\end{DoxyReturn}
+\Hypertarget{LifeManager_8c_a514faa7eb58002946482523cc55b0f6f}\label{LifeManager_8c_a514faa7eb58002946482523cc55b0f6f} 
+\index{LifeManager.c@{LifeManager.c}!PlayerLifeAlteration@{PlayerLifeAlteration}}
+\index{PlayerLifeAlteration@{PlayerLifeAlteration}!LifeManager.c@{LifeManager.c}}
+\doxysubsubsection{\texorpdfstring{PlayerLifeAlteration()}{PlayerLifeAlteration()}}
+{\footnotesize\ttfamily void Player\+Life\+Alteration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{ennemies,  }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets }\end{DoxyParamCaption})}
+
+
+
+Fait subir des dêgats au joueur en fonction des ennemies et des bullets ou régénère la vie du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur Player \\
+\hline
+{\em enemies} & Tableau contenant les ennemies \\
+\hline
+{\em bullets} & Tableau contenant les bullets \\
+\hline
+\end{DoxyParams}

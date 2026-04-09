@@ -1,0 +1,86 @@
+\doxysection{lib/player/\+Player.h File Reference}
+\hypertarget{Player_8h}{}\label{Player_8h}\index{lib/player/Player.h@{lib/player/Player.h}}
+
+
+Définit la structure du joueur et son corps, ainsi que les fonctions associées.  
+
+
+{\ttfamily \#include "{}Player\+Controller.\+h"{}}\newline
+{\ttfamily \#include "{}Player\+Movement.\+h"{}}\newline
+{\ttfamily \#include "{}Player\+Weapon.\+h"{}}\newline
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../systems/\+Buff\+System.\+h"{}}\newline
+Include dependency graph for Player.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPlayerBody__s}{Player\+Body\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Structure pour gérer le corps du joueur. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPlayer__s}{Player\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Structure pour gérer le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Player_8h_a1309e5f01bf9e9d10c145eca8b74c2b9}{PLAYER\+\_\+\+MAX\+\_\+\+DIST\+\_\+\+DETECT}}~100
+\begin{DoxyCompactList}\small\item\em distance maximale prise en compte pour les collisions entre le joueur et les autre entités \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structPlayerBody__s}{Player\+Body\+\_\+s}} \mbox{\hyperlink{Player_8h_aae7b815be55bd18dfadde5bba6a95a49}{Player\+Body}}
+\begin{DoxyCompactList}\small\item\em Type de données pour le corps du joueur. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structPlayer__s}{Player\+\_\+s}} \mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}}
+\begin{DoxyCompactList}\small\item\em Type de données pour le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Définit la structure du joueur et son corps, ainsi que les fonctions associées. 
+
+\begin{DoxyAuthor}{Author}
+Caius 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21-\/02-\/2026 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Player_8h_a1309e5f01bf9e9d10c145eca8b74c2b9}\label{Player_8h_a1309e5f01bf9e9d10c145eca8b74c2b9} 
+\index{Player.h@{Player.h}!PLAYER\_MAX\_DIST\_DETECT@{PLAYER\_MAX\_DIST\_DETECT}}
+\index{PLAYER\_MAX\_DIST\_DETECT@{PLAYER\_MAX\_DIST\_DETECT}!Player.h@{Player.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_MAX\_DIST\_DETECT}{PLAYER\_MAX\_DIST\_DETECT}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+MAX\+\_\+\+DIST\+\_\+\+DETECT~100}
+
+
+
+distance maximale prise en compte pour les collisions entre le joueur et les autre entités 
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{Player_8h_a9c8780378078e51e7c9041cbac392db9}\label{Player_8h_a9c8780378078e51e7c9041cbac392db9} 
+\index{Player.h@{Player.h}!Player@{Player}}
+\index{Player@{Player}!Player.h@{Player.h}}
+\doxysubsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Player_8h_a9c8780378078e51e7c9041cbac392db9}{Player}}}
+
+
+
+Type de données pour le joueur. 
+
+\Hypertarget{Player_8h_aae7b815be55bd18dfadde5bba6a95a49}\label{Player_8h_aae7b815be55bd18dfadde5bba6a95a49} 
+\index{Player.h@{Player.h}!PlayerBody@{PlayerBody}}
+\index{PlayerBody@{PlayerBody}!Player.h@{Player.h}}
+\doxysubsubsection{\texorpdfstring{PlayerBody}{PlayerBody}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Player_8h_aae7b815be55bd18dfadde5bba6a95a49}{Player\+Body}}}
+
+
+
+Type de données pour le corps du joueur. 
+
+Cette structure sépare le corps du joueur en deux parties \+: la partie principale et la partie inférieure du corps. Cette séparation permet une meilleure gestion des collisions avec les plateformes. 

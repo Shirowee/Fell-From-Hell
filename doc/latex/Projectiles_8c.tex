@@ -1,0 +1,122 @@
+\doxysection{src/systems/\+Projectiles.c File Reference}
+\hypertarget{Projectiles_8c}{}\label{Projectiles_8c}\index{src/systems/Projectiles.c@{src/systems/Projectiles.c}}
+
+
+Gestion des projectiles du jeu.  
+
+
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/levels/\+Level\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Projectiles.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Projectiles.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Projectiles_8c_ade1c32da98bc6ca8991ffc13c8664608}{Init\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet, int speed, int size, int dmg, Vector2 pos, int dir, float life\+Time, int indice)
+\begin{DoxyCompactList}\small\item\em Initialise un projectile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Projectiles_8c_a4d4b9728f427269e66222f67fa168836}{Update\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet)
+\begin{DoxyCompactList}\small\item\em Met à jour un projectile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Projectiles_8c_af25911d704be2b43f8d2243a7048e969}{Draw\+Explosion}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet)
+\begin{DoxyCompactList}\small\item\em Affiche une explosion de projectile explosif. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Projectiles_8c_a2cf641f58198b9c642f4aed7a1ecd588}{Draw\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet, Vector2 pos\+Joueur)
+\begin{DoxyCompactList}\small\item\em Dessine un projectile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestion des projectiles du jeu. 
+
+\begin{DoxyAuthor}{Authors}
+A. Pocholle, Kilian
+\end{DoxyAuthor}
+Ce module gère la création, la mise à jour et l\textquotesingle{}affichage des projectiles.
+
+Plusieurs types de projectiles sont supportés \+:
+\begin{DoxyItemize}
+\item BASIC \+: projectile classique
+\item EXPLOSIF \+: projectile avec explosion
+\item RAYON \+: tir instantané type laser
+\item MELEE \+: (non implémenté) 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Projectiles_8c_a2cf641f58198b9c642f4aed7a1ecd588}\label{Projectiles_8c_a2cf641f58198b9c642f4aed7a1ecd588} 
+\index{Projectiles.c@{Projectiles.c}!DrawBullet@{DrawBullet}}
+\index{DrawBullet@{DrawBullet}!Projectiles.c@{Projectiles.c}}
+\doxysubsubsection{\texorpdfstring{DrawBullet()}{DrawBullet()}}
+{\footnotesize\ttfamily void Draw\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet,  }\item[{Vector2}]{pos\+Joueur }\end{DoxyParamCaption})}
+
+
+
+Dessine un projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bullet} & pointeur vers le projectile \\
+\hline
+{\em pos\+Joueur} & position du joueur (utile pour le rayon) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Projectiles_8c_af25911d704be2b43f8d2243a7048e969}\label{Projectiles_8c_af25911d704be2b43f8d2243a7048e969} 
+\index{Projectiles.c@{Projectiles.c}!DrawExplosion@{DrawExplosion}}
+\index{DrawExplosion@{DrawExplosion}!Projectiles.c@{Projectiles.c}}
+\doxysubsubsection{\texorpdfstring{DrawExplosion()}{DrawExplosion()}}
+{\footnotesize\ttfamily void Draw\+Explosion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet }\end{DoxyParamCaption})}
+
+
+
+Affiche une explosion de projectile explosif. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bullet} & projectile concerné \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Projectiles_8c_ade1c32da98bc6ca8991ffc13c8664608}\label{Projectiles_8c_ade1c32da98bc6ca8991ffc13c8664608} 
+\index{Projectiles.c@{Projectiles.c}!InitBullet@{InitBullet}}
+\index{InitBullet@{InitBullet}!Projectiles.c@{Projectiles.c}}
+\doxysubsubsection{\texorpdfstring{InitBullet()}{InitBullet()}}
+{\footnotesize\ttfamily void Init\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet,  }\item[{int}]{speed,  }\item[{int}]{size,  }\item[{int}]{dmg,  }\item[{Vector2}]{Pos,  }\item[{int}]{dir,  }\item[{float}]{life\+Time,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+
+
+
+Initialise un projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bullet} & pointeur vers le projectile \\
+\hline
+{\em speed} & vitesse du projectile \\
+\hline
+{\em size} & taille du projectile \\
+\hline
+{\em dmg} & dégâts infligés \\
+\hline
+{\em pos} & position initiale \\
+\hline
+{\em dir} & direction en degrés \\
+\hline
+{\em life\+Time} & durée de vie du projectile \\
+\hline
+{\em indice} & type de projectile (BASIC, EXPLOSIF, etc.) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Projectiles_8c_a4d4b9728f427269e66222f67fa168836}\label{Projectiles_8c_a4d4b9728f427269e66222f67fa168836} 
+\index{Projectiles.c@{Projectiles.c}!UpdateBullet@{UpdateBullet}}
+\index{UpdateBullet@{UpdateBullet}!Projectiles.c@{Projectiles.c}}
+\doxysubsubsection{\texorpdfstring{UpdateBullet()}{UpdateBullet()}}
+{\footnotesize\ttfamily void Update\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet }\end{DoxyParamCaption})}
+
+
+
+Met à jour un projectile. 
+
+Gère le mouvement, les effets spéciaux et la désactivation selon le type de projectile.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bullet} & pointeur vers le projectile \\
+\hline
+\end{DoxyParams}

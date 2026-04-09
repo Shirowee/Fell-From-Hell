@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['settingsupdate_0',['settingsupdate',['../Screen_8h.html#a49267ba280d6e1db51d5839b1a22d844',1,'SettingsUpdate(Screen_t previousScreen):&#160;Settings.c'],['../Settings_8c.html#a49267ba280d6e1db51d5839b1a22d844',1,'SettingsUpdate(Screen_t previousScreen):&#160;Settings.c']]],
+  ['spawnbulletpool_1',['spawnbulletpool',['../BulletPool_8h.html#ad026bf70e944ff507c6e6ee3658a8a03',1,'SpawnBulletPool(bulletPool_t *pool, Vector2 pos, int dir, int speed, int size, int dmg, float lifeTime, int indice):&#160;BulletPool.c'],['../BulletPool_8c.html#ad026bf70e944ff507c6e6ee3658a8a03',1,'SpawnBulletPool(bulletPool_t *pool, Vector2 pos, int dir, int speed, int size, int dmg, float lifeTime, int indice):&#160;BulletPool.c']]],
+  ['spawnbulletweapon_2',['spawnbulletweapon',['../PlayerWeapon_8h.html#a4fb8e11fca5691cd02b616de96744a92',1,'spawnBulletWeapon(weapon_t weapon, Player player, int direction):&#160;PlayerWeapon.c'],['../PlayerWeapon_8c.html#a4fb8e11fca5691cd02b616de96744a92',1,'spawnBulletWeapon(weapon_t weapon, Player player, int direction):&#160;PlayerWeapon.c']]],
+  ['spawnenemypattern1_3',['SpawnEnemyPattern1',['../EnemySpawner_8h.html#abc47e057d9ab52658619983906a579e2',1,'EnemySpawner.h']]],
+  ['spawnenemypatternchasers_4',['SpawnEnemyPatternChasers',['../EnemySpawner_8c.html#a17dd66352b415881a492328e40f740f8',1,'EnemySpawner.c']]],
+  ['spawnenemypatterncircle_5',['SpawnEnemyPatternCircle',['../EnemySpawner_8c.html#aed0e1e899e0c2a973b7bb3610184c014',1,'EnemySpawner.c']]],
+  ['spawnenemypool_6',['spawnenemypool',['../EnemyPool_8h.html#aad4b72a3a13287968e82e35b7f64954b',1,'SpawnEnemyPool(enemyPool_t *pool, Vector2 pos, float speed, Vector2 size, int dmg, float bulletSpeed, int bulletSize, EnemyType_t type):&#160;EnemyPool.c'],['../EnemyPool_8c.html#aad4b72a3a13287968e82e35b7f64954b',1,'SpawnEnemyPool(enemyPool_t *pool, Vector2 pos, float speed, Vector2 size, int dmg, float bulletSpeed, int bulletSize, EnemyType_t type):&#160;EnemyPool.c']]],
+  ['spawnrandomenemy_7',['spawnrandomenemy',['../EnemySpawner_8h.html#a9d776f5787b32a9f4731256ebc3af03e',1,'SpawnRandomEnemy(enemyPool_t *pool):&#160;EnemySpawner.c'],['../EnemySpawner_8c.html#ab6da48e3a55e516e1650a7bf8b7782e2',1,'SpawnRandomEnemy(enemyPool_t *bulletPool):&#160;EnemySpawner.c']]]
+];
