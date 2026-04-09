@@ -1,0 +1,34 @@
+{
+  "map_info": {
+    "id": "map3", "title": "Lust LVL3",
+    "dimensions": { "w": 2048, "h": 2816 }
+  },
+  "platforms": [
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 2560, "width": 2048, "high": 256 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 192, "y": 2240, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 832, "y": 2240, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1472, "y": 2240, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 1728, "width": 320, "high": 320 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 1728, "y": 1728, "width": 320, "high": 320 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1344, "y": 1856, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 320, "y": 1856, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 768, "y": 1664, "width": 512, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 192, "y": 1152, "width": 320, "high": 256 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 512, "y": 1344, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 1536, "y": 1152, "width": 320, "high": 256 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1280, "y": 1344, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 704, "y": 960, "width": 640, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 0, "y": 704, "width": 576, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1472, "y": 704, "width": 576, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 512, "y": 384, "width": 960, "high": 64 }
+  ],
+  "entities": {
+    "player_start": { "x": 960, "y": 2496 },
+    "enemies": [],
+    "hazards": [
+    ]
+  },
+  "triggers": [
+    { "id": "finNiveau", "action": "map1", "rect": { "x": 960, "y": 192, "w": 128, "h": 192 } }
+  ]
+}

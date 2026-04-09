@@ -1,6 +1,9 @@
 #include "../../lib/levels/LevelManager.h"
 #include "../../raylib/include/raylib.h"
 #include "../../lib/cJson/cJSON.h"
+#include "../../lib/player/PlayerController.h"
+#include "../../lib/systems/EnemyPool.h"
+#include "../../lib/systems/BulletPool.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -26,7 +29,7 @@ void parseLevelData(cJSON *json, Level *lvl) {
         }
     }
 
-    // 2. Extraction des Plateformes (Tableau)
+    // 2. Extraction des Plateformes
     cJSON *platforms = cJSON_GetObjectItemCaseSensitive(json, "platforms");
     lvl->platformCount = 0;
     cJSON *plat = NULL;
@@ -43,7 +46,7 @@ void parseLevelData(cJSON *json, Level *lvl) {
         }
     }
 
-    // 3. Extraction des Entités (Player Start, Enemies, Hazards) ---
+    // 3. Extraction des Entités
     cJSON *entities = cJSON_GetObjectItemCaseSensitive(json, "entities");
     if (entities) {
         // Player Start
@@ -95,6 +98,7 @@ void parseLevelData(cJSON *json, Level *lvl) {
             t->rect.w = (float)cJSON_GetObjectItemCaseSensitive(r, "w")->valuedouble;
             t->rect.h = (float)cJSON_GetObjectItemCaseSensitive(r, "h")->valuedouble;
             lvl->triggerCount++;
+            t->triggered = false;
         }
     }
 }
@@ -152,7 +156,6 @@ void LevelInit(){
 }
 
 
-
 //Dessine le niveau
 void LevelDraw(void) {
     for (int i = 0; i < currentLevel.platformCount; i++) {
@@ -160,3 +163,40 @@ void LevelDraw(void) {
     }
 }
 
+
+
+
+static char pendingLevel[64] = "";
+
+void NextLvlRequest(const char *targetId) {
+    // Evite des problèmes de si ça s'éxécute deux fois
+    if (pendingLevel[0] != '\0') return; 
+    
+    strncpy(pendingLevel, targetId, 63);
+    pendingLevel[63] = '\0';
+}
+
+void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool) {
+    // Evite des problèmes de si ça s'éxécute deux fois
+    if (pendingLevel[0] == '\0') return;
+
+    // Suppression des balles et ennemis
+    for (int i = 0; i < enemyPool->capacity; i++)  enemyPool->tab[i].active = 0;
+    for (int i = 0; i < bulletPool->capacity; i++)  bulletPool->tab[i].active = 0;
+
+    // Chargement nouvelle map
+    if (readJsonLvl(pendingLevel)) {
+        LevelInit();
+
+        // Reset du joueur
+        PlayerInit(player);
+        player->position.x = (float)currentLevel.playerStart.x;
+        player->position.y = (float)currentLevel.playerStart.y;
+        player->body.main.x = player->position.x;
+        player->body.main.y = player->position.y;
+        player->body.foot.x = player->position.x;
+        player->body.foot.y = player->position.y + player->size.y;
+    }
+
+    pendingLevel[0] = '\0';
+}

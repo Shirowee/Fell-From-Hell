@@ -8,6 +8,8 @@
 int main(){
     InitWindow(800, 450, "Weapon Test");
 
+    /*
+
     //init pour rand ; faudra mettre dans gameInit
     srand(time(NULL));
 
@@ -46,5 +48,6 @@ int main(){
 
     FreeBulletPool(&playerBulletPool);
     CloseWindow();
+    */
     return 0;
 }

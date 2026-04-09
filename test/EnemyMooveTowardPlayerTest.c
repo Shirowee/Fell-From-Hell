@@ -7,6 +7,8 @@
 int main(void)
 {
     InitWindow(1920, 1080, "Enemy Pool Shooting Test");
+
+    /*
     InitEnemyPool(&enemyPool,200);
     Vector2 playerPos = (Vector2){800,450};
 
@@ -35,5 +37,6 @@ int main(void)
     }
     FreeEnemyPool(&enemyPool);
     CloseWindow();
+    */
     return 0;
 }

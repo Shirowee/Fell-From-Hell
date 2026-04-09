@@ -4,6 +4,7 @@
 #include "../lib/core/WindowManager.h"
 #include "../lib/core/Screen.h"
 #include "../lib/core/ResolutionManager.h"
+#include "../lib/core/ResolutionManager.h"
 #include "../lib/levels/LevelManager.h"
 #include "../lib/systems/LifeManager.h"
 
@@ -26,19 +27,29 @@ int main(void)
     /************************
     * INITIALISATION DU JEU *
     ************************/
+    int monitorHeight = GetMonitorHeight(0);
     Player player;
     GameInit(&player); // Initialisation du jeu
     
     
     camera.offset = (Vector2){ 0, 0 };
-    camera.target = (Vector2){ 0, 0 };
+    camera.target = (Vector2){ 0, player.position.y };
     camera.zoom   = resolution.scale;
 
+    /********************
+    * BOUCLE PRINCIPALE *
     /********************
     * BOUCLE PRINCIPALE *
     ********************/
     while (!WindowShouldClose() && currentScreen != SCREEN_EXIT)
     {
+        WindowManager_Update(); // Update de l'état de la fenêtre
+
+        camera.target.y = player.position.y + player.size.y - monitorHeight/3; // A changer dans game.c
+
+        // LOGIQUE
+        GameUpdate(&player, &timeSpent, &startReload);
+
         // DESSIN
         BeginDrawing();
         ClearBackground(RAYWHITE);
@@ -64,6 +75,7 @@ int main(void)
 
         EndDrawing();
     }
+
 
     /*********
     * UNLOAD *

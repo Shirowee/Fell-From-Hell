@@ -6,8 +6,9 @@
 #include "../../lib/systems/EnemySpawner.h"
 #include "../../lib/systems/CollisionSystem.h"
 #include "../../lib/systems/LifeManager.h"
+#include "../../lib/systems/TriggerSystem.h"
 
-//initialise le jeu
+// Initialise le jeu
 void GameInit(Player *player)
 {
     LevelInit();
@@ -21,9 +22,10 @@ void GameInit(Player *player)
     InitBulletPool(&playerBulletPool, 300);
 }
 
-//maj du jeu
+// Mise a jour du jeu
 void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
+    NextLvlUpdate(player, &enemyPool, &playerBulletPool);
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
     UpdateEnemyPool(&enemyPool, getPlayerCenter(player));
     UpdateBulletPool(&bulletPool);
@@ -31,10 +33,11 @@ void GameUpdate(Player *player, double* timeSpent, double* startReload)
     CheckEnemyBulletCollision(&enemyPool, &playerBulletPool);
 
     PlayerUpdate(player, currentLevel.platforms, currentLevel.platformCount, timeSpent, startReload);
+    TriggerSystemUpdate(player, &currentLevel);
     UpdateBulletPool(&playerBulletPool);
 }
 
-//rendre le jeu
+// Rendu du jeu
 void GameDraw(Player *player)
 {
     LevelDraw();
@@ -46,6 +49,8 @@ void GameDraw(Player *player)
 
 //décharger
 void GameUnload(Player player)
+// Déchargement
+void GameUnload(void)
 {
     FreeBulletPool(&playerBulletPool);
     FreeEnemyPool(&enemyPool);

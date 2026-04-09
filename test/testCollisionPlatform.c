@@ -18,6 +18,8 @@ int main(void)
 
     InitWindow(800, 450, "Fell From Hell");
 
+    /*
+
     PlayerInit(&player);
     TestLevelInit(platforms, &nbPlatforms);
 
@@ -49,6 +51,7 @@ int main(void)
     }
 
     CloseWindow();
+    */
     return 0;
 }
 

@@ -4,6 +4,7 @@ int main(void)
 {
     InitWindow(800, 450, "Enemy Projectile Test");
 
+    /*
     bullet_t bullet;
     InitBullet(&bullet, 20, 10, 10, (Vector2){400, 200}, 0, 100, 0);
 
@@ -22,5 +23,6 @@ int main(void)
     }
 
     CloseWindow();
+    */
     return 0;
 }

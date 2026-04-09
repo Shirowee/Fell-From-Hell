@@ -4,7 +4,8 @@ int main(void)
 {
     InitWindow(800, 450, "BulletPool Test");
 
-    //--------------------------ADD TO GAME INIT-------------------
+
+    /*
     InitBulletPool(&bulletPool, 300);
 
     SetTargetFPS(60);
@@ -28,5 +29,6 @@ int main(void)
     FreeBulletPool(&bulletPool);
     CloseWindow();
 
+    */
     return 0;
 }
