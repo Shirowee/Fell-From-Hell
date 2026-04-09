@@ -47,7 +47,7 @@ int main(void)
         // DESSIN
         BeginDrawing();
                
-
+        ClearBackground(GRAY);
         
         switch(currentScreen) {
             case SCREEN_MENU: 
