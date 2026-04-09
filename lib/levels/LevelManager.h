@@ -12,7 +12,11 @@
 #define LEVEL_MANAGER_H
 
 #include "Platform.h"
+#include "../player/Player.h"
+#include "../systems/BulletPool.h"
+#include "../systems/EnemyPool.h"
 #include "../../lib/cJson/cJSON.h"
+
 
 /** @name Maximum de tout les éléments d'une map
  * @{ */
@@ -95,16 +99,31 @@ typedef struct {
  */
 int readJsonLvl(const char * fileName);
 
+
 /**
  * @brief Initialise le niveau après la conversion JSON
  */
 void LevelInit(void);
+
 
 /**
  * @brief Dessine les platformes et le décors du niveau
  */
 void LevelDraw(void);
 
+
+/**
+ * \brief Demande une transition vers un autre niveau (exécutée au prochain GameUpdate).
+ * \param targetId Nom du fichier JSON sans extension (ex: "map2")
+ */
+void LevelTransitionRequest(const char *targetId);
+
+
+/**
+ * \brief À appeler en début de GameUpdate. Exécute la transition si en attente.
+ */
+void LevelTransitionUpdate(Player *player, enemyPool_t *enemyPool,
+                           bulletPool_t *bulletPool, float tileSize);
 
 /**
  *  @brief Contient toutes les informations sur le niveau actuel

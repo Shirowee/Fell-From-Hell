@@ -28,5 +28,7 @@
     "hazards": [
     ]
   },
-  "triggers": []
+  "triggers": [
+    { "id": "finNiveau", "action": "map1", "rect": { "x": 960, "y": 192, "w": 128, "h": 192 } }
+  ]
 }

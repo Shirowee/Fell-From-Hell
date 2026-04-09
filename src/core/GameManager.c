@@ -5,6 +5,7 @@
 #include "../../lib/systems/EnemyPool.h"
 #include "../../lib/systems/EnemySpawner.h"
 #include "../../lib/systems/CollisionSystem.h"
+#include "../../lib/systems/TriggerSystem.h"
 
 //initialise le jeu
 void GameInit(Player *player)
@@ -30,6 +31,7 @@ void GameUpdate(Player *player, double* timeSpent, double* startReload)
     CheckEnemyBulletCollision(&enemyPool, &playerBulletPool);
 
     PlayerUpdate(player, currentLevel.platforms, currentLevel.platformCount, timeSpent, startReload);
+    TriggerSystemUpdate(player, &currentLevel);
     UpdateBulletPool(&playerBulletPool);
 }
 

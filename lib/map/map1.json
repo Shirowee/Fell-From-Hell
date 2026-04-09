@@ -15,11 +15,13 @@
     { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 512, "y": 384, "width": 1024, "high": 64 }
   ],
   "entities": {
-    "player_start": { "x": 832, "y": 256 },
+    "player_start": { "x": 832, "y": 1256 },
     "enemies": [],
     "hazards": [
       { "type": "test", "x": 0, "y": 1408 }
     ]
   },
-  "triggers": []
+  "triggers": [
+    { "id": "finNiveau", "action": "map2", "rect": { "x": 960, "y": 192, "w": 128, "h": 192 } }
+  ]
 }

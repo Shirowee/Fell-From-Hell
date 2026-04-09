@@ -1,6 +1,9 @@
 #include "../../lib/levels/LevelManager.h"
 #include "../../raylib/include/raylib.h"
 #include "../../lib/cJson/cJSON.h"
+#include "../../lib/player/PlayerController.h"
+#include "../../lib/systems/EnemyPool.h"
+#include "../../lib/systems/BulletPool.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -152,7 +155,6 @@ void LevelInit(void) {
 }
 
 
-
 //Dessine le niveau
 void LevelDraw(void) {
     for (int i = 0; i < currentLevel.platformCount; i++) {
@@ -160,3 +162,38 @@ void LevelDraw(void) {
     }
 }
 
+
+
+static struct { bool isPending; char targetId[64]; } transition = { false, "" };
+
+void LevelTransitionRequest(const char *targetId) {
+    if (transition.isPending) return;
+    strncpy(transition.targetId, targetId, 63);
+    transition.targetId[63] = '\0';
+    transition.isPending = true;
+}
+
+void LevelTransitionUpdate(Player *player, enemyPool_t *enemyPool,
+                           bulletPool_t *bulletPool, float tileSize) {
+    if (!transition.isPending) return;
+
+    for (int i = 0; i < enemyPool->capacity; i++)  enemyPool->tab[i].active = 0;
+    for (int i = 0; i < bulletPool->capacity; i++)  bulletPool->tab[i].active = 0;
+
+    if (!readJsonLvl(transition.targetId)) {
+        transition.isPending = false;
+        return;
+    }
+
+    LevelInit();
+
+    PlayerInit(player);
+    player->position.x = (float)currentLevel.playerStart.x * tileSize;
+    player->position.y = (float)currentLevel.playerStart.y * tileSize;
+    player->body.main.x = player->position.x;
+    player->body.main.y = player->position.y;
+    player->body.foot.x = player->position.x;
+    player->body.foot.y = player->position.y + player->size.y;
+
+    transition.isPending = false;
+}
