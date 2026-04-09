@@ -29,7 +29,7 @@ void parseLevelData(cJSON *json, Level *lvl) {
         }
     }
 
-    // 2. Extraction des Plateformes (Tableau)
+    // 2. Extraction des Plateformes
     cJSON *platforms = cJSON_GetObjectItemCaseSensitive(json, "platforms");
     lvl->platformCount = 0;
     cJSON *plat = NULL;
@@ -46,7 +46,7 @@ void parseLevelData(cJSON *json, Level *lvl) {
         }
     }
 
-    // 3. Extraction des Entités (Player Start, Enemies, Hazards) ---
+    // 3. Extraction des Entités
     cJSON *entities = cJSON_GetObjectItemCaseSensitive(json, "entities");
     if (entities) {
         // Player Start
@@ -98,6 +98,7 @@ void parseLevelData(cJSON *json, Level *lvl) {
             t->rect.w = (float)cJSON_GetObjectItemCaseSensitive(r, "w")->valuedouble;
             t->rect.h = (float)cJSON_GetObjectItemCaseSensitive(r, "h")->valuedouble;
             lvl->triggerCount++;
+            t->triggered = false;
         }
     }
 }
@@ -164,36 +165,38 @@ void LevelDraw(void) {
 
 
 
-static struct { bool isPending; char targetId[64]; } transition = { false, "" };
 
-void LevelTransitionRequest(const char *targetId) {
-    if (transition.isPending) return;
-    strncpy(transition.targetId, targetId, 63);
-    transition.targetId[63] = '\0';
-    transition.isPending = true;
+static char pendingLevel[64] = "";
+
+void NextLvlRequest(const char *targetId) {
+    // Evite des problèmes de si ça s'éxécute deux fois
+    if (pendingLevel[0] != '\0') return; 
+    
+    strncpy(pendingLevel, targetId, 63);
+    pendingLevel[63] = '\0';
 }
 
-void LevelTransitionUpdate(Player *player, enemyPool_t *enemyPool,
-                           bulletPool_t *bulletPool, float tileSize) {
-    if (!transition.isPending) return;
+void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool) {
+    // Evite des problèmes de si ça s'éxécute deux fois
+    if (pendingLevel[0] == '\0') return;
 
+    // Suppression des balles et ennemis
     for (int i = 0; i < enemyPool->capacity; i++)  enemyPool->tab[i].active = 0;
     for (int i = 0; i < bulletPool->capacity; i++)  bulletPool->tab[i].active = 0;
 
-    if (!readJsonLvl(transition.targetId)) {
-        transition.isPending = false;
-        return;
+    // Chargement nouvelle map
+    if (readJsonLvl(pendingLevel)) {
+        LevelInit();
+
+        // Reset du joueur
+        PlayerInit(player);
+        player->position.x = (float)currentLevel.playerStart.x;
+        player->position.y = (float)currentLevel.playerStart.y;
+        player->body.main.x = player->position.x;
+        player->body.main.y = player->position.y;
+        player->body.foot.x = player->position.x;
+        player->body.foot.y = player->position.y + player->size.y;
     }
 
-    LevelInit();
-
-    PlayerInit(player);
-    player->position.x = (float)currentLevel.playerStart.x * tileSize;
-    player->position.y = (float)currentLevel.playerStart.y * tileSize;
-    player->body.main.x = player->position.x;
-    player->body.main.y = player->position.y;
-    player->body.foot.x = player->position.x;
-    player->body.foot.y = player->position.y + player->size.y;
-
-    transition.isPending = false;
+    pendingLevel[0] = '\0';
 }

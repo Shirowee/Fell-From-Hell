@@ -1,3 +1,12 @@
+/**
+ * \file TriggerSystem.h
+ * \author Thomas
+ * \brief Ce fichier TriggerSystem.h sert a la gestion des triggers
+ * 
+ * * TriggerSystem permet de savoir quand un joueur passe dans une zone 
+ * qui correspond a un trigger et quand c'est le cas éxécute l'action qui correspond au trigger
+ */
+
 #ifndef TRIGGER_SYSTEM_H
 #define TRIGGER_SYSTEM_H
 

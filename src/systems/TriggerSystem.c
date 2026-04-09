@@ -6,7 +6,7 @@
 
 void TriggerExecute(Trigger *trigger, Level *level) {
     if (strcmp(trigger->id, "finNiveau") == 0) {
-        LevelTransitionRequest(trigger->action);
+        NextLvlRequest(trigger->action);
     }
 }
 
@@ -16,6 +16,7 @@ void TriggerSystemUpdate(Player *player, Level *level) {
 
     for (int i = 0; i < level->triggerCount; i++) {
         Trigger *trigger = &level->triggers[i];
+        if (trigger->triggered == true) continue;;
 
         Rectangle trigRect = {
             trigger->rect.x,

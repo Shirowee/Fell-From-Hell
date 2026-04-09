@@ -64,6 +64,7 @@ typedef struct {
     char id[32];        /**< Identifiant de la zone*/
     Rect rect;          /**< Variable contenant toutes les informations sur la taille et les coordonnées de la zone*/
     char action[32];    /**< Nom de l'action qui doit être réalisé dans cette zone*/
+    bool triggered;      /**< Booleen pour savoir si le trigger a déjà été éxécuté*/
 } Trigger;
 
 
@@ -113,17 +114,15 @@ void LevelDraw(void);
 
 
 /**
- * \brief Demande une transition vers un autre niveau (exécutée au prochain GameUpdate).
- * \param targetId Nom du fichier JSON sans extension (ex: "map2")
+ * \param targetId Nom de la map vers laquelle on se dirige
  */
-void LevelTransitionRequest(const char *targetId);
+void NextLvlRequest(const char *targetId);
 
 
 /**
- * \brief À appeler en début de GameUpdate. Exécute la transition si en attente.
+ * \brief Réalise le passage au niveau suivant
  */
-void LevelTransitionUpdate(Player *player, enemyPool_t *enemyPool,
-                           bulletPool_t *bulletPool, float tileSize);
+void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool);
 
 /**
  *  @brief Contient toutes les informations sur le niveau actuel

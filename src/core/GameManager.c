@@ -7,7 +7,7 @@
 #include "../../lib/systems/CollisionSystem.h"
 #include "../../lib/systems/TriggerSystem.h"
 
-//initialise le jeu
+// Initialise le jeu
 void GameInit(Player *player)
 {
     LevelInit();
@@ -21,9 +21,10 @@ void GameInit(Player *player)
     InitBulletPool(&playerBulletPool, 300);
 }
 
-//maj du jeu
+// Mise a jour du jeu
 void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
+    NextLvlUpdate(player, &enemyPool, &playerBulletPool);
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
     UpdateEnemyPool(&enemyPool, player->position);
     UpdateBulletPool(&playerBulletPool);
@@ -35,7 +36,7 @@ void GameUpdate(Player *player, double* timeSpent, double* startReload)
     UpdateBulletPool(&playerBulletPool);
 }
 
-//rendre le jeu
+// Rendu du jeu
 void GameDraw(Player *player)
 {
     LevelDraw();
@@ -44,7 +45,7 @@ void GameDraw(Player *player)
     DrawBulletPool(&playerBulletPool, player->position);
 }
 
-//décharger
+// Déchargement
 void GameUnload(void)
 {
     FreeBulletPool(&playerBulletPool);
