@@ -32,10 +32,11 @@ Screen_t EndLevelUpdate(Player* player)
 
 
     //choix d'une arme aléatoire
+    //temp armes non fonctionel pour l'instant : LANCE_MISSILE_TETE_CHERCHEUSE LANCE_MISSILE_TETE_CHERCHEUSE EPEE_LONGUE
     if(indiceWeapon == -1){
         do{
             indiceWeapon = GetRandomValue(0, 13); //indice voir PlayerWeapon
-        }while (indiceWeapon == player->weapon.indice || indiceWeapon == LANCE_MISSILE_TETE_CHERCHEUSE || indiceWeapon == FUSIL_RAFALES || indiceWeapon == EPEE_LONGUE);
+        }while (indiceWeapon == player->weapon.indice || indiceWeapon == LANCE_MISSILE_TETE_CHERCHEUSE || indiceWeapon == LANCE_MISSILE_TETE_CHERCHEUSE || indiceWeapon == EPEE_LONGUE);
     }
     
     const char *buffs[6] = {
