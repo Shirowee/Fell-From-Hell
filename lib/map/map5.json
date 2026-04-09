@@ -1,0 +1,37 @@
+{
+  "map_info": {
+    "id": "map5", "title": "chepa",
+    "dimensions": { "w": 2048, "h": 3456 }
+  },
+  "platforms": [
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 3200, "width": 2048, "high": 256 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 1408, "y": 2368, "width": 640, "high": 512 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 2112, "width": 704, "high": 512 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 640, "y": 2944, "width": 320, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1152, "y": 2624, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 1216, "y": 1472, "width": 384, "high": 384 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1792, "y": 2112, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1600, "y": 1792, "width": 192, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1856, "y": 1472, "width": 192, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 576, "y": 1152, "width": 384, "high": 384 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 960, "y": 1280, "width": 192, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 0, "y": 1728, "width": 448, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 192, "y": 1408, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 0, "y": 1088, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1472, "y": 1152, "width": 320, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 640, "y": 768, "width": 832, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 384, "y": 960, "width": 192, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 0, "width": 2048, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": -64, "y": 0, "width": 64, "high": 3456 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 2048, "y": 0, "width": 64, "high": 3456 }
+  ],
+  "entities": {
+    "player_start": { "x": 1152, "y": 3072 },
+    "enemies": [],
+    "hazards": [
+    ]
+  },
+  "triggers": [
+    { "id": "finNiveau", "action": "map6", "rect": { "x": 960, "y": 576, "w": 128, "h": 192 } }
+  ]
+}

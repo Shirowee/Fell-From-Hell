@@ -3,6 +3,8 @@
 #include "../../lib/systems/BulletPool.h"
 #include<stdio.h>
 
+Camera2D camera = { 0 };
+
 int main(void)
 {
     InitWindow(800, 450, "Enemy Pool Test");

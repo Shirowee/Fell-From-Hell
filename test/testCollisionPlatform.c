@@ -6,6 +6,8 @@
 #include "../lib/player/PlayerMovement.h"
 #include "../lib/levels/LevelManager.h"
 
+Camera2D camera = { 0 };
+
 // Declarations
 static void TestLevelInit(Platform platforms[8], int *nbPlatforms);
 static void TestLevelDraw(Platform platforms[8], const int nbPlatforms);

@@ -20,7 +20,7 @@ int main(void)
     * INITIALISATION SYSTEME
     *****************/
     ChangeDirectory(GetApplicationDirectory()); // Ce place au niveau du .exe pour éviter des prob avec le readJson après
-    if (!readJsonLvl("map2")) return -1; // Si impossible de lire la map
+    if (!readJsonLvl("map1")) return -1; // Si impossible de lire la map
 
     ResolutionInit(currentLevel.info.width, currentLevel.info.height); // Initialise tout ce qui est lié a la résolution
 
