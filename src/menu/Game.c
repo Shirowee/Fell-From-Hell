@@ -21,6 +21,7 @@ Screen_t Game(Player* player)
     *************************/
     double timeSpent=0; //temp entre deux tir
     double startReload = -10;
+    int monitorHeight = GetMonitorHeight(0);
 
     /*******************
     * BOUCLE PRINCIPALE
@@ -29,11 +30,7 @@ Screen_t Game(Player* player)
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
 
-        float cameraSpeed = 800.0f * GetFrameTime(); // TEMPORAIRE MAP
-        if(IsKeyDown(KEY_UP)) camera.target.y -= cameraSpeed; // TEMPORAIRE MAP
-        if(IsKeyDown(KEY_DOWN)) camera.target.y += cameraSpeed; // TEMPORAIRE MAP
-        if(IsKeyDown(KEY_U)) camera.target.x += cameraSpeed; // TEMPORAIRE MAP
-        if(IsKeyDown(KEY_Y)) camera.target.x -= cameraSpeed; // TEMPORAIRE MAP
+        camera.target.y = player->position.y + player->size.y - monitorHeight/3;
 
         // LOGIQUE
         GameUpdate(player, &timeSpent, &startReload);

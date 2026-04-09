@@ -12,7 +12,7 @@ void TriggerExecute(Trigger *trigger, Level *level) {
 
 
 void TriggerSystemUpdate(Player *player, Level *level) {
-    Rectangle playerRect = player->body.main;
+    Rectangle playerRect = {player->position.x, player->position.y, player->size.x, player->size.y};
 
     for (int i = 0; i < level->triggerCount; i++) {
         Trigger *trigger = &level->triggers[i];

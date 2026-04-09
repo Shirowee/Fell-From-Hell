@@ -47,10 +47,8 @@ void GameDraw(Player *player)
     DrawBulletPool(&bulletPool, player->position);
 }
 
-//décharger
+// Décharger
 void GameUnload(Player player)
-// Déchargement
-void GameUnload(void)
 {
     FreeBulletPool(&playerBulletPool);
     FreeEnemyPool(&enemyPool);

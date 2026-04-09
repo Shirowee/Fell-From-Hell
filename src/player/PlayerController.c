@@ -15,7 +15,7 @@ void PlayerInit(Player *player){
     player->velocity = (Vector2){ 0, 0 };
 
     //Initialisation des mouvements du joueur
-    player->movConfig.maxSpeed = RS(MAX_SPEED);
+    player->movConfig.maxSpeed = RS(MAX_SPEED_X);
     player->movConfig.groundAcc = RS(GROUND_ACC);
     player->movConfig.airAcc = RS(AIR_ACC);
     player->movConfig.jumpStrength = RS(JUMP_STRENGTH);

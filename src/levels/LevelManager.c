@@ -192,10 +192,6 @@ void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletP
         PlayerInit(player);
         player->position.x = (float)currentLevel.playerStart.x;
         player->position.y = (float)currentLevel.playerStart.y;
-        player->body.main.x = player->position.x;
-        player->body.main.y = player->position.y;
-        player->body.foot.x = player->position.x;
-        player->body.foot.y = player->position.y + player->size.y;
     }
 
     pendingLevel[0] = '\0';

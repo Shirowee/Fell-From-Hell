@@ -36,8 +36,7 @@ int main(void)
     camera.target = (Vector2){ 0, player.position.y };
     camera.zoom   = resolution.scale;
 
-    /********************
-    * BOUCLE PRINCIPALE *
+
     /********************
     * BOUCLE PRINCIPALE *
     ********************/
@@ -46,9 +45,6 @@ int main(void)
         WindowManager_Update(); // Update de l'état de la fenêtre
 
         camera.target.y = player.position.y + player.size.y - monitorHeight/3; // A changer dans game.c
-
-        // LOGIQUE
-        GameUpdate(&player, &timeSpent, &startReload);
 
         // DESSIN
         BeginDrawing();
