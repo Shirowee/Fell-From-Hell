@@ -1,7 +1,7 @@
 {
   "map_info": {
     "id": "lust_01", "title": "Lust LVL1",
-    "dimensions": { "w": 2048, "h": 2304 }
+    "dimensions": { "w": 2048, "h": 2048 }
   },
   "platforms": [
     { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 2048, "width": 2048, "high": 256 },
