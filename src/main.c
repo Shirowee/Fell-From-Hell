@@ -27,7 +27,6 @@ int main(void)
     /************************
     * INITIALISATION DU JEU *
     ************************/
-    int monitorHeight = GetMonitorHeight(0);
     Player player;
     GameInit(&player); // Initialisation du jeu
     
