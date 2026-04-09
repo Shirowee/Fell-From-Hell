@@ -73,6 +73,7 @@ Texture2D* RM_GetTexture(const char *path)
 void LoadGameResources()
 {
     RM_GetTexture("../ressources/sprites/player/player.png");
+    RM_GetTexture("../ressources/sprites/bgs/Nebula.png");
 }
 
 

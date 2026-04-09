@@ -49,7 +49,7 @@ int main(void) {
 
         // DESSIN
         BeginDrawing();
-            ClearBackground(RAYWHITE);    
+               
 
             BeginMode2D(camera);     
                 GameDraw(&player);

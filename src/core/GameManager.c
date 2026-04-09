@@ -6,6 +6,7 @@
 #include "../../lib/systems/EnemySpawner.h"
 #include "../../lib/systems/CollisionSystem.h"
 #include "../../lib/systems/LifeManager.h"
+#include "../../lib/core/RessourcesManager.h"
 
 //initialise le jeu
 void GameInit(Player *player)
@@ -38,6 +39,8 @@ void GameUpdate(Player *player, double* timeSpent, double* startReload)
 //rendre le jeu
 void GameDraw(Player *player)
 {
+    ClearBackground(RAYWHITE);
+    DrawTextureEx(*RM_GetTexture("../ressources/sprites/bgs/Nebula.png"), (Vector2){-300, 300}, 0.0f, 3.0f, WHITE);
     LevelDraw();
     PlayerDraw(player);
     DrawEnemyPool(&enemyPool);
