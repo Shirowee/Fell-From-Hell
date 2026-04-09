@@ -32,7 +32,6 @@ void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
         posSouris = GetMousePosition();
         direction = ((int)(atan2(posSouris.y + camera.target.y - player->position.y, posSouris.x - player->position.x) * 180 / PI) + 360) % 360;
         spawnBulletWeapon(*weapon, *player, direction);
-        printf("posSouris.y= %f\n", posSouris.y);
         (weapon->amo_left)--;
     }
 

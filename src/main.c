@@ -44,7 +44,6 @@ int main(void)
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
 
-        camera.target.y = player.position.y + player.size.y - monitorHeight/3; // A changer dans game.c
 
         // DESSIN
         BeginDrawing();
