@@ -11,6 +11,7 @@
 Level currentLevel = {0};
 
 
+
 void parseLevelData(cJSON *json, Level *lvl) {
     if (json == NULL || lvl == NULL) return;
 
@@ -184,7 +185,7 @@ void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletP
     for (int i = 0; i < enemyPool->capacity; i++)  enemyPool->tab[i].active = 0;
     for (int i = 0; i < bulletPool->capacity; i++)  bulletPool->tab[i].active = 0;
 
-    // Chargement nouvelle map
+    // Chargement de la nouvelle map
     if (readJsonLvl(pendingLevel)) {
         LevelInit();
 
