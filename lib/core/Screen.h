@@ -70,4 +70,18 @@ Screen_t PauseUpdate(void);
  */
 Screen_t EndLevelUpdate(Player* player);
 
+/**
+ * \brief Gère l'état de déclenchement d'un nouveau niveau.
+ * \param newFlag Indique si un changement d'état est demandé (1 = toggle, 0 = aucun changement)
+ * \return L'état actuel du nouveau niveau (1 = actif, 0 = inactif)
+ *
+ * \details
+ * Cette fonction utilise une variable statique pour mémoriser l'état entre les appels.
+ * Si \p newFlag est à 1, l'état est inversé (toggle).
+ * Si \p newFlag est à 0, l'état reste inchangé.
+ *
+ * \note Fonctionne comme un interrupteur (toggle).
+ */
+int NewLevel(int newFlag);
+
 #endif

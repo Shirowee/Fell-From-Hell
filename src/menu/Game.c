@@ -49,5 +49,6 @@ Screen_t Game(Player* player, Camera2D* camera)
     if(IsKeyPressed(KEY_ESCAPE))
         return (SCREEN_PAUSE);
         
+    NewLevel(1);
     return (SCREEN_END_LEVEL);
 }
