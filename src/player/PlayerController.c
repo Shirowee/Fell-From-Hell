@@ -5,6 +5,7 @@
 #include "../../lib/levels/LevelManager.h"
 #include "../../lib/systems/EnemyPool.h"
 #include "../../lib/systems/LifeManager.h"
+#include "../../lib/core/RessourcesManager.h"
 #include <stdio.h>
 
 //init le joueur
@@ -40,6 +41,9 @@ void PlayerInit(Player *player){
 
     //Initialisation de l'arme du joueur
     player->weapon = minigun;
+
+    //Chargement de la texture du joueur
+    player->texture = RM_GetTexture("../ressources/sprites/player/player.png");
 }
 
 //maj de la logique du player
@@ -52,6 +56,7 @@ void PlayerUpdate(Player *player, Platform platform[], const int nbPlatforms, do
 
 //dessine le joueur
 void PlayerDraw(Player *player){
+    /*
     Color color;
     Rectangle body = (Rectangle){player->position.x, player->position.y, player->size.x, player->size.y};
 
@@ -65,6 +70,13 @@ void PlayerDraw(Player *player){
     }
 
     DrawRectangleRec(body, color);
+    if (player->texture == NULL)
+    {
+        printf("Texture NULL\n");
+        return;
+    }
+    */
+    DrawTexture(*player->texture, player->position.x, player->position.y, WHITE);
 }
 
 Vector2 getPlayerCenter(Player *player){

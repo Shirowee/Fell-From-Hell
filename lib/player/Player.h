@@ -24,7 +24,7 @@ typedef struct Player_s Player;
  * \def PLAYER_MAX_DIST_DETECT
  * \brief distance maximale prise en compte pour les collisions entre le joueur et les autre entités
  */
-#define PLAYER_MAX_DIST_DETECT 100
+#define PLAYER_MAX_DIST_DETECT 512
 
 /*
  *Structures
@@ -43,6 +43,9 @@ struct Player_s {
     PlayerStats stats;          /**< Statistiques du joueur */
     MovementConfig movConfig;  /**< Configuration de mouvement du joueur */
     weapon_t weapon;            /**< Arme du joueur */
+
+    /*===============Textures===============*/
+    Texture2D *texture;    /**< Texture du joueur */
 };
 
 #endif

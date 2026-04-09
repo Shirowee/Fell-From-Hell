@@ -25,12 +25,12 @@
  * \def PLAYER_SIZE_X
  * \brief Taille par défaut du joueur sur l'axe x en pixels.
  */
-#define PLAYER_SIZE_X 30
+#define PLAYER_SIZE_X 64
 /**
  * \def PLAYER_SIZE_Y
  * \brief Taille par défaut du joueur sur l'axe y en pixels.
  */
-#define PLAYER_SIZE_Y 50
+#define PLAYER_SIZE_Y 128
 /**
  * \def DEFAULT_PLAYER_HP
  * \brief Nombre de points de vie par défaut du joueur
