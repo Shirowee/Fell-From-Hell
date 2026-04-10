@@ -26,11 +26,12 @@
   ],
   "entities": {
     "player_start": { "x": 1024, "y": 3264 },
-    "enemies": [],
+    "enemies": [
+    ],
     "hazards": [
     ]
   },
   "triggers": [
-    { "id": "finNiveau", "action": "map1", "rect": { "x": 1280, "y": 576, "w": 128, "h": 192 } }
+    { "id": "finNiveau", "action": "map7", "rect": { "x": 1280, "y": 576, "w": 128, "h": 192 } }
   ]
 }

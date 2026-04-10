@@ -27,7 +27,8 @@
   ],
   "entities": {
     "player_start": { "x": 1152, "y": 3072 },
-    "enemies": [],
+    "enemies": [
+    ],
     "hazards": [
     ]
   },
