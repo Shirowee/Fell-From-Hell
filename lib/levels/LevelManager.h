@@ -95,6 +95,14 @@ typedef struct {
 
 
 /**
+ * @brief Organise les données chargé a partir du JSON dans une structure niveau
+ * @param json Qui contient les données extrait par la fonction readJsonLvl
+ * @param lvl Qui correspond au niveau dans lequel les informations vont être organisé
+ */
+void parseLevelData(cJSON *json, Level *lvl);
+
+
+/**
  * @brief Charge les données d'un niveau depuis un fichier JSON
  * @param fileName Nom du fichier à lire (sans le .json)
  * @return Retourne 1 si succès, 0 ou -1 en cas d'erreur de lecture
