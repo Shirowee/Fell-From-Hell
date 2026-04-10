@@ -16,33 +16,55 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/CollisionSystem.h"
 #include "../../lib/player/Player.h"
+#include "../../lib/systems/LifeManager.h"
 #include <math.h>
+
+#define MAX_DIST_DETECT 200
 
 void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
 {
-    for (int i = 0; i < enemies->capacity; i++)
+    int total_dmg;
+    enemy_t* enemy;
+    bullet_t* bullet;
+    float dx;
+    float dy;
+    float dist, distMin;
+    int i, j;
+
+
+    for (i = 0; i < enemies->capacity; i++)
     {
-        enemy_t* e = &enemies->tab[i];
-        if (!e->active) continue;
+        total_dmg = 0;
+        enemy = &enemies->tab[i];
+        if (!enemy->active) continue;
 
-        for (int j = 0; j < bullets->capacity; j++)
+        for (j = 0; j < bullets->capacity; j++)
         {
-            bullet_t* b = &bullets->tab[j];
-            if (!b->active) continue;
+            bullet = &bullets->tab[j];
+            if (!bullet->active) continue;
+            //Ne vérifie que pour les plateformes les plus proches
+            if(bullet->bulletPos.x + bullet->bulletSize < enemy->pos.x - MAX_DIST_DETECT || 
+                bullet->bulletPos.x > enemy->pos.x + MAX_DIST_DETECT) continue;
+            if(bullet->bulletPos.y + bullet->bulletSize < enemy->pos.y - MAX_DIST_DETECT ||
+                bullet->bulletPos.y > enemy->pos.y + MAX_DIST_DETECT) continue;
 
-            float dx = e->pos.x - b->bulletPos.x;
-            float dy = e->pos.y - b->bulletPos.y;
+            dx = enemy->pos.x - bullet->bulletPos.x;
+            dy = enemy->pos.y - bullet->bulletPos.y;
 
-            float dist = sqrtf(dx * dx + dy * dy);
+            dist = dx * dx + dy * dy;
+            distMin = (enemy->size.x * 0.5f + bullet->bulletSize)*(enemy->size.x * 0.5f + bullet->bulletSize);
 
-            if (dist < (e->size.x * 0.5f + b->bulletSize))
+            if (dist < distMin)
             {
-                e->active = 0;
-                b->active = 0;
-
-                break;
+                bullet->active = 0;
+                total_dmg += bullet->bulletDmg;
             }
         }
+
+        ApplyDamageToEnemy(enemy, total_dmg);
+
+        if(enemy->hp <= 0.0)
+            enemy->active = 0;
     }
 }
 
@@ -97,6 +119,7 @@ void CheckPlayerBulletCollision(Player* player, bulletPool_t* bullets, int* tota
             if (dist < (player->size.x * 0.5f + bullet->bulletSize))
             {
                 *total_dmg += bullet->bulletDmg;
+                bullet->active = 0;
             }
         }
     }

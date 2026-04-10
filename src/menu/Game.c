@@ -14,6 +14,7 @@ Camera2D camera = { 0 };
 
 // Point d'entrée du jeu
 Screen_t Game(Player* player)
+Screen_t Game(Player* player)
 {
 
     /************************
@@ -42,7 +43,13 @@ Screen_t Game(Player* player)
                 GameDraw(player);
             EndMode2D();
 
+            ClearBackground(RAYWHITE);   
+            BeginMode2D(camera);
+                GameDraw(player);
+            EndMode2D();
+
             DrawFPS(10, 10);
+            HPDraw(player, 10, 30, (int)(GetScreenWidth() * 0.2f), (int)(GetScreenHeight() * 0.03f));
         EndDrawing();
     }
 

@@ -56,6 +56,7 @@ int main(void)
                 break;
             case SCREEN_GAME: 
                 currentScreen = Game(&player); break;
+                currentScreen = Game(&player); break;
             case SCREEN_SETTINGS: 
                 currentScreen = SettingsUpdate(previousScreen); break;
             case SCREEN_PAUSE: 

@@ -37,14 +37,14 @@ void InitEnemyPool(enemyPool_t* pool, int capacity) {
     }
 }
 
-void SpawnEnemyPool(enemyPool_t* pool, Vector2 pos, 
+void SpawnEnemyPool(enemyPool_t* pool, Vector2 pos, int hp, 
                     float speed, Vector2 size, int dmg, float bulletSpeed, int bulletSize, EnemyType_t type) {
     //on cherche la premiere bullet inactive (disponible)
     int spawned = 0;
     for(int i=0; (i < pool->capacity) && (spawned == 0); i++) {
         
         if (pool->tab[i].active == 0) {
-            EnemyInit(&pool->tab[i], speed, size, dmg, pos, bulletSpeed, bulletSize, type);
+            EnemyInit(&pool->tab[i], hp, speed, size, dmg, pos, bulletSpeed, bulletSize, type);
             spawned = 1;
         }
     }

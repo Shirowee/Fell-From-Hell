@@ -29,6 +29,7 @@ void SpawnRandomEnemy(enemyPool_t* bulletPool){
     SpawnEnemyPool(bulletPool, 
         (Vector2){GetRandomValue(0, GetScreenWidth()), 
             GetRandomValue(0, GetScreenHeight())}, 
+            GetRandomValue(50, 150),
             GetRandomValue(50, 150), 
             (Vector2){GetRandomValue(30, 150), GetRandomValue(30, 150)}, 
             GetRandomValue(5, 15), 
@@ -104,6 +105,7 @@ void SpawnEnemyPatternChasers(EnemySpawner* spawner, enemyPool_t* pool, Vector2 
     //chasers
     SpawnEnemyPool(pool, 
         (Vector2){pos.x + 100, pos.y + 100}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -112,6 +114,7 @@ void SpawnEnemyPatternChasers(EnemySpawner* spawner, enemyPool_t* pool, Vector2 
         0);
     SpawnEnemyPool(pool, 
         (Vector2){pos.x - 100, pos.y + 100}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -120,6 +123,7 @@ void SpawnEnemyPatternChasers(EnemySpawner* spawner, enemyPool_t* pool, Vector2 
         0);
     SpawnEnemyPool(pool, 
         (Vector2){pos.x - 150, pos.y - 100}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -128,6 +132,7 @@ void SpawnEnemyPatternChasers(EnemySpawner* spawner, enemyPool_t* pool, Vector2 
         0);
     SpawnEnemyPool(pool, 
         (Vector2){pos.x + 150, pos.y - 100}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -136,6 +141,7 @@ void SpawnEnemyPatternChasers(EnemySpawner* spawner, enemyPool_t* pool, Vector2 
         0);
     SpawnEnemyPool(pool, 
         (Vector2){pos.x, pos.y-180}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -150,6 +156,7 @@ void SpawnEnemyPatternCircle(EnemySpawner* spawner, enemyPool_t* pool, Vector2 p
     //chasers
     SpawnEnemyPool(pool, 
         (Vector2){pos.x + 100, pos.y + 100}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -158,6 +165,7 @@ void SpawnEnemyPatternCircle(EnemySpawner* spawner, enemyPool_t* pool, Vector2 p
         0);
     SpawnEnemyPool(pool, 
         (Vector2){pos.x - 100, pos.y + 100}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -166,6 +174,7 @@ void SpawnEnemyPatternCircle(EnemySpawner* spawner, enemyPool_t* pool, Vector2 p
         0);
     SpawnEnemyPool(pool, 
         (Vector2){pos.x - 150, pos.y - 100}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -174,6 +183,7 @@ void SpawnEnemyPatternCircle(EnemySpawner* spawner, enemyPool_t* pool, Vector2 p
         0);
     SpawnEnemyPool(pool, 
         (Vector2){pos.x + 150, pos.y - 100}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -182,6 +192,7 @@ void SpawnEnemyPatternCircle(EnemySpawner* spawner, enemyPool_t* pool, Vector2 p
         0);
     SpawnEnemyPool(pool, 
         (Vector2){pos.x, pos.y-180}, 
+        20,
         200, 
         (Vector2){50,50}, 
         10, 
@@ -191,6 +202,7 @@ void SpawnEnemyPatternCircle(EnemySpawner* spawner, enemyPool_t* pool, Vector2 p
     //circle
     SpawnEnemyPool(pool, 
         (Vector2)pos, 
+        20,
         150, 
         (Vector2){75,75}, 
         20, 

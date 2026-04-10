@@ -33,9 +33,10 @@
 
 
 
-void EnemyInit(enemy_t * enemy, float speed, Vector2 size, int dmg,
+void EnemyInit(enemy_t * enemy, int hp, float speed, Vector2 size, int dmg,
                 Vector2 pos, int bulletSpeed, int bulletSize, EnemyType_t type) {
     /*=================== STATS ===================*/
+    enemy->hp = hp;
     enemy->speed = speed;
     enemy->pos = pos;
     enemy->dmg = dmg;
