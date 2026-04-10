@@ -19,6 +19,8 @@
 #include "../../lib/systems/LifeManager.h"
 #include <math.h>
 
+#define MAX_DIST_DETECT 200
+
 void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
 {
     int total_dmg;
@@ -26,7 +28,7 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
     bullet_t* bullet;
     float dx;
     float dy;
-    float dist;
+    float dist, distMin;
     int i, j;
 
 
@@ -40,13 +42,19 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
         {
             bullet = &bullets->tab[j];
             if (!bullet->active) continue;
+            //Ne vérifie que pour les plateformes les plus proches
+            if(bullet->bulletPos.x + bullet->bulletSize < enemy->pos.x - MAX_DIST_DETECT || 
+                bullet->bulletPos.x > enemy->pos.x + MAX_DIST_DETECT) continue;
+            if(bullet->bulletPos.y + bullet->bulletSize < enemy->pos.y - MAX_DIST_DETECT ||
+                bullet->bulletPos.y > enemy->pos.y + MAX_DIST_DETECT) continue;
 
             dx = enemy->pos.x - bullet->bulletPos.x;
             dy = enemy->pos.y - bullet->bulletPos.y;
 
-            dist = sqrtf(dx * dx + dy * dy);
+            dist = dx * dx + dy * dy;
+            distMin = (enemy->size.x * 0.5f + bullet->bulletSize)*(enemy->size.x * 0.5f + bullet->bulletSize);
 
-            if (dist < (enemy->size.x * 0.5f + bullet->bulletSize))
+            if (dist < distMin)
             {
                 bullet->active = 0;
                 total_dmg += bullet->bulletDmg;

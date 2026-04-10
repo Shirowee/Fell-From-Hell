@@ -47,7 +47,7 @@ void ApplyDamageToEnemy(enemy_t *enemy, int dmg){
 
 //Dessine barre de vie
 void HPDraw(Player *player, int x, int y, int width, int height){
-    int gap = 5;
+    int gap = 2;
     float ratio = (float)player->stats.hp / (float)player->stats.hpMax;
     Rectangle frame = (Rectangle){x, y, width, height};
     Rectangle healthBar = (Rectangle){x+gap, y+gap, (width-gap*2)*ratio , height-gap*2};

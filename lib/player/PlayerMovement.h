@@ -92,7 +92,19 @@
  * \def DEFAULT_JUMPS_MAX
  * \brief Nombre de saut d'affilé maximum par défaut
  */
-#define DEFAULT_JUMPS_MAX 3
+#define DEFAULT_JUMPS_MAX 2
+
+/**
+ * \def DEFAULT_DASH_MAX
+ * \brief Nombre de dash d'affilé maximum par défaut
+ */
+#define DEFAULT_DASH_MAX 2
+
+/**
+ * \def DASH_TIME_MAX
+ * \brief Durée du dash
+ */
+#define DASH_TIME_MAX 0.3f
 
 /**
  * \def KEY_MOVE_LEFT
@@ -222,7 +234,7 @@ void Gravity(Player *player, const float GravityStrength);
  * \param nbPlatform Nombre de Platform dans le tableau platform
  * \return true si le joueur est entré en collision au moins une fois avec une plateforme, sinon false
  */
-bool PlayerPositionFix(Player *player, Vector2 oldPosition, Platform platform[], const int nbPlatforms);
+void PlayerPositionFix(Player *player, Vector2 oldPosition, Platform platform[], const int nbPlatforms);
 /**
  * \fn bool isOnGround(Player *player, Platform **platform, const int nbPlatforms);
  * \brief Verifie si le joueur est sur une Platform
