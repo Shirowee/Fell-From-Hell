@@ -4,6 +4,8 @@
 #include "../../lib/enemies/EnemyMovement.h"
 #include<stdio.h>
 
+Camera2D camera = { 0 };
+
 int main(void)
 {
     InitWindow(1920, 1080, "Enemy Pool Shooting Test");

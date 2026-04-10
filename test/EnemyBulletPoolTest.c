@@ -1,9 +1,12 @@
 #include "../raylib/include/raylib.h"
 #include "../lib/systems/BulletPool.h"
+
+Camera2D camera = { 0 };
+
 int main(void)
 {
     InitWindow(800, 450, "BulletPool Test");
-
+    
 
     /*
     InitBulletPool(&bulletPool, 300);

@@ -1,5 +1,8 @@
 #include "../raylib/include/raylib.h"
 #include "../lib/systems/Projectiles.h"
+
+Camera2D camera = { 0 };
+
 int main(void)
 {
     InitWindow(800, 450, "Enemy Projectile Test");

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+Camera2D camera = { 0 };
 
 int main(){
     InitWindow(800, 450, "Weapon Test");

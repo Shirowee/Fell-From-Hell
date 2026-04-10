@@ -40,11 +40,12 @@ typedef struct {
 
 /**
  * @struct Enemy
- * @brief Informations sur les ennemis du niveau
+ * @brief Informations sur les vagues d'ennemis
  */
 typedef struct {
-    char type[32];      /**< Type de l'ennemi */
-    float dist_aggro;   /**< Distance maximal a laquelle l'ennemi peut voir le joueur*/
+    char id[32];        /**< Id du patern de la vague d'ennemis*/
+    int spawnTime;      /**< Temps avant l'apparition de la prochaine vague d'ennemis*/
+    Pos position;       /**< Position d'apparition de la vague*/
 } Enemy;
 
 /**
@@ -91,6 +92,14 @@ typedef struct {
     Trigger triggers[MAX_TRIGGERS]; /**< Tableau de zone provoquant un événement */
     int triggerCount;               /**< Nombre actuel de zone provoquant un événement */
 } Level;
+
+
+/**
+ * @brief Organise les données chargé a partir du JSON dans une structure niveau
+ * @param json Qui contient les données extrait par la fonction readJsonLvl
+ * @param lvl Qui correspond au niveau dans lequel les informations vont être organisé
+ */
+void parseLevelData(cJSON *json, Level *lvl);
 
 
 /**
