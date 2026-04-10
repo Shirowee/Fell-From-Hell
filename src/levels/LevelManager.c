@@ -11,7 +11,6 @@
 Level currentLevel = {0};
 
 
-
 void parseLevelData(cJSON *json, Level *lvl) {
     if (json == NULL || lvl == NULL) return;
 
@@ -63,8 +62,14 @@ void parseLevelData(cJSON *json, Level *lvl) {
         cJSON *en = NULL;
         cJSON_ArrayForEach(en, enemies) {
             if (lvl->enemyCount < MAX_ENEMIES) {
-                strncpy(lvl->enemies[lvl->enemyCount].type, cJSON_GetObjectItemCaseSensitive(en, "type")->valuestring, 31);
-                lvl->enemies[lvl->enemyCount].dist_aggro = (float)cJSON_GetObjectItemCaseSensitive(en, "dist_aggro")->valuedouble;
+                Enemy *e = &lvl->enemies[lvl->enemyCount];
+                strncpy(e->id, cJSON_GetObjectItemCaseSensitive(en, "id")->valuestring, 31);
+                e->spawnTime = cJSON_GetObjectItemCaseSensitive(en, "spawnTime")->valueint;
+                
+                cJSON *pos = cJSON_GetObjectItemCaseSensitive(en, "position");
+                e->position.x = cJSON_GetObjectItemCaseSensitive(pos, "x")->valueint; 
+                e->position.y = cJSON_GetObjectItemCaseSensitive(pos, "y")->valueint;
+                
                 lvl->enemyCount++;
             }
         }
