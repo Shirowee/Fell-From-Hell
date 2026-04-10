@@ -63,14 +63,15 @@ void parseLevelData(cJSON *json, Level *lvl) {
         cJSON_ArrayForEach(en, enemies) {
             if (lvl->enemyCount < MAX_ENEMIES) {
                 Enemy *e = &lvl->enemies[lvl->enemyCount];
-                strncpy(e->id, cJSON_GetObjectItemCaseSensitive(en, "id")->valuestring, 31);
-                e->spawnTime = cJSON_GetObjectItemCaseSensitive(en, "spawnTime")->valueint;
+                e->nbType = cJSON_GetObjectItemCaseSensitive(en, "nbType")->valueint;
+                e->spawnTime = cJSON_GetObjectItemCaseSensitive(en, "spawnTime")->valuedouble;
                 
                 cJSON *pos = cJSON_GetObjectItemCaseSensitive(en, "position");
                 e->position.x = cJSON_GetObjectItemCaseSensitive(pos, "x")->valueint; 
                 e->position.y = cJSON_GetObjectItemCaseSensitive(pos, "y")->valueint;
                 
                 lvl->enemyCount++;
+                e->spawned = false;
             }
         }
 

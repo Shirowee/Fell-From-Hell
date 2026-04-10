@@ -43,9 +43,10 @@ typedef struct {
  * @brief Informations sur les vagues d'ennemis
  */
 typedef struct {
-    char id[32];        /**< Id du patern de la vague d'ennemis*/
-    int spawnTime;      /**< Temps avant l'apparition de la prochaine vague d'ennemis*/
+    int nbType;        /**< Numéro du patern de la vague d'ennemis*/
+    float spawnTime;      /**< Temps avant l'apparition de la prochaine vague d'ennemis*/
     Pos position;       /**< Position d'apparition de la vague*/
+    bool spawned;
 } Enemy;
 
 /**

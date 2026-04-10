@@ -30,6 +30,7 @@
 typedef struct {
     float timer;
     float cooldown;
+    int nbVague;
 } EnemySpawner;
 
 /**
@@ -108,5 +109,16 @@ void SpawnEnemyPatternShooter(EnemySpawner* spawner, enemyPool_t* pool, Vector2 
  * @param pos position de spawn
  */
 void SpawnEnemyPatternArc(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos);
+
+/**
+ * @brief Spawn un pattern d'enemis
+ *
+ * 5 chasers et un tireur en spirale
+ *
+ * @param spawner pointeur vers le spawner
+ * @param pool pool d’ennemis
+ * @param pos position de spawn
+ */
+void SpawnEnemyPatternSpiral(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos);
 extern EnemySpawner enemySpawner;
 #endif

@@ -14,11 +14,13 @@
 
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/EnemySpawner.h"
+#include "../../lib/levels/LevelManager.h"
 
 EnemySpawner enemySpawner;
 
 void EnemySpawnerInit(EnemySpawner* spawner)
 {
+    spawner->nbVague = 0;
     spawner->timer = 0;
     spawner->cooldown = 0.5f;
 }
@@ -43,12 +45,57 @@ void UpdateEnemySpawner(EnemySpawner* spawner, enemyPool_t* pool)
 
     spawner->timer += dt;
 
-    if (spawner->timer >= spawner->cooldown)
-    {
-        SpawnEnemyPatternCircle(spawner, pool, (Vector2){GetRandomValue(0, GetScreenWidth()), GetRandomValue(0, GetScreenHeight())});
 
-        spawner->timer = 0;
-        spawner->cooldown = GetRandomValue(3, 5);
+    if (spawner->timer >= currentLevel.enemies[spawner->nbVague].spawnTime)
+    {
+        
+        switch (currentLevel.enemies[spawner->nbVague].nbType)
+        {
+        case 1 :
+        if (currentLevel.enemies[spawner->nbVague].spawned == false ){
+            SpawnEnemyPatternChasers(spawner, pool, (Vector2){currentLevel.enemies[spawner->nbVague].position.x, currentLevel.enemies[spawner->nbVague].position.y});
+            currentLevel.enemies[spawner->nbVague].spawned = true;
+            spawner->nbVague++;
+            spawner->timer=0;
+        }
+        break;
+            
+        case 2 :
+        if (currentLevel.enemies[spawner->nbVague].spawned == false ){
+            SpawnEnemyPatternShooter(spawner, pool, (Vector2){currentLevel.enemies[spawner->nbVague].position.x, currentLevel.enemies[spawner->nbVague].position.y});
+            currentLevel.enemies[spawner->nbVague].spawned = true;
+            spawner->nbVague++;
+            spawner->timer=0;
+        }
+            break;
+        case 3 :
+        if (currentLevel.enemies[spawner->nbVague].spawned == false ){
+            SpawnEnemyPatternCircle(spawner, pool, (Vector2){currentLevel.enemies[spawner->nbVague].position.x, currentLevel.enemies[spawner->nbVague].position.y});
+            currentLevel.enemies[spawner->nbVague].spawned = true;
+            spawner->nbVague++;
+            spawner->timer=0;
+        }
+            break;
+        case 4 :
+        if (currentLevel.enemies[spawner->nbVague].spawned == false ){
+            SpawnEnemyPatternSpiral(spawner, pool, (Vector2){currentLevel.enemies[spawner->nbVague].position.x, currentLevel.enemies[spawner->nbVague].position.y});
+            currentLevel.enemies[spawner->nbVague].spawned = true;
+            spawner->nbVague++;
+            spawner->timer=0;
+        }
+            break;
+        case 5 :
+        if (currentLevel.enemies[spawner->nbVague].spawned == false ){
+            SpawnEnemyPatternArc(spawner, pool, (Vector2){currentLevel.enemies[spawner->nbVague].position.x, currentLevel.enemies[spawner->nbVague].position.y});
+            currentLevel.enemies[spawner->nbVague].spawned = true;
+            spawner->nbVague++;
+            spawner->timer=0;
+        }
+            break;
+        
+        default:
+            break;
+        }
     }
 }
 
@@ -243,5 +290,44 @@ void SpawnEnemyPatternArc(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos)
         150, 
         20,
         ENEMY_ARC);   
+
+}
+
+void SpawnEnemyPatternSpiral(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos)
+{
+    //chasers
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x - 150, pos.y - 100}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x + 150, pos.y - 100}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    SpawnEnemyPool(pool, 
+        (Vector2){pos.x, pos.y-180}, 
+        200, 
+        (Vector2){50,50}, 
+        10, 
+        100, 
+        20,
+        0);
+    //spiral
+    SpawnEnemyPool(pool, 
+        (Vector2)pos, 
+        150, 
+        (Vector2){75,75}, 
+        20, 
+        150, 
+        20,
+        ENEMY_SPIRAL);   
 
 }
