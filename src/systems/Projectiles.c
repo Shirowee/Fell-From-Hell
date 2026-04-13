@@ -58,8 +58,8 @@ void UpdateBullet(bullet_t * bullet) {
         break;
 
     case RAYON:
-        bullet->bulletPos.x += cosf(angleRad) * 500; //constante temp
-        bullet->bulletPos.y += sinf(angleRad) * 500; 
+        bullet->bulletPos.x += cosf(angleRad) * 4000; //constante temp
+        bullet->bulletPos.y += sinf(angleRad) * 4000; 
         break;
 
     case MELEE:

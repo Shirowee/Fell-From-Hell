@@ -26,11 +26,10 @@ void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
     int gamepad = 0;
     float direction;
     weapon_t* weapon = &(player->weapon);
-    Vector2 posSouris; 
+    Vector2 mouseWorld = GetScreenToWorld2D(GetMousePosition(), camera);
 
     if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && !IsReloading(weapon, startReload) && Cooldown(*weapon, timeSpent)){
-        posSouris = GetMousePosition();
-        direction = ((int)(atan2(posSouris.y + camera.target.y - getPlayerCenter(player).y, posSouris.x - getPlayerCenter(player).x) * 180 / PI) + 360) % 360;
+        direction = (atan2(mouseWorld.y - getPlayerCenter(player).y, mouseWorld.x - getPlayerCenter(player).x) * 180 / PI);
         spawnBulletWeapon(*weapon, *player, direction);
         (weapon->amo_left)--;
     }
