@@ -65,7 +65,7 @@ ajouter descritpion
 
 Projet réalisé dans le cadre du cours **Gestion de projet**.
 
-- Année : [2025–2026] 
+- Année : 2025–2026 
 - Équipe :  
   - POCHOLLE Alice  
   - DAVOUST Kilian
