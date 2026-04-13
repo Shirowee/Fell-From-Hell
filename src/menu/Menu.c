@@ -1,6 +1,6 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/core/Screen.h"
-
+#include "../../lib/core/RessourcesManager.h"
 Screen_t MenuUpdate(void)
 {
     static int selected = 0; // 0 = Play, 1 = Settings, 2 = Exit
@@ -37,15 +37,26 @@ Screen_t MenuUpdate(void)
     int screenWidth = GetScreenWidth();
     int screenHeight = GetScreenHeight();
 
-    DrawText("Fell From Hell", screenWidth / 2 - 100, 150, 50, BLACK);
+    /*============= Draw the title =============*/
+    //DrawText("Fell From Hell", screenWidth / 2 - 100, 150, 50, BLACK);
+    Texture2D tex = *RM_GetTexture("../ressources/sprites/others/Title.jpg");
+
+    float scale = 7.0f;
+
+    Vector2 position = {
+        screenWidth / 2.0f - (tex.width * scale) / 2.0f + 200,
+        screenHeight / 2.0f - (tex.height * scale) / 2.0f
+    };
+
+    DrawTextureEx(tex, position, 0.0f, scale, WHITE);
 
     for (int i = 0; i < optionCount; i++) {
-        Color color = (i == selected) ? RED : DARKGRAY;
+        Color color = (i == selected) ? RED : (Color){240, 240, 240, 255};
 
         DrawText(
             options[i],
-            screenWidth / 2 - 100,
-            300 + i * 80,
+            100,
+            400 + i * 80,
             30,
             color
         );

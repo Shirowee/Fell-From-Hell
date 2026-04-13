@@ -46,9 +46,9 @@ int main(void)
 
         // DESSIN
         BeginDrawing();
-               
-        ClearBackground(GRAY);
-        
+
+        ClearBackground((Color){0, 7, 38, 0});
+
         switch(currentScreen) {
             case SCREEN_MENU: 
                 currentScreen = MenuUpdate(); 

@@ -74,6 +74,7 @@ void LoadGameResources()
 {
     RM_GetTexture("../ressources/sprites/player/player.png");
     RM_GetTexture("../ressources/sprites/bgs/Nebula.png");
+    RM_GetTexture("../ressources/sprites/others/Title.png");
 }
 
 
