@@ -34,8 +34,8 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
 
     //Corretion vitesse
     if(state != DASHING){
-        if(player->velocity.x > RS(player->movConfig.maxSpeed)) player->velocity.x = player->movConfig.maxSpeed;
-        else if(player->velocity.x < -player->movConfig.maxSpeed) player->velocity.x = -player->movConfig.maxSpeed;
+        if(player->velocity.x > RS(player->movConfig.maxSpeed)) player->velocity.x = RS(player->movConfig.maxSpeed);
+        else if(player->velocity.x < -RS(player->movConfig.maxSpeed)) player->velocity.x = -RS(player->movConfig.maxSpeed);
     }
     if(player->movConfig.isOnGround) player->velocity.y = 0.0;
     else if(IsKeyReleased(KEY_MOVE_JUMP) && state == JUMPING) player->velocity.y *= 0.5;
