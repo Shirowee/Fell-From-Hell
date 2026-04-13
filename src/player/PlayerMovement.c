@@ -2,11 +2,13 @@
 #include "../../lib/player/Player.h"
 #include "../../lib/levels/LevelManager.h"
 #include "../../lib/core/ResolutionManager.h"
+#include "../../lib/core/GameManager.h"
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
 static Vector2 directionDash = {0,0};
+
 
 void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
     float dt = GetFrameTime(); //Temps entre images
