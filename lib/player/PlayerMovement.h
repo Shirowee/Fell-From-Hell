@@ -20,19 +20,19 @@
  * \def GROUND_ACC
  * \brief accélération du joueur sur le sol en pixels par seconde.
  */
-#define GROUND_ACC 1600
+#define GROUND_ACC 3200
 
  /**
  * \def AIR_ACC
  * \brief accélération du joueur dans les airs en pixels par seconde.
  */
-#define AIR_ACC 1000
+#define AIR_ACC 2000
 
 /**
  * \def MAX_SPEED_X
  * \brief Vitesse maximale du joueur sur x en pixels par seconde.
  */
-#define MAX_SPEED_X 400
+#define MAX_SPEED_X 800
 
 /**
  * \def MAX_SPEED_Y
@@ -56,7 +56,7 @@
  * \def DASH_SPEED
  * \brief Vitesse du dash du joueur en pixels par seconde.
  */
-#define DASH_SPEED 800
+#define DASH_SPEED 1600
 
 /**
  * \def DEFAULT_GRAVITY
@@ -104,7 +104,7 @@
  * \def DASH_TIME_MAX
  * \brief Durée du dash
  */
-#define DASH_TIME_MAX 0.3f
+#define DASH_TIME_MAX 0.2f
 
 /**
  * \def KEY_MOVE_LEFT
