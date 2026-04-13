@@ -30,7 +30,7 @@ void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
 
     if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && !IsReloading(weapon, startReload) && Cooldown(*weapon, timeSpent)){
         posSouris = GetMousePosition();
-        direction = ((int)(atan2(posSouris.y + camera.target.y - player->position.y, posSouris.x - player->position.x) * 180 / PI) + 360) % 360;
+        direction = ((int)(atan2(posSouris.y + camera.target.y - getPlayerCenter(player).y, posSouris.x - getPlayerCenter(player).x) * 180 / PI) + 360) % 360;
         spawnBulletWeapon(*weapon, *player, direction);
         (weapon->amo_left)--;
     }
@@ -88,34 +88,34 @@ void spawnBulletWeapon(weapon_t weapon, Player player, int direction){
     
     switch(weapon.indice){
         case FUSIL_A_POMPE : 
-            SpawnBulletPool(&playerBulletPool, player.position, direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
-            SpawnBulletPool(&playerBulletPool, player.position, direction + weapon.dispersion * player.buff->dispersion /6, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
-            SpawnBulletPool(&playerBulletPool, player.position, direction + 2*(weapon.dispersion * player.buff->dispersion /6), weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
-            SpawnBulletPool(&playerBulletPool, player.position, direction + 3*(weapon.dispersion * player.buff->dispersion /6), weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
-            SpawnBulletPool(&playerBulletPool, player.position, direction - weapon.dispersion * player.buff->dispersion /6, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
-            SpawnBulletPool(&playerBulletPool, player.position, direction - 2*(weapon.dispersion * player.buff->dispersion /6), weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
-            SpawnBulletPool(&playerBulletPool, player.position, direction - 3*(weapon.dispersion * player.buff->dispersion /6), weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction + weapon.dispersion * player.buff->dispersion /6, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction + 2*(weapon.dispersion * player.buff->dispersion /6), weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction + 3*(weapon.dispersion * player.buff->dispersion /6), weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction - weapon.dispersion * player.buff->dispersion /6, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction - 2*(weapon.dispersion * player.buff->dispersion /6), weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction - 3*(weapon.dispersion * player.buff->dispersion /6), weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
             break;
 
         case PISTOLET_LASER : 
-            SpawnBulletPool(&playerBulletPool, player.position, direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, RAYON);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, RAYON);
             break;
 
         case LANCE_ROQUETTE : 
-            SpawnBulletPool(&playerBulletPool, player.position, direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, EXPLOSIF);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, EXPLOSIF);
             break;
 
         case PISTOLET_MULTI_DIRECTION : 
             direction += GetRandomValue(weapon.dispersion * player.buff->dispersion /-2, weapon.dispersion * player.buff->dispersion /2);
-            SpawnBulletPool(&playerBulletPool, player.position, direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
-            SpawnBulletPool(&playerBulletPool, player.position, direction + 90, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
-            SpawnBulletPool(&playerBulletPool, player.position, direction + 180, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
-            SpawnBulletPool(&playerBulletPool, player.position, direction + 270, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction + 90, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction + 180, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction + 270, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
             break;
 
 
         default : 
             if(weapon.dispersion != 0) direction += GetRandomValue(weapon.dispersion * player.buff->dispersion /-2, weapon.dispersion * player.buff->dispersion /2); // calcul de la dispesion
-            SpawnBulletPool(&playerBulletPool, player.position, direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
+            SpawnBulletPool(&playerBulletPool, getPlayerCenter(&player), direction, weapon.bulletSpeed * player.buff->bulletSpeed, weapon.bulletSize * player.buff->bulletSize, weapon.dmg * player.buff->dmg, weapon.lifeTime, BASIC);
     }
 }
