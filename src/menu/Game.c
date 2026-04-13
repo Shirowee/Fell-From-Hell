@@ -6,11 +6,14 @@
 #include "../../lib/levels/LevelManager.h"
 #include "../../lib/core/ResolutionManager.h"
 #include "../../lib/systems/LifeManager.h"
+#include "../../lib/systems/EnemySpawner.h"
+#include <stdio.h>
 
 #define REF_LARGEUR 1920
 #define REF_HAUTEUR 1080
 
 Camera2D camera = { 0 };
+
 
 // Point d'entrée du jeu
 Screen_t Game(Player* player)
@@ -26,7 +29,7 @@ Screen_t Game(Player* player)
     /*******************
     * BOUCLE PRINCIPALE
     ********************/
-    while (!IsKeyPressed(KEY_ESCAPE) && !IsKeyPressed(KEY_L))
+    while (!IsKeyPressed(KEY_ESCAPE) && !endLvl())
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
 
@@ -54,7 +57,17 @@ Screen_t Game(Player* player)
 
     if(IsKeyPressed(KEY_ESCAPE))
         return (SCREEN_PAUSE);
-        
+    NextLvlRequest(currentLevel.triggers->action); // Si on met plus de 1 trigger ça va pt
     NewLevel(1);
     return (SCREEN_END_LEVEL);
+}
+
+
+bool endLvl(){
+    int i;
+    if(enemySpawner.nbVague == currentLevel.enemyCount){
+        for(i = 0; enemyPool.tab[i].active == 0 && enemyPool.capacity > i ;i++);
+        if(enemyPool.capacity == i) return true;
+    }
+    return false;
 }

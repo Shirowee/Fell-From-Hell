@@ -2,6 +2,9 @@
 #include "../../lib/core/Screen.h"
 #include "../../lib/systems/BuffSystem.h"
 #include "../../lib/player/PlayerWeapon.h"
+#include "../../lib/levels/LevelManager.h"
+#include "../../lib/systems/EnemyPool.h"
+
 
 Screen_t EndLevelUpdate(Player* player)
 {
@@ -116,3 +119,6 @@ int NewLevel(int newFlag){
 
     return newLevel;
 }
+
+
+

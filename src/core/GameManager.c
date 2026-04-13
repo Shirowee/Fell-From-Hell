@@ -34,7 +34,7 @@ void GameUpdate(Player *player, double* timeSpent, double* startReload)
     CheckEnemyBulletCollision(&enemyPool, &playerBulletPool);
 
     PlayerUpdate(player, currentLevel.platforms, currentLevel.platformCount, timeSpent, startReload);
-    TriggerSystemUpdate(player, &currentLevel);
+    //TriggerSystemUpdate(player, &currentLevel); Temporairement enlever et la map passe dans le système de vague
     UpdateBulletPool(&playerBulletPool);
 }
 

@@ -84,4 +84,9 @@ Screen_t EndLevelUpdate(Player* player);
  */
 int NewLevel(int newFlag);
 
+/**
+* \brief Renvoie true si le niveau est fini false sinon
+*/
+bool endLvl();
+
 #endif

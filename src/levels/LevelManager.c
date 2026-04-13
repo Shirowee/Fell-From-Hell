@@ -196,7 +196,6 @@ void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletP
         LevelInit();
 
         // Reset du joueur
-        PlayerInit(player);
         player->position.x = (float)currentLevel.playerStart.x;
         player->position.y = (float)currentLevel.playerStart.y;
     }
