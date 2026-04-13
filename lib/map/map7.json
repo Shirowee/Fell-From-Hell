@@ -1,6 +1,6 @@
 {
   "map_info": {
-    "id": "map7", "title": "chepa",
+    "id": "map7", "title": "zgez",
     "dimensions": { "w": 2048, "h": 3200 }
   },
   "platforms": [
@@ -28,6 +28,11 @@
   "entities": {
     "player_start": { "x": 384, "y": 2176 },
     "enemies": [
+      { "nbType": 4, "spawnTime": 3, "position": { "x": 1024, "y": 1664 } },
+      { "nbType": 2, "spawnTime": 5, "position": { "x": 256, "y": 1664 } },
+      { "nbType": 2, "spawnTime": 1, "position": { "x": 1792, "y": 1664 } },
+      { "nbType": 3, "spawnTime": 5, "position": { "x": 1024, "y": 960 } },
+      { "nbType": 4, "spawnTime": 6, "position": { "x": 1024, "y": 384 } }
     ],
     "hazards": [
     ]

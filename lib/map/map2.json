@@ -22,7 +22,17 @@
   ],
   "entities": {
     "player_start": { "x": 1024, "y": 2112 },
-    "enemies": [],
+    "enemies": [
+      { "nbType": 1, "spawnTime": 2.5, "position": { "x": 256, "y": 1472 } },
+      { "nbType": 1, "spawnTime": 1, "position": { "x": 1792, "y": 1472 } },
+      { "nbType": 2, "spawnTime": 1, "position": { "x": 1024, "y": 960 } },
+      { "nbType": 1, "spawnTime": 6, "position": { "x": 256, "y": 960 } },
+      { "nbType": 1, "spawnTime": 1, "position": { "x": 1792, "y": 960 } },
+      { "nbType": 2, "spawnTime": 1, "position": { "x": 1024, "y": 448 } },
+      { "nbType": 1, "spawnTime": 6.5, "position": { "x": 256, "y": 1984 } },
+      { "nbType": 1, "spawnTime": 0.5, "position": { "x": 1024, "y": 2048 } },
+      { "nbType": 1, "spawnTime": 0.5, "position": { "x": 1792, "y": 1984 } }
+    ],
     "hazards": [
     ]
   },

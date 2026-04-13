@@ -1,6 +1,6 @@
 {
   "map_info": {
-    "id": "map6", "title": "chepa",
+    "id": "map6", "title": "gougougaga",
     "dimensions": { "w": 2048, "h": 3648 }
   },
   "platforms": [
@@ -27,6 +27,13 @@
   "entities": {
     "player_start": { "x": 1024, "y": 3264 },
     "enemies": [
+      { "nbType": 2, "spawnTime": 2, "position": { "x": 128, "y": 2432 } },
+      { "nbType": 2, "spawnTime": 1, "position": { "x": 1856, "y": 2432 } },
+      { "nbType": 3, "spawnTime": 4, "position": { "x": 1024, "y": 1728 } },
+      { "nbType": 2, "spawnTime": 6, "position": { "x": 1792, "y": 1920 } },
+      { "nbType": 2, "spawnTime": 1, "position": { "x": 256, "y": 1920 } },
+      { "nbType": 3, "spawnTime": 5, "position": { "x": 256, "y": 1088 } },
+      { "nbType": 3, "spawnTime": 0, "position": { "x": 1792, "y": 1088 } }
     ],
     "hazards": [
     ]
