@@ -52,3 +52,5 @@ Dans fell-from-hell/
  sudo apt install mingw-w64
  make
 ```
+Puis exécuter ***bin/game.exe***
+
