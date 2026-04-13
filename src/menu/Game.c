@@ -57,6 +57,8 @@ Screen_t Game(Player* player)
 
     if(IsKeyPressed(KEY_ESCAPE))
         return (SCREEN_PAUSE);
+    enemySpawner.nbVague = 0;
+    currentLevel.enemyCount = -1;
     NextLvlRequest(currentLevel.triggers->action); // Si on met plus de 1 trigger ça va pt
     NewLevel(1);
     return (SCREEN_END_LEVEL);
@@ -65,6 +67,8 @@ Screen_t Game(Player* player)
 
 bool endLvl(){
     int i;
+    printf("vague : %d\n", enemySpawner.nbVague);
+    printf("ennemis : %d\n", currentLevel.enemyCount);
     if(enemySpawner.nbVague == currentLevel.enemyCount){
         for(i = 0; enemyPool.tab[i].active == 0 && enemyPool.capacity > i ;i++);
         if(enemyPool.capacity == i) return true;
