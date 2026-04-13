@@ -26,7 +26,7 @@ void GameInit(Player *player)
 // Mise a jour du jeu
 void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
-    NextLvlUpdate(player, &enemyPool, &playerBulletPool);
+    NextLvlUpdate(player, &enemyPool, &playerBulletPool, &enemySpawner);
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
     UpdateEnemyPool(&enemyPool, getPlayerCenter(player));
     UpdateBulletPool(&bulletPool);

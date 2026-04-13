@@ -1,6 +1,6 @@
 {
   "map_info": {
-    "id": "map'4", "title": "chepa",
+    "id": "map4", "title": "Gourmandise1",
     "dimensions": { "w": 2048, "h": 3008 }
   },
   "platforms": [
@@ -20,7 +20,14 @@
   ],
   "entities": {
     "player_start": { "x": 1024, "y": 2624 },
-    "enemies": [],
+    "enemies": [
+      { "nbType": 2, "spawnTime": 2, "position": { "x": 448, "y": 2240 } },
+      { "nbType": 2, "spawnTime": 2, "position": { "x": 1600, "y": 2240 } },
+      { "nbType": 3, "spawnTime": 3, "position": { "x": 1024, "y": 1984 } },
+      { "nbType": 2, "spawnTime": 6, "position": { "x": 256, "y": 1472 } },
+      { "nbType": 3, "spawnTime": 2, "position": { "x": 1792, "y": 1472 } },
+      { "nbType": 3, "spawnTime": 3, "position": { "x": 1024, "y": 1216 } }
+    ],
     "hazards": [
     ]
   },

@@ -183,7 +183,7 @@ void NextLvlRequest(const char *targetId) {
     pendingLevel[63] = '\0';
 }
 
-void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool) {
+void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool, EnemySpawner *enemySpawner) {
     // Evite des problèmes de si ça s'éxécute deux fois
     if (pendingLevel[0] == '\0') return;
 
@@ -199,6 +199,9 @@ void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletP
         PlayerInit(player);
         player->position.x = (float)currentLevel.playerStart.x;
         player->position.y = (float)currentLevel.playerStart.y;
+
+        //Reset des vagues
+        enemySpawner->nbVague = 0;
     }
 
     pendingLevel[0] = '\0';

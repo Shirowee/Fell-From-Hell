@@ -1,6 +1,6 @@
 {
   "map_info": {
-    "id": "map5", "title": "chepa",
+    "id": "map5", "title": "yugezimozg",
     "dimensions": { "w": 2048, "h": 3456 }
   },
   "platforms": [
@@ -28,6 +28,13 @@
   "entities": {
     "player_start": { "x": 1152, "y": 3072 },
     "enemies": [
+      { "nbType": 3, "spawnTime": 2, "position": { "x": 1728, "y": 2048 } },
+      { "nbType": 3, "spawnTime": 2, "position": { "x": 512, "y": 1920 } },
+      { "nbType": 2, "spawnTime": 3, "position": { "x": 1024, "y": 1664 } },
+      { "nbType": 3, "spawnTime": 4, "position": { "x": 320, "y": 704 } },
+      { "nbType": 3, "spawnTime": 5, "position": { "x": 1728, "y": 704 } },
+      { "nbType": 2, "spawnTime": 5, "position": { "x": 256, "y": 640 } },
+      { "nbType": 2, "spawnTime": 1, "position": { "x": 1792, "y": 640 } }
     ],
     "hazards": [
     ]

@@ -15,6 +15,7 @@
 #include "../player/Player.h"
 #include "../systems/BulletPool.h"
 #include "../systems/EnemyPool.h"
+#include "../systems/EnemySpawner.h"
 #include "../../lib/cJson/cJSON.h"
 
 
@@ -132,7 +133,7 @@ void NextLvlRequest(const char *targetId);
 /**
  * \brief Réalise le passage au niveau suivant
  */
-void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool);
+void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool, EnemySpawner *enemySpawner);
 
 /**
  *  @brief Contient toutes les informations sur le niveau actuel

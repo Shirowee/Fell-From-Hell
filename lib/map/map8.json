@@ -1,6 +1,6 @@
 {
   "map_info": {
-    "id": "map8", "title": "chepa",
+    "id": "map8", "title": "hetrhlzyuoihzmoith",
     "dimensions": { "w": 2048, "h": 3200 }
   },
   "platforms": [
@@ -24,8 +24,13 @@
     { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": -64, "width": 2048, "high": 64 }
   ],
   "entities": {
-    "player_start": { "x": 960, "y": 1664 },
+    "player_start": { "x": 1024, "y": 2368 },
     "enemies": [
+      { "nbType": 2, "spawnTime": 2, "position": { "x": 192, "y": 1792 } },
+      { "nbType": 4, "spawnTime": 2, "position": { "x": 1600, "y": 1792 } },
+      { "nbType": 4, "spawnTime": 6, "position": { "x": 1024, "y": 1152 } },
+      { "nbType": 4, "spawnTime": 5, "position": { "x": 256, "y": 896 } },
+      { "nbType": 2, "spawnTime": 2, "position": { "x": 1792, "y": 896 } }
     ],
     "hazards": [
     ]
