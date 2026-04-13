@@ -28,19 +28,19 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
     if (IsKeyDown(KEY_MOVE_JUMP) && player->movConfig.canJump) PlayerJump(player);
     if (state == FALLING) Gravity(player, player->movConfig.fallingGravity);
     else if (state == JUMPING) Gravity(player, player->movConfig.gravity);
-    else if (state == WALL_SLIDING) Gravity(player, RS(WALL_SLIDE_GRAVITY));
+    else if (state == WALL_SLIDING) Gravity(player, WALL_SLIDE_GRAVITY);
 
     if(state == DASHING) PlayerDash(player);
 
     //Corretion vitesse
     if(state != DASHING){
-        if(player->velocity.x > RS(player->movConfig.maxSpeed)) player->velocity.x = RS(player->movConfig.maxSpeed);
-        else if(player->velocity.x < -RS(player->movConfig.maxSpeed)) player->velocity.x = -RS(player->movConfig.maxSpeed);
+        if(player->velocity.x > player->movConfig.maxSpeed) player->velocity.x = player->movConfig.maxSpeed;
+        else if(player->velocity.x < -player->movConfig.maxSpeed) player->velocity.x = -player->movConfig.maxSpeed;
     }
     if(player->movConfig.isOnGround) player->velocity.y = 0.0;
     else if(IsKeyReleased(KEY_MOVE_JUMP) && state == JUMPING) player->velocity.y *= 0.5;
-    if(state == WALL_SLIDING && player->velocity.y > MAX_WALL_SPEED) player->velocity.y = RS(MAX_WALL_SPEED);
-    else if(player->velocity.y > MAX_SPEED_Y) player->velocity.y = RS(MAX_SPEED_Y);
+    if(state == WALL_SLIDING && player->velocity.y > MAX_WALL_SPEED) player->velocity.y = MAX_WALL_SPEED;
+    else if(player->velocity.y > MAX_SPEED_Y) player->velocity.y = MAX_SPEED_Y;
 
 
 
