@@ -61,6 +61,8 @@ Screen_t Game(Player* player)
 
 bool endLvl(){
     int i;
+    printf("vague : %d\n", enemySpawner.nbVague);
+    printf("ennemis : %d\n", currentLevel.enemyCount);
     if(enemySpawner.nbVague == currentLevel.enemyCount){
         for(i = 0; enemyPool.tab[i].active == 0 && enemyPool.capacity > i ;i++);
         if(enemyPool.capacity == i) return true;
