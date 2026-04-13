@@ -1,22 +1,4 @@
 # Fell From Hell
-Projet de L2
-
-##Compilation Linux:
-Dans fell-from-hell/
-```
- make
-```
-Puis exécuter ***bin/game***
-
-##Compilation Windows WSL:
-Dans fell-from-hell/
-```
- sudo apt install mingw-w64
- make
-```
-Puis exécuter ***bin/game.exe***
-
-# Fell From Hell
 
 > Projet de L2
 ajouter descritpion
@@ -27,7 +9,7 @@ ajouter descritpion
 
 Projet réalisé dans le cadre du cours **Gestion de projet**.
 
-- Année : [2025–2026] 
+- Année : 2025–2026 
 - Équipe :  
   - POCHOLLE Alice  
   - DAVOUST Kilian
