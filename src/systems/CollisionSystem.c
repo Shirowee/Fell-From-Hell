@@ -12,6 +12,7 @@
 #include "../../lib/systems/CollisionSystem.h"
 #include "../../lib/player/Player.h"
 #include "../../lib/systems/LifeManager.h"
+#include "../../lib/enemies/EnemyController.h"
 #include <math.h>
 
 #define MAX_DIST_DETECT 200
@@ -24,7 +25,7 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
     bullet_t* bullet;
     Rectangle enemyHitbox;
 
-    for (i = 0; i < enemies->capacity; i++){
+    for (i = 0; i < enemies->nbEnemiesActive; i++){
         total_dmg = 0;
         enemy = &enemies->tab[i];
 
@@ -56,8 +57,10 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
 
         ApplyDamageToEnemy(enemy, total_dmg);
 
-        if(enemy->hp <= 0.0)
-            enemy->active = 0;
+        if(enemy->hp <= 0.0){
+            DesactivateEnemy(enemy, enemies);
+            i--;
+        }
     }
 }
 
@@ -74,7 +77,7 @@ void CheckPlayerEnemyCollision(Player* player, enemyPool_t* enemies, int* total_
     Rectangle enemyHitbox;
 
     //Vérification des collision
-    for(i = 0; i < enemies->capacity; i++){
+    for(i = 0; i < enemies->nbEnemiesActive; i++){
         enemy = &enemies->tab[i];
 
         if(!enemy->active) continue;

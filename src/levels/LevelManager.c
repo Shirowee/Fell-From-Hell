@@ -195,8 +195,8 @@ void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletP
     if (pendingLevel[0] == '\0') return;
 
     // Suppression des balles et ennemis
-    for (int i = 0; i < enemyPool->capacity; i++)  enemyPool->tab[i].active = 0;
-    for (int i = 0; i < bulletPool->capacity; i++)  bulletPool->tab[i].active = 0;
+    for (int i = 0; i < enemyPool->nbEnemiesActive; i++)  enemyPool->tab[i].active = 0;
+    for (int i = 0; i < bulletPool->nbBulletsActive; i++)  bulletPool->tab[i].active = 0;
 
     // Chargement de la nouvelle map
     if (readJsonLvl(pendingLevel)) {

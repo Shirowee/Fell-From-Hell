@@ -27,9 +27,10 @@
 
 
 
-typedef struct {
+typedef struct enemyPool_s {
     enemy_t* tab; //liste contenant les enemy
     int active; //booléen pour l'activité de la pool
+    int nbEnemiesActive; //nombre d'ennemis actifs
     int capacity; //nombre d'elements
 } enemyPool_t;
 

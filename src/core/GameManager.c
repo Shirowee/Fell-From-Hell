@@ -9,6 +9,7 @@
 #include "../../lib/systems/TriggerSystem.h"
 #include "../../lib/core/RessourcesManager.h"
 #include "../../lib/systems/TriggerSystem.h"
+#include "../../lib/core/Camera.h"
 #include "../../lib/menu/Screen.h"
 #include <string.h>
 
