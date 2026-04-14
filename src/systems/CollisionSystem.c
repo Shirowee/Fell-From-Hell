@@ -43,10 +43,49 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
             bullet = &bullets->tab[j];
             if (!bullet->active) continue;
             //Ne vérifie que pour les plateformes les plus proches
-            if(bullet->bulletPos.x + bullet->bulletSize < enemy->pos.x - MAX_DIST_DETECT || 
-                bullet->bulletPos.x > enemy->pos.x + MAX_DIST_DETECT) continue;
-            if(bullet->bulletPos.y + bullet->bulletSize < enemy->pos.y - MAX_DIST_DETECT ||
-                bullet->bulletPos.y > enemy->pos.y + MAX_DIST_DETECT) continue;
+            if(bullet->indice != RAYON){
+                if(bullet->bulletPos.x + bullet->bulletSize < enemy->pos.x - MAX_DIST_DETECT || 
+                    bullet->bulletPos.x > enemy->pos.x + MAX_DIST_DETECT) continue;
+                if(bullet->bulletPos.y + bullet->bulletSize < enemy->pos.y - MAX_DIST_DETECT ||
+                    bullet->bulletPos.y > enemy->pos.y + MAX_DIST_DETECT) continue;
+            }
+
+            //cas du laser
+            if (bullet->indice == RAYON) {
+                Vector2 A = bullet->laserPos;   // début du laser
+                Vector2 B = bullet->bulletPos;  // fin du laser
+                Vector2 P = enemy->pos;         // centre ennemi
+
+                // vecteurs
+                float ABx = B.x - A.x;
+                float ABy = B.y - A.y;
+                float APx = P.x - A.x;
+                float APy = P.y - A.y;
+
+                float ab2 = ABx * ABx + ABy * ABy;
+                float t = (APx * ABx + APy * ABy) / ab2;
+
+                // clamp entre 0 et 1
+                if (t < 0) t = 0;
+                if (t > 1) t = 1;
+
+                // point le plus proche sur le segment
+                float closestX = A.x + ABx * t;
+                float closestY = A.y + ABy * t;
+
+                float dx = P.x - closestX;
+                float dy = P.y - closestY;
+
+                float dist = dx * dx + dy * dy;
+
+                float radius = enemy->size.x * 0.5f + bullet->bulletSize * 0.5f;
+
+                if (dist < radius * radius) {
+                    total_dmg += bullet->bulletDmg;
+                }
+
+                continue;
+            }
 
             dx = enemy->pos.x - bullet->bulletPos.x;
             dy = enemy->pos.y - bullet->bulletPos.y;
