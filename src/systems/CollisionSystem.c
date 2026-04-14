@@ -25,11 +25,6 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
     enemy_t* enemy;
     bullet_t* bullet;
     Rectangle enemyHitbox;
-    
-    //temp
-    float dx;
-    float dy;
-    float dist, distMin;
 
     for (i = 0; i < enemies->capacity; i++){
         total_dmg = 0;
@@ -96,15 +91,7 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
                 continue;
             }
 
-            dx = enemy->pos.x - bullet->bulletPos.x;
-            dy = enemy->pos.y - bullet->bulletPos.y;
-
-            dist = dx * dx + dy * dy;
-            distMin = (enemy->size.x * 0.5f + bullet->bulletSize)*(enemy->size.x * 0.5f + bullet->bulletSize);
-
-            //if(CheckCollisionCircleRec(bullet->bulletPos, bullet->bulletSize, enemyHitbox)){
-            if (dist < distMin)
-            {
+            if(CheckCollisionCircleRec(bullet->bulletPos, bullet->bulletSize, enemyHitbox)){
                 //cas explosif
                 if (bullet->indice == EXPLOSIF) {
                     //DrawExplosion(bullet); //marche pas (dessin écrasé par les autre draw je crois)
