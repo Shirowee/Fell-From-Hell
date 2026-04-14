@@ -1,110 +1,163 @@
 /**
- * @file RessourcesManager.c
- * @brief Gestion des ressources du jeu
- * 
- * Définit l’interface de gestion des ressources du jeu, y compris
- * les textures, sons et autres éléments graphiques.
+ * @file RessourcesManager.h
+ * @brief Gestion des ressources du jeu (textures et sons)
  *
- * Fournit des fonctions pour :
- * - charger les ressources
- * - libérer les ressources
- * - accéder aux ressources
+ * Fournit un système centralisé pour charger, stocker et libérer
+ * les ressources du jeu (textures et effets sonores).
+ *
+ * Les ressources sont identifiées par leur chemin (path).
+ *
+ * Fonctionnalités :
+ * - Chargement automatique (lazy loading)
+ * - Mise en cache (évite les doublons)
+ * - Déchargement individuel ou global
+ * - Gestion du volume global des effets sonores
  *
  * @author A. Pocholle
  */
 
-#include "../../raylib/include/raylib.h"
-#include <string.h>
+
+#include "../../lib/core/RessourcesManager.h"
 #include <stdbool.h>
 #include <stdio.h>
 
-#define MAX_TEXTURES 128
-
-typedef struct {
-    char path[256];
-    Texture2D texture;
-    bool loaded;
-} TextureResource;
-
-static TextureResource textures[MAX_TEXTURES];
-static int textureCount = 0;
 
 
-static int FindTexture(const char *path)
+/* =========================
+   TEXTURES
+   ========================= */
+
+static Texture2D textures[TEX_COUNT];
+static bool texturesLoaded[TEX_COUNT] = {0};
+
+static const char* texturePaths[TEX_COUNT] = {
+    "../ressources/sprites/player/player.png", // TEX_PLAYER
+    "../ressources/sprites/bgs/Nebula.png", // TEX_BACKGROUND_NEBULA
+    "../ressources/sprites/others/Title.png" // TEX_TITLE
+};
+
+Texture2D* RM_GetTexture(TextureID id)
 {
-    for (int i = 0; i < textureCount; i++)
+    if (!texturesLoaded[id])
     {
-        if (strcmp(textures[i].path, path) == 0)
+        textures[id] = LoadTexture(texturePaths[id]);
+        texturesLoaded[id] = true;
+    }
+
+    return &textures[id];
+}
+
+
+/* =========================
+   SOUNDS
+   ========================= */
+
+static Sound sounds[SND_COUNT];
+static bool soundsLoaded[SND_COUNT] = {0};
+static float globalSFXVolume = 1.0f; // [0.0 - 1.0]
+
+static const char* soundPaths[SND_COUNT] = {
+    "../ressources/sfx/dash.wav", // SND_DASH
+    "../ressources/sfx/enemyDie.wav", // SND_ENEMY_DIE
+    "../ressources/sfx/enemyHurt.wav", // SND_ENEMY_HURT
+    "../ressources/sfx/enemyShoot.wav", // SND_ENEMY_SHOOT
+    "../ressources/sfx/hurt.wav", // SND_HURT
+    "../ressources/sfx/jump.wav", // SND_JUMP
+    "../ressources/sfx/shoot.wav", // SND_SHOOT
+    "../ressources/sfx/select.wav" // SND_SELECT
+};
+
+Sound* RM_GetSound(SoundID id)
+{
+    if (!soundsLoaded[id])
+    {
+        sounds[id] = LoadSound(soundPaths[id]);
+        SetSoundVolume(sounds[id], globalSFXVolume); // appliquer volume
+        soundsLoaded[id] = true;
+    }
+
+    return &sounds[id];
+}
+
+/* wrapper */
+void RM_PlaySound(SoundID id)
+{
+    Sound* s = RM_GetSound(id);
+
+    // sécurité : toujours appliquer le volume actuel
+    SetSoundVolume(*s, globalSFXVolume);
+
+    PlaySound(*s);
+}
+
+/* =========================
+   VOLUME GLOBAL
+   ========================= */
+
+
+float RM_GetSFXVolume(void)
+{
+    return globalSFXVolume;
+}
+
+void RM_SetSFXVolume(float volume)
+{
+    if (volume < 0.0f) volume = 0.0f;
+    if (volume > 1.0f) volume = 1.0f;
+
+    globalSFXVolume = volume;
+
+    // appliquer aux sons déjà chargés
+    for (int i = 0; i < SND_COUNT; i++)
+    {
+        if (soundsLoaded[i])
         {
-            return i;
+            SetSoundVolume(sounds[i], globalSFXVolume);
         }
     }
-    return -1;
 }
 
-Texture2D* RM_GetTexture(const char *path)
-{
-    int index = FindTexture(path);
 
-    if (index != -1)
+
+/* =========================
+   LOAD / UNLOAD
+   ========================= */
+
+void RM_LoadAll(void)
+{
+    // textures
+    for (int i = 0; i < TEX_COUNT; i++)
     {
-        return &textures[index].texture;
+        textures[i] = LoadTexture(texturePaths[i]);
+        texturesLoaded[i] = true;
     }
 
-    if (textureCount >= MAX_TEXTURES)
+    // sounds
+    for (int i = 0; i < SND_COUNT; i++)
     {
-        printf("ERROR: Max textures reached!\n");
-        return NULL;
+        sounds[i] = LoadSound(soundPaths[i]);
+        SetSoundVolume(sounds[i], globalSFXVolume);
+        soundsLoaded[i] = true;
     }
-
-
-    Texture2D tex = LoadTexture(path);
-
-    textures[textureCount].texture = tex;
-    strncpy(textures[textureCount].path, path, 255);
-    textures[textureCount].path[255] = '\0';
-    textures[textureCount].loaded = true;
-
-    textureCount++;
-
-    return &textures[textureCount - 1].texture;
 }
-
-void LoadGameResources()
-{
-    RM_GetTexture("../ressources/sprites/player/player.png");
-    RM_GetTexture("../ressources/sprites/bgs/Nebula.png");
-    RM_GetTexture("../ressources/sprites/others/Title.png");
-}
-
-
-void RM_UnloadTexture(const char *path)
-{
-    int index = FindTexture(path);
-
-    if (index == -1) return;
-
-    UnloadTexture(textures[index].texture);
-
-    // Décaler le tableau
-    for (int i = index; i < textureCount - 1; i++)
-    {
-        textures[i] = textures[i + 1];
-    }
-
-    textureCount--;
-}
-
 
 void RM_UnloadAll(void)
 {
-    for (int i = 0; i < textureCount; i++)
+    // textures
+    for (int i = 0; i < TEX_COUNT; i++)
     {
-        if (textures[i].loaded)
+        if (texturesLoaded[i])
         {
-            UnloadTexture(textures[i].texture);
+            UnloadTexture(textures[i]);
         }
     }
 
-    textureCount = 0;
+    // sounds
+    for (int i = 0; i < SND_COUNT; i++)
+    {
+        if (soundsLoaded[i])
+        {
+            UnloadSound(sounds[i]);
+        }
+    }
 }

@@ -51,7 +51,7 @@ void PlayerInit(Player *player){
     //PlayerMoveTimerInit();
 
     //Chargement de la texture du joueur
-    player->texture = RM_GetTexture("../ressources/sprites/player/player.png");
+    player->texture = RM_GetTexture(TEX_PLAYER);
 }
 
 //maj de la logique du player

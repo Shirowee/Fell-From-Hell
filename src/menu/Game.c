@@ -17,7 +17,6 @@ Camera2D camera = { 0 };
 // Point d'entrée du jeu
 Screen_t Game(Player* player)
 {
-
     /************************
     * INITIALISATION DU JEU
     *************************/
@@ -31,11 +30,12 @@ Screen_t Game(Player* player)
     while (!IsKeyPressed(KEY_ESCAPE) && !endLvl())
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
-
+        
         camera.target.y = player->position.y + player->size.y - monitorHeight/3;
 
         // LOGIQUE
         GameUpdate(player, &timeSpent, &startReload);
+        
 
         // DESSIN
         BeginDrawing();

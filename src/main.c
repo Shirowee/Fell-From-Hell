@@ -3,10 +3,11 @@
 #include "../lib/core/GameManager.h"
 #include "../lib/core/WindowManager.h"
 #include "../lib/core/Screen.h"
-#include "../lib/core/ResolutionManager.h"
+#include "../lib/core/RessourcesManager.h"
 #include "../lib/core/ResolutionManager.h"
 #include "../lib/levels/LevelManager.h"
 #include "../lib/systems/LifeManager.h"
+#include <stdio.h>
 
 // Point d'entrée du jeu
 int main(void)
@@ -28,9 +29,16 @@ int main(void)
 
     ResolutionInit(currentLevel.info.width, screenWidth, screenHeigth); // Initialise tout ce qui est lié a la résolution
 
+    /****************
+    * INITIALISATION RESSOURCES
+    *****************/
+    InitAudioDevice();
+    RM_LoadAll(); // Charge toutes les ressources du jeu (textures et sons)
+
     /************************
     * INITIALISATION DU JEU *
     ************************/
+    
     Player player;
     GameInit(&player); // Initialisation du jeu
     
@@ -78,6 +86,7 @@ int main(void)
     * UNLOAD *
     *********/
     GameUnload(player); 
-
+    RM_UnloadAll();
+    CloseAudioDevice();
     return 0;
 }
