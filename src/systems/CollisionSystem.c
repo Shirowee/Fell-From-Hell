@@ -82,6 +82,9 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
 
                 if (dist < radius * radius) {
                     total_dmg += bullet->bulletDmg;
+                    bullet->bulletSize *= 0.7;  //diminution de 30%
+                    if(bullet->bulletSize <= 1.0)
+                        bullet->active=0;
                 }
 
                 continue;
