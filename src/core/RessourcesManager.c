@@ -64,7 +64,8 @@ static const char* soundPaths[SND_COUNT] = {
     "../ressources/sfx/hurt.wav", // SND_HURT
     "../ressources/sfx/jump.wav", // SND_JUMP
     "../ressources/sfx/shoot.wav", // SND_SHOOT
-    "../ressources/sfx/select.wav" // SND_SELECT
+    "../ressources/sfx/select.wav", // SND_SELECT
+    "../ressources/sfx/selected.wav" // SND_SELECTED
 };
 
 Sound* RM_GetSound(SoundID id)

@@ -70,6 +70,7 @@ typedef enum {
     SND_JUMP,
     SND_SHOOT,
     SND_SELECT,
+    SND_SELECTED,
     SND_COUNT
 } SoundID;
 

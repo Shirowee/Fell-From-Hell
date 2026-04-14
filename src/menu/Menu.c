@@ -28,6 +28,7 @@ Screen_t MenuUpdate(void)
 
     // Validation
     if (IsKeyPressed(KEY_ENTER)) {
+        RM_PlaySound(SND_SELECTED); // Joue un son de sélectionné
         switch (selected) {
             case 0: return SCREEN_GAME;
             case 1: return SCREEN_SETTINGS;

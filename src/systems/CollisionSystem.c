@@ -15,6 +15,7 @@
 
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/CollisionSystem.h"
+#include "../../lib/core/RessourcesManager.h"
 #include "../../lib/player/Player.h"
 #include "../../lib/systems/LifeManager.h"
 #include <math.h>
@@ -57,6 +58,13 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
             if (dist < distMin)
             {
                 total_dmg += bullet->bulletDmg;
+                if(enemy->hp - total_dmg < 0.0) {
+                    RM_PlaySound(SND_ENEMY_DIE); // Joue un son de mort sur ennemi
+                }
+                else {
+                    RM_PlaySound(SND_ENEMY_HURT); // Joue un son de dgt sur ennemi
+                }
+
                 DesactivateBullet(bullet, bullets);
                 j--;
             }
@@ -64,8 +72,10 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
 
         ApplyDamageToEnemy(enemy, total_dmg);
 
-        if(enemy->hp <= 0.0)
+        if(enemy->hp <= 0.0) {
+            RM_PlaySound(SND_ENEMY_DIE); // Joue un son de mort
             enemy->active = 0;
+        }
     }
 }
 
@@ -98,7 +108,10 @@ void CheckPlayerEnemyCollision(Player* player, enemyPool_t* enemies, int* total_
             enemyHitbox.height = enemy->size.y - (int)(2*enemy->size.y*gap);
 
             if(CheckCollisionRecs(playerHitbox, enemyHitbox))
+            {
+                RM_PlaySound(SND_HURT); // Joue un son de dgt
                 *total_dmg += enemy->dmg;
+            }
         }
     }
 }
@@ -119,6 +132,7 @@ void CheckPlayerBulletCollision(Player* player, bulletPool_t* bullets, int* tota
 
             if (dist < (player->size.x * 0.5f + bullet->bulletSize))
             {
+                RM_PlaySound(SND_HURT); // Joue un son de dgt
                 *total_dmg += bullet->bulletDmg;
                 bullet->active = 0;
             }

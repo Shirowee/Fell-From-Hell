@@ -1,5 +1,6 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/core/Screen.h"
+#include "../../lib/core/RessourcesManager.h"
 
 Screen_t SettingsUpdate(Screen_t previousScreen)
 {
@@ -18,17 +19,20 @@ Screen_t SettingsUpdate(Screen_t previousScreen)
 
     // Navigation clavier
     if (IsKeyPressed(KEY_DOWN)) {
+        RM_PlaySound(SND_SELECT); // Joue un son de sélection
         selected++;
         if (selected >= optionCount) selected = 0;
     }
 
     if (IsKeyPressed(KEY_UP)) {
+        RM_PlaySound(SND_SELECT); // Joue un son de sélection
         selected--;
         if (selected < 0) selected = optionCount - 1;
     }
 
     // Validation
     if (IsKeyPressed(KEY_ENTER)) {
+        RM_PlaySound(SND_SELECTED); // Joue un son de sélectionné
         switch (selected) {
             case 0: return SCREEN_GAME; //jsp encore
             case 1: return SCREEN_SETTINGS;
