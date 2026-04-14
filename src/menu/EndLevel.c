@@ -1,5 +1,5 @@
 #include "../../raylib/include/raylib.h"
-#include "../../lib/core/Screen.h"
+#include "../../lib/menu/Screen.h"
 #include "../../lib/systems/BuffSystem.h"
 #include "../../lib/player/PlayerWeapon.h"
 #include "../../lib/levels/LevelManager.h"

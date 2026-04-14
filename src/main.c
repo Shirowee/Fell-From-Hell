@@ -2,7 +2,7 @@
 #include "../lib/player/Player.h"
 #include "../lib/core/GameManager.h"
 #include "../lib/core/WindowManager.h"
-#include "../lib/core/Screen.h"
+#include "../lib/menu/Screen.h"
 #include "../lib/core/ResolutionManager.h"
 #include "../lib/core/ResolutionManager.h"
 #include "../lib/levels/LevelManager.h"
@@ -62,9 +62,9 @@ int main(void)
             case SCREEN_SETTINGS: 
                 currentScreen = SettingsUpdate(previousScreen); break;
             case SCREEN_KEYBINDING: 
-                currentScreen = KeybindingUpdate(previousScreen); break;
+                currentScreen = KeybindingUpdate(); break;
             case SCREEN_SOUND: 
-                currentScreen = SoundUpdate(previousScreen); break;
+                currentScreen = SoundUpdate(); break;
             case SCREEN_PAUSE: 
                 currentScreen = PauseUpdate(); 
                 previousScreen = SCREEN_PAUSE;

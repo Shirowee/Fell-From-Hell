@@ -1,9 +1,9 @@
 #include "../../raylib/include/raylib.h"
-#include "../../lib/core/Screen.h"
+#include "../../lib/menu/Screen.h"
 
 Screen_t SettingsUpdate(Screen_t previousScreen)
 {
-    static int selected = 0; // 0 = key_binding, 1 = jsp_temp, 2 = Exit
+    static int selected = 0; // 0 = key_binding, 1 = sound, 2 = Exit
 
     const char *options[3] = {
         "CHANGEMENT DES TOUCHES",
@@ -30,7 +30,7 @@ Screen_t SettingsUpdate(Screen_t previousScreen)
     // Validation
     if (IsKeyPressed(KEY_ENTER)) {
         switch (selected) {
-            case 0: return SCREEN_KEYBINDING; //jsp encore
+            case 0: return SCREEN_KEYBINDING; 
             case 1: return SCREEN_SOUND;
             case 2: if(previousScreen == SCREEN_MENU) return SCREEN_MENU;
             return SCREEN_PAUSE;

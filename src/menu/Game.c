@@ -2,7 +2,7 @@
 #include "../../lib/player/Player.h"
 #include "../../lib/core/GameManager.h"
 #include "../../lib/core/WindowManager.h"
-#include "../../lib/core/Screen.h"
+#include "../../lib/menu/Screen.h"
 #include "../../lib/levels/LevelManager.h"
 #include "../../lib/core/ResolutionManager.h"
 #include "../../lib/systems/LifeManager.h"

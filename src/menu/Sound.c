@@ -1,5 +1,5 @@
 #include "../../raylib/include/raylib.h"
-#include "../../lib/core/Screen.h"
+#include "../../lib/menu/Screen.h"
 
 Screen_t SoundUpdate()
 {
