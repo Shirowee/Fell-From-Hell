@@ -99,7 +99,7 @@ void DesactivateBullet(bullet_t *bullet, bulletPool_t *originPool){
 }
 
 void DrawExplosion(bullet_t * bullet) {
-    DrawCircleV(bullet->bulletPos, 200, ORANGE);
+    DrawCircleV(bullet->bulletPos, bullet->bulletSize*5, ORANGE);
 }
 
 void DrawBullet(bullet_t * bullet) {

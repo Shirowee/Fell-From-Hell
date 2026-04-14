@@ -17,7 +17,9 @@
 #include "../../lib/systems/CollisionSystem.h"
 #include "../../lib/player/Player.h"
 #include "../../lib/systems/LifeManager.h"
+#include "../../lib/systems/Projectiles.h"
 #include <math.h>
+#include <stdio.h>
 
 #define MAX_DIST_DETECT 200
 
@@ -84,7 +86,7 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
                     total_dmg += bullet->bulletDmg;
                     bullet->bulletSize *= 0.7;  //diminution de 30%
                     if(bullet->bulletSize <= 1.0)
-                        bullet->active=0;
+                        bullet->active=0;   //verifier si desactive bien !!
                 }
 
                 continue;
@@ -98,9 +100,49 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
 
             if (dist < distMin)
             {
-                total_dmg += bullet->bulletDmg;
+                //cas explosif
+                if (bullet->indice == EXPLOSIF) {
+                    //DrawExplosion(bullet); //marche pas (dessin écrasé par les autre draw je crois)
+                    float explosionRadius = bullet->bulletSize*20; //const à revoir
+
+                    for (int k = 0; k < enemies->capacity; k++) {
+                        enemy_t *e = &enemies->tab[k];
+                        if (!e->active) continue;
+
+                        float dx = e->pos.x - bullet->bulletPos.x;
+                        float dy = e->pos.y - bullet->bulletPos.y;
+
+                        float dist2 = dx * dx + dy * dy;
+
+                        float enemyRadius = e->size.x * 0.5f;
+                        float radiusSum = explosionRadius + enemyRadius;
+                        float radiusSum2 = radiusSum * radiusSum;
+
+                        if (dist2 < radiusSum2) {
+
+                            float dist = sqrtf(dist2);
+
+                            float t = dist / explosionRadius;
+                            if (t > 1.0f) t = 1.0f;
+
+                            float damageFactor = 1.0f - (t * t);
+
+                            if (damageFactor < 0.0f) damageFactor = 0.0f;
+
+                            ApplyDamageToEnemy(e, bullet->bulletDmg * damageFactor);
+                            if(e->hp <= 0.0)
+                                e->active = 0;
+                            printf("damage factor %f\n", damageFactor);
+                        }
+                    }
+
+                } else {
+                    total_dmg += bullet->bulletDmg;
+                }
+
                 DesactivateBullet(bullet, bullets);
                 j--;
+
             }
         }
 
