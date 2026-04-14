@@ -14,12 +14,14 @@
  * \brief Représente les différents états/écrans du jeu.
  */
 typedef enum {
-    SCREEN_MENU,      /**< Écran du menu principal */
-    SCREEN_GAME,      /**< Écran de jeu */
-    SCREEN_SETTINGS,  /**< Écran des paramètres */
-    SCREEN_PAUSE,     /**< Écran de pause */
-    SCREEN_END_LEVEL, /**< Écran de fin d'un niveau */
-    SCREEN_EXIT       /**< Quitte le jeu */
+    SCREEN_MENU,        /**< Écran du menu principal */
+    SCREEN_GAME,        /**< Écran de jeu */
+    SCREEN_SETTINGS,    /**< Écran des paramètres */
+    SCREEN_KEYBINDING,  /**< Écran pour le changement des touches */
+    SCREEN_SOUND,       /**< Écran pour le changement du son */
+    SCREEN_PAUSE,       /**< Écran de pause */
+    SCREEN_END_LEVEL,   /**< Écran de fin d'un niveau */
+    SCREEN_EXIT         /**< Quitte le jeu */
 } Screen_t;
 
 /* =========================
@@ -69,6 +71,10 @@ Screen_t PauseUpdate(void);
  * des améliorations de passer au niveau suivant ou de quitter le jeu.
  */
 Screen_t EndLevelUpdate(Player* player);
+
+Screen_t SoundUpdate(void);
+
+Screen_t KeybindingUpdate(void);
 
 /**
  * \brief Gère l'état de déclenchement d'un nouveau niveau.
