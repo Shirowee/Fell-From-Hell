@@ -25,6 +25,11 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
     enemy_t* enemy;
     bullet_t* bullet;
     Rectangle enemyHitbox;
+    
+    //temp
+    float dx;
+    float dy;
+    float dist, distMin;
 
     for (i = 0; i < enemies->capacity; i++){
         total_dmg = 0;
