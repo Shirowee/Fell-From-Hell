@@ -39,7 +39,7 @@ Screen_t KeybindingUpdate()
     // Sélection
     if (IsKeyPressed(KEY_ENTER)) {
         if (selected == optionCount-1) {
-            SaveKeys();
+            SaveFileData("keybinds.dat", &keys, sizeof(KeyBindings));
             return SCREEN_SETTINGS;
         }
         waitingKey = selected; // on attend une nouvelle touche
@@ -84,7 +84,7 @@ Screen_t KeybindingUpdate()
 }
 
 void SaveKeys() {
-    FILE *file = fopen("save/keybinds.dat", "wb");
+    FILE *file = fopen("keybinds.dat", "wb");
     if (file) {
         printf("jsp save truc\n");
         fwrite(&keys, sizeof(KeyBindings), 1, file);
@@ -93,7 +93,7 @@ void SaveKeys() {
 }
 
 void LoadKeys() {
-    FILE *file = fopen("save/keybinds.dat", "rb");
+    FILE *file = fopen("keybinds.dat", "rb");
     if (file) {
         fread(&keys, sizeof(KeyBindings), 1, file);
         fclose(file);
