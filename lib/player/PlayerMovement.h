@@ -226,15 +226,7 @@ void PlayerDash(Player *player);
  * \param GravityStrength Force de gravité
  */
 void Gravity(Player *player, const float GravityStrength);
-/**
- * \fn bool PlayerPositionFix(Player *player, Platform **platform, const int nbPlatforms);
- * \brief Corrige la position du joueur en cas de collision avec un ou des Platform
- * \param player Pointeur sur Player
- * \param platform Tableau de pointeurs sur Platform
- * \param nbPlatform Nombre de Platform dans le tableau platform
- * \return true si le joueur est entré en collision au moins une fois avec une plateforme, sinon false
- */
-void PlayerPositionFix(Player *player, Vector2 oldPosition, Platform platform[], const int nbPlatforms);
+
 /**
  * \fn bool isOnGround(Player *player, Platform **platform, const int nbPlatforms);
  * \brief Verifie si le joueur est sur une Platform
