@@ -27,6 +27,7 @@
 #include "../../lib/enemies/EnemyController.h"
 #include "../../lib/enemies/EnemyMovement.h"
 #include "../../lib/systems/BulletPool.h"
+#include "../../lib/systems/EnemyPool.h"
 #include "../../lib/enemies/EnemyStates.h"
 #include "../../raylib/include/raylib.h"
 #include <stdio.h>
@@ -75,6 +76,31 @@ void EnemyUpdate(enemy_t * enemy, Vector2 playerPos)
         enemy->isShooting = 0;
         SpawnBulletPool(&bulletPool,enemy->pos,enemy->dir,enemy->bulletSpeed,enemy->bulletSize,enemy->dmg, 100, 0);
     }
+}
+
+void CopyEnemy(enemy_t *src, enemy_t *dest, bool cut){
+    dest->active = src->active;
+    dest->bulletSize = src->bulletSize;
+    dest->bulletSpeed = src->bulletSpeed;
+    dest->dir = src->dir;
+    dest->dmg = src->dmg;
+    dest->hp = src->hp;
+    dest->isShooting = src->isShooting;
+    dest->pos = src->pos;
+    dest->size = src->size;
+    dest->speed = src->speed;
+    dest->state = src->state;
+    dest->stateTimer = src->stateTimer;
+    dest->type = src->type;
+
+    if(cut)
+        src->active = 0;
+}
+
+void DesactivateEnemy(enemy_t *enemy, enemyPool_t *originPool){
+    //Remplace le projectile à désactiver par le dernier projectile actif
+    CopyEnemy(&originPool->tab[originPool->nbEnemiesActive-1], enemy, true);
+    originPool->nbEnemiesActive--;
 }
 
 

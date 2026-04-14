@@ -29,6 +29,8 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/BulletPool.h"
 
+typedef struct enemyPool_s enemyPool_t;
+
 /**
  * @brief Types d'ennemis disponibles
  */
@@ -94,6 +96,23 @@ void EnemyInit(enemy_t * enemy, int hp, float speed, Vector2 size, int dmg, Vect
  * @param playerPos position du joueur
  */
 void EnemyUpdate(enemy_t * enemy, Vector2 playerPos);
+
+/**
+ * @brief Copie les données du projectile source dans le projectile destinataire
+ *
+ * @param src pointeur vers l'ennemi source
+ * @param dest pointeur vers l'ennemi destinataire
+ * @param cut booléen qui détermine si l'ennemi source doit être désactivé
+ */
+void CopyEnemy(enemy_t *src, enemy_t *dest, bool cut);
+
+/**
+ * @brief Désactive l'ennemi dans sa pool respective
+ * 
+ * @param bullet pointeur vers l'ennemi à désactiver
+ * @param originPool pointeur sur la pool respective de l'ennemi
+ */
+void DesactivateEnemy(enemy_t *enemy, enemyPool_t *originPool);
 
 /**
  * @brief Dessine l'ennemi à l'écran
