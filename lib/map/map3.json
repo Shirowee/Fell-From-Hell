@@ -4,7 +4,7 @@
     "dimensions": { "w": 2048, "h": 3264 }
   },
   "platforms": [
-    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 3008, "width": 2048, "high": 256 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 3008, "width": 2048, "high": 768 },
     { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 192, "y": 2688, "width": 384, "high": 64 },
     { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 832, "y": 2688, "width": 384, "high": 64 },
     { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1472, "y": 2688, "width": 384, "high": 64 },

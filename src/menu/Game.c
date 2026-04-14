@@ -14,7 +14,6 @@
 
 Camera2D camera = { 0 };
 
-
 // Point d'entrée du jeu
 Screen_t Game(Player* player)
 {

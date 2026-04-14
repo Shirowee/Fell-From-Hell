@@ -12,9 +12,13 @@
 int main(void)
 {
     
+
     WindowInit();
     Screen_t currentScreen = SCREEN_MENU;
     Screen_t previousScreen = SCREEN_MENU;
+
+    int screenWidth = GetScreenWidth();
+    int screenHeigth = GetScreenHeight();
 
     /****************
     * INITIALISATION SYSTEME
@@ -22,14 +26,13 @@ int main(void)
     ChangeDirectory(GetApplicationDirectory()); // Ce place au niveau du .exe pour éviter des prob avec le readJson après
     if (!readJsonLvl("map1")) return -1; // Si impossible de lire la map
 
-    ResolutionInit(currentLevel.info.width, currentLevel.info.height); // Initialise tout ce qui est lié a la résolution
+    ResolutionInit(currentLevel.info.width, screenWidth, screenHeigth); // Initialise tout ce qui est lié a la résolution
 
     /************************
     * INITIALISATION DU JEU *
     ************************/
     Player player;
     GameInit(&player); // Initialisation du jeu
-    
     
     camera.offset = (Vector2){ 0, 0 };
     camera.target = (Vector2){ 0, player.position.y };
