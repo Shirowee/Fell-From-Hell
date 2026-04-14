@@ -17,6 +17,12 @@
 
 #include "../../lib/systems/EnemyPool.h"
 
+#define CHASER_HP 15    /**< Vie de l'ennemi "chaser" */
+#define CHASER_DMG 10   /**< Dégât infligé par l'ennemi "chaser" */
+
+#define SHOOTER_HP 60   /**< Vie de l'ennemi "shooter" */
+#define SHOOTER_DMG 30  /**< Dégât infligé par l'ennemi "shooter" */
+
 /**
  * @struct EnemySpawner
  * @brief Gère le système de spawn des ennemis
@@ -30,6 +36,8 @@
 typedef struct {
     float timer;
     float cooldown;
+    float difficultyMultHP;
+    float difficultyMultDMG;
     int nbVague;
 } EnemySpawner;
 
@@ -121,4 +129,5 @@ void SpawnEnemyPatternArc(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos)
  */
 void SpawnEnemyPatternSpiral(EnemySpawner* spawner, enemyPool_t* pool, Vector2 pos);
 extern EnemySpawner enemySpawner;
+
 #endif

@@ -45,11 +45,6 @@ Screen_t Game(Player* player)
                 GameDraw(player);
             EndMode2D();
 
-            ClearBackground(RAYWHITE);   
-            BeginMode2D(camera);
-                GameDraw(player);
-            EndMode2D();
-
             DrawFPS(10, 10);
             HPDraw(player, 10, 30, (int)(GetScreenWidth() * 0.2f), (int)(GetScreenHeight() * 0.03f));
         EndDrawing();
@@ -67,8 +62,6 @@ Screen_t Game(Player* player)
 
 bool endLvl(){
     int i;
-    printf("vague : %d\n", enemySpawner.nbVague);
-    printf("ennemis : %d\n", currentLevel.enemyCount);
     if(enemySpawner.nbVague == currentLevel.enemyCount){
         for(i = 0; enemyPool.tab[i].active == 0 && enemyPool.capacity > i ;i++);
         if(enemyPool.capacity == i) return true;
