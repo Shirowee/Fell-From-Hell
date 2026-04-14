@@ -4,8 +4,8 @@
  * \brief Ce fichier Camera.h sert a la gestion de tout ce qui concerne la caméra
  */
 
-#ifndef TRIGGER_SYSTEM_H
-#define TRIGGER_SYSTEM_H
+#ifndef CAMERA_H
+#define CAMERA_H
 
 #include "../player/Player.h"
 #include "../../raylib/include/raylib.h"
