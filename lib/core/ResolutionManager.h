@@ -17,9 +17,9 @@
  * @brief Stocke les paramètres globale pour la mise a l'échelle
  */
 typedef struct {
-    float scale;    /**< Ratio de multiplication (Écran Réel / taille Référence) */
-    int   refW;     /**< Largeur de référence*/
-    int   refH;     /**< Hauteur de référence*/
+    float   scale;    /**< Ratio de multiplication (Écran Réel / taille Référence) */
+    float   screenW;     /**< Largeur de l'écran*/
+    float   screenH;     /**< Hauteur de l'écran*/
 } ResolutionConfig;
 
 
@@ -28,10 +28,11 @@ extern ResolutionConfig resolution;
 /**
  * @brief Initialise la mise à l'échelle
  * * Calcule le ratio en comparant la largeur de l'écran actuelle avec la largeur de référence en paramètre
- * * @param mapRefWidth Largeur cible de référence
- * @param mapRefHeight Hauteur cible de référence
+ * * @param mapRefWidth Largeur cible de référence de la map
+ * @param screenWidth Largeur de l'écran
+ * @param screenHeight Hauteur de l'écran
  */
-void ResolutionInit(int mapRefWidth, int mapRefHeight);
+void ResolutionInit(int mapRefWidth, int screenWidth, int screenHeight);
 
 /**
  * @brief Convertit la valeur en paramètre avec le ratio scale

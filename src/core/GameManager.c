@@ -6,8 +6,10 @@
 #include "../../lib/systems/EnemySpawner.h"
 #include "../../lib/systems/CollisionSystem.h"
 #include "../../lib/systems/LifeManager.h"
-#include "../../lib/core/RessourcesManager.h"
 #include "../../lib/systems/TriggerSystem.h"
+#include "../../lib/core/RessourcesManager.h"
+#include "../../lib/core/Camera.h"
+
 
 // Initialise le jeu
 void GameInit(Player *player)
@@ -26,6 +28,7 @@ void GameInit(Player *player)
 // Mise a jour du jeu
 void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
+    CameraUpdate(&camera, player);
     NextLvlUpdate(player, &enemyPool, &playerBulletPool, &enemySpawner);
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
     UpdateEnemyPool(&enemyPool, getPlayerCenter(player));
