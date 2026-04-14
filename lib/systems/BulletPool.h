@@ -29,9 +29,10 @@
  * 
  * Le pool fonctionne en réutilisant les bullets inactives.
  */
-typedef struct {
+typedef struct bulletPool_s {
     bullet_t* tab; //liste contenant les bullets
     int active; //booléen pour l'activité de la pool
+    int nbBulletsActive; //nombre de projectiles actives
     int capacity; //nombre d'elements
 } bulletPool_t;
 
