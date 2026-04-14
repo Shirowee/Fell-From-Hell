@@ -14,15 +14,17 @@ void PlayerLifeAlteration(Player *player, enemyPool_t *ennemies, bulletPool_t *b
         CheckPlayerEnemyCollision(player, ennemies, &dmgToPlayer);
         CheckPlayerBulletCollision(player, bullets, &dmgToPlayer);
 
-        if(dmgToPlayer > 0)
+        if(dmgToPlayer > 0){
             ApplyDamageToPlayer(player, dmgToPlayer);
+            player->stats.regenTimeOut = REGEN_TIME;
+        }
     }
     else{
         player->stats.invTime -= dt;
     }
 
     //Gain de vie
-    if(canRegen(player)){
+    if(canRegen(player) && dmgToPlayer == 0){
         player->stats.regenTimeOut = REGEN_TIME;
         player->stats.hp += player->stats.regen;
 

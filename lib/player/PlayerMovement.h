@@ -56,7 +56,7 @@
  * \def DASH_SPEED
  * \brief Vitesse du dash du joueur en pixels par seconde.
  */
-#define DASH_SPEED 1600
+#define DASH_SPEED 2400
 
 /**
  * \def DEFAULT_GRAVITY

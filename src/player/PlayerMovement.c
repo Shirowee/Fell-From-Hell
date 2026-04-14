@@ -98,6 +98,8 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
         player->movConfig.dashTimeOut -= dt;
     }
     else if(player->movConfig.dashTimeOut <= 0.0 && player->movConfig.dashTime <= 0.0 && player->movConfig.isDashing){
+        player->velocity.x *= 0.25f;
+        player->velocity.y *= 0.25f;
         player->movConfig.dashTimeOut = 2;
     }
 
