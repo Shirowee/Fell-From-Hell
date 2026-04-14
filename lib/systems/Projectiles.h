@@ -43,6 +43,7 @@ typedef struct bullet_s {
     float bulletSize; // taille
     int bulletDmg; // dégats
     Vector2 bulletPos; // position
+    Vector2 laserPos; // position
     int bulletDir; // direction en deg
     double createTime; //heure de creation
     float lifeTime; //durer de vie (pour bullet explosif et rayon)
@@ -106,6 +107,6 @@ void DrawExplosion(bullet_t * bullet);
  * @param bullet pointeur vers le projectile
  * @param posJoueur position du joueur (utile pour le rayon)
  */
-void DrawBullet(bullet_t * bullet, Vector2 posJoueur);
+void DrawBullet(bullet_t * bullet);
 
 #endif

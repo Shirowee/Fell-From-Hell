@@ -23,7 +23,8 @@ void InitBullet(bullet_t * bullet, int speed, int size, int dmg, Vector2 pos, in
     bullet->bulletSpeed = speed;
     bullet->bulletSize = size;
     bullet->bulletDmg = dmg;
-    bullet->bulletPos = pos;   
+    bullet->bulletPos = pos;
+    bullet->laserPos = pos;   
     bullet->bulletDir = dir;
     bullet->createTime = GetTime();
     bullet->lifeTime = lifeTime;
@@ -98,10 +99,10 @@ void DesactivateBullet(bullet_t *bullet, bulletPool_t *originPool){
 }
 
 void DrawExplosion(bullet_t * bullet) {
-    DrawCircleV(bullet->bulletPos, 200, ORANGE);
+    DrawCircleV(bullet->bulletPos, bullet->bulletSize*5, ORANGE);
 }
 
-void DrawBullet(bullet_t * bullet, Vector2 posJoueur) {
+void DrawBullet(bullet_t * bullet) {
     if (!bullet->active) return;
 
     switch (bullet->indice)
@@ -116,7 +117,7 @@ void DrawBullet(bullet_t * bullet, Vector2 posJoueur) {
         break;
 
     case RAYON:
-        DrawLineEx(posJoueur, bullet->bulletPos, bullet->bulletSize, BLACK);
+        DrawLineEx(bullet->laserPos, bullet->bulletPos, bullet->bulletSize, BLACK);
         break;
 
     case MELEE:
