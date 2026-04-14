@@ -3,6 +3,7 @@
 #include "../../lib/cJson/cJSON.h"
 #include "../../lib/player/PlayerController.h"
 #include "../../lib/systems/EnemyPool.h"
+#include "../../lib/systems/EnemySpawner.h"
 #include "../../lib/systems/BulletPool.h"
 #include <stdio.h>
 #include <string.h>
@@ -178,6 +179,12 @@ static char pendingLevel[64] = "";
 void NextLvlRequest(const char *targetId) {
     // Evite des problèmes de si ça s'éxécute deux fois
     if (pendingLevel[0] != '\0') return; 
+
+    // Multiplicateur de difficulté si la map chargé est la map 1 et que l'actuelle était la 9
+    if((strcmp(pendingLevel, "map1") == 0 && strcmp(currentLevel.info.id, "map9") == 0)){
+        enemySpawner.difficultyMultHP *= 1.2f ;  // Augmentation de 20% des HP
+        enemySpawner.difficultyMultDMG *= 1.3f ; // Augmentation de 30% des DMG
+    }
     
     strncpy(pendingLevel, targetId, 63);
     pendingLevel[63] = '\0';

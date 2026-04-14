@@ -3,10 +3,10 @@
 
 ResolutionConfig resolution;
 
-void ResolutionInit(int mapRefWidth, int mapRefHeight) {
-    resolution.refW   = mapRefWidth;
-    resolution.refH   = mapRefHeight;
-    resolution.scale  = (float)GetScreenWidth() / mapRefWidth;
+void ResolutionInit(int mapRefWidth, int screenWidth, int screenHeight) {
+    resolution.screenW = screenWidth;
+    resolution.screenH = screenHeight;
+    resolution.scale = (float)GetScreenWidth() / mapRefWidth;
 }
 
 float RS(float value) {

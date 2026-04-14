@@ -11,7 +11,7 @@
 
 //init le joueur
 void PlayerInit(Player *player){
-    player->position = (Vector2){ PLAYER_X, PLAYER_Y };
+    player->position = (Vector2){ currentLevel.playerStart.x, currentLevel.playerStart.y };
     player->size = (Vector2){ PLAYER_SIZE_X, PLAYER_SIZE_Y };
     player->velocity = (Vector2){ 0, 0 };
 
