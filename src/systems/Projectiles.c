@@ -31,7 +31,9 @@ void InitBullet(bullet_t * bullet, int speed, int size, int dmg, Vector2 pos, in
     bullet->active = 1;
 }
 
-void UpdateBullet(bullet_t * bullet) {
+void UpdateBullet(bullet_t *bullet, bulletPool_t *originPool, bool *desactivated) {
+    *desactivated = false;
+
     if (!bullet->active) return;
 
     float dt = GetFrameTime();
@@ -44,7 +46,8 @@ void UpdateBullet(bullet_t * bullet) {
 
         //vérification que la bullet soit dans l'écran sinon c'est à unload
         if (bullet->bulletPos.x < -50 || bullet->bulletPos.x > currentLevel.info.width+50 || bullet->bulletPos.y < -50 || bullet->bulletPos.y > currentLevel.info.height+50) {
-                bullet->active = false;
+                DesactivateBullet(bullet, originPool);
+                *desactivated = true;
         }
         break;
 
@@ -68,8 +71,30 @@ void UpdateBullet(bullet_t * bullet) {
 
     //durer de vie dépassée
     if(GetTime() - bullet->createTime >= bullet->lifeTime){
-        bullet->active = false;
+        DesactivateBullet(bullet, originPool);
+        *desactivated = true;
     }
+}
+
+void CopyBullet(bullet_t *src, bullet_t *dest, bool cut){
+    dest->active = src->active;
+    dest->bulletDir = src->bulletDir;
+    dest->bulletDmg = src->bulletDmg;
+    dest->bulletPos = src->bulletPos;
+    dest->bulletSize = src->bulletSize;
+    dest->bulletSpeed = src->bulletSpeed;
+    dest->createTime = src->createTime;
+    dest->indice = src->indice;
+    dest->lifeTime = src->lifeTime;
+
+    if(cut)
+        src->active = 0;
+}
+
+void DesactivateBullet(bullet_t *bullet, bulletPool_t *originPool){
+    //Remplace le projectile à désactiver par le dernier projectile actif
+    CopyBullet(&originPool->tab[originPool->nbBulletsActive-1], bullet, true);
+    originPool->nbBulletsActive--;
 }
 
 void DrawExplosion(bullet_t * bullet) {

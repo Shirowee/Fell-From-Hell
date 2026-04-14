@@ -1,7 +1,7 @@
 /**
  * @file CollisionSystem.c
  * @brief Gestion des collisions entre ennemis et projectiles
- * @author A. Pocholle
+ * @author A. Pocholle, C. Tortevoix
  * 
  * Implémente la détection de collision entre les ennemis
  * et les bullets à l’aide d’une méthode simple basée sur la distance
@@ -38,7 +38,7 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
         enemy = &enemies->tab[i];
         if (!enemy->active) continue;
 
-        for (j = 0; j < bullets->capacity; j++)
+        for (j = 0; j < bullets->nbBulletsActive; j++)
         {
             bullet = &bullets->tab[j];
             if (!bullet->active) continue;
@@ -56,8 +56,9 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
 
             if (dist < distMin)
             {
-                bullet->active = 0;
                 total_dmg += bullet->bulletDmg;
+                DesactivateBullet(bullet, bullets);
+                j--;
             }
         }
 

@@ -19,6 +19,8 @@
 
 #include "../../raylib/include/raylib.h"
 
+typedef struct bulletPool_s bulletPool_t;
+
 //differents type de bullet
 #define BASIC 0
 #define EXPLOSIF 1
@@ -48,6 +50,7 @@ typedef struct bullet_s {
     int active; //si elle doit être dessinée
 } bullet_t;
 
+
 /**
  * @brief Initialise un projectile
  *
@@ -69,8 +72,26 @@ void InitBullet(bullet_t * bullet, int speed, int size, int dmg, Vector2 Pos, in
  * selon le type de projectile.
  *
  * @param bullet pointeur vers le projectile
+ * @param originPool pointeur vers la pool respective du projectile
  */
-void UpdateBullet(bullet_t * bullet);
+void UpdateBullet(bullet_t *bullet, bulletPool_t *originPool, bool *desactivated);
+
+/**
+ * @brief Copie les données du projectile source dans le projectile destinataire
+ *
+ * @param src pointeur vers le projectile source
+ * @param dest pointeur vers projectile destinataire
+ * @param cut booléen qui détermine si le projectile source doit être désactivé
+ */
+void CopyBullet(bullet_t *src, bullet_t *dest, bool cut);
+
+/**
+ * @brief Désactive le projectile dans sa pool respective
+ * 
+ * @param bullet pointeur vers le projectile à désactiver
+ * @param originPool pointeur sur la pool respective du projectile
+ */
+void DesactivateBullet(bullet_t *bullet, bulletPool_t *originPool);
 
 /**
  * @brief Affiche une explosion de projectile explosif

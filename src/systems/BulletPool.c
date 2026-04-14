@@ -26,6 +26,7 @@ bulletPool_t playerBulletPool;
 
 void InitBulletPool(bulletPool_t* pool, int capacity) {
     pool->active = 1;
+    pool->nbBulletsActive = 0;
     pool->capacity = capacity;
     pool->tab = malloc(sizeof(bullet_t) * capacity);
 
@@ -35,25 +36,27 @@ void InitBulletPool(bulletPool_t* pool, int capacity) {
 }
 
 void SpawnBulletPool(bulletPool_t* pool, Vector2 pos, int dir, int speed, int size, int dmg, float lifeTime, int indice) {
-    //on cherche la premiere bullet inactive (disponible)
-    int spawned = 0;
-    for(int i=0; (i < pool->capacity) && (spawned == 0); i++) {
-        
-        if (pool->tab[i].active == 0) {
-            InitBullet(&pool->tab[i], speed, size, dmg, pos, dir, lifeTime, indice);
-            spawned = 1;
-        }
+    if(pool->nbBulletsActive == pool->capacity){
+        fprintf(stderr, "SpawnBulletPool: Erreur: Pool saturé!\n");
+        exit(1);
     }
+    InitBullet(&pool->tab[pool->nbBulletsActive], speed, size, dmg, pos, dir, lifeTime, indice);
+    pool->nbBulletsActive++;
 }
 
 void UpdateBulletPool(bulletPool_t* pool) {
-    for(int i=0; i < pool->capacity; i++) {
-        UpdateBullet(&pool->tab[i]);
+    bool desactivated;
+
+    for(int i=0; i < pool->nbBulletsActive; i++) {
+        desactivated = false;
+        UpdateBullet(&pool->tab[i], pool, &desactivated);
+        if(desactivated)
+            i--;
     }
 }
 
 void DrawBulletPool(bulletPool_t* pool, Vector2 posJoueur) {
-    for(int i=0; i < pool->capacity; i++) {
+    for(int i=0; i < pool->nbBulletsActive; i++) {
         DrawBullet(&pool->tab[i], posJoueur);
     }
 }
