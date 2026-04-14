@@ -24,6 +24,15 @@ typedef enum {
     SCREEN_EXIT         /**< Quitte le jeu */
 } Screen_t;
 
+typedef struct {
+    int left;
+    int right;
+    int jump;
+    int dash;
+} KeyBindings;
+
+extern KeyBindings keys;
+
 /* =========================
  * Fonctions de gestion des écrans
  * ========================= */
@@ -75,6 +84,10 @@ Screen_t EndLevelUpdate(Player* player);
 Screen_t SoundUpdate(void);
 
 Screen_t KeybindingUpdate(void);
+
+void SaveKeys();
+
+void LoadKeys();
 
 /**
  * \brief Gère l'état de déclenchement d'un nouveau niveau.
