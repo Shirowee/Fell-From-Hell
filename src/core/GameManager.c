@@ -9,6 +9,8 @@
 #include "../../lib/systems/TriggerSystem.h"
 #include "../../lib/core/RessourcesManager.h"
 #include "../../lib/core/Camera.h"
+#include "../../lib/menu/Screen.h"
+#include <string.h>
 
 
 // Initialise le jeu
@@ -23,6 +25,15 @@ void GameInit(Player *player)
     InitBulletPool(&bulletPool, 3000);
 
     InitBulletPool(&playerBulletPool, 300);
+
+    //init des touches
+    int size = 0;
+    unsigned char *data = LoadFileData("keybinds.dat", &size);
+
+    if (data != NULL && size == sizeof(KeyBindings)) {
+        memcpy(&keys, data, sizeof(KeyBindings));
+        UnloadFileData(data);
+    }
 }
 
 // Mise a jour du jeu

@@ -3,6 +3,7 @@
 #include "../../lib/levels/LevelManager.h"
 #include "../../lib/core/ResolutionManager.h"
 #include "../../lib/core/GameManager.h"
+#include "../../lib/menu/Screen.h"
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -20,12 +21,12 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
 
     //Events de déplacement
     if(state != WALL_SLIDING){
-        if (IsKeyDown(KEY_MOVE_RIGHT)) player->velocity.x += (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * dt;
-        else if (IsKeyDown(KEY_MOVE_LEFT))  player->velocity.x -= (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * dt;
+        if (IsKeyDown(keys.right)) player->velocity.x += (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * dt;
+        else if (IsKeyDown(keys.left))  player->velocity.x -= (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * dt;
         else player->velocity.x *= (fabs(player->velocity.x) > 10 ? friction : 0); // Ralentissement progressif
     }
 
-    if (IsKeyDown(KEY_MOVE_JUMP) && player->movConfig.canJump) PlayerJump(player);
+    if (IsKeyDown(keys.jump) && player->movConfig.canJump) PlayerJump(player);
     if (state == FALLING) Gravity(player, player->movConfig.fallingGravity);
     else if (state == JUMPING) Gravity(player, player->movConfig.gravity);
     else if (state == WALL_SLIDING) Gravity(player, WALL_SLIDE_GRAVITY);
@@ -38,7 +39,7 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
         else if(player->velocity.x < -player->movConfig.maxSpeed) player->velocity.x = -player->movConfig.maxSpeed;
     }
     if(player->movConfig.isOnGround) player->velocity.y = 0.0;
-    else if(IsKeyReleased(KEY_MOVE_JUMP) && state == JUMPING) player->velocity.y *= 0.5;
+    else if(IsKeyReleased(keys.jump) && state == JUMPING) player->velocity.y *= 0.5;
     if(state == WALL_SLIDING && player->velocity.y > MAX_WALL_SPEED) player->velocity.y = MAX_WALL_SPEED;
     else if(player->velocity.y > MAX_SPEED_Y) player->velocity.y = MAX_SPEED_Y;
 
@@ -53,10 +54,10 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
     if(state != IDLE)
         PlayerPositionFix(player, oldPosition, platform, nbPlatforms); // Vérification de collision avec les plateformes
 
-    if(IsKeyPressed(KEY_MOVE_JUMP)){
+    if(IsKeyPressed(keys.jump)){
         player->movConfig.canJump = false;
     }
-    else if(IsKeyReleased(KEY_MOVE_JUMP)){
+    else if(IsKeyReleased(keys.jump)){
         player->movConfig.canJump = true;
     }
 
@@ -73,7 +74,7 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
     if(player->movConfig.dashTime > 0.0){
         player->movConfig.dashTime -= dt;
     }
-    else if(player->movConfig.dashTime <= 0.0 && player->movConfig.dashTimeOut <= 0.0 && IsKeyPressed(KEY_MOVE_DASH)){
+    else if(player->movConfig.dashTime <= 0.0 && player->movConfig.dashTimeOut <= 0.0 && IsKeyPressed(keys.dash)){
         player->movConfig.dashTime = DASH_TIME_MAX;
         player->stats.invTime = DASH_TIME_MAX;
         player->movConfig.isOnGround = false;

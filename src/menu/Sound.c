@@ -1,18 +1,18 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/menu/Screen.h"
 
-
-Screen_t PauseUpdate(void)
+Screen_t SoundUpdate()
 {
-    static int selected = 0; // 0 = Play, 1 = Settings, 2 = Exit
+    static int selected = 0; // 0 = key_binding, 1 = jsp_temp, 2 = Exit
 
     const char *options[3] = {
-        "RETOURNER EN JEU",
-        "PARAMETRES",
-        "QUITTER LE JEU"
+        "la tu met le texte",
+        "BLABLA",
+        "REVENIR AU MENU PARAMETRE"
     };
+    
 
-    int optionCount = 3;
+    int optionCount = 3;    //pense à changer la valeur si t'ajoute des option
 
     // Navigation clavier
     if (IsKeyPressed(KEY_DOWN)) {
@@ -28,9 +28,9 @@ Screen_t PauseUpdate(void)
     // Validation
     if (IsKeyPressed(KEY_ENTER)) {
         switch (selected) {
-            case 0: return SCREEN_GAME;
-            case 1: return SCREEN_SETTINGS;
-            case 2: return SCREEN_EXIT;
+            case 0: /*la tu met se que ça fait*/ break;      
+            case 1: /*la tu met se que ça fait*/ break;      
+            case 2: return SCREEN_SETTINGS;
         }
     }
 
@@ -38,7 +38,7 @@ Screen_t PauseUpdate(void)
     int screenWidth = GetScreenWidth();
     int screenHeight = GetScreenHeight();
 
-    DrawText("Pause", screenWidth / 2 - 100, 150, 50, BLACK);
+    DrawText("Titre de la page", screenWidth / 2 - 100, 150, 50, BLACK); //la fo mettre le titre
 
     for (int i = 0; i < optionCount; i++) {
         Color color = (i == selected) ? RED : DARKGRAY;
@@ -54,5 +54,5 @@ Screen_t PauseUpdate(void)
 
     DrawText("Utilise les flèches et ENTREE", screenWidth / 2 - 150, screenHeight - 100, 20, GRAY);
 
-    return SCREEN_PAUSE;
+    return SCREEN_SOUND;
 }

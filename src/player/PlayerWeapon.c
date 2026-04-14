@@ -1,5 +1,6 @@
 #include "../../lib/player/Player.h"
 #include "../../lib/core/GameManager.h"
+#include "../../lib/menu/Screen.h"
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>

@@ -1,5 +1,5 @@
 #include "../../raylib/include/raylib.h"
-#include "../../lib/core/Screen.h"
+#include "../../lib/menu/Screen.h"
 #include "../../lib/core/RessourcesManager.h"
 Screen_t MenuUpdate(void)
 {
