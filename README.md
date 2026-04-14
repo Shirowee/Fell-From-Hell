@@ -76,7 +76,7 @@ Projet réalisé dans le cadre du cours **Gestion de projet**.
 
 ## Description du jeu
 
-- concept du jeu  
+- L'objectif du jeu est de survivre le plus longtemps possible au vagues d'ennemis qui avec le temps augmente en difficulté 
 - Platformer/WIP 
 - TUER TOUT/WIP
 
