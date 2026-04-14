@@ -1,0 +1,304 @@
+\doxysection{src/player/\+Player\+Weapon.c File Reference}
+\hypertarget{PlayerWeapon_8c}{}\label{PlayerWeapon_8c}\index{src/player/PlayerWeapon.c@{src/player/PlayerWeapon.c}}
+{\ttfamily \#include "{}../../lib/player/\+Player.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Game\+Manager.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Player\+Weapon.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PlayerWeapon_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{PlayerWeapon_8c_afbd8054542ac18bb344723c5e7c171d8}{Player\+Shoot}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, double \texorpdfstring{$\ast$}{*}time\+Spent, double \texorpdfstring{$\ast$}{*}start\+Reload)
+\begin{DoxyCompactList}\small\item\em Permet au joueur de tirer avec son arme actuelle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{PlayerWeapon_8c_a3253470921600f82b027ff8d4fa60e4f}{Cooldown}} (\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} weapon, double \texorpdfstring{$\ast$}{*}time\+Spent)
+\begin{DoxyCompactList}\small\item\em Vérifie si l\textquotesingle{}arme est en cooldown. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{PlayerWeapon_8c_aba0adba5b97a0dbad07bea6343c5af16}{Is\+Reloading}} (\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}weapon, double \texorpdfstring{$\ast$}{*}start\+Reload)
+\begin{DoxyCompactList}\small\item\em Vérifie si l\textquotesingle{}arme est en cours de rechargement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PlayerWeapon_8c_adc123952fe27d52272e4627f4f7e124a}{Change\+Weapon}} (\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}old\+Weapon, int indice)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}arme actuelle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PlayerWeapon_8c_a4fb8e11fca5691cd02b616de96744a92}{spawn\+Bullet\+Weapon}} (\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} weapon, \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} player, int direction)
+\begin{DoxyCompactList}\small\item\em Génère un projectile selon les caractéristiques de l\textquotesingle{}arme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a4d8ff34614b1d5d9d20807134de12fd4}{minigun}} =\{0, 12.\+5, 10, 75, 75, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 30, 100, 500, 15\}
+\begin{DoxyCompactList}\small\item\em Minigun \+: tir rapide avec dispersion et grand chargeur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a50f909b581e3c83ab8e9fa368bcf9ad4}{lance\+\_\+flammes}} =\{1, 10, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 30, 0.\+5, 500, 30\}
+\begin{DoxyCompactList}\small\item\em Lance-\/flammes \+: faibles dégâts mais applique brûlure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a5620b923a3c0ec6db2ddeadc4507b47d}{lance\+\_\+missile\+\_\+tete\+\_\+chercheuse}} =\{2, 125, 2, 10, 10, 6, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 4, 500, 10\}
+\begin{DoxyCompactList}\small\item\em Lance-\/missile à tête chercheuse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_afeb379c686bd18e9c63c80b661209763}{fusil\+\_\+a\+\_\+pompe}} =\{3, 12.\+5, 0.\+75, 6, 6, 5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 50, 0.\+75, 400, 10\}
+\begin{DoxyCompactList}\small\item\em Fusil à pompe \+: tir en cône de plusieurs projectiles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_abdd8b82b357fb575842ce112597760ec}{pistolet\+\_\+laser}} =\{4, 50, 0.\+8, 10, 10, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 1, 500, 50\}
+\begin{DoxyCompactList}\small\item\em Pistolet laser \+: rayon continu pendant 1 seconde. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a01166402a9981ed8e533de5e1786ce89}{fusil\+\_\+rafales}} =\{5, 35, 2, 11, 11, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 10, 100, 500, 10\}
+\begin{DoxyCompactList}\small\item\em Fusil à rafales \+: tir de 3 balles successives. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_aedb4a0d6d9ebb2993170ccf3702774e2}{lance\+\_\+glace}} =\{6, 10, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601ac738f0f78c29056dc3dfcdc285ca67da}{GEL}}, 30, 0.\+5, 500, 10\}
+\begin{DoxyCompactList}\small\item\em Lance-\/glace \+: équivalent gel du lance-\/flammes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_aa533c9ae7191475452231219c0f40645}{lance\+\_\+roquette}} =\{7, 150, 0.\+8, 8, 8, 4, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 0, 0.\+5, 500, 10\}
+\begin{DoxyCompactList}\small\item\em Lance-\/roquette \+: missile explosif. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a8360d988d07b52ad8ddf20e5fafd4c6f}{epee\+\_\+longue}} =\{8, 75, 1.\+5, -\/1, -\/1, -\/1, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 160, 10, 500, 10\}
+\begin{DoxyCompactList}\small\item\em Épée longue \+: attaque de mêlée en cône. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a6a2743a0956741cb885071eb4e909f85}{sniper}} =\{9, 150, 0.\+75, 6, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 100, 1200, 20\}
+\begin{DoxyCompactList}\small\item\em Sniper \+: tir lent mais très puissant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a8c8acc3ea9356c2f5c7e3e10d7192059}{arbalete}} =\{10, 70, 1, 8, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601aed5cfbb579c1f93d8d070433808a46d9}{TOUS}}, 0, 100, 500, 10\}
+\begin{DoxyCompactList}\small\item\em Arbalète \+: alterne différents types de carreaux. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_aea8a4e4eb9161d8e4a3a7b5450e3d9a9}{pistolet\+\_\+eclectique}} =\{11, 35, 2, 15, 15, 2, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a1298860c6bdaef522a8452b33b3b8111}{ELECTRIQUE}}, 40, 50, 500, 10\}
+\begin{DoxyCompactList}\small\item\em Pistolet électrique \+: attaque en chaîne les ennemis proches. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_acc93f609dad18eb5ff6191661f27f9c9}{pistolet\+\_\+mitrailleur}} =\{12, 10, 10, 40, 40, 0.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 25, 50, 500, 10\}
+\begin{DoxyCompactList}\small\item\em Pistolet mitrailleur \+: rapide mais peu puissant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a038dce8dc6a7310c996daa199e4e027c}{pistolet\+\_\+multi\+\_\+direction}} =\{13, 20, 2, 20, 20, 1.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 7.\+5, 100, 500, 10\}
+\begin{DoxyCompactList}\small\item\em Pistolet multidirection \+: tir dans 4 directions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{PlayerWeapon_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{PlayerWeapon_8c_adc123952fe27d52272e4627f4f7e124a}\index{PlayerWeapon.c@{PlayerWeapon.c}!ChangeWeapon@{ChangeWeapon}}
+\index{ChangeWeapon@{ChangeWeapon}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{ChangeWeapon()}{ChangeWeapon()}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_adc123952fe27d52272e4627f4f7e124a} 
+void Change\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{old\+Weapon}{, }\item[{int}]{indice}{}\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}arme actuelle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Weapon} & Pointeur vers l\textquotesingle{}arme actuelle \\
+\hline
+{\em indice} & Indice de la nouvelle arme à équiper \\
+\hline
+\end{DoxyParams}
+\Hypertarget{PlayerWeapon_8c_a3253470921600f82b027ff8d4fa60e4f}\index{PlayerWeapon.c@{PlayerWeapon.c}!Cooldown@{Cooldown}}
+\index{Cooldown@{Cooldown}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{Cooldown()}{Cooldown()}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a3253470921600f82b027ff8d4fa60e4f} 
+int Cooldown (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}}}]{weapon}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{time\+Spent}{}\end{DoxyParamCaption})}
+
+
+
+Vérifie si l\textquotesingle{}arme est en cooldown. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weapon} & Arme utilisée \\
+\hline
+{\em time\+Spent} & Temps écoulé \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si en cooldown, 0 sinon 
+\end{DoxyReturn}
+\Hypertarget{PlayerWeapon_8c_aba0adba5b97a0dbad07bea6343c5af16}\index{PlayerWeapon.c@{PlayerWeapon.c}!IsReloading@{IsReloading}}
+\index{IsReloading@{IsReloading}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{IsReloading()}{IsReloading()}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_aba0adba5b97a0dbad07bea6343c5af16} 
+int Is\+Reloading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{weapon}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{start\+Reload}{}\end{DoxyParamCaption})}
+
+
+
+Vérifie si l\textquotesingle{}arme est en cours de rechargement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weapon} & Arme concernée \\
+\hline
+{\em start\+Reload} & Temps de début du rechargement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si en rechargement, 0 sinon 
+\end{DoxyReturn}
+\Hypertarget{PlayerWeapon_8c_afbd8054542ac18bb344723c5e7c171d8}\index{PlayerWeapon.c@{PlayerWeapon.c}!PlayerShoot@{PlayerShoot}}
+\index{PlayerShoot@{PlayerShoot}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{PlayerShoot()}{PlayerShoot()}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_afbd8054542ac18bb344723c5e7c171d8} 
+void Player\+Shoot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{time\+Spent}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{start\+Reload}{}\end{DoxyParamCaption})}
+
+
+
+Permet au joueur de tirer avec son arme actuelle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur vers le joueur \\
+\hline
+{\em time\+Spent} & Temps écoulé depuis le dernier tir \\
+\hline
+{\em start\+Reload} & Temps de début du rechargement \\
+\hline
+\end{DoxyParams}
+\Hypertarget{PlayerWeapon_8c_a4fb8e11fca5691cd02b616de96744a92}\index{PlayerWeapon.c@{PlayerWeapon.c}!spawnBulletWeapon@{spawnBulletWeapon}}
+\index{spawnBulletWeapon@{spawnBulletWeapon}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{spawnBulletWeapon()}{spawnBulletWeapon()}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a4fb8e11fca5691cd02b616de96744a92} 
+void spawn\+Bullet\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}}}]{weapon}{, }\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}}]{player}{, }\item[{int}]{direction}{}\end{DoxyParamCaption})}
+
+
+
+Génère un projectile selon les caractéristiques de l\textquotesingle{}arme. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weapon} & Arme utilisée \\
+\hline
+{\em pos\+Joueur} & Position du joueur \\
+\hline
+{\em direction} & \doxylink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} du tir \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-var-members}
+\Hypertarget{PlayerWeapon_8c_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{PlayerWeapon_8c_a8c8acc3ea9356c2f5c7e3e10d7192059}\index{PlayerWeapon.c@{PlayerWeapon.c}!arbalete@{arbalete}}
+\index{arbalete@{arbalete}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{arbalete}{arbalete}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a8c8acc3ea9356c2f5c7e3e10d7192059} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} arbalete =\{10, 70, 1, 8, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601aed5cfbb579c1f93d8d070433808a46d9}{TOUS}}, 0, 100, 500, 10\}}
+
+
+
+Arbalète \+: alterne différents types de carreaux. 
+
+\Hypertarget{PlayerWeapon_8c_a8360d988d07b52ad8ddf20e5fafd4c6f}\index{PlayerWeapon.c@{PlayerWeapon.c}!epee\_longue@{epee\_longue}}
+\index{epee\_longue@{epee\_longue}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{epee\_longue}{epee\_longue}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a8360d988d07b52ad8ddf20e5fafd4c6f} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} epee\+\_\+longue =\{8, 75, 1.\+5, -\/1, -\/1, -\/1, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 160, 10, 500, 10\}}
+
+
+
+Épée longue \+: attaque de mêlée en cône. 
+
+\Hypertarget{PlayerWeapon_8c_afeb379c686bd18e9c63c80b661209763}\index{PlayerWeapon.c@{PlayerWeapon.c}!fusil\_a\_pompe@{fusil\_a\_pompe}}
+\index{fusil\_a\_pompe@{fusil\_a\_pompe}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{fusil\_a\_pompe}{fusil\_a\_pompe}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_afeb379c686bd18e9c63c80b661209763} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+a\+\_\+pompe =\{3, 12.\+5, 0.\+75, 6, 6, 5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 50, 0.\+75, 400, 10\}}
+
+
+
+Fusil à pompe \+: tir en cône de plusieurs projectiles. 
+
+\Hypertarget{PlayerWeapon_8c_a01166402a9981ed8e533de5e1786ce89}\index{PlayerWeapon.c@{PlayerWeapon.c}!fusil\_rafales@{fusil\_rafales}}
+\index{fusil\_rafales@{fusil\_rafales}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{fusil\_rafales}{fusil\_rafales}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a01166402a9981ed8e533de5e1786ce89} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+rafales =\{5, 35, 2, 11, 11, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 10, 100, 500, 10\}}
+
+
+
+Fusil à rafales \+: tir de 3 balles successives. 
+
+\Hypertarget{PlayerWeapon_8c_a50f909b581e3c83ab8e9fa368bcf9ad4}\index{PlayerWeapon.c@{PlayerWeapon.c}!lance\_flammes@{lance\_flammes}}
+\index{lance\_flammes@{lance\_flammes}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{lance\_flammes}{lance\_flammes}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a50f909b581e3c83ab8e9fa368bcf9ad4} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+flammes =\{1, 10, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 30, 0.\+5, 500, 30\}}
+
+
+
+Lance-\/flammes \+: faibles dégâts mais applique brûlure. 
+
+\Hypertarget{PlayerWeapon_8c_aedb4a0d6d9ebb2993170ccf3702774e2}\index{PlayerWeapon.c@{PlayerWeapon.c}!lance\_glace@{lance\_glace}}
+\index{lance\_glace@{lance\_glace}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{lance\_glace}{lance\_glace}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_aedb4a0d6d9ebb2993170ccf3702774e2} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+glace =\{6, 10, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601ac738f0f78c29056dc3dfcdc285ca67da}{GEL}}, 30, 0.\+5, 500, 10\}}
+
+
+
+Lance-\/glace \+: équivalent gel du lance-\/flammes. 
+
+\Hypertarget{PlayerWeapon_8c_a5620b923a3c0ec6db2ddeadc4507b47d}\index{PlayerWeapon.c@{PlayerWeapon.c}!lance\_missile\_tete\_chercheuse@{lance\_missile\_tete\_chercheuse}}
+\index{lance\_missile\_tete\_chercheuse@{lance\_missile\_tete\_chercheuse}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{lance\_missile\_tete\_chercheuse}{lance\_missile\_tete\_chercheuse}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a5620b923a3c0ec6db2ddeadc4507b47d} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+missile\+\_\+tete\+\_\+chercheuse =\{2, 125, 2, 10, 10, 6, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 4, 500, 10\}}
+
+
+
+Lance-\/missile à tête chercheuse. 
+
+\Hypertarget{PlayerWeapon_8c_aa533c9ae7191475452231219c0f40645}\index{PlayerWeapon.c@{PlayerWeapon.c}!lance\_roquette@{lance\_roquette}}
+\index{lance\_roquette@{lance\_roquette}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{lance\_roquette}{lance\_roquette}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_aa533c9ae7191475452231219c0f40645} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+roquette =\{7, 150, 0.\+8, 8, 8, 4, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 0, 0.\+5, 500, 10\}}
+
+
+
+Lance-\/roquette \+: missile explosif. 
+
+\Hypertarget{PlayerWeapon_8c_a4d8ff34614b1d5d9d20807134de12fd4}\index{PlayerWeapon.c@{PlayerWeapon.c}!minigun@{minigun}}
+\index{minigun@{minigun}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{minigun}{minigun}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a4d8ff34614b1d5d9d20807134de12fd4} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} minigun =\{0, 12.\+5, 10, 75, 75, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 30, 100, 500, 15\}}
+
+
+
+Minigun \+: tir rapide avec dispersion et grand chargeur. 
+
+\Hypertarget{PlayerWeapon_8c_aea8a4e4eb9161d8e4a3a7b5450e3d9a9}\index{PlayerWeapon.c@{PlayerWeapon.c}!pistolet\_eclectique@{pistolet\_eclectique}}
+\index{pistolet\_eclectique@{pistolet\_eclectique}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{pistolet\_eclectique}{pistolet\_eclectique}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_aea8a4e4eb9161d8e4a3a7b5450e3d9a9} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+eclectique =\{11, 35, 2, 15, 15, 2, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a1298860c6bdaef522a8452b33b3b8111}{ELECTRIQUE}}, 40, 50, 500, 10\}}
+
+
+
+Pistolet électrique \+: attaque en chaîne les ennemis proches. 
+
+\Hypertarget{PlayerWeapon_8c_abdd8b82b357fb575842ce112597760ec}\index{PlayerWeapon.c@{PlayerWeapon.c}!pistolet\_laser@{pistolet\_laser}}
+\index{pistolet\_laser@{pistolet\_laser}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{pistolet\_laser}{pistolet\_laser}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_abdd8b82b357fb575842ce112597760ec} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+laser =\{4, 50, 0.\+8, 10, 10, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 1, 500, 50\}}
+
+
+
+Pistolet laser \+: rayon continu pendant 1 seconde. 
+
+\Hypertarget{PlayerWeapon_8c_acc93f609dad18eb5ff6191661f27f9c9}\index{PlayerWeapon.c@{PlayerWeapon.c}!pistolet\_mitrailleur@{pistolet\_mitrailleur}}
+\index{pistolet\_mitrailleur@{pistolet\_mitrailleur}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{pistolet\_mitrailleur}{pistolet\_mitrailleur}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_acc93f609dad18eb5ff6191661f27f9c9} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+mitrailleur =\{12, 10, 10, 40, 40, 0.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 25, 50, 500, 10\}}
+
+
+
+Pistolet mitrailleur \+: rapide mais peu puissant. 
+
+\Hypertarget{PlayerWeapon_8c_a038dce8dc6a7310c996daa199e4e027c}\index{PlayerWeapon.c@{PlayerWeapon.c}!pistolet\_multi\_direction@{pistolet\_multi\_direction}}
+\index{pistolet\_multi\_direction@{pistolet\_multi\_direction}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{pistolet\_multi\_direction}{pistolet\_multi\_direction}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a038dce8dc6a7310c996daa199e4e027c} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+multi\+\_\+direction =\{13, 20, 2, 20, 20, 1.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 7.\+5, 100, 500, 10\}}
+
+
+
+Pistolet multidirection \+: tir dans 4 directions. 
+
+\Hypertarget{PlayerWeapon_8c_a6a2743a0956741cb885071eb4e909f85}\index{PlayerWeapon.c@{PlayerWeapon.c}!sniper@{sniper}}
+\index{sniper@{sniper}!PlayerWeapon.c@{PlayerWeapon.c}}
+\doxysubsubsection{\texorpdfstring{sniper}{sniper}}
+{\footnotesize\ttfamily \label{PlayerWeapon_8c_a6a2743a0956741cb885071eb4e909f85} 
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} sniper =\{9, 150, 0.\+75, 6, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 100, 1200, 20\}}
+
+
+
+Sniper \+: tir lent mais très puissant. 
+

@@ -1,0 +1,80 @@
+\doxysection{src/core/\+Window\+Manager.c File Reference}
+\hypertarget{WindowManager_8c}{}\label{WindowManager_8c}\index{src/core/WindowManager.c@{src/core/WindowManager.c}}
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Window\+Manager.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{WindowManager_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{WindowManager_8c_a606f7d96601573005c78c5ffa83616e7}{verif\+Prem\+Plan}} (void)
+\begin{DoxyCompactList}\small\item\em Vérifie et change l\textquotesingle{}état de premier plan de la fenêtre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{WindowManager_8c_a1a20c5f41702180fea63adc55fae5e65}{Window\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialise la fenêtre de jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{WindowManager_8c_ad5f0aa7d8afd1ffba57b3d2ab54b22d2}{Window\+Manager\+\_\+\+Update}} (void)
+\begin{DoxyCompactList}\small\item\em Met à jour la fenêtre à chaque frame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{WindowManager_8c_a7ce90044dc8a3a27d7fecc6540ed81c8}{Window\+Manager\+\_\+\+Is\+Topmost}} (void)
+\begin{DoxyCompactList}\small\item\em Récupère l\textquotesingle{}état actuel en premier plan ou non de la fenêtre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{WindowManager_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{WindowManager_8c_a606f7d96601573005c78c5ffa83616e7}\index{WindowManager.c@{WindowManager.c}!verifPremPlan@{verifPremPlan}}
+\index{verifPremPlan@{verifPremPlan}!WindowManager.c@{WindowManager.c}}
+\doxysubsubsection{\texorpdfstring{verifPremPlan()}{verifPremPlan()}}
+{\footnotesize\ttfamily \label{WindowManager_8c_a606f7d96601573005c78c5ffa83616e7} 
+void verif\+Prem\+Plan (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Vérifie et change l\textquotesingle{}état de premier plan de la fenêtre. 
+
+
+\begin{DoxyItemize}
+\item Si la fenêtre est sélectionnée elle est forcée au premier plan Si elle n\textquotesingle{}est plus sélectionnée alors on enlève le flag forçant la mise au premier plan 
+\end{DoxyItemize}\Hypertarget{WindowManager_8c_a1a20c5f41702180fea63adc55fae5e65}\index{WindowManager.c@{WindowManager.c}!WindowInit@{WindowInit}}
+\index{WindowInit@{WindowInit}!WindowManager.c@{WindowManager.c}}
+\doxysubsubsection{\texorpdfstring{WindowInit()}{WindowInit()}}
+{\footnotesize\ttfamily \label{WindowManager_8c_a1a20c5f41702180fea63adc55fae5e65} 
+void Window\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise la fenêtre de jeu. 
+
+
+\begin{DoxyItemize}
+\item Initialise la fenêtre de jeu caché le temps de l\textquotesingle{}ouverture puis visible à la taille de l\textquotesingle{}écran mais sans la barre de titre \begin{DoxyNote}{Note}
+Sur Windows on met un pixel de moins pour éviter un bug d\textquotesingle{}affichage 
+\end{DoxyNote}
+
+\end{DoxyItemize}\Hypertarget{WindowManager_8c_a7ce90044dc8a3a27d7fecc6540ed81c8}\index{WindowManager.c@{WindowManager.c}!WindowManager\_IsTopmost@{WindowManager\_IsTopmost}}
+\index{WindowManager\_IsTopmost@{WindowManager\_IsTopmost}!WindowManager.c@{WindowManager.c}}
+\doxysubsubsection{\texorpdfstring{WindowManager\_IsTopmost()}{WindowManager\_IsTopmost()}}
+{\footnotesize\ttfamily \label{WindowManager_8c_a7ce90044dc8a3a27d7fecc6540ed81c8} 
+bool Window\+Manager\+\_\+\+Is\+Topmost (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Récupère l\textquotesingle{}état actuel en premier plan ou non de la fenêtre. 
+
+\begin{DoxyReturn}{Returns}
+true si la fenêtre est actuellement au premier plan, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{WindowManager_8c_ad5f0aa7d8afd1ffba57b3d2ab54b22d2}\index{WindowManager.c@{WindowManager.c}!WindowManager\_Update@{WindowManager\_Update}}
+\index{WindowManager\_Update@{WindowManager\_Update}!WindowManager.c@{WindowManager.c}}
+\doxysubsubsection{\texorpdfstring{WindowManager\_Update()}{WindowManager\_Update()}}
+{\footnotesize\ttfamily \label{WindowManager_8c_ad5f0aa7d8afd1ffba57b3d2ab54b22d2} 
+void Window\+Manager\+\_\+\+Update (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Met à jour la fenêtre à chaque frame. 
+

@@ -1,0 +1,110 @@
+\doxysection{src/systems/\+Collision\+System.c File Reference}
+\hypertarget{CollisionSystem_8c}{}\label{CollisionSystem_8c}\index{src/systems/CollisionSystem.c@{src/systems/CollisionSystem.c}}
+
+
+Gestion des collisions entre ennemis et projectiles.  
+
+
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Collision\+System.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/player/\+Player.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for Collision\+System.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CollisionSystem_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{CollisionSystem_8c_a3c23eee373911780724384bf8e15c347}{Check\+Enemy\+Bullet\+Collision}} (\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}enemies, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets)
+\begin{DoxyCompactList}\small\item\em Détecte les collisions entre ennemis et projectiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CollisionSystem_8c_a327130d83d0bdf2c3fe16e801d2b5b67}{Check\+Player\+Enemy\+Collision}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}enemies, int \texorpdfstring{$\ast$}{*}total\+\_\+dmg)
+\begin{DoxyCompactList}\small\item\em Détecte collisions entre joueur et ennemies et calcule le nombre de dégâts total à infliger. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CollisionSystem_8c_ad028a52a143ec6844b9ed1253c337681}{Check\+Player\+Bullet\+Collision}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets, int \texorpdfstring{$\ast$}{*}total\+\_\+dmg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestion des collisions entre ennemis et projectiles. 
+
+\begin{DoxyAuthor}{Author}
+A. Pocholle
+\end{DoxyAuthor}
+Ce fichier implémente la détection de collision entre les ennemis et les bullets à l’aide d’une méthode simple basée sur la distance entre deux points (collision circulaire).
+
+Lorsqu\textquotesingle{}une collision est détectée \+:
+\begin{DoxyItemize}
+\item l\textquotesingle{}ennemi est désactivé
+\item la bullet est désactivée
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+A. Pocholle
+\end{DoxyAuthor}
+Implémente la détection de collision entre les ennemis et les bullets à l’aide d’une méthode simple basée sur la distance entre deux points (collision circulaire).
+
+Lorsqu\textquotesingle{}une collision est détectée \+:
+\begin{DoxyItemize}
+\item l\textquotesingle{}ennemi est désactivé
+\item la bullet est désactivée 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{CollisionSystem_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{CollisionSystem_8c_a3c23eee373911780724384bf8e15c347}\index{CollisionSystem.c@{CollisionSystem.c}!CheckEnemyBulletCollision@{CheckEnemyBulletCollision}}
+\index{CheckEnemyBulletCollision@{CheckEnemyBulletCollision}!CollisionSystem.c@{CollisionSystem.c}}
+\doxysubsubsection{\texorpdfstring{CheckEnemyBulletCollision()}{CheckEnemyBulletCollision()}}
+{\footnotesize\ttfamily \label{CollisionSystem_8c_a3c23eee373911780724384bf8e15c347} 
+void Check\+Enemy\+Bullet\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemies}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets}{}\end{DoxyParamCaption})}
+
+
+
+Détecte les collisions entre ennemis et projectiles. 
+
+Parcourt tous les ennemis actifs et toutes les bullets actives, puis vérifie si la distance entre eux est inférieure à la somme de leurs rayons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemies} & pool d’ennemis \\
+\hline
+{\em bullets} & pool de projectiles \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CollisionSystem_8c_ad028a52a143ec6844b9ed1253c337681}\index{CollisionSystem.c@{CollisionSystem.c}!CheckPlayerBulletCollision@{CheckPlayerBulletCollision}}
+\index{CheckPlayerBulletCollision@{CheckPlayerBulletCollision}!CollisionSystem.c@{CollisionSystem.c}}
+\doxysubsubsection{\texorpdfstring{CheckPlayerBulletCollision()}{CheckPlayerBulletCollision()}}
+{\footnotesize\ttfamily \label{CollisionSystem_8c_ad028a52a143ec6844b9ed1253c337681} 
+void Check\+Player\+Bullet\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{total\+\_\+dmg}{}\end{DoxyParamCaption})}
+
+\Hypertarget{CollisionSystem_8c_a327130d83d0bdf2c3fe16e801d2b5b67}\index{CollisionSystem.c@{CollisionSystem.c}!CheckPlayerEnemyCollision@{CheckPlayerEnemyCollision}}
+\index{CheckPlayerEnemyCollision@{CheckPlayerEnemyCollision}!CollisionSystem.c@{CollisionSystem.c}}
+\doxysubsubsection{\texorpdfstring{CheckPlayerEnemyCollision()}{CheckPlayerEnemyCollision()}}
+{\footnotesize\ttfamily \label{CollisionSystem_8c_a327130d83d0bdf2c3fe16e801d2b5b67} 
+void Check\+Player\+Enemy\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemies}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{total\+\_\+dmg}{}\end{DoxyParamCaption})}
+
+
+
+Détecte collisions entre joueur et ennemies et calcule le nombre de dégâts total à infliger. 
+
+Détecte collisions entre joueur et bullets et calcule le nombre de dégâts total à infliger.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
+\hline
+ & {\em enemies} & Tableau contenant les ennemies \\
+\hline
+\mbox{\texttt{out}}  & {\em dmg} & Dégâts à infliger\\
+\hline
+ & {\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
+\hline
+ & {\em bullets} & Tableau contenant les bullets \\
+\hline
+\mbox{\texttt{out}}  & {\em dmg} & Dégâts à infliger \\
+\hline
+\end{DoxyParams}

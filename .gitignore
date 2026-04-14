@@ -1,7 +1,7 @@
 *.o
-.exe
+*.exe
 game
 game.exe
 test/Map.c
-bin/
+bin/*
 !bin/.gitkeep

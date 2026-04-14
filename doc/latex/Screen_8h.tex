@@ -1,0 +1,195 @@
+\doxysection{lib/core/\+Screen.h File Reference}
+\hypertarget{Screen_8h}{}\label{Screen_8h}\index{lib/core/Screen.h@{lib/core/Screen.h}}
+
+
+Définition des différents écrans du jeu (menu, jeu, paramètres, sortie).  
+
+
+{\ttfamily \#include "{}../player/\+Player.\+h"{}}\newline
+Include dependency graph for Screen.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Screen_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Screen_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \{ \newline
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6aa384e8d7c0f417df6b5b64f547952d52}{SCREEN\+\_\+\+MENU}}
+, \mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6a42d041abe0e99be298737a6cdc644e69}{SCREEN\+\_\+\+GAME}}
+, \mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6a6fcb85d9f038bd440753c164469342dc}{SCREEN\+\_\+\+SETTINGS}}
+, \mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6ad76d664a48ac5359f27749a6c092c5d7}{SCREEN\+\_\+\+PAUSE}}
+, \newline
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6a44e9fc54683eebcf21f4b1607417cab3}{SCREEN\+\_\+\+END\+\_\+\+LEVEL}}
+, \mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6aec6d65abfdf1b234c65e829298e3676c}{SCREEN\+\_\+\+EXIT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Représente les différents états/écrans du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{Screen_8h_a29d54772dcbbb55d658056dc967fa186}{Menu\+Update}} (void)
+\begin{DoxyCompactList}\small\item\em Met à jour le menu principal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{Screen_8h_a627bc5a973888196b8a7a68ba6d46377}{Game}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Lance et met à jour la logique du jeu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{Screen_8h_a49267ba280d6e1db51d5839b1a22d844}{Settings\+Update}} (\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} previous\+Screen)
+\begin{DoxyCompactList}\small\item\em Met à jour l\textquotesingle{}écran des paramètres. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{Screen_8h_ab922447b433a2222cf8cd3ba7cd1b67b}{Pause\+Update}} (void)
+\begin{DoxyCompactList}\small\item\em Met à jour l\textquotesingle{}écran de pause. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{Screen_8h_a525b442075900fe31937ecb0442eeddd}{End\+Level\+Update}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Met à jour l\textquotesingle{}écran de fin de niveau. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Screen_8h_a34b292658ed901a2a206b36968636322}{New\+Level}} (int new\+Flag)
+\begin{DoxyCompactList}\small\item\em Gère l\textquotesingle{}état de déclenchement d\textquotesingle{}un nouveau niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Définition des différents écrans du jeu (menu, jeu, paramètres, sortie). 
+
+\begin{DoxyAuthor}{Author}
+Kilian 
+\end{DoxyAuthor}
+
+
+\label{doc-enum-members}
+\Hypertarget{Screen_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}\index{Screen.h@{Screen.h}!Screen\_t@{Screen\_t}}
+\index{Screen\_t@{Screen\_t}!Screen.h@{Screen.h}}
+\doxysubsubsection{\texorpdfstring{Screen\_t}{Screen\_t}}
+{\footnotesize\ttfamily \label{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6} 
+enum \mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}}}
+
+
+
+Représente les différents états/écrans du jeu. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCREEN\_MENU@{SCREEN\_MENU}!Screen.h@{Screen.h}}\index{Screen.h@{Screen.h}!SCREEN\_MENU@{SCREEN\_MENU}}}\Hypertarget{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6aa384e8d7c0f417df6b5b64f547952d52}\label{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6aa384e8d7c0f417df6b5b64f547952d52} 
+SCREEN\+\_\+\+MENU&Écran du menu principal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCREEN\_GAME@{SCREEN\_GAME}!Screen.h@{Screen.h}}\index{Screen.h@{Screen.h}!SCREEN\_GAME@{SCREEN\_GAME}}}\Hypertarget{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6a42d041abe0e99be298737a6cdc644e69}\label{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6a42d041abe0e99be298737a6cdc644e69} 
+SCREEN\+\_\+\+GAME&Écran de jeu \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCREEN\_SETTINGS@{SCREEN\_SETTINGS}!Screen.h@{Screen.h}}\index{Screen.h@{Screen.h}!SCREEN\_SETTINGS@{SCREEN\_SETTINGS}}}\Hypertarget{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6a6fcb85d9f038bd440753c164469342dc}\label{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6a6fcb85d9f038bd440753c164469342dc} 
+SCREEN\+\_\+\+SETTINGS&Écran des paramètres \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCREEN\_PAUSE@{SCREEN\_PAUSE}!Screen.h@{Screen.h}}\index{Screen.h@{Screen.h}!SCREEN\_PAUSE@{SCREEN\_PAUSE}}}\Hypertarget{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6ad76d664a48ac5359f27749a6c092c5d7}\label{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6ad76d664a48ac5359f27749a6c092c5d7} 
+SCREEN\+\_\+\+PAUSE&Écran de pause \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCREEN\_END\_LEVEL@{SCREEN\_END\_LEVEL}!Screen.h@{Screen.h}}\index{Screen.h@{Screen.h}!SCREEN\_END\_LEVEL@{SCREEN\_END\_LEVEL}}}\Hypertarget{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6a44e9fc54683eebcf21f4b1607417cab3}\label{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6a44e9fc54683eebcf21f4b1607417cab3} 
+SCREEN\+\_\+\+END\+\_\+\+LEVEL&Écran de fin d\textquotesingle{}un niveau \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCREEN\_EXIT@{SCREEN\_EXIT}!Screen.h@{Screen.h}}\index{Screen.h@{Screen.h}!SCREEN\_EXIT@{SCREEN\_EXIT}}}\Hypertarget{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6aec6d65abfdf1b234c65e829298e3676c}\label{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6aec6d65abfdf1b234c65e829298e3676c} 
+SCREEN\+\_\+\+EXIT&Quitte le jeu \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{Screen_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{Screen_8h_a525b442075900fe31937ecb0442eeddd}\index{Screen.h@{Screen.h}!EndLevelUpdate@{EndLevelUpdate}}
+\index{EndLevelUpdate@{EndLevelUpdate}!Screen.h@{Screen.h}}
+\doxysubsubsection{\texorpdfstring{EndLevelUpdate()}{EndLevelUpdate()}}
+{\footnotesize\ttfamily \label{Screen_8h_a525b442075900fe31937ecb0442eeddd} 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} End\+Level\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Met à jour l\textquotesingle{}écran de fin de niveau. 
+
+\begin{DoxyReturn}{Returns}
+Le prochain écran à afficher (\doxylink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t})
+\end{DoxyReturn}
+Affiche les résultats du niveau et permet au joueur d\textquotesingle{}obtenir des améliorations de passer au niveau suivant ou de quitter le jeu. \Hypertarget{Screen_8h_a627bc5a973888196b8a7a68ba6d46377}\index{Screen.h@{Screen.h}!Game@{Game}}
+\index{Game@{Game}!Screen.h@{Screen.h}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily \label{Screen_8h_a627bc5a973888196b8a7a68ba6d46377} 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Lance et met à jour la logique du jeu. 
+
+\begin{DoxyReturn}{Returns}
+Le prochain écran à afficher (\doxylink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t})
+\end{DoxyReturn}
+Contient la boucle ou la logique principale du gameplay. Peut retourner SCREEN\+\_\+\+MENU ou SCREEN\+\_\+\+EXIT selon les actions du joueur. \Hypertarget{Screen_8h_a29d54772dcbbb55d658056dc967fa186}\index{Screen.h@{Screen.h}!MenuUpdate@{MenuUpdate}}
+\index{MenuUpdate@{MenuUpdate}!Screen.h@{Screen.h}}
+\doxysubsubsection{\texorpdfstring{MenuUpdate()}{MenuUpdate()}}
+{\footnotesize\ttfamily \label{Screen_8h_a29d54772dcbbb55d658056dc967fa186} 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} Menu\+Update (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Met à jour le menu principal. 
+
+\begin{DoxyReturn}{Returns}
+Le prochain écran à afficher (\doxylink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t})
+\end{DoxyReturn}
+Gère les entrées utilisateur (clavier/souris) et permet de naviguer entre les options (jouer, paramètres, quitter). \Hypertarget{Screen_8h_a34b292658ed901a2a206b36968636322}\index{Screen.h@{Screen.h}!NewLevel@{NewLevel}}
+\index{NewLevel@{NewLevel}!Screen.h@{Screen.h}}
+\doxysubsubsection{\texorpdfstring{NewLevel()}{NewLevel()}}
+{\footnotesize\ttfamily \label{Screen_8h_a34b292658ed901a2a206b36968636322} 
+int New\+Level (\begin{DoxyParamCaption}\item[{int}]{new\+Flag}{}\end{DoxyParamCaption})}
+
+
+
+Gère l\textquotesingle{}état de déclenchement d\textquotesingle{}un nouveau niveau. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Flag} & Indique si un changement d\textquotesingle{}état est demandé (1 = toggle, 0 = aucun changement) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}état actuel du nouveau niveau (1 = actif, 0 = inactif)
+\end{DoxyReturn}
+Cette fonction utilise une variable statique pour mémoriser l\textquotesingle{}état entre les appels. Si {\ttfamily new\+Flag} est à 1, l\textquotesingle{}état est inversé (toggle). Si {\ttfamily new\+Flag} est à 0, l\textquotesingle{}état reste inchangé.
+
+\begin{DoxyNote}{Note}
+Fonctionne comme un interrupteur (toggle). 
+\end{DoxyNote}
+\Hypertarget{Screen_8h_ab922447b433a2222cf8cd3ba7cd1b67b}\index{Screen.h@{Screen.h}!PauseUpdate@{PauseUpdate}}
+\index{PauseUpdate@{PauseUpdate}!Screen.h@{Screen.h}}
+\doxysubsubsection{\texorpdfstring{PauseUpdate()}{PauseUpdate()}}
+{\footnotesize\ttfamily \label{Screen_8h_ab922447b433a2222cf8cd3ba7cd1b67b} 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} Pause\+Update (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Met à jour l\textquotesingle{}écran de pause. 
+
+\begin{DoxyReturn}{Returns}
+Le prochain écran à afficher (\doxylink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t})
+\end{DoxyReturn}
+Gère les interactions durant la pause (reprendre la partie, modifier les paramètres, quitter le jeu, etc.). \Hypertarget{Screen_8h_a49267ba280d6e1db51d5839b1a22d844}\index{Screen.h@{Screen.h}!SettingsUpdate@{SettingsUpdate}}
+\index{SettingsUpdate@{SettingsUpdate}!Screen.h@{Screen.h}}
+\doxysubsubsection{\texorpdfstring{SettingsUpdate()}{SettingsUpdate()}}
+{\footnotesize\ttfamily \label{Screen_8h_a49267ba280d6e1db51d5839b1a22d844} 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} Settings\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}}}]{previous\+Screen}{}\end{DoxyParamCaption})}
+
+
+
+Met à jour l\textquotesingle{}écran des paramètres. 
+
+\begin{DoxyReturn}{Returns}
+Le prochain écran à afficher (\doxylink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t})
+\end{DoxyReturn}
+Permet de modifier les options du jeu (audio, contrôles, etc.). 

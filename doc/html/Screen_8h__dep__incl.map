@@ -1,0 +1,15 @@
+<map id="lib/core/Screen.h" name="lib/core/Screen.h">
+<area shape="rect" id="Node000001" title="Définition des différents écrans du jeu (menu, jeu, paramètres, sortie)." alt="" coords="381,5,511,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title=" " alt="" coords="5,79,95,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="367,35,106,81,96,83,95,78,106,76,366,30"/>
+<area shape="rect" id="Node000003" href="$EndLevel_8c.html" title=" " alt="" coords="119,79,275,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="393,37,238,81,236,76,392,32"/>
+<area shape="rect" id="Node000004" href="$Game_8c.html" title=" " alt="" coords="299,79,435,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="425,42,382,80,378,76,421,38"/>
+<area shape="rect" id="Node000005" href="$Menu_8c.html" title=" " alt="" coords="459,79,593,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="471,38,515,76,511,80,467,42"/>
+<area shape="rect" id="Node000006" href="$Pause_8c.html" title=" " alt="" coords="617,79,752,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="498,32,647,76,645,81,497,37"/>
+<area shape="rect" id="Node000007" href="$Settings_8c.html" title=" " alt="" coords="776,79,927,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="525,30,786,76,786,81,524,36"/>
+</map>

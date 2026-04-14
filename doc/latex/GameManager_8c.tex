@@ -1,0 +1,60 @@
+\doxysection{src/core/\+Game\+Manager.c File Reference}
+\hypertarget{GameManager_8c}{}\label{GameManager_8c}\index{src/core/GameManager.c@{src/core/GameManager.c}}
+{\ttfamily \#include "{}../../lib/core/\+Game\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/player/\+Player\+Controller.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/levels/\+Level\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Enemy\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Enemy\+Spawner.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Collision\+System.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Life\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Ressources\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Trigger\+System.\+h"{}}\newline
+Include dependency graph for Game\+Manager.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GameManager_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{GameManager_8c_ac855de57376273ccd48ec3cf3b583d84}{Game\+Init}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\item 
+void \mbox{\hyperlink{GameManager_8c_aa0df29916896420bc7740df4549402f8}{Game\+Update}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, double \texorpdfstring{$\ast$}{*}time\+Spent, double \texorpdfstring{$\ast$}{*}start\+Reload)
+\item 
+void \mbox{\hyperlink{GameManager_8c_a6319aa2e4132b1eb5e2c124a9078b78f}{Game\+Draw}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\item 
+void \mbox{\hyperlink{GameManager_8c_a3f8da19f0a5b50d5748539f11291d9d6}{Game\+Unload}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} player)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{GameManager_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{GameManager_8c_a6319aa2e4132b1eb5e2c124a9078b78f}\index{GameManager.c@{GameManager.c}!GameDraw@{GameDraw}}
+\index{GameDraw@{GameDraw}!GameManager.c@{GameManager.c}}
+\doxysubsubsection{\texorpdfstring{GameDraw()}{GameDraw()}}
+{\footnotesize\ttfamily \label{GameManager_8c_a6319aa2e4132b1eb5e2c124a9078b78f} 
+void Game\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+\Hypertarget{GameManager_8c_ac855de57376273ccd48ec3cf3b583d84}\index{GameManager.c@{GameManager.c}!GameInit@{GameInit}}
+\index{GameInit@{GameInit}!GameManager.c@{GameManager.c}}
+\doxysubsubsection{\texorpdfstring{GameInit()}{GameInit()}}
+{\footnotesize\ttfamily \label{GameManager_8c_ac855de57376273ccd48ec3cf3b583d84} 
+void Game\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+\Hypertarget{GameManager_8c_a3f8da19f0a5b50d5748539f11291d9d6}\index{GameManager.c@{GameManager.c}!GameUnload@{GameUnload}}
+\index{GameUnload@{GameUnload}!GameManager.c@{GameManager.c}}
+\doxysubsubsection{\texorpdfstring{GameUnload()}{GameUnload()}}
+{\footnotesize\ttfamily \label{GameManager_8c_a3f8da19f0a5b50d5748539f11291d9d6} 
+void Game\+Unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}}]{player}{}\end{DoxyParamCaption})}
+
+\Hypertarget{GameManager_8c_aa0df29916896420bc7740df4549402f8}\index{GameManager.c@{GameManager.c}!GameUpdate@{GameUpdate}}
+\index{GameUpdate@{GameUpdate}!GameManager.c@{GameManager.c}}
+\doxysubsubsection{\texorpdfstring{GameUpdate()}{GameUpdate()}}
+{\footnotesize\ttfamily \label{GameManager_8c_aa0df29916896420bc7740df4549402f8} 
+void Game\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{time\+Spent}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{start\+Reload}{}\end{DoxyParamCaption})}
+

@@ -1,0 +1,137 @@
+\doxysection{src/core/\+Ressources\+Manager.c File Reference}
+\hypertarget{RessourcesManager_8c}{}\label{RessourcesManager_8c}\index{src/core/RessourcesManager.c@{src/core/RessourcesManager.c}}
+
+
+Gestion des ressources du jeu.  
+
+
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Ressources\+Manager.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{RessourcesManager_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structTextureResource}{Texture\+Resource}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{RessourcesManager_8c_a6f83eeeca7ad2d7ad5ba41f3ae6d904e}{MAX\+\_\+\+TEXTURES}}~128
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Texture2D \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8c_a4bc34793271f2e1a0e99da94d1699edb}{RM\+\_\+\+Get\+Texture}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Récupère une texture depuis le gestionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8c_ad3887999d28d79cdafdb102920f84229}{Load\+Game\+Resources}} ()
+\item 
+void \mbox{\hyperlink{RessourcesManager_8c_a66438427e98c02c0c63b5673518e919f}{RM\+\_\+\+Unload\+Texture}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Décharge une texture spécifique. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8c_a7622c532cade6687cc2d50a52c6e7d40}{RM\+\_\+\+Unload\+All}} (void)
+\begin{DoxyCompactList}\small\item\em Décharge toutes les textures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestion des ressources du jeu. 
+
+Définit l’interface de gestion des ressources du jeu, y compris les textures, sons et autres éléments graphiques.
+
+Fournit des fonctions pour \+:
+\begin{DoxyItemize}
+\item charger les ressources
+\item libérer les ressources
+\item accéder aux ressources
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+A. Pocholle 
+\end{DoxyAuthor}
+
+
+\label{doc-define-members}
+\Hypertarget{RessourcesManager_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{RessourcesManager_8c_a6f83eeeca7ad2d7ad5ba41f3ae6d904e}\index{RessourcesManager.c@{RessourcesManager.c}!MAX\_TEXTURES@{MAX\_TEXTURES}}
+\index{MAX\_TEXTURES@{MAX\_TEXTURES}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_TEXTURES}{MAX\_TEXTURES}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a6f83eeeca7ad2d7ad5ba41f3ae6d904e} 
+\#define MAX\+\_\+\+TEXTURES~128}
+
+
+
+\label{doc-func-members}
+\Hypertarget{RessourcesManager_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{RessourcesManager_8c_ad3887999d28d79cdafdb102920f84229}\index{RessourcesManager.c@{RessourcesManager.c}!LoadGameResources@{LoadGameResources}}
+\index{LoadGameResources@{LoadGameResources}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{LoadGameResources()}{LoadGameResources()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_ad3887999d28d79cdafdb102920f84229} 
+void Load\+Game\+Resources (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{RessourcesManager_8c_a4bc34793271f2e1a0e99da94d1699edb}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_GetTexture@{RM\_GetTexture}}
+\index{RM\_GetTexture@{RM\_GetTexture}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_GetTexture()}{RM\_GetTexture()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a4bc34793271f2e1a0e99da94d1699edb} 
+Texture2D \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Récupère une texture depuis le gestionnaire. 
+
+Si la texture est déjà chargée, elle est simplement retournée. Sinon, elle est chargée puis stockée.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Chemin vers le fichier image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la texture, ou NULL en cas d\textquotesingle{}erreur
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+La texture reste en mémoire jusqu\textquotesingle{}à appel de \doxylink{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f}{RM\+\_\+\+Unload\+Texture()} ou \doxylink{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}{RM\+\_\+\+Unload\+All()} 
+\end{DoxyNote}
+\Hypertarget{RessourcesManager_8c_a7622c532cade6687cc2d50a52c6e7d40}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_UnloadAll@{RM\_UnloadAll}}
+\index{RM\_UnloadAll@{RM\_UnloadAll}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_UnloadAll()}{RM\_UnloadAll()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a7622c532cade6687cc2d50a52c6e7d40} 
+void RM\+\_\+\+Unload\+All (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Décharge toutes les textures. 
+
+Libère toutes les textures chargées en mémoire GPU et réinitialise le gestionnaire.
+
+\begin{DoxyWarning}{Warning}
+Doit être appelé avant la fermeture du programme 
+\end{DoxyWarning}
+\Hypertarget{RessourcesManager_8c_a66438427e98c02c0c63b5673518e919f}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_UnloadTexture@{RM\_UnloadTexture}}
+\index{RM\_UnloadTexture@{RM\_UnloadTexture}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_UnloadTexture()}{RM\_UnloadTexture()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a66438427e98c02c0c63b5673518e919f} 
+void RM\+\_\+\+Unload\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Décharge une texture spécifique. 
+
+Libère la mémoire GPU associée à la texture et la retire du gestionnaire.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Chemin de la texture à libérer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Si la texture n\textquotesingle{}existe pas, la fonction ne fait rien 
+\end{DoxyWarning}

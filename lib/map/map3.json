@@ -1,0 +1,48 @@
+{
+  "map_info": {
+    "id": "map3", "title": "Lust LVL3",
+    "dimensions": { "w": 2048, "h": 3264 }
+  },
+  "platforms": [
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 3008, "width": 2048, "high": 256 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 192, "y": 2688, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 832, "y": 2688, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1472, "y": 2688, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 2176, "width": 320, "high": 320 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 1728, "y": 2176, "width": 320, "high": 320 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1344, "y": 2304, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 320, "y": 2304, "width": 384, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 768, "y": 2112, "width": 512, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 256, "y": 1600, "width": 256, "high": 192 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 512, "y": 1728, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 1536, "y": 1600, "width": 256, "high": 192 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1280, "y": 1728, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 704, "y": 1344, "width": 640, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 0, "y": 1088, "width": 576, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1472, "y": 1088, "width": 576, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 512, "y": 768, "width": 960, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": -64, "y": 0, "width": 64, "high": 3264 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 2048, "y": 0, "width": 64, "high": 3264 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 0, "width": 2048, "high": 64 }
+  ],
+  "entities": {
+    "player_start": { "x": 1024, "y": 2880 },
+    "enemies": [
+      { "nbType": 2, "spawnTime": 2, "position": { "x": 512, "y": 2496 } },
+      { "nbType": 2, "spawnTime": 0.5, "position": { "x": 1536, "y": 2496 } },
+      { "nbType": 1, "spawnTime": 1, "position": { "x": 1024, "y": 1984 } },
+      { "nbType": 2, "spawnTime": 5, "position": { "x": 256, "y": 1984 } },
+      { "nbType": 2, "spawnTime": 0.5, "position": { "x": 1792, "y": 1984 } },
+      { "nbType": 2, "spawnTime": 6, "position": { "x": 192, "y": 1344 } },
+      { "nbType": 2, "spawnTime": 0.5, "position": { "x": 1024, "y": 960 } },
+      { "nbType": 1, "spawnTime": 5, "position": { "x": 1856, "y": 1344 } },
+      { "nbType": 1, "spawnTime": 6, "position": { "x": 128, "y": 1728 } },
+      { "nbType": 1, "spawnTime": 0, "position": { "x": 1920, "y": 1728 } }
+    ],
+    "hazards": [
+    ]
+  },
+  "triggers": [
+    { "id": "finNiveau", "action": "map4", "rect": { "x": 960, "y": 576, "w": 128, "h": 192 } }
+  ]
+}

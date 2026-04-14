@@ -1,0 +1,5 @@
+<map id="lib/levels/Platform.h" name="lib/levels/Platform.h">
+<area shape="rect" id="Node000001" title="Définition des structures de base pour des positions et des rectangles." alt="" coords="5,5,159,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="15,79,149,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,31,85,65,79,65,79,31"/>
+</map>

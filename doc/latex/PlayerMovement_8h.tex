@@ -1,0 +1,495 @@
+\doxysection{lib/player/\+Player\+Movement.h File Reference}
+\hypertarget{PlayerMovement_8h}{}\label{PlayerMovement_8h}\index{lib/player/PlayerMovement.h@{lib/player/PlayerMovement.h}}
+
+
+Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts, la gravité et les collisions avec les plateformes.  
+
+
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../levels/\+Platform.\+h"{}}\newline
+{\ttfamily \#include "{}Player.\+h"{}}\newline
+Include dependency graph for Player\+Movement.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PlayerMovement_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PlayerMovement_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMovementConfig__s}{Movement\+Config\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Structure pour gérer les mouvements du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a7e3949996f30c14a78b3a4906c350631}{GROUND\+\_\+\+ACC}}~1600
+\begin{DoxyCompactList}\small\item\em accélération du joueur sur le sol en pixels par seconde. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_ad479301cbe7814316ef8c52e3791302d}{AIR\+\_\+\+ACC}}~1000
+\begin{DoxyCompactList}\small\item\em accélération du joueur dans les airs en pixels par seconde. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a5bbc8fbcf0b075fbb2e4f352ddd2a87f}{MAX\+\_\+\+SPEED\+\_\+X}}~400
+\begin{DoxyCompactList}\small\item\em Vitesse maximale du joueur sur x en pixels par seconde. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_acade3c4bcbf9193889b5ab328b58d6d6}{MAX\+\_\+\+SPEED\+\_\+Y}}~1500
+\begin{DoxyCompactList}\small\item\em Vitesse maximale du joueur sur y en pixels par seconde. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_acf9e81ff8ca0e6f456581a6f42e5a176}{MAX\+\_\+\+WALL\+\_\+\+SPEED}}~200
+\begin{DoxyCompactList}\small\item\em Vitesse maximale du joueur sur mur en pixels par seconde. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_aee0e47d92715caf539d1db56449eed76}{JUMP\+\_\+\+STRENGTH}}~-\/1200
+\begin{DoxyCompactList}\small\item\em Force de saut du joueur en pixels par seconde. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_ac8a48a4879932f77e714e17fafbf1fd5}{DASH\+\_\+\+SPEED}}~800
+\begin{DoxyCompactList}\small\item\em Vitesse du dash du joueur en pixels par seconde. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a41ca8af45cee2a77e55c1de1f2aa4917}{DEFAULT\+\_\+\+GRAVITY}}~980
+\begin{DoxyCompactList}\small\item\em Gravité par défaut en pixels par seconde carrée. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a84e2af9780746cc86b1310096f56633e}{FALLING\+\_\+\+GRAVITY}}~1225
+\begin{DoxyCompactList}\small\item\em Gravité lors d\textquotesingle{}une chute en pixels par seconde carrée. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a0c047cd7540622bcfdc79a2b92391efb}{WALL\+\_\+\+SLIDE\+\_\+\+GRAVITY}}~300
+\begin{DoxyCompactList}\small\item\em Gravité sur mur en pixels par seconde carrée. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a7ee5ad188aae72c534715a394a7a13a4}{GROUND\+\_\+\+FRICTION}}~0.\+9f
+\begin{DoxyCompactList}\small\item\em Ralentissement par friction sur le sol. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_afcbfb35e32a730aede3dce9816392b05}{AIR\+\_\+\+FRICTION}}~0.\+99f
+\begin{DoxyCompactList}\small\item\em Ralentissement par friction dans les airs. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a2420d7aadd97c01cf2910f46af324e52}{DEFAULT\+\_\+\+JUMPS\+\_\+\+MAX}}~3
+\begin{DoxyCompactList}\small\item\em Nombre de saut d\textquotesingle{}affilé maximum par défaut. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_ae8a6a989aeb359370ce72bc7076c8093}{KEY\+\_\+\+MOVE\+\_\+\+LEFT}}~KEY\+\_\+A
+\begin{DoxyCompactList}\small\item\em Touche pour aller à gauche. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_ae688d0367b52a1c6160fac05a08c5ba4}{KEY\+\_\+\+MOVE\+\_\+\+RIGHT}}~KEY\+\_\+D
+\begin{DoxyCompactList}\small\item\em Touche pour aller à droite. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a6f534193cbc072aa859b4c92f581be3e}{KEY\+\_\+\+MOVE\+\_\+\+JUMP}}~KEY\+\_\+\+SPACE
+\begin{DoxyCompactList}\small\item\em Touche pour sauter. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a0f4c56453b95b630d92e3ff7cc6efd92}{KEY\+\_\+\+MOVE\+\_\+\+DASH}}~KEY\+\_\+E
+\begin{DoxyCompactList}\small\item\em Touche pour dasher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2be}{Movement\+State\+\_\+s}} \mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State}}
+\item 
+typedef struct \mbox{\hyperlink{structMovementConfig__s}{Movement\+Config\+\_\+s}} \mbox{\hyperlink{PlayerMovement_8h_ad86d4956249046fbd7348fdce9ec2b20}{Movement\+Config}}
+\begin{DoxyCompactList}\small\item\em Type de données pour les mouvements du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2be}{Movement\+State\+\_\+s}} \{ \newline
+\mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2beafd6a0e4343048b10646dd2976cc5ad18}{IDLE}}
+, \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea1061be6c3fb88d32829cba6f6b2be304}{RUNNING}}
+, \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2beab8cd32180a1d5897df8369b127256ad1}{JUMPING}}
+, \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bead24712a6a30c1d431b927d1ba2f84b66}{FALLING}}
+, \newline
+\mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea4e34cc101ca8a3d5ada9ace5dcfba04f}{WALL\+\_\+\+SLIDING}}
+, \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea298cd5ecd93c343ae59d91ffea626f5c}{DASHING}}
+ \}
+\item 
+enum \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} \{ \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaa9d4d8b0b72fc2659da772d761a3c5ecb}{Left}}
+, \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaad48f7af8c070184f3774c8e85854eb66}{Right}}
+, \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaa57a7edcbc04d6175683383cad5c3e0a2}{Up}}
+, \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaabcf8c79e9a5f5f9d606fb35645a0fb27}{Down}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration des directions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{PlayerMovement_8h_aff8d8ec0ba37d695840637edd0a0a9d1}{Player\+Move}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+\item 
+void \mbox{\hyperlink{PlayerMovement_8h_a3cbba88b75c89a10f73cbff7b2a82fd6}{Player\+Move\+Config\+Update}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+\item 
+void \mbox{\hyperlink{PlayerMovement_8h_af88c7ef0212a60ba1d2ac69e07665102}{Player\+Jump}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Fait sauter le joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PlayerMovement_8h_aa4c140cab25d9b704b7dceb45892beba}{Player\+Dash}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Fait dasher le joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PlayerMovement_8h_a40fc5396087b60ab70e66da5be7267bf}{Gravity}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, const float Gravity\+Strength)
+\begin{DoxyCompactList}\small\item\em Applique force de gravité sur le joueur. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{PlayerMovement_8h_affb9d3864ce109253880b2d40a262fa5}{Player\+Position\+Fix}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, Vector2 old\+Position, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+\item 
+bool \mbox{\hyperlink{PlayerMovement_8h_aa37e1e0779a50a707154ae6b3b46c850}{is\+On\+Ground}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+\item 
+bool \mbox{\hyperlink{PlayerMovement_8h_ae91de7901008cab29c3ad8fa376b06c0}{is\+On\+Wall}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms, \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
+\item 
+\mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State}} \mbox{\hyperlink{PlayerMovement_8h_ac1f9677d73ea082910111aebad432d8e}{get\+Player\+Movement\+State}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Verifie l\textquotesingle{}etat de mouvement du joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts, la gravité et les collisions avec les plateformes. 
+
+Gestion des armes du joueur (tir, rechargement, types d\textquotesingle{}armes).
+
+\begin{DoxyAuthor}{Author}
+Caius 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21-\/02-\/2026
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Kilian 
+\end{DoxyAuthor}
+
+
+\label{doc-define-members}
+\Hypertarget{PlayerMovement_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{PlayerMovement_8h_ad479301cbe7814316ef8c52e3791302d}\index{PlayerMovement.h@{PlayerMovement.h}!AIR\_ACC@{AIR\_ACC}}
+\index{AIR\_ACC@{AIR\_ACC}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{AIR\_ACC}{AIR\_ACC}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_ad479301cbe7814316ef8c52e3791302d} 
+\#define AIR\+\_\+\+ACC~1000}
+
+
+
+accélération du joueur dans les airs en pixels par seconde. 
+
+\Hypertarget{PlayerMovement_8h_afcbfb35e32a730aede3dce9816392b05}\index{PlayerMovement.h@{PlayerMovement.h}!AIR\_FRICTION@{AIR\_FRICTION}}
+\index{AIR\_FRICTION@{AIR\_FRICTION}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{AIR\_FRICTION}{AIR\_FRICTION}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_afcbfb35e32a730aede3dce9816392b05} 
+\#define AIR\+\_\+\+FRICTION~0.\+99f}
+
+
+
+Ralentissement par friction dans les airs. 
+
+\Hypertarget{PlayerMovement_8h_ac8a48a4879932f77e714e17fafbf1fd5}\index{PlayerMovement.h@{PlayerMovement.h}!DASH\_SPEED@{DASH\_SPEED}}
+\index{DASH\_SPEED@{DASH\_SPEED}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{DASH\_SPEED}{DASH\_SPEED}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_ac8a48a4879932f77e714e17fafbf1fd5} 
+\#define DASH\+\_\+\+SPEED~800}
+
+
+
+Vitesse du dash du joueur en pixels par seconde. 
+
+\Hypertarget{PlayerMovement_8h_a41ca8af45cee2a77e55c1de1f2aa4917}\index{PlayerMovement.h@{PlayerMovement.h}!DEFAULT\_GRAVITY@{DEFAULT\_GRAVITY}}
+\index{DEFAULT\_GRAVITY@{DEFAULT\_GRAVITY}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_GRAVITY}{DEFAULT\_GRAVITY}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a41ca8af45cee2a77e55c1de1f2aa4917} 
+\#define DEFAULT\+\_\+\+GRAVITY~980}
+
+
+
+Gravité par défaut en pixels par seconde carrée. 
+
+\Hypertarget{PlayerMovement_8h_a2420d7aadd97c01cf2910f46af324e52}\index{PlayerMovement.h@{PlayerMovement.h}!DEFAULT\_JUMPS\_MAX@{DEFAULT\_JUMPS\_MAX}}
+\index{DEFAULT\_JUMPS\_MAX@{DEFAULT\_JUMPS\_MAX}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_JUMPS\_MAX}{DEFAULT\_JUMPS\_MAX}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a2420d7aadd97c01cf2910f46af324e52} 
+\#define DEFAULT\+\_\+\+JUMPS\+\_\+\+MAX~3}
+
+
+
+Nombre de saut d\textquotesingle{}affilé maximum par défaut. 
+
+\Hypertarget{PlayerMovement_8h_a84e2af9780746cc86b1310096f56633e}\index{PlayerMovement.h@{PlayerMovement.h}!FALLING\_GRAVITY@{FALLING\_GRAVITY}}
+\index{FALLING\_GRAVITY@{FALLING\_GRAVITY}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{FALLING\_GRAVITY}{FALLING\_GRAVITY}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a84e2af9780746cc86b1310096f56633e} 
+\#define FALLING\+\_\+\+GRAVITY~1225}
+
+
+
+Gravité lors d\textquotesingle{}une chute en pixels par seconde carrée. 
+
+\Hypertarget{PlayerMovement_8h_a7e3949996f30c14a78b3a4906c350631}\index{PlayerMovement.h@{PlayerMovement.h}!GROUND\_ACC@{GROUND\_ACC}}
+\index{GROUND\_ACC@{GROUND\_ACC}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{GROUND\_ACC}{GROUND\_ACC}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a7e3949996f30c14a78b3a4906c350631} 
+\#define GROUND\+\_\+\+ACC~1600}
+
+
+
+accélération du joueur sur le sol en pixels par seconde. 
+
+\Hypertarget{PlayerMovement_8h_a7ee5ad188aae72c534715a394a7a13a4}\index{PlayerMovement.h@{PlayerMovement.h}!GROUND\_FRICTION@{GROUND\_FRICTION}}
+\index{GROUND\_FRICTION@{GROUND\_FRICTION}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{GROUND\_FRICTION}{GROUND\_FRICTION}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a7ee5ad188aae72c534715a394a7a13a4} 
+\#define GROUND\+\_\+\+FRICTION~0.\+9f}
+
+
+
+Ralentissement par friction sur le sol. 
+
+\Hypertarget{PlayerMovement_8h_aee0e47d92715caf539d1db56449eed76}\index{PlayerMovement.h@{PlayerMovement.h}!JUMP\_STRENGTH@{JUMP\_STRENGTH}}
+\index{JUMP\_STRENGTH@{JUMP\_STRENGTH}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{JUMP\_STRENGTH}{JUMP\_STRENGTH}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_aee0e47d92715caf539d1db56449eed76} 
+\#define JUMP\+\_\+\+STRENGTH~-\/1200}
+
+
+
+Force de saut du joueur en pixels par seconde. 
+
+\Hypertarget{PlayerMovement_8h_a0f4c56453b95b630d92e3ff7cc6efd92}\index{PlayerMovement.h@{PlayerMovement.h}!KEY\_MOVE\_DASH@{KEY\_MOVE\_DASH}}
+\index{KEY\_MOVE\_DASH@{KEY\_MOVE\_DASH}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MOVE\_DASH}{KEY\_MOVE\_DASH}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a0f4c56453b95b630d92e3ff7cc6efd92} 
+\#define KEY\+\_\+\+MOVE\+\_\+\+DASH~KEY\+\_\+E}
+
+
+
+Touche pour dasher. 
+
+\Hypertarget{PlayerMovement_8h_a6f534193cbc072aa859b4c92f581be3e}\index{PlayerMovement.h@{PlayerMovement.h}!KEY\_MOVE\_JUMP@{KEY\_MOVE\_JUMP}}
+\index{KEY\_MOVE\_JUMP@{KEY\_MOVE\_JUMP}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MOVE\_JUMP}{KEY\_MOVE\_JUMP}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a6f534193cbc072aa859b4c92f581be3e} 
+\#define KEY\+\_\+\+MOVE\+\_\+\+JUMP~KEY\+\_\+\+SPACE}
+
+
+
+Touche pour sauter. 
+
+\Hypertarget{PlayerMovement_8h_ae8a6a989aeb359370ce72bc7076c8093}\index{PlayerMovement.h@{PlayerMovement.h}!KEY\_MOVE\_LEFT@{KEY\_MOVE\_LEFT}}
+\index{KEY\_MOVE\_LEFT@{KEY\_MOVE\_LEFT}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MOVE\_LEFT}{KEY\_MOVE\_LEFT}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_ae8a6a989aeb359370ce72bc7076c8093} 
+\#define KEY\+\_\+\+MOVE\+\_\+\+LEFT~KEY\+\_\+A}
+
+
+
+Touche pour aller à gauche. 
+
+\Hypertarget{PlayerMovement_8h_ae688d0367b52a1c6160fac05a08c5ba4}\index{PlayerMovement.h@{PlayerMovement.h}!KEY\_MOVE\_RIGHT@{KEY\_MOVE\_RIGHT}}
+\index{KEY\_MOVE\_RIGHT@{KEY\_MOVE\_RIGHT}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MOVE\_RIGHT}{KEY\_MOVE\_RIGHT}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_ae688d0367b52a1c6160fac05a08c5ba4} 
+\#define KEY\+\_\+\+MOVE\+\_\+\+RIGHT~KEY\+\_\+D}
+
+
+
+Touche pour aller à droite. 
+
+\Hypertarget{PlayerMovement_8h_a5bbc8fbcf0b075fbb2e4f352ddd2a87f}\index{PlayerMovement.h@{PlayerMovement.h}!MAX\_SPEED\_X@{MAX\_SPEED\_X}}
+\index{MAX\_SPEED\_X@{MAX\_SPEED\_X}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SPEED\_X}{MAX\_SPEED\_X}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a5bbc8fbcf0b075fbb2e4f352ddd2a87f} 
+\#define MAX\+\_\+\+SPEED\+\_\+X~400}
+
+
+
+Vitesse maximale du joueur sur x en pixels par seconde. 
+
+\Hypertarget{PlayerMovement_8h_acade3c4bcbf9193889b5ab328b58d6d6}\index{PlayerMovement.h@{PlayerMovement.h}!MAX\_SPEED\_Y@{MAX\_SPEED\_Y}}
+\index{MAX\_SPEED\_Y@{MAX\_SPEED\_Y}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SPEED\_Y}{MAX\_SPEED\_Y}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_acade3c4bcbf9193889b5ab328b58d6d6} 
+\#define MAX\+\_\+\+SPEED\+\_\+Y~1500}
+
+
+
+Vitesse maximale du joueur sur y en pixels par seconde. 
+
+\Hypertarget{PlayerMovement_8h_acf9e81ff8ca0e6f456581a6f42e5a176}\index{PlayerMovement.h@{PlayerMovement.h}!MAX\_WALL\_SPEED@{MAX\_WALL\_SPEED}}
+\index{MAX\_WALL\_SPEED@{MAX\_WALL\_SPEED}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WALL\_SPEED}{MAX\_WALL\_SPEED}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_acf9e81ff8ca0e6f456581a6f42e5a176} 
+\#define MAX\+\_\+\+WALL\+\_\+\+SPEED~200}
+
+
+
+Vitesse maximale du joueur sur mur en pixels par seconde. 
+
+\Hypertarget{PlayerMovement_8h_a0c047cd7540622bcfdc79a2b92391efb}\index{PlayerMovement.h@{PlayerMovement.h}!WALL\_SLIDE\_GRAVITY@{WALL\_SLIDE\_GRAVITY}}
+\index{WALL\_SLIDE\_GRAVITY@{WALL\_SLIDE\_GRAVITY}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{WALL\_SLIDE\_GRAVITY}{WALL\_SLIDE\_GRAVITY}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a0c047cd7540622bcfdc79a2b92391efb} 
+\#define WALL\+\_\+\+SLIDE\+\_\+\+GRAVITY~300}
+
+
+
+Gravité sur mur en pixels par seconde carrée. 
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{PlayerMovement_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{PlayerMovement_8h_ad86d4956249046fbd7348fdce9ec2b20}\index{PlayerMovement.h@{PlayerMovement.h}!MovementConfig@{MovementConfig}}
+\index{MovementConfig@{MovementConfig}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{MovementConfig}{MovementConfig}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_ad86d4956249046fbd7348fdce9ec2b20} 
+typedef struct \mbox{\hyperlink{structMovementConfig__s}{Movement\+Config\+\_\+s}} \mbox{\hyperlink{PlayerMovement_8h_ad86d4956249046fbd7348fdce9ec2b20}{Movement\+Config}}}
+
+
+
+Type de données pour les mouvements du joueur. 
+
+\Hypertarget{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}\index{PlayerMovement.h@{PlayerMovement.h}!MovementState@{MovementState}}
+\index{MovementState@{MovementState}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{MovementState}{MovementState}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5} 
+typedef enum \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2be}{Movement\+State\+\_\+s}} \mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State}}}
+
+
+
+\label{doc-enum-members}
+\Hypertarget{PlayerMovement_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}\index{PlayerMovement.h@{PlayerMovement.h}!Direction@{Direction}}
+\index{Direction@{Direction}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa} 
+enum \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}
+
+
+
+Enumeration des directions. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!Left@{Left}}}\Hypertarget{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaa9d4d8b0b72fc2659da772d761a3c5ecb}\label{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaa9d4d8b0b72fc2659da772d761a3c5ecb} 
+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!Right@{Right}}}\Hypertarget{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaad48f7af8c070184f3774c8e85854eb66}\label{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaad48f7af8c070184f3774c8e85854eb66} 
+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Up@{Up}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!Up@{Up}}}\Hypertarget{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaa57a7edcbc04d6175683383cad5c3e0a2}\label{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaa57a7edcbc04d6175683383cad5c3e0a2} 
+Up&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Down@{Down}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!Down@{Down}}}\Hypertarget{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaabcf8c79e9a5f5f9d606fb35645a0fb27}\label{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaabcf8c79e9a5f5f9d606fb35645a0fb27} 
+Down&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2be}\index{PlayerMovement.h@{PlayerMovement.h}!MovementState\_s@{MovementState\_s}}
+\index{MovementState\_s@{MovementState\_s}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{MovementState\_s}{MovementState\_s}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2be} 
+enum \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2be}{Movement\+State\+\_\+s}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDLE@{IDLE}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!IDLE@{IDLE}}}\Hypertarget{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2beafd6a0e4343048b10646dd2976cc5ad18}\label{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2beafd6a0e4343048b10646dd2976cc5ad18} 
+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUNNING@{RUNNING}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!RUNNING@{RUNNING}}}\Hypertarget{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea1061be6c3fb88d32829cba6f6b2be304}\label{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea1061be6c3fb88d32829cba6f6b2be304} 
+RUNNING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JUMPING@{JUMPING}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!JUMPING@{JUMPING}}}\Hypertarget{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2beab8cd32180a1d5897df8369b127256ad1}\label{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2beab8cd32180a1d5897df8369b127256ad1} 
+JUMPING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FALLING@{FALLING}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!FALLING@{FALLING}}}\Hypertarget{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bead24712a6a30c1d431b927d1ba2f84b66}\label{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bead24712a6a30c1d431b927d1ba2f84b66} 
+FALLING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WALL\_SLIDING@{WALL\_SLIDING}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!WALL\_SLIDING@{WALL\_SLIDING}}}\Hypertarget{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea4e34cc101ca8a3d5ada9ace5dcfba04f}\label{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea4e34cc101ca8a3d5ada9ace5dcfba04f} 
+WALL\+\_\+\+SLIDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DASHING@{DASHING}!PlayerMovement.h@{PlayerMovement.h}}\index{PlayerMovement.h@{PlayerMovement.h}!DASHING@{DASHING}}}\Hypertarget{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea298cd5ecd93c343ae59d91ffea626f5c}\label{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea298cd5ecd93c343ae59d91ffea626f5c} 
+DASHING&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{PlayerMovement_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{PlayerMovement_8h_ac1f9677d73ea082910111aebad432d8e}\index{PlayerMovement.h@{PlayerMovement.h}!getPlayerMovementState@{getPlayerMovementState}}
+\index{getPlayerMovementState@{getPlayerMovementState}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{getPlayerMovementState()}{getPlayerMovementState()}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_ac1f9677d73ea082910111aebad432d8e} 
+\mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State}} get\+Player\+Movement\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Verifie l\textquotesingle{}etat de mouvement du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{Movement\+State} correspondant a l\textquotesingle{}etat de mouvement du joueur 
+\end{DoxyReturn}
+\Hypertarget{PlayerMovement_8h_a40fc5396087b60ab70e66da5be7267bf}\index{PlayerMovement.h@{PlayerMovement.h}!Gravity@{Gravity}}
+\index{Gravity@{Gravity}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{Gravity()}{Gravity()}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a40fc5396087b60ab70e66da5be7267bf} 
+void Gravity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{const float}]{Gravity\+Strength}{}\end{DoxyParamCaption})}
+
+
+
+Applique force de gravité sur le joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
+\hline
+{\em Gravity\+Strength} & Force de gravité \\
+\hline
+\end{DoxyParams}
+\Hypertarget{PlayerMovement_8h_aa37e1e0779a50a707154ae6b3b46c850}\index{PlayerMovement.h@{PlayerMovement.h}!isOnGround@{isOnGround}}
+\index{isOnGround@{isOnGround}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{isOnGround()}{isOnGround()}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_aa37e1e0779a50a707154ae6b3b46c850} 
+bool is\+On\+Ground (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
+
+\Hypertarget{PlayerMovement_8h_ae91de7901008cab29c3ad8fa376b06c0}\index{PlayerMovement.h@{PlayerMovement.h}!isOnWall@{isOnWall}}
+\index{isOnWall@{isOnWall}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{isOnWall()}{isOnWall()}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_ae91de7901008cab29c3ad8fa376b06c0} 
+bool is\+On\+Wall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{, }\item[{\mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}]{dir}{}\end{DoxyParamCaption})}
+
+\Hypertarget{PlayerMovement_8h_aa4c140cab25d9b704b7dceb45892beba}\index{PlayerMovement.h@{PlayerMovement.h}!PlayerDash@{PlayerDash}}
+\index{PlayerDash@{PlayerDash}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{PlayerDash()}{PlayerDash()}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_aa4c140cab25d9b704b7dceb45892beba} 
+void Player\+Dash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Fait dasher le joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{PlayerMovement_8h_af88c7ef0212a60ba1d2ac69e07665102}\index{PlayerMovement.h@{PlayerMovement.h}!PlayerJump@{PlayerJump}}
+\index{PlayerJump@{PlayerJump}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{PlayerJump()}{PlayerJump()}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_af88c7ef0212a60ba1d2ac69e07665102} 
+void Player\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Fait sauter le joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{PlayerMovement_8h_aff8d8ec0ba37d695840637edd0a0a9d1}\index{PlayerMovement.h@{PlayerMovement.h}!PlayerMove@{PlayerMove}}
+\index{PlayerMove@{PlayerMove}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{PlayerMove()}{PlayerMove()}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_aff8d8ec0ba37d695840637edd0a0a9d1} 
+void Player\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
+
+\Hypertarget{PlayerMovement_8h_a3cbba88b75c89a10f73cbff7b2a82fd6}\index{PlayerMovement.h@{PlayerMovement.h}!PlayerMoveConfigUpdate@{PlayerMoveConfigUpdate}}
+\index{PlayerMoveConfigUpdate@{PlayerMoveConfigUpdate}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{PlayerMoveConfigUpdate()}{PlayerMoveConfigUpdate()}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a3cbba88b75c89a10f73cbff7b2a82fd6} 
+void Player\+Move\+Config\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
+
+\Hypertarget{PlayerMovement_8h_affb9d3864ce109253880b2d40a262fa5}\index{PlayerMovement.h@{PlayerMovement.h}!PlayerPositionFix@{PlayerPositionFix}}
+\index{PlayerPositionFix@{PlayerPositionFix}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{PlayerPositionFix()}{PlayerPositionFix()}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_affb9d3864ce109253880b2d40a262fa5} 
+bool Player\+Position\+Fix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{Vector2}]{old\+Position}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
+

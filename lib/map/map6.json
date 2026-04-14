@@ -1,0 +1,44 @@
+{
+  "map_info": {
+    "id": "map6", "title": "gougougaga",
+    "dimensions": { "w": 2048, "h": 3648 }
+  },
+  "platforms": [
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 3392, "width": 2048, "high": 256 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 256, "y": 2560, "width": 448, "high": 512 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 1344, "y": 2496, "width": 448, "high": 512 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 704, "y": 3008, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1088, "y": 2752, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 704, "y": 2560, "width": 256, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 0, "y": 2240, "width": 768, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1280, "y": 2176, "width": 768, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 576, "y": 1920, "width": 896, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": -64, "y": -64, "width": 64, "high": 3712 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 2048, "y": -64, "width": 64, "high": 3712 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": 1536, "width": 448, "high": 192 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 448, "y": 1664, "width": 192, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 1600, "y": 1536, "width": 448, "high": 192 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1408, "y": 1664, "width": 192, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 640, "y": 1280, "width": 768, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 1024, "y": 768, "width": 640, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 0, "x": 128, "y": 960, "width": 640, "high": 64 },
+    { "type": "BASIC_PLATFORM_S", "solid": 1, "x": 0, "y": -64, "width": 2048, "high": 64 }
+  ],
+  "entities": {
+    "player_start": { "x": 1024, "y": 3264 },
+    "enemies": [
+      { "nbType": 2, "spawnTime": 2, "position": { "x": 128, "y": 2432 } },
+      { "nbType": 2, "spawnTime": 1, "position": { "x": 1856, "y": 2432 } },
+      { "nbType": 3, "spawnTime": 4, "position": { "x": 1024, "y": 1728 } },
+      { "nbType": 2, "spawnTime": 6, "position": { "x": 1792, "y": 1920 } },
+      { "nbType": 2, "spawnTime": 1, "position": { "x": 256, "y": 1920 } },
+      { "nbType": 3, "spawnTime": 5, "position": { "x": 256, "y": 1088 } },
+      { "nbType": 3, "spawnTime": 0, "position": { "x": 1792, "y": 1088 } }
+    ],
+    "hazards": [
+    ]
+  },
+  "triggers": [
+    { "id": "finNiveau", "action": "map7", "rect": { "x": 1280, "y": 576, "w": 128, "h": 192 } }
+  ]
+}

@@ -1,0 +1,87 @@
+\doxysection{Level\+Manager.\+h}
+\hypertarget{LevelManager_8h_source}{}\label{LevelManager_8h_source}\index{lib/levels/LevelManager.h@{lib/levels/LevelManager.h}}
+\mbox{\hyperlink{LevelManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ LEVEL\_MANAGER\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ LEVEL\_MANAGER\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Platform_8h}{Platform.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Player_8h}{../player/Player.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BulletPool_8h}{../systems/BulletPool.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EnemyPool_8h}{../systems/EnemyPool.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cJSON_8h}{../../lib/cJson/cJSON.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MAX\_PLATFORMS\ 100\ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ MAX\_ENEMIES\ 50\ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ MAX\_HAZARDS\ 50\ \ \ \ \ \ }\textcolor{preprocessor}{}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ MAX\_TRIGGERS\ 20\ \ \ \ \ }\textcolor{preprocessor}{}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keywordtype}{id}[32];\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structMapInfo_a8b99006aaed407e57f678f2ddb8c77ee}{title}}[64];\ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMapInfo_af8032038658c9020b5ee83b6bd832fd4}{width}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMapInfo_a8c414918d3f6c157d0000d8c741ceb03}{height}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{structMapInfo}{MapInfo}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structEnemy_ae8542615bddd051d63cce8cce122b9a7}{type}}[32];\ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structEnemy_a4d5e4877894781d1fc5d607fd114c60c}{dist\_aggro}};\ \ \ }
+\DoxyCodeLine{00048\ \}\ \mbox{\hyperlink{structEnemy}{Enemy}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structHazard_add788f392f99ff134c8fa8904052c51d}{type}}[32];\ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{structPos}{Pos}}\ \mbox{\hyperlink{structHazard_a1acf8e62dc78e370c5ce68c3fb75db82}{position}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \}\ \mbox{\hyperlink{structHazard}{Hazard}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keywordtype}{id}[32];\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{structRect}{Rect}}\ \mbox{\hyperlink{structTrigger_a758774b2a59c01d44c64a3014a083b8b}{rect}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structTrigger_a98f22165acce3cfb9b098002e779f19c}{action}}[32];\ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structTrigger_afd6bfd79db25090bf4c027b3d7301f18}{triggered}};\ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \}\ \mbox{\hyperlink{structTrigger}{Trigger}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{structMapInfo}{MapInfo}}\ \mbox{\hyperlink{structLevel_ae65df90d74c5b67bf456b41c900d421e}{info}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{structPlatform}{Platform}}\ \mbox{\hyperlink{structLevel_a06875363775e00f8ee1730863f4157fe}{platforms}}[\mbox{\hyperlink{LevelManager_8h_ac593e1f0ac5e6a695d5e3d581a1ff930}{MAX\_PLATFORMS}}];\ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLevel_a167561a87101ca9e9e01be2311b01677}{platformCount}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{structPos}{Pos}}\ \mbox{\hyperlink{structLevel_a910f6a63c5ea52cea64ba31cc23b5697}{playerStart}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{structEnemy}{Enemy}}\ \mbox{\hyperlink{structLevel_a62e247aca3d730284467ad9b6df2fa01}{enemies}}[\mbox{\hyperlink{LevelManager_8h_a544651f3405cff79c40d898a8e54f507}{MAX\_ENEMIES}}];\ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLevel_a2ba7dc6170abe47fefb58c0d9693ce83}{enemyCount}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{structHazard}{Hazard}}\ \mbox{\hyperlink{structLevel_acca09fd56a48191f53af77fc7bbaf2cd}{hazards}}[\mbox{\hyperlink{LevelManager_8h_ad5547aa11797d4f4a0a5264528f1fb30}{MAX\_HAZARDS}}];\ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLevel_a5888b471b84f6e2651c4d0f998ba36e4}{hazardCount}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{structTrigger}{Trigger}}\ \mbox{\hyperlink{structLevel_afda5ffa0fb1bbfad98c4db6b967d79d6}{triggers}}[\mbox{\hyperlink{LevelManager_8h_a7624b0372d537de626c9e76e8e6589c5}{MAX\_TRIGGERS}}];\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLevel_ad8c2a60536f24c3d958bc691416928b6}{triggerCount}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \}\ \mbox{\hyperlink{structLevel}{Level}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{LevelManager_8h_a3eb3374e1a3573ccef109a337db05e06}{readJsonLvl}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ fileName);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LevelManager_8h_aabf5f82cc95d911a3f58b33c25b88970}{LevelInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LevelManager_8h_a78e4d5c3e7ecd49b505d47b4940bf367}{LevelDraw}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LevelManager_8h_a7fa6d517303d1b1b17e59dcb5d0b0edb}{NextLvlRequest}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *targetId);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LevelManager_8h_ab4a3635d7e6eb93faef4184e6201ee75}{NextLvlUpdate}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player,\ \mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}\ *\mbox{\hyperlink{EnemyPool_8h_ab8b70d96e97532942f19fdcb03aa4b1a}{enemyPool}},\ \mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}\ *\mbox{\hyperlink{BulletPool_8h_ab235d8c88e2a6e8d419e9492a0188497}{bulletPool}});}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structLevel}{Level}}\ \mbox{\hyperlink{LevelManager_8h_af107047702073394f1225cd1d3fbae03}{currentLevel}};\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

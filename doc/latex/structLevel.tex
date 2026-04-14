@@ -1,0 +1,117 @@
+\doxysection{Level Struct Reference}
+\hypertarget{structLevel}{}\label{structLevel}\index{Level@{Level}}
+
+
+Structute globale qui contient toutes les informations sur le niveau.  
+
+
+
+
+{\ttfamily \#include $<$Level\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for Level\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structLevel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMapInfo}{Map\+Info}} \mbox{\hyperlink{structLevel_ae65df90d74c5b67bf456b41c900d421e}{info}}
+\item 
+\mbox{\hyperlink{structPlatform}{Platform}} \mbox{\hyperlink{structLevel_a06875363775e00f8ee1730863f4157fe}{platforms}} \mbox{[}\mbox{\hyperlink{LevelManager_8h_ac593e1f0ac5e6a695d5e3d581a1ff930}{MAX\+\_\+\+PLATFORMS}}\mbox{]}
+\item 
+int \mbox{\hyperlink{structLevel_a167561a87101ca9e9e01be2311b01677}{platform\+Count}}
+\item 
+\mbox{\hyperlink{structPos}{Pos}} \mbox{\hyperlink{structLevel_a910f6a63c5ea52cea64ba31cc23b5697}{player\+Start}}
+\item 
+\mbox{\hyperlink{structEnemy}{Enemy}} \mbox{\hyperlink{structLevel_a62e247aca3d730284467ad9b6df2fa01}{enemies}} \mbox{[}\mbox{\hyperlink{LevelManager_8h_a544651f3405cff79c40d898a8e54f507}{MAX\+\_\+\+ENEMIES}}\mbox{]}
+\item 
+int \mbox{\hyperlink{structLevel_a2ba7dc6170abe47fefb58c0d9693ce83}{enemy\+Count}}
+\item 
+\mbox{\hyperlink{structHazard}{Hazard}} \mbox{\hyperlink{structLevel_acca09fd56a48191f53af77fc7bbaf2cd}{hazards}} \mbox{[}\mbox{\hyperlink{LevelManager_8h_ad5547aa11797d4f4a0a5264528f1fb30}{MAX\+\_\+\+HAZARDS}}\mbox{]}
+\item 
+int \mbox{\hyperlink{structLevel_a5888b471b84f6e2651c4d0f998ba36e4}{hazard\+Count}}
+\item 
+\mbox{\hyperlink{structTrigger}{Trigger}} \mbox{\hyperlink{structLevel_afda5ffa0fb1bbfad98c4db6b967d79d6}{triggers}} \mbox{[}\mbox{\hyperlink{LevelManager_8h_a7624b0372d537de626c9e76e8e6589c5}{MAX\+\_\+\+TRIGGERS}}\mbox{]}
+\item 
+int \mbox{\hyperlink{structLevel_ad8c2a60536f24c3d958bc691416928b6}{trigger\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structute globale qui contient toutes les informations sur le niveau. 
+
+\label{doc-variable-members}
+\Hypertarget{structLevel_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{structLevel_a62e247aca3d730284467ad9b6df2fa01}\index{Level@{Level}!enemies@{enemies}}
+\index{enemies@{enemies}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{enemies}{enemies}}
+{\footnotesize\ttfamily \label{structLevel_a62e247aca3d730284467ad9b6df2fa01} 
+\mbox{\hyperlink{structEnemy}{Enemy}} Level\+::enemies\mbox{[}\mbox{\hyperlink{LevelManager_8h_a544651f3405cff79c40d898a8e54f507}{MAX\+\_\+\+ENEMIES}}\mbox{]}}
+
+Tableau des ennemis \Hypertarget{structLevel_a2ba7dc6170abe47fefb58c0d9693ce83}\index{Level@{Level}!enemyCount@{enemyCount}}
+\index{enemyCount@{enemyCount}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{enemyCount}{enemyCount}}
+{\footnotesize\ttfamily \label{structLevel_a2ba7dc6170abe47fefb58c0d9693ce83} 
+int Level\+::enemy\+Count}
+
+Nombre de type d\textquotesingle{}enemi sur la map \Hypertarget{structLevel_a5888b471b84f6e2651c4d0f998ba36e4}\index{Level@{Level}!hazardCount@{hazardCount}}
+\index{hazardCount@{hazardCount}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{hazardCount}{hazardCount}}
+{\footnotesize\ttfamily \label{structLevel_a5888b471b84f6e2651c4d0f998ba36e4} 
+int Level\+::hazard\+Count}
+
+Nombre actuel de piège sur la map \Hypertarget{structLevel_acca09fd56a48191f53af77fc7bbaf2cd}\index{Level@{Level}!hazards@{hazards}}
+\index{hazards@{hazards}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{hazards}{hazards}}
+{\footnotesize\ttfamily \label{structLevel_acca09fd56a48191f53af77fc7bbaf2cd} 
+\mbox{\hyperlink{structHazard}{Hazard}} Level\+::hazards\mbox{[}\mbox{\hyperlink{LevelManager_8h_ad5547aa11797d4f4a0a5264528f1fb30}{MAX\+\_\+\+HAZARDS}}\mbox{]}}
+
+Tableau des pièges \Hypertarget{structLevel_ae65df90d74c5b67bf456b41c900d421e}\index{Level@{Level}!info@{info}}
+\index{info@{info}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily \label{structLevel_ae65df90d74c5b67bf456b41c900d421e} 
+\mbox{\hyperlink{structMapInfo}{Map\+Info}} Level\+::info}
+
+Informations globales sur la map \Hypertarget{structLevel_a167561a87101ca9e9e01be2311b01677}\index{Level@{Level}!platformCount@{platformCount}}
+\index{platformCount@{platformCount}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{platformCount}{platformCount}}
+{\footnotesize\ttfamily \label{structLevel_a167561a87101ca9e9e01be2311b01677} 
+int Level\+::platform\+Count}
+
+Nombre de platformes la map \Hypertarget{structLevel_a06875363775e00f8ee1730863f4157fe}\index{Level@{Level}!platforms@{platforms}}
+\index{platforms@{platforms}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{platforms}{platforms}}
+{\footnotesize\ttfamily \label{structLevel_a06875363775e00f8ee1730863f4157fe} 
+\mbox{\hyperlink{structPlatform}{Platform}} Level\+::platforms\mbox{[}\mbox{\hyperlink{LevelManager_8h_ac593e1f0ac5e6a695d5e3d581a1ff930}{MAX\+\_\+\+PLATFORMS}}\mbox{]}}
+
+Tableau des plateformes \Hypertarget{structLevel_a910f6a63c5ea52cea64ba31cc23b5697}\index{Level@{Level}!playerStart@{playerStart}}
+\index{playerStart@{playerStart}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{playerStart}{playerStart}}
+{\footnotesize\ttfamily \label{structLevel_a910f6a63c5ea52cea64ba31cc23b5697} 
+\mbox{\hyperlink{structPos}{Pos}} Level\+::player\+Start}
+
+Coordonnées de départ du joueur \Hypertarget{structLevel_ad8c2a60536f24c3d958bc691416928b6}\index{Level@{Level}!triggerCount@{triggerCount}}
+\index{triggerCount@{triggerCount}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{triggerCount}{triggerCount}}
+{\footnotesize\ttfamily \label{structLevel_ad8c2a60536f24c3d958bc691416928b6} 
+int Level\+::trigger\+Count}
+
+Nombre actuel de zone provoquant un événement \Hypertarget{structLevel_afda5ffa0fb1bbfad98c4db6b967d79d6}\index{Level@{Level}!triggers@{triggers}}
+\index{triggers@{triggers}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{triggers}{triggers}}
+{\footnotesize\ttfamily \label{structLevel_afda5ffa0fb1bbfad98c4db6b967d79d6} 
+\mbox{\hyperlink{structTrigger}{Trigger}} Level\+::triggers\mbox{[}\mbox{\hyperlink{LevelManager_8h_a7624b0372d537de626c9e76e8e6589c5}{MAX\+\_\+\+TRIGGERS}}\mbox{]}}
+
+Tableau de zone provoquant un événement 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/levels/\mbox{\hyperlink{LevelManager_8h}{Level\+Manager.\+h}}\end{DoxyCompactItemize}

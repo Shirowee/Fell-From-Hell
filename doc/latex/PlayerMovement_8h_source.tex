@@ -1,0 +1,109 @@
+\doxysection{Player\+Movement.\+h}
+\hypertarget{PlayerMovement_8h_source}{}\label{PlayerMovement_8h_source}\index{lib/player/PlayerMovement.h@{lib/player/PlayerMovement.h}}
+\mbox{\hyperlink{PlayerMovement_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_MOVEMENT\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PLAYER\_MOVEMENT\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../../raylib/include/raylib.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Platform_8h}{../levels/Platform.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *Constantes}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ GROUND\_ACC\ 1600}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ AIR\_ACC\ 1000}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ MAX\_SPEED\_X\ 400}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ MAX\_SPEED\_Y\ 1500}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ MAX\_WALL\_SPEED\ 200}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ JUMP\_STRENGTH\ -\/1200}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ DASH\_SPEED\ 800}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ DEFAULT\_GRAVITY\ 980}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ FALLING\_GRAVITY\ 1225}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ WALL\_SLIDE\_GRAVITY\ 300}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ GROUND\_FRICTION\ 0.9f}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ AIR\_FRICTION\ 0.99f}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ DEFAULT\_JUMPS\_MAX\ 3}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ KEY\_MOVE\_LEFT\ KEY\_A}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ KEY\_MOVE\_RIGHT\ KEY\_D}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ KEY\_MOVE\_JUMP\ KEY\_SPACE}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ KEY\_MOVE\_DASH\ KEY\_E}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ *Structures}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2be}{MovementState\_s}}\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2beafd6a0e4343048b10646dd2976cc5ad18}{IDLE}},}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea1061be6c3fb88d32829cba6f6b2be304}{RUNNING}},}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2beab8cd32180a1d5897df8369b127256ad1}{JUMPING}},}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bead24712a6a30c1d431b927d1ba2f84b66}{FALLING}},}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea4e34cc101ca8a3d5ada9ace5dcfba04f}{WALL\_SLIDING}},}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{PlayerMovement_8h_a8992f9cdedef9a33e8b28babae7dd2bea298cd5ecd93c343ae59d91ffea626f5c}{DASHING}}}
+\DoxyCodeLine{00138\ \}\ \mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{MovementState}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMovementConfig__s}{MovementConfig\_s}}\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMovementConfig__s_aa004ad73eb143aa8e23d2cc0210c20e4}{maxSpeed}};\ \ \ \ \ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMovementConfig__s_a56647c2962b0769638995183fc81912a}{groundAcc}};\ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMovementConfig__s_abb8f9ea49ef279944ad3d8ca5db3896a}{airAcc}};\ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMovementConfig__s_a576d33b6c099c92298328b6715cc1cfa}{jumpStrength}};\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMovementConfig__s_ae48009f5f83f43bd266c072f5d484ee3}{gravity}};\ \ \ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMovementConfig__s_ab99b4a5df27a444d4ecc884984941bf8}{fallingGravity}};\ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMovementConfig__s_a025fa059524eafaf7b3e572c787b2c47}{dashTime}};}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMovementConfig__s_a26914d329a4472f80c09f62f8b17a197}{dashTimeOut}};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMovementConfig__s_aa6aa1ef058eaef9a61cb144eeca91d27}{nbJumpMax}};\ \ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMovementConfig__s_a97d0170b1c711ceabad455c90743a3ab}{nbJump}};\ \ \ \ \ }
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMovementConfig__s_aa15a68d9410c03b987af7315a3d93431}{isOnGround}};\ \ \ \ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMovementConfig__s_a02298999cbf34d782955734b8b108818}{isOnLeftWall}};\ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMovementConfig__s_a1f475172dacf2131bc7709dd3238879c}{isOnRightWall}};\ \ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMovementConfig__s_aeceeb289c2361a5faf957da6042619d2}{isDashing}};\ \ \ \ \ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMovementConfig__s_a4cee7a6116094412f7fbc4b0b999b80d}{canJump}};\ \ \ }
+\DoxyCodeLine{00164\ \}\ \mbox{\hyperlink{PlayerMovement_8h_ad86d4956249046fbd7348fdce9ec2b20}{MovementConfig}};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{\mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaa9d4d8b0b72fc2659da772d761a3c5ecb}{Left}},\ \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaad48f7af8c070184f3774c8e85854eb66}{Right}},\ \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaa57a7edcbc04d6175683383cad5c3e0a2}{Up}},\ \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aaabcf8c79e9a5f5f9d606fb35645a0fb27}{Down}}\}\ \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00175\ \textcolor{comment}{\ *Fonctions}}
+\DoxyCodeLine{00176\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerMovement_8h_aff8d8ec0ba37d695840637edd0a0a9d1}{PlayerMove}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player,\ \mbox{\hyperlink{structPlatform}{Platform}}\ platform[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nbPlatforms);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00194\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerMovement_8h_a3cbba88b75c89a10f73cbff7b2a82fd6}{PlayerMoveConfigUpdate}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player,\ \mbox{\hyperlink{structPlatform}{Platform}}\ platform[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nbPlatforms);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00201\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerMovement_8h_af88c7ef0212a60ba1d2ac69e07665102}{PlayerJump}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player);}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00208\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerMovement_8h_aa4c140cab25d9b704b7dceb45892beba}{PlayerDash}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00216\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{PlayerMovement_8h_a40fc5396087b60ab70e66da5be7267bf}{Gravity}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ GravityStrength);}
+\DoxyCodeLine{00225\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{PlayerMovement_8h_affb9d3864ce109253880b2d40a262fa5}{PlayerPositionFix}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player,\ Vector2\ oldPosition,\ \mbox{\hyperlink{structPlatform}{Platform}}\ platform[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nbPlatforms);}
+\DoxyCodeLine{00234\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{PlayerMovement_8h_aa37e1e0779a50a707154ae6b3b46c850}{isOnGround}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player,\ \mbox{\hyperlink{structPlatform}{Platform}}\ platform[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nbPlatforms);}
+\DoxyCodeLine{00244\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{PlayerMovement_8h_ae91de7901008cab29c3ad8fa376b06c0}{isOnWall}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player,\ \mbox{\hyperlink{structPlatform}{Platform}}\ platform[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nbPlatforms,\ \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}\ dir);}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00252\ \mbox{\hyperlink{PlayerMovement_8h_a833ba115fdd6a8f9a03fe990d39f74c5}{MovementState}}\ \mbox{\hyperlink{PlayerMovement_8h_ac1f9677d73ea082910111aebad432d8e}{getPlayerMovementState}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\doxysection{Enemy\+Controller.\+h}
+\hypertarget{EnemyController_8h_source}{}\label{EnemyController_8h_source}\index{lib/enemies/EnemyController.h@{lib/enemies/EnemyController.h}}
+\mbox{\hyperlink{EnemyController_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifndef\ ENEMY\_CONTROLLER\_H}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ ENEMY\_CONTROLLER\_H}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}../../raylib/include/raylib.h"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BulletPool_8h}{../../lib/systems/BulletPool.h}}"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79eaf7c5748ce82093d6dd874e7a621c410f}{ENEMY\_CHASER}},}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79ea5876bc8dd1f6eb6c13d2d7b09f56c873}{ENEMY\_SHOOTER\_CIRCLE}},}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79ea820860b20c5cfdb367ec0909f154eb45}{ENEMY\_SHOOTER}},}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79ea806393778bb3441099f7ae650e77080f}{ENEMY\_SPIRAL}},}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79eaa4f8884eaa6a5eeb86e66751b4b4df91}{ENEMY\_ARC}}}
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{EnemyType\_t}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structenemy__s}{enemy\_s}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*\ ====================\ Informations\ générales\ ====================\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structenemy__s_af4e1c4c1c7845b33fc1dc71866e26e6f}{speed}};\ }
+\DoxyCodeLine{00050\ \ \ \ \ Vector2\ \mbox{\hyperlink{structenemy__s_adfd6c9a138c6fa8c6bf30e9a17cb2e2a}{size}};\ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemy__s_ae3f153b4120433c472e65e29cf1f7e90}{dmg}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ Vector2\ \mbox{\hyperlink{structenemy__s_aa6b86f88832670da304b7ea37986873c}{pos}};\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemy__s_a64e0ac6141af2c6fe8c5a71d05fdf0ee}{dir}};\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemy__s_acb39fc113043fd049ded27c02fc18c70}{bulletSpeed}};\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemy__s_aed92d9c3289fe1688665295ab5ab9d1a}{bulletSize}};\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{/*\ ====================\ State\ machine\ ====================\ */}}
+\DoxyCodeLine{00063\ \ \ \ \ void\ (*\mbox{\hyperlink{structenemy__s_a657dc781cba66458f35aa6bf063ccca5}{state}})(\textcolor{keyword}{struct\ }\mbox{\hyperlink{structenemy__s}{enemy\_s}}*,\ \mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}*,\ Vector2);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structenemy__s_a5eb8b0da1a0344fef39a5f0b8c8d6a91}{stateTimer}};\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{EnemyType\_t}}\ \mbox{\hyperlink{structenemy__s_ae18c81532049d8b697f012bc0323ad63}{type}};\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{/*\ ====================\ Logique\ ====================\ */}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemy__s_ac7fe898a89f369ab93db5f6ea1a222a6}{isShooting}};\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemy__s_ab35290d554e2260ce9eb0ac1d85c24ba}{active}};\ }
+\DoxyCodeLine{00072\ \}\ \mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\_t}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyController_8h_af866370ba9b9e114fa79c088dead3748}{EnemyInit}}(\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\_t}}\ *\ enemy,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structenemy__s_af4e1c4c1c7845b33fc1dc71866e26e6f}{speed}},\ Vector2\ \mbox{\hyperlink{structenemy__s_adfd6c9a138c6fa8c6bf30e9a17cb2e2a}{size}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemy__s_ae3f153b4120433c472e65e29cf1f7e90}{dmg}},\ Vector2\ \mbox{\hyperlink{structenemy__s_aa6b86f88832670da304b7ea37986873c}{pos}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemy__s_acb39fc113043fd049ded27c02fc18c70}{bulletSpeed}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemy__s_aed92d9c3289fe1688665295ab5ab9d1a}{bulletSize}},\ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{EnemyType\_t}}\ \mbox{\hyperlink{structenemy__s_ae18c81532049d8b697f012bc0323ad63}{type}});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyController_8h_ac86b892c2a8e816f2ceb67ce9c676768}{EnemyUpdate}}(\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\_t}}\ *\ enemy,\ Vector2\ playerPos);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyController_8h_a1a5a2c68c5718f4cfb7963f26b93eed6}{EnemyDraw}}(\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\_t}}\ *\ enemy);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyController_8h_a7c1654e8730d9f7e1f971756cf408df2}{EnemyShoots}}(\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\_t}}\ *\ enemy);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['game_0',['Game',['../Screen_8h.html#a627bc5a973888196b8a7a68ba6d46377',1,'Game(Player *player):&#160;Game.c'],['../Game_8c.html#a627bc5a973888196b8a7a68ba6d46377',1,'Game(Player *player):&#160;Game.c']]],
+  ['gamedraw_1',['GameDraw',['../GameManager_8h.html#a6319aa2e4132b1eb5e2c124a9078b78f',1,'GameDraw(Player *player):&#160;GameManager.c'],['../GameManager_8c.html#a6319aa2e4132b1eb5e2c124a9078b78f',1,'GameDraw(Player *player):&#160;GameManager.c']]],
+  ['gameinit_2',['GameInit',['../GameManager_8h.html#ac855de57376273ccd48ec3cf3b583d84',1,'GameInit(Player *player):&#160;GameManager.c'],['../GameManager_8c.html#ac855de57376273ccd48ec3cf3b583d84',1,'GameInit(Player *player):&#160;GameManager.c']]],
+  ['gameunload_3',['GameUnload',['../GameManager_8h.html#a3f8da19f0a5b50d5748539f11291d9d6',1,'GameUnload(Player player):&#160;GameManager.c'],['../GameManager_8c.html#a3f8da19f0a5b50d5748539f11291d9d6',1,'GameUnload(Player player):&#160;GameManager.c']]],
+  ['gameupdate_4',['GameUpdate',['../GameManager_8h.html#aa0df29916896420bc7740df4549402f8',1,'GameUpdate(Player *player, double *timeSpent, double *startReload):&#160;GameManager.c'],['../GameManager_8c.html#aa0df29916896420bc7740df4549402f8',1,'GameUpdate(Player *player, double *timeSpent, double *startReload):&#160;GameManager.c']]],
+  ['getplayercenter_5',['getPlayerCenter',['../PlayerController_8h.html#a62167afbdb9b52e3146c01b6c565d7a8',1,'getPlayerCenter(Player *player):&#160;PlayerController.c'],['../PlayerController_8c.html#a62167afbdb9b52e3146c01b6c565d7a8',1,'getPlayerCenter(Player *player):&#160;PlayerController.c']]],
+  ['getplayermovementstate_6',['getPlayerMovementState',['../PlayerMovement_8h.html#ac1f9677d73ea082910111aebad432d8e',1,'getPlayerMovementState(Player *player):&#160;PlayerMovement.c'],['../PlayerMovement_8c.html#ac1f9677d73ea082910111aebad432d8e',1,'getPlayerMovementState(Player *player):&#160;PlayerMovement.c']]],
+  ['gravity_7',['Gravity',['../PlayerMovement_8h.html#a40fc5396087b60ab70e66da5be7267bf',1,'Gravity(Player *player, const float GravityStrength):&#160;PlayerMovement.c'],['../PlayerMovement_8c.html#a40fc5396087b60ab70e66da5be7267bf',1,'Gravity(Player *player, const float GravityStrength):&#160;PlayerMovement.c']]]
+];

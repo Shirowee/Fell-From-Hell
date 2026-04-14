@@ -1,0 +1,127 @@
+\doxysection{lib/enemies/\+Enemy\+Movement.h File Reference}
+\hypertarget{EnemyMovement_8h}{}\label{EnemyMovement_8h}\index{lib/enemies/EnemyMovement.h@{lib/enemies/EnemyMovement.h}}
+
+
+Gestion du mouvement des ennemis.  
+
+
+{\ttfamily \#include "{}../../lib/enemies/\+Enemy\+Controller.\+h"{}}\newline
+Include dependency graph for Enemy\+Movement.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{EnemyMovement_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{EnemyMovement_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{EnemyMovement_8h_acab62c497165be47039e024208455378}{ENEMY\+\_\+\+MOVEMENT\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{EnemyMovement_8h_a8a0be60e00616212c5c0313a530171d7}{Enemy\+Move}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy)
+\begin{DoxyCompactList}\small\item\em Déplace l\textquotesingle{}ennemi selon sa direction actuelle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyMovement_8h_a1a7b3bf48f0774789a1ac17013297ff9}{Enemy\+Move\+Towards\+Player}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, Vector2 player)
+\begin{DoxyCompactList}\small\item\em Déplace l\textquotesingle{}ennemi vers la position du joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyMovement_8h_aed0bf00c74b7f1684918c082a252ba4c}{Enemy\+Set\+Dir\+Towards\+Player}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, Vector2 player)
+\begin{DoxyCompactList}\small\item\em Change la direction de l\textquotesingle{}ennemi pour qu\textquotesingle{}il regarde vers le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestion du mouvement des ennemis. 
+
+Contient les fonctions responsables du déplacement des ennemis dans le jeu.
+
+Implémente différentes logiques de mouvement selon le type ou l’état de l’ennemi, par exemple \+:
+\begin{DoxyItemize}
+\item déplacement aléatoire
+\item poursuite du joueur
+\item déplacement directionnel simple
+\item comportement basé sur une machine à états
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+A. Pocholle 
+\end{DoxyAuthor}
+
+
+\label{doc-define-members}
+\Hypertarget{EnemyMovement_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{EnemyMovement_8h_acab62c497165be47039e024208455378}\index{EnemyMovement.h@{EnemyMovement.h}!ENEMY\_MOVEMENT\_H@{ENEMY\_MOVEMENT\_H}}
+\index{ENEMY\_MOVEMENT\_H@{ENEMY\_MOVEMENT\_H}!EnemyMovement.h@{EnemyMovement.h}}
+\doxysubsubsection{\texorpdfstring{ENEMY\_MOVEMENT\_H}{ENEMY\_MOVEMENT\_H}}
+{\footnotesize\ttfamily \label{EnemyMovement_8h_acab62c497165be47039e024208455378} 
+\#define ENEMY\+\_\+\+MOVEMENT\+\_\+H}
+
+
+
+\label{doc-func-members}
+\Hypertarget{EnemyMovement_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{EnemyMovement_8h_a8a0be60e00616212c5c0313a530171d7}\index{EnemyMovement.h@{EnemyMovement.h}!EnemyMove@{EnemyMove}}
+\index{EnemyMove@{EnemyMove}!EnemyMovement.h@{EnemyMovement.h}}
+\doxysubsubsection{\texorpdfstring{EnemyMove()}{EnemyMove()}}
+{\footnotesize\ttfamily \label{EnemyMovement_8h_a8a0be60e00616212c5c0313a530171d7} 
+void Enemy\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{}\end{DoxyParamCaption})}
+
+
+
+Déplace l\textquotesingle{}ennemi selon sa direction actuelle. 
+
+Utilise la direction (en degrés) et la vitesse pour calculer un déplacement basé sur le temps de frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & pointeur vers l\textquotesingle{}ennemi \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EnemyMovement_8h_a1a7b3bf48f0774789a1ac17013297ff9}\index{EnemyMovement.h@{EnemyMovement.h}!EnemyMoveTowardsPlayer@{EnemyMoveTowardsPlayer}}
+\index{EnemyMoveTowardsPlayer@{EnemyMoveTowardsPlayer}!EnemyMovement.h@{EnemyMovement.h}}
+\doxysubsubsection{\texorpdfstring{EnemyMoveTowardsPlayer()}{EnemyMoveTowardsPlayer()}}
+{\footnotesize\ttfamily \label{EnemyMovement_8h_a1a7b3bf48f0774789a1ac17013297ff9} 
+void Enemy\+Move\+Towards\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{Vector2}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Déplace l\textquotesingle{}ennemi vers la position du joueur. 
+
+Calcule la direction vers le joueur, normalise ce vecteur, puis déplace l\textquotesingle{}ennemi dans cette direction en fonction de sa vitesse et du temps de frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & pointeur vers l\textquotesingle{}ennemi \\
+\hline
+{\em player} & position du joueur \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EnemyMovement_8h_aed0bf00c74b7f1684918c082a252ba4c}\index{EnemyMovement.h@{EnemyMovement.h}!EnemySetDirTowardsPlayer@{EnemySetDirTowardsPlayer}}
+\index{EnemySetDirTowardsPlayer@{EnemySetDirTowardsPlayer}!EnemyMovement.h@{EnemyMovement.h}}
+\doxysubsubsection{\texorpdfstring{EnemySetDirTowardsPlayer()}{EnemySetDirTowardsPlayer()}}
+{\footnotesize\ttfamily \label{EnemyMovement_8h_aed0bf00c74b7f1684918c082a252ba4c} 
+void Enemy\+Set\+Dir\+Towards\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{Vector2}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Change la direction de l\textquotesingle{}ennemi pour qu\textquotesingle{}il regarde vers le joueur. 
+
+Calcule la direction vers le joueur, normalise ce vecteur, puis change la direction de l\textquotesingle{}ennemi pour qu\textquotesingle{}il regarde vers le joueur.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & pointeur vers l\textquotesingle{}ennemi \\
+\hline
+{\em player} & position du joueur \\
+\hline
+\end{DoxyParams}
