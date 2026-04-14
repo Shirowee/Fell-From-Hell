@@ -22,6 +22,9 @@
 #include <stdio.h>
 
 
+#define MUSIC_NONE MUSIC_COUNT
+
+static MusicID currentMusic = MUSIC_NONE;
 
 /* =========================
    TEXTURES
@@ -47,6 +50,79 @@ Texture2D* RM_GetTexture(TextureID id)
     return &textures[id];
 }
 
+/* =========================
+   MUSIQUE
+   ========================= */
+
+static Music music[MUSIC_COUNT];
+static bool musicLoaded[MUSIC_COUNT] = {0};
+
+static float globalMusicVolume = 1.0f;
+
+static const char* musicPaths[MUSIC_COUNT] = {
+    "../ressources/music/menu.ogg",
+    "../ressources/music/level1.ogg",
+};
+
+Music* RM_GetMusic(MusicID id)
+{
+    if (!musicLoaded[id])
+    {
+        music[id] = LoadMusicStream(musicPaths[id]);
+        SetMusicVolume(music[id], globalMusicVolume);
+        musicLoaded[id] = true;
+    }
+
+    return &music[id];
+}
+
+void RM_PlayMusic(MusicID id)
+{
+    if (currentMusic != MUSIC_COUNT)
+    {
+        StopMusicStream(music[currentMusic]);
+    }
+
+    Music* m = RM_GetMusic(id);
+
+    PlayMusicStream(*m);
+    SetMusicVolume(*m, globalMusicVolume);
+
+    currentMusic = id;
+}
+
+void RM_UpdateMusic(void)
+{
+    if (currentMusic != MUSIC_COUNT)
+    {
+        UpdateMusicStream(music[currentMusic]);
+    }
+}
+
+void RM_StopMusic(void)
+{
+    if (currentMusic != MUSIC_COUNT)
+    {
+        StopMusicStream(music[currentMusic]);
+        currentMusic = MUSIC_COUNT;
+    }
+}
+
+void RM_SetMusicVolume(float volume)
+{
+    if (volume < 0.0f) volume = 0.0f;
+    if (volume > 1.0f) volume = 1.0f;
+
+    globalMusicVolume = volume;
+
+    for (int i = 0; i < MUSIC_COUNT; i++)
+    {
+        if (musicLoaded[i])
+        {
+            SetMusicVolume(music[i], volume);
+        }
+    }
+}
 
 /* =========================
    SOUNDS
@@ -120,6 +196,7 @@ void RM_SetSFXVolume(float volume)
 
 
 
+
 /* =========================
    LOAD / UNLOAD
    ========================= */
@@ -159,6 +236,15 @@ void RM_UnloadAll(void)
         if (soundsLoaded[i])
         {
             UnloadSound(sounds[i]);
+        }
+    }
+
+    // musiques
+    for (int i = 0; i < MUSIC_COUNT; i++)
+    {
+        if (musicLoaded[i])
+        {
+            UnloadMusicStream(music[i]);
         }
     }
 }

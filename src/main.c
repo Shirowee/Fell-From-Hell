@@ -41,6 +41,8 @@ int main(void)
     
     Player player;
     GameInit(&player); // Initialisation du jeu
+
+    RM_PlayMusic(MUSIC_MENU); // Joue la musique de fond
     
     camera.offset = (Vector2){ 0, 0 };
     camera.target = (Vector2){ 0, player.position.y };
@@ -54,6 +56,7 @@ int main(void)
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
 
+        RM_UpdateMusic(); // Update de la musique (pour les musiques en streaming)
 
         // DESSIN
         BeginDrawing();
@@ -66,9 +69,17 @@ int main(void)
                 previousScreen = SCREEN_MENU;
                 break;
             case SCREEN_GAME: 
-                currentScreen = Game(&player); break;
+                if (previousScreen != SCREEN_GAME && currentScreen == SCREEN_GAME)
+                {
+                    RM_PlayMusic(MUSIC_LEVEL1);
+                }
+                currentScreen = Game(&player);
+                previousScreen = SCREEN_GAME;
+                break;
             case SCREEN_SETTINGS: 
-                currentScreen = SettingsUpdate(previousScreen); break;
+                currentScreen = SettingsUpdate(previousScreen); 
+                previousScreen = SCREEN_SETTINGS;
+                break;
             case SCREEN_PAUSE: 
                 currentScreen = PauseUpdate(); 
                 previousScreen = SCREEN_PAUSE;

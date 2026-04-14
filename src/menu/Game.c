@@ -5,6 +5,7 @@
 #include "../../lib/core/Screen.h"
 #include "../../lib/levels/LevelManager.h"
 #include "../../lib/core/ResolutionManager.h"
+#include "../../lib/core/RessourcesManager.h"
 #include "../../lib/systems/LifeManager.h"
 #include "../../lib/systems/EnemySpawner.h"
 #include <stdio.h>
@@ -24,12 +25,15 @@ Screen_t Game(Player* player)
     double startReload = -10;
     int monitorHeight = GetMonitorHeight(0);
 
+    
     /*******************
     * BOUCLE PRINCIPALE
     ********************/
     while (!IsKeyPressed(KEY_ESCAPE) && !endLvl())
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
+
+        RM_UpdateMusic();
         
         camera.target.y = player->position.y + player->size.y - monitorHeight/3;
 

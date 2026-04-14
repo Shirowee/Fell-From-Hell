@@ -50,6 +50,68 @@ typedef enum {
  */
 Texture2D* RM_GetTexture(TextureID id);
 
+/* =========================================================
+   MUSIQUE
+   ========================================================= */
+ 
+/**
+ * @brief Identifiants des musiques du jeu
+ *
+ * Chaque enum correspond à une musique chargée en mémoire.
+ * L’ordre doit correspondre au tableau interne musicPaths.
+ */
+typedef enum {
+      MUSIC_MENU,
+      MUSIC_LEVEL1,
+      MUSIC_COUNT
+} MusicID;
+
+/**
+ * @brief Récupère une musique du gestionnaire
+ *
+ * Charge la musique si nécessaire, sinon retourne celle en cache.
+ *
+ * @param id Identifiant de la musique
+ * @return Pointeur vers la musique chargée
+ */
+Music* RM_GetMusic(MusicID id);
+
+/**
+ * @brief Joue une musique
+ *
+ * Applique automatiquement le volume global avant lecture.
+ *
+ * @param id Identifiant de la musique à jouer
+ */
+void RM_PlayMusic(MusicID id);
+
+/**
+ * @brief Stoppe la musique en cours
+ *
+ * @param id Identifiant de la musique à stopper
+ */
+void RM_StopMusic(void);
+
+/**
+ * @brief Met à jour la musique en cours
+ *
+ * @param id Identifiant de la musique à mettre à jour
+ */
+void RM_UpdateMusic(void);
+
+/**
+ * @brief Met le volume de la musique
+ *
+ * @param volume Valeur entre 0.0 (silence) et 1.0 (max)
+ */
+void RM_SetMusicVolume(float volume);
+
+/**
+ * @brief Récupère le volume global actuel de la musique
+ *
+ * @return Volume de la musique (0.0 - 1.0)
+ */
+float RM_GetMusicVolume(void);
 
 /* =========================================================
    SOUNDS
