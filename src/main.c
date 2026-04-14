@@ -61,6 +61,10 @@ int main(void)
                 currentScreen = Game(&player); break;
             case SCREEN_SETTINGS: 
                 currentScreen = SettingsUpdate(previousScreen); break;
+            case SCREEN_KEYBINDING: 
+                currentScreen = KeybindingUpdate(previousScreen); break;
+            case SCREEN_SOUND: 
+                currentScreen = SoundUpdate(previousScreen); break;
             case SCREEN_PAUSE: 
                 currentScreen = PauseUpdate(); 
                 previousScreen = SCREEN_PAUSE;
