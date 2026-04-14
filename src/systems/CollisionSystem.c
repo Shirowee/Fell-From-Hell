@@ -132,7 +132,6 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets)
                             ApplyDamageToEnemy(e, bullet->bulletDmg * damageFactor);
                             if(e->hp <= 0.0)
                                 e->active = 0;
-                            printf("damage factor %f\n", damageFactor);
                         }
                     }
 
