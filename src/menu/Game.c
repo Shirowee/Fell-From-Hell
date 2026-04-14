@@ -19,16 +19,16 @@ Screen_t Game(Player* player)
 {
 
     /************************
-    * INITIALISATION DU JEU
-    *************************/
+    * INITIALISATION DU JEU *
+    ************************/
     double timeSpent=0; //temp entre deux tir
     double startReload = -10;
     int monitorHeight = GetMonitorHeight(0);
 
-    /*******************
-    * BOUCLE PRINCIPALE
+    /********************
+    * BOUCLE PRINCIPALE *
     ********************/
-    while (!IsKeyPressed(KEY_ESCAPE) && !endLvl())
+    while (!IsKeyPressed(KEY_ESCAPE) && !endLvl() && isAlive(player))
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
 
@@ -51,6 +51,10 @@ Screen_t Game(Player* player)
 
     if(IsKeyPressed(KEY_ESCAPE))
         return (SCREEN_PAUSE);
+
+    if(!isAlive(player))
+        return(SCREEN_END_GAME);
+
     enemySpawner.nbVague = 0;
     currentLevel.enemyCount = -1;
     NextLvlRequest(currentLevel.triggers->action); // Si on met plus de 1 trigger ça va pt

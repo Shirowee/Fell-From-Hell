@@ -8,6 +8,7 @@
 extern Camera2D camera;
 
 void GameInit(Player *player);
+void GameReset(Player *player);
 void GameUpdate(Player *player, double* timeSpent, double* startReload);
 void GameDraw(Player *player);
 void GameUnload(Player player);

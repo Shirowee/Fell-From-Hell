@@ -69,6 +69,8 @@ int main(void)
                 currentScreen = PauseUpdate(); 
                 previousScreen = SCREEN_PAUSE;
                 break;
+            case SCREEN_END_GAME:
+                currentScreen = DeathScreen(&player); break;
             case SCREEN_END_LEVEL: 
                 currentScreen = EndLevelUpdate(&player); break;
             default: break;

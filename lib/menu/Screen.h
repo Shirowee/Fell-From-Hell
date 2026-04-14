@@ -21,6 +21,7 @@ typedef enum {
     SCREEN_SOUND,       /**< Écran pour le changement du son */
     SCREEN_PAUSE,       /**< Écran de pause */
     SCREEN_END_LEVEL,   /**< Écran de fin d'un niveau */
+    SCREEN_END_GAME,    /**< Écran de fin de jeu */
     SCREEN_EXIT         /**< Quitte le jeu */
 } Screen_t;
 
@@ -71,6 +72,11 @@ Screen_t SettingsUpdate(Screen_t previousScreen);
  * modifier les paramètres, quitter le jeu, etc.).
  */
 Screen_t PauseUpdate(void);
+
+/**
+ * \brief Affiche l'écran de mort
+ */
+Screen_t DeathScreen(Player *player);
 
 /**
  * \brief Met à jour l'écran de fin de niveau.
