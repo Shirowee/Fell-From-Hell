@@ -42,7 +42,7 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets, weap
         enemyHitbox.height = enemy->size.y - (int)(2*enemy->size.y*gap);
 
         //Vérification des collision
-        for(j = 0; j < bullets->capacity; j++){
+        for(j = 0; j < bullets->nbBulletsActive; j++){
             bullet = &bullets->tab[j];
 
             if (!bullet->active) continue;
@@ -220,7 +220,7 @@ void CheckPlayerBulletCollision(Player* player, bulletPool_t* bullets, int* tota
     };
 
     //Vérification des collision
-    for(i = 0; i < bullets->capacity; i++){
+    for(i = 0; i < bullets->nbBulletsActive; i++){
         bullet = &bullets->tab[i];
 
         if (!bullet->active) continue;

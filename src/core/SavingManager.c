@@ -19,7 +19,8 @@ void SaveGame(Player *player)
     info.difficultyMultHP  = enemySpawner.difficultyMultHP;
     info.difficultyMultDMG = enemySpawner.difficultyMultDMG;
 
-    SaveFileData(SAVE_FILE, &info, sizeof(SaveInfo));
+    FILE *f = fopen(SAVE_FILE, "wb");
+    if (f) { fwrite(&info, sizeof(SaveInfo), 1, f); fclose(f); }
 }
 
 bool LoadGame(Player *player)

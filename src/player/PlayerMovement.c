@@ -121,6 +121,7 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
 
     if(player->movConfig.dashTime > 0.0 && (!player->movConfig.isDashing)){
         player->movConfig.isDashing = true;
+        RM_PlaySound(SND_DASH);
     }
     if(player->movConfig.dashTimeOut > 0.0)
         player->movConfig.isDashing = false;
@@ -163,7 +164,6 @@ void PlayerJump(Player *player) {
 
 // Dash
 void PlayerDash(Player *player){
-    RM_PlaySound(SND_DASH); // Joue un son de dash
     player->velocity.x = DASH_SPEED * directionDash.x;
     player->velocity.y = DASH_SPEED * directionDash.y;
 }
