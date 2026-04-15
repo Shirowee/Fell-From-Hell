@@ -1,5 +1,6 @@
 #include "../../lib/player/Player.h"
 #include "../../lib/core/GameManager.h"
+#include "../../lib/core/RessourcesManager.h"
 #include "../../lib/menu/Screen.h"
 #include <math.h>
 #include <stdlib.h>
@@ -32,6 +33,8 @@ void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
     if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && !IsReloading(weapon, startReload) && Cooldown(*weapon, timeSpent)){
         direction = (atan2(mouseWorld.y - getPlayerCenter(player).y, mouseWorld.x - getPlayerCenter(player).x) * 180 / PI);
         spawnBulletWeapon(*weapon, *player, direction);
+        
+        RM_PlaySound(SND_SHOOT); // Joue un son de tir
         (weapon->amo_left)--;
     }
 
@@ -40,6 +43,8 @@ void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
         float rightStickY = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_RIGHT_Y);
         direction = atan2(rightStickY, rightStickX) * 180/PI;
         spawnBulletWeapon(*weapon, *player, direction);
+
+        RM_PlaySound(SND_SHOOT); // Joue un son de tir
         (weapon->amo_left)--;
     }
 }

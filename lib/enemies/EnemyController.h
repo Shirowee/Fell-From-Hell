@@ -53,7 +53,7 @@ typedef struct enemy_s {
     Vector2 size;  /**< Taille de l'ennemi */
     int dmg; /**< Dégâts infligés */
     Vector2 pos; /**< Position actuelle */
-    int dir; /**< Direction */
+    float dir; /**< Direction */
     int bulletSpeed; /**< Vitesse des projectiles */
     int bulletSize; /**< Taille des projectiles */
 
@@ -118,8 +118,9 @@ void DesactivateEnemy(enemy_t *enemy, enemyPool_t *originPool);
  * @brief Dessine l'ennemi à l'écran
  * 
  * @param enemy pointeur vers l'ennemi
+ * @param playerPos position du joueur
  */
-void EnemyDraw(enemy_t * enemy);
+void EnemyDraw(enemy_t * enemy, Vector2 playerPos);
 
 /**
  * @brief Active le tir de l'ennemi

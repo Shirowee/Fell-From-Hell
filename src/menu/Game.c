@@ -5,8 +5,10 @@
 #include "../../lib/menu/Screen.h"
 #include "../../lib/levels/LevelManager.h"
 #include "../../lib/core/ResolutionManager.h"
+#include "../../lib/core/RessourcesManager.h"
 #include "../../lib/systems/LifeManager.h"
 #include "../../lib/systems/EnemySpawner.h"
+#include "../../lib/systems/ParallaxSystem.h"
 #include <stdio.h>
 
 #define REF_LARGEUR 1920
@@ -17,7 +19,6 @@ Camera2D camera = { 0 };
 // Point d'entrée du jeu
 Screen_t Game(Player* player)
 {
-
     /************************
     * INITIALISATION DU JEU *
     ************************/
@@ -32,15 +33,20 @@ Screen_t Game(Player* player)
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
 
+        RM_UpdateMusic();
+        
         camera.target.y = player->position.y + player->size.y - monitorHeight/3;
 
         // LOGIQUE
         GameUpdate(player, &timeSpent, &startReload);
+        
 
         // DESSIN
         BeginDrawing();
-            ClearBackground(RAYWHITE);   
+            ClearBackground(RAYWHITE); 
+            
             BeginMode2D(camera);
+                ParallaxDraw(&currentLevel.parallax, camera, player);  
                 GameDraw(player);
             EndMode2D();
 

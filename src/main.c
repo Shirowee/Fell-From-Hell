@@ -7,6 +7,7 @@
 #include "../lib/core/ResolutionManager.h"
 #include "../lib/levels/LevelManager.h"
 #include "../lib/systems/LifeManager.h"
+#include <stdio.h>
 
 // Point d'entrée du jeu
 int main(void)
@@ -28,11 +29,20 @@ int main(void)
 
     ResolutionInit(currentLevel.info.width, screenWidth, screenHeigth); // Initialise tout ce qui est lié a la résolution
 
+    /****************
+    * INITIALISATION RESSOURCES
+    *****************/
+    InitAudioDevice();
+    RM_LoadAll(); // Charge toutes les ressources du jeu (textures et sons)
+
     /************************
     * INITIALISATION DU JEU *
     ************************/
+    
     Player player;
     GameInit(&player); // Initialisation du jeu
+
+    RM_PlayMusic(MUSIC_MENU); // Joue la musique de fond
     
     camera.offset = (Vector2){ 0, 0 };
     camera.target = (Vector2){ 0, player.position.y };
@@ -46,6 +56,7 @@ int main(void)
     {
         WindowManager_Update(); // Update de l'état de la fenêtre
 
+        RM_UpdateMusic(); // Update de la musique (pour les musiques en streaming)
 
         // DESSIN
         BeginDrawing();
@@ -58,13 +69,25 @@ int main(void)
                 previousScreen = SCREEN_MENU;
                 break;
             case SCREEN_GAME: 
-                currentScreen = Game(&player); break;
+                if (previousScreen != SCREEN_GAME && currentScreen == SCREEN_GAME)
+                {
+                    RM_PlayMusic(MUSIC_LEVEL1);
+                }
+                currentScreen = Game(&player);
+                previousScreen = SCREEN_GAME;
+                break;
             case SCREEN_SETTINGS: 
-                currentScreen = SettingsUpdate(previousScreen); break;
+                currentScreen = SettingsUpdate(previousScreen); 
+                previousScreen = SCREEN_SETTINGS;
+                break;
             case SCREEN_KEYBINDING: 
-                currentScreen = KeybindingUpdate(); break;
+                currentScreen = KeybindingUpdate(); 
+                previousScreen = SCREEN_KEYBINDING;
+                break;
             case SCREEN_SOUND: 
-                currentScreen = SoundUpdate(); break;
+                currentScreen = SoundUpdate(); 
+                previousScreen = SCREEN_SOUND;
+                break;
             case SCREEN_PAUSE: 
                 currentScreen = PauseUpdate(); 
                 previousScreen = SCREEN_PAUSE;
@@ -84,6 +107,7 @@ int main(void)
     * UNLOAD *
     *********/
     GameUnload(player); 
-
+    RM_UnloadAll();
+    CloseAudioDevice();
     return 0;
 }

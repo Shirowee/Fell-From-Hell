@@ -28,17 +28,20 @@ Screen_t MenuUpdate(Player *player)
 
     // Navigation clavier
     if (IsKeyPressed(KEY_DOWN)) {
+        RM_PlaySound(SND_SELECT); // Joue un son de sélection
         selected++;
         if (selected >= optionCount) selected = 0;
     }
 
     if (IsKeyPressed(KEY_UP)) {
+        RM_PlaySound(SND_SELECT); // Joue un son de sélection
         selected--;
         if (selected < 0) selected = optionCount - 1;
     }
 
     // Validation
     if (IsKeyPressed(KEY_ENTER)) {
+        RM_PlaySound(SND_SELECTED); // Joue un son de sélectionné
         if(optionCount == 4){
             switch (selected) {
                 case 0: return SCREEN_GAME;
@@ -48,6 +51,7 @@ Screen_t MenuUpdate(Player *player)
             }
         }
 
+        
         switch (selected) {
             case 0: return SCREEN_GAME;
             case 1: return SCREEN_SETTINGS;
@@ -61,7 +65,7 @@ Screen_t MenuUpdate(Player *player)
 
     /*============= Draw the title =============*/
     //DrawText("Fell From Hell", screenWidth / 2 - 100, 150, 50, BLACK);
-    Texture2D tex = *RM_GetTexture("../ressources/sprites/others/Title.jpg");
+    Texture2D tex = *RM_GetTexture(TEX_TITLE);
 
     float scale = 7.0f;
 

@@ -10,6 +10,7 @@
 
 #include "../../raylib/include/raylib.h"
 #include "../../lib/systems/CollisionSystem.h"
+#include "../../lib/core/RessourcesManager.h"
 #include "../../lib/player/Player.h"
 #include "../../lib/systems/LifeManager.h"
 #include "../../lib/systems/Projectiles.h"
@@ -132,6 +133,13 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
                     total_dmg += bullet->bulletDmg;
                 }
 
+                if(enemy->hp - total_dmg < 0.0) {
+                    RM_PlaySound(SND_ENEMY_DIE); // Joue un son de mort sur ennemi
+                }
+                else {
+                    RM_PlaySound(SND_ENEMY_HURT); // Joue un son de dgt sur ennemi
+                }
+
                 DesactivateBullet(bullet, bullets);
                 j--;
 
@@ -140,9 +148,11 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
 
         ApplyDamageToEnemy(enemy, total_dmg);
 
-        if(enemy->hp <= 0.0){
+        if(enemy->hp <= 0.0) {
+            RM_PlaySound(SND_ENEMY_DIE); // Joue un son de mort{
             DesactivateEnemy(enemy, enemies);
             i--;
+        }
         }
     }
 }
@@ -176,8 +186,12 @@ void CheckPlayerEnemyCollision(Player* player, enemyPool_t* enemies, int* total_
         enemyHitbox.width = enemy->size.x - (int)(2*enemy->size.x*gap);
         enemyHitbox.height = enemy->size.y - (int)(2*enemy->size.y*gap);
 
-        if(CheckCollisionRecs(playerHitbox, enemyHitbox))
-            *total_dmg += enemy->dmg;
+            if(CheckCollisionRecs(playerHitbox, enemyHitbox))
+            {
+                RM_PlaySound(SND_HURT); // Joue un son de dgt
+                *total_dmg += enemy->dmg;
+            }
+        }
     }
 }
 
@@ -204,6 +218,7 @@ void CheckPlayerBulletCollision(Player* player, bulletPool_t* bullets, int* tota
             bullet->bulletPos.y > player->position.y + player->size.y + MAX_DIST_DETECT) continue;
 
         if(CheckCollisionCircleRec(bullet->bulletPos, bullet->bulletSize, playerHitbox)){
+                RM_PlaySound(SND_HURT); // Joue un son de dgt
             *total_dmg += bullet->bulletDmg;
             DesactivateBullet(bullet, bullets);
             i--;

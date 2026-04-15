@@ -17,6 +17,7 @@
 #include "../systems/EnemyPool.h"
 #include "../systems/EnemySpawner.h"
 #include "../../lib/cJson/cJSON.h"
+#include "../../lib/systems/ParallaxSystem.h"
 
 
 /** @name Maximum de tout les éléments d'une map
@@ -93,6 +94,8 @@ typedef struct {
 
     Trigger triggers[MAX_TRIGGERS]; /**< Tableau de zone provoquant un événement */
     int triggerCount;               /**< Nombre actuel de zone provoquant un événement */
+
+    ParallaxSystem parallax;
 } Level;
 
 
@@ -117,6 +120,12 @@ int readJsonLvl(const char * fileName);
  */
 void LevelInit(void);
 
+/**
+ * @brief Traduit les plateformes en tiles et les dessine
+ * @param p Plateforme à dessiner
+ * @param tileset Texture contenant les tiles à utiliser pour dessiner la plateforme
+ */
+void BuildTilesFromPlatforms(void);
 
 /**
  * @brief Dessine les platformes et le décors du niveau

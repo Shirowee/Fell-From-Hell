@@ -2,6 +2,7 @@
 #include "../../lib/player/Player.h"
 #include "../../lib/levels/LevelManager.h"
 #include "../../lib/core/ResolutionManager.h"
+#include "../../lib/core/RessourcesManager.h"
 #include "../../lib/core/GameManager.h"
 #include "../../lib/systems/CollisionSystem.h"
 #include "../../lib/menu/Screen.h"
@@ -128,6 +129,8 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
 void PlayerJump(Player *player) {
 
     if(getPlayerMovementState(player) == WALL_SLIDING){
+        RM_PlaySound(SND_JUMP); // Joue un son de saut
+
         if (player->movConfig.isOnLeftWall) {
             player->velocity.y = player->movConfig.jumpStrength / 1.5; // Force de saut
             player->velocity.x = -player->movConfig.jumpStrength * 10; // Saut vers la droite
@@ -142,12 +145,15 @@ void PlayerJump(Player *player) {
         }
     }
     else if(player->movConfig.isOnGround){
+        RM_PlaySound(SND_JUMP); // Joue un son de saut
+
         player->velocity.y = player->movConfig.jumpStrength; // Force de saut
         player->movConfig.isOnGround = false;
         player->movConfig.nbJump--;
     }
     else{
         if(player->movConfig.nbJump){
+            RM_PlaySound(SND_JUMP); // Joue un son de saut
             player->velocity.y = player->movConfig.jumpStrength / 1.25;
             player->movConfig.nbJump--;
         }
@@ -156,6 +162,7 @@ void PlayerJump(Player *player) {
 
 // Dash
 void PlayerDash(Player *player){
+    RM_PlaySound(SND_DASH); // Joue un son de dash
     player->velocity.x = DASH_SPEED * directionDash.x;
     player->velocity.y = DASH_SPEED * directionDash.y;
 }
