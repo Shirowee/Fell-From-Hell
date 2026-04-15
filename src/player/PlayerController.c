@@ -41,7 +41,7 @@ void PlayerInit(Player *player){
     player->stats.regenTimeOut = 1.0;
 
     //Initialisation de l'arme du joueur
-    player->weapon = pistolet_laser;
+    player->weapon = minigun;
 
     //Initialisation des buff du joueur
     player->buff = BuffInit();

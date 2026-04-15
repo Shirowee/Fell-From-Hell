@@ -8,19 +8,19 @@
 
 
 weapon_t minigun ={0, 12.5, 10, 75, 75, 3, AUCUN, 30, 100, 900, 15};
-weapon_t lance_flammes ={1, 10, 20, 300, 300, 3, FEU, 30, 0.5, 900, 30};
+weapon_t lance_flammes ={1, 5, 20, 300, 300, 3, FEU, 30, 0.5, 900, 30};
 weapon_t lance_missile_tete_chercheuse ={2, 125, 2, 10, 10, 6, AUCUN, 0, 4, 900, 10};
 weapon_t fusil_a_pompe ={3, 12.5, 0.75, 6, 6, 5, AUCUN, 50, 0.75, 700, 10};
-weapon_t pistolet_laser ={4, 50, 0.8, 10, 10, 3, AUCUN, 0, 1, 900, 50};
+weapon_t pistolet_laser ={4, 75, 0.5, 10, 10, 3, AUCUN, 0, 1, 900, 50};
 weapon_t fusil_rafales ={5, 35, 2, 11, 11, 3, AUCUN, 10, 100, 900, 10};
-weapon_t lance_glace ={6, 10, 20, 300, 300, 3, GEL, 30, 0.5, 900, 10};
-weapon_t lance_roquette ={7, 150, 0.8, 8, 8, 4, FEU, 0, 0.5, 900, 15};
+weapon_t lance_glace ={6, 5, 20, 300, 300, 3, GEL, 30, 0.5, 900, 30};
+weapon_t lance_roquette ={7, 200, 0.75, 8, 8, 4, FEU, 0, 0.5, 900, 15};
 weapon_t epee_longue ={8, 75, 1.5, -1, -1, -1, AUCUN, 160, 10, 900, 10};
 weapon_t sniper ={9, 150, 0.75, 6, 6, 3, AUCUN, 0, 100, 1500, 20};
 weapon_t arbalete ={10, 70, 1, 8, 6, 3, TOUS, 0, 100, 800, 10};
 weapon_t pistolet_eclectique ={11, 35, 2, 15, 15, 2, ELECTRIQUE, 40, 50, 900, 10};
-weapon_t pistolet_mitrailleur ={12, 10, 10, 40, 40, 0.5, AUCUN, 25, 50, 900, 10};
-weapon_t pistolet_multi_direction ={13, 20, 2, 20, 20, 1.5, AUCUN, 7.5, 100, 900, 10};
+weapon_t pistolet_mitrailleur ={12, 7.5, 12.5, 40, 40, 0.5, AUCUN, 25, 50, 900, 10};
+weapon_t pistolet_multi_direction ={13, 25, 2, 20, 20, 1.5, AUCUN, 7.5, 100, 900, 10};
 
 
 void PlayerShoot(Player* player, double  * timeSpent, double * startReload){
