@@ -272,10 +272,11 @@ void LevelDraw(void) {
     for (int i = 0; i < currentLevel.platformCount; i++) {
         DrawRectangleRec(currentLevel.platforms[i].rect, currentLevel.platforms[i].color);
     }*/
+    Texture2D tileset = *RM_GetTexture(TEX_TILESET);
     for (int i = 0; i < tileCount; i++)
     {
         DrawTextureRec(
-            *RM_GetTexture(TEX_TILESET),
+            tileset,
             tiles[i].src,
             (Vector2){tiles[i].dest.x, tiles[i].dest.y},
             WHITE
