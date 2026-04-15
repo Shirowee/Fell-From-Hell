@@ -17,11 +17,15 @@
 
 #include "../../lib/systems/EnemyPool.h"
 
-#define CHASER_HP 15    /**< Vie de l'ennemi "chaser" */
-#define CHASER_DMG 10   /**< Dégât infligé par l'ennemi "chaser" */
+#define CHASER_HP 15        /**< Vie de l'ennemi "chaser" */
+#define CHASER_DMG 10       /**< Dégât infligé par l'ennemi "chaser" */
+#define CHASER_SPEED 250   /**< Vitesse de déplacement de l'ennemi "chaser" */
 
-#define SHOOTER_HP 60   /**< Vie de l'ennemi "shooter" */
-#define SHOOTER_DMG 30  /**< Dégât infligé par l'ennemi "shooter" */
+#define SHOOTER_HP 60       /**< Vie de l'ennemi "shooter" */
+#define SHOOTER_DMG 30      /**< Dégât infligé par l'ennemi "shooter" */
+#define SHOOTER_SPEED 170   /**< Vitesse de déplacement de l'ennemi "shooter" */
+#define SHOOTER_BULLET_SIZE 25 /**< Taille des balles de l'ennemi "shooter" */
+#define SHOOTER_BULLET_SPEED 420 /**< Vitesse des balles de l'ennemi "shooter" */
 
 /**
  * @struct EnemySpawner
@@ -30,7 +34,8 @@
  * Permet de contrôler l’apparition des ennemis
  * dans le jeu via un système de timer et de cooldown.
  *
- * Le timer accumule le temps écoulé,
+ *
+ *  Le timer accumule le temps écoulé,
  * et le cooldown définit le temps minimum entre deux spawns.
  */
 typedef struct {
