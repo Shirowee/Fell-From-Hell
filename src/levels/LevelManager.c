@@ -159,20 +159,40 @@ int readJsonLvl(const char * fileName){
 
 
 //Initialise le niveau
-void LevelInit(){
-    for (int i = 0; i < currentLevel.platformCount; i++) {
+void LevelInit()
+{
+    /*-----------------------------
+        Platforms init
+    ------------------------------*/
+    for (int i = 0; i < currentLevel.platformCount; i++)
+    {
         Platform *p = &currentLevel.platforms[i];
-        p->rect = (Rectangle){ 
-            p->x,
-            p->y, 
-            p->width, 
-            p->high 
-        };
-        BuildTilesFromPlatforms();
 
-        p->color = p->solid ? DARKGRAY : GRAY; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
-        if (strcmp(p->type, "BASIC_PLATFORM_S") == 0) p->color = DARKBLUE; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
+        p->rect = (Rectangle){
+            p->x,
+            p->y,
+            p->width,
+            p->high
+        };
+
+        p->color = p->solid ? DARKGRAY : GRAY;
+
+        if (strcmp(p->type, "BASIC_PLATFORM_S") == 0)
+            p->color = DARKBLUE;
     }
+
+    BuildTilesFromPlatforms();
+
+    /*-----------------------------
+        PARALLAX INIT
+    ------------------------------*/
+    ParallaxInit(&currentLevel.parallax);
+
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_BG), 0.015f);
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_1), 0.02f);
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_3), 0.08f);
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_4), 0.09f);
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_5), 0.10f);
 }
 
 
@@ -184,41 +204,61 @@ void BuildTilesFromPlatforms(void)
     {
         Platform *p = &currentLevel.platforms[i];
 
-        int tilesX = p->width / 32;
-        int tilesY = p->high / 32;
+        int tilesX = (int)(p->width / TILE_SIZE);
+        int tilesY = (int)(p->high / TILE_SIZE);
 
         for (int y = 0; y < tilesY; y++)
         {
+            if (!p->solid && y > 0) continue;
+
             for (int x = 0; x < tilesX; x++)
             {
-                int tileID = 4; // centre par défaut
+                int srcX = 0;
+                int srcY = 0;
 
-                // CAS DES BORDS
-                if (y == 0 && x == 0) tileID = 0; // top-left
-                else if (y == 0 && x == tilesX - 1) tileID = 2; // top-right
-                else if (y == tilesY - 1 && x == 0) tileID = 6; // bottom-left
-                else if (y == tilesY - 1 && x == tilesX - 1) tileID = 8; // bottom-right
+                if (p->solid)
+                {
+                    // ===== AUTOTILE 3x3 =====
+                    int tileID = 4;
 
-                else if (y == 0) tileID = 1; // top
-                else if (y == tilesY - 1) tileID = 7; // bottom
-                else if (x == 0) tileID = 3; // left
-                else if (x == tilesX - 1) tileID = 5; // right
+                    if (y == 0 && x == 0) tileID = 0;
+                    else if (y == 0 && x == tilesX - 1) tileID = 2;
+                    else if (y == tilesY - 1 && x == 0) tileID = 6;
+                    else if (y == tilesY - 1 && x == tilesX - 1) tileID = 8;
 
-                // source dans tileset (3x3)
-                Rectangle src = {
-                    (tileID % 3) * 32,
-                    (tileID / 3) * 32,
-                    32, 32
-                };
+                    else if (y == 0) tileID = 1;
+                    else if (y == tilesY - 1) tileID = 7;
+                    else if (x == 0) tileID = 3;
+                    else if (x == tilesX - 1) tileID = 5;
 
-                tiles[tileCount++] = (Tile){
-                    .src = src,
-                    .dest = {
-                        p->x + x * 32,
-                        p->y + y * 32,
-                        32, 32
-                    }
-                };
+                    srcX = (tileID % 3) * TILE_SIZE;
+                    srcY = (tileID / 3) * TILE_SIZE; // lignes 0–2
+                }
+                else
+                {
+                    // ===== PLATEFORME (UNE SEULE LIGNE) =====
+
+                    int tileID = 1; // middle
+
+                    if (x == 0) tileID = 0;                 // gauche
+                    else if (x == tilesX - 1) tileID = 2;   // droite
+
+                    srcX = tileID * TILE_SIZE;
+                    srcY = 3 * TILE_SIZE; 
+                }
+
+                if (tileCount < MAX_TILES)
+                {
+                    tiles[tileCount++] = (Tile){
+                        .src = { srcX, srcY, TILE_SIZE, TILE_SIZE },
+                        .dest = {
+                            p->x + x * TILE_SIZE,
+                            p->y + y * TILE_SIZE,
+                            TILE_SIZE,
+                            TILE_SIZE
+                        }
+                    };
+                }
             }
         }
     }
@@ -230,7 +270,6 @@ void LevelDraw(void) {
     for (int i = 0; i < currentLevel.platformCount; i++) {
         DrawRectangleRec(currentLevel.platforms[i].rect, currentLevel.platforms[i].color);
     }*/
-    printf("tileCount = %d\n", tileCount);
     for (int i = 0; i < tileCount; i++)
     {
         DrawTextureRec(

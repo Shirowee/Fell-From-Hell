@@ -80,8 +80,9 @@ void UpdateEnemyPool(enemyPool_t* pool, Vector2 playerPos);
  * @brief Dessine tous les ennemis actifs
  * 
  * @param pool pointeur vers le pool
+ * @param playerPos position du joueur
  */
-void DrawEnemyPool(enemyPool_t* pool);
+void DrawEnemyPool(enemyPool_t* pool, Vector2 playerPos);
 
 /**
  * @brief Libère la mémoire du pool d’ennemis

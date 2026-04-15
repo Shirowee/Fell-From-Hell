@@ -56,9 +56,9 @@ void UpdateEnemyPool(enemyPool_t* pool, Vector2 playerPos) {
     }
 }
 
-void DrawEnemyPool(enemyPool_t* pool) {
+void DrawEnemyPool(enemyPool_t* pool, Vector2 playerPos) {
     for(int i=0; i < pool->capacity; i++) {
-        EnemyDraw(&pool->tab[i]);
+        EnemyDraw(&pool->tab[i], playerPos);
     }
 }
 

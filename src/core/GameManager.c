@@ -46,10 +46,10 @@ void GameDraw(Player *player)
 {
     ClearBackground(RAYWHITE);
     //DrawTextureEx(*RM_GetTexture("../ressources/sprites/bgs/Nebula.png"), (Vector2){-300, 300}, 0.0f, 3.0f, WHITE);
-    DrawTextureEx(*RM_GetTexture(TEX_BACKGROUND_NEBULA), (Vector2){-300, 300}, 0.0f, 3.0f, WHITE);
+    //DrawTextureEx(*RM_GetTexture(TEX_BACKGROUND_NEBULA), (Vector2){-300, 300}, 0.0f, 3.0f, WHITE);
     LevelDraw();
     PlayerDraw(player);
-    DrawEnemyPool(&enemyPool);
+    DrawEnemyPool(&enemyPool, player->position);
     DrawBulletPool(&playerBulletPool, player->position);
     DrawBulletPool(&bulletPool, player->position);
 }

@@ -17,6 +17,7 @@
 #include "../systems/EnemyPool.h"
 #include "../systems/EnemySpawner.h"
 #include "../../lib/cJson/cJSON.h"
+#include "../../lib/systems/ParallaxSystem.h"
 
 
 /** @name Maximum de tout les éléments d'une map
@@ -93,6 +94,8 @@ typedef struct {
 
     Trigger triggers[MAX_TRIGGERS]; /**< Tableau de zone provoquant un événement */
     int triggerCount;               /**< Nombre actuel de zone provoquant un événement */
+
+    ParallaxSystem parallax;
 } Level;
 
 

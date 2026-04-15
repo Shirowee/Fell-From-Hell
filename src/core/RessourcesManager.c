@@ -37,7 +37,17 @@ static const char* texturePaths[TEX_COUNT] = {
     "../ressources/sprites/player/player.png", // TEX_PLAYER
     "../ressources/sprites/bgs/Nebula.png", // TEX_BACKGROUND_NEBULA
     "../ressources/sprites/others/Title.png", // TEX_TITLE
-    "../ressources/sprites/others/tileset.png" // TEX_TILESET
+    "../ressources/sprites/others/tileset.png", // TEX_TILESET
+    "../ressources/sprites/enemies/chaser.png", // TEX_CHASER
+    "../ressources/sprites/enemies/shooter.png", // TEX_SHOOTER
+    "../ressources/sprites/enemies/huit.png", // TEX_HUIT
+    "../ressources/sprites/enemies/spiral.png", // TEX_SPIRAL
+    "../ressources/sprites/enemies/arc.png", // TEX_ARC
+    "../ressources/sprites/bgs/parallax_neb/bg.png", // TEX_PARALLAX_NEB_BG
+    "../ressources/sprites/bgs/parallax_neb/1.png", // TEX_PARALLAX_NEB_1
+    "../ressources/sprites/bgs/parallax_neb/3.png", // TEX_PARALLAX_NEB_3
+    "../ressources/sprites/bgs/parallax_neb/4.png", // TEX_PARALLAX_NEB_4
+    "../ressources/sprites/bgs/parallax_neb/5.png" // TEX_PARALLAX_NEB_5
 };
 
 Texture2D* RM_GetTexture(TextureID id)

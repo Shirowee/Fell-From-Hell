@@ -108,7 +108,7 @@ void DrawBullet(bullet_t * bullet, Vector2 posJoueur) {
     {
     case BASIC:
         
-        DrawCircleV(bullet->bulletPos, bullet->bulletSize, BLACK);
+        DrawCircleV(bullet->bulletPos, bullet->bulletSize, RED);
         break;
 
     case EXPLOSIF:

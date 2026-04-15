@@ -23,7 +23,7 @@
  * @author A. Pocholle
  */
 
-
+#include "../../lib/core/RessourcesManager.h"
 #include "../../lib/enemies/EnemyController.h"
 #include "../../lib/enemies/EnemyMovement.h"
 #include "../../lib/systems/BulletPool.h"
@@ -78,10 +78,82 @@ void EnemyUpdate(enemy_t * enemy, Vector2 playerPos)
 }
 
 
-void EnemyDraw(enemy_t * enemy)
+void EnemyDraw(enemy_t * enemy, Vector2 playerPos)
 {
     if (enemy->active == 0) return;
-    float centered_x = enemy->pos.x - enemy->size.x / 2;
-    float centered_y = enemy->pos.y - enemy->size.y / 2;
-    DrawRectangleV((Vector2){centered_x, centered_y}, enemy->size, RED);
+
+    Texture2D tex;
+
+    switch (enemy->type)
+    {
+    case ENEMY_CHASER:
+
+        EnemySetDirTowardsPlayer(enemy, playerPos);
+        tex = *RM_GetTexture(TEX_CHASER);
+
+        DrawTexturePro(
+            tex,
+            (Rectangle){0, 0, tex.width, tex.height},
+            (Rectangle){enemy->pos.x, enemy->pos.y, tex.width, tex.height},
+            (Vector2){tex.width / 2.0f, tex.height / 2.0f},
+            enemy->dir + 180.0f,
+            WHITE
+        );
+        break;
+    case ENEMY_SHOOTER:       
+        tex = *RM_GetTexture(TEX_SHOOTER);
+        DrawTexturePro(
+            tex,
+            (Rectangle){0, 0, tex.width, tex.height},
+            (Rectangle){enemy->pos.x, enemy->pos.y, tex.width, tex.height},
+            (Vector2){tex.width / 2.0f, tex.height / 2.0f},
+            enemy->dir + 180.0f,
+            WHITE
+        );
+        break;
+    case ENEMY_SHOOTER_CIRCLE:
+        tex = *RM_GetTexture(TEX_HUIT);
+        DrawTexturePro(
+            tex,
+            (Rectangle){0, 0, tex.width, tex.height},
+            (Rectangle){enemy->pos.x, enemy->pos.y, tex.width, tex.height},
+            (Vector2){tex.width / 2.0f, tex.height / 2.0f},
+            enemy->dir + 180.0f,
+            WHITE
+        );
+        break;
+    case ENEMY_SPIRAL:
+        tex = *RM_GetTexture(TEX_SPIRAL);
+        DrawTexturePro(
+            tex,
+            (Rectangle){0, 0, tex.width, tex.height},
+            (Rectangle){enemy->pos.x, enemy->pos.y, tex.width, tex.height},
+            (Vector2){tex.width / 2.0f, tex.height / 2.0f},
+            enemy->dir + 180.0f,
+            WHITE
+        );
+        break;
+    case ENEMY_ARC:
+        tex = *RM_GetTexture(TEX_ARC);
+        DrawTexturePro(
+            tex,
+            (Rectangle){0, 0, tex.width, tex.height},
+            (Rectangle){enemy->pos.x, enemy->pos.y, tex.width, tex.height},
+            (Vector2){tex.width / 2.0f, tex.height / 2.0f},
+            enemy->dir + 180.0f,
+            WHITE
+        );
+        break;
+
+
+    default:
+        DrawRectangleV(
+            (Vector2){
+                enemy->pos.x - enemy->size.x / 2,
+                enemy->pos.y - enemy->size.y / 2
+            },
+            enemy->size,
+            RED
+        );
+    }
 }
