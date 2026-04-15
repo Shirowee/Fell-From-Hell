@@ -145,7 +145,7 @@ void CheckBulletsPlatformsCollision(bulletPool_t *bullets, Platform platforms[],
             if(bullet->bulletPos.y + bullet->bulletSize < platform->y - MAX_DIST_DETECT ||
                 bullet->bulletPos.y > platform->y + platform->high + MAX_DIST_DETECT) continue;
 
-            if (platform->solid || (bullet->bulletDir > 0 && bullet->bulletDir < 180)) {
+            if (platform->solid) {
                 if(CheckCollisionCircleRec(bullet->bulletPos, bullet->bulletSize, platform->rect)){
                     DesactivateBullet(bullet, bullets);
                     j--;
