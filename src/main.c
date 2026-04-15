@@ -53,8 +53,8 @@ int main(void)
         ClearBackground((Color){0, 7, 38, 0});
 
         switch(currentScreen) {
-            case SCREEN_MENU: 
-                currentScreen = MenuUpdate(); 
+            case SCREEN_MENU:
+                currentScreen = MenuUpdate(&player);
                 previousScreen = SCREEN_MENU;
                 break;
             case SCREEN_GAME: 

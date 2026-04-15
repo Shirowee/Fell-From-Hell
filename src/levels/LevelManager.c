@@ -5,6 +5,8 @@
 #include "../../lib/systems/EnemyPool.h"
 #include "../../lib/systems/EnemySpawner.h"
 #include "../../lib/systems/BulletPool.h"
+#include "../../lib/systems/Projectiles.h"
+#include "../../lib/core/SavingManager.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -190,13 +192,9 @@ void NextLvlRequest(const char *targetId) {
     pendingLevel[63] = '\0';
 }
 
-void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool, EnemySpawner *enemySpawner) {
+void NextLvlUpdate(Player *player, EnemySpawner *enemySpawner) {
     // Evite des problèmes de si ça s'éxécute deux fois
     if (pendingLevel[0] == '\0') return;
-
-    // Suppression des balles et ennemis
-    for (int i = 0; i < enemyPool->capacity; i++)  enemyPool->tab[i].active = 0;
-    for (int i = 0; i < bulletPool->capacity; i++)  bulletPool->tab[i].active = 0;
 
     // Chargement de la nouvelle map
     if (readJsonLvl(pendingLevel)) {
@@ -206,8 +204,14 @@ void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletP
         player->position.x = (float)currentLevel.playerStart.x;
         player->position.y = (float)currentLevel.playerStart.y;
 
-        //Reset des vagues
+        // Reset des vagues
         enemySpawner->nbVague = 0;
+
+        // Suppression des balles
+        DesactAllBullet(&playerBulletPool);
+        DesactAllBullet(&bulletPool);
+
+        SaveGame(player);
     }
 
     pendingLevel[0] = '\0';

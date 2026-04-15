@@ -45,7 +45,7 @@ extern KeyBindings keys;
  * \details Gère les entrées utilisateur (clavier/souris) et
  * permet de naviguer entre les options (jouer, paramètres, quitter).
  */
-Screen_t MenuUpdate(void);
+Screen_t MenuUpdate(Player *player);
 
 /**
  * \brief Lance et met à jour la logique du jeu.

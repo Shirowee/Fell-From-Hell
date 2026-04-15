@@ -58,7 +58,7 @@ void GameReset(Player *player) {
 void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
     CameraUpdate(&camera, player);
-    NextLvlUpdate(player, &enemyPool, &playerBulletPool, &enemySpawner);
+    NextLvlUpdate(player, &enemySpawner);
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
     UpdateEnemyPool(&enemyPool, getPlayerCenter(player));
     UpdateBulletPool(&bulletPool);

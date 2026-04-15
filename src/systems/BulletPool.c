@@ -66,3 +66,10 @@ void FreeBulletPool(bulletPool_t* pool) {
     pool->tab = NULL;
     pool->capacity = 0;
 }
+
+void DesactAllBullet(bulletPool_t *pool){
+    for(int i=0; i < pool->nbBulletsActive; i++) {
+        pool->tab[i].active = 0;
+    }
+    pool->nbBulletsActive = 0;
+}

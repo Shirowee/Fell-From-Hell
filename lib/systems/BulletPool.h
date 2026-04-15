@@ -89,6 +89,16 @@ void DrawBulletPool(bulletPool_t* pool, Vector2 posJoueur);
  */
 void FreeBulletPool(bulletPool_t* pool);
 
+
+/**
+ * @brief Desactive toute les bullets de la pool
+ *
+ * Desactive toute les bullets de la pool en parcourant le tableau de bullets
+ * 
+ * @param pool pointeur vers le pool
+ */
+void DesactAllBullet(bulletPool_t *pool);
+
 /** @brief Pool de projectiles des ennemis */
 extern bulletPool_t bulletPool;
 /** @brief Pool de projectiles du joueur */
