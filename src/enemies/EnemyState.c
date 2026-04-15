@@ -107,12 +107,13 @@ void EnemyState_EnemyShootCircle(enemy_t* enemy, bulletPool_t* pool, Vector2 pla
     enemy->stateTimer += dt;
     if (enemy->stateTimer > 0.5f) {
         int bullets = 8;
+        Vector2 centerPos = { enemy->pos.x + enemy->size.x / 2, enemy->pos.y + enemy->size.y / 2 };
 
         for (int i = 0; i < bullets; i++)
         {
             float angle = (360.0f / bullets) * i;
             SpawnBulletPool(pool,
-                enemy->pos,
+                centerPos,
                 angle,
                 enemy->bulletSpeed,
                 enemy->bulletSize,
@@ -128,8 +129,9 @@ void EnemyState_EnemyShootCircle(enemy_t* enemy, bulletPool_t* pool, Vector2 pla
 void EnemyState_EnemyShoot(enemy_t* enemy, bulletPool_t* pool, Vector2 playerPos)
 {
     EnemySetDirTowardsPlayer(enemy, playerPos);
+    Vector2 centerPos = { enemy->pos.x + enemy->size.x / 2, enemy->pos.y + enemy->size.y / 2 };
     SpawnBulletPool(pool,
-                enemy->pos,
+                centerPos,
                 enemy->dir,
                 enemy->bulletSpeed,
                 enemy->bulletSize,
@@ -145,8 +147,9 @@ void EnemyState_EnemyShootArc(enemy_t* enemy, bulletPool_t* pool, Vector2 player
     float dt = GetFrameTime();
     enemy->stateTimer += dt;
     if ((enemy->stateTimer > 1.0f)&&(enemy->stateTimer < 1.5f)) {
+        Vector2 centerPos = { enemy->pos.x + enemy->size.x / 2, enemy->pos.y + enemy->size.y / 2 };
         SpawnBulletPool(pool,
-                enemy->pos,
+                centerPos,
                 enemy->dir,
                 enemy->bulletSpeed,
                 enemy->bulletSize,
@@ -168,8 +171,9 @@ void EnemyState_EnemyShootSpiral(enemy_t* enemy, bulletPool_t* pool, Vector2 pla
     float dt = GetFrameTime();
     enemy->stateTimer += dt;
     if (enemy->stateTimer > 0.25f) {
+        Vector2 centerPos = { enemy->pos.x + enemy->size.x / 2, enemy->pos.y + enemy->size.y / 2 };
         SpawnBulletPool(pool,
-                enemy->pos,
+                centerPos,
                 enemy->dir,
                 enemy->bulletSpeed,
                 enemy->bulletSize,

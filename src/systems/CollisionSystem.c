@@ -270,129 +270,95 @@ void PlayerPositionFix(Player *player, Vector2 oldPosition, Platform platforms[]
     }
 }
 
-/*
+
 void EnemiesPositionFix(enemyPool_t *enemies, Platform platform[], const int nbPlatforms){
     int i, j;
     int distanceX, distanceY;
     int platformCenterX, platformCenterY;
     int enemyCenterX, enemyCenterY;
 
+    float dt = GetFrameTime();
     float prevBottom;
     float currBottom;
     float platformTop;
 
     bool collision;
     bool wasAbove;
-    bool isFalling;
 
     enemy_t *enemy;
     Rectangle enemyBody;
 
-    for(i = 0; i < enemies->capacity; i++){
+    for(i = 0; i < enemies->nbEnemiesActive; i++){
         enemy = &enemies->tab[i];
 
-        enemy->type = 
+        if(enemy->type == ENEMY_SHOOTER){
 
-        //Initialisation de la boîte de collision de l'ennemi
-        enemyBody.x = enemy->pos.x;
-        enemyBody.y = enemy->pos.y;
-        enemyBody.width = enemy->size.x;
-        enemyBody.height = enemy->size.y;
+            //Initialisation de la boîte de collision de l'ennemi
+            enemyBody.x = enemy->pos.x;
+            enemyBody.y = enemy->pos.y;
+            enemyBody.width = enemy->size.x;
+            enemyBody.height = enemy->size.y;
 
-        for(j = 0; j < nbPlatforms; j++) {
-            //Ne vérifie que pour les plateformes les plus proches
-            if(platform[i].x + platform[i].width < player->position.x - PLAYER_MAX_DIST_DETECT || 
-                platform[i].x > player->position.x + PLAYER_MAX_DIST_DETECT) continue;
-            if(platform[i].y + platform[i].high < player->position.y - PLAYER_MAX_DIST_DETECT ||
-                platform[i].y > player->position.y + PLAYER_MAX_DIST_DETECT) continue;
+            for(j = 0; j < nbPlatforms; j++) {
+                //Ne vérifie que pour les plateformes les plus proches
+                if(platform[j].x + platform[j].width < enemy->pos.x - PLAYER_MAX_DIST_DETECT || 
+                    platform[j].x > enemy->pos.x + PLAYER_MAX_DIST_DETECT) continue;
+                if(platform[j].y + platform[j].high < enemy->pos.y - PLAYER_MAX_DIST_DETECT ||
+                    platform[j].y > enemy->pos.y + PLAYER_MAX_DIST_DETECT) continue;
 
 
-            collision = false;
-            // Calcul du centre de la plateforme
-            platformCenterX = platform[i].x + platform[i].width / 2;
-            platformCenterY = platform[i].y + platform[i].high / 2;
+                collision = false;
+                // Calcul du centre de la plateforme
+                platformCenterX = platform[j].x + platform[j].width / 2;
+                platformCenterY = platform[j].y + platform[j].high / 2;
 
-            if(platform[i].solid) {
-                if(CheckCollisionRecs(body, platform[i].rect)){
-                    collision = true;
-                    // Calcul du centre de la rectangle main
-                    playerCenterX = player->position.x + player->size.x / 2;
-                    playerCenterY = player->position.y + player->size.y / 2;
+                if(platform[j].solid) {
+                    if(CheckCollisionRecs(enemyBody, platform[j].rect)){
+                        collision = true;
+                        // Calcul du centre de la rectangle main
+                        enemyCenterX = enemy->pos.x + enemy->size.x / 2;
+                        enemyCenterY = enemy->pos.y + enemy->size.y / 2;
 
-                    // Calcul de la distance entre le joueur et la plateforme
-                    distanceX = (player->size.x / 2 + platform[i].width / 2) - abs(playerCenterX - platformCenterX);
-                    distanceY = (player->size.y / 2 + platform[i].high / 2) - abs(playerCenterY - platformCenterY);
+                        // Calcul de la distance entre le joueur et la plateforme
+                        distanceX = (enemy->size.x / 2 + platform[j].width / 2) - abs(enemyCenterX - platformCenterX);
+                        distanceY = (enemy->size.y / 2 + platform[j].high / 2) - abs(enemyCenterY - platformCenterY);
 
-                    if(distanceX < distanceY) { // Collision sur l'axe x
-                        if (playerCenterX < platformCenterX) {
-                            player->position.x = platform[i].x - player->size.x; // Collision à droite
-                            if(state == JUMPING || state == FALLING){
-                                player->movConfig.isOnLeftWall = false;
-                                player->movConfig.isOnRightWall = true;
-                                player->velocity.y = 0;
-                            }
-                        } else {
-                            player->position.x = platform[i].x + platform[i].width; // Collision à gauche
-                            if(state == JUMPING || state == FALLING){
-                                player->movConfig.isOnLeftWall = true;
-                                player->movConfig.isOnRightWall = false;
-                                player->velocity.y = 0;
+                        if(distanceX < distanceY) { // Collision sur l'axe x
+                            if (enemyCenterX < platformCenterX) {
+                                enemy->pos.x = platform[j].x - enemy->size.x; // Collision à droite
+                            } else {
+                                enemy->pos.x = platform[j].x + platform[j].width; // Collision à gauche
                             }
                         }
-                        player->velocity.x = 0; // Arrêter le mouvement horizontal
-                        if(state == DASHING)
-                            player->movConfig.isDashing = false;
-                    }
-                    else { // Collision sur l'axe y
-                        if (playerCenterY < platformCenterY) {
-                            player->position.y = platform[i].y - player->size.y; // Collision en bas
-                            if (state == FALLING) {
-                                player->movConfig.isOnGround = true;
-                                player->velocity.y = 0; // Arrêter le mouvement vertical
+                        else { // Collision sur l'axe y
+                            if (enemyCenterY < platformCenterY) {
+                                enemy->pos.y = platform[j].y - enemy->size.y; // Collision en bas
+                            } 
+                            else {
+                                enemy->pos.y = platform[j].y + platform[j].high; // Collision en haut
                             }
-                            if (state == WALL_SLIDING) {
-                                player->movConfig.isOnGround = true;
-                                player->movConfig.isOnLeftWall = false;
-                                player->movConfig.isOnRightWall = false;
-                                player->velocity.y = 0;
-                            }
-                        } 
-                        else {
-                            player->position.y = platform[i].y + platform[i].high; // Collision en haut
-                            if (state == JUMPING) {
-                                player->velocity.y = 0; // Arrêter le mouvement vertical
-                            }
-                            if(state == DASHING)
-                                player->movConfig.isDashing = false;
                         }
                     }
                 }
-            }
-            else {
-                prevBottom = oldPosition.y + player->size.y;
-                currBottom = player->position.y + player->size.y;
-                platformTop = platform[i].y;
+                else {
+                    prevBottom = (enemy->pos.y - sinf(enemy->dir * DEG2RAD) * enemy->speed * dt) + enemy->size.y;
+                    currBottom = enemy->pos.y + enemy->size.y;
+                    platformTop = platform[j].y;
 
-                wasAbove = prevBottom <= platformTop;
+                    wasAbove = prevBottom <= platformTop;
 
-                if(wasAbove && isFalling && currBottom >= platformTop && CheckCollisionRecs(body, platform[i].rect)){
-                    player->position.y = platform[i].y - player->size.y; // Collision en bas
-                    player->velocity.y = 0; // Arrêter le mouvement vertical
-                    player->movConfig.isOnGround = true;
-                    collision = true;
-                    if (state == WALL_SLIDING) {
-                        player->movConfig.isOnLeftWall = false;
-                        player->movConfig.isOnRightWall = false;
-                        player->velocity.y = 0;
+                    if(wasAbove && currBottom >= platformTop && CheckCollisionRecs(enemyBody, platform[j].rect)){
+                        enemy->pos.y = platform[j].y - enemy->size.y; // Collision en bas
+                        collision = true;
                     }
                 }
-            }
 
-            if(collision){
-                // Mettre à jour le corps du joueur après correction de position
-                body.x = player->position.x;
-                body.y = player->position.y;
+                if(collision){
+                    // Mettre à jour le corps du joueur après correction de position
+                    enemyBody.x = enemy->pos.x;
+                    enemyBody.y = enemy->pos.y;
+                }
             }
         }
     }
-}*/
+}
