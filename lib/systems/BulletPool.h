@@ -78,7 +78,7 @@ void UpdateBulletPool(bulletPool_t* pool);
  * @param pool pointeur vers le pool
  * @param posJoueur position du joueur
  */
-void DrawBulletPool(bulletPool_t* pool);
+void DrawBulletPool(bulletPool_t* pool, Vector2 posJoueur);
 
 /**
  * @brief Libère la mémoire du pool

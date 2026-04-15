@@ -3,7 +3,7 @@
 #include "../lib/core/GameManager.h"
 #include "../lib/core/WindowManager.h"
 #include "../lib/menu/Screen.h"
-#include "../lib/core/ResolutionManager.h"
+#include "../lib/core/RessourcesManager.h"
 #include "../lib/core/ResolutionManager.h"
 #include "../lib/levels/LevelManager.h"
 #include "../lib/systems/LifeManager.h"

@@ -153,7 +153,7 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
             DesactivateEnemy(enemy, enemies);
             i--;
         }
-        }
+        
     }
 }
 
@@ -186,11 +186,11 @@ void CheckPlayerEnemyCollision(Player* player, enemyPool_t* enemies, int* total_
         enemyHitbox.width = enemy->size.x - (int)(2*enemy->size.x*gap);
         enemyHitbox.height = enemy->size.y - (int)(2*enemy->size.y*gap);
 
-            if(CheckCollisionRecs(playerHitbox, enemyHitbox))
-            {
-                RM_PlaySound(SND_HURT); // Joue un son de dgt
-                *total_dmg += enemy->dmg;
-            }
+        if(CheckCollisionRecs(playerHitbox, enemyHitbox))
+        {
+            RM_PlaySound(SND_HURT); // Joue un son de dgt
+            *total_dmg += enemy->dmg;
+            
         }
     }
 }
