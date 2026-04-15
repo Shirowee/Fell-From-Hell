@@ -237,30 +237,33 @@ void RM_LoadAll(void)
 
 void RM_UnloadAll(void)
 {
-    // textures
     for (int i = 0; i < TEX_COUNT; i++)
     {
         if (texturesLoaded[i])
         {
             UnloadTexture(textures[i]);
+            textures[i] = (Texture2D){0};
+            texturesLoaded[i] = false;
         }
     }
 
-    // sounds
     for (int i = 0; i < SND_COUNT; i++)
     {
         if (soundsLoaded[i])
         {
             UnloadSound(sounds[i]);
+            sounds[i] = (Sound){0};
+            soundsLoaded[i] = false;
         }
     }
 
-    // musiques
     for (int i = 0; i < MUSIC_COUNT; i++)
     {
         if (musicLoaded[i])
         {
             UnloadMusicStream(music[i]);
+            music[i] = (Music){0};
+            musicLoaded[i] = false;
         }
     }
 }

@@ -22,7 +22,7 @@ void GameInit(Player *player)
     //Init enemy
     InitEnemyPool(&enemyPool, 100);
     EnemySpawnerInit(&enemySpawner);
-    InitBulletPool(&bulletPool, 3000);
+    InitBulletPool(&bulletPool, 300);
 
     InitBulletPool(&playerBulletPool, 300);
 

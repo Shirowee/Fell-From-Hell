@@ -28,7 +28,7 @@ void ParallaxAddLayer(ParallaxSystem *ps, Texture2D texture, float speed)
 
     ps->layers[ps->layerCount].texture = texture;
     ps->layers[ps->layerCount].speed = speed;
-    ps->layers[ps->layerCount].offset = (Vector2){0, -700.0f};
+    ps->layers[ps->layerCount].offset = (Vector2){0, -100.0f};
 
     ps->layerCount++;
 }

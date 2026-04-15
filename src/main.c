@@ -39,7 +39,7 @@ int main(void)
     * INITIALISATION DU JEU *
     ************************/
     
-    Player player;
+    Player player = {0};
     GameInit(&player); // Initialisation du jeu
 
     RM_PlayMusic(MUSIC_MENU); // Joue la musique de fond

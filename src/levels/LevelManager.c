@@ -190,11 +190,11 @@ void LevelInit()
     ------------------------------*/
     ParallaxInit(&currentLevel.parallax);
 
-    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_BG), 0.015f);
-    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_1), 0.02f);
-    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_3), 0.08f);
-    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_4), 0.09f);
-    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_5), 0.10f);
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_BG), 0.030f);
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_1), 0.04f);
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_3), 0.16f);
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_4), 0.25f);
+    ParallaxAddLayer(&currentLevel.parallax, *RM_GetTexture(TEX_PARALLAX_NEB_5), 0.30f);
 }
 
 
