@@ -106,8 +106,8 @@ int main(void)
     /*********
     * UNLOAD *
     *********/
-    GameUnload(player); 
     RM_UnloadAll();
     CloseAudioDevice();
+    GameUnload(player);
     return 0;
 }

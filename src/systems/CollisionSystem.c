@@ -87,8 +87,10 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
                 if (dist < radius * radius) {
                     total_dmg += bullet->bulletDmg;
                     bullet->bulletSize *= 0.7;  //diminution de 30%
-                    if(bullet->bulletSize <= 1.0)
-                        bullet->active=0;   //verifier si desactive bien !!
+                    if(bullet->bulletSize <= 1.0){
+                        DesactivateBullet(bullet, bullets);
+                        j--;
+                    }
                 }
 
                 continue;
@@ -100,7 +102,7 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
                     //DrawExplosion(bullet); //marche pas (dessin écrasé par les autre draw je crois)
                     float explosionRadius = bullet->bulletSize*20; //const à revoir
 
-                    for (int k = 0; k < enemies->capacity; k++) {
+                    for (int k = 0 ; k < enemies->nbEnemiesActive ; k++) {
                         enemy_t *e = &enemies->tab[k];
                         if (!e->active) continue;
 
@@ -125,8 +127,10 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
                             if (damageFactor < 0.0f) damageFactor = 0.0f;
 
                             ApplyDamageToEnemy(e, bullet->bulletDmg * damageFactor);
-                            if(e->hp <= 0.0)
-                                e->active = 0;
+                            if(e->hp <= 0.0){
+                                DesactivateEnemy(e, enemies);
+                                i--;
+                            }
                         }
                     }
 
