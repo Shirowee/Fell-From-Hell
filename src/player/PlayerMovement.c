@@ -22,8 +22,8 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
 
     //Events de déplacement
     if(state != WALL_SLIDING){
-        if (IsKeyDown(keys.right)) player->velocity.x += (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * dt;
-        else if (IsKeyDown(keys.left))  player->velocity.x -= (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * dt;
+        if (IsKeyDown(keys.right)) player->velocity.x += (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * (player->buff->movementSpeed / MAX_SPEED_X) * dt;
+        else if (IsKeyDown(keys.left))  player->velocity.x -= (player->movConfig.isOnGround ? player->movConfig.groundAcc : player->movConfig.airAcc) * (player->buff->movementSpeed / MAX_SPEED_X) * dt;
         else player->velocity.x *= (fabs(player->velocity.x) > 10 ? friction : 0); // Ralentissement progressif
     }
 
@@ -36,8 +36,8 @@ void PlayerMove(Player *player, Platform platform[], const int nbPlatforms) {
 
     //Corretion vitesse
     if(state != DASHING){
-        if(player->velocity.x > player->movConfig.maxSpeed) player->velocity.x = player->movConfig.maxSpeed;
-        else if(player->velocity.x < -player->movConfig.maxSpeed) player->velocity.x = -player->movConfig.maxSpeed;
+        if(player->velocity.x > player->buff->movementSpeed) player->velocity.x = player->buff->movementSpeed;
+        else if(player->velocity.x < -player->buff->movementSpeed) player->velocity.x = -player->buff->movementSpeed;
     }
     if(player->movConfig.isOnGround) player->velocity.y = 0.0;
     else if(IsKeyReleased(keys.jump) && state == JUMPING) player->velocity.y *= 0.5;
@@ -102,7 +102,7 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
     else if(player->movConfig.dashTimeOut <= 0.0 && player->movConfig.dashTime <= 0.0 && player->movConfig.isDashing){
         player->velocity.x *= 0.25f;
         player->velocity.y *= 0.25f;
-        player->movConfig.dashTimeOut = 2;
+        player->movConfig.dashTimeOut = player->buff->dashCooldown;
     }
 
     //Booleens
