@@ -103,6 +103,7 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
         player->velocity.x *= 0.25f;
         player->velocity.y *= 0.25f;
         player->movConfig.dashTimeOut = 2;
+        player->movConfig.nbJump = 1;
     }
 
     //Booleens
