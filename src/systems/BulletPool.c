@@ -55,9 +55,9 @@ void UpdateBulletPool(bulletPool_t* pool) {
     }
 }
 
-void DrawBulletPool(bulletPool_t* pool, Vector2 posJoueur) {
+void DrawBulletPool(bulletPool_t* pool) {
     for(int i=0; i < pool->nbBulletsActive; i++) {
-        DrawBullet(&pool->tab[i], posJoueur);
+        DrawBullet(&pool->tab[i]);
     }
 }
 
