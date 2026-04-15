@@ -30,7 +30,7 @@
  * @param enemies pool d’ennemis
  * @param bullets pool de projectiles
  */
-void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets);
+void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets, weapon_t* weapon);
 
 /**
  * @brief Détecte collisions entre joueur et ennemies et calcule le nombre de dégâts total à infliger

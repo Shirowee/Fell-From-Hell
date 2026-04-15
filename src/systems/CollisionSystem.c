@@ -21,7 +21,7 @@
 
 #define MAX_DIST_DETECT 200
 
-void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
+void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets, weapon_t* weapon){
     int i, j;
     int total_dmg;
     float gap = 0.05; //En %
@@ -145,9 +145,17 @@ void CheckEnemyBulletCollision(enemyPool_t* enemies, bulletPool_t* bullets){
                     RM_PlaySound(SND_ENEMY_HURT); // Joue un son de dgt sur ennemi
                 }
 
-                DesactivateBullet(bullet, bullets);
-                j--;
-
+                if(weapon->indice == SNIPER){
+                    bullet->bulletDmg /= 2; //percage avec dégats div par 2 à chaque ennemi touché
+                    if(bullet->bulletDmg < 10){
+                        DesactivateBullet(bullet, bullets);
+                        j--;
+                    }
+                }
+                else{
+                    DesactivateBullet(bullet, bullets);
+                    j--;
+                }
             }
         }
 

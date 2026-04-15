@@ -16,6 +16,7 @@
 // Initialise le jeu
 void GameInit(Player *player)
 {
+    RM_LoadAll();
     LevelInit();
     PlayerInit(player);
 
@@ -61,6 +62,7 @@ void GameReset(Player *player) {
 // Mise a jour du jeu
 void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
+    RM_UpdateMusic();
     CameraUpdate(&camera, player);
     NextLvlUpdate(player, &enemySpawner);
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
@@ -68,7 +70,7 @@ void GameUpdate(Player *player, double* timeSpent, double* startReload)
     EnemiesPositionFix(&enemyPool, currentLevel.platforms, currentLevel.platformCount);
     UpdateBulletPool(&bulletPool);
 
-    CheckEnemyBulletCollision(&enemyPool, &playerBulletPool);
+    CheckEnemyBulletCollision(&enemyPool, &playerBulletPool, &(player->weapon));
     CheckBulletsPlatformsCollision(&bulletPool, currentLevel.platforms, currentLevel.platformCount);
 
     PlayerUpdate(player, currentLevel.platforms, currentLevel.platformCount, timeSpent, startReload);
