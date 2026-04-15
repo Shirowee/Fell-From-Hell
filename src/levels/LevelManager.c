@@ -2,6 +2,7 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/cJson/cJSON.h"
 #include "../../lib/player/PlayerController.h"
+#include "../../lib/core/RessourcesManager.h"
 #include "../../lib/systems/EnemyPool.h"
 #include "../../lib/systems/EnemySpawner.h"
 #include "../../lib/systems/BulletPool.h"
@@ -9,8 +10,18 @@
 #include <string.h>
 #include <stdlib.h>
 
-Level currentLevel = {0};
+#define TILE_SIZE 32
+#define MAX_TILES 5000
 
+typedef struct Tile {
+    Rectangle src;   // dans tileset
+    Rectangle dest;  // dans le monde
+} Tile;
+
+Tile tiles[MAX_TILES];
+int tileCount = 0;
+
+Level currentLevel = {0};
 
 void parseLevelData(cJSON *json, Level *lvl) {
     if (json == NULL || lvl == NULL) return;
@@ -157,6 +168,7 @@ void LevelInit(){
             p->width, 
             p->high 
         };
+        BuildTilesFromPlatforms();
 
         p->color = p->solid ? DARKGRAY : GRAY; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
         if (strcmp(p->type, "BASIC_PLATFORM_S") == 0) p->color = DARKBLUE; // TEMPORAIRE POUR TEST LES DIFFERENT TYPES
@@ -164,10 +176,69 @@ void LevelInit(){
 }
 
 
+void BuildTilesFromPlatforms(void)
+{
+    tileCount = 0;
+
+    for (int i = 0; i < currentLevel.platformCount; i++)
+    {
+        Platform *p = &currentLevel.platforms[i];
+
+        int tilesX = p->width / 32;
+        int tilesY = p->high / 32;
+
+        for (int y = 0; y < tilesY; y++)
+        {
+            for (int x = 0; x < tilesX; x++)
+            {
+                int tileID = 4; // centre par défaut
+
+                // CAS DES BORDS
+                if (y == 0 && x == 0) tileID = 0; // top-left
+                else if (y == 0 && x == tilesX - 1) tileID = 2; // top-right
+                else if (y == tilesY - 1 && x == 0) tileID = 6; // bottom-left
+                else if (y == tilesY - 1 && x == tilesX - 1) tileID = 8; // bottom-right
+
+                else if (y == 0) tileID = 1; // top
+                else if (y == tilesY - 1) tileID = 7; // bottom
+                else if (x == 0) tileID = 3; // left
+                else if (x == tilesX - 1) tileID = 5; // right
+
+                // source dans tileset (3x3)
+                Rectangle src = {
+                    (tileID % 3) * 32,
+                    (tileID / 3) * 32,
+                    32, 32
+                };
+
+                tiles[tileCount++] = (Tile){
+                    .src = src,
+                    .dest = {
+                        p->x + x * 32,
+                        p->y + y * 32,
+                        32, 32
+                    }
+                };
+            }
+        }
+    }
+}
+
 //Dessine le niveau
 void LevelDraw(void) {
+    /*
     for (int i = 0; i < currentLevel.platformCount; i++) {
         DrawRectangleRec(currentLevel.platforms[i].rect, currentLevel.platforms[i].color);
+    }*/
+    printf("tileCount = %d\n", tileCount);
+    for (int i = 0; i < tileCount; i++)
+    {
+        DrawTextureRec(
+            *RM_GetTexture(TEX_TILESET),
+            tiles[i].src,
+            (Vector2){tiles[i].dest.x, tiles[i].dest.y},
+            WHITE
+        );
     }
 }
 

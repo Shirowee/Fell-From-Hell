@@ -36,7 +36,8 @@ static bool texturesLoaded[TEX_COUNT] = {0};
 static const char* texturePaths[TEX_COUNT] = {
     "../ressources/sprites/player/player.png", // TEX_PLAYER
     "../ressources/sprites/bgs/Nebula.png", // TEX_BACKGROUND_NEBULA
-    "../ressources/sprites/others/Title.png" // TEX_TITLE
+    "../ressources/sprites/others/Title.png", // TEX_TITLE
+    "../ressources/sprites/others/tileset.png" // TEX_TILESET
 };
 
 Texture2D* RM_GetTexture(TextureID id)

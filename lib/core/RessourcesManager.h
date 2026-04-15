@@ -34,10 +34,11 @@
  * L’ordre doit correspondre au tableau interne texturePaths.
  */
 typedef enum {
-    TEX_PLAYER,
-    TEX_BACKGROUND_NEBULA,
-    TEX_TITLE,
-    TEX_COUNT
+   TEX_PLAYER,
+   TEX_BACKGROUND_NEBULA,
+   TEX_TITLE,
+   TEX_TILESET,
+   TEX_COUNT
 } TextureID;
 
 /**
@@ -61,9 +62,9 @@ Texture2D* RM_GetTexture(TextureID id);
  * L’ordre doit correspondre au tableau interne musicPaths.
  */
 typedef enum {
-      MUSIC_MENU,
-      MUSIC_LEVEL1,
-      MUSIC_COUNT
+   MUSIC_MENU,
+   MUSIC_LEVEL1,
+   MUSIC_COUNT
 } MusicID;
 
 /**
@@ -124,16 +125,16 @@ float RM_GetMusicVolume(void);
  * L’ordre doit correspondre au tableau interne soundPaths.
  */
 typedef enum {
-    SND_DASH,
-    SND_ENEMY_DIE,
-    SND_ENEMY_HURT,
-    SND_ENEMY_SHOOT,
-    SND_HURT,
-    SND_JUMP,
-    SND_SHOOT,
-    SND_SELECT,
-    SND_SELECTED,
-    SND_COUNT
+   SND_DASH,
+   SND_ENEMY_DIE,
+   SND_ENEMY_HURT,
+   SND_ENEMY_SHOOT,
+   SND_HURT,
+   SND_JUMP,
+   SND_SHOOT,
+   SND_SELECT,
+   SND_SELECTED,
+   SND_COUNT
 } SoundID;
 
 /**

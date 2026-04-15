@@ -117,6 +117,12 @@ int readJsonLvl(const char * fileName);
  */
 void LevelInit(void);
 
+/**
+ * @brief Traduit les plateformes en tiles et les dessine
+ * @param p Plateforme à dessiner
+ * @param tileset Texture contenant les tiles à utiliser pour dessiner la plateforme
+ */
+void BuildTilesFromPlatforms(void);
 
 /**
  * @brief Dessine les platformes et le décors du niveau
