@@ -86,8 +86,8 @@ void GameDraw(Player *player)
     LevelDraw();
     PlayerDraw(player);
     DrawEnemyPool(&enemyPool, player->position);
-    DrawBulletPool(&playerBulletPool, player->position);
-    DrawBulletPool(&bulletPool, player->position);
+    DrawBulletPool(&playerBulletPool);
+    DrawBulletPool(&bulletPool);
 }
 
 // Décharger

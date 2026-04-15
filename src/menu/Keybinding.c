@@ -82,20 +82,3 @@ Screen_t KeybindingUpdate()
 
     return SCREEN_KEYBINDING;
 }
-
-void SaveKeys() {
-    FILE *file = fopen("keybinds.dat", "wb");
-    if (file) {
-        printf("jsp save truc\n");
-        fwrite(&keys, sizeof(KeyBindings), 1, file);
-        fclose(file);
-    }
-}
-
-void LoadKeys() {
-    FILE *file = fopen("keybinds.dat", "rb");
-    if (file) {
-        fread(&keys, sizeof(KeyBindings), 1, file);
-        fclose(file);
-    }
-}
