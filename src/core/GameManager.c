@@ -40,6 +40,9 @@ void GameInit(Player *player)
 void GameReset(Player *player) {
     int i;
 
+    readJsonLvl("map1");
+    LevelInit();
+
     PlayerInit(player);
 
     bulletPool.nbBulletsActive = 0;
@@ -52,6 +55,7 @@ void GameReset(Player *player) {
 
     for (i = 0; i < currentLevel.enemyCount; i++)
         currentLevel.enemies[i].spawned = false;
+
 }
 
 // Mise a jour du jeu

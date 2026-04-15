@@ -30,7 +30,7 @@ Screen_t DeathScreen(Player *player)
     // Validation
     if (IsKeyPressed(KEY_ENTER)) {
         switch (selected) {
-            case 0: GameReset(player); SCREEN_MENU;
+            case 0: GameReset(player); return SCREEN_MENU;
             case 1: return SCREEN_EXIT; break;
         }
     }
