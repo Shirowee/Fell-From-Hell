@@ -65,6 +65,7 @@ void GameUpdate(Player *player, double* timeSpent, double* startReload)
     NextLvlUpdate(player, &enemySpawner);
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
     UpdateEnemyPool(&enemyPool, getPlayerCenter(player));
+    EnemiesPositionFix(&enemyPool, currentLevel.platforms, currentLevel.platformCount);
     UpdateBulletPool(&bulletPool);
 
     CheckEnemyBulletCollision(&enemyPool, &playerBulletPool);

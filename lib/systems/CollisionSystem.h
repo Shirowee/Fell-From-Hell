@@ -62,6 +62,8 @@ void CheckBulletsPlatformsCollision(bulletPool_t *bullets, Platform platforms[],
 /**
  * @brief Corrige la position du joueur en cas de collision avec les platformes
  * 
+ * Utilise l'algorithme AABB Collision Resolution
+ * 
  * @param player Pointeur vers le joueur
  * @param oldPosition Ancienne coordonnées du joueur
  * @param platform Tableau de platformes
@@ -71,6 +73,8 @@ void PlayerPositionFix(Player *player, const Vector2 oldPosition, Platform platf
 
 /**
  * @brief Corrige la position des ennemis en cas de collision avec les platformes
+ * 
+ * Utilise l'algorithme AABB Collision Resolution
  * 
  * @param enemies Pool d'ennemis
  * @param platform Tableau de plateformes
