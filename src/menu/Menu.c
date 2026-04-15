@@ -1,7 +1,12 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/menu/Screen.h"
 #include "../../lib/core/RessourcesManager.h"
-Screen_t MenuUpdate(void)
+#include "../../lib/core/SavingManager.h"
+#include "../../lib/levels/LevelManager.h"
+#include "../../lib/player/Player.h"
+#include "../../lib/core/GameManager.h"
+
+Screen_t MenuUpdate(Player *player)
 {
     static int selected = 0; // 0 = Play, 1 = Settings, 2 = Exit
 
@@ -11,7 +16,15 @@ Screen_t MenuUpdate(void)
         "QUITTER LE JEU"
     };
 
-    int optionCount = 3;
+    const char *optionSave[4] = {
+        "JOUER",
+        "CONTINUER",
+        "PARAMETRES",
+        "QUITTER LE JEU"
+    };
+
+
+    int optionCount = HasSaveFile() ? 4 : 3;
 
     // Navigation clavier
     if (IsKeyPressed(KEY_DOWN)) {
@@ -26,6 +39,15 @@ Screen_t MenuUpdate(void)
 
     // Validation
     if (IsKeyPressed(KEY_ENTER)) {
+        if(optionCount == 4){
+            switch (selected) {
+                case 0: return SCREEN_GAME;
+                case 1: GameReset(player); LoadGame(player); return SCREEN_GAME;
+                case 2: return SCREEN_SETTINGS;
+                case 3: return SCREEN_EXIT;
+            }
+        }
+
         switch (selected) {
             case 0: return SCREEN_GAME;
             case 1: return SCREEN_SETTINGS;
@@ -50,11 +72,12 @@ Screen_t MenuUpdate(void)
 
     DrawTextureEx(tex, position, 0.0f, scale, WHITE);
 
+    
     for (int i = 0; i < optionCount; i++) {
         Color color = (i == selected) ? RED : (Color){240, 240, 240, 255};
 
         DrawText(
-            options[i],
+            (optionCount == 4 ? optionSave[i] : options[i]),
             100,
             400 + i * 80,
             30,

@@ -36,11 +36,29 @@ void GameInit(Player *player)
     }
 }
 
+// Remet le jeu à zéro (après une mort)
+void GameReset(Player *player) {
+    int i;
+
+    PlayerInit(player);
+
+    bulletPool.nbBulletsActive = 0;
+    playerBulletPool.nbBulletsActive = 0;
+
+    for (i = 0; i < enemyPool.capacity; i++)
+        enemyPool.tab[i].active = 0;
+
+    EnemySpawnerInit(&enemySpawner);
+
+    for (i = 0; i < currentLevel.enemyCount; i++)
+        currentLevel.enemies[i].spawned = false;
+}
+
 // Mise a jour du jeu
 void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
     CameraUpdate(&camera, player);
-    NextLvlUpdate(player, &enemyPool, &playerBulletPool, &enemySpawner);
+    NextLvlUpdate(player, &enemySpawner);
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
     UpdateEnemyPool(&enemyPool, getPlayerCenter(player));
     UpdateBulletPool(&bulletPool);

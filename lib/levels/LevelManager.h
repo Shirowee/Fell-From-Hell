@@ -133,7 +133,7 @@ void NextLvlRequest(const char *targetId);
 /**
  * \brief Réalise le passage au niveau suivant
  */
-void NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool, EnemySpawner *enemySpawner);
+void NextLvlUpdate(Player *player, EnemySpawner *enemySpawner);
 
 /**
  *  @brief Contient toutes les informations sur le niveau actuel
