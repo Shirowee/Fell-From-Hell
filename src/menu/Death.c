@@ -1,10 +1,13 @@
 #include "../../raylib/include/raylib.h"
 #include "../../lib/menu/Screen.h"
+#include "../../lib/core/SavingManager.h"
 #include "../../lib/core/GameManager.h"
 
 Screen_t DeathScreen(Player *player)
 {
     static int selected = 0;
+
+    if(HasSaveFile()){DeleteSave();}
     
     const char *options[3] = {
         "Retour au menu principal",
@@ -27,7 +30,7 @@ Screen_t DeathScreen(Player *player)
     // Validation
     if (IsKeyPressed(KEY_ENTER)) {
         switch (selected) {
-            case 0: GameReset(player); return SCREEN_MENU;
+            case 0: GameReset(player); SCREEN_MENU;
             case 1: return SCREEN_EXIT; break;
         }
     }

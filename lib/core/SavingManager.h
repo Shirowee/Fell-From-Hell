@@ -46,4 +46,9 @@ bool LoadGame(Player *player);
  */
 bool HasSaveFile(void);
 
+/**
+ * @brief Supprime le fichier de sauvegarde
+ */
+void DeleteSave(void);
+
 #endif

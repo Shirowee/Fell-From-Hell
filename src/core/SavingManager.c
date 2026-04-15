@@ -3,6 +3,7 @@
 #include "../../lib/systems/EnemySpawner.h"
 #include "../../raylib/include/raylib.h"
 #include <string.h>
+#include <stdio.h>
 
 #define SAVE_FILE "Save.dat"
 
@@ -49,4 +50,9 @@ bool LoadGame(Player *player)
 bool HasSaveFile(void)
 {
     return FileExists(SAVE_FILE);
+}
+
+void DeleteSave(void)
+{
+    remove(SAVE_FILE);
 }
