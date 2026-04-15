@@ -23,17 +23,18 @@ typedef struct {
     float bulletSize;    /**< Augmentation de la taille des projectiles */
 
     /*
-     * ===== Buffs avancés (non utilisés actuellement) =====
+     * ===== Buffs avancés (pas tous utilisé actuellement) =====
      *
      * effect_t effet;     // Effet appliqué (feu, gel, etc.)
      * float fireDmg;      // Dégâts de brûlure
      * float iceTime;      // Durée de gel
-     * float movementSpeed;// Vitesse de déplacement
-     * float dashCooldown; // Temps de recharge du dash
-     *
-     * ===== Buffs majeurs =====
-     * int extraDash;      // Nombre de dash supplémentaires
      */
+    float movementSpeed;// Vitesse de déplacement
+    float dashCooldown; // Temps de recharge du dash
+
+    /* ===== Buffs majeurs =====
+    int extraDash;      // Nombre de dash supplémentaires
+    */
 } buff_t;
 
 /* =========================
@@ -89,6 +90,22 @@ void BuffbulletSpeed(buff_t* buff, float add);
  * \param add Valeur à ajouter
  */
 void BuffbulletSize(buff_t* buff, float add);
+
+/**
+ * \brief Augmente la vitesse du joueur.
+ * \param buff Pointeur vers la structure de buff
+ * \param add Valeur à ajouter
+ * \author Caius Tortevoix
+ */
+void BuffmovementSpeed(buff_t* buff, float add);
+
+/**
+ * \brief Diminue la durée du cooldown du dash.
+ * \param buff Pointeur vers la structure de buff
+ * \param sub Valeur à soustraire
+ * \author Caius Tortevoix
+ */
+void BuffdashCooldown(buff_t* buff, float sub);
 
 /**
  * \brief Initialise et alloue un nouveau buff.

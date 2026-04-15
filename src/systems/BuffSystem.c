@@ -1,4 +1,5 @@
 #include "../../lib/systems/BuffSystem.h"
+#include "../../lib/player/PlayerController.h"
 #include <stdlib.h>
 
 buff_t* BuffInit(void){
@@ -10,6 +11,8 @@ buff_t* BuffInit(void){
     buff->dispersion = 1;
     buff->bulletSpeed = 1;
     buff->bulletSize = 1;
+    buff->movementSpeed = MAX_SPEED_X;
+    buff->dashCooldown = 3;
 
     return(buff);
 }
@@ -26,24 +29,32 @@ void Buff(buff_t* buff, float add, int indice){
         case 3 : Buffdispersion(buff, add); break;
         case 4 : BuffbulletSpeed(buff, add); break;
         case 5 : BuffbulletSize(buff, add); break;
+        case 6 : BuffmovementSpeed(buff, add); break;
+        case 7 : BuffdashCooldown(buff, add); break;
         default: break;
     }
 }
 void BuffDmg(buff_t* buff, float add){
-    buff->dmg += add;
+    buff->dmg += buff->dmg*add;
 }
 void BufffireRate(buff_t* buff, float add){
-    buff->fireRate += add;
+    buff->fireRate += buff->fireRate*add;
 }
 void BuffreloadTime(buff_t* buff, float sub){
-    buff->reloadTime -= sub;
+    buff->reloadTime -= buff->reloadTime*sub;
 }
 void Buffdispersion(buff_t* buff, float sub){
-    buff->dispersion -= sub;
+    buff->dispersion -= buff->dispersion*sub;
 }
 void BuffbulletSpeed(buff_t* buff, float add){
-    buff->bulletSpeed += add;
+    buff->bulletSpeed += buff->bulletSpeed*add;
 }
 void BuffbulletSize(buff_t* buff, float add){
-    buff->bulletSize += add;
+    buff->bulletSize += buff->bulletSize*add;
+}
+void BuffmovementSpeed(buff_t* buff, float add){
+    buff->movementSpeed += buff->movementSpeed*add;
+}
+void BuffdashCooldown(buff_t* buff, float sub){
+    buff->dashCooldown -= buff->dashCooldown*sub;
 }

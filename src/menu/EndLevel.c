@@ -23,12 +23,12 @@ Screen_t EndLevelUpdate(Player* player)
     }
 
     if(buff1 == -1){
-        buff1 = GetRandomValue(0, 5); // 0 = dmg, 1 = fireRate, 2 = reloadTime, 3 = dispersion, 4 = bulletSpeed, 5 = bulletSize
+        buff1 = GetRandomValue(0, 7); // 0 = dmg, 1 = fireRate, 2 = reloadTime, 3 = dispersion, 4 = bulletSpeed, 5 = bulletSize, 6 = movementSpeed, 7 = dashCooldown
         do{
-            buff2 = GetRandomValue(0, 5);
+            buff2 = GetRandomValue(0, 7);
         }while (buff2 == buff1);
         do{
-            buff3 = GetRandomValue(0, 5);
+            buff3 = GetRandomValue(0, 7);
         }while (buff3 == buff1 || buff3 == buff2);
     }
     
@@ -42,13 +42,15 @@ Screen_t EndLevelUpdate(Player* player)
         }while (indiceWeapon == player->weapon.indice || indiceWeapon == FUSIL_RAFALES || indiceWeapon == LANCE_MISSILE_TETE_CHERCHEUSE || indiceWeapon == EPEE_LONGUE);
     }
     
-    const char *buffs[6] = {
+    const char *buffs[8] = {
         "+10% de dégats",
         "+10% de cadence de tir",
         "-10% de temps de rechargement",
         "-10% de dispersion",
         "+10% de la vitesse de la balle",
-        "+10% de la taille de la balle"
+        "+10% de la taille de la balle",
+        "+10% de vitesse de mouvement",
+        "-10% de cooldown sur le dash"
     };
     const char *weapon[14] = {
         "MINIGUN",
