@@ -183,6 +183,11 @@ void RM_PlaySound(SoundID id)
    ========================= */
 
 
+float RM_GetMusicVolume(void)
+{
+    return globalMusicVolume;
+}
+
 float RM_GetSFXVolume(void)
 {
     return globalSFXVolume;
