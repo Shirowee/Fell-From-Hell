@@ -394,7 +394,7 @@ void EnemiesPositionFix(enemyPool_t *enemies, Platform platform[], const int nbP
     for(i = 0; i < enemies->nbEnemiesActive; i++){
         enemy = &enemies->tab[i];
 
-        if(enemy->type == ENEMY_SHOOTER){
+        if(enemy->type == ENEMY_SHOOTER || enemy->type == ENEMY_SHOOTER_CIRCLE){
 
             //Initialisation de la boîte de collision de l'ennemi
             enemyBody.x = enemy->pos.x;
