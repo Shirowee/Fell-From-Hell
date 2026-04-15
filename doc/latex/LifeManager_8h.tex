@@ -7,8 +7,7 @@ Gère la vie du joueur, des balles et des ennemies.
 
 {\ttfamily \#include "{}../../lib/player/\+Player.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/systems/\+Enemy\+Pool.\+h"{}}\newline
-Include dependency graph for Life\+Manager.\+h\+:
-\nopagebreak
+Include dependency graph for Life\+Manager.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,12 +25,14 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{LifeManager_8h_a870df31353b6772009d2f7e10ac4d32b}{Player\+Life\+Alteration}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}enemies, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets)
+void \mbox{\hyperlink{LifeManager_8h_a870df31353b6772009d2f7e10ac4d32b}{Player\+Life\+Alteration}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}enemies, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets)
 \begin{DoxyCompactList}\small\item\em Fait subir des dêgats au joueur en fonction des ennemies et des bullets ou régénère la vie du joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{LifeManager_8h_a4e7948c7d864b12e5ac3157ae3802a5e}{HPDraw}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, int x, int y, int width, int height)
 \begin{DoxyCompactList}\small\item\em Dessine la barre de vie du joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{LifeManager_8h_a84f9e478cd6f931eadbe6e4f95095205}{Apply\+Damage\+To\+Player}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, int dmg)
 \begin{DoxyCompactList}\small\item\em Applique des dégâts au joueur, c-\/à-\/d lui retirer des points de vie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LifeManager_8h_a02ace4fab61529554d33e9e7d53b366d}{Apply\+Damage\+To\+Enemy}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, int dmg)
+\item 
 bool \mbox{\hyperlink{LifeManager_8h_a7ca0b81eff813b0a722db9e69573de1f}{is\+Invicible}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
 \begin{DoxyCompactList}\small\item\em Détermine si le joueur est invincible. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{LifeManager_8h_a7b7e1d1167696b52e069168da7e9ed6d}{is\+Alive}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
@@ -57,6 +58,12 @@ Caius
 \label{doc-func-members}
 \Hypertarget{LifeManager_8h_doc-func-members}
 \doxysubsection{Function Documentation}
+\Hypertarget{LifeManager_8h_a02ace4fab61529554d33e9e7d53b366d}\index{LifeManager.h@{LifeManager.h}!ApplyDamageToEnemy@{ApplyDamageToEnemy}}
+\index{ApplyDamageToEnemy@{ApplyDamageToEnemy}!LifeManager.h@{LifeManager.h}}
+\doxysubsubsection{\texorpdfstring{ApplyDamageToEnemy()}{ApplyDamageToEnemy()}}
+{\footnotesize\ttfamily \label{LifeManager_8h_a02ace4fab61529554d33e9e7d53b366d} 
+void Apply\+Damage\+To\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{int}]{dmg}{}\end{DoxyParamCaption})}
+
 \Hypertarget{LifeManager_8h_a84f9e478cd6f931eadbe6e4f95095205}\index{LifeManager.h@{LifeManager.h}!ApplyDamageToPlayer@{ApplyDamageToPlayer}}
 \index{ApplyDamageToPlayer@{ApplyDamageToPlayer}!LifeManager.h@{LifeManager.h}}
 \doxysubsubsection{\texorpdfstring{ApplyDamageToPlayer()}{ApplyDamageToPlayer()}}
@@ -67,16 +74,19 @@ void Apply\+Damage\+To\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{
 
 Applique des dégâts au joueur, c-\/à-\/d lui retirer des points de vie. 
 
+Applique des dégâts à l\textquotesingle{}ennemie, c-\/à-\/d lui retirer des points de vie.
+
 
 \begin{DoxyParams}{Parameters}
 {\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
 \hline
+{\em dmg} & Nombre de points de vie à retirer\\
+\hline
+{\em enemy} & Pointeur sur \doxylink{structEnemy}{Enemy} \\
+\hline
 {\em dmg} & Nombre de points de vie à retirer \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Renvoie vrai si il est invincible, sinon faux 
-\end{DoxyReturn}
 \Hypertarget{LifeManager_8h_a9f1fb09ae5370091264df718ab30ca97}\index{LifeManager.h@{LifeManager.h}!canRegen@{canRegen}}
 \index{canRegen@{canRegen}!LifeManager.h@{LifeManager.h}}
 \doxysubsubsection{\texorpdfstring{canRegen()}{canRegen()}}
@@ -158,7 +168,7 @@ Renvoie vrai si il est invincible, sinon faux
 \index{PlayerLifeAlteration@{PlayerLifeAlteration}!LifeManager.h@{LifeManager.h}}
 \doxysubsubsection{\texorpdfstring{PlayerLifeAlteration()}{PlayerLifeAlteration()}}
 {\footnotesize\ttfamily \label{LifeManager_8h_a870df31353b6772009d2f7e10ac4d32b} 
-void Player\+Life\+Alteration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{ennemies}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets}{}\end{DoxyParamCaption})}
+void Player\+Life\+Alteration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{ennemies}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets}{}\end{DoxyParamCaption})}
 
 
 

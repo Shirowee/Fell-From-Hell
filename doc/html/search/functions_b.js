@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['newlevel_0',['NewLevel',['../Screen_8h.html#a34b292658ed901a2a206b36968636322',1,'NewLevel(int newFlag):&#160;EndLevel.c'],['../EndLevel_8c.html#a34b292658ed901a2a206b36968636322',1,'NewLevel(int newFlag):&#160;EndLevel.c']]],
-  ['nextlvlrequest_1',['NextLvlRequest',['../LevelManager_8h.html#a7fa6d517303d1b1b17e59dcb5d0b0edb',1,'NextLvlRequest(const char *targetId):&#160;LevelManager.c'],['../LevelManager_8c.html#a7fa6d517303d1b1b17e59dcb5d0b0edb',1,'NextLvlRequest(const char *targetId):&#160;LevelManager.c']]],
-  ['nextlvlupdate_2',['NextLvlUpdate',['../LevelManager_8h.html#ab4a3635d7e6eb93faef4184e6201ee75',1,'NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool):&#160;LevelManager.c'],['../LevelManager_8c.html#ab4a3635d7e6eb93faef4184e6201ee75',1,'NextLvlUpdate(Player *player, enemyPool_t *enemyPool, bulletPool_t *bulletPool):&#160;LevelManager.c']]]
+  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
+  ['malloc_5ffn_1',['malloc_fn',['../structcJSON__Hooks.html#ae8fc738005f553ff03bc725c58d3188f',1,'cJSON_Hooks']]],
+  ['menuupdate_2',['MenuUpdate',['../Screen_8h.html#afb04eeff03e48756ab6bca468642dc7a',1,'MenuUpdate(Player *player):&#160;Menu.c'],['../Menu_8c.html#afb04eeff03e48756ab6bca468642dc7a',1,'MenuUpdate(Player *player):&#160;Menu.c']]]
 ];

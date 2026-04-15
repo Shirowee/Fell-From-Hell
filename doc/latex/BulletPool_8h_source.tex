@@ -10,24 +10,28 @@
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}../../raylib/include/raylib.h"{}}}
 \DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Projectiles_8h}{Projectiles.h}}"{}}}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\_t}}*\ \mbox{\hyperlink{structbulletPool__t_a3911eb7cddaab90015da4dc76974390a}{tab}};\ \textcolor{comment}{//liste\ contenant\ les\ bullets}}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbulletPool__t_a1e6930573231a1fd24e73748bd9c9717}{active}};\ \textcolor{comment}{//booléen\ pour\ l'activité\ de\ la\ pool}}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbulletPool__t_a512ff4f9ec30c4f6d605469677956c33}{capacity}};\ \textcolor{comment}{//nombre\ d'elements}}
-\DoxyCodeLine{00036\ \}\ \mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_ad57664463d97f394168d80dcab8aa5d7}{InitBulletPool}}(\mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}*\ pool,\ \textcolor{keywordtype}{int}\ capacity);}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_ad026bf70e944ff507c6e6ee3658a8a03}{SpawnBulletPool}}(\mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}*\ pool,\ Vector2\ pos,\ \textcolor{keywordtype}{int}\ dir,\ \textcolor{keywordtype}{int}\ speed,\ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ dmg,\ \textcolor{keywordtype}{float}\ lifeTime,\ \textcolor{keywordtype}{int}\ indice);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_a76d5595ccec9e55ff7965f8939112ebc}{UpdateBulletPool}}(\mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}*\ pool);}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_a3b7fd1e8efbee5fb1469b308243e7165}{DrawBulletPool}}(\mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}*\ pool,\ Vector2\ posJoueur);}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_ac20faedcdf2e2f61a11ec25191108b6f}{FreeBulletPool}}(\mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}*\ pool);}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00092\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}\ \mbox{\hyperlink{BulletPool_8h_ab235d8c88e2a6e8d419e9492a0188497}{bulletPool}};}
-\DoxyCodeLine{00094\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}\ \mbox{\hyperlink{BulletPool_8h_ab0e44fdb9d248c3e0e2e6af819e646d8}{playerBulletPool}};}
-\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbulletPool__s}{bulletPool\_s}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\_t}}*\ \mbox{\hyperlink{structbulletPool__s_a91ddad10eeddd261b89cde3b98da73eb}{tab}};\ \textcolor{comment}{//liste\ contenant\ les\ bullets}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbulletPool__s_a91fad77531c1352103a5439a414aaf94}{active}};\ \textcolor{comment}{//booléen\ pour\ l'activité\ de\ la\ pool}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbulletPool__s_a7f3cf2516ca1a7aa91f943fba57d47d9}{nbBulletsActive}};\ \textcolor{comment}{//nombre\ de\ projectiles\ actives}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbulletPool__s_a496eec1b5f10029d6c2cadb40ca988f9}{capacity}};\ \textcolor{comment}{//nombre\ d'elements}}
+\DoxyCodeLine{00037\ \}\ \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_ad57664463d97f394168d80dcab8aa5d7}{InitBulletPool}}(\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}*\ pool,\ \textcolor{keywordtype}{int}\ capacity);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_ad026bf70e944ff507c6e6ee3658a8a03}{SpawnBulletPool}}(\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}*\ pool,\ Vector2\ pos,\ \textcolor{keywordtype}{int}\ dir,\ \textcolor{keywordtype}{int}\ speed,\ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ dmg,\ \textcolor{keywordtype}{float}\ lifeTime,\ \textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_a76d5595ccec9e55ff7965f8939112ebc}{UpdateBulletPool}}(\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}*\ pool);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_a03bdc664a334bd8ad44ff92ab0651806}{DrawBulletPool}}(\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}*\ pool);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_ac20faedcdf2e2f61a11ec25191108b6f}{FreeBulletPool}}(\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}*\ pool);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BulletPool_8h_ab828d28c9213c2eb9c4d4bd1fc0d4821}{DesactAllBullet}}(\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}\ *pool);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}\ \mbox{\hyperlink{BulletPool_8h_ab235d8c88e2a6e8d419e9492a0188497}{bulletPool}};}
+\DoxyCodeLine{00105\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}\ \mbox{\hyperlink{BulletPool_8h_ab0e44fdb9d248c3e0e2e6af819e646d8}{playerBulletPool}};}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

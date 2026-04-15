@@ -1,0 +1,112 @@
+\doxysection{lib/core/\+Saving\+Manager.h File Reference}
+\hypertarget{SavingManager_8h}{}\label{SavingManager_8h}\index{lib/core/SavingManager.h@{lib/core/SavingManager.h}}
+
+
+Sert a enregistrer différentes informations pour pouvoir reprendre une partie Ce fichier créer un fichier contenant les informations nécessaire pour reprendre une partie en cours de déroulement.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}../player/\+Player.\+h"{}}\newline
+{\ttfamily \#include "{}../systems/\+Buff\+System.\+h"{}}\newline
+{\ttfamily \#include "{}../player/\+Player\+Weapon.\+h"{}}\newline
+Include dependency graph for Saving\+Manager.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SavingManager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SavingManager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSaveInfo}{Save\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{SavingManager_8h_abf4786fa38f800da8d87ab023dd8fbc7}{Save\+Game}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Sauvegarde l\textquotesingle{}état actuel du jeu dans un fichier. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{SavingManager_8h_a6b1a8c02d4b5ea24d695a9200bd5f997}{Load\+Game}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Charge un fichier de sauvegarde et applique les données au joueur. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{SavingManager_8h_a8f4ca69c42f51c91a43580b4bac731e4}{Has\+Save\+File}} (void)
+\begin{DoxyCompactList}\small\item\em Vérifie si un fichier de sauvegarde existe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SavingManager_8h_aa61d51057892c57717b8f1866a98dbda}{Delete\+Save}} (void)
+\begin{DoxyCompactList}\small\item\em Supprime le fichier de sauvegarde. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sert a enregistrer différentes informations pour pouvoir reprendre une partie Ce fichier créer un fichier contenant les informations nécessaire pour reprendre une partie en cours de déroulement. 
+
+\begin{DoxyAuthor}{Author}
+Thomas 
+\end{DoxyAuthor}
+
+
+\label{doc-func-members}
+\Hypertarget{SavingManager_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{SavingManager_8h_aa61d51057892c57717b8f1866a98dbda}\index{SavingManager.h@{SavingManager.h}!DeleteSave@{DeleteSave}}
+\index{DeleteSave@{DeleteSave}!SavingManager.h@{SavingManager.h}}
+\doxysubsubsection{\texorpdfstring{DeleteSave()}{DeleteSave()}}
+{\footnotesize\ttfamily \label{SavingManager_8h_aa61d51057892c57717b8f1866a98dbda} 
+void Delete\+Save (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Supprime le fichier de sauvegarde. 
+
+\Hypertarget{SavingManager_8h_a8f4ca69c42f51c91a43580b4bac731e4}\index{SavingManager.h@{SavingManager.h}!HasSaveFile@{HasSaveFile}}
+\index{HasSaveFile@{HasSaveFile}!SavingManager.h@{SavingManager.h}}
+\doxysubsubsection{\texorpdfstring{HasSaveFile()}{HasSaveFile()}}
+{\footnotesize\ttfamily \label{SavingManager_8h_a8f4ca69c42f51c91a43580b4bac731e4} 
+bool Has\+Save\+File (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Vérifie si un fichier de sauvegarde existe. 
+
+\begin{DoxyReturn}{Returns}
+true si une sauvegarde est disponible, false sinon 
+\end{DoxyReturn}
+\Hypertarget{SavingManager_8h_a6b1a8c02d4b5ea24d695a9200bd5f997}\index{SavingManager.h@{SavingManager.h}!LoadGame@{LoadGame}}
+\index{LoadGame@{LoadGame}!SavingManager.h@{SavingManager.h}}
+\doxysubsubsection{\texorpdfstring{LoadGame()}{LoadGame()}}
+{\footnotesize\ttfamily \label{SavingManager_8h_a6b1a8c02d4b5ea24d695a9200bd5f997} 
+bool Load\+Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Charge un fichier de sauvegarde et applique les données au joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur vers le joueur à initialiser \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le chargement a réussi, false sinon 
+\end{DoxyReturn}
+\Hypertarget{SavingManager_8h_abf4786fa38f800da8d87ab023dd8fbc7}\index{SavingManager.h@{SavingManager.h}!SaveGame@{SaveGame}}
+\index{SaveGame@{SaveGame}!SavingManager.h@{SavingManager.h}}
+\doxysubsubsection{\texorpdfstring{SaveGame()}{SaveGame()}}
+{\footnotesize\ttfamily \label{SavingManager_8h_abf4786fa38f800da8d87ab023dd8fbc7} 
+void Save\+Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Sauvegarde l\textquotesingle{}état actuel du jeu dans un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur vers le joueur courant \\
+\hline
+\end{DoxyParams}

@@ -86,28 +86,67 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;../../raylib/include/raylib.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="EnemySpawner_8h_source.html">../../lib/systems/EnemySpawner.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LevelManager_8h_source.html">../../lib/levels/LevelManager.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for EnemySpawner.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="EnemySpawner_8c__incl.png" border="0" usemap="#asrc_2systems_2EnemySpawner_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2systems_2EnemySpawner_8c" id="asrc_2systems_2EnemySpawner_8c">
-<area shape="rect" title="Gestion de l&#39;apparition dynamique des ennemis." alt="" coords="5,5,220,31"/>
-<area shape="rect" title=" " alt="" coords="69,460,204,500"/>
-<area shape="poly" title=" " alt="" coords="102,33,82,54,63,80,43,120,38,163,38,320,44,357,61,392,83,423,106,448,102,452,79,426,56,395,39,359,33,320,33,163,38,118,58,77,78,50,98,29"/>
-<area shape="rect" href="EnemySpawner_8h.html" title=" " alt="" coords="73,79,310,104"/>
-<area shape="poly" title=" " alt="" coords="127,29,170,68,167,71,124,33"/>
-<area shape="rect" href="EnemyPool_8h.html" title=" " alt="" coords="86,152,297,177"/>
-<area shape="poly" title=" " alt="" coords="194,104,194,138,189,138,189,104"/>
-<area shape="poly" title=" " alt="" coords="167,180,138,199,125,212,115,227,105,254,99,284,100,344,111,401,126,446,121,448,106,402,95,345,94,283,99,253,110,224,121,208,135,195,164,175"/>
-<area shape="rect" href="EnemyController_8h.html" title="Gestion des ennemis et de leur comportement (state machine)" alt="" coords="124,225,339,251"/>
-<area shape="poly" title=" " alt="" coords="200,176,220,212,216,215,196,179"/>
-<area shape="poly" title=" " alt="" coords="213,253,187,273,164,300,149,337,141,376,137,447,132,446,136,376,144,335,160,297,183,269,210,249"/>
-<area shape="rect" href="BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="174,299,337,339"/>
-<area shape="poly" title=" " alt="" coords="237,250,248,285,243,286,232,252"/>
-<area shape="poly" title=" " alt="" coords="243,340,161,450,157,447,239,337"/>
-<area shape="rect" href="Projectiles_8h.html" title=" " alt="" coords="225,387,328,412"/>
-<area shape="poly" title=" " alt="" coords="263,338,272,372,267,374,258,340"/>
-<area shape="poly" title=" " alt="" coords="257,415,184,456,181,451,255,410"/>
+<area shape="rect" title="Gestion de l&#39;apparition dynamique des ennemis." alt="" coords="189,5,403,31"/>
+<area shape="rect" title=" " alt="" coords="431,548,566,588"/>
+<area shape="poly" title=" " alt="" coords="194,33,130,49,98,61,69,76,45,94,25,116,13,141,8,171,8,408,11,423,19,436,51,463,100,486,160,506,295,536,418,555,417,560,294,541,158,511,98,491,49,467,15,440,6,425,3,408,3,170,7,139,21,113,41,90,67,72,96,56,128,44,193,28"/>
+<area shape="rect" href="EnemySpawner_8h.html" title=" " alt="" coords="43,159,280,185"/>
+<area shape="poly" title=" " alt="" coords="288,32,183,151,179,147,284,29"/>
+<area shape="rect" href="LevelManager_8h.html" title="Ce fichier LevelManager.h sert a la gestion des niveaux (affichage et chargement)" alt="" coords="262,79,474,104"/>
+<area shape="poly" title=" " alt="" coords="310,29,348,67,345,71,306,33"/>
+<area shape="rect" title=" " alt="" coords="497,79,564,104"/>
+<area shape="poly" title=" " alt="" coords="334,28,485,73,484,79,333,33"/>
+<area shape="rect" href="EnemyPool_8h.html" title=" " alt="" coords="76,240,287,265"/>
+<area shape="poly" title=" " alt="" coords="167,184,178,226,172,227,162,186"/>
+<area shape="poly" title=" " alt="" coords="148,268,121,280,97,296,83,316,81,326,84,338,111,383,146,422,188,455,234,483,283,506,331,525,418,550,417,555,329,530,280,511,232,488,185,460,143,426,107,386,79,340,76,326,78,314,93,292,118,276,145,263"/>
+<area shape="rect" href="EnemyController_8h.html" title="Gestion des ennemis et de leur comportement (state machine)" alt="" coords="94,313,309,339"/>
+<area shape="poly" title=" " alt="" coords="187,265,197,299,192,301,182,266"/>
+<area shape="poly" title=" " alt="" coords="207,338,217,370,235,413,261,459,296,498,324,517,355,532,418,552,417,557,353,537,321,522,293,502,257,462,230,415,212,372,202,340"/>
+<area shape="rect" href="BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="277,387,440,427"/>
+<area shape="poly" title=" " alt="" coords="225,336,310,378,307,383,223,341"/>
+<area shape="poly" title=" " alt="" coords="379,425,423,473,477,535,473,539,419,476,375,429"/>
+<area shape="rect" href="Projectiles_8h.html" title=" " alt="" coords="307,475,410,500"/>
+<area shape="poly" title=" " alt="" coords="361,427,361,461,356,461,356,427"/>
+<area shape="poly" title=" " alt="" coords="381,498,454,539,452,544,378,503"/>
+<area shape="poly" title=" " alt="" coords="339,107,205,157,203,152,337,102"/>
+<area shape="poly" title=" " alt="" coords="364,106,336,147,294,194,259,218,224,237,221,232,256,214,290,190,332,144,359,103"/>
+<area shape="poly" title=" " alt="" coords="370,104,362,373,357,373,365,104"/>
+<area shape="rect" href="Platform_8h.html" title="Définition des structures de base pour des positions et des rectangles." alt="" coords="563,394,653,419"/>
+<area shape="poly" title=" " alt="" coords="379,103,593,381,588,384,375,106"/>
+<area shape="rect" href="Player_8h.html" title="Définit la structure du joueur et son corps, ainsi que les fonctions associées." alt="" coords="709,240,840,265"/>
+<area shape="poly" title=" " alt="" coords="415,101,488,122,569,150,664,191,743,231,740,236,662,196,567,154,486,127,413,107"/>
+<area shape="rect" href="cJSON_8h.html" title=" " alt="" coords="972,159,1127,185"/>
+<area shape="poly" title=" " alt="" coords="467,101,959,158,958,163,467,107"/>
+<area shape="rect" href="ParallaxSystem_8h.html" title=" " alt="" coords="686,152,863,192"/>
+<area shape="poly" title=" " alt="" coords="428,101,673,148,672,154,427,107"/>
+<area shape="poly" title=" " alt="" coords="602,421,522,538,517,535,598,418"/>
+<area shape="poly" title=" " alt="" coords="829,263,864,274,895,291,906,301,914,312,915,326,910,340,880,383,842,421,800,453,755,481,663,523,580,551,579,546,661,518,753,476,797,449,839,417,876,380,906,337,910,325,909,314,902,304,892,295,862,279,828,268"/>
+<area shape="rect" href="PlayerController_8h.html" title="Gère l&#39;initialisation, la mise à jour et le dessin du joueur." alt="" coords="587,313,725,339"/>
+<area shape="poly" title=" " alt="" coords="750,268,681,308,678,303,747,263"/>
+<area shape="rect" href="PlayerMovement_8h.html" title="Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts, la gravité et les coll..." alt="" coords="750,313,895,339"/>
+<area shape="poly" title=" " alt="" coords="778,264,802,301,797,304,773,267"/>
+<area shape="rect" href="PlayerWeapon_8h.html" title=" " alt="" coords="385,313,511,339"/>
+<area shape="poly" title=" " alt="" coords="723,268,515,313,514,308,722,263"/>
+<area shape="rect" href="BuffSystem_8h.html" title="Gestion des améliorations (buffs) appliquées au joueur et aux armes." alt="" coords="841,475,1021,500"/>
+<area shape="poly" title=" " alt="" coords="841,255,871,261,902,272,931,289,954,312,964,330,969,350,968,392,958,431,945,464,940,462,953,430,963,391,964,351,959,332,950,315,928,293,900,277,870,266,840,260"/>
+<area shape="poly" title=" " alt="" coords="651,340,624,384,620,381,647,337"/>
+<area shape="poly" title=" " alt="" coords="681,311,750,270,753,275,684,315"/>
+<area shape="poly" title=" " alt="" coords="809,341,537,542,534,537,805,337"/>
+<area shape="poly" title=" " alt="" coords="792,341,653,392,651,387,791,336"/>
+<area shape="poly" title=" " alt="" coords="819,315,796,277,800,275,824,312"/>
+<area shape="poly" title=" " alt="" coords="453,338,494,534,489,535,448,339"/>
+<area shape="poly" title=" " alt="" coords="437,341,392,380,389,376,433,337"/>
+<area shape="poly" title=" " alt="" coords="868,503,580,555,579,549,867,497"/>
+<area shape="rect" title=" " alt="" coords="1096,240,1171,265"/>
+<area shape="poly" title=" " alt="" coords="1064,183,1113,229,1109,232,1060,187"/>
+<area shape="poly" title=" " alt="" coords="864,181,930,196,963,208,994,224,1021,242,1042,265,1056,293,1061,324,1061,408,1061,460,1053,481,1035,502,1001,522,954,537,896,549,832,557,698,567,580,570,580,565,697,562,831,552,895,544,953,532,999,517,1032,498,1049,479,1055,459,1056,408,1056,325,1051,294,1038,268,1017,246,991,228,961,213,928,202,863,186"/>
+<area shape="poly" title=" " alt="" coords="777,192,777,226,772,226,772,192"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -115,18 +154,20 @@ Include dependency graph for EnemySpawner.c:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a3162edda342eb1321eda01d0bc86a566" id="r_a3162edda342eb1321eda01d0bc86a566"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3162edda342eb1321eda01d0bc86a566">EnemySpawnerInit</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner)</td></tr>
 <tr class="memdesc:a3162edda342eb1321eda01d0bc86a566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise le spawner d'ennemis.  <br /></td></tr>
-<tr class="memitem:ab6da48e3a55e516e1650a7bf8b7782e2" id="r_ab6da48e3a55e516e1650a7bf8b7782e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6da48e3a55e516e1650a7bf8b7782e2">SpawnRandomEnemy</a> (<a class="el" href="structenemyPool__t.html">enemyPool_t</a> *<a class="el" href="BulletPool_8h.html#ab235d8c88e2a6e8d419e9492a0188497">bulletPool</a>)</td></tr>
+<tr class="memitem:ab6da48e3a55e516e1650a7bf8b7782e2" id="r_ab6da48e3a55e516e1650a7bf8b7782e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6da48e3a55e516e1650a7bf8b7782e2">SpawnRandomEnemy</a> (<a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *<a class="el" href="BulletPool_8h.html#ab235d8c88e2a6e8d419e9492a0188497">bulletPool</a>)</td></tr>
 <tr class="memdesc:ab6da48e3a55e516e1650a7bf8b7782e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawn un ennemi à une position aléatoire.  <br /></td></tr>
-<tr class="memitem:a8b8f393df12c59d1d2708df07014048f" id="r_a8b8f393df12c59d1d2708df07014048f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b8f393df12c59d1d2708df07014048f">UpdateEnemySpawner</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="structenemyPool__t.html">enemyPool_t</a> *pool)</td></tr>
+<tr class="memitem:a8b8f393df12c59d1d2708df07014048f" id="r_a8b8f393df12c59d1d2708df07014048f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b8f393df12c59d1d2708df07014048f">UpdateEnemySpawner</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *pool)</td></tr>
 <tr class="memdesc:a8b8f393df12c59d1d2708df07014048f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le spawner d'ennemis.  <br /></td></tr>
-<tr class="memitem:a17dd66352b415881a492328e40f740f8" id="r_a17dd66352b415881a492328e40f740f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17dd66352b415881a492328e40f740f8">SpawnEnemyPatternChasers</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="structenemyPool__t.html">enemyPool_t</a> *pool, Vector2 pos)</td></tr>
+<tr class="memitem:a17dd66352b415881a492328e40f740f8" id="r_a17dd66352b415881a492328e40f740f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17dd66352b415881a492328e40f740f8">SpawnEnemyPatternChasers</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *pool, Vector2 pos)</td></tr>
 <tr class="memdesc:a17dd66352b415881a492328e40f740f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawn un pattern d'enemis.  <br /></td></tr>
-<tr class="memitem:aed0e1e899e0c2a973b7bb3610184c014" id="r_aed0e1e899e0c2a973b7bb3610184c014"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed0e1e899e0c2a973b7bb3610184c014">SpawnEnemyPatternCircle</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="structenemyPool__t.html">enemyPool_t</a> *pool, Vector2 pos)</td></tr>
+<tr class="memitem:aed0e1e899e0c2a973b7bb3610184c014" id="r_aed0e1e899e0c2a973b7bb3610184c014"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed0e1e899e0c2a973b7bb3610184c014">SpawnEnemyPatternCircle</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *pool, Vector2 pos)</td></tr>
 <tr class="memdesc:aed0e1e899e0c2a973b7bb3610184c014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawn un pattern d'enemis.  <br /></td></tr>
-<tr class="memitem:a65c809e7b8099271d95db0d5ac16d65d" id="r_a65c809e7b8099271d95db0d5ac16d65d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65c809e7b8099271d95db0d5ac16d65d">SpawnEnemyPatternShooter</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="structenemyPool__t.html">enemyPool_t</a> *pool, Vector2 pos)</td></tr>
+<tr class="memitem:a65c809e7b8099271d95db0d5ac16d65d" id="r_a65c809e7b8099271d95db0d5ac16d65d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65c809e7b8099271d95db0d5ac16d65d">SpawnEnemyPatternShooter</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *pool, Vector2 pos)</td></tr>
 <tr class="memdesc:a65c809e7b8099271d95db0d5ac16d65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawn un pattern d'enemis.  <br /></td></tr>
-<tr class="memitem:a6f30172da00459c58ceb9d9addea5118" id="r_a6f30172da00459c58ceb9d9addea5118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f30172da00459c58ceb9d9addea5118">SpawnEnemyPatternArc</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="structenemyPool__t.html">enemyPool_t</a> *pool, Vector2 pos)</td></tr>
+<tr class="memitem:a6f30172da00459c58ceb9d9addea5118" id="r_a6f30172da00459c58ceb9d9addea5118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f30172da00459c58ceb9d9addea5118">SpawnEnemyPatternArc</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *pool, Vector2 pos)</td></tr>
 <tr class="memdesc:a6f30172da00459c58ceb9d9addea5118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawn un pattern d'enemis.  <br /></td></tr>
+<tr class="memitem:a6817658959058f4047ca299f5de0365b" id="r_a6817658959058f4047ca299f5de0365b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6817658959058f4047ca299f5de0365b">SpawnEnemyPatternSpiral</a> (<a class="el" href="structEnemySpawner.html">EnemySpawner</a> *spawner, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *pool, Vector2 pos)</td></tr>
+<tr class="memdesc:a6817658959058f4047ca299f5de0365b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawn un pattern d'enemis.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -181,7 +222,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -218,7 +259,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -255,7 +296,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -292,7 +333,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -315,6 +356,43 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a6817658959058f4047ca299f5de0365b" name="a6817658959058f4047ca299f5de0365b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6817658959058f4047ca299f5de0365b">&#9670;&#160;</a></span>SpawnEnemyPatternSpiral()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SpawnEnemyPatternSpiral </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnemySpawner.html">EnemySpawner</a> *</td>          <td class="paramname"><span class="paramname"><em>spawner</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector2</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Spawn un pattern d'enemis. </p>
+<p>5 chasers et un tireur en spirale</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spawner</td><td>pointeur vers le spawner </td></tr>
+    <tr><td class="paramname">pool</td><td>pool d’ennemis </td></tr>
+    <tr><td class="paramname">pos</td><td>position de spawn </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab6da48e3a55e516e1650a7bf8b7782e2" name="ab6da48e3a55e516e1650a7bf8b7782e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6da48e3a55e516e1650a7bf8b7782e2">&#9670;&#160;</a></span>SpawnRandomEnemy()</h2>
 
@@ -324,7 +402,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void SpawnRandomEnemy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -361,7 +439,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -132,17 +132,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="LifeManager_8h__dep__incl.png" border="0" usemap="#alib_2systems_2LifeManager_8hdep" loading="lazy" alt=""/></div>
 <map name="alib_2systems_2LifeManager_8hdep" id="alib_2systems_2LifeManager_8hdep">
-<area shape="rect" title="Gère la vie du joueur, des balles et des ennemies." alt="" coords="297,5,491,31"/>
+<area shape="rect" title="Gère la vie du joueur, des balles et des ennemies." alt="" coords="395,5,588,31"/>
 <area shape="rect" href="GameManager_8c.html" title=" " alt="" coords="5,79,188,104"/>
-<area shape="poly" title=" " alt="" coords="334,36,145,81,144,76,332,31"/>
+<area shape="poly" title=" " alt="" coords="415,36,161,81,160,76,414,30"/>
 <area shape="rect" href="main_8c.html" title=" " alt="" coords="212,79,301,104"/>
-<area shape="poly" title=" " alt="" coords="361,39,280,81,278,76,359,34"/>
+<area shape="poly" title=" " alt="" coords="441,37,295,81,294,76,440,32"/>
 <area shape="rect" href="Game_8c.html" title=" " alt="" coords="326,79,462,104"/>
-<area shape="poly" title=" " alt="" coords="397,44,397,79,391,79,391,44"/>
+<area shape="poly" title=" " alt="" coords="466,41,411,81,408,76,463,37"/>
 <area shape="rect" href="PlayerController_8c.html" title=" " alt="" coords="486,79,691,104"/>
-<area shape="poly" title=" " alt="" coords="439,33,558,76,556,81,437,38"/>
-<area shape="rect" href="LifeManager_8c.html" title=" " alt="" coords="715,79,910,104"/>
-<area shape="poly" title=" " alt="" coords="475,30,746,76,745,81,474,36"/>
+<area shape="poly" title=" " alt="" coords="520,37,574,76,571,81,517,41"/>
+<area shape="rect" href="CollisionSystem_8c.html" title="Gestion des collisions entre ennemis et projectiles." alt="" coords="716,79,936,104"/>
+<area shape="poly" title=" " alt="" coords="559,31,772,76,771,81,558,36"/>
+<area shape="rect" href="LifeManager_8c.html" title=" " alt="" coords="961,79,1155,104"/>
+<area shape="poly" title=" " alt="" coords="596,30,967,76,966,81,595,35"/>
 </map>
 </div>
 </div>
@@ -150,12 +152,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a870df31353b6772009d2f7e10ac4d32b" id="r_a870df31353b6772009d2f7e10ac4d32b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a870df31353b6772009d2f7e10ac4d32b">PlayerLifeAlteration</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="structenemyPool__t.html">enemyPool_t</a> *enemies, <a class="el" href="structbulletPool__t.html">bulletPool_t</a> *bullets)</td></tr>
+<tr class="memitem:a870df31353b6772009d2f7e10ac4d32b" id="r_a870df31353b6772009d2f7e10ac4d32b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a870df31353b6772009d2f7e10ac4d32b">PlayerLifeAlteration</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *enemies, <a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *bullets)</td></tr>
 <tr class="memdesc:a870df31353b6772009d2f7e10ac4d32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait subir des dêgats au joueur en fonction des ennemies et des bullets ou régénère la vie du joueur.  <br /></td></tr>
 <tr class="memitem:a4e7948c7d864b12e5ac3157ae3802a5e" id="r_a4e7948c7d864b12e5ac3157ae3802a5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e7948c7d864b12e5ac3157ae3802a5e">HPDraw</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, int x, int y, int width, int height)</td></tr>
 <tr class="memdesc:a4e7948c7d864b12e5ac3157ae3802a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine la barre de vie du joueur.  <br /></td></tr>
 <tr class="memitem:a84f9e478cd6f931eadbe6e4f95095205" id="r_a84f9e478cd6f931eadbe6e4f95095205"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84f9e478cd6f931eadbe6e4f95095205">ApplyDamageToPlayer</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, int dmg)</td></tr>
 <tr class="memdesc:a84f9e478cd6f931eadbe6e4f95095205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique des dégâts au joueur, c-à-d lui retirer des points de vie.  <br /></td></tr>
+<tr class="memitem:a02ace4fab61529554d33e9e7d53b366d" id="r_a02ace4fab61529554d33e9e7d53b366d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02ace4fab61529554d33e9e7d53b366d">ApplyDamageToEnemy</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *enemy, int dmg)</td></tr>
 <tr class="memitem:a7ca0b81eff813b0a722db9e69573de1f" id="r_a7ca0b81eff813b0a722db9e69573de1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ca0b81eff813b0a722db9e69573de1f">isInvicible</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player)</td></tr>
 <tr class="memdesc:a7ca0b81eff813b0a722db9e69573de1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détermine si le joueur est invincible.  <br /></td></tr>
 <tr class="memitem:a7b7e1d1167696b52e069168da7e9ed6d" id="r_a7b7e1d1167696b52e069168da7e9ed6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b7e1d1167696b52e069168da7e9ed6d">isAlive</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player)</td></tr>
@@ -169,6 +172,27 @@ Functions</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>07-04-2026 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a02ace4fab61529554d33e9e7d53b366d" name="a02ace4fab61529554d33e9e7d53b366d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ace4fab61529554d33e9e7d53b366d">&#9670;&#160;</a></span>ApplyDamageToEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ApplyDamageToEnemy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemy</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dmg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a84f9e478cd6f931eadbe6e4f95095205" name="a84f9e478cd6f931eadbe6e4f95095205"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84f9e478cd6f931eadbe6e4f95095205">&#9670;&#160;</a></span>ApplyDamageToPlayer()</h2>
 
@@ -189,14 +213,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Applique des dégâts au joueur, c-à-d lui retirer des points de vie. </p>
+<p>Applique des dégâts à l'ennemie, c-à-d lui retirer des points de vie.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">player</td><td>Pointeur sur <a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090" title="Structure opaque représentant le joueur.">Player</a> </td></tr>
+    <tr><td class="paramname">dmg</td><td>Nombre de points de vie à retirer</td></tr>
+    <tr><td class="paramname">enemy</td><td>Pointeur sur <a class="el" href="structEnemy.html" title="Informations sur les vagues d&#39;ennemis.">Enemy</a> </td></tr>
     <tr><td class="paramname">dmg</td><td>Nombre de points de vie à retirer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Renvoie vrai si il est invincible, sinon faux </dd></dl>
 
 </div>
 </div>
@@ -340,12 +366,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ennemies</em></span>, </td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ennemies</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structbulletPool__t.html">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bullets</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bullets</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

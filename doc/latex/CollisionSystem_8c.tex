@@ -7,8 +7,14 @@ Gestion des collisions entre ennemis et projectiles.
 
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/systems/\+Collision\+System.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Ressources\+Manager.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/player/\+Player.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Life\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Projectiles.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/enemies/\+Enemy\+Controller.\+h"{}}\newline
 {\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
 Include dependency graph for Collision\+System.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -17,15 +23,26 @@ Include dependency graph for Collision\+System.\+c\+:
 \includegraphics[width=350pt]{CollisionSystem_8c__incl}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{CollisionSystem_8c_addb1d01a9bf9c8e784d49ea284d701c5}{MAX\+\_\+\+DIST\+\_\+\+DETECT}}~200
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{CollisionSystem_8c_a3c23eee373911780724384bf8e15c347}{Check\+Enemy\+Bullet\+Collision}} (\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}enemies, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets)
+void \mbox{\hyperlink{CollisionSystem_8c_a17a10d407f5e4bc35829fb5a171b05a8}{Check\+Enemy\+Bullet\+Collision}} (\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}enemies, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets, \mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}weapon)
 \begin{DoxyCompactList}\small\item\em Détecte les collisions entre ennemis et projectiles. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{CollisionSystem_8c_a327130d83d0bdf2c3fe16e801d2b5b67}{Check\+Player\+Enemy\+Collision}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}enemies, int \texorpdfstring{$\ast$}{*}total\+\_\+dmg)
+void \mbox{\hyperlink{CollisionSystem_8c_a327130d83d0bdf2c3fe16e801d2b5b67}{Check\+Player\+Enemy\+Collision}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}enemies, int \texorpdfstring{$\ast$}{*}total\+\_\+dmg)
 \begin{DoxyCompactList}\small\item\em Détecte collisions entre joueur et ennemies et calcule le nombre de dégâts total à infliger. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{CollisionSystem_8c_ad028a52a143ec6844b9ed1253c337681}{Check\+Player\+Bullet\+Collision}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets, int \texorpdfstring{$\ast$}{*}total\+\_\+dmg)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{CollisionSystem_8c_ad028a52a143ec6844b9ed1253c337681}{Check\+Player\+Bullet\+Collision}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets, int \texorpdfstring{$\ast$}{*}total\+\_\+dmg)
+\begin{DoxyCompactList}\small\item\em Détecte collisions entre joueur et projectiles et calcule le nombre de dégâts total à infliger. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CollisionSystem_8c_ab480aab05266800ff0c4661d272a31e0}{Check\+Bullets\+Platforms\+Collision}} (\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}bullets, \mbox{\hyperlink{structPlatform}{Platform}} platforms\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+\begin{DoxyCompactList}\small\item\em Détecte collisions entre les projectiles et les platformes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CollisionSystem_8c_a1a6d6907f555819c924c2fafc285e1f3}{Player\+Position\+Fix}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, Vector2 old\+Position, \mbox{\hyperlink{structPlatform}{Platform}} platforms\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+\begin{DoxyCompactList}\small\item\em Corrige la position du joueur en cas de collision avec les platformes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{CollisionSystem_8c_a2021d5ba7e16b464f6833791fd66f2a5}{Enemies\+Position\+Fix}} (\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}enemies, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
+\begin{DoxyCompactList}\small\item\em Corrige la position des ennemis en cas de collision avec les platformes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -43,24 +60,48 @@ Lorsqu\textquotesingle{}une collision est détectée \+:
 \end{DoxyItemize}
 
 \begin{DoxyAuthor}{Author}
-A. Pocholle
+A. Pocholle, C. Tortevoix
 \end{DoxyAuthor}
-Implémente la détection de collision entre les ennemis et les bullets à l’aide d’une méthode simple basée sur la distance entre deux points (collision circulaire).
+Implémente la détection de collision entre les ennemis, les projectiles, le joueur et les plateformes 
 
-Lorsqu\textquotesingle{}une collision est détectée \+:
-\begin{DoxyItemize}
-\item l\textquotesingle{}ennemi est désactivé
-\item la bullet est désactivée 
-\end{DoxyItemize}
+\label{doc-define-members}
+\Hypertarget{CollisionSystem_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{CollisionSystem_8c_addb1d01a9bf9c8e784d49ea284d701c5}\index{CollisionSystem.c@{CollisionSystem.c}!MAX\_DIST\_DETECT@{MAX\_DIST\_DETECT}}
+\index{MAX\_DIST\_DETECT@{MAX\_DIST\_DETECT}!CollisionSystem.c@{CollisionSystem.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_DIST\_DETECT}{MAX\_DIST\_DETECT}}
+{\footnotesize\ttfamily \label{CollisionSystem_8c_addb1d01a9bf9c8e784d49ea284d701c5} 
+\#define MAX\+\_\+\+DIST\+\_\+\+DETECT~200}
+
+
 
 \label{doc-func-members}
 \Hypertarget{CollisionSystem_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{CollisionSystem_8c_a3c23eee373911780724384bf8e15c347}\index{CollisionSystem.c@{CollisionSystem.c}!CheckEnemyBulletCollision@{CheckEnemyBulletCollision}}
+\Hypertarget{CollisionSystem_8c_ab480aab05266800ff0c4661d272a31e0}\index{CollisionSystem.c@{CollisionSystem.c}!CheckBulletsPlatformsCollision@{CheckBulletsPlatformsCollision}}
+\index{CheckBulletsPlatformsCollision@{CheckBulletsPlatformsCollision}!CollisionSystem.c@{CollisionSystem.c}}
+\doxysubsubsection{\texorpdfstring{CheckBulletsPlatformsCollision()}{CheckBulletsPlatformsCollision()}}
+{\footnotesize\ttfamily \label{CollisionSystem_8c_ab480aab05266800ff0c4661d272a31e0} 
+void Check\+Bullets\+Platforms\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platforms}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
+
+
+
+Détecte collisions entre les projectiles et les platformes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bullets} & Pool de projectiles \\
+\hline
+{\em platforms} & Tableau de platformes \\
+\hline
+{\em nb\+Platforms} & Nombre de platformes \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CollisionSystem_8c_a17a10d407f5e4bc35829fb5a171b05a8}\index{CollisionSystem.c@{CollisionSystem.c}!CheckEnemyBulletCollision@{CheckEnemyBulletCollision}}
 \index{CheckEnemyBulletCollision@{CheckEnemyBulletCollision}!CollisionSystem.c@{CollisionSystem.c}}
 \doxysubsubsection{\texorpdfstring{CheckEnemyBulletCollision()}{CheckEnemyBulletCollision()}}
-{\footnotesize\ttfamily \label{CollisionSystem_8c_a3c23eee373911780724384bf8e15c347} 
-void Check\+Enemy\+Bullet\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemies}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{CollisionSystem_8c_a17a10d407f5e4bc35829fb5a171b05a8} 
+void Check\+Enemy\+Bullet\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemies}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets}{, }\item[{\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{weapon}{}\end{DoxyParamCaption})}
 
 
 
@@ -79,32 +120,81 @@ Parcourt tous les ennemis actifs et toutes les bullets actives, puis vérifie si
 \index{CheckPlayerBulletCollision@{CheckPlayerBulletCollision}!CollisionSystem.c@{CollisionSystem.c}}
 \doxysubsubsection{\texorpdfstring{CheckPlayerBulletCollision()}{CheckPlayerBulletCollision()}}
 {\footnotesize\ttfamily \label{CollisionSystem_8c_ad028a52a143ec6844b9ed1253c337681} 
-void Check\+Player\+Bullet\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{total\+\_\+dmg}{}\end{DoxyParamCaption})}
+void Check\+Player\+Bullet\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullets}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{total\+\_\+dmg}{}\end{DoxyParamCaption})}
 
+
+
+Détecte collisions entre joueur et projectiles et calcule le nombre de dégâts total à infliger. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em player} & Pointeur vers le joueur \\
+\hline
+ & {\em bullets} & Pool de projectiles \\
+\hline
+\mbox{\texttt{out}}  & {\em dmg} & Dégâts à infliger \\
+\hline
+\end{DoxyParams}
 \Hypertarget{CollisionSystem_8c_a327130d83d0bdf2c3fe16e801d2b5b67}\index{CollisionSystem.c@{CollisionSystem.c}!CheckPlayerEnemyCollision@{CheckPlayerEnemyCollision}}
 \index{CheckPlayerEnemyCollision@{CheckPlayerEnemyCollision}!CollisionSystem.c@{CollisionSystem.c}}
 \doxysubsubsection{\texorpdfstring{CheckPlayerEnemyCollision()}{CheckPlayerEnemyCollision()}}
 {\footnotesize\ttfamily \label{CollisionSystem_8c_a327130d83d0bdf2c3fe16e801d2b5b67} 
-void Check\+Player\+Enemy\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemies}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{total\+\_\+dmg}{}\end{DoxyParamCaption})}
+void Check\+Player\+Enemy\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemies}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{total\+\_\+dmg}{}\end{DoxyParamCaption})}
 
 
 
 Détecte collisions entre joueur et ennemies et calcule le nombre de dégâts total à infliger. 
 
-Détecte collisions entre joueur et bullets et calcule le nombre de dégâts total à infliger.
-
 
 \begin{DoxyParams}[1]{Parameters}
- & {\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
+ & {\em player} & Pointeur vers le joueur \\
 \hline
- & {\em enemies} & Tableau contenant les ennemies \\
-\hline
-\mbox{\texttt{out}}  & {\em dmg} & Dégâts à infliger\\
-\hline
- & {\em player} & Pointeur sur \doxylink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player} \\
-\hline
- & {\em bullets} & Tableau contenant les bullets \\
+ & {\em enemies} & Pool d\textquotesingle{}ennemis \\
 \hline
 \mbox{\texttt{out}}  & {\em dmg} & Dégâts à infliger \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CollisionSystem_8c_a2021d5ba7e16b464f6833791fd66f2a5}\index{CollisionSystem.c@{CollisionSystem.c}!EnemiesPositionFix@{EnemiesPositionFix}}
+\index{EnemiesPositionFix@{EnemiesPositionFix}!CollisionSystem.c@{CollisionSystem.c}}
+\doxysubsubsection{\texorpdfstring{EnemiesPositionFix()}{EnemiesPositionFix()}}
+{\footnotesize\ttfamily \label{CollisionSystem_8c_a2021d5ba7e16b464f6833791fd66f2a5} 
+void Enemies\+Position\+Fix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemies}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
+
+
+
+Corrige la position des ennemis en cas de collision avec les platformes. 
+
+Utilise l\textquotesingle{}algorithme AABB Collision Resolution
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemies} & Pool d\textquotesingle{}ennemis \\
+\hline
+{\em platform} & Tableau de plateformes \\
+\hline
+{\em nb\+Platform} & Nombre de platformes \\
+\hline
+\end{DoxyParams}
+\Hypertarget{CollisionSystem_8c_a1a6d6907f555819c924c2fafc285e1f3}\index{CollisionSystem.c@{CollisionSystem.c}!PlayerPositionFix@{PlayerPositionFix}}
+\index{PlayerPositionFix@{PlayerPositionFix}!CollisionSystem.c@{CollisionSystem.c}}
+\doxysubsubsection{\texorpdfstring{PlayerPositionFix()}{PlayerPositionFix()}}
+{\footnotesize\ttfamily \label{CollisionSystem_8c_a1a6d6907f555819c924c2fafc285e1f3} 
+void Player\+Position\+Fix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{const Vector2}]{old\+Position}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
+
+
+
+Corrige la position du joueur en cas de collision avec les platformes. 
+
+Utilise l\textquotesingle{}algorithme AABB Collision Resolution
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointeur vers le joueur \\
+\hline
+{\em old\+Position} & Ancienne coordonnées du joueur \\
+\hline
+{\em platform} & Tableau de platformes \\
+\hline
+{\em nb\+Platform} & Nombre de platformes \\
 \hline
 \end{DoxyParams}

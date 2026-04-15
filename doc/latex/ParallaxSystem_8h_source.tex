@@ -1,0 +1,40 @@
+\doxysection{Parallax\+System.\+h}
+\hypertarget{ParallaxSystem_8h_source}{}\label{ParallaxSystem_8h_source}\index{lib/systems/ParallaxSystem.h@{lib/systems/ParallaxSystem.h}}
+\mbox{\hyperlink{ParallaxSystem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ PARALLAX\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ PARALLAX\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../../raylib/include/raylib.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Player_8h}{../../lib/player/Player.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ PARALLAX\_MAX\_LAYERS\ 8}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structParallaxLayer__s}{ParallaxLayer\_s}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ Texture2D\ \mbox{\hyperlink{structParallaxLayer__s_aae022fe089a12cbb00b5606acbb5108b}{texture}};\ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structParallaxLayer__s_a5318a8600ed8f2d166dbcef60881d644}{speed}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ Vector2\ \mbox{\hyperlink{structParallaxLayer__s_a4b14d068c3572279844b2f2e68cf4723}{offset}};\ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \}\ \mbox{\hyperlink{ParallaxSystem_8h_a5e50ab82c134c03f8f134901c0275c06}{ParallaxLayer}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structParallaxSystem__s}{ParallaxSystem\_s}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{ParallaxSystem_8h_a5e50ab82c134c03f8f134901c0275c06}{ParallaxLayer}}\ \mbox{\hyperlink{structParallaxSystem__s_ad45ce160b81c2edb7b215e61556fa0a1}{layers}}[\mbox{\hyperlink{ParallaxSystem_8h_a88f25d1c319a3af43d782d12132746d3}{PARALLAX\_MAX\_LAYERS}}];\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structParallaxSystem__s_a5b85b3a0660ee42f6e7503b3724aad01}{layerCount}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{ParallaxSystem}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/*====================\ INIT\ ====================*/}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ParallaxSystem_8h_ad74ea4680a232c24db98997385f852b5}{ParallaxInit}}(\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{ParallaxSystem}}\ *ps);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ParallaxSystem_8h_a2925c6d12b483d9136dc54f1491abf94}{ParallaxAddLayer}}(\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{ParallaxSystem}}\ *ps,\ Texture2D\ texture,\ \textcolor{keywordtype}{float}\ speed);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{/*====================\ UPDATE\ /\ DRAW\ ====================*/}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ParallaxSystem_8h_a6d5e7ff6b509a6912c1e641839a67afe}{ParallaxDraw}}(\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{ParallaxSystem}}\ *ps,\ Camera2D\ \mbox{\hyperlink{GameManager_8h_a2104321f3e01d1f85c8054cda5ad149c}{camera}},\ \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

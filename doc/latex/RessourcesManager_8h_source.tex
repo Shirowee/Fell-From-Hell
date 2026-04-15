@@ -3,21 +3,100 @@
 \mbox{\hyperlink{RessourcesManager_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ RESOURCES\_MANAGER\_H}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ RESOURCES\_MANAGER\_H}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../../raylib/include/raylib.h"{}}}
-\DoxyCodeLine{00032\ Texture2D*\ \mbox{\hyperlink{RessourcesManager_8h_a4bc34793271f2e1a0e99da94d1699edb}{RM\_GetTexture}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *path);}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f}{RM\_UnloadTexture}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *path);}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}{RM\_UnloadAll}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a601e378d412e2ae15519a5eb51347f5e}{RM\_PrintStatus}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESOURCES\_MANAGER\_H}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ RESOURCES\_MANAGER\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ RESOURCES\_MANAGER\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}../../raylib/include/raylib.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/*\ =========================================================}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ TEXTURES}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ =========================================================\ */}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da57afbae4eaf1d80234340d72e4620537}{TEX\_PLAYER}},}
+\DoxyCodeLine{00038\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da7672177c73680ae4b8a1cd6ae2cc55e8}{TEX\_BACKGROUND\_NEBULA}},}
+\DoxyCodeLine{00039\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da8cf3802efd425d85ec181d5063c1d627}{TEX\_TITLE}},}
+\DoxyCodeLine{00040\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dab0c6d33d37673c056c193511a43827b6}{TEX\_TILESET}},}
+\DoxyCodeLine{00041\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da4e45fd811ef278246a155f47e7d3e1f0}{TEX\_CHASER}},}
+\DoxyCodeLine{00042\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dad2071f5f700363ce957335933a5981b2}{TEX\_SHOOTER}},}
+\DoxyCodeLine{00043\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dadfb23725cb4016cd49bb5adccf8c4db0}{TEX\_HUIT}},}
+\DoxyCodeLine{00044\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da605c351ba35fadb243c80c7023b8bab0}{TEX\_SPIRAL}},}
+\DoxyCodeLine{00045\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11daa191ccbbba8754d2da541e53cadb30cf}{TEX\_ARC}},}
+\DoxyCodeLine{00046\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dad0441bdda1694e78d80bca49230a16ff}{TEX\_PARALLAX\_NEB\_BG}},}
+\DoxyCodeLine{00047\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da6c0b44ef4f15a285e7204f1a63b1c30c}{TEX\_PARALLAX\_NEB\_1}},}
+\DoxyCodeLine{00048\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dada674c5273bc98ccce8949cc5c0f2340}{TEX\_PARALLAX\_NEB\_3}},}
+\DoxyCodeLine{00049\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da4184e7c621044b8f107548fcaae58af6}{TEX\_PARALLAX\_NEB\_4}},}
+\DoxyCodeLine{00050\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da8d6ea5a409306f4da8753f8d2a868d15}{TEX\_PARALLAX\_NEB\_5}},}
+\DoxyCodeLine{00051\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dadfe045e0afe371d5d1e049cbefede069}{TEX\_COUNT}}}
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}{TextureID}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00062\ Texture2D*\ \mbox{\hyperlink{RessourcesManager_8h_a166f8337eb3c921dfda23e1b16cfa4b1}{RM\_GetTexture}}(\mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}{TextureID}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{/*\ =========================================================}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ \ \ MUSIQUE}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ =========================================================\ */}}
+\DoxyCodeLine{00067\ \ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00075\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078ab2ddd126a9b0f79ddf87b33dc446b852}{MUSIC\_MENU}},}
+\DoxyCodeLine{00076\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a3250ff92071345aa25480ca7a963591d}{MUSIC\_LEVEL1}},}
+\DoxyCodeLine{00077\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a4579796568f086dac1f0ba1c5bc0ec74}{MUSIC\_COUNT}}}
+\DoxyCodeLine{00078\ \}\ \mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{MusicID}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00088\ Music*\ \mbox{\hyperlink{RessourcesManager_8h_af692b3cc91497de2c20c0b20690f0b9e}{RM\_GetMusic}}(\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{MusicID}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a2a156010f2ebc87a95f729d66f8f33f7}{RM\_PlayMusic}}(\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{MusicID}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a670daca95cb8320602e2a948f9d8c6f3}{RM\_StopMusic}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a280a165b029b522e40f948eabaa22a91}{RM\_UpdateMusic}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a2d410176a9896ef691ccc49e9a571655}{RM\_SetMusicVolume}}(\textcolor{keywordtype}{float}\ volume);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{RessourcesManager_8h_ad205fdf360d72a13deeafea20dff6e18}{RM\_GetMusicVolume}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{/*\ =========================================================}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ SOUNDS}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ \ \ =========================================================\ */}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00138\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aeb704b5494840c8528214f453d4e93aa}{SND\_DASH}},}
+\DoxyCodeLine{00139\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61acd1a9141ec7fea152dde880b9c2420bc}{SND\_ENEMY\_DIE}},}
+\DoxyCodeLine{00140\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a6c6387b94bd1b24127cb25ee71633c98}{SND\_ENEMY\_HURT}},}
+\DoxyCodeLine{00141\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aeb5061e776b6fce34b2218747b3c08de}{SND\_ENEMY\_SHOOT}},}
+\DoxyCodeLine{00142\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aebe2d3dcd31669e860a3aeac1e8e46c7}{SND\_HURT}},}
+\DoxyCodeLine{00143\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a9f6cd9e3e68e38c01fd4bd37d70fbcca}{SND\_JUMP}},}
+\DoxyCodeLine{00144\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a861e393ea402b9608ff3324ad91c8f81}{SND\_SHOOT}},}
+\DoxyCodeLine{00145\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a3574c971cf91b368d4e72e0a2c5a3b2e}{SND\_SELECT}},}
+\DoxyCodeLine{00146\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a6bed8fbb00ec7d6ec1f43391977aee1f}{SND\_SELECTED}},}
+\DoxyCodeLine{00147\ \ \ \ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61ade6d032c16ff5adf4ede131e5cf16561}{SND\_COUNT}}}
+\DoxyCodeLine{00148\ \}\ \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{SoundID}};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00158\ Sound*\ \mbox{\hyperlink{RessourcesManager_8h_aab50c0e8589559e329df2892c0e5a694}{RM\_GetSound}}(\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{SoundID}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00167\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a444330cb6cfeb7ba3e5a99a4bf214838}{RM\_PlaySound}}(\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{SoundID}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{comment}{/*\ =========================================================}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ \ \ VOLUME}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ \ \ =========================================================\ */}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a772cdf072fdb534278b6124687a627f7}{RM\_SetSFXVolume}}(\textcolor{keywordtype}{float}\ volume);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00186\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{RessourcesManager_8h_a793f31865becd80f0516a7ec4919545a}{RM\_GetSFXVolume}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{comment}{/*\ =========================================================}}
+\DoxyCodeLine{00190\ \textcolor{comment}{\ \ \ GLOBAL}}
+\DoxyCodeLine{00191\ \textcolor{comment}{\ \ \ =========================================================\ */}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_ac43a759d198245cbdeb12ad95c7bea6e}{RM\_LoadAll}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}{RM\_UnloadAll}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{RessourcesManager_8h_a601e378d412e2ae15519a5eb51347f5e}{RM\_PrintStatus}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESOURCES\_MANAGER\_H}}
 
 \end{DoxyCode}

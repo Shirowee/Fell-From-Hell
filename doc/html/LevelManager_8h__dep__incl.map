@@ -1,23 +1,33 @@
 <map id="lib/levels/LevelManager.h" name="lib/levels/LevelManager.h">
-<area shape="rect" id="Node000001" title="Ce fichier LevelManager.h sert a la gestion des niveaux (affichage et chargement)" alt="" coords="552,5,740,31"/>
+<area shape="rect" id="Node000001" title="Ce fichier LevelManager.h sert a la gestion des niveaux (affichage et chargement)" alt="" coords="1000,5,1188,31"/>
 <area shape="rect" id="Node000002" href="$TriggerSystem_8h.html" title="Ce fichier TriggerSystem.h sert a la gestion des triggers." alt="" coords="104,79,311,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="563,35,278,81,278,76,562,30"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="987,30,330,81,311,83,311,78,330,76,986,25"/>
 <area shape="rect" id="Node000003" href="$GameManager_8c.html" title=" " alt="" coords="5,152,188,177"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="538,26,408,33,269,44,152,60,114,70,93,81,85,97,84,116,94,151,89,152,79,116,80,95,89,77,112,65,151,55,268,39,408,27,538,21"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="986,24,744,31,456,43,209,60,129,70,104,75,93,81,85,97,84,115,94,151,89,152,79,116,80,95,89,77,103,70,128,65,208,54,455,38,744,26,986,19"/>
 <area shape="rect" id="Node000004" href="$TriggerSystem_8c.html" title=" " alt="" coords="229,152,437,177"/>
-<area shape="poly" id="edge11_Node000001_Node000004" title=" " alt="" coords="543,35,445,54,404,67,377,81,362,97,350,116,338,152,333,151,346,114,357,94,374,77,402,62,444,49,542,30"/>
-<area shape="rect" id="Node000005" href="$LevelManager_8c.html" title=" " alt="" coords="387,79,577,104"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="608,39,510,81,508,76,606,34"/>
-<area shape="rect" id="Node000006" href="$main_8c.html" title=" " alt="" coords="601,79,691,104"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="649,44,649,79,643,79,643,44"/>
-<area shape="rect" id="Node000007" href="$Game_8c.html" title=" " alt="" coords="715,79,851,104"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="681,34,762,76,760,81,679,39"/>
-<area shape="rect" id="Node000008" href="$PlayerController_8c.html" title=" " alt="" coords="875,79,1081,104"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="713,31,925,76,924,81,712,36"/>
-<area shape="rect" id="Node000009" href="$PlayerMovement_8c.html" title=" " alt="" coords="1105,79,1317,104"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="750,30,1121,76,1120,81,750,35"/>
-<area shape="rect" id="Node000010" href="$Projectiles_8c.html" title="Gestion des projectiles du jeu." alt="" coords="1341,79,1524,104"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="754,25,1330,76,1341,77,1341,82,1330,81,753,31"/>
+<area shape="poly" id="edge16_Node000001_Node000004" title=" " alt="" coords="986,25,818,32,628,43,464,59,407,69,375,81,360,96,349,116,337,152,332,151,344,113,356,93,373,76,406,64,464,54,628,38,818,26,986,20"/>
+<area shape="rect" id="Node000005" href="$Camera_8c.html" title=" " alt="" coords="386,79,525,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="987,32,538,81,525,83,524,78,538,76,986,27"/>
+<area shape="rect" id="Node000006" href="$SavingManager_8c.html" title=" " alt="" coords="549,79,737,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="1009,35,716,81,716,76,1008,30"/>
+<area shape="rect" id="Node000007" href="$LevelManager_8c.html" title=" " alt="" coords="761,79,952,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="1044,37,896,81,894,76,1042,32"/>
+<area shape="rect" id="Node000008" href="$main_8c.html" title=" " alt="" coords="976,79,1065,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="1074,42,1034,80,1031,77,1070,38"/>
+<area shape="rect" id="Node000009" href="$EndLevel_8c.html" title=" " alt="" coords="1089,79,1245,104"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="1118,38,1157,77,1154,80,1114,42"/>
+<area shape="rect" id="Node000010" href="$Game_8c.html" title=" " alt="" coords="1270,79,1406,104"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="1147,32,1299,76,1298,81,1145,37"/>
+<area shape="rect" id="Node000011" href="$Menu_8c.html" title=" " alt="" coords="1430,79,1563,104"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="1172,30,1432,76,1431,81,1171,36"/>
+<area shape="rect" id="Node000012" href="$PlayerController_8c.html" title=" " alt="" coords="1587,79,1793,104"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="1202,29,1594,76,1594,81,1201,35"/>
+<area shape="rect" id="Node000013" href="$PlayerMovement_8c.html" title=" " alt="" coords="1817,79,2029,104"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="1202,25,1805,76,1817,77,1817,82,1804,81,1202,31"/>
+<area shape="rect" id="Node000014" href="$EnemySpawner_8c.html" title="Gestion de l&#39;apparition dynamique des ennemis." alt="" coords="2053,79,2268,104"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="1202,22,1574,44,2042,76,2054,77,2053,82,2042,81,1573,49,1201,28"/>
+<area shape="rect" id="Node000015" href="$Projectiles_8c.html" title="Gestion des projectiles du jeu." alt="" coords="2292,79,2475,104"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="1202,20,1671,39,1974,55,2281,76,2292,77,2291,82,2280,81,1974,60,1670,44,1202,25"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,114,116,154,113,150,177,109"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="241,108,313,149,311,154,238,113"/>
 </map>

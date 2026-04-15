@@ -89,53 +89,62 @@ $(function() {
 <code>#include &quot;<a class="el" href="Player_8h_source.html">../player/Player.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BulletPool_8h_source.html">../systems/BulletPool.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="EnemyPool_8h_source.html">../systems/EnemyPool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="EnemySpawner_8h_source.html">../systems/EnemySpawner.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cJSON_8h_source.html">../../lib/cJson/cJSON.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ParallaxSystem_8h_source.html">../../lib/systems/ParallaxSystem.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LevelManager.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="LevelManager_8h__incl.png" border="0" usemap="#alib_2levels_2LevelManager_8h" loading="lazy" alt=""/></div>
 <map name="alib_2levels_2LevelManager_8h" id="alib_2levels_2LevelManager_8h">
-<area shape="rect" title="Ce fichier LevelManager.h sert a la gestion des niveaux (affichage et chargement)" alt="" coords="530,5,718,31"/>
-<area shape="rect" href="Platform_8h.html" title="Définition des structures de base pour des positions et des rectangles." alt="" coords="90,225,181,251"/>
-<area shape="poly" title=" " alt="" coords="529,28,391,41,235,65,161,81,97,101,46,126,27,139,14,154,9,164,9,173,22,191,47,207,78,219,76,224,45,211,18,195,4,175,4,163,9,150,24,135,43,121,95,96,160,76,234,59,390,35,529,22"/>
-<area shape="rect" href="Player_8h.html" title="Définit la structure du joueur et son corps, ainsi que les fonctions associées." alt="" coords="249,79,380,104"/>
-<area shape="poly" title=" " alt="" coords="575,33,378,78,377,73,573,28"/>
-<area shape="rect" href="BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="596,225,766,251"/>
-<area shape="poly" title=" " alt="" coords="627,30,634,94,642,135,653,176,669,213,665,215,648,178,636,136,629,94,622,31"/>
-<area shape="rect" href="EnemyPool_8h.html" title=" " alt="" coords="680,79,858,104"/>
-<area shape="poly" title=" " alt="" coords="648,28,734,70,732,75,646,33"/>
-<area shape="rect" href="cJSON_8h.html" title=" " alt="" coords="897,79,1052,104"/>
-<area shape="poly" title=" " alt="" coords="681,28,905,73,904,79,679,33"/>
-<area shape="rect" title=" " alt="" coords="499,372,634,412"/>
-<area shape="poly" title=" " alt="" coords="148,249,187,285,213,305,242,322,303,345,367,363,485,382,485,387,366,368,302,350,240,326,211,310,184,289,144,253"/>
-<area shape="poly" title=" " alt="" coords="324,103,336,125,346,151,349,178,346,202,331,244,325,263,323,282,326,301,338,322,360,339,396,353,486,375,485,380,395,358,357,343,334,326,321,303,317,282,320,262,326,242,341,201,344,178,341,153,332,127,320,106"/>
-<area shape="rect" href="PlayerController_8h.html" title="Gère l&#39;initialisation, la mise à jour et le dessin du joueur." alt="" coords="24,152,162,177"/>
-<area shape="poly" title=" " alt="" coords="273,107,136,150,134,145,271,101"/>
-<area shape="rect" href="PlayerMovement_8h.html" title="Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts, la gravité et les coll..." alt="" coords="187,152,332,177"/>
-<area shape="poly" title=" " alt="" coords="300,106,271,142,267,139,296,103"/>
-<area shape="rect" href="PlayerWeapon_8h.html" title=" " alt="" coords="459,152,586,177"/>
-<area shape="poly" title=" " alt="" coords="349,101,476,145,475,150,347,107"/>
-<area shape="rect" href="BuffSystem_8h.html" title="Gestion des améliorations (buffs) appliquées au joueur et aux armes." alt="" coords="348,299,528,324"/>
-<area shape="poly" title=" " alt="" coords="336,102,365,122,391,150,410,184,423,221,438,284,433,285,418,222,405,187,387,154,361,126,333,106"/>
-<area shape="poly" title=" " alt="" coords="102,176,124,212,120,215,98,179"/>
-<area shape="poly" title=" " alt="" coords="135,149,272,106,273,111,136,154"/>
-<area shape="poly" title=" " alt="" coords="241,180,169,221,166,216,238,175"/>
-<area shape="poly" title=" " alt="" coords="261,178,259,207,262,246,272,287,281,306,293,322,324,341,373,356,486,378,485,383,371,361,322,345,290,326,276,308,267,289,256,246,254,207,256,177"/>
-<area shape="poly" title=" " alt="" coords="273,150,303,114,307,118,277,154"/>
-<area shape="poly" title=" " alt="" coords="527,177,563,357,557,359,522,178"/>
-<area shape="poly" title=" " alt="" coords="549,175,644,217,642,222,547,180"/>
-<area shape="poly" title=" " alt="" coords="695,249,709,264,721,284,727,305,722,325,707,343,689,357,648,377,646,372,686,353,703,339,717,323,722,305,716,286,705,268,691,253"/>
-<area shape="rect" href="Projectiles_8h.html" title=" " alt="" coords="604,299,707,324"/>
-<area shape="poly" title=" " alt="" coords="679,252,667,287,662,285,674,250"/>
-<area shape="poly" title=" " alt="" coords="644,326,600,365,596,361,641,322"/>
-<area shape="poly" title=" " alt="" coords="459,322,525,362,522,367,456,326"/>
-<area shape="poly" title=" " alt="" coords="821,102,860,120,877,134,891,151,895,164,892,178,870,228,846,264,815,294,770,326,741,343,710,358,648,378,646,373,708,353,739,339,768,322,811,290,842,261,866,226,886,176,890,164,887,153,873,137,857,124,819,107"/>
-<area shape="rect" href="EnemyController_8h.html" title="Gestion des ennemis et de leur comportement (state machine)" alt="" coords="662,152,876,177"/>
-<area shape="poly" title=" " alt="" coords="772,104,772,138,766,138,766,104"/>
-<area shape="poly" title=" " alt="" coords="774,177,781,225,781,256,776,282,763,304,741,326,697,356,648,375,646,370,694,351,738,322,759,300,771,280,776,256,776,226,769,178"/>
-<area shape="poly" title=" " alt="" coords="757,179,708,219,704,214,753,175"/>
-<area shape="rect" title=" " alt="" coords="952,152,1026,177"/>
-<area shape="poly" title=" " alt="" coords="979,104,986,138,981,139,974,105"/>
+<area shape="rect" title="Ce fichier LevelManager.h sert a la gestion des niveaux (affichage et chargement)" alt="" coords="619,5,807,31"/>
+<area shape="rect" href="Platform_8h.html" title="Définition des structures de base pour des positions et des rectangles." alt="" coords="195,313,286,339"/>
+<area shape="poly" title=" " alt="" coords="618,23,492,35,421,49,347,69,275,97,208,134,150,182,125,210,103,241,98,254,99,265,106,275,116,284,147,299,182,311,181,316,145,304,113,288,102,278,94,266,93,253,98,239,121,207,146,178,205,130,273,92,345,64,419,43,492,30,618,17"/>
+<area shape="rect" href="Player_8h.html" title="Définit la structure du joueur et son corps, ainsi que les fonctions associées." alt="" coords="283,167,414,192"/>
+<area shape="poly" title=" " alt="" coords="642,33,565,52,486,81,423,120,373,159,370,155,420,115,484,76,564,47,641,28"/>
+<area shape="rect" href="BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="649,313,819,339"/>
+<area shape="poly" title=" " alt="" coords="716,31,735,300,730,300,711,31"/>
+<area shape="rect" href="EnemyPool_8h.html" title=" " alt="" coords="818,167,997,192"/>
+<area shape="poly" title=" " alt="" coords="807,26,904,45,944,59,969,77,975,88,977,99,970,121,954,142,936,160,932,156,950,138,965,119,971,99,970,89,965,80,942,64,903,50,806,32"/>
+<area shape="rect" href="EnemySpawner_8h.html" title=" " alt="" coords="750,86,955,111"/>
+<area shape="poly" title=" " alt="" coords="735,29,821,77,819,82,732,33"/>
+<area shape="rect" href="cJSON_8h.html" title=" " alt="" coords="1030,86,1185,111"/>
+<area shape="poly" title=" " alt="" coords="771,28,1037,81,1036,86,770,33"/>
+<area shape="rect" href="ParallaxSystem_8h.html" title=" " alt="" coords="497,79,675,119"/>
+<area shape="poly" title=" " alt="" coords="695,33,630,73,627,69,693,29"/>
+<area shape="rect" title=" " alt="" coords="519,460,653,500"/>
+<area shape="poly" title=" " alt="" coords="257,337,307,372,372,410,440,436,506,457,505,462,438,441,370,414,304,377,254,341"/>
+<area shape="poly" title=" " alt="" coords="371,190,402,211,435,238,479,291,518,348,573,446,569,449,514,351,475,295,431,242,399,215,368,194"/>
+<area shape="rect" href="PlayerController_8h.html" title="Gère l&#39;initialisation, la mise à jour et le dessin du joueur." alt="" coords="113,240,251,265"/>
+<area shape="poly" title=" " alt="" coords="316,194,216,237,214,232,314,190"/>
+<area shape="rect" href="PlayerMovement_8h.html" title="Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts, la gravité et les coll..." alt="" coords="276,240,421,265"/>
+<area shape="poly" title=" " alt="" coords="344,192,343,227,337,226,339,192"/>
+<area shape="rect" href="PlayerWeapon_8h.html" title=" " alt="" coords="497,240,624,265"/>
+<area shape="poly" title=" " alt="" coords="384,189,514,233,513,238,382,195"/>
+<area shape="rect" href="BuffSystem_8h.html" title="Gestion des améliorations (buffs) appliquées au joueur et aux armes." alt="" coords="5,387,185,412"/>
+<area shape="poly" title=" " alt="" coords="284,190,177,209,131,224,114,232,103,242,87,273,82,308,85,343,90,373,85,374,79,344,77,308,82,271,99,238,111,228,129,219,175,204,283,185"/>
+<area shape="poly" title=" " alt="" coords="194,264,225,301,221,305,190,267"/>
+<area shape="poly" title=" " alt="" coords="215,237,315,195,317,200,217,242"/>
+<area shape="poly" title=" " alt="" coords="333,268,271,308,268,303,330,263"/>
+<area shape="poly" title=" " alt="" coords="355,264,385,332,410,373,442,410,476,434,513,452,510,457,473,439,439,414,406,376,380,334,350,267"/>
+<area shape="poly" title=" " alt="" coords="353,240,355,206,360,206,358,240"/>
+<area shape="poly" title=" " alt="" coords="565,265,585,446,580,446,559,266"/>
+<area shape="poly" title=" " alt="" coords="590,263,694,306,692,310,588,268"/>
+<area shape="poly" title=" " alt="" coords="725,341,616,452,612,448,721,337"/>
+<area shape="rect" href="Projectiles_8h.html" title=" " alt="" coords="700,387,803,412"/>
+<area shape="poly" title=" " alt="" coords="739,338,748,373,743,374,734,340"/>
+<area shape="poly" title=" " alt="" coords="728,414,640,456,637,452,726,410"/>
+<area shape="poly" title=" " alt="" coords="167,409,505,463,505,468,166,415"/>
+<area shape="poly" title=" " alt="" coords="931,190,958,210,980,239,984,253,981,266,956,318,928,354,892,384,843,414,801,436,755,452,668,472,666,467,754,447,798,431,841,410,889,379,925,351,952,315,975,264,979,253,976,241,954,214,928,194"/>
+<area shape="rect" href="EnemyController_8h.html" title="Gestion des ennemis et de leur comportement (state machine)" alt="" coords="751,240,965,265"/>
+<area shape="poly" title=" " alt="" coords="901,194,876,230,872,227,897,191"/>
+<area shape="poly" title=" " alt="" coords="861,265,860,295,855,334,842,377,831,396,817,414,784,440,746,458,706,470,668,477,667,472,705,465,744,453,781,435,813,410,827,393,837,375,850,333,855,294,856,265"/>
+<area shape="poly" title=" " alt="" coords="839,268,767,309,765,304,837,263"/>
+<area shape="poly" title=" " alt="" coords="863,110,894,154,889,157,859,113"/>
+<area shape="rect" title=" " alt="" coords="1070,167,1145,192"/>
+<area shape="poly" title=" " alt="" coords="1110,112,1110,153,1105,153,1105,112"/>
+<area shape="poly" title=" " alt="" coords="598,118,620,172,639,240,638,281,628,338,598,447,593,446,623,337,633,281,634,240,615,173,593,120"/>
+<area shape="poly" title=" " alt="" coords="530,121,397,165,395,160,528,116"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -143,25 +152,35 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="LevelManager_8h__dep__incl.png" border="0" usemap="#alib_2levels_2LevelManager_8hdep" loading="lazy" alt=""/></div>
 <map name="alib_2levels_2LevelManager_8hdep" id="alib_2levels_2LevelManager_8hdep">
-<area shape="rect" title="Ce fichier LevelManager.h sert a la gestion des niveaux (affichage et chargement)" alt="" coords="552,5,740,31"/>
+<area shape="rect" title="Ce fichier LevelManager.h sert a la gestion des niveaux (affichage et chargement)" alt="" coords="1000,5,1188,31"/>
 <area shape="rect" href="TriggerSystem_8h.html" title="Ce fichier TriggerSystem.h sert a la gestion des triggers." alt="" coords="104,79,311,104"/>
-<area shape="poly" title=" " alt="" coords="563,35,278,81,278,76,562,30"/>
+<area shape="poly" title=" " alt="" coords="987,30,330,81,311,83,311,78,330,76,986,25"/>
 <area shape="rect" href="GameManager_8c.html" title=" " alt="" coords="5,152,188,177"/>
-<area shape="poly" title=" " alt="" coords="538,26,408,33,269,44,152,60,114,70,93,81,85,97,84,116,94,151,89,152,79,116,80,95,89,77,112,65,151,55,268,39,408,27,538,21"/>
+<area shape="poly" title=" " alt="" coords="986,24,744,31,456,43,209,60,129,70,104,75,93,81,85,97,84,115,94,151,89,152,79,116,80,95,89,77,103,70,128,65,208,54,455,38,744,26,986,19"/>
 <area shape="rect" href="TriggerSystem_8c.html" title=" " alt="" coords="229,152,437,177"/>
-<area shape="poly" title=" " alt="" coords="543,35,445,54,404,67,377,81,362,97,350,116,338,152,333,151,346,114,357,94,374,77,402,62,444,49,542,30"/>
-<area shape="rect" href="LevelManager_8c.html" title=" " alt="" coords="387,79,577,104"/>
-<area shape="poly" title=" " alt="" coords="608,39,510,81,508,76,606,34"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="601,79,691,104"/>
-<area shape="poly" title=" " alt="" coords="649,44,649,79,643,79,643,44"/>
-<area shape="rect" href="Game_8c.html" title=" " alt="" coords="715,79,851,104"/>
-<area shape="poly" title=" " alt="" coords="681,34,762,76,760,81,679,39"/>
-<area shape="rect" href="PlayerController_8c.html" title=" " alt="" coords="875,79,1081,104"/>
-<area shape="poly" title=" " alt="" coords="713,31,925,76,924,81,712,36"/>
-<area shape="rect" href="PlayerMovement_8c.html" title=" " alt="" coords="1105,79,1317,104"/>
-<area shape="poly" title=" " alt="" coords="750,30,1121,76,1120,81,750,35"/>
-<area shape="rect" href="Projectiles_8c.html" title="Gestion des projectiles du jeu." alt="" coords="1341,79,1524,104"/>
-<area shape="poly" title=" " alt="" coords="754,25,1330,76,1341,77,1341,82,1330,81,753,31"/>
+<area shape="poly" title=" " alt="" coords="986,25,818,32,628,43,464,59,407,69,375,81,360,96,349,116,337,152,332,151,344,113,356,93,373,76,406,64,464,54,628,38,818,26,986,20"/>
+<area shape="rect" href="Camera_8c.html" title=" " alt="" coords="386,79,525,104"/>
+<area shape="poly" title=" " alt="" coords="987,32,538,81,525,83,524,78,538,76,986,27"/>
+<area shape="rect" href="SavingManager_8c.html" title=" " alt="" coords="549,79,737,104"/>
+<area shape="poly" title=" " alt="" coords="1009,35,716,81,716,76,1008,30"/>
+<area shape="rect" href="LevelManager_8c.html" title=" " alt="" coords="761,79,952,104"/>
+<area shape="poly" title=" " alt="" coords="1044,37,896,81,894,76,1042,32"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="976,79,1065,104"/>
+<area shape="poly" title=" " alt="" coords="1074,42,1034,80,1031,77,1070,38"/>
+<area shape="rect" href="EndLevel_8c.html" title=" " alt="" coords="1089,79,1245,104"/>
+<area shape="poly" title=" " alt="" coords="1118,38,1157,77,1154,80,1114,42"/>
+<area shape="rect" href="Game_8c.html" title=" " alt="" coords="1270,79,1406,104"/>
+<area shape="poly" title=" " alt="" coords="1147,32,1299,76,1298,81,1145,37"/>
+<area shape="rect" href="Menu_8c.html" title=" " alt="" coords="1430,79,1563,104"/>
+<area shape="poly" title=" " alt="" coords="1172,30,1432,76,1431,81,1171,36"/>
+<area shape="rect" href="PlayerController_8c.html" title=" " alt="" coords="1587,79,1793,104"/>
+<area shape="poly" title=" " alt="" coords="1202,29,1594,76,1594,81,1201,35"/>
+<area shape="rect" href="PlayerMovement_8c.html" title=" " alt="" coords="1817,79,2029,104"/>
+<area shape="poly" title=" " alt="" coords="1202,25,1805,76,1817,77,1817,82,1804,81,1202,31"/>
+<area shape="rect" href="EnemySpawner_8c.html" title="Gestion de l&#39;apparition dynamique des ennemis." alt="" coords="2053,79,2268,104"/>
+<area shape="poly" title=" " alt="" coords="1202,22,1574,44,2042,76,2054,77,2053,82,2042,81,1573,49,1201,28"/>
+<area shape="rect" href="Projectiles_8c.html" title="Gestion des projectiles du jeu." alt="" coords="2292,79,2475,104"/>
+<area shape="poly" title=" " alt="" coords="1202,20,1671,39,1974,55,2281,76,2292,77,2291,82,2280,81,1974,60,1670,44,1202,25"/>
 <area shape="poly" title=" " alt="" coords="179,114,116,154,113,150,177,109"/>
 <area shape="poly" title=" " alt="" coords="241,108,313,149,311,154,238,113"/>
 </map>
@@ -174,7 +193,7 @@ Data Structures</h2></td></tr>
 <tr class="memitem:MapInfo" id="r_MapInfo"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMapInfo.html">MapInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informations globales sur le niveau.  <a href="structMapInfo.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Enemy" id="r_Enemy"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEnemy.html">Enemy</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informations sur les ennemis du niveau.  <a href="structEnemy.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informations sur les vagues d'ennemis.  <a href="structEnemy.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Hazard" id="r_Hazard"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHazard.html">Hazard</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informations sur les pièges du niveau.  <a href="structHazard.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Trigger" id="r_Trigger"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrigger.html">Trigger</a></td></tr>
@@ -191,15 +210,19 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:af64c0642d91865991cbcf495da581433" id="r_af64c0642d91865991cbcf495da581433"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af64c0642d91865991cbcf495da581433">parseLevelData</a> (<a class="el" href="structcJSON.html">cJSON</a> *json, <a class="el" href="structLevel.html">Level</a> *lvl)</td></tr>
+<tr class="memdesc:af64c0642d91865991cbcf495da581433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Organise les données chargé a partir du JSON dans une structure niveau.  <br /></td></tr>
 <tr class="memitem:a3eb3374e1a3573ccef109a337db05e06" id="r_a3eb3374e1a3573ccef109a337db05e06"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3eb3374e1a3573ccef109a337db05e06">readJsonLvl</a> (const char *fileName)</td></tr>
 <tr class="memdesc:a3eb3374e1a3573ccef109a337db05e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge les données d'un niveau depuis un fichier JSON.  <br /></td></tr>
 <tr class="memitem:aabf5f82cc95d911a3f58b33c25b88970" id="r_aabf5f82cc95d911a3f58b33c25b88970"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabf5f82cc95d911a3f58b33c25b88970">LevelInit</a> (void)</td></tr>
 <tr class="memdesc:aabf5f82cc95d911a3f58b33c25b88970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise le niveau après la conversion JSON.  <br /></td></tr>
+<tr class="memitem:a8fe1fd018badf8bd650beacae77c5991" id="r_a8fe1fd018badf8bd650beacae77c5991"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fe1fd018badf8bd650beacae77c5991">BuildTilesFromPlatforms</a> (void)</td></tr>
+<tr class="memdesc:a8fe1fd018badf8bd650beacae77c5991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traduit les plateformes en tiles et les dessine.  <br /></td></tr>
 <tr class="memitem:a78e4d5c3e7ecd49b505d47b4940bf367" id="r_a78e4d5c3e7ecd49b505d47b4940bf367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78e4d5c3e7ecd49b505d47b4940bf367">LevelDraw</a> (void)</td></tr>
 <tr class="memdesc:a78e4d5c3e7ecd49b505d47b4940bf367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine les platformes et le décors du niveau.  <br /></td></tr>
 <tr class="memitem:a7fa6d517303d1b1b17e59dcb5d0b0edb" id="r_a7fa6d517303d1b1b17e59dcb5d0b0edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fa6d517303d1b1b17e59dcb5d0b0edb">NextLvlRequest</a> (const char *targetId)</td></tr>
-<tr class="memitem:ab4a3635d7e6eb93faef4184e6201ee75" id="r_ab4a3635d7e6eb93faef4184e6201ee75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4a3635d7e6eb93faef4184e6201ee75">NextLvlUpdate</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="structenemyPool__t.html">enemyPool_t</a> *<a class="el" href="EnemyPool_8h.html#ab8b70d96e97532942f19fdcb03aa4b1a">enemyPool</a>, <a class="el" href="structbulletPool__t.html">bulletPool_t</a> *<a class="el" href="BulletPool_8h.html#ab235d8c88e2a6e8d419e9492a0188497">bulletPool</a>)</td></tr>
-<tr class="memdesc:ab4a3635d7e6eb93faef4184e6201ee75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réalise le passage au niveau suivant.  <br /></td></tr>
+<tr class="memitem:abd614b8da9a30cd94e7bfef693654224" id="r_abd614b8da9a30cd94e7bfef693654224"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd614b8da9a30cd94e7bfef693654224">NextLvlUpdate</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="structEnemySpawner.html">EnemySpawner</a> *<a class="el" href="EnemySpawner_8h.html#afa1e3a6688b8a86e113b40c4902d54b2">enemySpawner</a>)</td></tr>
+<tr class="memdesc:abd614b8da9a30cd94e7bfef693654224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réalise le passage au niveau suivant.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -274,6 +297,32 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a8fe1fd018badf8bd650beacae77c5991" name="a8fe1fd018badf8bd650beacae77c5991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fe1fd018badf8bd650beacae77c5991">&#9670;&#160;</a></span>BuildTilesFromPlatforms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BuildTilesFromPlatforms </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Traduit les plateformes en tiles et les dessine. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Plateforme à dessiner </td></tr>
+    <tr><td class="paramname">tileset</td><td>Texture contenant les tiles à utiliser pour dessiner la plateforme </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a78e4d5c3e7ecd49b505d47b4940bf367" name="a78e4d5c3e7ecd49b505d47b4940bf367"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78e4d5c3e7ecd49b505d47b4940bf367">&#9670;&#160;</a></span>LevelDraw()</h2>
 
@@ -335,8 +384,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab4a3635d7e6eb93faef4184e6201ee75" name="ab4a3635d7e6eb93faef4184e6201ee75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4a3635d7e6eb93faef4184e6201ee75">&#9670;&#160;</a></span>NextLvlUpdate()</h2>
+<a id="abd614b8da9a30cd94e7bfef693654224" name="abd614b8da9a30cd94e7bfef693654224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd614b8da9a30cd94e7bfef693654224">&#9670;&#160;</a></span>NextLvlUpdate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -349,17 +398,42 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemyPool</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structbulletPool__t.html">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bulletPool</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structEnemySpawner.html">EnemySpawner</a> *</td>          <td class="paramname"><span class="paramname"><em>enemySpawner</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Réalise le passage au niveau suivant. </p>
+
+</div>
+</div>
+<a id="af64c0642d91865991cbcf495da581433" name="af64c0642d91865991cbcf495da581433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af64c0642d91865991cbcf495da581433">&#9670;&#160;</a></span>parseLevelData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void parseLevelData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcJSON.html">cJSON</a> *</td>          <td class="paramname"><span class="paramname"><em>json</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structLevel.html">Level</a> *</td>          <td class="paramname"><span class="paramname"><em>lvl</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Organise les données chargé a partir du JSON dans une structure niveau. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">json</td><td>Qui contient les données extrait par la fonction readJsonLvl </td></tr>
+    <tr><td class="paramname">lvl</td><td>Qui correspond au niveau dans lequel les informations vont être organisé </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

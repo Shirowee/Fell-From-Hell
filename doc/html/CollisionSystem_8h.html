@@ -131,13 +131,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="CollisionSystem_8h__dep__incl.png" border="0" usemap="#alib_2systems_2CollisionSystem_8hdep" loading="lazy" alt=""/></div>
 <map name="alib_2systems_2CollisionSystem_8hdep" id="alib_2systems_2CollisionSystem_8hdep">
-<area shape="rect" title=" " alt="" coords="213,5,431,31"/>
+<area shape="rect" title=" " alt="" coords="329,5,547,31"/>
 <area shape="rect" href="GameManager_8c.html" title=" " alt="" coords="5,79,188,104"/>
-<area shape="poly" title=" " alt="" coords="274,37,134,81,132,76,272,32"/>
-<area shape="rect" href="CollisionSystem_8c.html" title="Gestion des collisions entre ennemis et projectiles." alt="" coords="212,79,432,104"/>
-<area shape="poly" title=" " alt="" coords="325,44,325,79,319,79,319,44"/>
-<area shape="rect" href="LifeManager_8c.html" title=" " alt="" coords="457,79,651,104"/>
-<area shape="poly" title=" " alt="" coords="373,32,517,76,516,81,371,37"/>
+<area shape="poly" title=" " alt="" coords="371,36,152,81,151,76,369,31"/>
+<area shape="rect" href="PlayerMovement_8c.html" title=" " alt="" coords="212,79,424,104"/>
+<area shape="poly" title=" " alt="" coords="408,40,339,81,336,76,405,35"/>
+<area shape="rect" href="CollisionSystem_8c.html" title="Gestion des collisions entre ennemis et projectiles." alt="" coords="448,79,668,104"/>
+<area shape="poly" title=" " alt="" coords="471,35,540,76,537,81,468,40"/>
+<area shape="rect" href="LifeManager_8c.html" title=" " alt="" coords="693,79,887,104"/>
+<area shape="poly" title=" " alt="" coords="508,31,734,76,732,81,507,36"/>
 </map>
 </div>
 </div>
@@ -145,15 +147,58 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3c23eee373911780724384bf8e15c347" id="r_a3c23eee373911780724384bf8e15c347"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c23eee373911780724384bf8e15c347">CheckEnemyBulletCollision</a> (<a class="el" href="structenemyPool__t.html">enemyPool_t</a> *enemies, <a class="el" href="structbulletPool__t.html">bulletPool_t</a> *bullets)</td></tr>
-<tr class="memdesc:a3c23eee373911780724384bf8e15c347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détecte les collisions entre ennemis et projectiles.  <br /></td></tr>
-<tr class="memitem:a327130d83d0bdf2c3fe16e801d2b5b67" id="r_a327130d83d0bdf2c3fe16e801d2b5b67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a327130d83d0bdf2c3fe16e801d2b5b67">CheckPlayerEnemyCollision</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="structenemyPool__t.html">enemyPool_t</a> *enemies, int *total_dmg)</td></tr>
+<tr class="memitem:a17a10d407f5e4bc35829fb5a171b05a8" id="r_a17a10d407f5e4bc35829fb5a171b05a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17a10d407f5e4bc35829fb5a171b05a8">CheckEnemyBulletCollision</a> (<a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *enemies, <a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *bullets, <a class="el" href="structweapon__t.html">weapon_t</a> *weapon)</td></tr>
+<tr class="memdesc:a17a10d407f5e4bc35829fb5a171b05a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détecte les collisions entre ennemis et projectiles.  <br /></td></tr>
+<tr class="memitem:a327130d83d0bdf2c3fe16e801d2b5b67" id="r_a327130d83d0bdf2c3fe16e801d2b5b67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a327130d83d0bdf2c3fe16e801d2b5b67">CheckPlayerEnemyCollision</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *enemies, int *total_dmg)</td></tr>
 <tr class="memdesc:a327130d83d0bdf2c3fe16e801d2b5b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détecte collisions entre joueur et ennemies et calcule le nombre de dégâts total à infliger.  <br /></td></tr>
-<tr class="memitem:ad028a52a143ec6844b9ed1253c337681" id="r_ad028a52a143ec6844b9ed1253c337681"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad028a52a143ec6844b9ed1253c337681">CheckPlayerBulletCollision</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="structbulletPool__t.html">bulletPool_t</a> *bullets, int *total_dmg)</td></tr>
+<tr class="memitem:ad028a52a143ec6844b9ed1253c337681" id="r_ad028a52a143ec6844b9ed1253c337681"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad028a52a143ec6844b9ed1253c337681">CheckPlayerBulletCollision</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *bullets, int *total_dmg)</td></tr>
+<tr class="memdesc:ad028a52a143ec6844b9ed1253c337681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détecte collisions entre joueur et projectiles et calcule le nombre de dégâts total à infliger.  <br /></td></tr>
+<tr class="memitem:ab480aab05266800ff0c4661d272a31e0" id="r_ab480aab05266800ff0c4661d272a31e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab480aab05266800ff0c4661d272a31e0">CheckBulletsPlatformsCollision</a> (<a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *bullets, <a class="el" href="structPlatform.html">Platform</a> platforms[], const int nbPlatforms)</td></tr>
+<tr class="memdesc:ab480aab05266800ff0c4661d272a31e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détecte collisions entre les projectiles et les platformes.  <br /></td></tr>
+<tr class="memitem:ace0628a76b5e131dcca111a4d8987f6c" id="r_ace0628a76b5e131dcca111a4d8987f6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace0628a76b5e131dcca111a4d8987f6c">PlayerPositionFix</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, const Vector2 oldPosition, <a class="el" href="structPlatform.html">Platform</a> platform[], const int nbPlatforms)</td></tr>
+<tr class="memdesc:ace0628a76b5e131dcca111a4d8987f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Corrige la position du joueur en cas de collision avec les platformes.  <br /></td></tr>
+<tr class="memitem:a2021d5ba7e16b464f6833791fd66f2a5" id="r_a2021d5ba7e16b464f6833791fd66f2a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2021d5ba7e16b464f6833791fd66f2a5">EnemiesPositionFix</a> (<a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *enemies, <a class="el" href="structPlatform.html">Platform</a> platform[], const int nbPlatforms)</td></tr>
+<tr class="memdesc:a2021d5ba7e16b464f6833791fd66f2a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Corrige la position des ennemis en cas de collision avec les platformes.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a3c23eee373911780724384bf8e15c347" name="a3c23eee373911780724384bf8e15c347"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c23eee373911780724384bf8e15c347">&#9670;&#160;</a></span>CheckEnemyBulletCollision()</h2>
+<a id="ab480aab05266800ff0c4661d272a31e0" name="ab480aab05266800ff0c4661d272a31e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab480aab05266800ff0c4661d272a31e0">&#9670;&#160;</a></span>CheckBulletsPlatformsCollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CheckBulletsPlatformsCollision </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bullets</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPlatform.html">Platform</a></td>          <td class="paramname"><span class="paramname"><em>platforms</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>nbPlatforms</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détecte collisions entre les projectiles et les platformes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bullets</td><td>Pool de projectiles </td></tr>
+    <tr><td class="paramname">platforms</td><td>Tableau de platformes </td></tr>
+    <tr><td class="paramname">nbPlatforms</td><td>Nombre de platformes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a17a10d407f5e4bc35829fb5a171b05a8" name="a17a10d407f5e4bc35829fb5a171b05a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a10d407f5e4bc35829fb5a171b05a8">&#9670;&#160;</a></span>CheckEnemyBulletCollision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,12 +206,17 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void CheckEnemyBulletCollision </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemies</em></span>, </td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemies</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structbulletPool__t.html">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bullets</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bullets</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structweapon__t.html">weapon_t</a> *</td>          <td class="paramname"><span class="paramname"><em>weapon</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -197,7 +247,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structbulletPool__t.html">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bullets</em></span>, </td>
+          <td class="paramtype"><a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bullets</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -206,6 +256,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Détecte collisions entre joueur et projectiles et calcule le nombre de dégâts total à infliger. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">player</td><td>Pointeur vers le joueur </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">bullets</td><td>Pool de projectiles </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dmg</td><td>Dégâts à infliger </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -223,7 +283,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemies</em></span>, </td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemies</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -234,15 +294,91 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Détecte collisions entre joueur et ennemies et calcule le nombre de dégâts total à infliger. </p>
-<p>Détecte collisions entre joueur et bullets et calcule le nombre de dégâts total à infliger.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">player</td><td>Pointeur sur <a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090" title="Structure opaque représentant le joueur.">Player</a> </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">enemies</td><td>Tableau contenant les ennemies </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">dmg</td><td>Dégâts à infliger</td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">player</td><td>Pointeur sur <a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090" title="Structure opaque représentant le joueur.">Player</a> </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">bullets</td><td>Tableau contenant les bullets </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">player</td><td>Pointeur vers le joueur </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">enemies</td><td>Pool d'ennemis </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">dmg</td><td>Dégâts à infliger </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2021d5ba7e16b464f6833791fd66f2a5" name="a2021d5ba7e16b464f6833791fd66f2a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2021d5ba7e16b464f6833791fd66f2a5">&#9670;&#160;</a></span>EnemiesPositionFix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnemiesPositionFix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemies</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPlatform.html">Platform</a></td>          <td class="paramname"><span class="paramname"><em>platform</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>nbPlatforms</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Corrige la position des ennemis en cas de collision avec les platformes. </p>
+<p>Utilise l'algorithme AABB Collision Resolution</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enemies</td><td>Pool d'ennemis </td></tr>
+    <tr><td class="paramname">platform</td><td>Tableau de plateformes </td></tr>
+    <tr><td class="paramname">nbPlatform</td><td>Nombre de platformes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ace0628a76b5e131dcca111a4d8987f6c" name="ace0628a76b5e131dcca111a4d8987f6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace0628a76b5e131dcca111a4d8987f6c">&#9670;&#160;</a></span>PlayerPositionFix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerPositionFix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *</td>          <td class="paramname"><span class="paramname"><em>player</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector2</td>          <td class="paramname"><span class="paramname"><em>oldPosition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPlatform.html">Platform</a></td>          <td class="paramname"><span class="paramname"><em>platform</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>nbPlatforms</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Corrige la position du joueur en cas de collision avec les platformes. </p>
+<p>Utilise l'algorithme AABB Collision Resolution</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Pointeur vers le joueur </td></tr>
+    <tr><td class="paramname">oldPosition</td><td>Ancienne coordonnées du joueur </td></tr>
+    <tr><td class="paramname">platform</td><td>Tableau de platformes </td></tr>
+    <tr><td class="paramname">nbPlatform</td><td>Nombre de platformes </td></tr>
   </table>
   </dd>
 </dl>

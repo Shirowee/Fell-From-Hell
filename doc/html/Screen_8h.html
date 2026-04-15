@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fell From Hell: lib/core/Screen.h File Reference</title>
+<title>Fell From Hell: lib/menu/Screen.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,14 +70,16 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_a2d5e495f4b604d04f57d90095a59dd6.html">core</a></li>  </ul>
+<li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_272b57e86a33352289e8933a3b869038.html">menu</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">Screen.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -88,9 +90,9 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Screen.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="Screen_8h__incl.png" border="0" usemap="#alib_2core_2Screen_8h" loading="lazy" alt=""/></div>
-<map name="alib_2core_2Screen_8h" id="alib_2core_2Screen_8h">
-<area shape="rect" title="Définition des différents écrans du jeu (menu, jeu, paramètres, sortie)." alt="" coords="176,5,307,31"/>
+<div class="center"><img src="Screen_8h__incl.png" border="0" usemap="#alib_2menu_2Screen_8h" loading="lazy" alt=""/></div>
+<map name="alib_2menu_2Screen_8h" id="alib_2menu_2Screen_8h">
+<area shape="rect" title="Définition des différents écrans du jeu (menu, jeu, paramètres, sortie)." alt="" coords="172,5,311,31"/>
 <area shape="rect" href="Player_8h.html" title="Définit la structure du joueur et son corps, ainsi que les fonctions associées." alt="" coords="176,79,307,104"/>
 <area shape="poly" title=" " alt="" coords="244,31,244,65,239,65,239,31"/>
 <area shape="rect" href="PlayerController_8h.html" title="Gère l&#39;initialisation, la mise à jour et le dessin du joueur." alt="" coords="5,152,144,177"/>
@@ -123,54 +125,86 @@ Include dependency graph for Screen.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="Screen_8h__dep__incl.png" border="0" usemap="#alib_2core_2Screen_8hdep" loading="lazy" alt=""/></div>
-<map name="alib_2core_2Screen_8hdep" id="alib_2core_2Screen_8hdep">
-<area shape="rect" title="Définition des différents écrans du jeu (menu, jeu, paramètres, sortie)." alt="" coords="381,5,511,31"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="5,79,95,104"/>
-<area shape="poly" title=" " alt="" coords="367,35,106,81,96,83,95,78,106,76,366,30"/>
-<area shape="rect" href="EndLevel_8c.html" title=" " alt="" coords="119,79,275,104"/>
-<area shape="poly" title=" " alt="" coords="393,37,238,81,236,76,392,32"/>
-<area shape="rect" href="Game_8c.html" title=" " alt="" coords="299,79,435,104"/>
-<area shape="poly" title=" " alt="" coords="425,42,382,80,378,76,421,38"/>
-<area shape="rect" href="Menu_8c.html" title=" " alt="" coords="459,79,593,104"/>
-<area shape="poly" title=" " alt="" coords="471,38,515,76,511,80,467,42"/>
-<area shape="rect" href="Pause_8c.html" title=" " alt="" coords="617,79,752,104"/>
-<area shape="poly" title=" " alt="" coords="498,32,647,76,645,81,497,37"/>
-<area shape="rect" href="Settings_8c.html" title=" " alt="" coords="776,79,927,104"/>
-<area shape="poly" title=" " alt="" coords="525,30,786,76,786,81,524,36"/>
+<div class="center"><img src="Screen_8h__dep__incl.png" border="0" usemap="#alib_2menu_2Screen_8hdep" loading="lazy" alt=""/></div>
+<map name="alib_2menu_2Screen_8hdep" id="alib_2menu_2Screen_8hdep">
+<area shape="rect" title="Définition des différents écrans du jeu (menu, jeu, paramètres, sortie)." alt="" coords="931,5,1070,31"/>
+<area shape="rect" href="GameManager_8c.html" title=" " alt="" coords="5,79,188,104"/>
+<area shape="poly" title=" " alt="" coords="918,27,602,49,200,81,189,82,188,77,199,76,602,43,917,22"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="212,79,301,104"/>
+<area shape="poly" title=" " alt="" coords="918,26,649,45,482,61,314,81,302,83,301,78,314,76,481,55,648,40,917,21"/>
+<area shape="rect" href="Death_8c.html" title=" " alt="" coords="326,79,462,104"/>
+<area shape="poly" title=" " alt="" coords="918,31,474,81,462,83,462,78,474,76,917,25"/>
+<area shape="rect" href="EndLevel_8c.html" title=" " alt="" coords="487,79,643,104"/>
+<area shape="poly" title=" " alt="" coords="918,35,635,81,634,76,917,30"/>
+<area shape="rect" href="Game_8c.html" title=" " alt="" coords="667,79,803,104"/>
+<area shape="poly" title=" " alt="" coords="945,37,779,81,778,76,944,32"/>
+<area shape="rect" href="Keybinding_8c.html" title=" " alt="" coords="828,79,997,104"/>
+<area shape="poly" title=" " alt="" coords="978,41,929,81,925,76,974,37"/>
+<area shape="rect" href="Menu_8c.html" title=" " alt="" coords="1022,79,1155,104"/>
+<area shape="poly" title=" " alt="" coords="1027,37,1076,76,1073,81,1024,41"/>
+<area shape="rect" href="Pause_8c.html" title=" " alt="" coords="1180,79,1315,104"/>
+<area shape="poly" title=" " alt="" coords="1054,32,1208,76,1207,81,1053,37"/>
+<area shape="rect" href="Settings_8c.html" title=" " alt="" coords="1339,79,1489,104"/>
+<area shape="poly" title=" " alt="" coords="1081,30,1348,76,1347,81,1080,36"/>
+<area shape="rect" href="Sound_8c.html" title=" " alt="" coords="1513,79,1651,104"/>
+<area shape="poly" title=" " alt="" coords="1084,26,1502,76,1513,77,1513,83,1502,81,1083,31"/>
+<area shape="rect" href="PlayerMovement_8c.html" title=" " alt="" coords="1675,79,1887,104"/>
+<area shape="poly" title=" " alt="" coords="1084,24,1664,76,1675,77,1674,82,1663,81,1084,29"/>
+<area shape="rect" href="PlayerWeapon_8c.html" title=" " alt="" coords="1911,79,2106,104"/>
+<area shape="poly" title=" " alt="" coords="1084,21,1438,42,1900,76,1911,77,1911,82,1899,81,1438,48,1083,26"/>
 </map>
 </div>
 </div>
 <p><a href="Screen_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:KeyBindings" id="r_KeyBindings"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structKeyBindings.html">KeyBindings</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a63bc4bb165086ba2f1e7d992a1a73cb6" id="r_a63bc4bb165086ba2f1e7d992a1a73cb6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a> { <br />
 &#160;&#160;<a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6aa384e8d7c0f417df6b5b64f547952d52">SCREEN_MENU</a>
 , <a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6a42d041abe0e99be298737a6cdc644e69">SCREEN_GAME</a>
 , <a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6a6fcb85d9f038bd440753c164469342dc">SCREEN_SETTINGS</a>
-, <a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6ad76d664a48ac5359f27749a6c092c5d7">SCREEN_PAUSE</a>
+, <a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6a25f1f33162f3e76d6875fc3ee1b68bb4">SCREEN_KEYBINDING</a>
 , <br />
-&#160;&#160;<a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6a44e9fc54683eebcf21f4b1607417cab3">SCREEN_END_LEVEL</a>
-, <a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6aec6d65abfdf1b234c65e829298e3676c">SCREEN_EXIT</a>
+&#160;&#160;<a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6a61abb99e871b7c0dedc9f2a19d0897ad">SCREEN_SOUND</a>
+, <a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6ad76d664a48ac5359f27749a6c092c5d7">SCREEN_PAUSE</a>
+, <a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6a44e9fc54683eebcf21f4b1607417cab3">SCREEN_END_LEVEL</a>
+, <a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6ad431b1b2e627f6621b09081978efe116">SCREEN_END_GAME</a>
+, <br />
+&#160;&#160;<a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6aec6d65abfdf1b234c65e829298e3676c">SCREEN_EXIT</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a63bc4bb165086ba2f1e7d992a1a73cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente les différents états/écrans du jeu.  <a href="#a63bc4bb165086ba2f1e7d992a1a73cb6">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a29d54772dcbbb55d658056dc967fa186" id="r_a29d54772dcbbb55d658056dc967fa186"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29d54772dcbbb55d658056dc967fa186">MenuUpdate</a> (void)</td></tr>
-<tr class="memdesc:a29d54772dcbbb55d658056dc967fa186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le menu principal.  <br /></td></tr>
+<tr class="memitem:afb04eeff03e48756ab6bca468642dc7a" id="r_afb04eeff03e48756ab6bca468642dc7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb04eeff03e48756ab6bca468642dc7a">MenuUpdate</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player)</td></tr>
+<tr class="memdesc:afb04eeff03e48756ab6bca468642dc7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le menu principal.  <br /></td></tr>
 <tr class="memitem:a627bc5a973888196b8a7a68ba6d46377" id="r_a627bc5a973888196b8a7a68ba6d46377"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a627bc5a973888196b8a7a68ba6d46377">Game</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player)</td></tr>
 <tr class="memdesc:a627bc5a973888196b8a7a68ba6d46377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance et met à jour la logique du jeu.  <br /></td></tr>
 <tr class="memitem:a49267ba280d6e1db51d5839b1a22d844" id="r_a49267ba280d6e1db51d5839b1a22d844"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49267ba280d6e1db51d5839b1a22d844">SettingsUpdate</a> (<a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a> previousScreen)</td></tr>
 <tr class="memdesc:a49267ba280d6e1db51d5839b1a22d844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'écran des paramètres.  <br /></td></tr>
 <tr class="memitem:ab922447b433a2222cf8cd3ba7cd1b67b" id="r_ab922447b433a2222cf8cd3ba7cd1b67b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab922447b433a2222cf8cd3ba7cd1b67b">PauseUpdate</a> (void)</td></tr>
 <tr class="memdesc:ab922447b433a2222cf8cd3ba7cd1b67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'écran de pause.  <br /></td></tr>
+<tr class="memitem:abbeb39bf6bf37db659fbf546ebf46fda" id="r_abbeb39bf6bf37db659fbf546ebf46fda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbeb39bf6bf37db659fbf546ebf46fda">DeathScreen</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player)</td></tr>
+<tr class="memdesc:abbeb39bf6bf37db659fbf546ebf46fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'écran de mort.  <br /></td></tr>
 <tr class="memitem:a525b442075900fe31937ecb0442eeddd" id="r_a525b442075900fe31937ecb0442eeddd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a525b442075900fe31937ecb0442eeddd">EndLevelUpdate</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player)</td></tr>
 <tr class="memdesc:a525b442075900fe31937ecb0442eeddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'écran de fin de niveau.  <br /></td></tr>
+<tr class="memitem:a3cdd214fe525a58e457eecfe419e9225" id="r_a3cdd214fe525a58e457eecfe419e9225"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cdd214fe525a58e457eecfe419e9225">SoundUpdate</a> (void)</td></tr>
+<tr class="memitem:adf35fd0dc2a52f5b92f71158ccd285ac" id="r_adf35fd0dc2a52f5b92f71158ccd285ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf35fd0dc2a52f5b92f71158ccd285ac">KeybindingUpdate</a> (void)</td></tr>
+<tr class="memitem:a0234031510fe84f66ce3ec3c1ee087c5" id="r_a0234031510fe84f66ce3ec3c1ee087c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0234031510fe84f66ce3ec3c1ee087c5">SaveKeys</a> ()</td></tr>
+<tr class="memitem:abcfe8c7cb46c4bb57a72602ff9cb56ad" id="r_abcfe8c7cb46c4bb57a72602ff9cb56ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcfe8c7cb46c4bb57a72602ff9cb56ad">LoadKeys</a> ()</td></tr>
 <tr class="memitem:a34b292658ed901a2a206b36968636322" id="r_a34b292658ed901a2a206b36968636322"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34b292658ed901a2a206b36968636322">NewLevel</a> (int newFlag)</td></tr>
 <tr class="memdesc:a34b292658ed901a2a206b36968636322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère l'état de déclenchement d'un nouveau niveau.  <br /></td></tr>
+<tr class="memitem:a53838e6c486dd10dfbc61c76dc748295" id="r_a53838e6c486dd10dfbc61c76dc748295"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53838e6c486dd10dfbc61c76dc748295">endLvl</a> ()</td></tr>
+<tr class="memdesc:a53838e6c486dd10dfbc61c76dc748295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie true si le niveau est fini false sinon.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a463be7aa97f360545201f64931677e6c" id="r_a463be7aa97f360545201f64931677e6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structKeyBindings.html">KeyBindings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a463be7aa97f360545201f64931677e6c">keys</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Définition des différents écrans du jeu (menu, jeu, paramètres, sortie). </p>
@@ -196,9 +230,15 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a63bc4bb165086ba2f1e7d992a1a73cb6a6fcb85d9f038bd440753c164469342dc" name="a63bc4bb165086ba2f1e7d992a1a73cb6a6fcb85d9f038bd440753c164469342dc"></a>SCREEN_SETTINGS&#160;</td><td class="fielddoc"><p>Écran des paramètres </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a63bc4bb165086ba2f1e7d992a1a73cb6a25f1f33162f3e76d6875fc3ee1b68bb4" name="a63bc4bb165086ba2f1e7d992a1a73cb6a25f1f33162f3e76d6875fc3ee1b68bb4"></a>SCREEN_KEYBINDING&#160;</td><td class="fielddoc"><p>Écran pour le changement des touches </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a63bc4bb165086ba2f1e7d992a1a73cb6a61abb99e871b7c0dedc9f2a19d0897ad" name="a63bc4bb165086ba2f1e7d992a1a73cb6a61abb99e871b7c0dedc9f2a19d0897ad"></a>SCREEN_SOUND&#160;</td><td class="fielddoc"><p>Écran pour le changement du son </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a63bc4bb165086ba2f1e7d992a1a73cb6ad76d664a48ac5359f27749a6c092c5d7" name="a63bc4bb165086ba2f1e7d992a1a73cb6ad76d664a48ac5359f27749a6c092c5d7"></a>SCREEN_PAUSE&#160;</td><td class="fielddoc"><p>Écran de pause </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a63bc4bb165086ba2f1e7d992a1a73cb6a44e9fc54683eebcf21f4b1607417cab3" name="a63bc4bb165086ba2f1e7d992a1a73cb6a44e9fc54683eebcf21f4b1607417cab3"></a>SCREEN_END_LEVEL&#160;</td><td class="fielddoc"><p>Écran de fin d'un niveau </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a63bc4bb165086ba2f1e7d992a1a73cb6ad431b1b2e627f6621b09081978efe116" name="a63bc4bb165086ba2f1e7d992a1a73cb6ad431b1b2e627f6621b09081978efe116"></a>SCREEN_END_GAME&#160;</td><td class="fielddoc"><p>Écran de fin de jeu </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a63bc4bb165086ba2f1e7d992a1a73cb6aec6d65abfdf1b234c65e829298e3676c" name="a63bc4bb165086ba2f1e7d992a1a73cb6aec6d65abfdf1b234c65e829298e3676c"></a>SCREEN_EXIT&#160;</td><td class="fielddoc"><p>Quitte le jeu </p>
 </td></tr>
@@ -207,6 +247,25 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="abbeb39bf6bf37db659fbf546ebf46fda" name="abbeb39bf6bf37db659fbf546ebf46fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbeb39bf6bf37db659fbf546ebf46fda">&#9670;&#160;</a></span>DeathScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a> DeathScreen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'écran de mort. </p>
+
+</div>
+</div>
 <a id="a525b442075900fe31937ecb0442eeddd" name="a525b442075900fe31937ecb0442eeddd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a525b442075900fe31937ecb0442eeddd">&#9670;&#160;</a></span>EndLevelUpdate()</h2>
 
@@ -225,6 +284,25 @@ Functions</h2></td></tr>
 <p>Met à jour l'écran de fin de niveau. </p>
 <dl class="section return"><dt>Returns</dt><dd>Le prochain écran à afficher (<a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6" title="Représente les différents états/écrans du jeu.">Screen_t</a>)</dd></dl>
 <p>Affiche les résultats du niveau et permet au joueur d'obtenir des améliorations de passer au niveau suivant ou de quitter le jeu. </p>
+
+</div>
+</div>
+<a id="a53838e6c486dd10dfbc61c76dc748295" name="a53838e6c486dd10dfbc61c76dc748295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53838e6c486dd10dfbc61c76dc748295">&#9670;&#160;</a></span>endLvl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool endLvl </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie true si le niveau est fini false sinon. </p>
 
 </div>
 </div>
@@ -249,8 +327,42 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a29d54772dcbbb55d658056dc967fa186" name="a29d54772dcbbb55d658056dc967fa186"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29d54772dcbbb55d658056dc967fa186">&#9670;&#160;</a></span>MenuUpdate()</h2>
+<a id="adf35fd0dc2a52f5b92f71158ccd285ac" name="adf35fd0dc2a52f5b92f71158ccd285ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf35fd0dc2a52f5b92f71158ccd285ac">&#9670;&#160;</a></span>KeybindingUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a> KeybindingUpdate </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcfe8c7cb46c4bb57a72602ff9cb56ad" name="abcfe8c7cb46c4bb57a72602ff9cb56ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcfe8c7cb46c4bb57a72602ff9cb56ad">&#9670;&#160;</a></span>LoadKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoadKeys </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afb04eeff03e48756ab6bca468642dc7a" name="afb04eeff03e48756ab6bca468642dc7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb04eeff03e48756ab6bca468642dc7a">&#9670;&#160;</a></span>MenuUpdate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +370,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a> MenuUpdate </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -319,6 +431,23 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0234031510fe84f66ce3ec3c1ee087c5" name="a0234031510fe84f66ce3ec3c1ee087c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0234031510fe84f66ce3ec3c1ee087c5">&#9670;&#160;</a></span>SaveKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SaveKeys </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a49267ba280d6e1db51d5839b1a22d844" name="a49267ba280d6e1db51d5839b1a22d844"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a49267ba280d6e1db51d5839b1a22d844">&#9670;&#160;</a></span>SettingsUpdate()</h2>
 
@@ -337,6 +466,46 @@ Functions</h2></td></tr>
 <p>Met à jour l'écran des paramètres. </p>
 <dl class="section return"><dt>Returns</dt><dd>Le prochain écran à afficher (<a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6" title="Représente les différents états/écrans du jeu.">Screen_t</a>)</dd></dl>
 <p>Permet de modifier les options du jeu (audio, contrôles, etc.). </p>
+
+</div>
+</div>
+<a id="a3cdd214fe525a58e457eecfe419e9225" name="a3cdd214fe525a58e457eecfe419e9225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cdd214fe525a58e457eecfe419e9225">&#9670;&#160;</a></span>SoundUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a63bc4bb165086ba2f1e7d992a1a73cb6">Screen_t</a> SoundUpdate </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="a463be7aa97f360545201f64931677e6c" name="a463be7aa97f360545201f64931677e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463be7aa97f360545201f64931677e6c">&#9670;&#160;</a></span>keys</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structKeyBindings.html">KeyBindings</a> keys</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

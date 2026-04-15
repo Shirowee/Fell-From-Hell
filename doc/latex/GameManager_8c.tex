@@ -8,8 +8,11 @@
 {\ttfamily \#include "{}../../lib/systems/\+Enemy\+Spawner.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/systems/\+Collision\+System.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/systems/\+Life\+Manager.\+h"{}}\newline
-{\ttfamily \#include "{}../../lib/core/\+Ressources\+Manager.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/systems/\+Trigger\+System.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Ressources\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Camera.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/menu/\+Screen.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
 Include dependency graph for Game\+Manager.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -22,6 +25,8 @@ Include dependency graph for Game\+Manager.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{GameManager_8c_ac855de57376273ccd48ec3cf3b583d84}{Game\+Init}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\item 
+void \mbox{\hyperlink{GameManager_8c_aed44cef490d6de65012479c3f9c27e52}{Game\+Reset}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
 \item 
 void \mbox{\hyperlink{GameManager_8c_aa0df29916896420bc7740df4549402f8}{Game\+Update}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, double \texorpdfstring{$\ast$}{*}time\+Spent, double \texorpdfstring{$\ast$}{*}start\+Reload)
 \item 
@@ -45,6 +50,12 @@ void Game\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6
 \doxysubsubsection{\texorpdfstring{GameInit()}{GameInit()}}
 {\footnotesize\ttfamily \label{GameManager_8c_ac855de57376273ccd48ec3cf3b583d84} 
 void Game\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+\Hypertarget{GameManager_8c_aed44cef490d6de65012479c3f9c27e52}\index{GameManager.c@{GameManager.c}!GameReset@{GameReset}}
+\index{GameReset@{GameReset}!GameManager.c@{GameManager.c}}
+\doxysubsubsection{\texorpdfstring{GameReset()}{GameReset()}}
+{\footnotesize\ttfamily \label{GameManager_8c_aed44cef490d6de65012479c3f9c27e52} 
+void Game\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
 
 \Hypertarget{GameManager_8c_a3f8da19f0a5b50d5748539f11291d9d6}\index{GameManager.c@{GameManager.c}!GameUnload@{GameUnload}}
 \index{GameUnload@{GameUnload}!GameManager.c@{GameManager.c}}

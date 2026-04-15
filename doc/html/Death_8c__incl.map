@@ -1,0 +1,46 @@
+<map id="src/menu/Death.c" name="src/menu/Death.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="236,5,372,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="285,445,419,485"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,26,163,37,125,47,89,61,57,79,31,101,14,129,8,164,8,312,15,351,34,382,64,407,101,426,143,440,187,450,271,460,271,465,186,455,141,445,99,431,61,411,30,386,10,353,3,313,3,163,9,128,27,98,53,74,86,56,123,42,162,32,235,20"/>
+<area shape="rect" id="Node000003" href="$Screen_8h.html" title="Définition des différents écrans du jeu (menu, jeu, paramètres, sortie)." alt="" coords="328,79,491,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="322,28,382,69,380,73,319,33"/>
+<area shape="rect" id="Node000012" href="$SavingManager_8h.html" title="Sert a enregistrer différentes informations pour pouvoir reprendre une partie Ce fichier créer un fic..." alt="" coords="93,79,304,104"/>
+<area shape="poly" id="edge21_Node000001_Node000012" title=" " alt="" coords="289,33,228,73,226,69,286,28"/>
+<area shape="rect" id="Node000014" href="$GameManager_8h.html" title=" " alt="" coords="515,79,720,104"/>
+<area shape="poly" id="edge26_Node000001_Node000014" title=" " alt="" coords="355,28,554,73,553,78,354,33"/>
+<area shape="rect" id="Node000004" href="$Player_8h.html" title="Définit la structure du joueur et son corps, ainsi que les fonctions associées." alt="" coords="319,152,449,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="408,105,395,140,390,138,403,103"/>
+<area shape="poly" id="edge18_Node000004_Node000002" title=" " alt="" coords="351,180,317,198,302,211,290,227,280,253,277,280,279,308,285,336,307,389,332,432,328,435,302,392,280,338,274,309,271,280,275,251,286,224,298,207,314,194,348,175"/>
+<area shape="rect" id="Node000005" href="$PlayerController_8h.html" title="Gère l&#39;initialisation, la mise à jour et le dessin du joueur." alt="" coords="469,225,608,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="403,175,495,217,493,222,401,180"/>
+<area shape="rect" id="Node000007" href="$PlayerMovement_8h.html" title="Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts, la gravité et les coll..." alt="" coords="299,225,445,251"/>
+<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="378,178,370,212,365,211,373,177"/>
+<area shape="rect" id="Node000008" href="$PlayerWeapon_8h.html" title=" " alt="" coords="633,225,759,251"/>
+<area shape="poly" id="edge12_Node000004_Node000008" title=" " alt="" coords="435,175,633,220,632,225,434,180"/>
+<area shape="rect" id="Node000011" href="$BuffSystem_8h.html" title="Gestion des améliorations (buffs) appliquées au joueur et aux armes." alt="" coords="43,225,223,251"/>
+<area shape="poly" id="edge19_Node000004_Node000011" title=" " alt="" coords="344,180,188,224,186,219,343,175"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="519,228,427,185,429,180,521,223"/>
+<area shape="rect" id="Node000006" href="$Platform_8h.html" title="Définition des structures de base pour des positions et des rectangles." alt="" coords="350,299,495,324"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="521,253,455,294,452,289,519,248"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="420,325,369,434,364,432,415,323"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="365,252,352,273,341,299,336,334,336,370,346,432,341,433,331,370,331,334,336,298,347,271,361,249"/>
+<area shape="poly" id="edge11_Node000007_Node000004" title=" " alt="" coords="378,225,386,191,391,192,383,226"/>
+<area shape="poly" id="edge10_Node000007_Node000006" title=" " alt="" coords="383,249,409,286,404,289,378,253"/>
+<area shape="poly" id="edge13_Node000008_Node000002" title=" " alt="" coords="680,253,394,440,391,435,677,249"/>
+<area shape="rect" id="Node000009" href="$BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="619,299,789,324"/>
+<area shape="poly" id="edge14_Node000008_Node000009" title=" " alt="" coords="700,251,704,285,699,285,695,251"/>
+<area shape="poly" id="edge15_Node000009_Node000002" title=" " alt="" coords="708,324,706,361,700,381,689,399,671,412,645,423,580,440,505,453,433,461,433,455,504,447,579,435,644,418,668,407,685,395,696,379,701,360,703,324"/>
+<area shape="rect" id="Node000010" href="$Projectiles_8h.html" title=" " alt="" coords="571,372,674,397"/>
+<area shape="poly" id="edge16_Node000009_Node000010" title=" " alt="" coords="693,326,648,365,644,361,689,322"/>
+<area shape="poly" id="edge17_Node000010_Node000002" title=" " alt="" coords="584,400,431,444,429,439,583,395"/>
+<area shape="poly" id="edge20_Node000011_Node000002" title=" " alt="" coords="141,250,180,316,210,357,244,395,272,418,302,437,300,441,269,422,241,399,206,360,176,319,137,252"/>
+<area shape="poly" id="edge23_Node000012_Node000004" title=" " alt="" coords="229,102,342,145,340,149,227,107"/>
+<area shape="poly" id="edge25_Node000012_Node000008" title=" " alt="" coords="259,101,355,122,462,149,568,184,656,218,654,223,566,189,461,155,354,127,258,107"/>
+<area shape="poly" id="edge24_Node000012_Node000011" title=" " alt="" coords="192,106,161,153,141,213,136,211,156,151,187,103"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="171,152,253,177"/>
+<area shape="poly" id="edge22_Node000012_Node000013" title=" " alt="" coords="203,104,210,138,205,139,198,105"/>
+<area shape="poly" id="edge27_Node000014_Node000004" title=" " alt="" coords="581,107,435,151,434,145,579,101"/>
+<area shape="poly" id="edge28_Node000014_Node000009" title=" " alt="" coords="642,102,674,121,711,148,747,182,774,224,777,244,769,263,755,279,738,293,735,289,752,275,765,260,772,244,770,226,743,186,708,152,671,125,639,107"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="582,152,653,177"/>
+<area shape="poly" id="edge29_Node000014_Node000015" title=" " alt="" coords="620,104,620,138,615,138,615,104"/>
+</map>

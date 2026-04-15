@@ -1,12 +1,16 @@
 var searchData=
 [
-  ['scale_0',['scale',['../structResolutionConfig.html#a8a3df631df9a7d44e0dbf21e6cbcbdc2',1,'ResolutionConfig']]],
-  ['size_1',['size',['../structenemy__s.html#adfd6c9a138c6fa8c6bf30e9a17cb2e2a',1,'enemy_s::size'],['../structPlayer__s.html#aecaa3b7b01f9e080d8c2527b8c5b9e0f',1,'Player_s::size']]],
-  ['sniper_2',['sniper',['../PlayerWeapon_8h.html#a6a2743a0956741cb885071eb4e909f85',1,'sniper:&#160;PlayerWeapon.c'],['../PlayerWeapon_8c.html#a6a2743a0956741cb885071eb4e909f85',1,'sniper:&#160;PlayerWeapon.c']]],
-  ['solid_3',['solid',['../structPlatform.html#a0d80022fd27e130ba5ab9fb64694e872',1,'Platform']]],
-  ['speed_4',['speed',['../structenemy__s.html#af4e1c4c1c7845b33fc1dc71866e26e6f',1,'enemy_s']]],
-  ['state_5',['state',['../structenemy__s.html#a657dc781cba66458f35aa6bf063ccca5',1,'enemy_s']]],
-  ['statetimer_6',['stateTimer',['../structenemy__s.html#a5eb8b0da1a0344fef39a5f0b8c8d6a91',1,'enemy_s']]],
-  ['stats_7',['stats',['../structPlayer__s.html#a541ff3b84b02fbfabb48136868d7e939',1,'Player_s']]],
-  ['string_8',['string',['../structcJSON.html#aa6b47e9a4b0e0a26f519b1a2b6739983',1,'cJSON::string'],['../cJSON_8h.html#addf925fe055723aa55a381a1ba45bda2',1,'string:&#160;cJSON.h']]]
+  ['parallax_0',['parallax',['../structLevel.html#a8fd95528048dd3d6b34ed9322911c6e7',1,'Level']]],
+  ['pistolet_5feclectique_1',['pistolet_eclectique',['../PlayerWeapon_8h.html#aea8a4e4eb9161d8e4a3a7b5450e3d9a9',1,'pistolet_eclectique:&#160;PlayerWeapon.c'],['../PlayerWeapon_8c.html#aea8a4e4eb9161d8e4a3a7b5450e3d9a9',1,'pistolet_eclectique:&#160;PlayerWeapon.c']]],
+  ['pistolet_5flaser_2',['pistolet_laser',['../PlayerWeapon_8h.html#abdd8b82b357fb575842ce112597760ec',1,'pistolet_laser:&#160;PlayerWeapon.c'],['../PlayerWeapon_8c.html#abdd8b82b357fb575842ce112597760ec',1,'pistolet_laser:&#160;PlayerWeapon.c']]],
+  ['pistolet_5fmitrailleur_3',['pistolet_mitrailleur',['../PlayerWeapon_8h.html#acc93f609dad18eb5ff6191661f27f9c9',1,'pistolet_mitrailleur:&#160;PlayerWeapon.c'],['../PlayerWeapon_8c.html#acc93f609dad18eb5ff6191661f27f9c9',1,'pistolet_mitrailleur:&#160;PlayerWeapon.c']]],
+  ['pistolet_5fmulti_5fdirection_4',['pistolet_multi_direction',['../PlayerWeapon_8h.html#a038dce8dc6a7310c996daa199e4e027c',1,'pistolet_multi_direction:&#160;PlayerWeapon.c'],['../PlayerWeapon_8c.html#a038dce8dc6a7310c996daa199e4e027c',1,'pistolet_multi_direction:&#160;PlayerWeapon.c']]],
+  ['platformcount_5',['platformCount',['../structLevel.html#a167561a87101ca9e9e01be2311b01677',1,'Level']]],
+  ['platforms_6',['platforms',['../structLevel.html#a06875363775e00f8ee1730863f4157fe',1,'Level']]],
+  ['playerbulletpool_7',['playerBulletPool',['../BulletPool_8h.html#ab0e44fdb9d248c3e0e2e6af819e646d8',1,'playerBulletPool:&#160;BulletPool.c'],['../BulletPool_8c.html#ab0e44fdb9d248c3e0e2e6af819e646d8',1,'playerBulletPool:&#160;BulletPool.c']]],
+  ['playerstart_8',['playerStart',['../structLevel.html#a910f6a63c5ea52cea64ba31cc23b5697',1,'Level']]],
+  ['pos_9',['pos',['../structenemy__s.html#aa6b86f88832670da304b7ea37986873c',1,'enemy_s']]],
+  ['position_10',['position',['../structEnemy.html#a22ee73a866fff149543e7e698f4b62cf',1,'Enemy::position'],['../structHazard.html#a1acf8e62dc78e370c5ce68c3fb75db82',1,'Hazard::position'],['../structPlayer__s.html#a5ed26994494a8c9bcca57f21cc50716d',1,'Player_s::position']]],
+  ['prebuffer_11',['prebuffer',['../cJSON_8h.html#a039dc262c2ae63f95cfe193245f8ee7e',1,'cJSON.h']]],
+  ['prev_12',['prev',['../structcJSON.html#a488a393f610347821fce8e985e79fc2f',1,'cJSON']]]
 ];

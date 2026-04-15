@@ -19,41 +19,46 @@
 \DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structbuff__t_a723fcac4f3e30cfee8feab3978d027f6}{bulletSize}};\ \ \ \ }
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ \ *\ =====\ Buffs\ avancés\ (non\ utilisés\ actuellement)\ =====}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ \ *\ =====\ Buffs\ avancés\ (pas\ tous\ utilisé\ actuellement)\ =====}}
 \DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ \ *}}
 \DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ *\ effect\_t\ effet;\ \ \ \ \ //\ Effet\ appliqué\ (feu,\ gel,\ etc.)}}
 \DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ *\ float\ fireDmg;\ \ \ \ \ \ //\ Dégâts\ de\ brûlure}}
 \DoxyCodeLine{00030\ \textcolor{comment}{\ \ \ \ \ *\ float\ iceTime;\ \ \ \ \ \ //\ Durée\ de\ gel}}
-\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ \ \ *\ float\ movementSpeed;//\ Vitesse\ de\ déplacement}}
-\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ \ \ *\ float\ dashCooldown;\ //\ Temps\ de\ recharge\ du\ dash}}
-\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ *}}
-\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ *\ =====\ Buffs\ majeurs\ =====}}
-\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ \ *\ int\ extraDash;\ \ \ \ \ \ //\ Nombre\ de\ dash\ supplémentaires}}
-\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ \ */}}
-\DoxyCodeLine{00037\ \}\ \mbox{\hyperlink{structbuff__t}{buff\_t}};}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{comment}{/*\ =========================}}
-\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ Fonctions\ de\ modification\ des\ buffs}}
-\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ =========================\ */}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00049\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a9a9b4b2422ce2adc3ad12233d4d26e56}{Buff}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add,\ \textcolor{keywordtype}{int}\ indice);}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_ae22790f9620560c2393838ad1d17606d}{BuffDmg}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add);}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_ad5534b7b1fc84944467ed484f987d148}{BufffireRate}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_aed66b9e9348fc7e0ad2c87f18c159bcc}{BuffreloadTime}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ sub);}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a36aa5af7ab945960b0408c7b3147598b}{Buffdispersion}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ sub);}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a521760451f88833725e8b17b3586edc1}{BuffbulletSpeed}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add);}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a277e45232d5f2fe316d40dabc07d9b8a}{BuffbulletSize}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add);}
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00100\ \mbox{\hyperlink{structbuff__t}{buff\_t}}*\ \mbox{\hyperlink{BuffSystem_8h_aaa53f454659a437188bc410146a733fe}{BuffInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structbuff__t_aabf73de65d8d7f4c9cac6d30c3b40820}{movementSpeed}};\textcolor{comment}{//\ Vitesse\ de\ déplacement}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structbuff__t_a8e6acd9b4288e9540a49b773e3fd6790}{dashCooldown}};\ \textcolor{comment}{//\ Temps\ de\ recharge\ du\ dash}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{/*\ =====\ Buffs\ majeurs\ =====}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ int\ extraDash;\ \ \ \ \ \ //\ Nombre\ de\ dash\ supplémentaires}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00038\ \}\ \mbox{\hyperlink{structbuff__t}{buff\_t}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ =========================}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ Fonctions\ de\ modification\ des\ buffs}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ =========================\ */}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a9a9b4b2422ce2adc3ad12233d4d26e56}{Buff}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add,\ \textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_ae22790f9620560c2393838ad1d17606d}{BuffDmg}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_ad5534b7b1fc84944467ed484f987d148}{BufffireRate}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_aed66b9e9348fc7e0ad2c87f18c159bcc}{BuffreloadTime}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ sub);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a36aa5af7ab945960b0408c7b3147598b}{Buffdispersion}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ sub);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a521760451f88833725e8b17b3586edc1}{BuffbulletSpeed}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a277e45232d5f2fe316d40dabc07d9b8a}{BuffbulletSize}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_ae286f3d6598ad5c98e4f5ce16a4bcc98}{BuffmovementSpeed}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ add);}
 \DoxyCodeLine{00101\ }
-\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a72028564d5ae2c5ceb60456d54691e8b}{FreeBuff}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff);}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a2193dee4ae206d25067d74faa7494300}{BuffdashCooldown}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff,\ \textcolor{keywordtype}{float}\ sub);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00117\ \mbox{\hyperlink{structbuff__t}{buff\_t}}*\ \mbox{\hyperlink{BuffSystem_8h_aaa53f454659a437188bc410146a733fe}{BuffInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BuffSystem_8h_a72028564d5ae2c5ceb60456d54691e8b}{FreeBuff}}(\mbox{\hyperlink{structbuff__t}{buff\_t}}*\ buff);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

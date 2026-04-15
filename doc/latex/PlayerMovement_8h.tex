@@ -8,8 +8,7 @@ Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
 {\ttfamily \#include "{}../levels/\+Platform.\+h"{}}\newline
 {\ttfamily \#include "{}Player.\+h"{}}\newline
-Include dependency graph for Player\+Movement.\+h\+:
-\nopagebreak
+Include dependency graph for Player\+Movement.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,11 +31,11 @@ struct \mbox{\hyperlink{structMovementConfig__s}{Movement\+Config\+\_\+s}}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{PlayerMovement_8h_a7e3949996f30c14a78b3a4906c350631}{GROUND\+\_\+\+ACC}}~1600
+\#define \mbox{\hyperlink{PlayerMovement_8h_a7e3949996f30c14a78b3a4906c350631}{GROUND\+\_\+\+ACC}}~3200
 \begin{DoxyCompactList}\small\item\em accélération du joueur sur le sol en pixels par seconde. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{PlayerMovement_8h_ad479301cbe7814316ef8c52e3791302d}{AIR\+\_\+\+ACC}}~1000
+\#define \mbox{\hyperlink{PlayerMovement_8h_ad479301cbe7814316ef8c52e3791302d}{AIR\+\_\+\+ACC}}~2000
 \begin{DoxyCompactList}\small\item\em accélération du joueur dans les airs en pixels par seconde. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{PlayerMovement_8h_a5bbc8fbcf0b075fbb2e4f352ddd2a87f}{MAX\+\_\+\+SPEED\+\_\+X}}~400
+\#define \mbox{\hyperlink{PlayerMovement_8h_a5bbc8fbcf0b075fbb2e4f352ddd2a87f}{MAX\+\_\+\+SPEED\+\_\+X}}~800
 \begin{DoxyCompactList}\small\item\em Vitesse maximale du joueur sur x en pixels par seconde. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{PlayerMovement_8h_acade3c4bcbf9193889b5ab328b58d6d6}{MAX\+\_\+\+SPEED\+\_\+Y}}~1500
 \begin{DoxyCompactList}\small\item\em Vitesse maximale du joueur sur y en pixels par seconde. \end{DoxyCompactList}\item 
@@ -44,7 +43,7 @@ struct \mbox{\hyperlink{structMovementConfig__s}{Movement\+Config\+\_\+s}}
 \begin{DoxyCompactList}\small\item\em Vitesse maximale du joueur sur mur en pixels par seconde. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{PlayerMovement_8h_aee0e47d92715caf539d1db56449eed76}{JUMP\+\_\+\+STRENGTH}}~-\/1200
 \begin{DoxyCompactList}\small\item\em Force de saut du joueur en pixels par seconde. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{PlayerMovement_8h_ac8a48a4879932f77e714e17fafbf1fd5}{DASH\+\_\+\+SPEED}}~800
+\#define \mbox{\hyperlink{PlayerMovement_8h_ac8a48a4879932f77e714e17fafbf1fd5}{DASH\+\_\+\+SPEED}}~2400
 \begin{DoxyCompactList}\small\item\em Vitesse du dash du joueur en pixels par seconde. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{PlayerMovement_8h_a41ca8af45cee2a77e55c1de1f2aa4917}{DEFAULT\+\_\+\+GRAVITY}}~980
 \begin{DoxyCompactList}\small\item\em Gravité par défaut en pixels par seconde carrée. \end{DoxyCompactList}\item 
@@ -56,8 +55,12 @@ struct \mbox{\hyperlink{structMovementConfig__s}{Movement\+Config\+\_\+s}}
 \begin{DoxyCompactList}\small\item\em Ralentissement par friction sur le sol. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{PlayerMovement_8h_afcbfb35e32a730aede3dce9816392b05}{AIR\+\_\+\+FRICTION}}~0.\+99f
 \begin{DoxyCompactList}\small\item\em Ralentissement par friction dans les airs. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{PlayerMovement_8h_a2420d7aadd97c01cf2910f46af324e52}{DEFAULT\+\_\+\+JUMPS\+\_\+\+MAX}}~3
+\#define \mbox{\hyperlink{PlayerMovement_8h_a2420d7aadd97c01cf2910f46af324e52}{DEFAULT\+\_\+\+JUMPS\+\_\+\+MAX}}~2
 \begin{DoxyCompactList}\small\item\em Nombre de saut d\textquotesingle{}affilé maximum par défaut. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_a9aa37716a48139c30bcbbdb52be9e47c}{DEFAULT\+\_\+\+DASH\+\_\+\+MAX}}~2
+\begin{DoxyCompactList}\small\item\em Nombre de dash d\textquotesingle{}affilé maximum par défaut. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PlayerMovement_8h_ad4196e7f3d19d51c5ba715276e1a4cb9}{DASH\+\_\+\+TIME\+\_\+\+MAX}}~0.\+2f
+\begin{DoxyCompactList}\small\item\em Durée du dash. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{PlayerMovement_8h_ae8a6a989aeb359370ce72bc7076c8093}{KEY\+\_\+\+MOVE\+\_\+\+LEFT}}~KEY\+\_\+A
 \begin{DoxyCompactList}\small\item\em Touche pour aller à gauche. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{PlayerMovement_8h_ae688d0367b52a1c6160fac05a08c5ba4}{KEY\+\_\+\+MOVE\+\_\+\+RIGHT}}~KEY\+\_\+D
@@ -105,8 +108,6 @@ void \mbox{\hyperlink{PlayerMovement_8h_aa4c140cab25d9b704b7dceb45892beba}{Playe
 \begin{DoxyCompactList}\small\item\em Fait dasher le joueur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{PlayerMovement_8h_a40fc5396087b60ab70e66da5be7267bf}{Gravity}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, const float Gravity\+Strength)
 \begin{DoxyCompactList}\small\item\em Applique force de gravité sur le joueur. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{PlayerMovement_8h_affb9d3864ce109253880b2d40a262fa5}{Player\+Position\+Fix}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, Vector2 old\+Position, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
-\item 
 bool \mbox{\hyperlink{PlayerMovement_8h_aa37e1e0779a50a707154ae6b3b46c850}{is\+On\+Ground}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms)
 \item 
 bool \mbox{\hyperlink{PlayerMovement_8h_ae91de7901008cab29c3ad8fa376b06c0}{is\+On\+Wall}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structPlatform}{Platform}} platform\mbox{[}$\,$\mbox{]}, const int nb\+Platforms, \mbox{\hyperlink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} dir)
@@ -141,7 +142,7 @@ Kilian
 \index{AIR\_ACC@{AIR\_ACC}!PlayerMovement.h@{PlayerMovement.h}}
 \doxysubsubsection{\texorpdfstring{AIR\_ACC}{AIR\_ACC}}
 {\footnotesize\ttfamily \label{PlayerMovement_8h_ad479301cbe7814316ef8c52e3791302d} 
-\#define AIR\+\_\+\+ACC~1000}
+\#define AIR\+\_\+\+ACC~2000}
 
 
 
@@ -161,11 +162,31 @@ Ralentissement par friction dans les airs.
 \index{DASH\_SPEED@{DASH\_SPEED}!PlayerMovement.h@{PlayerMovement.h}}
 \doxysubsubsection{\texorpdfstring{DASH\_SPEED}{DASH\_SPEED}}
 {\footnotesize\ttfamily \label{PlayerMovement_8h_ac8a48a4879932f77e714e17fafbf1fd5} 
-\#define DASH\+\_\+\+SPEED~800}
+\#define DASH\+\_\+\+SPEED~2400}
 
 
 
 Vitesse du dash du joueur en pixels par seconde. 
+
+\Hypertarget{PlayerMovement_8h_ad4196e7f3d19d51c5ba715276e1a4cb9}\index{PlayerMovement.h@{PlayerMovement.h}!DASH\_TIME\_MAX@{DASH\_TIME\_MAX}}
+\index{DASH\_TIME\_MAX@{DASH\_TIME\_MAX}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{DASH\_TIME\_MAX}{DASH\_TIME\_MAX}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_ad4196e7f3d19d51c5ba715276e1a4cb9} 
+\#define DASH\+\_\+\+TIME\+\_\+\+MAX~0.\+2f}
+
+
+
+Durée du dash. 
+
+\Hypertarget{PlayerMovement_8h_a9aa37716a48139c30bcbbdb52be9e47c}\index{PlayerMovement.h@{PlayerMovement.h}!DEFAULT\_DASH\_MAX@{DEFAULT\_DASH\_MAX}}
+\index{DEFAULT\_DASH\_MAX@{DEFAULT\_DASH\_MAX}!PlayerMovement.h@{PlayerMovement.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_DASH\_MAX}{DEFAULT\_DASH\_MAX}}
+{\footnotesize\ttfamily \label{PlayerMovement_8h_a9aa37716a48139c30bcbbdb52be9e47c} 
+\#define DEFAULT\+\_\+\+DASH\+\_\+\+MAX~2}
+
+
+
+Nombre de dash d\textquotesingle{}affilé maximum par défaut. 
 
 \Hypertarget{PlayerMovement_8h_a41ca8af45cee2a77e55c1de1f2aa4917}\index{PlayerMovement.h@{PlayerMovement.h}!DEFAULT\_GRAVITY@{DEFAULT\_GRAVITY}}
 \index{DEFAULT\_GRAVITY@{DEFAULT\_GRAVITY}!PlayerMovement.h@{PlayerMovement.h}}
@@ -181,7 +202,7 @@ Gravité par défaut en pixels par seconde carrée.
 \index{DEFAULT\_JUMPS\_MAX@{DEFAULT\_JUMPS\_MAX}!PlayerMovement.h@{PlayerMovement.h}}
 \doxysubsubsection{\texorpdfstring{DEFAULT\_JUMPS\_MAX}{DEFAULT\_JUMPS\_MAX}}
 {\footnotesize\ttfamily \label{PlayerMovement_8h_a2420d7aadd97c01cf2910f46af324e52} 
-\#define DEFAULT\+\_\+\+JUMPS\+\_\+\+MAX~3}
+\#define DEFAULT\+\_\+\+JUMPS\+\_\+\+MAX~2}
 
 
 
@@ -201,7 +222,7 @@ Gravité lors d\textquotesingle{}une chute en pixels par seconde carrée.
 \index{GROUND\_ACC@{GROUND\_ACC}!PlayerMovement.h@{PlayerMovement.h}}
 \doxysubsubsection{\texorpdfstring{GROUND\_ACC}{GROUND\_ACC}}
 {\footnotesize\ttfamily \label{PlayerMovement_8h_a7e3949996f30c14a78b3a4906c350631} 
-\#define GROUND\+\_\+\+ACC~1600}
+\#define GROUND\+\_\+\+ACC~3200}
 
 
 
@@ -271,7 +292,7 @@ Touche pour aller à droite.
 \index{MAX\_SPEED\_X@{MAX\_SPEED\_X}!PlayerMovement.h@{PlayerMovement.h}}
 \doxysubsubsection{\texorpdfstring{MAX\_SPEED\_X}{MAX\_SPEED\_X}}
 {\footnotesize\ttfamily \label{PlayerMovement_8h_a5bbc8fbcf0b075fbb2e4f352ddd2a87f} 
-\#define MAX\+\_\+\+SPEED\+\_\+X~400}
+\#define MAX\+\_\+\+SPEED\+\_\+X~800}
 
 
 
@@ -486,10 +507,4 @@ void Player\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47
 \doxysubsubsection{\texorpdfstring{PlayerMoveConfigUpdate()}{PlayerMoveConfigUpdate()}}
 {\footnotesize\ttfamily \label{PlayerMovement_8h_a3cbba88b75c89a10f73cbff7b2a82fd6} 
 void Player\+Move\+Config\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
-
-\Hypertarget{PlayerMovement_8h_affb9d3864ce109253880b2d40a262fa5}\index{PlayerMovement.h@{PlayerMovement.h}!PlayerPositionFix@{PlayerPositionFix}}
-\index{PlayerPositionFix@{PlayerPositionFix}!PlayerMovement.h@{PlayerMovement.h}}
-\doxysubsubsection{\texorpdfstring{PlayerPositionFix()}{PlayerPositionFix()}}
-{\footnotesize\ttfamily \label{PlayerMovement_8h_affb9d3864ce109253880b2d40a262fa5} 
-bool Player\+Position\+Fix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{Vector2}]{old\+Position}{, }\item[{\mbox{\hyperlink{structPlatform}{Platform}}}]{platform}{\mbox{[}$\,$\mbox{]}, }\item[{const int}]{nb\+Platforms}{}\end{DoxyParamCaption})}
 

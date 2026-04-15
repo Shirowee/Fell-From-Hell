@@ -77,46 +77,87 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Informations sur les ennemis du niveau.  
+<p>Informations sur les vagues d'ennemis.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="LevelManager_8h_source.html">LevelManager.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Enemy:</div>
+<div class="dyncontent">
+<div class="center"><img src="structEnemy__coll__graph.png" border="0" usemap="#aEnemy_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="aEnemy_coll__map" id="aEnemy_coll__map">
+<area shape="rect" title="Informations sur les vagues d&#39;ennemis." alt="" coords="5,101,72,127"/>
+<area shape="rect" href="structPos.html" title="Structure simple qui contient uniquement deux coordonnées x et y." alt="" coords="16,5,61,31"/>
+<area shape="poly" title=" " alt="" coords="41,45,41,101,36,101,36,45"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ae8542615bddd051d63cce8cce122b9a7" id="r_ae8542615bddd051d63cce8cce122b9a7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8542615bddd051d63cce8cce122b9a7">type</a> [32]</td></tr>
-<tr class="memitem:a4d5e4877894781d1fc5d607fd114c60c" id="r_a4d5e4877894781d1fc5d607fd114c60c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d5e4877894781d1fc5d607fd114c60c">dist_aggro</a></td></tr>
+<tr class="memitem:a65660a59ddef0197ae008284904970dd" id="r_a65660a59ddef0197ae008284904970dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65660a59ddef0197ae008284904970dd">nbType</a></td></tr>
+<tr class="memitem:a3a0bc993c29bb9de1985ca3ceeefa06a" id="r_a3a0bc993c29bb9de1985ca3ceeefa06a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a0bc993c29bb9de1985ca3ceeefa06a">spawnTime</a></td></tr>
+<tr class="memitem:a22ee73a866fff149543e7e698f4b62cf" id="r_a22ee73a866fff149543e7e698f4b62cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPos.html">Pos</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22ee73a866fff149543e7e698f4b62cf">position</a></td></tr>
+<tr class="memitem:a795a55a88cc3360d63e7fbceef3adb20" id="r_a795a55a88cc3360d63e7fbceef3adb20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795a55a88cc3360d63e7fbceef3adb20">spawned</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Informations sur les ennemis du niveau. </p>
+<div class="textblock"><p>Informations sur les vagues d'ennemis. </p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Field Documentation</h2>
-<a id="a4d5e4877894781d1fc5d607fd114c60c" name="a4d5e4877894781d1fc5d607fd114c60c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d5e4877894781d1fc5d607fd114c60c">&#9670;&#160;</a></span>dist_aggro</h2>
+<a id="a65660a59ddef0197ae008284904970dd" name="a65660a59ddef0197ae008284904970dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65660a59ddef0197ae008284904970dd">&#9670;&#160;</a></span>nbType</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Enemy::dist_aggro</td>
+          <td class="memname">int Enemy::nbType</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Distance maximal a laquelle l'ennemi peut voir le joueur </p>
+<p>Numéro du patern de la vague d'ennemis </p>
 
 </div>
 </div>
-<a id="ae8542615bddd051d63cce8cce122b9a7" name="ae8542615bddd051d63cce8cce122b9a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8542615bddd051d63cce8cce122b9a7">&#9670;&#160;</a></span>type</h2>
+<a id="a22ee73a866fff149543e7e698f4b62cf" name="a22ee73a866fff149543e7e698f4b62cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ee73a866fff149543e7e698f4b62cf">&#9670;&#160;</a></span>position</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char Enemy::type[32]</td>
+          <td class="memname"><a class="el" href="structPos.html">Pos</a> Enemy::position</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Type de l'ennemi </p>
+<p>Position d'apparition de la vague </p>
+
+</div>
+</div>
+<a id="a795a55a88cc3360d63e7fbceef3adb20" name="a795a55a88cc3360d63e7fbceef3adb20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795a55a88cc3360d63e7fbceef3adb20">&#9670;&#160;</a></span>spawned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Enemy::spawned</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a0bc993c29bb9de1985ca3ceeefa06a" name="a3a0bc993c29bb9de1985ca3ceeefa06a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a0bc993c29bb9de1985ca3ceeefa06a">&#9670;&#160;</a></span>spawnTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Enemy::spawnTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Temps avant l'apparition de la prochaine vague d'ennemis </p>
 
 </div>
 </div>

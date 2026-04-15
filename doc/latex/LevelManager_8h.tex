@@ -9,7 +9,9 @@ Ce fichier \doxylink{LevelManager_8h}{Level\+Manager.\+h} sert a la gestion des 
 {\ttfamily \#include "{}../player/\+Player.\+h"{}}\newline
 {\ttfamily \#include "{}../systems/\+Bullet\+Pool.\+h"{}}\newline
 {\ttfamily \#include "{}../systems/\+Enemy\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}../systems/\+Enemy\+Spawner.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/c\+Json/c\+JSON.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Parallax\+System.\+h"{}}\newline
 Include dependency graph for Level\+Manager.\+h\+:
 \nopagebreak
 \begin{figure}[H]
@@ -32,7 +34,7 @@ This graph shows which files directly or indirectly include this file\+:
 struct \mbox{\hyperlink{structMapInfo}{Map\+Info}}
 \begin{DoxyCompactList}\small\item\em Informations globales sur le niveau. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structEnemy}{Enemy}}
-\begin{DoxyCompactList}\small\item\em Informations sur les ennemis du niveau. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Informations sur les vagues d\textquotesingle{}ennemis. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structHazard}{Hazard}}
 \begin{DoxyCompactList}\small\item\em Informations sur les pièges du niveau. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structTrigger}{Trigger}}
@@ -55,15 +57,19 @@ struct \mbox{\hyperlink{structLevel}{Level}}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{LevelManager_8h_af64c0642d91865991cbcf495da581433}{parse\+Level\+Data}} (\mbox{\hyperlink{structcJSON}{c\+JSON}} \texorpdfstring{$\ast$}{*}json, \mbox{\hyperlink{structLevel}{Level}} \texorpdfstring{$\ast$}{*}lvl)
+\begin{DoxyCompactList}\small\item\em Organise les données chargé a partir du JSON dans une structure niveau. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{LevelManager_8h_a3eb3374e1a3573ccef109a337db05e06}{read\+Json\+Lvl}} (const char \texorpdfstring{$\ast$}{*}file\+Name)
 \begin{DoxyCompactList}\small\item\em Charge les données d\textquotesingle{}un niveau depuis un fichier JSON. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{LevelManager_8h_aabf5f82cc95d911a3f58b33c25b88970}{Level\+Init}} (void)
 \begin{DoxyCompactList}\small\item\em Initialise le niveau après la conversion JSON. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LevelManager_8h_a8fe1fd018badf8bd650beacae77c5991}{Build\+Tiles\+From\+Platforms}} (void)
+\begin{DoxyCompactList}\small\item\em Traduit les plateformes en tiles et les dessine. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{LevelManager_8h_a78e4d5c3e7ecd49b505d47b4940bf367}{Level\+Draw}} (void)
 \begin{DoxyCompactList}\small\item\em Dessine les platformes et le décors du niveau. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{LevelManager_8h_a7fa6d517303d1b1b17e59dcb5d0b0edb}{Next\+Lvl\+Request}} (const char \texorpdfstring{$\ast$}{*}target\+Id)
 \item 
-void \mbox{\hyperlink{LevelManager_8h_ab4a3635d7e6eb93faef4184e6201ee75}{Next\+Lvl\+Update}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{EnemyPool_8h_ab8b70d96e97532942f19fdcb03aa4b1a}{enemy\+Pool}}, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{BulletPool_8h_ab235d8c88e2a6e8d419e9492a0188497}{bullet\+Pool}})
+void \mbox{\hyperlink{LevelManager_8h_abd614b8da9a30cd94e7bfef693654224}{Next\+Lvl\+Update}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{EnemySpawner_8h_afa1e3a6688b8a86e113b40c4902d54b2}{enemy\+Spawner}})
 \begin{DoxyCompactList}\small\item\em Réalise le passage au niveau suivant. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -115,6 +121,23 @@ Nombre maximum de zone provoquant un événement par map
 \label{doc-func-members}
 \Hypertarget{LevelManager_8h_doc-func-members}
 \doxysubsection{Function Documentation}
+\Hypertarget{LevelManager_8h_a8fe1fd018badf8bd650beacae77c5991}\index{LevelManager.h@{LevelManager.h}!BuildTilesFromPlatforms@{BuildTilesFromPlatforms}}
+\index{BuildTilesFromPlatforms@{BuildTilesFromPlatforms}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{BuildTilesFromPlatforms()}{BuildTilesFromPlatforms()}}
+{\footnotesize\ttfamily \label{LevelManager_8h_a8fe1fd018badf8bd650beacae77c5991} 
+void Build\+Tiles\+From\+Platforms (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Traduit les plateformes en tiles et les dessine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Plateforme à dessiner \\
+\hline
+{\em tileset} & Texture contenant les tiles à utiliser pour dessiner la plateforme \\
+\hline
+\end{DoxyParams}
 \Hypertarget{LevelManager_8h_a78e4d5c3e7ecd49b505d47b4940bf367}\index{LevelManager.h@{LevelManager.h}!LevelDraw@{LevelDraw}}
 \index{LevelDraw@{LevelDraw}!LevelManager.h@{LevelManager.h}}
 \doxysubsubsection{\texorpdfstring{LevelDraw()}{LevelDraw()}}
@@ -146,16 +169,33 @@ void Next\+Lvl\+Request (\begin{DoxyParamCaption}\item[{const char \texorpdfstri
 {\em target\+Id} & Nom de la map vers laquelle on se dirige \\
 \hline
 \end{DoxyParams}
-\Hypertarget{LevelManager_8h_ab4a3635d7e6eb93faef4184e6201ee75}\index{LevelManager.h@{LevelManager.h}!NextLvlUpdate@{NextLvlUpdate}}
+\Hypertarget{LevelManager_8h_abd614b8da9a30cd94e7bfef693654224}\index{LevelManager.h@{LevelManager.h}!NextLvlUpdate@{NextLvlUpdate}}
 \index{NextLvlUpdate@{NextLvlUpdate}!LevelManager.h@{LevelManager.h}}
 \doxysubsubsection{\texorpdfstring{NextLvlUpdate()}{NextLvlUpdate()}}
-{\footnotesize\ttfamily \label{LevelManager_8h_ab4a3635d7e6eb93faef4184e6201ee75} 
-void Next\+Lvl\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy\+Pool}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet\+Pool}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{LevelManager_8h_abd614b8da9a30cd94e7bfef693654224} 
+void Next\+Lvl\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{enemy\+Spawner}{}\end{DoxyParamCaption})}
 
 
 
 Réalise le passage au niveau suivant. 
 
+\Hypertarget{LevelManager_8h_af64c0642d91865991cbcf495da581433}\index{LevelManager.h@{LevelManager.h}!parseLevelData@{parseLevelData}}
+\index{parseLevelData@{parseLevelData}!LevelManager.h@{LevelManager.h}}
+\doxysubsubsection{\texorpdfstring{parseLevelData()}{parseLevelData()}}
+{\footnotesize\ttfamily \label{LevelManager_8h_af64c0642d91865991cbcf495da581433} 
+void parse\+Level\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcJSON}{c\+JSON}} \texorpdfstring{$\ast$}{*}}]{json}{, }\item[{\mbox{\hyperlink{structLevel}{Level}} \texorpdfstring{$\ast$}{*}}]{lvl}{}\end{DoxyParamCaption})}
+
+
+
+Organise les données chargé a partir du JSON dans une structure niveau. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & Qui contient les données extrait par la fonction read\+Json\+Lvl \\
+\hline
+{\em lvl} & Qui correspond au niveau dans lequel les informations vont être organisé \\
+\hline
+\end{DoxyParams}
 \Hypertarget{LevelManager_8h_a3eb3374e1a3573ccef109a337db05e06}\index{LevelManager.h@{LevelManager.h}!readJsonLvl@{readJsonLvl}}
 \index{readJsonLvl@{readJsonLvl}!LevelManager.h@{LevelManager.h}}
 \doxysubsubsection{\texorpdfstring{readJsonLvl()}{readJsonLvl()}}

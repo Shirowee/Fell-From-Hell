@@ -1,16 +1,9 @@
 var searchData=
 [
-  ['w_0',['w',['../structRect.html#a049f7ee5e7eb0475229bf3ed9b3bad44',1,'Rect']]],
-  ['wall_5fslide_5fgravity_1',['WALL_SLIDE_GRAVITY',['../PlayerMovement_8h.html#a0c047cd7540622bcfdc79a2b92391efb',1,'PlayerMovement.h']]],
-  ['wall_5fsliding_2',['WALL_SLIDING',['../PlayerMovement_8h.html#a8992f9cdedef9a33e8b28babae7dd2bea4e34cc101ca8a3d5ada9ace5dcfba04f',1,'PlayerMovement.h']]],
-  ['weapon_3',['weapon',['../structPlayer__s.html#a258d2081187aaa706dfcffd8bed2f994',1,'Player_s']]],
-  ['weapon_5ft_4',['weapon_t',['../structweapon__t.html',1,'']]],
-  ['which_5',['which',['../cJSON_8h.html#aa2a4dae2a14de4093826005f9bdfd3bb',1,'cJSON.h']]],
-  ['width_6',['width',['../structMapInfo.html#af8032038658c9020b5ee83b6bd832fd4',1,'MapInfo::width'],['../structPlatform.html#afc780622147a0b5345e333118c1ecc77',1,'Platform::width']]],
-  ['window_5fmanager_5fh_7',['WINDOW_MANAGER_H',['../WindowManager_8h.html#a782c7e61a78fd3aac102f8ad5beb2fb9',1,'WindowManager.h']]],
-  ['windowinit_8',['WindowInit',['../WindowManager_8h.html#a1a20c5f41702180fea63adc55fae5e65',1,'WindowInit():&#160;WindowManager.c'],['../WindowManager_8c.html#a1a20c5f41702180fea63adc55fae5e65',1,'WindowInit():&#160;WindowManager.c']]],
-  ['windowmanager_2ec_9',['WindowManager.c',['../WindowManager_8c.html',1,'']]],
-  ['windowmanager_2eh_10',['WindowManager.h',['../WindowManager_8h.html',1,'']]],
-  ['windowmanager_5fistopmost_11',['WindowManager_IsTopmost',['../WindowManager_8h.html#a7ce90044dc8a3a27d7fecc6540ed81c8',1,'WindowManager_IsTopmost(void):&#160;WindowManager.c'],['../WindowManager_8c.html#a7ce90044dc8a3a27d7fecc6540ed81c8',1,'WindowManager_IsTopmost(void):&#160;WindowManager.c']]],
-  ['windowmanager_5fupdate_12',['WindowManager_Update',['../WindowManager_8h.html#ad5f0aa7d8afd1ffba57b3d2ab54b22d2',1,'WindowManager_Update(void):&#160;WindowManager.c'],['../WindowManager_8c.html#ad5f0aa7d8afd1ffba57b3d2ab54b22d2',1,'WindowManager_Update(void):&#160;WindowManager.c']]]
+  ['valuedouble_0',['valuedouble',['../structcJSON.html#a4b21817d0fd2919901abadac73214e7f',1,'cJSON']]],
+  ['valueint_1',['valueint',['../structcJSON.html#a369cea49494eb5d4409d532a731a0fbf',1,'cJSON']]],
+  ['valuestring_2',['valuestring',['../structcJSON.html#ad43f8de2571e504c4c5ce0a36990e6e1',1,'cJSON::valuestring'],['../cJSON_8h.html#aa770d5dc55a1031ccff9aee4e96acf8f',1,'valuestring:&#160;cJSON.h']]],
+  ['velocity_3',['velocity',['../structPlayer__s.html#a4a9ac67b8576048daf432605599e1459',1,'Player_s']]],
+  ['verifpremplan_4',['verifPremPlan',['../WindowManager_8h.html#a01699e0c378c75b5c5147d5c1a9f569c',1,'verifPremPlan(void):&#160;WindowManager.c'],['../WindowManager_8c.html#a606f7d96601573005c78c5ffa83616e7',1,'verifPremPlan(void):&#160;WindowManager.c']]],
+  ['void_5',['void',['../structcJSON__Hooks.html#a42c96b388103ffb466e7335b9fc710c3',1,'cJSON_Hooks']]]
 ];

@@ -12,6 +12,8 @@ Structure représentant un ennemi.
 \doxysubsubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{structenemy__s_af28a975709f8c15cc4164e2dbfabceec}{hp}}
+\item 
 float \mbox{\hyperlink{structenemy__s_af4e1c4c1c7845b33fc1dc71866e26e6f}{speed}}
 \item 
 Vector2 \mbox{\hyperlink{structenemy__s_adfd6c9a138c6fa8c6bf30e9a17cb2e2a}{size}}
@@ -20,13 +22,13 @@ int \mbox{\hyperlink{structenemy__s_ae3f153b4120433c472e65e29cf1f7e90}{dmg}}
 \item 
 Vector2 \mbox{\hyperlink{structenemy__s_aa6b86f88832670da304b7ea37986873c}{pos}}
 \item 
-int \mbox{\hyperlink{structenemy__s_a64e0ac6141af2c6fe8c5a71d05fdf0ee}{dir}}
+float \mbox{\hyperlink{structenemy__s_a5dbe6a69eefa8388ceeb60f707154462}{dir}}
 \item 
 int \mbox{\hyperlink{structenemy__s_acb39fc113043fd049ded27c02fc18c70}{bullet\+Speed}}
 \item 
 int \mbox{\hyperlink{structenemy__s_aed92d9c3289fe1688665295ab5ab9d1a}{bullet\+Size}}
 \item 
-void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structenemy__s_a657dc781cba66458f35aa6bf063ccca5}{state}} )(struct \mbox{\hyperlink{structenemy__s}{enemy\+\_\+s}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}, Vector2)
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structenemy__s_a657dc781cba66458f35aa6bf063ccca5}{state}} )(struct \mbox{\hyperlink{structenemy__s}{enemy\+\_\+s}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}, Vector2)
 \begin{DoxyCompactList}\small\item\em Fonction représentant l\textquotesingle{}état courant. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{structenemy__s_a5eb8b0da1a0344fef39a5f0b8c8d6a91}{state\+Timer}}
 \item 
@@ -62,11 +64,11 @@ Taille des projectiles \Hypertarget{structenemy__s_acb39fc113043fd049ded27c02fc1
 {\footnotesize\ttfamily \label{structenemy__s_acb39fc113043fd049ded27c02fc18c70} 
 int enemy\+\_\+s\+::bullet\+Speed}
 
-Vitesse des projectiles \Hypertarget{structenemy__s_a64e0ac6141af2c6fe8c5a71d05fdf0ee}\index{enemy\_s@{enemy\_s}!dir@{dir}}
+Vitesse des projectiles \Hypertarget{structenemy__s_a5dbe6a69eefa8388ceeb60f707154462}\index{enemy\_s@{enemy\_s}!dir@{dir}}
 \index{dir@{dir}!enemy\_s@{enemy\_s}}
 \doxysubsubsection{\texorpdfstring{dir}{dir}}
-{\footnotesize\ttfamily \label{structenemy__s_a64e0ac6141af2c6fe8c5a71d05fdf0ee} 
-int enemy\+\_\+s\+::dir}
+{\footnotesize\ttfamily \label{structenemy__s_a5dbe6a69eefa8388ceeb60f707154462} 
+float enemy\+\_\+s\+::dir}
 
 \doxylink{PlayerMovement_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \Hypertarget{structenemy__s_ae3f153b4120433c472e65e29cf1f7e90}\index{enemy\_s@{enemy\_s}!dmg@{dmg}}
 \index{dmg@{dmg}!enemy\_s@{enemy\_s}}
@@ -74,7 +76,13 @@ int enemy\+\_\+s\+::dir}
 {\footnotesize\ttfamily \label{structenemy__s_ae3f153b4120433c472e65e29cf1f7e90} 
 int enemy\+\_\+s\+::dmg}
 
-Dégâts infligés \Hypertarget{structenemy__s_ac7fe898a89f369ab93db5f6ea1a222a6}\index{enemy\_s@{enemy\_s}!isShooting@{isShooting}}
+Dégâts infligés \Hypertarget{structenemy__s_af28a975709f8c15cc4164e2dbfabceec}\index{enemy\_s@{enemy\_s}!hp@{hp}}
+\index{hp@{hp}!enemy\_s@{enemy\_s}}
+\doxysubsubsection{\texorpdfstring{hp}{hp}}
+{\footnotesize\ttfamily \label{structenemy__s_af28a975709f8c15cc4164e2dbfabceec} 
+int enemy\+\_\+s\+::hp}
+
+Points de vie de l\textquotesingle{}ennemi \Hypertarget{structenemy__s_ac7fe898a89f369ab93db5f6ea1a222a6}\index{enemy\_s@{enemy\_s}!isShooting@{isShooting}}
 \index{isShooting@{isShooting}!enemy\_s@{enemy\_s}}
 \doxysubsubsection{\texorpdfstring{isShooting}{isShooting}}
 {\footnotesize\ttfamily \label{structenemy__s_ac7fe898a89f369ab93db5f6ea1a222a6} 
@@ -102,7 +110,7 @@ Vitesse de déplacement \Hypertarget{structenemy__s_a657dc781cba66458f35aa6bf063
 \index{state@{state}!enemy\_s@{enemy\_s}}
 \doxysubsubsection{\texorpdfstring{state}{state}}
 {\footnotesize\ttfamily \label{structenemy__s_a657dc781cba66458f35aa6bf063ccca5} 
-void(\texorpdfstring{$\ast$}{*} enemy\+\_\+s\+::state) (struct \mbox{\hyperlink{structenemy__s}{enemy\+\_\+s}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}, Vector2)}
+void(\texorpdfstring{$\ast$}{*} enemy\+\_\+s\+::state) (struct \mbox{\hyperlink{structenemy__s}{enemy\+\_\+s}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}, Vector2)}
 
 
 

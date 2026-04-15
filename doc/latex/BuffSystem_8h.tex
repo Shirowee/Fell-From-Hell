@@ -6,8 +6,7 @@ Gestion des améliorations (buffs) appliquées au joueur et aux armes.
 
 
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
-Include dependency graph for Buff\+System.\+h\+:
-\nopagebreak
+Include dependency graph for Buff\+System.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -44,6 +43,10 @@ void \mbox{\hyperlink{BuffSystem_8h_a521760451f88833725e8b17b3586edc1}{Buffbulle
 \begin{DoxyCompactList}\small\item\em Augmente la vitesse des projectiles. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{BuffSystem_8h_a277e45232d5f2fe316d40dabc07d9b8a}{Buffbullet\+Size}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float add)
 \begin{DoxyCompactList}\small\item\em Augmente la taille des projectiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8h_ae286f3d6598ad5c98e4f5ce16a4bcc98}{Buffmovement\+Speed}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float add)
+\begin{DoxyCompactList}\small\item\em Augmente la vitesse du joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{BuffSystem_8h_a2193dee4ae206d25067d74faa7494300}{Buffdash\+Cooldown}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff, float sub)
+\begin{DoxyCompactList}\small\item\em Diminue la durée du cooldown du dash. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{BuffSystem_8h_aaa53f454659a437188bc410146a733fe}{Buff\+Init}} (void)
 \begin{DoxyCompactList}\small\item\em Initialise et alloue un nouveau buff. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{BuffSystem_8h_a72028564d5ae2c5ceb60456d54691e8b}{Free\+Buff}} (\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}buff)
@@ -114,6 +117,26 @@ Augmente la vitesse des projectiles.
 {\em add} & Valeur à ajouter \\
 \hline
 \end{DoxyParams}
+\Hypertarget{BuffSystem_8h_a2193dee4ae206d25067d74faa7494300}\index{BuffSystem.h@{BuffSystem.h}!BuffdashCooldown@{BuffdashCooldown}}
+\index{BuffdashCooldown@{BuffdashCooldown}!BuffSystem.h@{BuffSystem.h}}
+\doxysubsubsection{\texorpdfstring{BuffdashCooldown()}{BuffdashCooldown()}}
+{\footnotesize\ttfamily \label{BuffSystem_8h_a2193dee4ae206d25067d74faa7494300} 
+void Buffdash\+Cooldown (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{, }\item[{float}]{sub}{}\end{DoxyParamCaption})}
+
+
+
+Diminue la durée du cooldown du dash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff \\
+\hline
+{\em sub} & Valeur à soustraire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Caius Tortevoix 
+\end{DoxyAuthor}
 \Hypertarget{BuffSystem_8h_a36aa5af7ab945960b0408c7b3147598b}\index{BuffSystem.h@{BuffSystem.h}!Buffdispersion@{Buffdispersion}}
 \index{Buffdispersion@{Buffdispersion}!BuffSystem.h@{BuffSystem.h}}
 \doxysubsubsection{\texorpdfstring{Buffdispersion()}{Buffdispersion()}}
@@ -184,6 +207,26 @@ Les valeurs du buff sont initialisées à 1 (aucun bonus).
 \begin{DoxyWarning}{Warning}
 La mémoire allouée doit être libérée avec \doxylink{BuffSystem_8h_a72028564d5ae2c5ceb60456d54691e8b}{Free\+Buff()}. 
 \end{DoxyWarning}
+\Hypertarget{BuffSystem_8h_ae286f3d6598ad5c98e4f5ce16a4bcc98}\index{BuffSystem.h@{BuffSystem.h}!BuffmovementSpeed@{BuffmovementSpeed}}
+\index{BuffmovementSpeed@{BuffmovementSpeed}!BuffSystem.h@{BuffSystem.h}}
+\doxysubsubsection{\texorpdfstring{BuffmovementSpeed()}{BuffmovementSpeed()}}
+{\footnotesize\ttfamily \label{BuffSystem_8h_ae286f3d6598ad5c98e4f5ce16a4bcc98} 
+void Buffmovement\+Speed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbuff__t}{buff\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{buff}{, }\item[{float}]{add}{}\end{DoxyParamCaption})}
+
+
+
+Augmente la vitesse du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buff} & Pointeur vers la structure de buff \\
+\hline
+{\em add} & Valeur à ajouter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Caius Tortevoix 
+\end{DoxyAuthor}
 \Hypertarget{BuffSystem_8h_aed66b9e9348fc7e0ad2c87f18c159bcc}\index{BuffSystem.h@{BuffSystem.h}!BuffreloadTime@{BuffreloadTime}}
 \index{BuffreloadTime@{BuffreloadTime}!BuffSystem.h@{BuffSystem.h}}
 \doxysubsubsection{\texorpdfstring{BuffreloadTime()}{BuffreloadTime()}}

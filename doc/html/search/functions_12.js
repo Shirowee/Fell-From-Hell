@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['windowinit_0',['WindowInit',['../WindowManager_8h.html#a1a20c5f41702180fea63adc55fae5e65',1,'WindowInit():&#160;WindowManager.c'],['../WindowManager_8c.html#a1a20c5f41702180fea63adc55fae5e65',1,'WindowInit():&#160;WindowManager.c']]],
-  ['windowmanager_5fistopmost_1',['WindowManager_IsTopmost',['../WindowManager_8h.html#a7ce90044dc8a3a27d7fecc6540ed81c8',1,'WindowManager_IsTopmost(void):&#160;WindowManager.c'],['../WindowManager_8c.html#a7ce90044dc8a3a27d7fecc6540ed81c8',1,'WindowManager_IsTopmost(void):&#160;WindowManager.c']]],
-  ['windowmanager_5fupdate_2',['WindowManager_Update',['../WindowManager_8h.html#ad5f0aa7d8afd1ffba57b3d2ab54b22d2',1,'WindowManager_Update(void):&#160;WindowManager.c'],['../WindowManager_8c.html#ad5f0aa7d8afd1ffba57b3d2ab54b22d2',1,'WindowManager_Update(void):&#160;WindowManager.c']]]
+  ['verifpremplan_0',['verifPremPlan',['../WindowManager_8h.html#a01699e0c378c75b5c5147d5c1a9f569c',1,'verifPremPlan(void):&#160;WindowManager.c'],['../WindowManager_8c.html#a606f7d96601573005c78c5ffa83616e7',1,'verifPremPlan(void):&#160;WindowManager.c']]],
+  ['void_1',['void',['../structcJSON__Hooks.html#a42c96b388103ffb466e7335b9fc710c3',1,'cJSON_Hooks']]]
 ];

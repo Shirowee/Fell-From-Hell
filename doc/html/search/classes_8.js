@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['textureresource_0',['TextureResource',['../structTextureResource.html',1,'']]],
-  ['trigger_1',['Trigger',['../structTrigger.html',1,'']]]
+  ['rect_0',['Rect',['../structRect.html',1,'']]],
+  ['resolutionconfig_1',['ResolutionConfig',['../structResolutionConfig.html',1,'']]]
 ];

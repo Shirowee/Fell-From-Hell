@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['valuedouble_0',['valuedouble',['../structcJSON.html#a4b21817d0fd2919901abadac73214e7f',1,'cJSON']]],
-  ['valueint_1',['valueint',['../structcJSON.html#a369cea49494eb5d4409d532a731a0fbf',1,'cJSON']]],
-  ['valuestring_2',['valuestring',['../structcJSON.html#ad43f8de2571e504c4c5ce0a36990e6e1',1,'cJSON::valuestring'],['../cJSON_8h.html#aa770d5dc55a1031ccff9aee4e96acf8f',1,'valuestring:&#160;cJSON.h']]],
-  ['velocity_3',['velocity',['../structPlayer__s.html#a4a9ac67b8576048daf432605599e1459',1,'Player_s']]],
-  ['verifpremplan_4',['verifPremPlan',['../WindowManager_8h.html#a01699e0c378c75b5c5147d5c1a9f569c',1,'verifPremPlan(void):&#160;WindowManager.c'],['../WindowManager_8c.html#a606f7d96601573005c78c5ffa83616e7',1,'verifPremPlan(void):&#160;WindowManager.c']]],
-  ['void_5',['void',['../structcJSON__Hooks.html#a42c96b388103ffb466e7335b9fc710c3',1,'cJSON_Hooks']]]
+  ['up_0',['Up',['../PlayerMovement_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa57a7edcbc04d6175683383cad5c3e0a2',1,'PlayerMovement.h']]],
+  ['updatebullet_1',['UpdateBullet',['../Projectiles_8h.html#ae02dbe0eef63a4e222cfa169f9d77076',1,'UpdateBullet(bullet_t *bullet, bulletPool_t *originPool, bool *desactivated):&#160;Projectiles.c'],['../Projectiles_8c.html#ae02dbe0eef63a4e222cfa169f9d77076',1,'UpdateBullet(bullet_t *bullet, bulletPool_t *originPool, bool *desactivated):&#160;Projectiles.c']]],
+  ['updatebulletpool_2',['UpdateBulletPool',['../BulletPool_8h.html#a76d5595ccec9e55ff7965f8939112ebc',1,'UpdateBulletPool(bulletPool_t *pool):&#160;BulletPool.c'],['../BulletPool_8c.html#a76d5595ccec9e55ff7965f8939112ebc',1,'UpdateBulletPool(bulletPool_t *pool):&#160;BulletPool.c']]],
+  ['updateenemypool_3',['UpdateEnemyPool',['../EnemyPool_8h.html#a16cc3781f1de82d5cbbb58564117cc5b',1,'UpdateEnemyPool(enemyPool_t *pool, Vector2 playerPos):&#160;EnemyPool.c'],['../EnemyPool_8c.html#a16cc3781f1de82d5cbbb58564117cc5b',1,'UpdateEnemyPool(enemyPool_t *pool, Vector2 playerPos):&#160;EnemyPool.c']]],
+  ['updateenemyspawner_4',['UpdateEnemySpawner',['../EnemySpawner_8h.html#a8b8f393df12c59d1d2708df07014048f',1,'UpdateEnemySpawner(EnemySpawner *spawner, enemyPool_t *pool):&#160;EnemySpawner.c'],['../EnemySpawner_8c.html#a8b8f393df12c59d1d2708df07014048f',1,'UpdateEnemySpawner(EnemySpawner *spawner, enemyPool_t *pool):&#160;EnemySpawner.c']]]
 ];

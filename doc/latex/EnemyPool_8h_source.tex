@@ -13,30 +13,32 @@
 \DoxyCodeLine{00027\ }
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\_t}}*\ \mbox{\hyperlink{structenemyPool__t_a2829470377cc162b525211c74732f22f}{tab}};\ \textcolor{comment}{//liste\ contenant\ les\ enemy}}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemyPool__t_a81267b793613e607e2f7d1670016fa8b}{active}};\ \textcolor{comment}{//booléen\ pour\ l'activité\ de\ la\ pool}}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemyPool__t_a8de7f7f91fd839f8c01cd326293479ff}{capacity}};\ \textcolor{comment}{//nombre\ d'elements}}
-\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_a2f1535ca00ed3dd50590fd7713dac682}{InitEnemyPool}}(\mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ pool,\ \textcolor{keywordtype}{int}\ capacity);}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_aad4b72a3a13287968e82e35b7f64954b}{SpawnEnemyPool}}(\mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ pool,\ }
-\DoxyCodeLine{00062\ \ \ \ \ Vector2\ pos,\ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{float}\ speed,\ }
-\DoxyCodeLine{00064\ \ \ \ \ Vector2\ size,\ }
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ dmg,\ }
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{float}\ bulletSpeed,\ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ bulletSize,\ }
-\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{EnemyType\_t}}\ type);}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_a16cc3781f1de82d5cbbb58564117cc5b}{UpdateEnemyPool}}(\mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ pool,\ Vector2\ playerPos);}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_ac85ea34beb9e60a0c254e1f38a8cc685}{DrawEnemyPool}}(\mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ pool);}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_a4dc0ff895b8c776796452ae7e8a8ace3}{FreeEnemyPool}}(\mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ pool);}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00093\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}\ \mbox{\hyperlink{EnemyPool_8h_ab8b70d96e97532942f19fdcb03aa4b1a}{enemyPool}};}
-\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structenemyPool__s}{enemyPool\_s}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\_t}}*\ \mbox{\hyperlink{structenemyPool__s_a10cb478f6228906a05137083d8b7540a}{tab}};\ \textcolor{comment}{//liste\ contenant\ les\ enemy}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemyPool__s_a5e4ca1618bd5f4ee63de88492ca104eb}{active}};\ \textcolor{comment}{//booléen\ pour\ l'activité\ de\ la\ pool}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemyPool__s_adda8ee1a44f22d50e6b54a22c1061f84}{nbEnemiesActive}};\ \textcolor{comment}{//nombre\ d'ennemis\ actifs}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structenemyPool__s_aefd0d7eb2c13800e3decc590d2001875}{capacity}};\ \textcolor{comment}{//nombre\ d'elements}}
+\DoxyCodeLine{00035\ \}\ \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_a2f1535ca00ed3dd50590fd7713dac682}{InitEnemyPool}}(\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}}*\ pool,\ \textcolor{keywordtype}{int}\ capacity);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_a98357c6a35b73b29e95b4e9a2c397165}{SpawnEnemyPool}}(\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}}*\ pool,\ }
+\DoxyCodeLine{00063\ \ \ \ \ Vector2\ pos,\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ hp,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{float}\ speed,\ }
+\DoxyCodeLine{00066\ \ \ \ \ Vector2\ size,\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ dmg,\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{float}\ bulletSpeed,\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ bulletSize,\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{EnemyType\_t}}\ type);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_a16cc3781f1de82d5cbbb58564117cc5b}{UpdateEnemyPool}}(\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}}*\ pool,\ Vector2\ playerPos);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_a4628e2a567895b010dc9dcb679e138e2}{DrawEnemyPool}}(\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}}*\ pool,\ Vector2\ playerPos);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{EnemyPool_8h_a4dc0ff895b8c776796452ae7e8a8ace3}{FreeEnemyPool}}(\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}}*\ pool);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}}\ \mbox{\hyperlink{EnemyPool_8h_ab8b70d96e97532942f19fdcb03aa4b1a}{enemyPool}};}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

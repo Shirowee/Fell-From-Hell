@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['level_0',['Level',['../structLevel.html',1,'']]]
+  ['keybindings_0',['KeyBindings',['../structKeyBindings.html',1,'']]]
 ];

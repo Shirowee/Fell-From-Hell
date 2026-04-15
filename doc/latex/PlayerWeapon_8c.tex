@@ -2,6 +2,8 @@
 \hypertarget{PlayerWeapon_8c}{}\label{PlayerWeapon_8c}\index{src/player/PlayerWeapon.c@{src/player/PlayerWeapon.c}}
 {\ttfamily \#include "{}../../lib/player/\+Player.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/core/\+Game\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Ressources\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/menu/\+Screen.\+h"{}}\newline
 {\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
@@ -29,33 +31,33 @@ void \mbox{\hyperlink{PlayerWeapon_8c_a4fb8e11fca5691cd02b616de96744a92}{spawn\+
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a4d8ff34614b1d5d9d20807134de12fd4}{minigun}} =\{0, 12.\+5, 10, 75, 75, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 30, 100, 500, 15\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a4d8ff34614b1d5d9d20807134de12fd4}{minigun}} =\{0, 12.\+5, 10, 75, 75, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 30, 100, 900, 15\}
 \begin{DoxyCompactList}\small\item\em Minigun \+: tir rapide avec dispersion et grand chargeur. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a50f909b581e3c83ab8e9fa368bcf9ad4}{lance\+\_\+flammes}} =\{1, 10, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 30, 0.\+5, 500, 30\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a50f909b581e3c83ab8e9fa368bcf9ad4}{lance\+\_\+flammes}} =\{1, 5, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 30, 0.\+5, 900, 30\}
 \begin{DoxyCompactList}\small\item\em Lance-\/flammes \+: faibles dégâts mais applique brûlure. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a5620b923a3c0ec6db2ddeadc4507b47d}{lance\+\_\+missile\+\_\+tete\+\_\+chercheuse}} =\{2, 125, 2, 10, 10, 6, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 4, 500, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a5620b923a3c0ec6db2ddeadc4507b47d}{lance\+\_\+missile\+\_\+tete\+\_\+chercheuse}} =\{2, 125, 2, 10, 10, 6, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 4, 900, 10\}
 \begin{DoxyCompactList}\small\item\em Lance-\/missile à tête chercheuse. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_afeb379c686bd18e9c63c80b661209763}{fusil\+\_\+a\+\_\+pompe}} =\{3, 12.\+5, 0.\+75, 6, 6, 5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 50, 0.\+75, 400, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_afeb379c686bd18e9c63c80b661209763}{fusil\+\_\+a\+\_\+pompe}} =\{3, 12.\+5, 0.\+75, 6, 6, 5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 50, 0.\+75, 700, 10\}
 \begin{DoxyCompactList}\small\item\em Fusil à pompe \+: tir en cône de plusieurs projectiles. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_abdd8b82b357fb575842ce112597760ec}{pistolet\+\_\+laser}} =\{4, 50, 0.\+8, 10, 10, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 1, 500, 50\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_abdd8b82b357fb575842ce112597760ec}{pistolet\+\_\+laser}} =\{4, 75, 0.\+5, 10, 10, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 1, 900, 50\}
 \begin{DoxyCompactList}\small\item\em Pistolet laser \+: rayon continu pendant 1 seconde. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a01166402a9981ed8e533de5e1786ce89}{fusil\+\_\+rafales}} =\{5, 35, 2, 11, 11, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 10, 100, 500, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a01166402a9981ed8e533de5e1786ce89}{fusil\+\_\+rafales}} =\{5, 35, 2, 11, 11, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 10, 100, 900, 10\}
 \begin{DoxyCompactList}\small\item\em Fusil à rafales \+: tir de 3 balles successives. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_aedb4a0d6d9ebb2993170ccf3702774e2}{lance\+\_\+glace}} =\{6, 10, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601ac738f0f78c29056dc3dfcdc285ca67da}{GEL}}, 30, 0.\+5, 500, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_aedb4a0d6d9ebb2993170ccf3702774e2}{lance\+\_\+glace}} =\{6, 5, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601ac738f0f78c29056dc3dfcdc285ca67da}{GEL}}, 30, 0.\+5, 900, 30\}
 \begin{DoxyCompactList}\small\item\em Lance-\/glace \+: équivalent gel du lance-\/flammes. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_aa533c9ae7191475452231219c0f40645}{lance\+\_\+roquette}} =\{7, 150, 0.\+8, 8, 8, 4, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 0, 0.\+5, 500, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_aa533c9ae7191475452231219c0f40645}{lance\+\_\+roquette}} =\{7, 200, 0.\+75, 8, 8, 4, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 0, 0.\+5, 900, 15\}
 \begin{DoxyCompactList}\small\item\em Lance-\/roquette \+: missile explosif. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a8360d988d07b52ad8ddf20e5fafd4c6f}{epee\+\_\+longue}} =\{8, 75, 1.\+5, -\/1, -\/1, -\/1, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 160, 10, 500, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a8360d988d07b52ad8ddf20e5fafd4c6f}{epee\+\_\+longue}} =\{8, 75, 1.\+5, -\/1, -\/1, -\/1, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 160, 10, 900, 10\}
 \begin{DoxyCompactList}\small\item\em Épée longue \+: attaque de mêlée en cône. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a6a2743a0956741cb885071eb4e909f85}{sniper}} =\{9, 150, 0.\+75, 6, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 100, 1200, 20\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a6a2743a0956741cb885071eb4e909f85}{sniper}} =\{9, 150, 0.\+75, 6, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 100, 1500, 20\}
 \begin{DoxyCompactList}\small\item\em Sniper \+: tir lent mais très puissant. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a8c8acc3ea9356c2f5c7e3e10d7192059}{arbalete}} =\{10, 70, 1, 8, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601aed5cfbb579c1f93d8d070433808a46d9}{TOUS}}, 0, 100, 500, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a8c8acc3ea9356c2f5c7e3e10d7192059}{arbalete}} =\{10, 70, 1, 8, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601aed5cfbb579c1f93d8d070433808a46d9}{TOUS}}, 0, 100, 800, 10\}
 \begin{DoxyCompactList}\small\item\em Arbalète \+: alterne différents types de carreaux. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_aea8a4e4eb9161d8e4a3a7b5450e3d9a9}{pistolet\+\_\+eclectique}} =\{11, 35, 2, 15, 15, 2, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a1298860c6bdaef522a8452b33b3b8111}{ELECTRIQUE}}, 40, 50, 500, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_aea8a4e4eb9161d8e4a3a7b5450e3d9a9}{pistolet\+\_\+eclectique}} =\{11, 35, 2, 15, 15, 2, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a1298860c6bdaef522a8452b33b3b8111}{ELECTRIQUE}}, 40, 50, 900, 10\}
 \begin{DoxyCompactList}\small\item\em Pistolet électrique \+: attaque en chaîne les ennemis proches. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_acc93f609dad18eb5ff6191661f27f9c9}{pistolet\+\_\+mitrailleur}} =\{12, 10, 10, 40, 40, 0.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 25, 50, 500, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_acc93f609dad18eb5ff6191661f27f9c9}{pistolet\+\_\+mitrailleur}} =\{12, 7.\+5, 12.\+5, 40, 40, 0.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 25, 50, 900, 10\}
 \begin{DoxyCompactList}\small\item\em Pistolet mitrailleur \+: rapide mais peu puissant. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a038dce8dc6a7310c996daa199e4e027c}{pistolet\+\_\+multi\+\_\+direction}} =\{13, 20, 2, 20, 20, 1.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 7.\+5, 100, 500, 10\}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} \mbox{\hyperlink{PlayerWeapon_8c_a038dce8dc6a7310c996daa199e4e027c}{pistolet\+\_\+multi\+\_\+direction}} =\{13, 25, 2, 20, 20, 1.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 7.\+5, 100, 900, 10\}
 \begin{DoxyCompactList}\small\item\em Pistolet multidirection \+: tir dans 4 directions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -166,7 +168,7 @@ Génère un projectile selon les caractéristiques de l\textquotesingle{}arme.
 \index{arbalete@{arbalete}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{arbalete}{arbalete}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_a8c8acc3ea9356c2f5c7e3e10d7192059} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} arbalete =\{10, 70, 1, 8, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601aed5cfbb579c1f93d8d070433808a46d9}{TOUS}}, 0, 100, 500, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} arbalete =\{10, 70, 1, 8, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601aed5cfbb579c1f93d8d070433808a46d9}{TOUS}}, 0, 100, 800, 10\}}
 
 
 
@@ -176,7 +178,7 @@ Arbalète \+: alterne différents types de carreaux.
 \index{epee\_longue@{epee\_longue}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{epee\_longue}{epee\_longue}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_a8360d988d07b52ad8ddf20e5fafd4c6f} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} epee\+\_\+longue =\{8, 75, 1.\+5, -\/1, -\/1, -\/1, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 160, 10, 500, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} epee\+\_\+longue =\{8, 75, 1.\+5, -\/1, -\/1, -\/1, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 160, 10, 900, 10\}}
 
 
 
@@ -186,7 +188,7 @@ Arbalète \+: alterne différents types de carreaux.
 \index{fusil\_a\_pompe@{fusil\_a\_pompe}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{fusil\_a\_pompe}{fusil\_a\_pompe}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_afeb379c686bd18e9c63c80b661209763} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+a\+\_\+pompe =\{3, 12.\+5, 0.\+75, 6, 6, 5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 50, 0.\+75, 400, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+a\+\_\+pompe =\{3, 12.\+5, 0.\+75, 6, 6, 5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 50, 0.\+75, 700, 10\}}
 
 
 
@@ -196,7 +198,7 @@ Fusil à pompe \+: tir en cône de plusieurs projectiles.
 \index{fusil\_rafales@{fusil\_rafales}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{fusil\_rafales}{fusil\_rafales}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_a01166402a9981ed8e533de5e1786ce89} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+rafales =\{5, 35, 2, 11, 11, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 10, 100, 500, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} fusil\+\_\+rafales =\{5, 35, 2, 11, 11, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 10, 100, 900, 10\}}
 
 
 
@@ -206,7 +208,7 @@ Fusil à rafales \+: tir de 3 balles successives.
 \index{lance\_flammes@{lance\_flammes}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{lance\_flammes}{lance\_flammes}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_a50f909b581e3c83ab8e9fa368bcf9ad4} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+flammes =\{1, 10, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 30, 0.\+5, 500, 30\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+flammes =\{1, 5, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 30, 0.\+5, 900, 30\}}
 
 
 
@@ -216,7 +218,7 @@ Lance-\/flammes \+: faibles dégâts mais applique brûlure.
 \index{lance\_glace@{lance\_glace}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{lance\_glace}{lance\_glace}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_aedb4a0d6d9ebb2993170ccf3702774e2} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+glace =\{6, 10, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601ac738f0f78c29056dc3dfcdc285ca67da}{GEL}}, 30, 0.\+5, 500, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+glace =\{6, 5, 20, 300, 300, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601ac738f0f78c29056dc3dfcdc285ca67da}{GEL}}, 30, 0.\+5, 900, 30\}}
 
 
 
@@ -226,7 +228,7 @@ Lance-\/glace \+: équivalent gel du lance-\/flammes.
 \index{lance\_missile\_tete\_chercheuse@{lance\_missile\_tete\_chercheuse}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{lance\_missile\_tete\_chercheuse}{lance\_missile\_tete\_chercheuse}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_a5620b923a3c0ec6db2ddeadc4507b47d} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+missile\+\_\+tete\+\_\+chercheuse =\{2, 125, 2, 10, 10, 6, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 4, 500, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+missile\+\_\+tete\+\_\+chercheuse =\{2, 125, 2, 10, 10, 6, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 4, 900, 10\}}
 
 
 
@@ -236,7 +238,7 @@ Lance-\/missile à tête chercheuse.
 \index{lance\_roquette@{lance\_roquette}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{lance\_roquette}{lance\_roquette}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_aa533c9ae7191475452231219c0f40645} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+roquette =\{7, 150, 0.\+8, 8, 8, 4, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 0, 0.\+5, 500, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} lance\+\_\+roquette =\{7, 200, 0.\+75, 8, 8, 4, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601af9ce11295c6313cf2a6b219d48278488}{FEU}}, 0, 0.\+5, 900, 15\}}
 
 
 
@@ -246,7 +248,7 @@ Lance-\/roquette \+: missile explosif.
 \index{minigun@{minigun}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{minigun}{minigun}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_a4d8ff34614b1d5d9d20807134de12fd4} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} minigun =\{0, 12.\+5, 10, 75, 75, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 30, 100, 500, 15\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} minigun =\{0, 12.\+5, 10, 75, 75, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 30, 100, 900, 15\}}
 
 
 
@@ -256,7 +258,7 @@ Minigun \+: tir rapide avec dispersion et grand chargeur.
 \index{pistolet\_eclectique@{pistolet\_eclectique}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{pistolet\_eclectique}{pistolet\_eclectique}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_aea8a4e4eb9161d8e4a3a7b5450e3d9a9} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+eclectique =\{11, 35, 2, 15, 15, 2, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a1298860c6bdaef522a8452b33b3b8111}{ELECTRIQUE}}, 40, 50, 500, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+eclectique =\{11, 35, 2, 15, 15, 2, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a1298860c6bdaef522a8452b33b3b8111}{ELECTRIQUE}}, 40, 50, 900, 10\}}
 
 
 
@@ -266,7 +268,7 @@ Pistolet électrique \+: attaque en chaîne les ennemis proches.
 \index{pistolet\_laser@{pistolet\_laser}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{pistolet\_laser}{pistolet\_laser}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_abdd8b82b357fb575842ce112597760ec} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+laser =\{4, 50, 0.\+8, 10, 10, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 1, 500, 50\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+laser =\{4, 75, 0.\+5, 10, 10, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 1, 900, 50\}}
 
 
 
@@ -276,7 +278,7 @@ Pistolet laser \+: rayon continu pendant 1 seconde.
 \index{pistolet\_mitrailleur@{pistolet\_mitrailleur}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{pistolet\_mitrailleur}{pistolet\_mitrailleur}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_acc93f609dad18eb5ff6191661f27f9c9} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+mitrailleur =\{12, 10, 10, 40, 40, 0.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 25, 50, 500, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+mitrailleur =\{12, 7.\+5, 12.\+5, 40, 40, 0.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 25, 50, 900, 10\}}
 
 
 
@@ -286,7 +288,7 @@ Pistolet mitrailleur \+: rapide mais peu puissant.
 \index{pistolet\_multi\_direction@{pistolet\_multi\_direction}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{pistolet\_multi\_direction}{pistolet\_multi\_direction}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_a038dce8dc6a7310c996daa199e4e027c} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+multi\+\_\+direction =\{13, 20, 2, 20, 20, 1.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 7.\+5, 100, 500, 10\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} pistolet\+\_\+multi\+\_\+direction =\{13, 25, 2, 20, 20, 1.\+5, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 7.\+5, 100, 900, 10\}}
 
 
 
@@ -296,7 +298,7 @@ Pistolet multidirection \+: tir dans 4 directions.
 \index{sniper@{sniper}!PlayerWeapon.c@{PlayerWeapon.c}}
 \doxysubsubsection{\texorpdfstring{sniper}{sniper}}
 {\footnotesize\ttfamily \label{PlayerWeapon_8c_a6a2743a0956741cb885071eb4e909f85} 
-\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} sniper =\{9, 150, 0.\+75, 6, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 100, 1200, 20\}}
+\mbox{\hyperlink{structweapon__t}{weapon\+\_\+t}} sniper =\{9, 150, 0.\+75, 6, 6, 3, \mbox{\hyperlink{PlayerWeapon_8h_a13b8dbe7212735c28cb8f3ea70b4b601a87797e00a316143a6c49ad311b240a2b}{AUCUN}}, 0, 100, 1500, 20\}}
 
 
 

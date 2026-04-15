@@ -2,7 +2,7 @@ var searchData=
 [
   ['b_0',['b',['../cJSON_8h.html#a1a175e87536301df98c805ac0636ad7c',1,'cJSON.h']]],
   ['boolean_1',['boolean',['../cJSON_8h.html#a08f076c86f430b6f0e301fcf94223b38',1,'cJSON.h']]],
-  ['buff_2',['buff',['../structPlayer__s.html#a68fb69ce39c80afdd83f1ac6303ecaa1',1,'Player_s']]],
+  ['buff_2',['buff',['../structSaveInfo.html#aa9647ec34d4bf0e3e2509efca722d28d',1,'SaveInfo::buff'],['../structPlayer__s.html#a68fb69ce39c80afdd83f1ac6303ecaa1',1,'Player_s::buff']]],
   ['buffer_3',['buffer',['../cJSON_8h.html#aff2566f4c366b48d73479bef43ee4d2e',1,'cJSON.h']]],
   ['buffer_5flength_4',['buffer_length',['../cJSON_8h.html#a7beaf9b4ef5e4c7254cc3298a3424354',1,'cJSON.h']]],
   ['bulletdir_5',['bulletDir',['../structbullet__s.html#a939e85d587b4abe93c054a94ce2d9c9c',1,'bullet_s']]],

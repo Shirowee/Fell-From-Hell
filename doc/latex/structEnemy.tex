@@ -2,41 +2,67 @@
 \hypertarget{structEnemy}{}\label{structEnemy}\index{Enemy@{Enemy}}
 
 
-Informations sur les ennemis du niveau.  
+Informations sur les vagues d\textquotesingle{}ennemis.  
 
 
 
 
 {\ttfamily \#include $<$Level\+Manager.\+h$>$}
 
+
+
+Collaboration diagram for Enemy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{structEnemy__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-char \mbox{\hyperlink{structEnemy_ae8542615bddd051d63cce8cce122b9a7}{type}} \mbox{[}32\mbox{]}
+int \mbox{\hyperlink{structEnemy_a65660a59ddef0197ae008284904970dd}{nb\+Type}}
 \item 
-float \mbox{\hyperlink{structEnemy_a4d5e4877894781d1fc5d607fd114c60c}{dist\+\_\+aggro}}
+float \mbox{\hyperlink{structEnemy_a3a0bc993c29bb9de1985ca3ceeefa06a}{spawn\+Time}}
+\item 
+\mbox{\hyperlink{structPos}{Pos}} \mbox{\hyperlink{structEnemy_a22ee73a866fff149543e7e698f4b62cf}{position}}
+\item 
+bool \mbox{\hyperlink{structEnemy_a795a55a88cc3360d63e7fbceef3adb20}{spawned}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Informations sur les ennemis du niveau. 
+Informations sur les vagues d\textquotesingle{}ennemis. 
 
 \label{doc-variable-members}
 \Hypertarget{structEnemy_doc-variable-members}
 \doxysubsection{Field Documentation}
-\Hypertarget{structEnemy_a4d5e4877894781d1fc5d607fd114c60c}\index{Enemy@{Enemy}!dist\_aggro@{dist\_aggro}}
-\index{dist\_aggro@{dist\_aggro}!Enemy@{Enemy}}
-\doxysubsubsection{\texorpdfstring{dist\_aggro}{dist\_aggro}}
-{\footnotesize\ttfamily \label{structEnemy_a4d5e4877894781d1fc5d607fd114c60c} 
-float Enemy\+::dist\+\_\+aggro}
+\Hypertarget{structEnemy_a65660a59ddef0197ae008284904970dd}\index{Enemy@{Enemy}!nbType@{nbType}}
+\index{nbType@{nbType}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{nbType}{nbType}}
+{\footnotesize\ttfamily \label{structEnemy_a65660a59ddef0197ae008284904970dd} 
+int Enemy\+::nb\+Type}
 
-Distance maximal a laquelle l\textquotesingle{}ennemi peut voir le joueur \Hypertarget{structEnemy_ae8542615bddd051d63cce8cce122b9a7}\index{Enemy@{Enemy}!type@{type}}
-\index{type@{type}!Enemy@{Enemy}}
-\doxysubsubsection{\texorpdfstring{type}{type}}
-{\footnotesize\ttfamily \label{structEnemy_ae8542615bddd051d63cce8cce122b9a7} 
-char Enemy\+::type\mbox{[}32\mbox{]}}
+Numéro du patern de la vague d\textquotesingle{}ennemis \Hypertarget{structEnemy_a22ee73a866fff149543e7e698f4b62cf}\index{Enemy@{Enemy}!position@{position}}
+\index{position@{position}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{structEnemy_a22ee73a866fff149543e7e698f4b62cf} 
+\mbox{\hyperlink{structPos}{Pos}} Enemy\+::position}
 
-Type de l\textquotesingle{}ennemi 
+Position d\textquotesingle{}apparition de la vague \Hypertarget{structEnemy_a795a55a88cc3360d63e7fbceef3adb20}\index{Enemy@{Enemy}!spawned@{spawned}}
+\index{spawned@{spawned}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{spawned}{spawned}}
+{\footnotesize\ttfamily \label{structEnemy_a795a55a88cc3360d63e7fbceef3adb20} 
+bool Enemy\+::spawned}
+
+\Hypertarget{structEnemy_a3a0bc993c29bb9de1985ca3ceeefa06a}\index{Enemy@{Enemy}!spawnTime@{spawnTime}}
+\index{spawnTime@{spawnTime}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{spawnTime}{spawnTime}}
+{\footnotesize\ttfamily \label{structEnemy_a3a0bc993c29bb9de1985ca3ceeefa06a} 
+float Enemy\+::spawn\+Time}
+
+Temps avant l\textquotesingle{}apparition de la prochaine vague d\textquotesingle{}ennemis 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

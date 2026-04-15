@@ -1,10 +1,13 @@
 \doxysection{src/enemies/\+Enemy\+Controller.c File Reference}
 \hypertarget{EnemyController_8c}{}\label{EnemyController_8c}\index{src/enemies/EnemyController.c@{src/enemies/EnemyController.c}}
+{\ttfamily \#include "{}../../lib/core/\+Ressources\+Manager.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/enemies/\+Enemy\+Controller.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/enemies/\+Enemy\+Movement.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/systems/\+Bullet\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/systems/\+Enemy\+Pool.\+h"{}}\newline
 {\ttfamily \#include "{}../../lib/enemies/\+Enemy\+States.\+h"{}}\newline
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
 Include dependency graph for Enemy\+Controller.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -16,24 +19,64 @@ Include dependency graph for Enemy\+Controller.\+c\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{EnemyController_8c_af866370ba9b9e114fa79c088dead3748}{Enemy\+Init}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, float speed, Vector2 size, int dmg, Vector2 pos, int bullet\+Speed, int bullet\+Size, \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}} type)
+void \mbox{\hyperlink{EnemyController_8c_a458cf1b8a79c53e379a97a1669bcfe75}{Enemy\+Init}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, int hp, float speed, Vector2 size, int dmg, Vector2 pos, int bullet\+Speed, int bullet\+Size, \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}} type)
 \begin{DoxyCompactList}\small\item\em Initialise un ennemi. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{EnemyController_8c_a7c1654e8730d9f7e1f971756cf408df2}{Enemy\+Shoots}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy)
 \begin{DoxyCompactList}\small\item\em Active le tir de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{EnemyController_8c_ac86b892c2a8e816f2ceb67ce9c676768}{Enemy\+Update}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Met à jour la logique de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyController_8c_a1a5a2c68c5718f4cfb7963f26b93eed6}{Enemy\+Draw}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy)
+void \mbox{\hyperlink{EnemyController_8c_accd5f44b269c7c418034e9112713e5c4}{Copy\+Enemy}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}dest, bool cut)
+\begin{DoxyCompactList}\small\item\em Copie les données du projectile source dans le projectile destinataire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyController_8c_adc5809260a02a7ae636d69eea3c1ff70}{Desactivate\+Enemy}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}origin\+Pool)
+\begin{DoxyCompactList}\small\item\em Désactive l\textquotesingle{}ennemi dans sa pool respective. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemyController_8c_a218e6a8a978435807134c96cb2580647}{Enemy\+Draw}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Dessine l\textquotesingle{}ennemi à l\textquotesingle{}écran. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \label{doc-func-members}
 \Hypertarget{EnemyController_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{EnemyController_8c_a1a5a2c68c5718f4cfb7963f26b93eed6}\index{EnemyController.c@{EnemyController.c}!EnemyDraw@{EnemyDraw}}
+\Hypertarget{EnemyController_8c_accd5f44b269c7c418034e9112713e5c4}\index{EnemyController.c@{EnemyController.c}!CopyEnemy@{CopyEnemy}}
+\index{CopyEnemy@{CopyEnemy}!EnemyController.c@{EnemyController.c}}
+\doxysubsubsection{\texorpdfstring{CopyEnemy()}{CopyEnemy()}}
+{\footnotesize\ttfamily \label{EnemyController_8c_accd5f44b269c7c418034e9112713e5c4} 
+void Copy\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{src}{, }\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dest}{, }\item[{bool}]{cut}{}\end{DoxyParamCaption})}
+
+
+
+Copie les données du projectile source dans le projectile destinataire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & pointeur vers l\textquotesingle{}ennemi source \\
+\hline
+{\em dest} & pointeur vers l\textquotesingle{}ennemi destinataire \\
+\hline
+{\em cut} & booléen qui détermine si l\textquotesingle{}ennemi source doit être désactivé \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EnemyController_8c_adc5809260a02a7ae636d69eea3c1ff70}\index{EnemyController.c@{EnemyController.c}!DesactivateEnemy@{DesactivateEnemy}}
+\index{DesactivateEnemy@{DesactivateEnemy}!EnemyController.c@{EnemyController.c}}
+\doxysubsubsection{\texorpdfstring{DesactivateEnemy()}{DesactivateEnemy()}}
+{\footnotesize\ttfamily \label{EnemyController_8c_adc5809260a02a7ae636d69eea3c1ff70} 
+void Desactivate\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{origin\+Pool}{}\end{DoxyParamCaption})}
+
+
+
+Désactive l\textquotesingle{}ennemi dans sa pool respective. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bullet} & pointeur vers l\textquotesingle{}ennemi à désactiver \\
+\hline
+{\em origin\+Pool} & pointeur sur la pool respective de l\textquotesingle{}ennemi \\
+\hline
+\end{DoxyParams}
+\Hypertarget{EnemyController_8c_a218e6a8a978435807134c96cb2580647}\index{EnemyController.c@{EnemyController.c}!EnemyDraw@{EnemyDraw}}
 \index{EnemyDraw@{EnemyDraw}!EnemyController.c@{EnemyController.c}}
 \doxysubsubsection{\texorpdfstring{EnemyDraw()}{EnemyDraw()}}
-{\footnotesize\ttfamily \label{EnemyController_8c_a1a5a2c68c5718f4cfb7963f26b93eed6} 
-void Enemy\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyController_8c_a218e6a8a978435807134c96cb2580647} 
+void Enemy\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -43,12 +86,14 @@ Dessine l\textquotesingle{}ennemi à l\textquotesingle{}écran.
 \begin{DoxyParams}{Parameters}
 {\em enemy} & pointeur vers l\textquotesingle{}ennemi \\
 \hline
+{\em player\+Pos} & position du joueur \\
+\hline
 \end{DoxyParams}
-\Hypertarget{EnemyController_8c_af866370ba9b9e114fa79c088dead3748}\index{EnemyController.c@{EnemyController.c}!EnemyInit@{EnemyInit}}
+\Hypertarget{EnemyController_8c_a458cf1b8a79c53e379a97a1669bcfe75}\index{EnemyController.c@{EnemyController.c}!EnemyInit@{EnemyInit}}
 \index{EnemyInit@{EnemyInit}!EnemyController.c@{EnemyController.c}}
 \doxysubsubsection{\texorpdfstring{EnemyInit()}{EnemyInit()}}
-{\footnotesize\ttfamily \label{EnemyController_8c_af866370ba9b9e114fa79c088dead3748} 
-void Enemy\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{float}]{speed}{, }\item[{Vector2}]{size}{, }\item[{int}]{dmg}{, }\item[{Vector2}]{pos}{, }\item[{int}]{bullet\+Speed}{, }\item[{int}]{bullet\+Size}{, }\item[{\mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}}}]{type}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyController_8c_a458cf1b8a79c53e379a97a1669bcfe75} 
+void Enemy\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{int}]{hp}{, }\item[{float}]{speed}{, }\item[{Vector2}]{size}{, }\item[{int}]{dmg}{, }\item[{Vector2}]{pos}{, }\item[{int}]{bullet\+Speed}{, }\item[{int}]{bullet\+Size}{, }\item[{\mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}}}]{type}{}\end{DoxyParamCaption})}
 
 
 
@@ -57,6 +102,8 @@ Initialise un ennemi.
 
 \begin{DoxyParams}{Parameters}
 {\em enemy} & pointeur vers l\textquotesingle{}ennemi \\
+\hline
+{\em hp} & nombre de points de vie \\
 \hline
 {\em speed} & vitesse de déplacement \\
 \hline

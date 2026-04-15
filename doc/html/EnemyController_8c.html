@@ -80,53 +80,137 @@ $(function() {
   <div class="headertitle"><div class="title">EnemyController.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="EnemyController_8h_source.html">../../lib/enemies/EnemyController.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="RessourcesManager_8h_source.html">../../lib/core/RessourcesManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="EnemyController_8h_source.html">../../lib/enemies/EnemyController.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="EnemyMovement_8h_source.html">../../lib/enemies/EnemyMovement.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BulletPool_8h_source.html">../../lib/systems/BulletPool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="EnemyPool_8h_source.html">../../lib/systems/EnemyPool.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="EnemyStates_8h_source.html">../../lib/enemies/EnemyStates.h</a>&quot;</code><br />
 <code>#include &quot;../../raylib/include/raylib.h&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for EnemyController.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="EnemyController_8c__incl.png" border="0" usemap="#asrc_2enemies_2EnemyController_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2enemies_2EnemyController_8c" id="asrc_2enemies_2EnemyController_8c">
-<area shape="rect" title=" " alt="" coords="108,5,332,31"/>
-<area shape="rect" href="EnemyController_8h.html" title="Gestion des ennemis et de leur comportement (state machine)" alt="" coords="122,152,369,177"/>
-<area shape="poly" title=" " alt="" coords="165,33,128,45,96,61,85,70,79,80,78,90,84,102,111,128,145,145,143,150,108,133,79,106,73,91,74,78,81,66,93,56,126,40,163,28"/>
-<area shape="rect" title=" " alt="" coords="203,387,338,427"/>
-<area shape="poly" title=" " alt="" coords="167,33,115,50,63,77,41,94,24,114,12,137,8,164,8,246,13,276,25,302,45,324,70,343,129,372,191,390,189,395,127,377,67,348,41,328,21,305,8,278,3,247,3,163,7,135,19,111,38,90,60,72,113,45,165,28"/>
-<area shape="rect" href="BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="304,225,467,265"/>
-<area shape="poly" title=" " alt="" coords="332,18,413,23,495,33,564,51,590,62,609,77,622,101,621,124,608,145,588,164,529,198,464,223,462,218,527,193,584,160,604,141,616,122,616,102,605,80,588,67,562,56,494,39,413,29,332,24"/>
-<area shape="rect" href="EnemyMovement_8h.html" title="Gestion du mouvement des ennemis." alt="" coords="93,79,347,104"/>
-<area shape="poly" title=" " alt="" coords="223,31,223,65,217,65,217,31"/>
-<area shape="rect" href="EnemyStates_8h.html" title="Machine à états des ennemis." alt="" coords="371,79,595,104"/>
-<area shape="poly" title=" " alt="" coords="263,28,428,72,426,78,262,33"/>
-<area shape="poly" title=" " alt="" coords="249,177,270,373,265,373,244,178"/>
-<area shape="poly" title=" " alt="" coords="267,175,341,216,338,221,265,180"/>
-<area shape="poly" title=" " alt="" coords="366,268,323,315,288,375,283,373,319,312,362,264"/>
-<area shape="rect" href="Projectiles_8h.html" title=" " alt="" coords="334,313,437,339"/>
-<area shape="poly" title=" " alt="" coords="388,266,388,299,383,299,383,266"/>
-<area shape="poly" title=" " alt="" coords="370,341,311,381,308,377,367,337"/>
-<area shape="poly" title=" " alt="" coords="227,103,239,138,234,140,222,105"/>
-<area shape="poly" title=" " alt="" coords="445,107,298,151,296,145,444,101"/>
-<area shape="poly" title=" " alt="" coords="478,105,407,215,403,212,473,103"/>
+<area shape="rect" title=" " alt="" coords="378,5,602,31"/>
+<area shape="rect" href="RessourcesManager_8h.html" title="Gestion centralisée des ressources du jeu (textures et sons)" alt="" coords="5,79,177,119"/>
+<area shape="poly" title=" " alt="" coords="433,33,192,80,191,75,432,28"/>
+<area shape="rect" title=" " alt="" coords="336,401,471,441"/>
+<area shape="poly" title=" " alt="" coords="391,33,332,51,303,64,277,81,250,102,232,122,222,146,218,178,218,261,221,284,229,305,242,325,258,342,297,371,339,393,336,398,294,376,254,346,238,328,224,308,216,286,213,262,213,178,216,144,228,119,247,98,274,76,301,59,330,46,390,28"/>
+<area shape="rect" href="EnemyController_8h.html" title="Gestion des ennemis et de leur comportement (state machine)" alt="" coords="441,167,688,192"/>
+<area shape="poly" title=" " alt="" coords="504,29,524,50,542,77,556,116,564,153,559,154,551,118,537,80,519,54,500,33"/>
+<area shape="rect" href="BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="323,240,486,280"/>
+<area shape="poly" title=" " alt="" coords="379,30,331,48,311,62,294,80,284,99,283,119,288,140,299,160,332,198,368,230,365,234,328,202,295,163,283,141,278,120,279,98,289,77,307,58,329,44,377,25"/>
+<area shape="rect" href="EnemyMovement_8h.html" title="Gestion du mouvement des ennemis." alt="" coords="602,86,855,111"/>
+<area shape="poly" title=" " alt="" coords="526,28,682,79,680,84,524,33"/>
+<area shape="rect" href="EnemyPool_8h.html" title=" " alt="" coords="879,86,1090,111"/>
+<area shape="poly" title=" " alt="" coords="563,28,868,76,900,81,900,86,867,81,562,33"/>
+<area shape="rect" href="EnemyStates_8h.html" title="Machine à états des ennemis." alt="" coords="303,86,527,111"/>
+<area shape="poly" title=" " alt="" coords="481,33,438,78,434,74,477,29"/>
+<area shape="rect" title=" " alt="" coords="1114,86,1181,111"/>
+<area shape="poly" title=" " alt="" coords="602,18,709,22,835,32,970,49,1103,76,1112,79,1110,84,1101,81,969,55,834,38,708,28,602,23"/>
+<area shape="poly" title=" " alt="" coords="110,117,142,165,153,194,159,220,162,266,170,308,181,329,199,351,226,373,257,390,290,401,323,409,322,414,289,406,255,395,223,378,195,355,176,332,165,310,157,266,153,220,148,195,137,168,105,120"/>
+<area shape="rect" title=" " alt="" coords="45,167,127,192"/>
+<area shape="poly" title=" " alt="" coords="93,119,90,153,85,153,87,119"/>
+<area shape="poly" title=" " alt="" coords="559,194,500,281,426,391,422,388,496,279,555,191"/>
+<area shape="poly" title=" " alt="" coords="543,194,457,236,455,231,540,190"/>
+<area shape="poly" title=" " alt="" coords="414,280,423,314,425,354,417,389,412,388,419,353,418,315,409,281"/>
+<area shape="rect" href="Projectiles_8h.html" title=" " alt="" coords="308,328,411,353"/>
+<area shape="poly" title=" " alt="" coords="396,282,375,317,371,315,391,279"/>
+<area shape="poly" title=" " alt="" coords="368,352,388,388,384,391,364,355"/>
+<area shape="poly" title=" " alt="" coords="706,114,602,163,600,158,704,109"/>
+<area shape="poly" title=" " alt="" coords="965,114,451,397,448,392,963,109"/>
+<area shape="poly" title=" " alt="" coords="924,114,640,167,639,162,923,109"/>
+<area shape="poly" title=" " alt="" coords="439,109,532,158,529,163,436,114"/>
+<area shape="poly" title=" " alt="" coords="417,112,410,226,404,226,412,111"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af866370ba9b9e114fa79c088dead3748" id="r_af866370ba9b9e114fa79c088dead3748"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af866370ba9b9e114fa79c088dead3748">EnemyInit</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *enemy, float speed, Vector2 size, int dmg, Vector2 pos, int bulletSpeed, int bulletSize, <a class="el" href="EnemyController_8h.html#a7a8e191a4803cd055d89be80d903e79e">EnemyType_t</a> type)</td></tr>
-<tr class="memdesc:af866370ba9b9e114fa79c088dead3748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise un ennemi.  <br /></td></tr>
+<tr class="memitem:a458cf1b8a79c53e379a97a1669bcfe75" id="r_a458cf1b8a79c53e379a97a1669bcfe75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a458cf1b8a79c53e379a97a1669bcfe75">EnemyInit</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *enemy, int hp, float speed, Vector2 size, int dmg, Vector2 pos, int bulletSpeed, int bulletSize, <a class="el" href="EnemyController_8h.html#a7a8e191a4803cd055d89be80d903e79e">EnemyType_t</a> type)</td></tr>
+<tr class="memdesc:a458cf1b8a79c53e379a97a1669bcfe75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise un ennemi.  <br /></td></tr>
 <tr class="memitem:a7c1654e8730d9f7e1f971756cf408df2" id="r_a7c1654e8730d9f7e1f971756cf408df2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c1654e8730d9f7e1f971756cf408df2">EnemyShoots</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *enemy)</td></tr>
 <tr class="memdesc:a7c1654e8730d9f7e1f971756cf408df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active le tir de l'ennemi.  <br /></td></tr>
 <tr class="memitem:ac86b892c2a8e816f2ceb67ce9c676768" id="r_ac86b892c2a8e816f2ceb67ce9c676768"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac86b892c2a8e816f2ceb67ce9c676768">EnemyUpdate</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *enemy, Vector2 playerPos)</td></tr>
 <tr class="memdesc:ac86b892c2a8e816f2ceb67ce9c676768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour la logique de l'ennemi.  <br /></td></tr>
-<tr class="memitem:a1a5a2c68c5718f4cfb7963f26b93eed6" id="r_a1a5a2c68c5718f4cfb7963f26b93eed6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a5a2c68c5718f4cfb7963f26b93eed6">EnemyDraw</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *enemy)</td></tr>
-<tr class="memdesc:a1a5a2c68c5718f4cfb7963f26b93eed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine l'ennemi à l'écran.  <br /></td></tr>
+<tr class="memitem:accd5f44b269c7c418034e9112713e5c4" id="r_accd5f44b269c7c418034e9112713e5c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accd5f44b269c7c418034e9112713e5c4">CopyEnemy</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *src, <a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *dest, bool cut)</td></tr>
+<tr class="memdesc:accd5f44b269c7c418034e9112713e5c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copie les données du projectile source dans le projectile destinataire.  <br /></td></tr>
+<tr class="memitem:adc5809260a02a7ae636d69eea3c1ff70" id="r_adc5809260a02a7ae636d69eea3c1ff70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc5809260a02a7ae636d69eea3c1ff70">DesactivateEnemy</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *enemy, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *originPool)</td></tr>
+<tr class="memdesc:adc5809260a02a7ae636d69eea3c1ff70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Désactive l'ennemi dans sa pool respective.  <br /></td></tr>
+<tr class="memitem:a218e6a8a978435807134c96cb2580647" id="r_a218e6a8a978435807134c96cb2580647"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a218e6a8a978435807134c96cb2580647">EnemyDraw</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *enemy, Vector2 playerPos)</td></tr>
+<tr class="memdesc:a218e6a8a978435807134c96cb2580647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine l'ennemi à l'écran.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a1a5a2c68c5718f4cfb7963f26b93eed6" name="a1a5a2c68c5718f4cfb7963f26b93eed6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a5a2c68c5718f4cfb7963f26b93eed6">&#9670;&#160;</a></span>EnemyDraw()</h2>
+<a id="accd5f44b269c7c418034e9112713e5c4" name="accd5f44b269c7c418034e9112713e5c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accd5f44b269c7c418034e9112713e5c4">&#9670;&#160;</a></span>CopyEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CopyEnemy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>cut</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copie les données du projectile source dans le projectile destinataire. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>pointeur vers l'ennemi source </td></tr>
+    <tr><td class="paramname">dest</td><td>pointeur vers l'ennemi destinataire </td></tr>
+    <tr><td class="paramname">cut</td><td>booléen qui détermine si l'ennemi source doit être désactivé </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc5809260a02a7ae636d69eea3c1ff70" name="adc5809260a02a7ae636d69eea3c1ff70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc5809260a02a7ae636d69eea3c1ff70">&#9670;&#160;</a></span>DesactivateEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DesactivateEnemy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemy</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>originPool</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Désactive l'ennemi dans sa pool respective. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bullet</td><td>pointeur vers l'ennemi à désactiver </td></tr>
+    <tr><td class="paramname">originPool</td><td>pointeur sur la pool respective de l'ennemi </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a218e6a8a978435807134c96cb2580647" name="a218e6a8a978435807134c96cb2580647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a218e6a8a978435807134c96cb2580647">&#9670;&#160;</a></span>EnemyDraw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,8 +218,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void EnemyDraw </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemy</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemy</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Vector2</td>          <td class="paramname"><span class="paramname"><em>playerPos</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -144,14 +232,15 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">enemy</td><td>pointeur vers l'ennemi </td></tr>
+    <tr><td class="paramname">playerPos</td><td>position du joueur </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="af866370ba9b9e114fa79c088dead3748" name="af866370ba9b9e114fa79c088dead3748"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af866370ba9b9e114fa79c088dead3748">&#9670;&#160;</a></span>EnemyInit()</h2>
+<a id="a458cf1b8a79c53e379a97a1669bcfe75" name="a458cf1b8a79c53e379a97a1669bcfe75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a458cf1b8a79c53e379a97a1669bcfe75">&#9670;&#160;</a></span>EnemyInit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,6 +249,11 @@ Functions</h2></td></tr>
           <td class="memname">void EnemyInit </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemy</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>hp</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -203,6 +297,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">enemy</td><td>pointeur vers l'ennemi </td></tr>
+    <tr><td class="paramname">hp</td><td>nombre de points de vie </td></tr>
     <tr><td class="paramname">speed</td><td>vitesse de déplacement </td></tr>
     <tr><td class="paramname">size</td><td>taille de l'ennemi </td></tr>
     <tr><td class="paramname">dmg</td><td>dégâts infligés </td></tr>

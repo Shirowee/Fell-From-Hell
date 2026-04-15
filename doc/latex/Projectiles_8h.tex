@@ -1,8 +1,7 @@
 \doxysection{lib/systems/\+Projectiles.h File Reference}
 \hypertarget{Projectiles_8h}{}\label{Projectiles_8h}\index{lib/systems/Projectiles.h@{lib/systems/Projectiles.h}}
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
-Include dependency graph for Projectiles.\+h\+:
-\nopagebreak
+Include dependency graph for Projectiles.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -43,11 +42,15 @@ typedef struct \mbox{\hyperlink{structbullet__s}{bullet\+\_\+s}} \mbox{\hyperlin
 \item 
 void \mbox{\hyperlink{Projectiles_8h_a5ec9717e1b10c968f91d3b2af2c57eba}{Init\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet, int speed, int size, int dmg, Vector2 \mbox{\hyperlink{structPos}{Pos}}, int dir, float life\+Time, int indice)
 \begin{DoxyCompactList}\small\item\em Initialise un projectile. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{Projectiles_8h_a4d4b9728f427269e66222f67fa168836}{Update\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet)
+void \mbox{\hyperlink{Projectiles_8h_ae02dbe0eef63a4e222cfa169f9d77076}{Update\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}origin\+Pool, bool \texorpdfstring{$\ast$}{*}desactivated)
 \begin{DoxyCompactList}\small\item\em Met à jour un projectile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Projectiles_8h_a7f586668be02cae163b47f1159738df5}{Copy\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}dest, bool cut)
+\begin{DoxyCompactList}\small\item\em Copie les données du projectile source dans le projectile destinataire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Projectiles_8h_a054d1c471605ac0b9f3dbe2927ec2cfa}{Desactivate\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}origin\+Pool)
+\begin{DoxyCompactList}\small\item\em Désactive le projectile dans sa pool respective. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{Projectiles_8h_af25911d704be2b43f8d2243a7048e969}{Draw\+Explosion}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet)
 \begin{DoxyCompactList}\small\item\em Affiche une explosion de projectile explosif. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{Projectiles_8h_a2cf641f58198b9c642f4aed7a1ecd588}{Draw\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet, Vector2 pos\+Joueur)
+void \mbox{\hyperlink{Projectiles_8h_a073c031666f635030e904bfa67b1741d}{Draw\+Bullet}} (\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}bullet)
 \begin{DoxyCompactList}\small\item\em Dessine un projectile. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -94,11 +97,47 @@ typedef struct \mbox{\hyperlink{structbullet__s}{bullet\+\_\+s}} \mbox{\hyperlin
 \label{doc-func-members}
 \Hypertarget{Projectiles_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{Projectiles_8h_a2cf641f58198b9c642f4aed7a1ecd588}\index{Projectiles.h@{Projectiles.h}!DrawBullet@{DrawBullet}}
+\Hypertarget{Projectiles_8h_a7f586668be02cae163b47f1159738df5}\index{Projectiles.h@{Projectiles.h}!CopyBullet@{CopyBullet}}
+\index{CopyBullet@{CopyBullet}!Projectiles.h@{Projectiles.h}}
+\doxysubsubsection{\texorpdfstring{CopyBullet()}{CopyBullet()}}
+{\footnotesize\ttfamily \label{Projectiles_8h_a7f586668be02cae163b47f1159738df5} 
+void Copy\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{src}{, }\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dest}{, }\item[{bool}]{cut}{}\end{DoxyParamCaption})}
+
+
+
+Copie les données du projectile source dans le projectile destinataire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & pointeur vers le projectile source \\
+\hline
+{\em dest} & pointeur vers projectile destinataire \\
+\hline
+{\em cut} & booléen qui détermine si le projectile source doit être désactivé \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Projectiles_8h_a054d1c471605ac0b9f3dbe2927ec2cfa}\index{Projectiles.h@{Projectiles.h}!DesactivateBullet@{DesactivateBullet}}
+\index{DesactivateBullet@{DesactivateBullet}!Projectiles.h@{Projectiles.h}}
+\doxysubsubsection{\texorpdfstring{DesactivateBullet()}{DesactivateBullet()}}
+{\footnotesize\ttfamily \label{Projectiles_8h_a054d1c471605ac0b9f3dbe2927ec2cfa} 
+void Desactivate\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{origin\+Pool}{}\end{DoxyParamCaption})}
+
+
+
+Désactive le projectile dans sa pool respective. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bullet} & pointeur vers le projectile à désactiver \\
+\hline
+{\em origin\+Pool} & pointeur sur la pool respective du projectile \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Projectiles_8h_a073c031666f635030e904bfa67b1741d}\index{Projectiles.h@{Projectiles.h}!DrawBullet@{DrawBullet}}
 \index{DrawBullet@{DrawBullet}!Projectiles.h@{Projectiles.h}}
 \doxysubsubsection{\texorpdfstring{DrawBullet()}{DrawBullet()}}
-{\footnotesize\ttfamily \label{Projectiles_8h_a2cf641f58198b9c642f4aed7a1ecd588} 
-void Draw\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet}{, }\item[{Vector2}]{pos\+Joueur}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Projectiles_8h_a073c031666f635030e904bfa67b1741d} 
+void Draw\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet}{}\end{DoxyParamCaption})}
 
 
 
@@ -155,11 +194,11 @@ Initialise un projectile.
 {\em indice} & type de projectile (BASIC, EXPLOSIF, etc.) \\
 \hline
 \end{DoxyParams}
-\Hypertarget{Projectiles_8h_a4d4b9728f427269e66222f67fa168836}\index{Projectiles.h@{Projectiles.h}!UpdateBullet@{UpdateBullet}}
+\Hypertarget{Projectiles_8h_ae02dbe0eef63a4e222cfa169f9d77076}\index{Projectiles.h@{Projectiles.h}!UpdateBullet@{UpdateBullet}}
 \index{UpdateBullet@{UpdateBullet}!Projectiles.h@{Projectiles.h}}
 \doxysubsubsection{\texorpdfstring{UpdateBullet()}{UpdateBullet()}}
-{\footnotesize\ttfamily \label{Projectiles_8h_a4d4b9728f427269e66222f67fa168836} 
-void Update\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Projectiles_8h_ae02dbe0eef63a4e222cfa169f9d77076} 
+void Update\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{bullet}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{origin\+Pool}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{desactivated}{}\end{DoxyParamCaption})}
 
 
 
@@ -170,5 +209,7 @@ Gère le mouvement, les effets spéciaux et la désactivation selon le type de p
 
 \begin{DoxyParams}{Parameters}
 {\em bullet} & pointeur vers le projectile \\
+\hline
+{\em origin\+Pool} & pointeur vers la pool respective du projectile \\
 \hline
 \end{DoxyParams}

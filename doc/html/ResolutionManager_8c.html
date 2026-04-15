@@ -100,8 +100,8 @@ Include dependency graph for ResolutionManager.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8997fc15fcd97e435b417522d66c9f59" id="r_a8997fc15fcd97e435b417522d66c9f59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8997fc15fcd97e435b417522d66c9f59">ResolutionInit</a> (int mapRefWidth, int mapRefHeight)</td></tr>
-<tr class="memdesc:a8997fc15fcd97e435b417522d66c9f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la mise à l'échelle.  <br /></td></tr>
+<tr class="memitem:a3358de0c8c17597188cd54fcef3c0001" id="r_a3358de0c8c17597188cd54fcef3c0001"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3358de0c8c17597188cd54fcef3c0001">ResolutionInit</a> (int mapRefWidth, int screenWidth, int screenHeight)</td></tr>
+<tr class="memdesc:a3358de0c8c17597188cd54fcef3c0001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la mise à l'échelle.  <br /></td></tr>
 <tr class="memitem:adb0f3480b1aa6929ae10e15a04dcdbcf" id="r_adb0f3480b1aa6929ae10e15a04dcdbcf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb0f3480b1aa6929ae10e15a04dcdbcf">RS</a> (float value)</td></tr>
 <tr class="memdesc:adb0f3480b1aa6929ae10e15a04dcdbcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit la valeur en paramètre avec le ratio scale.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -110,8 +110,8 @@ Variables</h2></td></tr>
 <tr class="memitem:a2016104fa368c7cbefbbb0fe119a3a09" id="r_a2016104fa368c7cbefbbb0fe119a3a09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structResolutionConfig.html">ResolutionConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2016104fa368c7cbefbbb0fe119a3a09">resolution</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a8997fc15fcd97e435b417522d66c9f59" name="a8997fc15fcd97e435b417522d66c9f59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8997fc15fcd97e435b417522d66c9f59">&#9670;&#160;</a></span>ResolutionInit()</h2>
+<a id="a3358de0c8c17597188cd54fcef3c0001" name="a3358de0c8c17597188cd54fcef3c0001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3358de0c8c17597188cd54fcef3c0001">&#9670;&#160;</a></span>ResolutionInit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,7 +124,12 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mapRefHeight</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>screenWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>screenHeight</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -134,8 +139,9 @@ Variables</h2></td></tr>
 <li>Calcule le ratio en comparant la largeur de l'écran actuelle avec la largeur de référence en paramètre</li>
 <li><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mapRefWidth</td><td>Largeur cible de référence </td></tr>
-    <tr><td class="paramname">mapRefHeight</td><td>Hauteur cible de référence </td></tr>
+    <tr><td class="paramname">mapRefWidth</td><td>Largeur cible de référence de la map </td></tr>
+    <tr><td class="paramname">screenWidth</td><td>Largeur de l'écran </td></tr>
+    <tr><td class="paramname">screenHeight</td><td>Hauteur de l'écran </td></tr>
   </table>
   </dd>
 </dl>

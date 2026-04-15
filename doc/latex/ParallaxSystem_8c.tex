@@ -1,0 +1,77 @@
+\doxysection{src/systems/\+Parallax\+System.c File Reference}
+\hypertarget{ParallaxSystem_8c}{}\label{ParallaxSystem_8c}\index{src/systems/ParallaxSystem.c@{src/systems/ParallaxSystem.c}}
+{\ttfamily \#include "{}../../lib/systems/\+Parallax\+System.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Resolution\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Ressources\+Manager.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Parallax\+System.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ParallaxSystem_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ParallaxSystem_8c_ad74ea4680a232c24db98997385f852b5}{Parallax\+Init}} (\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}ps)
+\begin{DoxyCompactList}\small\item\em Initialise le système de parallax. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ParallaxSystem_8c_a2925c6d12b483d9136dc54f1491abf94}{Parallax\+Add\+Layer}} (\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}ps, Texture2D texture, float speed)
+\begin{DoxyCompactList}\small\item\em Ajoute une couche au système. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ParallaxSystem_8c_a6d5e7ff6b509a6912c1e641839a67afe}{Parallax\+Draw}} (\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}ps, Camera2D \mbox{\hyperlink{GameManager_8h_a2104321f3e01d1f85c8054cda5ad149c}{camera}}, \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Dessine toutes les couches de parallax. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{ParallaxSystem_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{ParallaxSystem_8c_a2925c6d12b483d9136dc54f1491abf94}\index{ParallaxSystem.c@{ParallaxSystem.c}!ParallaxAddLayer@{ParallaxAddLayer}}
+\index{ParallaxAddLayer@{ParallaxAddLayer}!ParallaxSystem.c@{ParallaxSystem.c}}
+\doxysubsubsection{\texorpdfstring{ParallaxAddLayer()}{ParallaxAddLayer()}}
+{\footnotesize\ttfamily \label{ParallaxSystem_8c_a2925c6d12b483d9136dc54f1491abf94} 
+void Parallax\+Add\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}}]{ps}{, }\item[{Texture2D}]{texture}{, }\item[{float}]{speed}{}\end{DoxyParamCaption})}
+
+
+
+Ajoute une couche au système. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ps} & système \\
+\hline
+{\em texture} & texture de la couche \\
+\hline
+{\em speed} & facteur de vitesse (0..1) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ParallaxSystem_8c_a6d5e7ff6b509a6912c1e641839a67afe}\index{ParallaxSystem.c@{ParallaxSystem.c}!ParallaxDraw@{ParallaxDraw}}
+\index{ParallaxDraw@{ParallaxDraw}!ParallaxSystem.c@{ParallaxSystem.c}}
+\doxysubsubsection{\texorpdfstring{ParallaxDraw()}{ParallaxDraw()}}
+{\footnotesize\ttfamily \label{ParallaxSystem_8c_a6d5e7ff6b509a6912c1e641839a67afe} 
+void Parallax\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}}]{ps}{, }\item[{Camera2D}]{camera}{, }\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Dessine toutes les couches de parallax. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ps} & système \\
+\hline
+{\em camera} & caméra du jeu \\
+\hline
+{\em player} & joueur \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ParallaxSystem_8c_ad74ea4680a232c24db98997385f852b5}\index{ParallaxSystem.c@{ParallaxSystem.c}!ParallaxInit@{ParallaxInit}}
+\index{ParallaxInit@{ParallaxInit}!ParallaxSystem.c@{ParallaxSystem.c}}
+\doxysubsubsection{\texorpdfstring{ParallaxInit()}{ParallaxInit()}}
+{\footnotesize\ttfamily \label{ParallaxSystem_8c_ad74ea4680a232c24db98997385f852b5} 
+void Parallax\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}}]{ps}{}\end{DoxyParamCaption})}
+
+
+
+Initialise le système de parallax. 
+

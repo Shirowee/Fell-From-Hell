@@ -12,12 +12,18 @@
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BulletPool_8h}{BulletPool.h}}"{}}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Player_8h}{../player/Player.h}}"{}}}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CollisionSystem_8h_a3c23eee373911780724384bf8e15c347}{CheckEnemyBulletCollision}}(\mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ enemies,\ \mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}*\ bullets);}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CollisionSystem_8h_a17a10d407f5e4bc35829fb5a171b05a8}{CheckEnemyBulletCollision}}(\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}}*\ enemies,\ \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}*\ bullets,\ \mbox{\hyperlink{structweapon__t}{weapon\_t}}*\ weapon);}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CollisionSystem_8h_a327130d83d0bdf2c3fe16e801d2b5b67}{CheckPlayerEnemyCollision}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}*\ player,\ \mbox{\hyperlink{structenemyPool__t}{enemyPool\_t}}*\ enemies,\ \textcolor{keywordtype}{int}*\ total\_dmg);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CollisionSystem_8h_a327130d83d0bdf2c3fe16e801d2b5b67}{CheckPlayerEnemyCollision}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}*\ player,\ \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}}*\ enemies,\ \textcolor{keywordtype}{int}*\ total\_dmg);}
 \DoxyCodeLine{00043\ }
-\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CollisionSystem_8h_ad028a52a143ec6844b9ed1253c337681}{CheckPlayerBulletCollision}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}*\ player,\ \mbox{\hyperlink{structbulletPool__t}{bulletPool\_t}}*\ bullets,\ \textcolor{keywordtype}{int}*\ total\_dmg);}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CollisionSystem_8h_ad028a52a143ec6844b9ed1253c337681}{CheckPlayerBulletCollision}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}*\ player,\ \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}*\ bullets,\ \textcolor{keywordtype}{int}*\ total\_dmg);}
 \DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CollisionSystem_8h_ab480aab05266800ff0c4661d272a31e0}{CheckBulletsPlatformsCollision}}(\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bulletPool\_t}}\ *bullets,\ \mbox{\hyperlink{structPlatform}{Platform}}\ platforms[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nbPlatforms);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CollisionSystem_8h_ace0628a76b5e131dcca111a4d8987f6c}{PlayerPositionFix}}(\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}}\ *player,\ \textcolor{keyword}{const}\ Vector2\ oldPosition,\ \mbox{\hyperlink{structPlatform}{Platform}}\ platform[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nbPlatforms);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CollisionSystem_8h_a2021d5ba7e16b464f6833791fd66f2a5}{EnemiesPositionFix}}(\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemyPool\_t}}\ *enemies,\ \mbox{\hyperlink{structPlatform}{Platform}}\ platform[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ nbPlatforms);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

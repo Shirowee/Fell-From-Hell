@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['leveldraw_0',['LevelDraw',['../LevelManager_8h.html#a78e4d5c3e7ecd49b505d47b4940bf367',1,'LevelDraw(void):&#160;LevelManager.c'],['../LevelManager_8c.html#a78e4d5c3e7ecd49b505d47b4940bf367',1,'LevelDraw(void):&#160;LevelManager.c']]],
-  ['levelinit_1',['LevelInit',['../LevelManager_8h.html#aabf5f82cc95d911a3f58b33c25b88970',1,'LevelInit(void):&#160;LevelManager.c'],['../LevelManager_8c.html#a1b8338ac80e1c5e6f6e534ce3cd263cb',1,'LevelInit():&#160;LevelManager.c']]],
-  ['loadgameresources_2',['LoadGameResources',['../RessourcesManager_8c.html#ad3887999d28d79cdafdb102920f84229',1,'RessourcesManager.c']]]
+  ['keybindingupdate_0',['KeybindingUpdate',['../Screen_8h.html#adf35fd0dc2a52f5b92f71158ccd285ac',1,'KeybindingUpdate(void):&#160;Keybinding.c'],['../Keybinding_8c.html#a3de63aab2e854494b16e264b59f96457',1,'KeybindingUpdate():&#160;Keybinding.c']]]
 ];

@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['y_0',['y',['../structPos.html#a6b309684454df6615bce567e09437348',1,'Pos::y'],['../structRect.html#a4ea33d8210fa0b8b0d6ef3f7e06e6b27',1,'Rect::y'],['../structPlatform.html#a8b1d3d629e63423b254830716f2f99e4',1,'Platform::y']]]
+  ['w_0',['w',['../structRect.html#a049f7ee5e7eb0475229bf3ed9b3bad44',1,'Rect']]],
+  ['weapon_1',['weapon',['../structSaveInfo.html#a0d8b74f66a1fc977da21b3c19cdbbc46',1,'SaveInfo::weapon'],['../structPlayer__s.html#a258d2081187aaa706dfcffd8bed2f994',1,'Player_s::weapon']]],
+  ['which_2',['which',['../cJSON_8h.html#aa2a4dae2a14de4093826005f9bdfd3bb',1,'cJSON.h']]],
+  ['width_3',['width',['../structMapInfo.html#af8032038658c9020b5ee83b6bd832fd4',1,'MapInfo::width'],['../structPlatform.html#afc780622147a0b5345e333118c1ecc77',1,'Platform::width']]]
 ];

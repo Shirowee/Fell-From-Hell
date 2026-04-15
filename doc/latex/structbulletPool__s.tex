@@ -1,0 +1,73 @@
+\doxysection{bullet\+Pool\+\_\+s Struct Reference}
+\hypertarget{structbulletPool__s}{}\label{structbulletPool__s}\index{bulletPool\_s@{bulletPool\_s}}
+
+
+Représente un pool de projectiles (object pool)  
+
+
+
+
+{\ttfamily \#include $<$Bullet\+Pool.\+h$>$}
+
+
+
+Collaboration diagram for bullet\+Pool\+\_\+s\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{structbulletPool__s__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structbulletPool__s_a91ddad10eeddd261b89cde3b98da73eb}{tab}}
+\item 
+int \mbox{\hyperlink{structbulletPool__s_a91fad77531c1352103a5439a414aaf94}{active}}
+\item 
+int \mbox{\hyperlink{structbulletPool__s_a7f3cf2516ca1a7aa91f943fba57d47d9}{nb\+Bullets\+Active}}
+\item 
+int \mbox{\hyperlink{structbulletPool__s_a496eec1b5f10029d6c2cadb40ca988f9}{capacity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Représente un pool de projectiles (object pool) 
+
+Cette structure permet de gérer un ensemble de bullets pré-\/allouées afin d\textquotesingle{}éviter les allocations dynamiques répétées pendant l\textquotesingle{}exécution.
+
+Le pool fonctionne en réutilisant les bullets inactives. 
+
+\label{doc-variable-members}
+\Hypertarget{structbulletPool__s_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{structbulletPool__s_a91fad77531c1352103a5439a414aaf94}\index{bulletPool\_s@{bulletPool\_s}!active@{active}}
+\index{active@{active}!bulletPool\_s@{bulletPool\_s}}
+\doxysubsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily \label{structbulletPool__s_a91fad77531c1352103a5439a414aaf94} 
+int bullet\+Pool\+\_\+s\+::active}
+
+\Hypertarget{structbulletPool__s_a496eec1b5f10029d6c2cadb40ca988f9}\index{bulletPool\_s@{bulletPool\_s}!capacity@{capacity}}
+\index{capacity@{capacity}!bulletPool\_s@{bulletPool\_s}}
+\doxysubsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily \label{structbulletPool__s_a496eec1b5f10029d6c2cadb40ca988f9} 
+int bullet\+Pool\+\_\+s\+::capacity}
+
+\Hypertarget{structbulletPool__s_a7f3cf2516ca1a7aa91f943fba57d47d9}\index{bulletPool\_s@{bulletPool\_s}!nbBulletsActive@{nbBulletsActive}}
+\index{nbBulletsActive@{nbBulletsActive}!bulletPool\_s@{bulletPool\_s}}
+\doxysubsubsection{\texorpdfstring{nbBulletsActive}{nbBulletsActive}}
+{\footnotesize\ttfamily \label{structbulletPool__s_a7f3cf2516ca1a7aa91f943fba57d47d9} 
+int bullet\+Pool\+\_\+s\+::nb\+Bullets\+Active}
+
+\Hypertarget{structbulletPool__s_a91ddad10eeddd261b89cde3b98da73eb}\index{bulletPool\_s@{bulletPool\_s}!tab@{tab}}
+\index{tab@{tab}!bulletPool\_s@{bulletPool\_s}}
+\doxysubsubsection{\texorpdfstring{tab}{tab}}
+{\footnotesize\ttfamily \label{structbulletPool__s_a91ddad10eeddd261b89cde3b98da73eb} 
+\mbox{\hyperlink{Projectiles_8h_af4c8cd9aa199f51037ae6ffc019acc68}{bullet\+\_\+t}}\texorpdfstring{$\ast$}{*} bullet\+Pool\+\_\+s\+::tab}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/systems/\mbox{\hyperlink{BulletPool_8h}{Bullet\+Pool.\+h}}\end{DoxyCompactItemize}

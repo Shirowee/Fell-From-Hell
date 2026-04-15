@@ -1,12 +1,14 @@
 var searchData=
 [
-  ['tab_0',['tab',['../structbulletPool__t.html#a3911eb7cddaab90015da4dc76974390a',1,'bulletPool_t::tab'],['../structenemyPool__t.html#a2829470377cc162b525211c74732f22f',1,'enemyPool_t::tab']]],
-  ['texture_1',['texture',['../structPlayer__s.html#a451f91e8a50c6084f1229fcc69204235',1,'Player_s::texture'],['../structTextureResource.html#a455e30f72403a1d575eefd7ca8d09f76',1,'TextureResource::texture']]],
-  ['timer_2',['timer',['../structEnemySpawner.html#ae441b65332c44af6a765b4881a394650',1,'EnemySpawner']]],
-  ['title_3',['title',['../structMapInfo.html#a8b99006aaed407e57f678f2ddb8c77ee',1,'MapInfo']]],
-  ['tps_4',['tps',['../structweapon__t.html#ab5260b43ccc91fbd407ec256d95caf7f',1,'weapon_t']]],
-  ['triggercount_5',['triggerCount',['../structLevel.html#ad8c2a60536f24c3d958bc691416928b6',1,'Level']]],
-  ['triggered_6',['triggered',['../structTrigger.html#afd6bfd79db25090bf4c027b3d7301f18',1,'Trigger']]],
-  ['triggers_7',['triggers',['../structLevel.html#afda5ffa0fb1bbfad98c4db6b967d79d6',1,'Level']]],
-  ['type_8',['type',['../structcJSON.html#ab13084c574681593b12f6e0a3db0dcfc',1,'cJSON::type'],['../structenemy__s.html#ae18c81532049d8b697f012bc0323ad63',1,'enemy_s::type'],['../structEnemy.html#ae8542615bddd051d63cce8cce122b9a7',1,'Enemy::type'],['../structHazard.html#add788f392f99ff134c8fa8904052c51d',1,'Hazard::type'],['../structPlatform.html#a9f8f3c0e214485914e51686830540ed2',1,'Platform::type']]]
+  ['raw_0',['raw',['../cJSON_8h.html#a788db922597cf2fb6389e278f822e59f',1,'cJSON.h']]],
+  ['rect_1',['rect',['../structTrigger.html#a758774b2a59c01d44c64a3014a083b8b',1,'Trigger::rect'],['../structPlatform.html#a18ff9d86ebdb43f6552095576ae9e42d',1,'Platform::rect']]],
+  ['recurse_2',['recurse',['../cJSON_8h.html#afc8d1c385c6dc37e1c5b640869ce4ab6',1,'cJSON.h']]],
+  ['regen_3',['regen',['../structPlayerStats__s.html#a0e7182ae60b8a0d646f0348b58e40eb1',1,'PlayerStats_s']]],
+  ['regentimeout_4',['regenTimeOut',['../structPlayerStats__s.html#a13602357799753f3b36ad3afdf7358a3',1,'PlayerStats_s']]],
+  ['reloadtime_5',['reloadTime',['../structweapon__t.html#a0f7694cc87a52113aa3e0d0cd852ae47',1,'weapon_t::reloadTime'],['../structbuff__t.html#ad44189de31c341c2af23a38adbaabd37',1,'buff_t::reloadTime']]],
+  ['replacement_6',['replacement',['../cJSON_8h.html#a10573fccca598ec39809e8beb3f7f791',1,'cJSON.h']]],
+  ['require_5fnull_5fterminated_7',['require_null_terminated',['../cJSON_8h.html#a68bc5d2265c7694323a75615f7ac0130',1,'cJSON.h']]],
+  ['resolution_8',['resolution',['../ResolutionManager_8h.html#a2016104fa368c7cbefbbb0fe119a3a09',1,'resolution:&#160;ResolutionManager.c'],['../ResolutionManager_8c.html#a2016104fa368c7cbefbbb0fe119a3a09',1,'resolution:&#160;ResolutionManager.c']]],
+  ['return_5fparse_5fend_9',['return_parse_end',['../cJSON_8h.html#a7725ae4fa33fc499614c6895ee9ee44a',1,'cJSON.h']]],
+  ['right_10',['right',['../structKeyBindings.html#a0d83fecb05f4b45fd8fbccc35dec0fe1',1,'KeyBindings']]]
 ];

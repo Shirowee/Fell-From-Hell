@@ -143,10 +143,11 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a514faa7eb58002946482523cc55b0f6f" id="r_a514faa7eb58002946482523cc55b0f6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a514faa7eb58002946482523cc55b0f6f">PlayerLifeAlteration</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="structenemyPool__t.html">enemyPool_t</a> *ennemies, <a class="el" href="structbulletPool__t.html">bulletPool_t</a> *bullets)</td></tr>
+<tr class="memitem:a514faa7eb58002946482523cc55b0f6f" id="r_a514faa7eb58002946482523cc55b0f6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a514faa7eb58002946482523cc55b0f6f">PlayerLifeAlteration</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, <a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *ennemies, <a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *bullets)</td></tr>
 <tr class="memdesc:a514faa7eb58002946482523cc55b0f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait subir des dêgats au joueur en fonction des ennemies et des bullets ou régénère la vie du joueur.  <br /></td></tr>
 <tr class="memitem:a84f9e478cd6f931eadbe6e4f95095205" id="r_a84f9e478cd6f931eadbe6e4f95095205"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84f9e478cd6f931eadbe6e4f95095205">ApplyDamageToPlayer</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, int dmg)</td></tr>
 <tr class="memdesc:a84f9e478cd6f931eadbe6e4f95095205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique des dégâts au joueur, c-à-d lui retirer des points de vie.  <br /></td></tr>
+<tr class="memitem:a02ace4fab61529554d33e9e7d53b366d" id="r_a02ace4fab61529554d33e9e7d53b366d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02ace4fab61529554d33e9e7d53b366d">ApplyDamageToEnemy</a> (<a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *enemy, int dmg)</td></tr>
 <tr class="memitem:a4e7948c7d864b12e5ac3157ae3802a5e" id="r_a4e7948c7d864b12e5ac3157ae3802a5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e7948c7d864b12e5ac3157ae3802a5e">HPDraw</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player, int x, int y, int width, int height)</td></tr>
 <tr class="memdesc:a4e7948c7d864b12e5ac3157ae3802a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine la barre de vie du joueur.  <br /></td></tr>
 <tr class="memitem:a7ca0b81eff813b0a722db9e69573de1f" id="r_a7ca0b81eff813b0a722db9e69573de1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ca0b81eff813b0a722db9e69573de1f">isInvicible</a> (<a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090">Player</a> *player)</td></tr>
@@ -172,6 +173,27 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a02ace4fab61529554d33e9e7d53b366d" name="a02ace4fab61529554d33e9e7d53b366d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ace4fab61529554d33e9e7d53b366d">&#9670;&#160;</a></span>ApplyDamageToEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ApplyDamageToEnemy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#afa3dd68d66def5d5cd65efb756bbbb96">enemy_t</a> *</td>          <td class="paramname"><span class="paramname"><em>enemy</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dmg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a84f9e478cd6f931eadbe6e4f95095205" name="a84f9e478cd6f931eadbe6e4f95095205"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84f9e478cd6f931eadbe6e4f95095205">&#9670;&#160;</a></span>ApplyDamageToPlayer()</h2>
 
@@ -192,14 +214,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Applique des dégâts au joueur, c-à-d lui retirer des points de vie. </p>
+<p>Applique des dégâts à l'ennemie, c-à-d lui retirer des points de vie.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">player</td><td>Pointeur sur <a class="el" href="Player_8h.html#a47e6f8d93a79a2576363b43294ea2090" title="Structure opaque représentant le joueur.">Player</a> </td></tr>
+    <tr><td class="paramname">dmg</td><td>Nombre de points de vie à retirer</td></tr>
+    <tr><td class="paramname">enemy</td><td>Pointeur sur <a class="el" href="structEnemy.html" title="Informations sur les vagues d&#39;ennemis.">Enemy</a> </td></tr>
     <tr><td class="paramname">dmg</td><td>Nombre de points de vie à retirer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Renvoie vrai si il est invincible, sinon faux </dd></dl>
 
 </div>
 </div>
@@ -343,12 +367,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structenemyPool__t.html">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ennemies</em></span>, </td>
+          <td class="paramtype"><a class="el" href="EnemyController_8h.html#af5e0476aef6320552ff86cb82f01620d">enemyPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ennemies</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structbulletPool__t.html">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bullets</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="BulletPool_8h.html#a483439fbd4757def6275c8ca8d13a364">bulletPool_t</a> *</td>          <td class="paramname"><span class="paramname"><em>bullets</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

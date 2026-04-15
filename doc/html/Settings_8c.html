@@ -81,43 +81,49 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;../../raylib/include/raylib.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="Screen_8h_source.html">../../lib/core/Screen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Screen_8h_source.html">../../lib/menu/Screen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RessourcesManager_8h_source.html">../../lib/core/RessourcesManager.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Settings.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="Settings_8c__incl.png" border="0" usemap="#asrc_2menu_2Settings_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2menu_2Settings_8c" id="asrc_2menu_2Settings_8c">
-<area shape="rect" title=" " alt="" coords="9,5,159,31"/>
-<area shape="rect" title=" " alt="" coords="246,445,381,485"/>
-<area shape="poly" title=" " alt="" coords="74,33,55,55,33,86,15,123,8,164,8,312,14,347,30,375,55,398,86,417,121,432,159,443,233,456,232,461,158,448,119,437,83,422,51,402,26,378,9,348,3,313,3,163,10,122,28,84,51,52,70,29"/>
-<area shape="rect" href="Screen_8h.html" title="Définition des différents écrans du jeu (menu, jeu, paramètres, sortie)." alt="" coords="147,79,301,104"/>
-<area shape="poly" title=" " alt="" coords="108,28,190,70,188,75,105,33"/>
-<area shape="rect" href="Player_8h.html" title="Définit la structure du joueur et son corps, ainsi que les fonctions associées." alt="" coords="180,152,311,177"/>
-<area shape="poly" title=" " alt="" coords="230,104,241,138,235,140,225,105"/>
-<area shape="poly" title=" " alt="" coords="180,175,153,181,127,192,103,207,84,227,77,244,76,269,82,296,94,323,126,361,166,393,208,418,248,438,246,442,205,423,162,397,123,365,90,325,77,298,71,269,72,243,79,224,99,203,124,187,152,176,179,169"/>
-<area shape="rect" href="PlayerController_8h.html" title="Gère l&#39;initialisation, la mise à jour et le dessin du joueur." alt="" coords="93,225,232,251"/>
-<area shape="poly" title=" " alt="" coords="227,179,181,217,177,213,224,175"/>
-<area shape="rect" href="PlayerMovement_8h.html" title="Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts, la gravité et les coll..." alt="" coords="257,225,402,251"/>
-<area shape="poly" title=" " alt="" coords="254,176,300,215,296,219,251,180"/>
-<area shape="rect" href="PlayerWeapon_8h.html" title=" " alt="" coords="426,225,553,251"/>
-<area shape="poly" title=" " alt="" coords="285,175,438,219,436,224,284,180"/>
-<area shape="rect" href="BuffSystem_8h.html" title="Gestion des améliorations (buffs) appliquées au joueur et aux armes." alt="" coords="554,372,734,397"/>
-<area shape="poly" title=" " alt="" coords="311,169,454,187,521,203,548,212,567,223,596,254,618,290,633,327,642,358,636,359,628,329,613,292,592,257,564,227,545,217,520,208,453,193,310,174"/>
-<area shape="poly" title=" " alt="" coords="181,223,227,185,230,189,185,227"/>
-<area shape="rect" href="Platform_8h.html" title="Définition des structures de base pour des positions et des rectangles." alt="" coords="105,299,250,324"/>
-<area shape="poly" title=" " alt="" coords="168,250,175,285,170,286,162,252"/>
-<area shape="poly" title=" " alt="" coords="190,322,289,433,285,437,186,326"/>
-<area shape="poly" title=" " alt="" coords="330,251,323,299,316,432,311,432,317,298,324,251"/>
-<area shape="poly" title=" " alt="" coords="321,227,275,188,278,183,324,223"/>
-<area shape="poly" title=" " alt="" coords="306,253,215,295,213,290,304,248"/>
-<area shape="poly" title=" " alt="" coords="457,253,419,272,383,301,361,332,343,367,322,433,317,431,338,365,356,329,379,297,416,268,455,248"/>
-<area shape="rect" href="BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="393,299,564,324"/>
-<area shape="poly" title=" " alt="" coords="490,251,485,286,480,285,485,251"/>
-<area shape="poly" title=" " alt="" coords="468,326,346,438,342,434,464,322"/>
-<area shape="rect" href="Projectiles_8h.html" title=" " alt="" coords="427,372,530,397"/>
-<area shape="poly" title=" " alt="" coords="481,324,481,358,476,358,476,324"/>
-<area shape="poly" title=" " alt="" coords="456,400,367,442,365,437,453,395"/>
-<area shape="poly" title=" " alt="" coords="597,400,395,448,393,442,595,395"/>
+<area shape="rect" title=" " alt="" coords="254,5,405,31"/>
+<area shape="rect" title=" " alt="" coords="261,460,395,500"/>
+<area shape="poly" title=" " alt="" coords="254,27,175,39,134,51,95,66,60,86,33,111,15,141,8,178,8,327,14,363,32,392,58,416,91,435,129,450,169,460,247,472,246,477,168,465,127,455,89,440,55,420,28,396,9,365,3,328,3,178,10,139,29,107,57,81,93,61,132,46,174,34,253,21"/>
+<area shape="rect" href="Screen_8h.html" title="Définition des différents écrans du jeu (menu, jeu, paramètres, sortie)." alt="" coords="248,86,411,111"/>
+<area shape="poly" title=" " alt="" coords="332,31,332,72,327,72,327,31"/>
+<area shape="rect" href="RessourcesManager_8h.html" title="Gestion centralisée des ressources du jeu (textures et sons)" alt="" coords="675,79,847,119"/>
+<area shape="poly" title=" " alt="" coords="393,28,662,77,661,82,392,33"/>
+<area shape="rect" href="Player_8h.html" title="Définit la structure du joueur et son corps, ainsi que les fonctions associées." alt="" coords="264,167,395,192"/>
+<area shape="poly" title=" " alt="" coords="332,112,332,153,327,153,327,112"/>
+<area shape="poly" title=" " alt="" coords="264,190,157,209,111,223,94,232,83,242,69,266,66,288,71,311,84,337,116,378,158,411,204,436,249,454,247,459,201,441,155,415,112,382,79,340,66,313,60,288,64,264,79,238,91,228,109,218,156,203,263,185"/>
+<area shape="rect" href="PlayerController_8h.html" title="Gère l&#39;initialisation, la mise à jour et le dessin du joueur." alt="" coords="93,240,232,265"/>
+<area shape="poly" title=" " alt="" coords="297,194,196,237,194,232,295,190"/>
+<area shape="rect" href="PlayerMovement_8h.html" title="Gère les mouvements du joueur, y compris les déplacements latéraux, les sauts, la gravité et les coll..." alt="" coords="257,240,402,265"/>
+<area shape="poly" title=" " alt="" coords="325,192,323,227,318,226,320,192"/>
+<area shape="rect" href="PlayerWeapon_8h.html" title=" " alt="" coords="426,240,553,265"/>
+<area shape="poly" title=" " alt="" coords="356,190,452,232,450,237,354,194"/>
+<area shape="rect" href="BuffSystem_8h.html" title="Gestion des améliorations (buffs) appliquées au joueur et aux armes." alt="" coords="543,387,723,412"/>
+<area shape="poly" title=" " alt="" coords="395,179,437,185,482,195,526,212,566,238,593,269,612,305,625,341,632,372,627,373,619,343,607,307,588,272,562,242,524,217,480,200,436,190,395,185"/>
+<area shape="poly" title=" " alt="" coords="196,237,296,195,298,200,198,242"/>
+<area shape="rect" href="Platform_8h.html" title="Définition des structures de base pour des positions et des rectangles." alt="" coords="94,313,239,339"/>
+<area shape="poly" title=" " alt="" coords="166,266,168,300,163,300,161,266"/>
+<area shape="poly" title=" " alt="" coords="181,337,300,449,296,452,177,341"/>
+<area shape="poly" title=" " alt="" coords="327,266,312,314,307,363,312,412,320,446,315,447,307,412,302,363,307,313,322,265"/>
+<area shape="poly" title=" " alt="" coords="334,240,335,206,341,206,339,240"/>
+<area shape="poly" title=" " alt="" coords="304,268,207,310,205,305,302,263"/>
+<area shape="poly" title=" " alt="" coords="448,268,408,286,389,299,373,315,354,346,342,381,331,446,326,446,336,380,349,344,369,312,385,295,405,281,446,263"/>
+<area shape="rect" href="BulletPool_8h.html" title="Gestion des pools de projectiles (bullets)" alt="" coords="383,313,553,339"/>
+<area shape="poly" title=" " alt="" coords="488,266,478,301,473,299,483,265"/>
+<area shape="poly" title=" " alt="" coords="457,341,406,389,353,451,349,447,402,385,453,337"/>
+<area shape="rect" href="Projectiles_8h.html" title=" " alt="" coords="417,387,519,412"/>
+<area shape="poly" title=" " alt="" coords="471,339,471,373,465,373,465,339"/>
+<area shape="poly" title=" " alt="" coords="449,415,375,456,372,451,446,410"/>
+<area shape="poly" title=" " alt="" coords="590,415,409,461,408,455,588,409"/>
+<area shape="poly" title=" " alt="" coords="764,119,764,251,764,327,762,375,755,395,738,414,714,429,680,441,595,460,498,472,410,478,409,473,498,466,594,454,679,436,712,424,734,410,750,392,757,374,759,327,759,251,759,119"/>
+<area shape="rect" title=" " alt="" coords="799,167,881,192"/>
+<area shape="poly" title=" " alt="" coords="782,117,820,155,817,159,778,121"/>
 </map>
 </div>
 </div><table class="memberdecls">

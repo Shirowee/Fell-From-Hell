@@ -1,8 +1,7 @@
 \doxysection{lib/systems/\+Enemy\+Spawner.h File Reference}
 \hypertarget{EnemySpawner_8h}{}\label{EnemySpawner_8h}\index{lib/systems/EnemySpawner.h@{lib/systems/EnemySpawner.h}}
 {\ttfamily \#include "{}../../lib/systems/\+Enemy\+Pool.\+h"{}}\newline
-Include dependency graph for Enemy\+Spawner.\+h\+:
-\nopagebreak
+Include dependency graph for Enemy\+Spawner.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,22 +21,43 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 struct \mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}}
 \begin{DoxyCompactList}\small\item\em Gère le système de spawn des ennemis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{EnemySpawner_8h_a1f7a81c0d91c13db112a120afb559bce}{CHASER\+\_\+\+HP}}~15
+\item 
+\#define \mbox{\hyperlink{EnemySpawner_8h_a41b42d8092937f963657a75c96ef43ff}{CHASER\+\_\+\+DMG}}~10
+\item 
+\#define \mbox{\hyperlink{EnemySpawner_8h_a1a570a54610403a41053a1313316c018}{CHASER\+\_\+\+SPEED}}~250
+\item 
+\#define \mbox{\hyperlink{EnemySpawner_8h_ad30e2206d952351c2fa241abad78b41f}{SHOOTER\+\_\+\+HP}}~60
+\item 
+\#define \mbox{\hyperlink{EnemySpawner_8h_af3b9e4f18b9134d662246015852ce6aa}{SHOOTER\+\_\+\+DMG}}~30
+\item 
+\#define \mbox{\hyperlink{EnemySpawner_8h_adb2c2480fb983a635587901e7a1142c0}{SHOOTER\+\_\+\+SPEED}}~170
+\item 
+\#define \mbox{\hyperlink{EnemySpawner_8h_a08db132f1c4a4478871df3206f200123}{SHOOTER\+\_\+\+BULLET\+\_\+\+SIZE}}~25
+\item 
+\#define \mbox{\hyperlink{EnemySpawner_8h_a8e4cb464731774bf1523c7c052606b15}{SHOOTER\+\_\+\+BULLET\+\_\+\+SPEED}}~420
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{EnemySpawner_8h_a3162edda342eb1321eda01d0bc86a566}{Enemy\+Spawner\+Init}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner)
 \begin{DoxyCompactList}\small\item\em Initialise le spawner d\textquotesingle{}ennemis. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemySpawner_8h_a9d776f5787b32a9f4731256ebc3af03e}{Spawn\+Random\+Enemy}} (\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
+void \mbox{\hyperlink{EnemySpawner_8h_a9d776f5787b32a9f4731256ebc3af03e}{Spawn\+Random\+Enemy}} (\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
 \begin{DoxyCompactList}\small\item\em Spawn un ennemi à une position aléatoire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemySpawner_8h_a8b8f393df12c59d1d2708df07014048f}{Update\+Enemy\+Spawner}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
+void \mbox{\hyperlink{EnemySpawner_8h_a8b8f393df12c59d1d2708df07014048f}{Update\+Enemy\+Spawner}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
 \begin{DoxyCompactList}\small\item\em Met à jour le spawner d\textquotesingle{}ennemis. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemySpawner_8h_a17dd66352b415881a492328e40f740f8}{Spawn\+Enemy\+Pattern\+Chasers}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
+void \mbox{\hyperlink{EnemySpawner_8h_a17dd66352b415881a492328e40f740f8}{Spawn\+Enemy\+Pattern\+Chasers}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
 \begin{DoxyCompactList}\small\item\em Spawn un pattern d\textquotesingle{}enemis. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemySpawner_8h_aed0e1e899e0c2a973b7bb3610184c014}{Spawn\+Enemy\+Pattern\+Circle}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
+void \mbox{\hyperlink{EnemySpawner_8h_aed0e1e899e0c2a973b7bb3610184c014}{Spawn\+Enemy\+Pattern\+Circle}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
 \begin{DoxyCompactList}\small\item\em Spawn un pattern d\textquotesingle{}enemis. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemySpawner_8h_a65c809e7b8099271d95db0d5ac16d65d}{Spawn\+Enemy\+Pattern\+Shooter}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
+void \mbox{\hyperlink{EnemySpawner_8h_a65c809e7b8099271d95db0d5ac16d65d}{Spawn\+Enemy\+Pattern\+Shooter}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
 \begin{DoxyCompactList}\small\item\em Spawn un pattern d\textquotesingle{}enemis. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemySpawner_8h_a6f30172da00459c58ceb9d9addea5118}{Spawn\+Enemy\+Pattern\+Arc}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
+void \mbox{\hyperlink{EnemySpawner_8h_a6f30172da00459c58ceb9d9addea5118}{Spawn\+Enemy\+Pattern\+Arc}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
+\begin{DoxyCompactList}\small\item\em Spawn un pattern d\textquotesingle{}enemis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{EnemySpawner_8h_a6817658959058f4047ca299f5de0365b}{Spawn\+Enemy\+Pattern\+Spiral}} (\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}spawner, \mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos)
 \begin{DoxyCompactList}\small\item\em Spawn un pattern d\textquotesingle{}enemis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -45,6 +65,59 @@ void \mbox{\hyperlink{EnemySpawner_8h_a6f30172da00459c58ceb9d9addea5118}{Spawn\+
 \mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \mbox{\hyperlink{EnemySpawner_8h_afa1e3a6688b8a86e113b40c4902d54b2}{enemy\+Spawner}}
 \end{DoxyCompactItemize}
 
+
+\label{doc-define-members}
+\Hypertarget{EnemySpawner_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{EnemySpawner_8h_a41b42d8092937f963657a75c96ef43ff}\index{EnemySpawner.h@{EnemySpawner.h}!CHASER\_DMG@{CHASER\_DMG}}
+\index{CHASER\_DMG@{CHASER\_DMG}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{CHASER\_DMG}{CHASER\_DMG}}
+{\footnotesize\ttfamily \label{EnemySpawner_8h_a41b42d8092937f963657a75c96ef43ff} 
+\#define CHASER\+\_\+\+DMG~10}
+
+Dégât infligé par l\textquotesingle{}ennemi "{}chaser"{} \Hypertarget{EnemySpawner_8h_a1f7a81c0d91c13db112a120afb559bce}\index{EnemySpawner.h@{EnemySpawner.h}!CHASER\_HP@{CHASER\_HP}}
+\index{CHASER\_HP@{CHASER\_HP}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{CHASER\_HP}{CHASER\_HP}}
+{\footnotesize\ttfamily \label{EnemySpawner_8h_a1f7a81c0d91c13db112a120afb559bce} 
+\#define CHASER\+\_\+\+HP~15}
+
+Vie de l\textquotesingle{}ennemi "{}chaser"{} \Hypertarget{EnemySpawner_8h_a1a570a54610403a41053a1313316c018}\index{EnemySpawner.h@{EnemySpawner.h}!CHASER\_SPEED@{CHASER\_SPEED}}
+\index{CHASER\_SPEED@{CHASER\_SPEED}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{CHASER\_SPEED}{CHASER\_SPEED}}
+{\footnotesize\ttfamily \label{EnemySpawner_8h_a1a570a54610403a41053a1313316c018} 
+\#define CHASER\+\_\+\+SPEED~250}
+
+Vitesse de déplacement de l\textquotesingle{}ennemi "{}chaser"{} \Hypertarget{EnemySpawner_8h_a08db132f1c4a4478871df3206f200123}\index{EnemySpawner.h@{EnemySpawner.h}!SHOOTER\_BULLET\_SIZE@{SHOOTER\_BULLET\_SIZE}}
+\index{SHOOTER\_BULLET\_SIZE@{SHOOTER\_BULLET\_SIZE}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{SHOOTER\_BULLET\_SIZE}{SHOOTER\_BULLET\_SIZE}}
+{\footnotesize\ttfamily \label{EnemySpawner_8h_a08db132f1c4a4478871df3206f200123} 
+\#define SHOOTER\+\_\+\+BULLET\+\_\+\+SIZE~25}
+
+Taille des balles de l\textquotesingle{}ennemi "{}shooter"{} \Hypertarget{EnemySpawner_8h_a8e4cb464731774bf1523c7c052606b15}\index{EnemySpawner.h@{EnemySpawner.h}!SHOOTER\_BULLET\_SPEED@{SHOOTER\_BULLET\_SPEED}}
+\index{SHOOTER\_BULLET\_SPEED@{SHOOTER\_BULLET\_SPEED}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{SHOOTER\_BULLET\_SPEED}{SHOOTER\_BULLET\_SPEED}}
+{\footnotesize\ttfamily \label{EnemySpawner_8h_a8e4cb464731774bf1523c7c052606b15} 
+\#define SHOOTER\+\_\+\+BULLET\+\_\+\+SPEED~420}
+
+Vitesse des balles de l\textquotesingle{}ennemi "{}shooter"{} \Hypertarget{EnemySpawner_8h_af3b9e4f18b9134d662246015852ce6aa}\index{EnemySpawner.h@{EnemySpawner.h}!SHOOTER\_DMG@{SHOOTER\_DMG}}
+\index{SHOOTER\_DMG@{SHOOTER\_DMG}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{SHOOTER\_DMG}{SHOOTER\_DMG}}
+{\footnotesize\ttfamily \label{EnemySpawner_8h_af3b9e4f18b9134d662246015852ce6aa} 
+\#define SHOOTER\+\_\+\+DMG~30}
+
+Dégât infligé par l\textquotesingle{}ennemi "{}shooter"{} \Hypertarget{EnemySpawner_8h_ad30e2206d952351c2fa241abad78b41f}\index{EnemySpawner.h@{EnemySpawner.h}!SHOOTER\_HP@{SHOOTER\_HP}}
+\index{SHOOTER\_HP@{SHOOTER\_HP}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{SHOOTER\_HP}{SHOOTER\_HP}}
+{\footnotesize\ttfamily \label{EnemySpawner_8h_ad30e2206d952351c2fa241abad78b41f} 
+\#define SHOOTER\+\_\+\+HP~60}
+
+Vie de l\textquotesingle{}ennemi "{}shooter"{} \Hypertarget{EnemySpawner_8h_adb2c2480fb983a635587901e7a1142c0}\index{EnemySpawner.h@{EnemySpawner.h}!SHOOTER\_SPEED@{SHOOTER\_SPEED}}
+\index{SHOOTER\_SPEED@{SHOOTER\_SPEED}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{SHOOTER\_SPEED}{SHOOTER\_SPEED}}
+{\footnotesize\ttfamily \label{EnemySpawner_8h_adb2c2480fb983a635587901e7a1142c0} 
+\#define SHOOTER\+\_\+\+SPEED~170}
+
+Vitesse de déplacement de l\textquotesingle{}ennemi "{}shooter"{} 
 
 \label{doc-func-members}
 \Hypertarget{EnemySpawner_8h_doc-func-members}
@@ -68,7 +141,7 @@ Initialise le spawner d\textquotesingle{}ennemis.
 \index{SpawnEnemyPatternArc@{SpawnEnemyPatternArc}!EnemySpawner.h@{EnemySpawner.h}}
 \doxysubsubsection{\texorpdfstring{SpawnEnemyPatternArc()}{SpawnEnemyPatternArc()}}
 {\footnotesize\ttfamily \label{EnemySpawner_8h_a6f30172da00459c58ceb9d9addea5118} 
-void Spawn\+Enemy\+Pattern\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
+void Spawn\+Enemy\+Pattern\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -89,7 +162,7 @@ Spawn un pattern d\textquotesingle{}enemis.
 \index{SpawnEnemyPatternChasers@{SpawnEnemyPatternChasers}!EnemySpawner.h@{EnemySpawner.h}}
 \doxysubsubsection{\texorpdfstring{SpawnEnemyPatternChasers()}{SpawnEnemyPatternChasers()}}
 {\footnotesize\ttfamily \label{EnemySpawner_8h_a17dd66352b415881a492328e40f740f8} 
-void Spawn\+Enemy\+Pattern\+Chasers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
+void Spawn\+Enemy\+Pattern\+Chasers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -110,7 +183,7 @@ Spawn un pattern d\textquotesingle{}enemis.
 \index{SpawnEnemyPatternCircle@{SpawnEnemyPatternCircle}!EnemySpawner.h@{EnemySpawner.h}}
 \doxysubsubsection{\texorpdfstring{SpawnEnemyPatternCircle()}{SpawnEnemyPatternCircle()}}
 {\footnotesize\ttfamily \label{EnemySpawner_8h_aed0e1e899e0c2a973b7bb3610184c014} 
-void Spawn\+Enemy\+Pattern\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
+void Spawn\+Enemy\+Pattern\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -131,7 +204,7 @@ Spawn un pattern d\textquotesingle{}enemis.
 \index{SpawnEnemyPatternShooter@{SpawnEnemyPatternShooter}!EnemySpawner.h@{EnemySpawner.h}}
 \doxysubsubsection{\texorpdfstring{SpawnEnemyPatternShooter()}{SpawnEnemyPatternShooter()}}
 {\footnotesize\ttfamily \label{EnemySpawner_8h_a65c809e7b8099271d95db0d5ac16d65d} 
-void Spawn\+Enemy\+Pattern\+Shooter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
+void Spawn\+Enemy\+Pattern\+Shooter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -148,11 +221,32 @@ Spawn un pattern d\textquotesingle{}enemis.
 {\em pos} & position de spawn \\
 \hline
 \end{DoxyParams}
+\Hypertarget{EnemySpawner_8h_a6817658959058f4047ca299f5de0365b}\index{EnemySpawner.h@{EnemySpawner.h}!SpawnEnemyPatternSpiral@{SpawnEnemyPatternSpiral}}
+\index{SpawnEnemyPatternSpiral@{SpawnEnemyPatternSpiral}!EnemySpawner.h@{EnemySpawner.h}}
+\doxysubsubsection{\texorpdfstring{SpawnEnemyPatternSpiral()}{SpawnEnemyPatternSpiral()}}
+{\footnotesize\ttfamily \label{EnemySpawner_8h_a6817658959058f4047ca299f5de0365b} 
+void Spawn\+Enemy\+Pattern\+Spiral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Spawn un pattern d\textquotesingle{}enemis. 
+
+5 chasers et un tireur en spirale
+
+
+\begin{DoxyParams}{Parameters}
+{\em spawner} & pointeur vers le spawner \\
+\hline
+{\em pool} & pool d’ennemis \\
+\hline
+{\em pos} & position de spawn \\
+\hline
+\end{DoxyParams}
 \Hypertarget{EnemySpawner_8h_a9d776f5787b32a9f4731256ebc3af03e}\index{EnemySpawner.h@{EnemySpawner.h}!SpawnRandomEnemy@{SpawnRandomEnemy}}
 \index{SpawnRandomEnemy@{SpawnRandomEnemy}!EnemySpawner.h@{EnemySpawner.h}}
 \doxysubsubsection{\texorpdfstring{SpawnRandomEnemy()}{SpawnRandomEnemy()}}
 {\footnotesize\ttfamily \label{EnemySpawner_8h_a9d776f5787b32a9f4731256ebc3af03e} 
-void Spawn\+Random\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{}\end{DoxyParamCaption})}
+void Spawn\+Random\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{}\end{DoxyParamCaption})}
 
 
 
@@ -176,7 +270,7 @@ Génère un ennemi avec des statistiques aléatoires \+:
 \index{UpdateEnemySpawner@{UpdateEnemySpawner}!EnemySpawner.h@{EnemySpawner.h}}
 \doxysubsubsection{\texorpdfstring{UpdateEnemySpawner()}{UpdateEnemySpawner()}}
 {\footnotesize\ttfamily \label{EnemySpawner_8h_a8b8f393df12c59d1d2708df07014048f} 
-void Update\+Enemy\+Spawner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{}\end{DoxyParamCaption})}
+void Update\+Enemy\+Spawner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEnemySpawner}{Enemy\+Spawner}} \texorpdfstring{$\ast$}{*}}]{spawner}{, }\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{}\end{DoxyParamCaption})}
 
 
 

@@ -2,7 +2,7 @@ var searchData=
 [
   ['camera_0',['camera',['../GameManager_8h.html#a2104321f3e01d1f85c8054cda5ad149c',1,'camera:&#160;Game.c'],['../Game_8c.html#a2104321f3e01d1f85c8054cda5ad149c',1,'camera:&#160;Game.c']]],
   ['canjump_1',['canJump',['../structMovementConfig__s.html#a4cee7a6116094412f7fbc4b0b999b80d',1,'MovementConfig_s']]],
-  ['capacity_2',['capacity',['../structbulletPool__t.html#a512ff4f9ec30c4f6d605469677956c33',1,'bulletPool_t::capacity'],['../structenemyPool__t.html#a8de7f7f91fd839f8c01cd326293479ff',1,'enemyPool_t::capacity']]],
+  ['capacity_2',['capacity',['../structbulletPool__s.html#a496eec1b5f10029d6c2cadb40ca988f9',1,'bulletPool_s::capacity'],['../structenemyPool__s.html#aefd0d7eb2c13800e3decc590d2001875',1,'enemyPool_s::capacity']]],
   ['case_5fsensitive_3',['case_sensitive',['../cJSON_8h.html#a05334336676ca1cd88db19ede4a065de',1,'cJSON.h']]],
   ['child_4',['child',['../structcJSON.html#a401b274c2da358dac5c23ab8b2c71f85',1,'cJSON']]],
   ['color_5',['color',['../structPlatform.html#a357a9235887d3dc9509126b135e32a4f',1,'Platform']]],

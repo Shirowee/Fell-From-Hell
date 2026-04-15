@@ -1,5 +1,7 @@
 <map id="lib/core/RessourcesManager.h" name="lib/core/RessourcesManager.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,221,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="46,79,181,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,31,116,65,111,65,111,31"/>
+<area shape="rect" id="Node000001" title="Gestion centralisée des ressources du jeu (textures et sons)" alt="" coords="31,5,247,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,140,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,33,100,70,96,66,127,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="165,86,247,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,29,189,74,185,77,147,33"/>
 </map>

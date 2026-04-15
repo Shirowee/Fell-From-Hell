@@ -11,8 +11,7 @@ Gestion du pool d\textquotesingle{}ennemis (object pooling)
 {\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
-Include dependency graph for Enemy\+Pool.\+c\+:
-\nopagebreak
+Include dependency graph for Enemy\+Pool.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,20 +21,20 @@ Include dependency graph for Enemy\+Pool.\+c\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{EnemyPool_8c_a2f1535ca00ed3dd50590fd7713dac682}{Init\+Enemy\+Pool}} (\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, int capacity)
+void \mbox{\hyperlink{EnemyPool_8c_a2f1535ca00ed3dd50590fd7713dac682}{Init\+Enemy\+Pool}} (\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, int capacity)
 \begin{DoxyCompactList}\small\item\em Initialise un pool d’ennemis. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyPool_8c_aad4b72a3a13287968e82e35b7f64954b}{Spawn\+Enemy\+Pool}} (\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos, float speed, Vector2 size, int dmg, float bullet\+Speed, int bullet\+Size, \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}} type)
+void \mbox{\hyperlink{EnemyPool_8c_a98357c6a35b73b29e95b4e9a2c397165}{Spawn\+Enemy\+Pool}} (\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 pos, int hp, float speed, Vector2 size, int dmg, float bullet\+Speed, int bullet\+Size, \mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}} type)
 \begin{DoxyCompactList}\small\item\em Fait apparaître un ennemi dans le pool. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyPool_8c_a16cc3781f1de82d5cbbb58564117cc5b}{Update\+Enemy\+Pool}} (\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+void \mbox{\hyperlink{EnemyPool_8c_a16cc3781f1de82d5cbbb58564117cc5b}{Update\+Enemy\+Pool}} (\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Met à jour tous les ennemis du pool. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyPool_8c_ac85ea34beb9e60a0c254e1f38a8cc685}{Draw\+Enemy\+Pool}} (\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
+void \mbox{\hyperlink{EnemyPool_8c_a4628e2a567895b010dc9dcb679e138e2}{Draw\+Enemy\+Pool}} (\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Dessine tous les ennemis actifs. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyPool_8c_a4dc0ff895b8c776796452ae7e8a8ace3}{Free\+Enemy\+Pool}} (\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
+void \mbox{\hyperlink{EnemyPool_8c_a4dc0ff895b8c776796452ae7e8a8ace3}{Free\+Enemy\+Pool}} (\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool)
 \begin{DoxyCompactList}\small\item\em Libère la mémoire du pool d’ennemis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \mbox{\hyperlink{EnemyPool_8c_ab8b70d96e97532942f19fdcb03aa4b1a}{enemy\+Pool}}
+\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \mbox{\hyperlink{EnemyPool_8c_ab8b70d96e97532942f19fdcb03aa4b1a}{enemy\+Pool}}
 \begin{DoxyCompactList}\small\item\em Pool global d’ennemis. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -61,11 +60,11 @@ Fonctionnalités \+:
 \label{doc-func-members}
 \Hypertarget{EnemyPool_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{EnemyPool_8c_ac85ea34beb9e60a0c254e1f38a8cc685}\index{EnemyPool.c@{EnemyPool.c}!DrawEnemyPool@{DrawEnemyPool}}
+\Hypertarget{EnemyPool_8c_a4628e2a567895b010dc9dcb679e138e2}\index{EnemyPool.c@{EnemyPool.c}!DrawEnemyPool@{DrawEnemyPool}}
 \index{DrawEnemyPool@{DrawEnemyPool}!EnemyPool.c@{EnemyPool.c}}
 \doxysubsubsection{\texorpdfstring{DrawEnemyPool()}{DrawEnemyPool()}}
-{\footnotesize\ttfamily \label{EnemyPool_8c_ac85ea34beb9e60a0c254e1f38a8cc685} 
-void Draw\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyPool_8c_a4628e2a567895b010dc9dcb679e138e2} 
+void Draw\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -75,12 +74,14 @@ Dessine tous les ennemis actifs.
 \begin{DoxyParams}{Parameters}
 {\em pool} & pointeur vers le pool \\
 \hline
+{\em player\+Pos} & position du joueur \\
+\hline
 \end{DoxyParams}
 \Hypertarget{EnemyPool_8c_a4dc0ff895b8c776796452ae7e8a8ace3}\index{EnemyPool.c@{EnemyPool.c}!FreeEnemyPool@{FreeEnemyPool}}
 \index{FreeEnemyPool@{FreeEnemyPool}!EnemyPool.c@{EnemyPool.c}}
 \doxysubsubsection{\texorpdfstring{FreeEnemyPool()}{FreeEnemyPool()}}
 {\footnotesize\ttfamily \label{EnemyPool_8c_a4dc0ff895b8c776796452ae7e8a8ace3} 
-void Free\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{}\end{DoxyParamCaption})}
+void Free\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{}\end{DoxyParamCaption})}
 
 
 
@@ -95,7 +96,7 @@ Libère la mémoire du pool d’ennemis.
 \index{InitEnemyPool@{InitEnemyPool}!EnemyPool.c@{EnemyPool.c}}
 \doxysubsubsection{\texorpdfstring{InitEnemyPool()}{InitEnemyPool()}}
 {\footnotesize\ttfamily \label{EnemyPool_8c_a2f1535ca00ed3dd50590fd7713dac682} 
-void Init\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+void Init\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
 
 
 
@@ -110,11 +111,11 @@ Alloue dynamiquement un tableau d’ennemis et initialise chaque entrée comme i
 {\em capacity} & nombre maximum d’ennemis \\
 \hline
 \end{DoxyParams}
-\Hypertarget{EnemyPool_8c_aad4b72a3a13287968e82e35b7f64954b}\index{EnemyPool.c@{EnemyPool.c}!SpawnEnemyPool@{SpawnEnemyPool}}
+\Hypertarget{EnemyPool_8c_a98357c6a35b73b29e95b4e9a2c397165}\index{EnemyPool.c@{EnemyPool.c}!SpawnEnemyPool@{SpawnEnemyPool}}
 \index{SpawnEnemyPool@{SpawnEnemyPool}!EnemyPool.c@{EnemyPool.c}}
 \doxysubsubsection{\texorpdfstring{SpawnEnemyPool()}{SpawnEnemyPool()}}
-{\footnotesize\ttfamily \label{EnemyPool_8c_aad4b72a3a13287968e82e35b7f64954b} 
-void Spawn\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{, }\item[{float}]{speed}{, }\item[{Vector2}]{size}{, }\item[{int}]{dmg}{, }\item[{float}]{bullet\+Speed}{, }\item[{int}]{bullet\+Size}{, }\item[{\mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}}}]{type}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{EnemyPool_8c_a98357c6a35b73b29e95b4e9a2c397165} 
+void Spawn\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{pos}{, }\item[{int}]{hp}{, }\item[{float}]{speed}{, }\item[{Vector2}]{size}{, }\item[{int}]{dmg}{, }\item[{float}]{bullet\+Speed}{, }\item[{int}]{bullet\+Size}{, }\item[{\mbox{\hyperlink{EnemyController_8h_a7a8e191a4803cd055d89be80d903e79e}{Enemy\+Type\+\_\+t}}}]{type}{}\end{DoxyParamCaption})}
 
 
 
@@ -143,7 +144,7 @@ Recherche la première entrée inactive pour la réutiliser. Si aucun slot n’e
 \index{UpdateEnemyPool@{UpdateEnemyPool}!EnemyPool.c@{EnemyPool.c}}
 \doxysubsubsection{\texorpdfstring{UpdateEnemyPool()}{UpdateEnemyPool()}}
 {\footnotesize\ttfamily \label{EnemyPool_8c_a16cc3781f1de82d5cbbb58564117cc5b} 
-void Update\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
+void Update\+Enemy\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -165,7 +166,7 @@ Met à jour tous les ennemis du pool.
 \index{enemyPool@{enemyPool}!EnemyPool.c@{EnemyPool.c}}
 \doxysubsubsection{\texorpdfstring{enemyPool}{enemyPool}}
 {\footnotesize\ttfamily \label{EnemyPool_8c_ab8b70d96e97532942f19fdcb03aa4b1a} 
-\mbox{\hyperlink{structenemyPool__t}{enemy\+Pool\+\_\+t}} enemy\+Pool}
+\mbox{\hyperlink{EnemyController_8h_af5e0476aef6320552ff86cb82f01620d}{enemy\+Pool\+\_\+t}} enemy\+Pool}
 
 
 

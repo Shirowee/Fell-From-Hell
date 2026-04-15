@@ -1,12 +1,18 @@
 \doxysection{lib/core/\+Ressources\+Manager.h File Reference}
 \hypertarget{RessourcesManager_8h}{}\label{RessourcesManager_8h}\index{lib/core/RessourcesManager.h@{lib/core/RessourcesManager.h}}
+
+
+Gestion centralisée des ressources du jeu (textures et sons)  
+
+
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
 Include dependency graph for Ressources\+Manager.\+h\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{RessourcesManager_8h__incl}
+\includegraphics[width=262pt]{RessourcesManager_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -17,45 +23,406 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=350pt]{RessourcesManager_8h__dep__incl}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}{Texture\+ID}} \{ \newline
+\mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da57afbae4eaf1d80234340d72e4620537}{TEX\+\_\+\+PLAYER}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da7672177c73680ae4b8a1cd6ae2cc55e8}{TEX\+\_\+\+BACKGROUND\+\_\+\+NEBULA}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da8cf3802efd425d85ec181d5063c1d627}{TEX\+\_\+\+TITLE}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dab0c6d33d37673c056c193511a43827b6}{TEX\+\_\+\+TILESET}}
+, \newline
+\mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da4e45fd811ef278246a155f47e7d3e1f0}{TEX\+\_\+\+CHASER}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dad2071f5f700363ce957335933a5981b2}{TEX\+\_\+\+SHOOTER}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dadfb23725cb4016cd49bb5adccf8c4db0}{TEX\+\_\+\+HUIT}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da605c351ba35fadb243c80c7023b8bab0}{TEX\+\_\+\+SPIRAL}}
+, \newline
+\mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11daa191ccbbba8754d2da541e53cadb30cf}{TEX\+\_\+\+ARC}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dad0441bdda1694e78d80bca49230a16ff}{TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+\+BG}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da6c0b44ef4f15a285e7204f1a63b1c30c}{TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+1}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dada674c5273bc98ccce8949cc5c0f2340}{TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+3}}
+, \newline
+\mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da4184e7c621044b8f107548fcaae58af6}{TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+4}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da8d6ea5a409306f4da8753f8d2a868d15}{TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+5}}
+, \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dadfe045e0afe371d5d1e049cbefede069}{TEX\+\_\+\+COUNT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Identifiants des textures du jeu. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}} \{ \mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078ab2ddd126a9b0f79ddf87b33dc446b852}{MUSIC\+\_\+\+MENU}}
+, \mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a3250ff92071345aa25480ca7a963591d}{MUSIC\+\_\+\+LEVEL1}}
+, \mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a4579796568f086dac1f0ba1c5bc0ec74}{MUSIC\+\_\+\+COUNT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Identifiants des musiques du jeu. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}} \{ \newline
+\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aeb704b5494840c8528214f453d4e93aa}{SND\+\_\+\+DASH}}
+, \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61acd1a9141ec7fea152dde880b9c2420bc}{SND\+\_\+\+ENEMY\+\_\+\+DIE}}
+, \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a6c6387b94bd1b24127cb25ee71633c98}{SND\+\_\+\+ENEMY\+\_\+\+HURT}}
+, \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aeb5061e776b6fce34b2218747b3c08de}{SND\+\_\+\+ENEMY\+\_\+\+SHOOT}}
+, \newline
+\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aebe2d3dcd31669e860a3aeac1e8e46c7}{SND\+\_\+\+HURT}}
+, \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a9f6cd9e3e68e38c01fd4bd37d70fbcca}{SND\+\_\+\+JUMP}}
+, \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a861e393ea402b9608ff3324ad91c8f81}{SND\+\_\+\+SHOOT}}
+, \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a3574c971cf91b368d4e72e0a2c5a3b2e}{SND\+\_\+\+SELECT}}
+, \newline
+\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a6bed8fbb00ec7d6ec1f43391977aee1f}{SND\+\_\+\+SELECTED}}
+, \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61ade6d032c16ff5adf4ede131e5cf16561}{SND\+\_\+\+COUNT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Identifiants des effets sonores du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-Texture2D \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8h_a4bc34793271f2e1a0e99da94d1699edb}{RM\+\_\+\+Get\+Texture}} (const char \texorpdfstring{$\ast$}{*}path)
-\begin{DoxyCompactList}\small\item\em Récupère une texture depuis le gestionnaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f}{RM\+\_\+\+Unload\+Texture}} (const char \texorpdfstring{$\ast$}{*}path)
-\begin{DoxyCompactList}\small\item\em Décharge une texture spécifique. \end{DoxyCompactList}\item 
+Texture2D \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8h_a166f8337eb3c921dfda23e1b16cfa4b1}{RM\+\_\+\+Get\+Texture}} (\mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}{Texture\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Récupère une texture du gestionnaire. \end{DoxyCompactList}\item 
+Music \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8h_af692b3cc91497de2c20c0b20690f0b9e}{RM\+\_\+\+Get\+Music}} (\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Récupère une musique du gestionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_a2a156010f2ebc87a95f729d66f8f33f7}{RM\+\_\+\+Play\+Music}} (\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Joue une musique. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_a670daca95cb8320602e2a948f9d8c6f3}{RM\+\_\+\+Stop\+Music}} (void)
+\begin{DoxyCompactList}\small\item\em Stoppe la musique en cours. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_a280a165b029b522e40f948eabaa22a91}{RM\+\_\+\+Update\+Music}} (void)
+\begin{DoxyCompactList}\small\item\em Met à jour la musique en cours. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_a2d410176a9896ef691ccc49e9a571655}{RM\+\_\+\+Set\+Music\+Volume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Met le volume de la musique. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{RessourcesManager_8h_ad205fdf360d72a13deeafea20dff6e18}{RM\+\_\+\+Get\+Music\+Volume}} (void)
+\begin{DoxyCompactList}\small\item\em Récupère le volume global actuel de la musique. \end{DoxyCompactList}\item 
+Sound \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8h_aab50c0e8589559e329df2892c0e5a694}{RM\+\_\+\+Get\+Sound}} (\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Récupère un son du gestionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_a444330cb6cfeb7ba3e5a99a4bf214838}{RM\+\_\+\+Play\+Sound}} (\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Joue un effet sonore. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_a772cdf072fdb534278b6124687a627f7}{RM\+\_\+\+Set\+SFXVolume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Définit le volume global des effets sonores. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{RessourcesManager_8h_a793f31865becd80f0516a7ec4919545a}{RM\+\_\+\+Get\+SFXVolume}} (void)
+\begin{DoxyCompactList}\small\item\em Récupère le volume global actuel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8h_ac43a759d198245cbdeb12ad95c7bea6e}{RM\+\_\+\+Load\+All}} (void)
+\begin{DoxyCompactList}\small\item\em Charge toutes les ressources du jeu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}{RM\+\_\+\+Unload\+All}} (void)
-\begin{DoxyCompactList}\small\item\em Décharge toutes les textures. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Libère toutes les ressources du jeu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{RessourcesManager_8h_a601e378d412e2ae15519a5eb51347f5e}{RM\+\_\+\+Print\+Status}} (void)
-\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}état interne du Resource Manager (debug) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Affiche l’état du Resource Manager (debug) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestion centralisée des ressources du jeu (textures et sons) 
+
+Gestion des ressources du jeu (textures et sons)
+
+Ce module permet de charger, stocker et gérer les ressources du jeu de manière centralisée afin d’éviter les doublons et optimiser la mémoire.
+
+Les ressources sont identifiées via des enums (\doxylink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}{Texture\+ID} / \doxylink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}), garantissant un accès rapide et sécurisé sans utilisation de chemins strings.
+
+Fonctionnalités \+:
+\begin{DoxyItemize}
+\item Chargement lazy ou global des ressources
+\item Accès rapide via identifiants (enum)
+\item Gestion du cache mémoire
+\item Gestion du volume global des effets sonores
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+A. Pocholle
+\end{DoxyAuthor}
+Fournit un système centralisé pour charger, stocker et libérer les ressources du jeu (textures et effets sonores).
+
+Les ressources sont identifiées par leur chemin (path).
+
+Fonctionnalités \+:
+\begin{DoxyItemize}
+\item Chargement automatique (lazy loading)
+\item Mise en cache (évite les doublons)
+\item Déchargement individuel ou global
+\item Gestion du volume global des effets sonores
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+A. Pocholle 
+\end{DoxyAuthor}
+
+
+\label{doc-enum-members}
+\Hypertarget{RessourcesManager_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}\index{RessourcesManager.h@{RessourcesManager.h}!MusicID@{MusicID}}
+\index{MusicID@{MusicID}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{MusicID}{MusicID}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078} 
+enum \mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}}}
+
+
+
+Identifiants des musiques du jeu. 
+
+Chaque enum correspond à une musique chargée en mémoire. L’ordre doit correspondre au tableau interne music\+Paths. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MUSIC\_MENU@{MUSIC\_MENU}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!MUSIC\_MENU@{MUSIC\_MENU}}}\Hypertarget{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078ab2ddd126a9b0f79ddf87b33dc446b852}\label{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078ab2ddd126a9b0f79ddf87b33dc446b852} 
+MUSIC\+\_\+\+MENU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MUSIC\_LEVEL1@{MUSIC\_LEVEL1}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!MUSIC\_LEVEL1@{MUSIC\_LEVEL1}}}\Hypertarget{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a3250ff92071345aa25480ca7a963591d}\label{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a3250ff92071345aa25480ca7a963591d} 
+MUSIC\+\_\+\+LEVEL1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MUSIC\_COUNT@{MUSIC\_COUNT}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!MUSIC\_COUNT@{MUSIC\_COUNT}}}\Hypertarget{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a4579796568f086dac1f0ba1c5bc0ec74}\label{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a4579796568f086dac1f0ba1c5bc0ec74} 
+MUSIC\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}\index{RessourcesManager.h@{RessourcesManager.h}!SoundID@{SoundID}}
+\index{SoundID@{SoundID}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{SoundID}{SoundID}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61} 
+enum \mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}}}
+
+
+
+Identifiants des effets sonores du jeu. 
+
+Chaque enum correspond à un son chargé en mémoire. L’ordre doit correspondre au tableau interne sound\+Paths. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_DASH@{SND\_DASH}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_DASH@{SND\_DASH}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aeb704b5494840c8528214f453d4e93aa}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aeb704b5494840c8528214f453d4e93aa} 
+SND\+\_\+\+DASH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_ENEMY\_DIE@{SND\_ENEMY\_DIE}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_ENEMY\_DIE@{SND\_ENEMY\_DIE}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61acd1a9141ec7fea152dde880b9c2420bc}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61acd1a9141ec7fea152dde880b9c2420bc} 
+SND\+\_\+\+ENEMY\+\_\+\+DIE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_ENEMY\_HURT@{SND\_ENEMY\_HURT}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_ENEMY\_HURT@{SND\_ENEMY\_HURT}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a6c6387b94bd1b24127cb25ee71633c98}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a6c6387b94bd1b24127cb25ee71633c98} 
+SND\+\_\+\+ENEMY\+\_\+\+HURT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_ENEMY\_SHOOT@{SND\_ENEMY\_SHOOT}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_ENEMY\_SHOOT@{SND\_ENEMY\_SHOOT}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aeb5061e776b6fce34b2218747b3c08de}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aeb5061e776b6fce34b2218747b3c08de} 
+SND\+\_\+\+ENEMY\+\_\+\+SHOOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_HURT@{SND\_HURT}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_HURT@{SND\_HURT}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aebe2d3dcd31669e860a3aeac1e8e46c7}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61aebe2d3dcd31669e860a3aeac1e8e46c7} 
+SND\+\_\+\+HURT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_JUMP@{SND\_JUMP}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_JUMP@{SND\_JUMP}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a9f6cd9e3e68e38c01fd4bd37d70fbcca}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a9f6cd9e3e68e38c01fd4bd37d70fbcca} 
+SND\+\_\+\+JUMP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_SHOOT@{SND\_SHOOT}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_SHOOT@{SND\_SHOOT}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a861e393ea402b9608ff3324ad91c8f81}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a861e393ea402b9608ff3324ad91c8f81} 
+SND\+\_\+\+SHOOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_SELECT@{SND\_SELECT}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_SELECT@{SND\_SELECT}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a3574c971cf91b368d4e72e0a2c5a3b2e}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a3574c971cf91b368d4e72e0a2c5a3b2e} 
+SND\+\_\+\+SELECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_SELECTED@{SND\_SELECTED}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_SELECTED@{SND\_SELECTED}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a6bed8fbb00ec7d6ec1f43391977aee1f}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61a6bed8fbb00ec7d6ec1f43391977aee1f} 
+SND\+\_\+\+SELECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SND\_COUNT@{SND\_COUNT}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!SND\_COUNT@{SND\_COUNT}}}\Hypertarget{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61ade6d032c16ff5adf4ede131e5cf16561}\label{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61ade6d032c16ff5adf4ede131e5cf16561} 
+SND\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}\index{RessourcesManager.h@{RessourcesManager.h}!TextureID@{TextureID}}
+\index{TextureID@{TextureID}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{TextureID}{TextureID}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d} 
+enum \mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}{Texture\+ID}}}
+
+
+
+Identifiants des textures du jeu. 
+
+Chaque enum correspond à une texture chargée en mémoire. L’ordre doit correspondre au tableau interne texture\+Paths. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_PLAYER@{TEX\_PLAYER}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_PLAYER@{TEX\_PLAYER}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da57afbae4eaf1d80234340d72e4620537}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da57afbae4eaf1d80234340d72e4620537} 
+TEX\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_BACKGROUND\_NEBULA@{TEX\_BACKGROUND\_NEBULA}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_BACKGROUND\_NEBULA@{TEX\_BACKGROUND\_NEBULA}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da7672177c73680ae4b8a1cd6ae2cc55e8}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da7672177c73680ae4b8a1cd6ae2cc55e8} 
+TEX\+\_\+\+BACKGROUND\+\_\+\+NEBULA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_TITLE@{TEX\_TITLE}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_TITLE@{TEX\_TITLE}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da8cf3802efd425d85ec181d5063c1d627}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da8cf3802efd425d85ec181d5063c1d627} 
+TEX\+\_\+\+TITLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_TILESET@{TEX\_TILESET}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_TILESET@{TEX\_TILESET}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dab0c6d33d37673c056c193511a43827b6}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dab0c6d33d37673c056c193511a43827b6} 
+TEX\+\_\+\+TILESET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_CHASER@{TEX\_CHASER}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_CHASER@{TEX\_CHASER}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da4e45fd811ef278246a155f47e7d3e1f0}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da4e45fd811ef278246a155f47e7d3e1f0} 
+TEX\+\_\+\+CHASER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_SHOOTER@{TEX\_SHOOTER}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_SHOOTER@{TEX\_SHOOTER}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dad2071f5f700363ce957335933a5981b2}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dad2071f5f700363ce957335933a5981b2} 
+TEX\+\_\+\+SHOOTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_HUIT@{TEX\_HUIT}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_HUIT@{TEX\_HUIT}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dadfb23725cb4016cd49bb5adccf8c4db0}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dadfb23725cb4016cd49bb5adccf8c4db0} 
+TEX\+\_\+\+HUIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_SPIRAL@{TEX\_SPIRAL}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_SPIRAL@{TEX\_SPIRAL}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da605c351ba35fadb243c80c7023b8bab0}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da605c351ba35fadb243c80c7023b8bab0} 
+TEX\+\_\+\+SPIRAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_ARC@{TEX\_ARC}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_ARC@{TEX\_ARC}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11daa191ccbbba8754d2da541e53cadb30cf}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11daa191ccbbba8754d2da541e53cadb30cf} 
+TEX\+\_\+\+ARC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_PARALLAX\_NEB\_BG@{TEX\_PARALLAX\_NEB\_BG}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_PARALLAX\_NEB\_BG@{TEX\_PARALLAX\_NEB\_BG}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dad0441bdda1694e78d80bca49230a16ff}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dad0441bdda1694e78d80bca49230a16ff} 
+TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+\+BG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_PARALLAX\_NEB\_1@{TEX\_PARALLAX\_NEB\_1}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_PARALLAX\_NEB\_1@{TEX\_PARALLAX\_NEB\_1}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da6c0b44ef4f15a285e7204f1a63b1c30c}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da6c0b44ef4f15a285e7204f1a63b1c30c} 
+TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_PARALLAX\_NEB\_3@{TEX\_PARALLAX\_NEB\_3}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_PARALLAX\_NEB\_3@{TEX\_PARALLAX\_NEB\_3}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dada674c5273bc98ccce8949cc5c0f2340}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dada674c5273bc98ccce8949cc5c0f2340} 
+TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_PARALLAX\_NEB\_4@{TEX\_PARALLAX\_NEB\_4}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_PARALLAX\_NEB\_4@{TEX\_PARALLAX\_NEB\_4}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da4184e7c621044b8f107548fcaae58af6}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da4184e7c621044b8f107548fcaae58af6} 
+TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_PARALLAX\_NEB\_5@{TEX\_PARALLAX\_NEB\_5}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_PARALLAX\_NEB\_5@{TEX\_PARALLAX\_NEB\_5}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da8d6ea5a409306f4da8753f8d2a868d15}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11da8d6ea5a409306f4da8753f8d2a868d15} 
+TEX\+\_\+\+PARALLAX\+\_\+\+NEB\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEX\_COUNT@{TEX\_COUNT}!RessourcesManager.h@{RessourcesManager.h}}\index{RessourcesManager.h@{RessourcesManager.h}!TEX\_COUNT@{TEX\_COUNT}}}\Hypertarget{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dadfe045e0afe371d5d1e049cbefede069}\label{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11dadfe045e0afe371d5d1e049cbefede069} 
+TEX\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
 
 
 \label{doc-func-members}
 \Hypertarget{RessourcesManager_8h_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{RessourcesManager_8h_a4bc34793271f2e1a0e99da94d1699edb}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_GetTexture@{RM\_GetTexture}}
-\index{RM\_GetTexture@{RM\_GetTexture}!RessourcesManager.h@{RessourcesManager.h}}
-\doxysubsubsection{\texorpdfstring{RM\_GetTexture()}{RM\_GetTexture()}}
-{\footnotesize\ttfamily \label{RessourcesManager_8h_a4bc34793271f2e1a0e99da94d1699edb} 
-Texture2D \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+\Hypertarget{RessourcesManager_8h_af692b3cc91497de2c20c0b20690f0b9e}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_GetMusic@{RM\_GetMusic}}
+\index{RM\_GetMusic@{RM\_GetMusic}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_GetMusic()}{RM\_GetMusic()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_af692b3cc91497de2c20c0b20690f0b9e} 
+Music \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}}}]{id}{}\end{DoxyParamCaption})}
 
 
 
-Récupère une texture depuis le gestionnaire. 
+Récupère une musique du gestionnaire. 
 
-Si la texture est déjà chargée, elle est simplement retournée. Sinon, elle est chargée puis stockée.
+Charge la musique si nécessaire, sinon retourne celle en cache.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Chemin vers le fichier image \\
+{\em id} & Identifiant de la musique \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Pointeur vers la texture, ou NULL en cas d\textquotesingle{}erreur
+Pointeur vers la musique chargée 
 \end{DoxyReturn}
-\begin{DoxyNote}{Note}
-La texture reste en mémoire jusqu\textquotesingle{}à appel de \doxylink{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f}{RM\+\_\+\+Unload\+Texture()} ou \doxylink{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}{RM\+\_\+\+Unload\+All()} 
-\end{DoxyNote}
+\Hypertarget{RessourcesManager_8h_ad205fdf360d72a13deeafea20dff6e18}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_GetMusicVolume@{RM\_GetMusicVolume}}
+\index{RM\_GetMusicVolume@{RM\_GetMusicVolume}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_GetMusicVolume()}{RM\_GetMusicVolume()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_ad205fdf360d72a13deeafea20dff6e18} 
+float RM\+\_\+\+Get\+Music\+Volume (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Récupère le volume global actuel de la musique. 
+
+\begin{DoxyReturn}{Returns}
+Volume de la musique (0.\+0 -\/ 1.\+0) 
+\end{DoxyReturn}
+\Hypertarget{RessourcesManager_8h_a793f31865becd80f0516a7ec4919545a}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_GetSFXVolume@{RM\_GetSFXVolume}}
+\index{RM\_GetSFXVolume@{RM\_GetSFXVolume}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_GetSFXVolume()}{RM\_GetSFXVolume()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a793f31865becd80f0516a7ec4919545a} 
+float RM\+\_\+\+Get\+SFXVolume (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Récupère le volume global actuel. 
+
+\begin{DoxyReturn}{Returns}
+Volume des SFX (0.\+0 -\/ 1.\+0) 
+\end{DoxyReturn}
+\Hypertarget{RessourcesManager_8h_aab50c0e8589559e329df2892c0e5a694}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_GetSound@{RM\_GetSound}}
+\index{RM\_GetSound@{RM\_GetSound}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_GetSound()}{RM\_GetSound()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_aab50c0e8589559e329df2892c0e5a694} 
+Sound \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}}}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Récupère un son du gestionnaire. 
+
+Charge le son si nécessaire, sinon retourne celui en cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant du son \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers le son chargé 
+\end{DoxyReturn}
+\Hypertarget{RessourcesManager_8h_a166f8337eb3c921dfda23e1b16cfa4b1}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_GetTexture@{RM\_GetTexture}}
+\index{RM\_GetTexture@{RM\_GetTexture}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_GetTexture()}{RM\_GetTexture()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a166f8337eb3c921dfda23e1b16cfa4b1} 
+Texture2D \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}{Texture\+ID}}}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Récupère une texture du gestionnaire. 
+
+Charge la texture si nécessaire, sinon retourne celle en cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant de la texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la texture chargée 
+\end{DoxyReturn}
+\Hypertarget{RessourcesManager_8h_ac43a759d198245cbdeb12ad95c7bea6e}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_LoadAll@{RM\_LoadAll}}
+\index{RM\_LoadAll@{RM\_LoadAll}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_LoadAll()}{RM\_LoadAll()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_ac43a759d198245cbdeb12ad95c7bea6e} 
+void RM\+\_\+\+Load\+All (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Charge toutes les ressources du jeu. 
+
+Précharge textures et sons pour éviter les stutters en jeu. \Hypertarget{RessourcesManager_8h_a2a156010f2ebc87a95f729d66f8f33f7}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_PlayMusic@{RM\_PlayMusic}}
+\index{RM\_PlayMusic@{RM\_PlayMusic}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_PlayMusic()}{RM\_PlayMusic()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a2a156010f2ebc87a95f729d66f8f33f7} 
+void RM\+\_\+\+Play\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}}}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Joue une musique. 
+
+Applique automatiquement le volume global avant lecture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant de la musique à jouer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{RessourcesManager_8h_a444330cb6cfeb7ba3e5a99a4bf214838}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_PlaySound@{RM\_PlaySound}}
+\index{RM\_PlaySound@{RM\_PlaySound}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_PlaySound()}{RM\_PlaySound()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a444330cb6cfeb7ba3e5a99a4bf214838} 
+void RM\+\_\+\+Play\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}}}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Joue un effet sonore. 
+
+Applique automatiquement le volume global avant lecture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant du son à jouer \\
+\hline
+\end{DoxyParams}
 \Hypertarget{RessourcesManager_8h_a601e378d412e2ae15519a5eb51347f5e}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_PrintStatus@{RM\_PrintStatus}}
 \index{RM\_PrintStatus@{RM\_PrintStatus}!RessourcesManager.h@{RessourcesManager.h}}
 \doxysubsubsection{\texorpdfstring{RM\_PrintStatus()}{RM\_PrintStatus()}}
@@ -64,13 +431,59 @@ void RM\+\_\+\+Print\+Status (\begin{DoxyParamCaption}\item[{void}]{}{}\end{Doxy
 
 
 
-Affiche l\textquotesingle{}état interne du Resource Manager (debug) 
+Affiche l’état du Resource Manager (debug) 
 
 Affiche dans la console \+:
 \begin{DoxyItemize}
-\item le nombre de textures chargées
-\item la liste des chemins 
-\end{DoxyItemize}\Hypertarget{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_UnloadAll@{RM\_UnloadAll}}
+\item textures chargées
+\item sons chargés
+\item état interne 
+\end{DoxyItemize}\Hypertarget{RessourcesManager_8h_a2d410176a9896ef691ccc49e9a571655}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_SetMusicVolume@{RM\_SetMusicVolume}}
+\index{RM\_SetMusicVolume@{RM\_SetMusicVolume}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_SetMusicVolume()}{RM\_SetMusicVolume()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a2d410176a9896ef691ccc49e9a571655} 
+void RM\+\_\+\+Set\+Music\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Met le volume de la musique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & Valeur entre 0.\+0 (silence) et 1.\+0 (max) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{RessourcesManager_8h_a772cdf072fdb534278b6124687a627f7}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_SetSFXVolume@{RM\_SetSFXVolume}}
+\index{RM\_SetSFXVolume@{RM\_SetSFXVolume}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_SetSFXVolume()}{RM\_SetSFXVolume()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a772cdf072fdb534278b6124687a627f7} 
+void RM\+\_\+\+Set\+SFXVolume (\begin{DoxyParamCaption}\item[{float}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Définit le volume global des effets sonores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & Valeur entre 0.\+0 (silence) et 1.\+0 (max) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{RessourcesManager_8h_a670daca95cb8320602e2a948f9d8c6f3}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_StopMusic@{RM\_StopMusic}}
+\index{RM\_StopMusic@{RM\_StopMusic}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_StopMusic()}{RM\_StopMusic()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a670daca95cb8320602e2a948f9d8c6f3} 
+void RM\+\_\+\+Stop\+Music (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Stoppe la musique en cours. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant de la musique à stopper \\
+\hline
+\end{DoxyParams}
+\Hypertarget{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_UnloadAll@{RM\_UnloadAll}}
 \index{RM\_UnloadAll@{RM\_UnloadAll}!RessourcesManager.h@{RessourcesManager.h}}
 \doxysubsubsection{\texorpdfstring{RM\_UnloadAll()}{RM\_UnloadAll()}}
 {\footnotesize\ttfamily \label{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40} 
@@ -78,30 +491,20 @@ void RM\+\_\+\+Unload\+All (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyPa
 
 
 
-Décharge toutes les textures. 
+Libère toutes les ressources du jeu. 
 
-Libère toutes les textures chargées en mémoire GPU et réinitialise le gestionnaire.
-
-\begin{DoxyWarning}{Warning}
-Doit être appelé avant la fermeture du programme 
-\end{DoxyWarning}
-\Hypertarget{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_UnloadTexture@{RM\_UnloadTexture}}
-\index{RM\_UnloadTexture@{RM\_UnloadTexture}!RessourcesManager.h@{RessourcesManager.h}}
-\doxysubsubsection{\texorpdfstring{RM\_UnloadTexture()}{RM\_UnloadTexture()}}
-{\footnotesize\ttfamily \label{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f} 
-void RM\+\_\+\+Unload\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+Doit être appelé à la fin du programme pour éviter les leaks mémoire. \Hypertarget{RessourcesManager_8h_a280a165b029b522e40f948eabaa22a91}\index{RessourcesManager.h@{RessourcesManager.h}!RM\_UpdateMusic@{RM\_UpdateMusic}}
+\index{RM\_UpdateMusic@{RM\_UpdateMusic}!RessourcesManager.h@{RessourcesManager.h}}
+\doxysubsubsection{\texorpdfstring{RM\_UpdateMusic()}{RM\_UpdateMusic()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8h_a280a165b029b522e40f948eabaa22a91} 
+void RM\+\_\+\+Update\+Music (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
 
 
-Décharge une texture spécifique. 
-
-Libère la mémoire GPU associée à la texture et la retire du gestionnaire.
+Met à jour la musique en cours. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Chemin de la texture à libérer\\
+{\em id} & Identifiant de la musique à mettre à jour \\
 \hline
 \end{DoxyParams}
-\begin{DoxyWarning}{Warning}
-Si la texture n\textquotesingle{}existe pas, la fonction ne fait rien 
-\end{DoxyWarning}

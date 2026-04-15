@@ -1,13 +1,17 @@
 <map id="lib/core/ResolutionManager.h" name="lib/core/ResolutionManager.h">
-<area shape="rect" id="Node000001" title="Sert a gérer la mise à l&#39;échelle dynamiquement Ce fichier sert à adapter les coordonnées du JSON à la..." alt="" coords="320,5,531,31"/>
-<area shape="rect" id="Node000002" href="$ResolutionManager_8c.html" title=" " alt="" coords="5,79,219,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="362,36,163,81,162,76,361,31"/>
-<area shape="rect" id="Node000003" href="$main_8c.html" title=" " alt="" coords="243,79,333,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="393,39,312,81,309,76,390,34"/>
-<area shape="rect" id="Node000004" href="$Game_8c.html" title=" " alt="" coords="357,79,493,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="428,44,428,79,423,79,423,44"/>
-<area shape="rect" id="Node000005" href="$PlayerController_8c.html" title=" " alt="" coords="517,79,723,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="470,33,589,76,587,81,468,38"/>
-<area shape="rect" id="Node000006" href="$PlayerMovement_8c.html" title=" " alt="" coords="747,79,959,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="508,30,785,76,784,81,507,36"/>
+<area shape="rect" id="Node000001" title="Sert a gérer la mise à l&#39;échelle dynamiquement Ce fichier sert à adapter les coordonnées du JSON à la..." alt="" coords="483,5,693,31"/>
+<area shape="rect" id="Node000002" href="$Camera_8c.html" title=" " alt="" coords="5,79,144,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="491,35,156,81,145,83,144,78,156,76,491,30"/>
+<area shape="rect" id="Node000003" href="$ResolutionManager_8c.html" title=" " alt="" coords="168,79,381,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="525,36,326,81,325,76,524,31"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title=" " alt="" coords="406,79,495,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="555,39,474,81,472,76,553,34"/>
+<area shape="rect" id="Node000005" href="$Game_8c.html" title=" " alt="" coords="520,79,656,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="591,44,591,79,585,79,585,44"/>
+<area shape="rect" id="Node000006" href="$PlayerController_8c.html" title=" " alt="" coords="680,79,885,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="633,33,752,76,750,81,631,38"/>
+<area shape="rect" id="Node000007" href="$PlayerMovement_8c.html" title=" " alt="" coords="910,79,1122,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="671,30,947,76,947,81,670,36"/>
+<area shape="rect" id="Node000008" href="$ParallaxSystem_8c.html" title=" " alt="" coords="1147,79,1363,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="707,29,1148,76,1147,81,707,35"/>
 </map>

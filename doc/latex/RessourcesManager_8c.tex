@@ -1,12 +1,6 @@
 \doxysection{src/core/\+Ressources\+Manager.c File Reference}
 \hypertarget{RessourcesManager_8c}{}\label{RessourcesManager_8c}\index{src/core/RessourcesManager.c@{src/core/RessourcesManager.c}}
-
-
-Gestion des ressources du jeu.  
-
-
-{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
-{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}../../lib/core/\+Ressources\+Manager.\+h"{}}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 Include dependency graph for Ressources\+Manager.\+c\+:
@@ -14,92 +8,234 @@ Include dependency graph for Ressources\+Manager.\+c\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{RessourcesManager_8c__incl}
+\includegraphics[width=320pt]{RessourcesManager_8c__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Data Structures}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structTextureResource}{Texture\+Resource}}
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{RessourcesManager_8c_a6f83eeeca7ad2d7ad5ba41f3ae6d904e}{MAX\+\_\+\+TEXTURES}}~128
+\#define \mbox{\hyperlink{RessourcesManager_8c_a8f4cfcf13baff859c5fe64281e6a1d26}{MUSIC\+\_\+\+NONE}}~\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a4579796568f086dac1f0ba1c5bc0ec74}{MUSIC\+\_\+\+COUNT}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-Texture2D \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8c_a4bc34793271f2e1a0e99da94d1699edb}{RM\+\_\+\+Get\+Texture}} (const char \texorpdfstring{$\ast$}{*}path)
-\begin{DoxyCompactList}\small\item\em Récupère une texture depuis le gestionnaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{RessourcesManager_8c_ad3887999d28d79cdafdb102920f84229}{Load\+Game\+Resources}} ()
-\item 
-void \mbox{\hyperlink{RessourcesManager_8c_a66438427e98c02c0c63b5673518e919f}{RM\+\_\+\+Unload\+Texture}} (const char \texorpdfstring{$\ast$}{*}path)
-\begin{DoxyCompactList}\small\item\em Décharge une texture spécifique. \end{DoxyCompactList}\item 
+Texture2D \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8c_a166f8337eb3c921dfda23e1b16cfa4b1}{RM\+\_\+\+Get\+Texture}} (\mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}{Texture\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Récupère une texture du gestionnaire. \end{DoxyCompactList}\item 
+Music \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8c_af692b3cc91497de2c20c0b20690f0b9e}{RM\+\_\+\+Get\+Music}} (\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Récupère une musique du gestionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8c_a2a156010f2ebc87a95f729d66f8f33f7}{RM\+\_\+\+Play\+Music}} (\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Joue une musique. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8c_a280a165b029b522e40f948eabaa22a91}{RM\+\_\+\+Update\+Music}} (void)
+\begin{DoxyCompactList}\small\item\em Met à jour la musique en cours. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8c_a670daca95cb8320602e2a948f9d8c6f3}{RM\+\_\+\+Stop\+Music}} (void)
+\begin{DoxyCompactList}\small\item\em Stoppe la musique en cours. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8c_a2d410176a9896ef691ccc49e9a571655}{RM\+\_\+\+Set\+Music\+Volume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Met le volume de la musique. \end{DoxyCompactList}\item 
+Sound \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{RessourcesManager_8c_aab50c0e8589559e329df2892c0e5a694}{RM\+\_\+\+Get\+Sound}} (\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Récupère un son du gestionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8c_a444330cb6cfeb7ba3e5a99a4bf214838}{RM\+\_\+\+Play\+Sound}} (\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Joue un effet sonore. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{RessourcesManager_8c_ad205fdf360d72a13deeafea20dff6e18}{RM\+\_\+\+Get\+Music\+Volume}} (void)
+\begin{DoxyCompactList}\small\item\em Récupère le volume global actuel de la musique. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{RessourcesManager_8c_a793f31865becd80f0516a7ec4919545a}{RM\+\_\+\+Get\+SFXVolume}} (void)
+\begin{DoxyCompactList}\small\item\em Récupère le volume global actuel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8c_a772cdf072fdb534278b6124687a627f7}{RM\+\_\+\+Set\+SFXVolume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Définit le volume global des effets sonores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{RessourcesManager_8c_ac43a759d198245cbdeb12ad95c7bea6e}{RM\+\_\+\+Load\+All}} (void)
+\begin{DoxyCompactList}\small\item\em Charge toutes les ressources du jeu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{RessourcesManager_8c_a7622c532cade6687cc2d50a52c6e7d40}{RM\+\_\+\+Unload\+All}} (void)
-\begin{DoxyCompactList}\small\item\em Décharge toutes les textures. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-Gestion des ressources du jeu. 
-
-Définit l’interface de gestion des ressources du jeu, y compris les textures, sons et autres éléments graphiques.
-
-Fournit des fonctions pour \+:
-\begin{DoxyItemize}
-\item charger les ressources
-\item libérer les ressources
-\item accéder aux ressources
-\end{DoxyItemize}
-
-\begin{DoxyAuthor}{Author}
-A. Pocholle 
-\end{DoxyAuthor}
+\begin{DoxyCompactList}\small\item\em Libère toutes les ressources du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \label{doc-define-members}
 \Hypertarget{RessourcesManager_8c_doc-define-members}
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{RessourcesManager_8c_a6f83eeeca7ad2d7ad5ba41f3ae6d904e}\index{RessourcesManager.c@{RessourcesManager.c}!MAX\_TEXTURES@{MAX\_TEXTURES}}
-\index{MAX\_TEXTURES@{MAX\_TEXTURES}!RessourcesManager.c@{RessourcesManager.c}}
-\doxysubsubsection{\texorpdfstring{MAX\_TEXTURES}{MAX\_TEXTURES}}
-{\footnotesize\ttfamily \label{RessourcesManager_8c_a6f83eeeca7ad2d7ad5ba41f3ae6d904e} 
-\#define MAX\+\_\+\+TEXTURES~128}
+\Hypertarget{RessourcesManager_8c_a8f4cfcf13baff859c5fe64281e6a1d26}\index{RessourcesManager.c@{RessourcesManager.c}!MUSIC\_NONE@{MUSIC\_NONE}}
+\index{MUSIC\_NONE@{MUSIC\_NONE}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{MUSIC\_NONE}{MUSIC\_NONE}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a8f4cfcf13baff859c5fe64281e6a1d26} 
+\#define MUSIC\+\_\+\+NONE~\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078a4579796568f086dac1f0ba1c5bc0ec74}{MUSIC\+\_\+\+COUNT}}}
 
 
 
 \label{doc-func-members}
 \Hypertarget{RessourcesManager_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{RessourcesManager_8c_ad3887999d28d79cdafdb102920f84229}\index{RessourcesManager.c@{RessourcesManager.c}!LoadGameResources@{LoadGameResources}}
-\index{LoadGameResources@{LoadGameResources}!RessourcesManager.c@{RessourcesManager.c}}
-\doxysubsubsection{\texorpdfstring{LoadGameResources()}{LoadGameResources()}}
-{\footnotesize\ttfamily \label{RessourcesManager_8c_ad3887999d28d79cdafdb102920f84229} 
-void Load\+Game\+Resources (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-\Hypertarget{RessourcesManager_8c_a4bc34793271f2e1a0e99da94d1699edb}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_GetTexture@{RM\_GetTexture}}
-\index{RM\_GetTexture@{RM\_GetTexture}!RessourcesManager.c@{RessourcesManager.c}}
-\doxysubsubsection{\texorpdfstring{RM\_GetTexture()}{RM\_GetTexture()}}
-{\footnotesize\ttfamily \label{RessourcesManager_8c_a4bc34793271f2e1a0e99da94d1699edb} 
-Texture2D \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+\Hypertarget{RessourcesManager_8c_af692b3cc91497de2c20c0b20690f0b9e}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_GetMusic@{RM\_GetMusic}}
+\index{RM\_GetMusic@{RM\_GetMusic}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_GetMusic()}{RM\_GetMusic()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_af692b3cc91497de2c20c0b20690f0b9e} 
+Music \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}}}]{id}{}\end{DoxyParamCaption})}
 
 
 
-Récupère une texture depuis le gestionnaire. 
+Récupère une musique du gestionnaire. 
 
-Si la texture est déjà chargée, elle est simplement retournée. Sinon, elle est chargée puis stockée.
+Charge la musique si nécessaire, sinon retourne celle en cache.
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Chemin vers le fichier image \\
+{\em id} & Identifiant de la musique \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Pointeur vers la texture, ou NULL en cas d\textquotesingle{}erreur
+Pointeur vers la musique chargée 
 \end{DoxyReturn}
-\begin{DoxyNote}{Note}
-La texture reste en mémoire jusqu\textquotesingle{}à appel de \doxylink{RessourcesManager_8h_a66438427e98c02c0c63b5673518e919f}{RM\+\_\+\+Unload\+Texture()} ou \doxylink{RessourcesManager_8h_a7622c532cade6687cc2d50a52c6e7d40}{RM\+\_\+\+Unload\+All()} 
-\end{DoxyNote}
+\Hypertarget{RessourcesManager_8c_ad205fdf360d72a13deeafea20dff6e18}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_GetMusicVolume@{RM\_GetMusicVolume}}
+\index{RM\_GetMusicVolume@{RM\_GetMusicVolume}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_GetMusicVolume()}{RM\_GetMusicVolume()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_ad205fdf360d72a13deeafea20dff6e18} 
+float RM\+\_\+\+Get\+Music\+Volume (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Récupère le volume global actuel de la musique. 
+
+\begin{DoxyReturn}{Returns}
+Volume de la musique (0.\+0 -\/ 1.\+0) 
+\end{DoxyReturn}
+\Hypertarget{RessourcesManager_8c_a793f31865becd80f0516a7ec4919545a}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_GetSFXVolume@{RM\_GetSFXVolume}}
+\index{RM\_GetSFXVolume@{RM\_GetSFXVolume}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_GetSFXVolume()}{RM\_GetSFXVolume()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a793f31865becd80f0516a7ec4919545a} 
+float RM\+\_\+\+Get\+SFXVolume (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Récupère le volume global actuel. 
+
+\begin{DoxyReturn}{Returns}
+Volume des SFX (0.\+0 -\/ 1.\+0) 
+\end{DoxyReturn}
+\Hypertarget{RessourcesManager_8c_aab50c0e8589559e329df2892c0e5a694}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_GetSound@{RM\_GetSound}}
+\index{RM\_GetSound@{RM\_GetSound}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_GetSound()}{RM\_GetSound()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_aab50c0e8589559e329df2892c0e5a694} 
+Sound \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}}}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Récupère un son du gestionnaire. 
+
+Charge le son si nécessaire, sinon retourne celui en cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant du son \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers le son chargé 
+\end{DoxyReturn}
+\Hypertarget{RessourcesManager_8c_a166f8337eb3c921dfda23e1b16cfa4b1}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_GetTexture@{RM\_GetTexture}}
+\index{RM\_GetTexture@{RM\_GetTexture}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_GetTexture()}{RM\_GetTexture()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a166f8337eb3c921dfda23e1b16cfa4b1} 
+Texture2D \texorpdfstring{$\ast$}{*} RM\+\_\+\+Get\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_aac8c8e4db184e4a83ec51cdec293c11d}{Texture\+ID}}}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Récupère une texture du gestionnaire. 
+
+Charge la texture si nécessaire, sinon retourne celle en cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant de la texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la texture chargée 
+\end{DoxyReturn}
+\Hypertarget{RessourcesManager_8c_ac43a759d198245cbdeb12ad95c7bea6e}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_LoadAll@{RM\_LoadAll}}
+\index{RM\_LoadAll@{RM\_LoadAll}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_LoadAll()}{RM\_LoadAll()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_ac43a759d198245cbdeb12ad95c7bea6e} 
+void RM\+\_\+\+Load\+All (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Charge toutes les ressources du jeu. 
+
+Précharge textures et sons pour éviter les stutters en jeu. \Hypertarget{RessourcesManager_8c_a2a156010f2ebc87a95f729d66f8f33f7}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_PlayMusic@{RM\_PlayMusic}}
+\index{RM\_PlayMusic@{RM\_PlayMusic}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_PlayMusic()}{RM\_PlayMusic()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a2a156010f2ebc87a95f729d66f8f33f7} 
+void RM\+\_\+\+Play\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_a68946471db0c45b6ce503ef14572f078}{Music\+ID}}}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Joue une musique. 
+
+Applique automatiquement le volume global avant lecture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant de la musique à jouer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{RessourcesManager_8c_a444330cb6cfeb7ba3e5a99a4bf214838}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_PlaySound@{RM\_PlaySound}}
+\index{RM\_PlaySound@{RM\_PlaySound}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_PlaySound()}{RM\_PlaySound()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a444330cb6cfeb7ba3e5a99a4bf214838} 
+void RM\+\_\+\+Play\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{RessourcesManager_8h_aa4689ee7c9a692044aebd36cb0915e61}{Sound\+ID}}}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Joue un effet sonore. 
+
+Applique automatiquement le volume global avant lecture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant du son à jouer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{RessourcesManager_8c_a2d410176a9896ef691ccc49e9a571655}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_SetMusicVolume@{RM\_SetMusicVolume}}
+\index{RM\_SetMusicVolume@{RM\_SetMusicVolume}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_SetMusicVolume()}{RM\_SetMusicVolume()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a2d410176a9896ef691ccc49e9a571655} 
+void RM\+\_\+\+Set\+Music\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Met le volume de la musique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & Valeur entre 0.\+0 (silence) et 1.\+0 (max) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{RessourcesManager_8c_a772cdf072fdb534278b6124687a627f7}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_SetSFXVolume@{RM\_SetSFXVolume}}
+\index{RM\_SetSFXVolume@{RM\_SetSFXVolume}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_SetSFXVolume()}{RM\_SetSFXVolume()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a772cdf072fdb534278b6124687a627f7} 
+void RM\+\_\+\+Set\+SFXVolume (\begin{DoxyParamCaption}\item[{float}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Définit le volume global des effets sonores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & Valeur entre 0.\+0 (silence) et 1.\+0 (max) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{RessourcesManager_8c_a670daca95cb8320602e2a948f9d8c6f3}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_StopMusic@{RM\_StopMusic}}
+\index{RM\_StopMusic@{RM\_StopMusic}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_StopMusic()}{RM\_StopMusic()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a670daca95cb8320602e2a948f9d8c6f3} 
+void RM\+\_\+\+Stop\+Music (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Stoppe la musique en cours. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifiant de la musique à stopper \\
+\hline
+\end{DoxyParams}
 \Hypertarget{RessourcesManager_8c_a7622c532cade6687cc2d50a52c6e7d40}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_UnloadAll@{RM\_UnloadAll}}
 \index{RM\_UnloadAll@{RM\_UnloadAll}!RessourcesManager.c@{RessourcesManager.c}}
 \doxysubsubsection{\texorpdfstring{RM\_UnloadAll()}{RM\_UnloadAll()}}
@@ -108,30 +244,20 @@ void RM\+\_\+\+Unload\+All (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyPa
 
 
 
-Décharge toutes les textures. 
+Libère toutes les ressources du jeu. 
 
-Libère toutes les textures chargées en mémoire GPU et réinitialise le gestionnaire.
-
-\begin{DoxyWarning}{Warning}
-Doit être appelé avant la fermeture du programme 
-\end{DoxyWarning}
-\Hypertarget{RessourcesManager_8c_a66438427e98c02c0c63b5673518e919f}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_UnloadTexture@{RM\_UnloadTexture}}
-\index{RM\_UnloadTexture@{RM\_UnloadTexture}!RessourcesManager.c@{RessourcesManager.c}}
-\doxysubsubsection{\texorpdfstring{RM\_UnloadTexture()}{RM\_UnloadTexture()}}
-{\footnotesize\ttfamily \label{RessourcesManager_8c_a66438427e98c02c0c63b5673518e919f} 
-void RM\+\_\+\+Unload\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+Doit être appelé à la fin du programme pour éviter les leaks mémoire. \Hypertarget{RessourcesManager_8c_a280a165b029b522e40f948eabaa22a91}\index{RessourcesManager.c@{RessourcesManager.c}!RM\_UpdateMusic@{RM\_UpdateMusic}}
+\index{RM\_UpdateMusic@{RM\_UpdateMusic}!RessourcesManager.c@{RessourcesManager.c}}
+\doxysubsubsection{\texorpdfstring{RM\_UpdateMusic()}{RM\_UpdateMusic()}}
+{\footnotesize\ttfamily \label{RessourcesManager_8c_a280a165b029b522e40f948eabaa22a91} 
+void RM\+\_\+\+Update\+Music (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
 
 
-Décharge une texture spécifique. 
-
-Libère la mémoire GPU associée à la texture et la retire du gestionnaire.
+Met à jour la musique en cours. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & Chemin de la texture à libérer\\
+{\em id} & Identifiant de la musique à mettre à jour \\
 \hline
 \end{DoxyParams}
-\begin{DoxyWarning}{Warning}
-Si la texture n\textquotesingle{}existe pas, la fonction ne fait rien 
-\end{DoxyWarning}

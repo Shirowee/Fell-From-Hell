@@ -76,17 +76,12 @@ $(function() {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">RessourcesManager.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Gestion des ressources du jeu.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;../../raylib/include/raylib.h&quot;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="RessourcesManager_8h_source.html">../../lib/core/RessourcesManager.h</a>&quot;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -94,54 +89,61 @@ Include dependency graph for RessourcesManager.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="RessourcesManager_8c__incl.png" border="0" usemap="#asrc_2core_2RessourcesManager_8c" loading="lazy" alt=""/></div>
 <map name="asrc_2core_2RessourcesManager_8c" id="asrc_2core_2RessourcesManager_8c">
-<area shape="rect" title="Gestion des ressources du jeu." alt="" coords="141,5,359,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,140,119"/>
-<area shape="poly" title=" " alt="" coords="225,33,129,76,127,71,223,28"/>
-<area shape="rect" title=" " alt="" coords="164,86,235,111"/>
-<area shape="poly" title=" " alt="" coords="245,32,217,76,212,73,240,29"/>
-<area shape="rect" title=" " alt="" coords="259,86,342,111"/>
-<area shape="poly" title=" " alt="" coords="260,29,288,73,283,76,255,32"/>
-<area shape="rect" title=" " alt="" coords="366,86,433,111"/>
-<area shape="poly" title=" " alt="" coords="273,28,367,77,364,82,271,33"/>
+<area shape="rect" title=" " alt="" coords="106,5,325,31"/>
+<area shape="rect" href="RessourcesManager_8h.html" title="Gestion centralisée des ressources du jeu (textures et sons)" alt="" coords="5,79,177,119"/>
+<area shape="poly" title=" " alt="" coords="198,33,134,73,131,69,196,29"/>
+<area shape="rect" title=" " alt="" coords="174,174,257,199"/>
+<area shape="poly" title=" " alt="" coords="218,31,218,160,213,160,213,31"/>
+<area shape="rect" title=" " alt="" coords="253,86,319,111"/>
+<area shape="poly" title=" " alt="" coords="228,29,268,74,264,77,224,33"/>
+<area shape="rect" title=" " alt="" coords="15,167,149,207"/>
+<area shape="poly" title=" " alt="" coords="92,119,88,153,83,153,87,119"/>
+<area shape="poly" title=" " alt="" coords="120,117,189,164,186,168,117,121"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:TextureResource" id="r_TextureResource"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTextureResource.html">TextureResource</a></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a6f83eeeca7ad2d7ad5ba41f3ae6d904e" id="r_a6f83eeeca7ad2d7ad5ba41f3ae6d904e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f83eeeca7ad2d7ad5ba41f3ae6d904e">MAX_TEXTURES</a>&#160;&#160;&#160;128</td></tr>
+<tr class="memitem:a8f4cfcf13baff859c5fe64281e6a1d26" id="r_a8f4cfcf13baff859c5fe64281e6a1d26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f4cfcf13baff859c5fe64281e6a1d26">MUSIC_NONE</a>&#160;&#160;&#160;<a class="el" href="RessourcesManager_8h.html#a68946471db0c45b6ce503ef14572f078a4579796568f086dac1f0ba1c5bc0ec74">MUSIC_COUNT</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4bc34793271f2e1a0e99da94d1699edb" id="r_a4bc34793271f2e1a0e99da94d1699edb"><td class="memItemLeft" align="right" valign="top">Texture2D *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bc34793271f2e1a0e99da94d1699edb">RM_GetTexture</a> (const char *path)</td></tr>
-<tr class="memdesc:a4bc34793271f2e1a0e99da94d1699edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère une texture depuis le gestionnaire.  <br /></td></tr>
-<tr class="memitem:ad3887999d28d79cdafdb102920f84229" id="r_ad3887999d28d79cdafdb102920f84229"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3887999d28d79cdafdb102920f84229">LoadGameResources</a> ()</td></tr>
-<tr class="memitem:a66438427e98c02c0c63b5673518e919f" id="r_a66438427e98c02c0c63b5673518e919f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66438427e98c02c0c63b5673518e919f">RM_UnloadTexture</a> (const char *path)</td></tr>
-<tr class="memdesc:a66438427e98c02c0c63b5673518e919f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Décharge une texture spécifique.  <br /></td></tr>
+<tr class="memitem:a166f8337eb3c921dfda23e1b16cfa4b1" id="r_a166f8337eb3c921dfda23e1b16cfa4b1"><td class="memItemLeft" align="right" valign="top">Texture2D *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a166f8337eb3c921dfda23e1b16cfa4b1">RM_GetTexture</a> (<a class="el" href="RessourcesManager_8h.html#aac8c8e4db184e4a83ec51cdec293c11d">TextureID</a> id)</td></tr>
+<tr class="memdesc:a166f8337eb3c921dfda23e1b16cfa4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère une texture du gestionnaire.  <br /></td></tr>
+<tr class="memitem:af692b3cc91497de2c20c0b20690f0b9e" id="r_af692b3cc91497de2c20c0b20690f0b9e"><td class="memItemLeft" align="right" valign="top">Music *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af692b3cc91497de2c20c0b20690f0b9e">RM_GetMusic</a> (<a class="el" href="RessourcesManager_8h.html#a68946471db0c45b6ce503ef14572f078">MusicID</a> id)</td></tr>
+<tr class="memdesc:af692b3cc91497de2c20c0b20690f0b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère une musique du gestionnaire.  <br /></td></tr>
+<tr class="memitem:a2a156010f2ebc87a95f729d66f8f33f7" id="r_a2a156010f2ebc87a95f729d66f8f33f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a156010f2ebc87a95f729d66f8f33f7">RM_PlayMusic</a> (<a class="el" href="RessourcesManager_8h.html#a68946471db0c45b6ce503ef14572f078">MusicID</a> id)</td></tr>
+<tr class="memdesc:a2a156010f2ebc87a95f729d66f8f33f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joue une musique.  <br /></td></tr>
+<tr class="memitem:a280a165b029b522e40f948eabaa22a91" id="r_a280a165b029b522e40f948eabaa22a91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a280a165b029b522e40f948eabaa22a91">RM_UpdateMusic</a> (void)</td></tr>
+<tr class="memdesc:a280a165b029b522e40f948eabaa22a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour la musique en cours.  <br /></td></tr>
+<tr class="memitem:a670daca95cb8320602e2a948f9d8c6f3" id="r_a670daca95cb8320602e2a948f9d8c6f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a670daca95cb8320602e2a948f9d8c6f3">RM_StopMusic</a> (void)</td></tr>
+<tr class="memdesc:a670daca95cb8320602e2a948f9d8c6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stoppe la musique en cours.  <br /></td></tr>
+<tr class="memitem:a2d410176a9896ef691ccc49e9a571655" id="r_a2d410176a9896ef691ccc49e9a571655"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d410176a9896ef691ccc49e9a571655">RM_SetMusicVolume</a> (float volume)</td></tr>
+<tr class="memdesc:a2d410176a9896ef691ccc49e9a571655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met le volume de la musique.  <br /></td></tr>
+<tr class="memitem:aab50c0e8589559e329df2892c0e5a694" id="r_aab50c0e8589559e329df2892c0e5a694"><td class="memItemLeft" align="right" valign="top">Sound *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab50c0e8589559e329df2892c0e5a694">RM_GetSound</a> (<a class="el" href="RessourcesManager_8h.html#aa4689ee7c9a692044aebd36cb0915e61">SoundID</a> id)</td></tr>
+<tr class="memdesc:aab50c0e8589559e329df2892c0e5a694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un son du gestionnaire.  <br /></td></tr>
+<tr class="memitem:a444330cb6cfeb7ba3e5a99a4bf214838" id="r_a444330cb6cfeb7ba3e5a99a4bf214838"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a444330cb6cfeb7ba3e5a99a4bf214838">RM_PlaySound</a> (<a class="el" href="RessourcesManager_8h.html#aa4689ee7c9a692044aebd36cb0915e61">SoundID</a> id)</td></tr>
+<tr class="memdesc:a444330cb6cfeb7ba3e5a99a4bf214838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joue un effet sonore.  <br /></td></tr>
+<tr class="memitem:ad205fdf360d72a13deeafea20dff6e18" id="r_ad205fdf360d72a13deeafea20dff6e18"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad205fdf360d72a13deeafea20dff6e18">RM_GetMusicVolume</a> (void)</td></tr>
+<tr class="memdesc:ad205fdf360d72a13deeafea20dff6e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le volume global actuel de la musique.  <br /></td></tr>
+<tr class="memitem:a793f31865becd80f0516a7ec4919545a" id="r_a793f31865becd80f0516a7ec4919545a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a793f31865becd80f0516a7ec4919545a">RM_GetSFXVolume</a> (void)</td></tr>
+<tr class="memdesc:a793f31865becd80f0516a7ec4919545a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le volume global actuel.  <br /></td></tr>
+<tr class="memitem:a772cdf072fdb534278b6124687a627f7" id="r_a772cdf072fdb534278b6124687a627f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a772cdf072fdb534278b6124687a627f7">RM_SetSFXVolume</a> (float volume)</td></tr>
+<tr class="memdesc:a772cdf072fdb534278b6124687a627f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le volume global des effets sonores.  <br /></td></tr>
+<tr class="memitem:ac43a759d198245cbdeb12ad95c7bea6e" id="r_ac43a759d198245cbdeb12ad95c7bea6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac43a759d198245cbdeb12ad95c7bea6e">RM_LoadAll</a> (void)</td></tr>
+<tr class="memdesc:ac43a759d198245cbdeb12ad95c7bea6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge toutes les ressources du jeu.  <br /></td></tr>
 <tr class="memitem:a7622c532cade6687cc2d50a52c6e7d40" id="r_a7622c532cade6687cc2d50a52c6e7d40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7622c532cade6687cc2d50a52c6e7d40">RM_UnloadAll</a> (void)</td></tr>
-<tr class="memdesc:a7622c532cade6687cc2d50a52c6e7d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Décharge toutes les textures.  <br /></td></tr>
+<tr class="memdesc:a7622c532cade6687cc2d50a52c6e7d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère toutes les ressources du jeu.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Gestion des ressources du jeu. </p>
-<p>Définit l’interface de gestion des ressources du jeu, y compris les textures, sons et autres éléments graphiques.</p>
-<p>Fournit des fonctions pour :</p><ul>
-<li>charger les ressources</li>
-<li>libérer les ressources</li>
-<li>accéder aux ressources</li>
-</ul>
-<dl class="section author"><dt>Author</dt><dd>A. Pocholle </dd></dl>
-</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
-<a id="a6f83eeeca7ad2d7ad5ba41f3ae6d904e" name="a6f83eeeca7ad2d7ad5ba41f3ae6d904e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f83eeeca7ad2d7ad5ba41f3ae6d904e">&#9670;&#160;</a></span>MAX_TEXTURES</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a8f4cfcf13baff859c5fe64281e6a1d26" name="a8f4cfcf13baff859c5fe64281e6a1d26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f4cfcf13baff859c5fe64281e6a1d26">&#9670;&#160;</a></span>MUSIC_NONE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_TEXTURES&#160;&#160;&#160;128</td>
+          <td class="memname">#define MUSIC_NONE&#160;&#160;&#160;<a class="el" href="RessourcesManager_8h.html#a68946471db0c45b6ce503ef14572f078a4579796568f086dac1f0ba1c5bc0ec74">MUSIC_COUNT</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -149,25 +151,102 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ad3887999d28d79cdafdb102920f84229" name="ad3887999d28d79cdafdb102920f84229"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3887999d28d79cdafdb102920f84229">&#9670;&#160;</a></span>LoadGameResources()</h2>
+<a id="af692b3cc91497de2c20c0b20690f0b9e" name="af692b3cc91497de2c20c0b20690f0b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af692b3cc91497de2c20c0b20690f0b9e">&#9670;&#160;</a></span>RM_GetMusic()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void LoadGameResources </td>
+          <td class="memname">Music * RM_GetMusic </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="RessourcesManager_8h.html#a68946471db0c45b6ce503ef14572f078">MusicID</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Récupère une musique du gestionnaire. </p>
+<p>Charge la musique si nécessaire, sinon retourne celle en cache.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifiant de la musique </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointeur vers la musique chargée </dd></dl>
+
 </div>
 </div>
-<a id="a4bc34793271f2e1a0e99da94d1699edb" name="a4bc34793271f2e1a0e99da94d1699edb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bc34793271f2e1a0e99da94d1699edb">&#9670;&#160;</a></span>RM_GetTexture()</h2>
+<a id="ad205fdf360d72a13deeafea20dff6e18" name="ad205fdf360d72a13deeafea20dff6e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad205fdf360d72a13deeafea20dff6e18">&#9670;&#160;</a></span>RM_GetMusicVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float RM_GetMusicVolume </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère le volume global actuel de la musique. </p>
+<dl class="section return"><dt>Returns</dt><dd>Volume de la musique (0.0 - 1.0) </dd></dl>
+
+</div>
+</div>
+<a id="a793f31865becd80f0516a7ec4919545a" name="a793f31865becd80f0516a7ec4919545a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a793f31865becd80f0516a7ec4919545a">&#9670;&#160;</a></span>RM_GetSFXVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float RM_GetSFXVolume </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère le volume global actuel. </p>
+<dl class="section return"><dt>Returns</dt><dd>Volume des SFX (0.0 - 1.0) </dd></dl>
+
+</div>
+</div>
+<a id="aab50c0e8589559e329df2892c0e5a694" name="aab50c0e8589559e329df2892c0e5a694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab50c0e8589559e329df2892c0e5a694">&#9670;&#160;</a></span>RM_GetSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sound * RM_GetSound </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="RessourcesManager_8h.html#aa4689ee7c9a692044aebd36cb0915e61">SoundID</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère un son du gestionnaire. </p>
+<p>Charge le son si nécessaire, sinon retourne celui en cache.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifiant du son </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointeur vers le son chargé </dd></dl>
+
+</div>
+</div>
+<a id="a166f8337eb3c921dfda23e1b16cfa4b1" name="a166f8337eb3c921dfda23e1b16cfa4b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a166f8337eb3c921dfda23e1b16cfa4b1">&#9670;&#160;</a></span>RM_GetTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,22 +254,168 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">Texture2D * RM_GetTexture </td>
           <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="RessourcesManager_8h.html#aac8c8e4db184e4a83ec51cdec293c11d">TextureID</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Récupère une texture depuis le gestionnaire. </p>
-<p>Si la texture est déjà chargée, elle est simplement retournée. Sinon, elle est chargée puis stockée.</p>
+<p>Récupère une texture du gestionnaire. </p>
+<p>Charge la texture si nécessaire, sinon retourne celle en cache.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>Chemin vers le fichier image </td></tr>
+    <tr><td class="paramname">id</td><td>Identifiant de la texture </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointeur vers la texture, ou NULL en cas d'erreur</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>La texture reste en mémoire jusqu'à appel de <a class="el" href="RessourcesManager_8h.html#a66438427e98c02c0c63b5673518e919f" title="Décharge une texture spécifique.">RM_UnloadTexture()</a> ou <a class="el" href="RessourcesManager_8h.html#a7622c532cade6687cc2d50a52c6e7d40" title="Décharge toutes les textures.">RM_UnloadAll()</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointeur vers la texture chargée </dd></dl>
+
+</div>
+</div>
+<a id="ac43a759d198245cbdeb12ad95c7bea6e" name="ac43a759d198245cbdeb12ad95c7bea6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac43a759d198245cbdeb12ad95c7bea6e">&#9670;&#160;</a></span>RM_LoadAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RM_LoadAll </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Charge toutes les ressources du jeu. </p>
+<p>Précharge textures et sons pour éviter les stutters en jeu. </p>
+
+</div>
+</div>
+<a id="a2a156010f2ebc87a95f729d66f8f33f7" name="a2a156010f2ebc87a95f729d66f8f33f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a156010f2ebc87a95f729d66f8f33f7">&#9670;&#160;</a></span>RM_PlayMusic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RM_PlayMusic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="RessourcesManager_8h.html#a68946471db0c45b6ce503ef14572f078">MusicID</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joue une musique. </p>
+<p>Applique automatiquement le volume global avant lecture.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifiant de la musique à jouer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a444330cb6cfeb7ba3e5a99a4bf214838" name="a444330cb6cfeb7ba3e5a99a4bf214838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a444330cb6cfeb7ba3e5a99a4bf214838">&#9670;&#160;</a></span>RM_PlaySound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RM_PlaySound </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="RessourcesManager_8h.html#aa4689ee7c9a692044aebd36cb0915e61">SoundID</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Joue un effet sonore. </p>
+<p>Applique automatiquement le volume global avant lecture.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifiant du son à jouer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2d410176a9896ef691ccc49e9a571655" name="a2d410176a9896ef691ccc49e9a571655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d410176a9896ef691ccc49e9a571655">&#9670;&#160;</a></span>RM_SetMusicVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RM_SetMusicVolume </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>volume</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Met le volume de la musique. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">volume</td><td>Valeur entre 0.0 (silence) et 1.0 (max) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a772cdf072fdb534278b6124687a627f7" name="a772cdf072fdb534278b6124687a627f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a772cdf072fdb534278b6124687a627f7">&#9670;&#160;</a></span>RM_SetSFXVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RM_SetSFXVolume </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>volume</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit le volume global des effets sonores. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">volume</td><td>Valeur entre 0.0 (silence) et 1.0 (max) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a670daca95cb8320602e2a948f9d8c6f3" name="a670daca95cb8320602e2a948f9d8c6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670daca95cb8320602e2a948f9d8c6f3">&#9670;&#160;</a></span>RM_StopMusic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RM_StopMusic </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stoppe la musique en cours. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifiant de la musique à stopper </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -209,36 +434,33 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Décharge toutes les textures. </p>
-<p>Libère toutes les textures chargées en mémoire GPU et réinitialise le gestionnaire.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Doit être appelé avant la fermeture du programme </dd></dl>
+<p>Libère toutes les ressources du jeu. </p>
+<p>Doit être appelé à la fin du programme pour éviter les leaks mémoire. </p>
 
 </div>
 </div>
-<a id="a66438427e98c02c0c63b5673518e919f" name="a66438427e98c02c0c63b5673518e919f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66438427e98c02c0c63b5673518e919f">&#9670;&#160;</a></span>RM_UnloadTexture()</h2>
+<a id="a280a165b029b522e40f948eabaa22a91" name="a280a165b029b522e40f948eabaa22a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a280a165b029b522e40f948eabaa22a91">&#9670;&#160;</a></span>RM_UpdateMusic()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void RM_UnloadTexture </td>
+          <td class="memname">void RM_UpdateMusic </td>
           <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Décharge une texture spécifique. </p>
-<p>Libère la mémoire GPU associée à la texture et la retire du gestionnaire.</p>
+<p>Met à jour la musique en cours. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>Chemin de la texture à libérer</td></tr>
+    <tr><td class="paramname">id</td><td>Identifiant de la musique à mettre à jour </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section warning"><dt>Warning</dt><dd>Si la texture n'existe pas, la fonction ne fait rien </dd></dl>
 
 </div>
 </div>

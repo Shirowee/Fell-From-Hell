@@ -1,7 +1,12 @@
 \doxysection{src/menu/\+Menu.c File Reference}
 \hypertarget{Menu_8c}{}\label{Menu_8c}\index{src/menu/Menu.c@{src/menu/Menu.c}}
 {\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
-{\ttfamily \#include "{}../../lib/core/\+Screen.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/menu/\+Screen.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Ressources\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Saving\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/levels/\+Level\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/player/\+Player.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/core/\+Game\+Manager.\+h"{}}\newline
 Include dependency graph for Menu.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -13,18 +18,18 @@ Include dependency graph for Menu.\+c\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{Menu_8c_a29d54772dcbbb55d658056dc967fa186}{Menu\+Update}} (void)
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} \mbox{\hyperlink{Menu_8c_afb04eeff03e48756ab6bca468642dc7a}{Menu\+Update}} (\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
 \begin{DoxyCompactList}\small\item\em Met à jour le menu principal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \label{doc-func-members}
 \Hypertarget{Menu_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{Menu_8c_a29d54772dcbbb55d658056dc967fa186}\index{Menu.c@{Menu.c}!MenuUpdate@{MenuUpdate}}
+\Hypertarget{Menu_8c_afb04eeff03e48756ab6bca468642dc7a}\index{Menu.c@{Menu.c}!MenuUpdate@{MenuUpdate}}
 \index{MenuUpdate@{MenuUpdate}!Menu.c@{Menu.c}}
 \doxysubsubsection{\texorpdfstring{MenuUpdate()}{MenuUpdate()}}
-{\footnotesize\ttfamily \label{Menu_8c_a29d54772dcbbb55d658056dc967fa186} 
-\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} Menu\+Update (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Menu_8c_afb04eeff03e48756ab6bca468642dc7a} 
+\mbox{\hyperlink{Screen_8h_a63bc4bb165086ba2f1e7d992a1a73cb6}{Screen\+\_\+t}} Menu\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
 
 
 

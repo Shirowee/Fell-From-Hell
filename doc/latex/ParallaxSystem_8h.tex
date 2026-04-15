@@ -1,0 +1,137 @@
+\doxysection{lib/systems/\+Parallax\+System.h File Reference}
+\hypertarget{ParallaxSystem_8h}{}\label{ParallaxSystem_8h}\index{lib/systems/ParallaxSystem.h@{lib/systems/ParallaxSystem.h}}
+{\ttfamily \#include "{}../../raylib/include/raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/player/\+Player.\+h"{}}\newline
+Include dependency graph for Parallax\+System.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ParallaxSystem_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ParallaxSystem_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structParallaxLayer__s}{Parallax\+Layer\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Représente une couche de parallax. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structParallaxSystem__s}{Parallax\+System\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Système de parallax complet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ParallaxSystem_8h_a88f25d1c319a3af43d782d12132746d3}{PARALLAX\+\_\+\+MAX\+\_\+\+LAYERS}}~8
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structParallaxLayer__s}{Parallax\+Layer\+\_\+s}} \mbox{\hyperlink{ParallaxSystem_8h_a5e50ab82c134c03f8f134901c0275c06}{Parallax\+Layer}}
+\begin{DoxyCompactList}\small\item\em Représente une couche de parallax. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structParallaxSystem__s}{Parallax\+System\+\_\+s}} \mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}}
+\begin{DoxyCompactList}\small\item\em Système de parallax complet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ParallaxSystem_8h_ad74ea4680a232c24db98997385f852b5}{Parallax\+Init}} (\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}ps)
+\begin{DoxyCompactList}\small\item\em Initialise le système de parallax. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ParallaxSystem_8h_a2925c6d12b483d9136dc54f1491abf94}{Parallax\+Add\+Layer}} (\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}ps, Texture2D texture, float speed)
+\begin{DoxyCompactList}\small\item\em Ajoute une couche au système. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ParallaxSystem_8h_a6d5e7ff6b509a6912c1e641839a67afe}{Parallax\+Draw}} (\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}ps, Camera2D \mbox{\hyperlink{GameManager_8h_a2104321f3e01d1f85c8054cda5ad149c}{camera}}, \mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Dessine toutes les couches de parallax. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{ParallaxSystem_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{ParallaxSystem_8h_a88f25d1c319a3af43d782d12132746d3}\index{ParallaxSystem.h@{ParallaxSystem.h}!PARALLAX\_MAX\_LAYERS@{PARALLAX\_MAX\_LAYERS}}
+\index{PARALLAX\_MAX\_LAYERS@{PARALLAX\_MAX\_LAYERS}!ParallaxSystem.h@{ParallaxSystem.h}}
+\doxysubsubsection{\texorpdfstring{PARALLAX\_MAX\_LAYERS}{PARALLAX\_MAX\_LAYERS}}
+{\footnotesize\ttfamily \label{ParallaxSystem_8h_a88f25d1c319a3af43d782d12132746d3} 
+\#define PARALLAX\+\_\+\+MAX\+\_\+\+LAYERS~8}
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{ParallaxSystem_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{ParallaxSystem_8h_a5e50ab82c134c03f8f134901c0275c06}\index{ParallaxSystem.h@{ParallaxSystem.h}!ParallaxLayer@{ParallaxLayer}}
+\index{ParallaxLayer@{ParallaxLayer}!ParallaxSystem.h@{ParallaxSystem.h}}
+\doxysubsubsection{\texorpdfstring{ParallaxLayer}{ParallaxLayer}}
+{\footnotesize\ttfamily \label{ParallaxSystem_8h_a5e50ab82c134c03f8f134901c0275c06} 
+typedef struct \mbox{\hyperlink{structParallaxLayer__s}{Parallax\+Layer\+\_\+s}} \mbox{\hyperlink{ParallaxSystem_8h_a5e50ab82c134c03f8f134901c0275c06}{Parallax\+Layer}}}
+
+
+
+Représente une couche de parallax. 
+
+\Hypertarget{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}\index{ParallaxSystem.h@{ParallaxSystem.h}!ParallaxSystem@{ParallaxSystem}}
+\index{ParallaxSystem@{ParallaxSystem}!ParallaxSystem.h@{ParallaxSystem.h}}
+\doxysubsubsection{\texorpdfstring{ParallaxSystem}{ParallaxSystem}}
+{\footnotesize\ttfamily \label{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2} 
+typedef struct \mbox{\hyperlink{structParallaxSystem__s}{Parallax\+System\+\_\+s}} \mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}}}
+
+
+
+Système de parallax complet. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{ParallaxSystem_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{ParallaxSystem_8h_a2925c6d12b483d9136dc54f1491abf94}\index{ParallaxSystem.h@{ParallaxSystem.h}!ParallaxAddLayer@{ParallaxAddLayer}}
+\index{ParallaxAddLayer@{ParallaxAddLayer}!ParallaxSystem.h@{ParallaxSystem.h}}
+\doxysubsubsection{\texorpdfstring{ParallaxAddLayer()}{ParallaxAddLayer()}}
+{\footnotesize\ttfamily \label{ParallaxSystem_8h_a2925c6d12b483d9136dc54f1491abf94} 
+void Parallax\+Add\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}}]{ps}{, }\item[{Texture2D}]{texture}{, }\item[{float}]{speed}{}\end{DoxyParamCaption})}
+
+
+
+Ajoute une couche au système. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ps} & système \\
+\hline
+{\em texture} & texture de la couche \\
+\hline
+{\em speed} & facteur de vitesse (0..1) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ParallaxSystem_8h_a6d5e7ff6b509a6912c1e641839a67afe}\index{ParallaxSystem.h@{ParallaxSystem.h}!ParallaxDraw@{ParallaxDraw}}
+\index{ParallaxDraw@{ParallaxDraw}!ParallaxSystem.h@{ParallaxSystem.h}}
+\doxysubsubsection{\texorpdfstring{ParallaxDraw()}{ParallaxDraw()}}
+{\footnotesize\ttfamily \label{ParallaxSystem_8h_a6d5e7ff6b509a6912c1e641839a67afe} 
+void Parallax\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}}]{ps}{, }\item[{Camera2D}]{camera}{, }\item[{\mbox{\hyperlink{Player_8h_a47e6f8d93a79a2576363b43294ea2090}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Dessine toutes les couches de parallax. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ps} & système \\
+\hline
+{\em camera} & caméra du jeu \\
+\hline
+{\em player} & joueur \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ParallaxSystem_8h_ad74ea4680a232c24db98997385f852b5}\index{ParallaxSystem.h@{ParallaxSystem.h}!ParallaxInit@{ParallaxInit}}
+\index{ParallaxInit@{ParallaxInit}!ParallaxSystem.h@{ParallaxSystem.h}}
+\doxysubsubsection{\texorpdfstring{ParallaxInit()}{ParallaxInit()}}
+{\footnotesize\ttfamily \label{ParallaxSystem_8h_ad74ea4680a232c24db98997385f852b5} 
+void Parallax\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ParallaxSystem_8h_a13eeae7c45e0b4a323246dcc5ec763e2}{Parallax\+System}} \texorpdfstring{$\ast$}{*}}]{ps}{}\end{DoxyParamCaption})}
+
+
+
+Initialise le système de parallax. 
+

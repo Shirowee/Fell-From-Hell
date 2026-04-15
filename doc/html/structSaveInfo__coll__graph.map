@@ -1,0 +1,7 @@
+<map id="SaveInfo" name="SaveInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="57,101,135,127"/>
+<area shape="rect" id="Node000002" href="$structweapon__t.html" title="Structure représentant une arme." alt="" coords="5,5,91,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,44,52,61,57,76,67,89,79,99,75,103,63,92,52,79,46,62,44,45"/>
+<area shape="rect" id="Node000003" href="$structbuff__t.html" title="Représente un ensemble de bonus appliqués aux caractéristiques du joueur ou des armes." alt="" coords="115,5,173,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,44,117,79,105,102,100,100,112,76,130,42"/>
+</map>

@@ -7,16 +7,14 @@ Machine à états des ennemis.
 
 {\ttfamily \#include "{}../../lib/enemies/\+Enemy\+Controller.\+h"{}}\newline
 {\ttfamily \#include "{}../systems/\+Bullet\+Pool.\+h"{}}\newline
-Include dependency graph for Enemy\+States.\+h\+:
-\nopagebreak
+Include dependency graph for Enemy\+States.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=331pt]{EnemyStates_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,19 +24,19 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{EnemyStates_8h_ac94036e6a02356ceeb7e56aa4bda6a45}{Enemy\+State\+\_\+\+Idle}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+void \mbox{\hyperlink{EnemyStates_8h_ac94036e6a02356ceeb7e56aa4bda6a45}{Enemy\+State\+\_\+\+Idle}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Etat idle de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyStates_8h_a01c6174988d6b9551efbd6b2aedf9844}{Enemy\+State\+\_\+\+Move\+Towards\+Player}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+void \mbox{\hyperlink{EnemyStates_8h_a01c6174988d6b9551efbd6b2aedf9844}{Enemy\+State\+\_\+\+Move\+Towards\+Player}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Etat de poursuite du joueur. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyStates_8h_ab7496197d87f1a1c33ca801ed4a5fb1f}{Enemy\+State\+\_\+\+Move\+Random}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+void \mbox{\hyperlink{EnemyStates_8h_ab7496197d87f1a1c33ca801ed4a5fb1f}{Enemy\+State\+\_\+\+Move\+Random}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Etat de déplacement aléatoire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyStates_8h_acdebdf53c605dc9060ed461662ee53b0}{Enemy\+State\+\_\+\+Enemy\+Shoot\+Circle}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+void \mbox{\hyperlink{EnemyStates_8h_acdebdf53c605dc9060ed461662ee53b0}{Enemy\+State\+\_\+\+Enemy\+Shoot\+Circle}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Etat d\textquotesingle{}attaque circulaire. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyStates_8h_af28d290b08219e29153615845506a277}{Enemy\+State\+\_\+\+Enemy\+Shoot}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+void \mbox{\hyperlink{EnemyStates_8h_af28d290b08219e29153615845506a277}{Enemy\+State\+\_\+\+Enemy\+Shoot}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Etat d\textquotesingle{}attaque simple. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyStates_8h_a6b533b04076a4312fbf6f4517f6ac0e0}{Enemy\+State\+\_\+\+Enemy\+Shoot\+Spiral}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+void \mbox{\hyperlink{EnemyStates_8h_a6b533b04076a4312fbf6f4517f6ac0e0}{Enemy\+State\+\_\+\+Enemy\+Shoot\+Spiral}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Etat d\textquotesingle{}attaque en spirale. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{EnemyStates_8h_abfae72489b09a912b5fa7c6e5b49e782}{Enemy\+State\+\_\+\+Enemy\+Shoot\+Arc}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
+void \mbox{\hyperlink{EnemyStates_8h_abfae72489b09a912b5fa7c6e5b49e782}{Enemy\+State\+\_\+\+Enemy\+Shoot\+Arc}} (\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}enemy, \mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}pool, Vector2 player\+Pos)
 \begin{DoxyCompactList}\small\item\em Etat d\textquotesingle{}attaque en arc. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -69,7 +67,7 @@ A. Pocholle
 \index{EnemyState\_EnemyShoot@{EnemyState\_EnemyShoot}!EnemyStates.h@{EnemyStates.h}}
 \doxysubsubsection{\texorpdfstring{EnemyState\_EnemyShoot()}{EnemyState\_EnemyShoot()}}
 {\footnotesize\ttfamily \label{EnemyStates_8h_af28d290b08219e29153615845506a277} 
-void Enemy\+State\+\_\+\+Enemy\+Shoot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
+void Enemy\+State\+\_\+\+Enemy\+Shoot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -79,7 +77,7 @@ Tire un projectile en ligne droite vers le joueur \Hypertarget{EnemyStates_8h_ab
 \index{EnemyState\_EnemyShootArc@{EnemyState\_EnemyShootArc}!EnemyStates.h@{EnemyStates.h}}
 \doxysubsubsection{\texorpdfstring{EnemyState\_EnemyShootArc()}{EnemyState\_EnemyShootArc()}}
 {\footnotesize\ttfamily \label{EnemyStates_8h_abfae72489b09a912b5fa7c6e5b49e782} 
-void Enemy\+State\+\_\+\+Enemy\+Shoot\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
+void Enemy\+State\+\_\+\+Enemy\+Shoot\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -89,7 +87,7 @@ Tire des projectiles en arc de cercle vers le joueur \Hypertarget{EnemyStates_8h
 \index{EnemyState\_EnemyShootCircle@{EnemyState\_EnemyShootCircle}!EnemyStates.h@{EnemyStates.h}}
 \doxysubsubsection{\texorpdfstring{EnemyState\_EnemyShootCircle()}{EnemyState\_EnemyShootCircle()}}
 {\footnotesize\ttfamily \label{EnemyStates_8h_acdebdf53c605dc9060ed461662ee53b0} 
-void Enemy\+State\+\_\+\+Enemy\+Shoot\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
+void Enemy\+State\+\_\+\+Enemy\+Shoot\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -99,7 +97,7 @@ Tire des projectiles en cercle autour de l\textquotesingle{}ennemi \Hypertarget{
 \index{EnemyState\_EnemyShootSpiral@{EnemyState\_EnemyShootSpiral}!EnemyStates.h@{EnemyStates.h}}
 \doxysubsubsection{\texorpdfstring{EnemyState\_EnemyShootSpiral()}{EnemyState\_EnemyShootSpiral()}}
 {\footnotesize\ttfamily \label{EnemyStates_8h_a6b533b04076a4312fbf6f4517f6ac0e0} 
-void Enemy\+State\+\_\+\+Enemy\+Shoot\+Spiral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
+void Enemy\+State\+\_\+\+Enemy\+Shoot\+Spiral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -109,7 +107,7 @@ Tire un projectile en spirale autour de l\textquotesingle{}ennemi \Hypertarget{E
 \index{EnemyState\_Idle@{EnemyState\_Idle}!EnemyStates.h@{EnemyStates.h}}
 \doxysubsubsection{\texorpdfstring{EnemyState\_Idle()}{EnemyState\_Idle()}}
 {\footnotesize\ttfamily \label{EnemyStates_8h_ac94036e6a02356ceeb7e56aa4bda6a45} 
-void Enemy\+State\+\_\+\+Idle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
+void Enemy\+State\+\_\+\+Idle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -123,7 +121,7 @@ Choisit le prochain état en fonction du type d\textquotesingle{}ennemi \+:
 \index{EnemyState\_MoveRandom@{EnemyState\_MoveRandom}!EnemyStates.h@{EnemyStates.h}}
 \doxysubsubsection{\texorpdfstring{EnemyState\_MoveRandom()}{EnemyState\_MoveRandom()}}
 {\footnotesize\ttfamily \label{EnemyStates_8h_ab7496197d87f1a1c33ca801ed4a5fb1f} 
-void Enemy\+State\+\_\+\+Move\+Random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
+void Enemy\+State\+\_\+\+Move\+Random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 
@@ -138,7 +136,7 @@ Etat de déplacement aléatoire.
 \index{EnemyState\_MoveTowardsPlayer@{EnemyState\_MoveTowardsPlayer}!EnemyStates.h@{EnemyStates.h}}
 \doxysubsubsection{\texorpdfstring{EnemyState\_MoveTowardsPlayer()}{EnemyState\_MoveTowardsPlayer()}}
 {\footnotesize\ttfamily \label{EnemyStates_8h_a01c6174988d6b9551efbd6b2aedf9844} 
-void Enemy\+State\+\_\+\+Move\+Towards\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{structbulletPool__t}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
+void Enemy\+State\+\_\+\+Move\+Towards\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{EnemyController_8h_afa3dd68d66def5d5cd65efb756bbbb96}{enemy\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enemy}{, }\item[{\mbox{\hyperlink{BulletPool_8h_a483439fbd4757def6275c8ca8d13a364}{bullet\+Pool\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pool}{, }\item[{Vector2}]{player\+Pos}{}\end{DoxyParamCaption})}
 
 
 

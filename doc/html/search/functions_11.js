@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['verifpremplan_0',['verifPremPlan',['../WindowManager_8h.html#a01699e0c378c75b5c5147d5c1a9f569c',1,'verifPremPlan(void):&#160;WindowManager.c'],['../WindowManager_8c.html#a606f7d96601573005c78c5ffa83616e7',1,'verifPremPlan(void):&#160;WindowManager.c']]],
-  ['void_1',['void',['../structcJSON__Hooks.html#a42c96b388103ffb466e7335b9fc710c3',1,'cJSON_Hooks']]]
+  ['updatebullet_0',['UpdateBullet',['../Projectiles_8h.html#ae02dbe0eef63a4e222cfa169f9d77076',1,'UpdateBullet(bullet_t *bullet, bulletPool_t *originPool, bool *desactivated):&#160;Projectiles.c'],['../Projectiles_8c.html#ae02dbe0eef63a4e222cfa169f9d77076',1,'UpdateBullet(bullet_t *bullet, bulletPool_t *originPool, bool *desactivated):&#160;Projectiles.c']]],
+  ['updatebulletpool_1',['UpdateBulletPool',['../BulletPool_8h.html#a76d5595ccec9e55ff7965f8939112ebc',1,'UpdateBulletPool(bulletPool_t *pool):&#160;BulletPool.c'],['../BulletPool_8c.html#a76d5595ccec9e55ff7965f8939112ebc',1,'UpdateBulletPool(bulletPool_t *pool):&#160;BulletPool.c']]],
+  ['updateenemypool_2',['UpdateEnemyPool',['../EnemyPool_8h.html#a16cc3781f1de82d5cbbb58564117cc5b',1,'UpdateEnemyPool(enemyPool_t *pool, Vector2 playerPos):&#160;EnemyPool.c'],['../EnemyPool_8c.html#a16cc3781f1de82d5cbbb58564117cc5b',1,'UpdateEnemyPool(enemyPool_t *pool, Vector2 playerPos):&#160;EnemyPool.c']]],
+  ['updateenemyspawner_3',['UpdateEnemySpawner',['../EnemySpawner_8h.html#a8b8f393df12c59d1d2708df07014048f',1,'UpdateEnemySpawner(EnemySpawner *spawner, enemyPool_t *pool):&#160;EnemySpawner.c'],['../EnemySpawner_8c.html#a8b8f393df12c59d1d2708df07014048f',1,'UpdateEnemySpawner(EnemySpawner *spawner, enemyPool_t *pool):&#160;EnemySpawner.c']]]
 ];
