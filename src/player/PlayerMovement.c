@@ -121,7 +121,7 @@ void PlayerMoveConfigUpdate(Player *player, Platform platform[], const int nbPla
 
     if(player->movConfig.dashTime > 0.0 && (!player->movConfig.isDashing)){
         player->movConfig.isDashing = true;
-        RM_PlaySound(SND_DASH);
+        RM_PlaySound(SND_DASH); // Joue un son de Dash
     }
     if(player->movConfig.dashTimeOut > 0.0)
         player->movConfig.isDashing = false;

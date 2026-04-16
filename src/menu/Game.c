@@ -72,7 +72,7 @@ Screen_t Game(Player* player)
 bool endLvl(){
     int i;
     if(enemySpawner.nbVague == currentLevel.enemyCount){
-        for(i = 0; enemyPool.tab[i].active == 0 && enemyPool.capacity > i ;i++);
+        for(i = 0; enemyPool.capacity > i && enemyPool.tab[i].active == 0 ;i++);
         if(enemyPool.capacity == i) return true;
     }
     return false;

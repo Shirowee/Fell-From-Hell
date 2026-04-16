@@ -62,7 +62,6 @@ void GameReset(Player *player) {
 // Mise a jour du jeu
 void GameUpdate(Player *player, double* timeSpent, double* startReload)
 {
-    RM_UpdateMusic();
     CameraUpdate(&camera, player);
     NextLvlUpdate(player, &enemySpawner);
     UpdateEnemySpawner(&enemySpawner, &enemyPool);
